@@ -1,0 +1,393 @@
+{
+  "Meta": {
+    "title": "SaaleWeb — Websites, SEO & KI für Unternehmen",
+    "description": "SaaleWeb baut digitale Kundengewinnungs-Systeme: moderne Websites, SEO und KI-Optimierung für Unternehmen in Halle, Leipzig und ganz Deutschland."
+  },
+  "NotFound": {
+    "title": "Seite nicht gefunden",
+    "description": "Diese Seite existiert nicht oder wurde verschoben.",
+    "back": "Zur Startseite"
+  },
+  "Nav": {
+    "services": "Leistungen",
+    "industries": "Branchen",
+    "cases": "Cases",
+    "pricing": "Preise",
+    "faq": "FAQ",
+    "cta": "Erstgespräch"
+  },
+  "Hero": {
+    "badge": "Digitales Studio · Halle (Saale) → Deutschland",
+    "titleA": "Websites, die ",
+    "titleB": "Kunden bringen.",
+    "lead1": "SEO-optimiert. KI-gestützt. Made in Halle.",
+    "lead2": "Wir verkaufen keine Websites — wir bauen digitale Kundengewinnungs-Systeme.",
+    "ctaPrimary": "Kostenloses Erstgespräch",
+    "ctaSecondary": "Preise ansehen",
+    "note": "Antwort in 24 h · Keine Vorkasse · Festpreis",
+    "metrics": {
+      "aiVisibility": "AI Visibility",
+      "leads": "Leads / Monat",
+      "growth": "Lead-Wachstum",
+      "seoTrend": "stark"
+    },
+    "floats": {
+      "a": "+212 % Anfragen",
+      "b": "Platz 1 bei Google"
+    }
+  },
+  "Trust": {
+    "label": "Echte Projekte · echte Ergebnisse"
+  },
+  "Services": {
+    "eyebrow": "Leistungen",
+    "title": "Alles für Ihre digitale Sichtbarkeit",
+    "lead": "Von der ersten Strategie bis zur laufenden Optimierung — aus einer Hand.",
+    "more": "Mehr erfahren",
+    "items": [
+      {
+        "title": "Website Entwicklung",
+        "desc": "Schnelle, moderne Websites mit Next.js — gebaut für Conversion und Wachstum."
+      },
+      {
+        "title": "SEO Optimierung",
+        "desc": "Technisches und inhaltliches SEO, das Sie nachhaltig nach oben bringt."
+      },
+      {
+        "title": "Local SEO",
+        "desc": "Sichtbar bei Kunden vor Ort — Google Maps, Bewertungen, lokale Rankings."
+      },
+      {
+        "title": "KI Integration",
+        "desc": "Inhalte und Struktur, die ChatGPT, Gemini & Co. zitieren und empfehlen."
+      },
+      {
+        "title": "Website Relaunch",
+        "desc": "Aus einer alten Seite wird ein modernes System — ohne Ranking-Verlust."
+      },
+      {
+        "title": "Performance",
+        "desc": "Ladezeiten unter einer Sekunde und perfekte Core Web Vitals."
+      },
+      {
+        "title": "Hosting",
+        "desc": "Sicheres, blitzschnelles Hosting auf Vercel — weltweit ausgeliefert."
+      },
+      {
+        "title": "Wartung",
+        "desc": "Updates, Monitoring und Support, damit alles dauerhaft läuft."
+      },
+      {
+        "title": "Digitalberatung",
+        "desc": "Klare Strategie für Ihr digitales Wachstum — verständlich erklärt."
+      }
+    ]
+  },
+  "Pricing": {
+    "eyebrow": "Preise",
+    "title": "Transparente Festpreise",
+    "lead": "Keine versteckten Kosten. Sie wissen genau, was Sie bekommen.",
+    "popular": "Beliebt",
+    "button": "Anfragen",
+    "packages": [
+      {
+        "name": "Starter",
+        "sub": "Landingpage",
+        "price": "ab 990 €",
+        "features": [
+          "One-Page Website",
+          "Mobil-optimiert",
+          "SEO-Grundlagen",
+          "Kontaktformular"
+        ]
+      },
+      {
+        "name": "Business",
+        "sub": "Unternehmenswebsite",
+        "price": "ab 1.990 €",
+        "features": [
+          "Mehrseitige Website",
+          "Vollständiges SEO",
+          "Blog-System",
+          "CMS zum Selbstpflegen",
+          "Analytics & Tracking"
+        ]
+      },
+      {
+        "name": "Premium",
+        "sub": "SEO + Automatisierung + KI",
+        "price": "ab 3.490 €",
+        "features": [
+          "Alles aus Business",
+          "KI-Optimierung (GEO)",
+          "Automatisierung & Leads",
+          "Mehrsprachig (DE/EN/RU)",
+          "Laufende Betreuung"
+        ]
+      }
+    ]
+  },
+  "Faq": {
+    "eyebrow": "FAQ",
+    "title": "Häufige Fragen",
+    "items": [
+      {
+        "q": "Was kostet eine Website bei SaaleWeb?",
+        "a": "Eine Landingpage startet bei 990 €, Unternehmenswebsites bei 1.990 €. Sie erhalten immer einen transparenten Festpreis nach einem kostenlosen Erstgespräch."
+      },
+      {
+        "q": "Wie lange dauert die Erstellung?",
+        "a": "Eine Landingpage ist oft in 1–2 Wochen fertig, eine vollständige Unternehmenswebsite in 3–5 Wochen — abhängig von Umfang und Inhalten."
+      },
+      {
+        "q": "Kümmert ihr euch auch um SEO?",
+        "a": "Ja. SEO ist von Anfang an Teil jeder Website — technisch, inhaltlich und lokal. So werden Sie bei Google und in KI-Suchen gefunden."
+      },
+      {
+        "q": "Was bedeutet „KI-optimiert\"?",
+        "a": "Wir strukturieren Ihre Inhalte so, dass auch ChatGPT, Gemini, Claude und Perplexity Ihr Unternehmen verstehen, zitieren und empfehlen können."
+      },
+      {
+        "q": "Kann ich Inhalte selbst pflegen?",
+        "a": "Ab dem Business-Paket erhalten Sie ein einfaches CMS, mit dem Sie Texte, Bilder und Blog-Beiträge selbst aktualisieren können."
+      },
+      {
+        "q": "Bietet ihr Hosting und Wartung?",
+        "a": "Ja. Wir hosten auf Vercel (blitzschnell und sicher) und bieten optionale Wartungspakete mit Updates, Monitoring und Support."
+      }
+    ]
+  },
+  "Contact": {
+    "eyebrow": "Kontakt",
+    "title": "Bereit für mehr Kunden?",
+    "lead": "Lassen Sie uns in einem kostenlosen Erstgespräch herausfinden, wie SaaleWeb Ihr Unternehmen sichtbar macht.",
+    "name": "Ihr Name",
+    "email": "E-Mail-Adresse",
+    "company": "Unternehmen (optional)",
+    "message": "Worum geht es?",
+    "submit": "Anfrage senden",
+    "sending": "Wird gesendet …",
+    "success": "Danke! Wir melden uns innerhalb von 24 Stunden.",
+    "error": "Bitte prüfen Sie Ihre Eingaben und versuchen Sie es erneut."
+  },
+  "Footer": {
+    "tagline": "Digitales Studio für moderne Websites, SEO und KI — aus Halle (Saale) für ganz Deutschland.",
+    "services": "Leistungen",
+    "locations": "Standorte",
+    "company": "Unternehmen",
+    "contact": "Kontakt",
+    "legal": "Impressum · Datenschutz · Made in Halle"
+  },
+  "CaseStudies": {
+    "eyebrow": "Case Studies",
+    "title": "Ergebnisse, die man messen kann",
+    "lead": "Jede Website ist ein System für mehr Sichtbarkeit, mehr Anfragen und mehr Umsatz.",
+    "link": "Case ansehen",
+    "items": [
+      {
+        "name": "Salon Elen",
+        "tag": "Beauty · Next.js",
+        "title": "Online-Buchungen verdreifacht",
+        "desc": "Neue Website mit lokaler SEO und Buchungssystem für einen Beauty-Salon in Halle.",
+        "result": "+212%"
+      },
+      {
+        "name": "Waldschlösschen",
+        "tag": "Hotel · SEO",
+        "title": "Direktbuchungen ohne Portale",
+        "desc": "Hotel-Website, die Gäste über Google statt über teure Buchungsportale gewinnt.",
+        "result": "+148%"
+      },
+      {
+        "name": "SorgfaltBau",
+        "tag": "Bau · Local SEO",
+        "title": "Qualifizierte Bauanfragen",
+        "desc": "Local-SEO-Strategie, die ein Bauunternehmen in der gesamten Region sichtbar macht.",
+        "result": "Platz 1"
+      }
+    ]
+  },
+  "Industries": {
+    "eyebrow": "Branchen",
+    "title": "Spezialisiert auf Ihre Branche",
+    "lead": "Maßgeschneiderte Lösungen mit Branchenwissen und passenden Inhalten.",
+    "items": [
+      {
+        "name": "Hotels",
+        "desc": "Direktbuchungen"
+      },
+      {
+        "name": "Restaurants",
+        "desc": "Mehr Reservierungen"
+      },
+      {
+        "name": "Beauty & Salons",
+        "desc": "Online-Termine"
+      },
+      {
+        "name": "Bau",
+        "desc": "Qualifizierte Anfragen"
+      },
+      {
+        "name": "Handwerk",
+        "desc": "Regionale Aufträge"
+      },
+      {
+        "name": "Arztpraxen",
+        "desc": "Neue Patienten"
+      },
+      {
+        "name": "Immobilien",
+        "desc": "Mehr Leads"
+      },
+      {
+        "name": "Kanzleien",
+        "desc": "Mandanten gewinnen"
+      }
+    ]
+  },
+  "TechStack": {
+    "eyebrow": "Technologie",
+    "title": "Gebaut auf modernster Technologie",
+    "lead": "Wir nutzen denselben Stack wie Vercel, Stripe und Linear — für maximale Geschwindigkeit, Sicherheit und Skalierbarkeit.",
+    "benefits": [
+      {
+        "title": "Performance",
+        "desc": "Server-Komponenten und Edge-Auslieferung für Ladezeiten unter 1 s."
+      },
+      {
+        "title": "SEO",
+        "desc": "Sauberes HTML, Schema-Daten und perfekte technische Basis für Google."
+      },
+      {
+        "title": "Sicherheit",
+        "desc": "Sichere Header, CSP, Rate-Limiting und Schutz vor Bots & Spam."
+      },
+      {
+        "title": "Skalierbarkeit",
+        "desc": "Eine Architektur, die mit Ihrem Unternehmen mitwächst."
+      }
+    ]
+  },
+  "AiReady": {
+    "eyebrow": "AI Ready Websites",
+    "title": "Optimiert für die Suche der Zukunft",
+    "lead": "Menschen suchen nicht mehr nur bei Google. Wir bauen Websites, die auch von KI-Systemen verstanden, zitiert und empfohlen werden.",
+    "features": [
+      {
+        "title": "Strukturierte Inhalte",
+        "desc": "Klare Semantik, die Maschinen lesen können"
+      },
+      {
+        "title": "Entity-Optimierung",
+        "desc": "Ihr Unternehmen als klare Entität im Web"
+      },
+      {
+        "title": "Schema Markup",
+        "desc": "JSON-LD für jede relevante Information"
+      },
+      {
+        "title": "Zitierfähig",
+        "desc": "Architektur, die als Quelle empfohlen wird"
+      }
+    ]
+  },
+  "Comparison": {
+    "eyebrow": "Vergleich",
+    "title": "Moderne Website vs. klassisches WordPress",
+    "them": "WordPress",
+    "rows": [
+      {
+        "feature": "Performance",
+        "us": "Exzellent",
+        "them": "Mittel"
+      },
+      {
+        "feature": "SEO",
+        "us": "Nativ",
+        "them": "Über Plugins"
+      },
+      {
+        "feature": "Sicherheit",
+        "us": "Hoch",
+        "them": "Angriffsfläche"
+      },
+      {
+        "feature": "Skalierbarkeit",
+        "us": "Unbegrenzt",
+        "them": "Begrenzt"
+      },
+      {
+        "feature": "Wartung",
+        "us": "Minimal",
+        "them": "Laufend"
+      },
+      {
+        "feature": "User Experience",
+        "us": "Premium",
+        "them": "Template"
+      }
+    ]
+  },
+  "Process": {
+    "eyebrow": "Prozess",
+    "title": "In 4 Schritten zum Wachstum",
+    "steps": [
+      {
+        "title": "Analyse",
+        "desc": "Wir verstehen Ihr Geschäft, Ihre Kunden und Ihren Markt."
+      },
+      {
+        "title": "Strategie",
+        "desc": "Klarer Plan für Website, SEO und Kundengewinnung."
+      },
+      {
+        "title": "Entwicklung",
+        "desc": "Wir bauen ein schnelles, modernes und sichtbares System."
+      },
+      {
+        "title": "Wachstum",
+        "desc": "Laufende Optimierung für mehr Anfragen und Umsatz."
+      }
+    ]
+  },
+  "Founder": {
+    "role": "Webentwickler & Gründer von SaaleWeb",
+    "bio": "SaaleWeb verbindet moderne Technologie mit echtem Geschäftsverständnis. Ich arbeite direkt mit meinen Kunden — und gemeinsam mit ausgewählten Partnern und Spezialisten, um Websites zu bauen, die langfristig Kunden gewinnen.",
+    "stats": [
+      {
+        "value": "30+",
+        "label": "Projekte"
+      },
+      {
+        "value": "100",
+        "label": "Lighthouse Score"
+      },
+      {
+        "value": "3",
+        "label": "Sprachen"
+      }
+    ]
+  },
+  "Testimonials": {
+    "eyebrow": "Stimmen",
+    "title": "Was Kunden sagen",
+    "items": [
+      {
+        "quote": "„Unsere Buchungen haben sich verdreifacht. Die Seite lädt sofort und wir werden endlich bei Google gefunden.“",
+        "name": "Elena L.",
+        "company": "Salon Elen, Halle"
+      },
+      {
+        "quote": "„Professionell, schnell und mitdenkend. Die neue Website bringt uns regelmäßig qualifizierte Anfragen.“",
+        "name": "Markus S.",
+        "company": "SorgfaltBau"
+      },
+      {
+        "quote": "„Wir bekommen jetzt Direktbuchungen statt teure Portalgebühren zu zahlen. Beste Investition.“",
+        "name": "Anja W.",
+        "company": "Hotel Waldschlösschen"
+      }
+    ]
+  }
+}

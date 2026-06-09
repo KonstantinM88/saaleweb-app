@@ -1,0 +1,393 @@
+{
+  "Meta": {
+    "title": "SaaleWeb — Websites, SEO & AI for businesses",
+    "description": "SaaleWeb builds digital customer-acquisition systems: modern websites, SEO and AI optimization for businesses in Halle, Leipzig and across Germany."
+  },
+  "NotFound": {
+    "title": "Page not found",
+    "description": "This page doesn't exist or has been moved.",
+    "back": "Back to home"
+  },
+  "Nav": {
+    "services": "Services",
+    "industries": "Industries",
+    "cases": "Cases",
+    "pricing": "Pricing",
+    "faq": "FAQ",
+    "cta": "Free call"
+  },
+  "Hero": {
+    "badge": "Digital studio · Halle (Saale) → Germany",
+    "titleA": "Websites that ",
+    "titleB": "win customers.",
+    "lead1": "SEO-optimized. AI-ready. Made in Halle.",
+    "lead2": "We don't sell websites — we build digital customer-acquisition systems.",
+    "ctaPrimary": "Free consultation",
+    "ctaSecondary": "View pricing",
+    "note": "Reply in 24 h · No upfront payment · Fixed price",
+    "metrics": {
+      "aiVisibility": "AI Visibility",
+      "leads": "Leads / month",
+      "growth": "Lead growth",
+      "seoTrend": "strong"
+    },
+    "floats": {
+      "a": "+212% inquiries",
+      "b": "#1 on Google"
+    }
+  },
+  "Trust": {
+    "label": "Real projects · real results"
+  },
+  "Services": {
+    "eyebrow": "Services",
+    "title": "Everything for your digital visibility",
+    "lead": "From first strategy to ongoing optimization — all from one source.",
+    "more": "Learn more",
+    "items": [
+      {
+        "title": "Web Development",
+        "desc": "Fast, modern websites with Next.js — built for conversion and growth."
+      },
+      {
+        "title": "SEO Optimization",
+        "desc": "Technical and content SEO that moves you up sustainably."
+      },
+      {
+        "title": "Local SEO",
+        "desc": "Visible to local customers — Google Maps, reviews, local rankings."
+      },
+      {
+        "title": "AI Integration",
+        "desc": "Content and structure that ChatGPT, Gemini & co. cite and recommend."
+      },
+      {
+        "title": "Website Relaunch",
+        "desc": "Turn an old site into a modern system — without losing rankings."
+      },
+      {
+        "title": "Performance",
+        "desc": "Sub-second load times and perfect Core Web Vitals."
+      },
+      {
+        "title": "Hosting",
+        "desc": "Secure, lightning-fast hosting on Vercel — delivered worldwide."
+      },
+      {
+        "title": "Maintenance",
+        "desc": "Updates, monitoring and support so everything keeps running."
+      },
+      {
+        "title": "Digital Consulting",
+        "desc": "A clear strategy for your digital growth — explained simply."
+      }
+    ]
+  },
+  "Pricing": {
+    "eyebrow": "Pricing",
+    "title": "Transparent fixed prices",
+    "lead": "No hidden costs. You know exactly what you get.",
+    "popular": "Popular",
+    "button": "Request",
+    "packages": [
+      {
+        "name": "Starter",
+        "sub": "Landing page",
+        "price": "from €990",
+        "features": [
+          "One-page website",
+          "Mobile-optimized",
+          "SEO basics",
+          "Contact form"
+        ]
+      },
+      {
+        "name": "Business",
+        "sub": "Company website",
+        "price": "from €1,990",
+        "features": [
+          "Multi-page website",
+          "Full SEO",
+          "Blog system",
+          "Self-managed CMS",
+          "Analytics & tracking"
+        ]
+      },
+      {
+        "name": "Premium",
+        "sub": "SEO + automation + AI",
+        "price": "from €3,490",
+        "features": [
+          "Everything in Business",
+          "AI optimization (GEO)",
+          "Automation & leads",
+          "Multilingual (DE/EN/RU)",
+          "Ongoing support"
+        ]
+      }
+    ]
+  },
+  "Faq": {
+    "eyebrow": "FAQ",
+    "title": "Frequently asked questions",
+    "items": [
+      {
+        "q": "What does a website at SaaleWeb cost?",
+        "a": "A landing page starts at €990, company websites at €1,990. You always get a transparent fixed price after a free initial call."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "A landing page is often ready in 1–2 weeks, a full company website in 3–5 weeks — depending on scope and content."
+      },
+      {
+        "q": "Do you handle SEO too?",
+        "a": "Yes. SEO is part of every website from the start — technical, content and local — so you're found on Google and in AI search."
+      },
+      {
+        "q": "What does \"AI-optimized\" mean?",
+        "a": "We structure your content so that ChatGPT, Gemini, Claude and Perplexity can understand, cite and recommend your business."
+      },
+      {
+        "q": "Can I edit content myself?",
+        "a": "From the Business package you get a simple CMS to update texts, images and blog posts yourself."
+      },
+      {
+        "q": "Do you offer hosting and maintenance?",
+        "a": "Yes. We host on Vercel (lightning-fast and secure) and offer optional maintenance with updates, monitoring and support."
+      }
+    ]
+  },
+  "Contact": {
+    "eyebrow": "Contact",
+    "title": "Ready for more customers?",
+    "lead": "Let's find out in a free initial call how SaaleWeb can make your business visible.",
+    "name": "Your name",
+    "email": "Email address",
+    "company": "Company (optional)",
+    "message": "What's it about?",
+    "submit": "Send request",
+    "sending": "Sending …",
+    "success": "Thanks! We'll get back to you within 24 hours.",
+    "error": "Please check your input and try again."
+  },
+  "Footer": {
+    "tagline": "Digital studio for modern websites, SEO and AI — from Halle (Saale) for all of Germany.",
+    "services": "Services",
+    "locations": "Locations",
+    "company": "Company",
+    "contact": "Contact",
+    "legal": "Imprint · Privacy · Made in Halle"
+  },
+  "CaseStudies": {
+    "eyebrow": "Case studies",
+    "title": "Results you can measure",
+    "lead": "Every website is a system for more visibility, more inquiries and more revenue.",
+    "link": "View case",
+    "items": [
+      {
+        "name": "Salon Elen",
+        "tag": "Beauty · Next.js",
+        "title": "Online bookings tripled",
+        "desc": "New website with local SEO and a booking system for a beauty salon in Halle.",
+        "result": "+212%"
+      },
+      {
+        "name": "Waldschlösschen",
+        "tag": "Hotel · SEO",
+        "title": "Direct bookings without portals",
+        "desc": "Hotel website that wins guests through Google instead of expensive booking portals.",
+        "result": "+148%"
+      },
+      {
+        "name": "SorgfaltBau",
+        "tag": "Construction · Local SEO",
+        "title": "Qualified construction leads",
+        "desc": "Local-SEO strategy that makes a construction company visible across the region.",
+        "result": "#1"
+      }
+    ]
+  },
+  "Industries": {
+    "eyebrow": "Industries",
+    "title": "Specialized in your industry",
+    "lead": "Tailored solutions with industry know-how and the right content.",
+    "items": [
+      {
+        "name": "Hotels",
+        "desc": "Direct bookings"
+      },
+      {
+        "name": "Restaurants",
+        "desc": "More reservations"
+      },
+      {
+        "name": "Beauty & salons",
+        "desc": "Online appointments"
+      },
+      {
+        "name": "Construction",
+        "desc": "Qualified leads"
+      },
+      {
+        "name": "Craftsmen",
+        "desc": "Regional jobs"
+      },
+      {
+        "name": "Medical practices",
+        "desc": "New patients"
+      },
+      {
+        "name": "Real estate",
+        "desc": "More leads"
+      },
+      {
+        "name": "Law firms",
+        "desc": "Win clients"
+      }
+    ]
+  },
+  "TechStack": {
+    "eyebrow": "Technology",
+    "title": "Built on cutting-edge technology",
+    "lead": "We use the same stack as Vercel, Stripe and Linear — for maximum speed, security and scalability.",
+    "benefits": [
+      {
+        "title": "Performance",
+        "desc": "Server components and edge delivery for load times under 1 s."
+      },
+      {
+        "title": "SEO",
+        "desc": "Clean HTML, schema data and a perfect technical base for Google."
+      },
+      {
+        "title": "Security",
+        "desc": "Secure headers, CSP, rate-limiting and protection from bots & spam."
+      },
+      {
+        "title": "Scalability",
+        "desc": "An architecture that grows with your business."
+      }
+    ]
+  },
+  "AiReady": {
+    "eyebrow": "AI ready websites",
+    "title": "Optimized for the search of the future",
+    "lead": "People no longer search only on Google. We build websites that AI systems also understand, cite and recommend.",
+    "features": [
+      {
+        "title": "Structured content",
+        "desc": "Clear semantics machines can read"
+      },
+      {
+        "title": "Entity optimization",
+        "desc": "Your business as a clear entity on the web"
+      },
+      {
+        "title": "Schema markup",
+        "desc": "JSON-LD for every relevant detail"
+      },
+      {
+        "title": "Citation-ready",
+        "desc": "Architecture recommended as a source"
+      }
+    ]
+  },
+  "Comparison": {
+    "eyebrow": "Comparison",
+    "title": "Modern website vs. classic WordPress",
+    "them": "WordPress",
+    "rows": [
+      {
+        "feature": "Performance",
+        "us": "Excellent",
+        "them": "Average"
+      },
+      {
+        "feature": "SEO",
+        "us": "Native",
+        "them": "Via plugins"
+      },
+      {
+        "feature": "Security",
+        "us": "High",
+        "them": "Exposed"
+      },
+      {
+        "feature": "Scalability",
+        "us": "Unlimited",
+        "them": "Limited"
+      },
+      {
+        "feature": "Maintenance",
+        "us": "Minimal",
+        "them": "Constant"
+      },
+      {
+        "feature": "User experience",
+        "us": "Premium",
+        "them": "Template"
+      }
+    ]
+  },
+  "Process": {
+    "eyebrow": "Process",
+    "title": "Growth in 4 steps",
+    "steps": [
+      {
+        "title": "Analysis",
+        "desc": "We understand your business, your customers and your market."
+      },
+      {
+        "title": "Strategy",
+        "desc": "A clear plan for website, SEO and customer acquisition."
+      },
+      {
+        "title": "Development",
+        "desc": "We build a fast, modern and visible system."
+      },
+      {
+        "title": "Growth",
+        "desc": "Ongoing optimization for more inquiries and revenue."
+      }
+    ]
+  },
+  "Founder": {
+    "role": "Web developer & founder of SaaleWeb",
+    "bio": "SaaleWeb combines modern technology with real business understanding. I work directly with my clients — together with selected partners and specialists — to build websites that win customers long term.",
+    "stats": [
+      {
+        "value": "30+",
+        "label": "Projects"
+      },
+      {
+        "value": "100",
+        "label": "Lighthouse score"
+      },
+      {
+        "value": "3",
+        "label": "Languages"
+      }
+    ]
+  },
+  "Testimonials": {
+    "eyebrow": "Voices",
+    "title": "What clients say",
+    "items": [
+      {
+        "quote": "“Our bookings tripled. The site loads instantly and we're finally found on Google.”",
+        "name": "Elena L.",
+        "company": "Salon Elen, Halle"
+      },
+      {
+        "quote": "“Professional, fast and thoughtful. The new website brings us qualified inquiries regularly.”",
+        "name": "Markus S.",
+        "company": "SorgfaltBau"
+      },
+      {
+        "quote": "“We now get direct bookings instead of paying expensive portal fees. Best investment.”",
+        "name": "Anja W.",
+        "company": "Hotel Waldschlösschen"
+      }
+    ]
+  }
+}

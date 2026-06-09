@@ -1,0 +1,366 @@
+// SaaleWeb — Prisma schema
+// PostgreSQL. Content is multilingual via dedicated *Translation tables.
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Locale {
+  de
+  en
+  ru
+}
+
+enum UserRole {
+  ADMIN
+  EDITOR
+}
+
+enum LeadStatus {
+  NEW
+  CONTACTED
+  QUALIFIED
+  WON
+  LOST
+}
+
+enum RequestType {
+  CONTACT
+  QUOTE
+  CONSULTATION
+  AUDIT
+}
+
+// ---------------------------------------------------------------------------
+// People / auth
+// ---------------------------------------------------------------------------
+
+model User {
+  id        String     @id @default(cuid())
+  email     String     @unique
+  name      String?
+  role      UserRole   @default(EDITOR)
+  posts     BlogPost[]
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+}
+
+model Author {
+  id           String              @id @default(cuid())
+  name         String
+  avatarUrl    String?
+  posts        BlogPost[]
+  translations AuthorTranslation[]
+  createdAt    DateTime            @default(now())
+}
+
+model AuthorTranslation {
+  id       String @id @default(cuid())
+  author   Author @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  authorId String
+  locale   Locale
+  role     String
+  bio      String
+
+  @@unique([authorId, locale])
+}
+
+// ---------------------------------------------------------------------------
+// Leads & forms
+// ---------------------------------------------------------------------------
+
+model Lead {
+  id        String     @id @default(cuid())
+  name      String
+  email     String
+  phone     String?
+  company   String?
+  message   String?
+  source    String?
+  status    LeadStatus @default(NEW)
+  locale    Locale     @default(de)
+  createdAt DateTime   @default(now())
+}
+
+model ContactRequest {
+  id        String      @id @default(cuid())
+  type      RequestType @default(CONTACT)
+  name      String
+  email     String
+  phone     String?
+  company   String?
+  budget    String?
+  message   String?
+  locale    Locale      @default(de)
+  handled   Boolean     @default(false)
+  createdAt DateTime    @default(now())
+}
+
+model NewsletterSubscriber {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  locale    Locale   @default(de)
+  confirmed Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
+
+// ---------------------------------------------------------------------------
+// Projects / case studies
+// ---------------------------------------------------------------------------
+
+model ProjectCategory {
+  id           String                       @id @default(cuid())
+  key          String                       @unique
+  projects     Project[]
+  translations ProjectCategoryTranslation[]
+}
+
+model ProjectCategoryTranslation {
+  id         String          @id @default(cuid())
+  category   ProjectCategory @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  categoryId String
+  locale     Locale
+  name       String
+
+  @@unique([categoryId, locale])
+}
+
+model Project {
+  id           String               @id @default(cuid())
+  category     ProjectCategory?     @relation(fields: [categoryId], references: [id])
+  categoryId   String?
+  coverColor   String?
+  technologies String[]
+  resultValue  String?
+  year         Int?
+  featured     Boolean              @default(false)
+  published    Boolean              @default(false)
+  order        Int                  @default(0)
+  translations ProjectTranslation[]
+  media        Media[]
+  createdAt    DateTime             @default(now())
+  updatedAt    DateTime             @updatedAt
+}
+
+model ProjectTranslation {
+  id        String  @id @default(cuid())
+  project   Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  projectId String
+  locale    Locale
+  title     String
+  slug      String
+  challenge String?
+  solution  String?
+  results   String?
+
+  @@unique([projectId, locale])
+  @@unique([locale, slug])
+}
+
+// ---------------------------------------------------------------------------
+// Services & industries
+// ---------------------------------------------------------------------------
+
+model Service {
+  id           String               @id @default(cuid())
+  icon         String?
+  published    Boolean              @default(true)
+  order        Int                  @default(0)
+  translations ServiceTranslation[]
+}
+
+model ServiceTranslation {
+  id        String  @id @default(cuid())
+  service   Service @relation(fields: [serviceId], references: [id], onDelete: Cascade)
+  serviceId String
+  locale    Locale
+  name      String
+  slug      String
+  excerpt   String?
+  content   String?
+
+  @@unique([serviceId, locale])
+  @@unique([locale, slug])
+}
+
+model Industry {
+  id           String                @id @default(cuid())
+  emoji        String?
+  published    Boolean               @default(true)
+  order        Int                   @default(0)
+  translations IndustryTranslation[]
+}
+
+model IndustryTranslation {
+  id         String   @id @default(cuid())
+  industry   Industry @relation(fields: [industryId], references: [id], onDelete: Cascade)
+  industryId String
+  locale     Locale
+  name       String
+  slug       String
+  excerpt    String?
+  content    String?
+
+  @@unique([industryId, locale])
+  @@unique([locale, slug])
+}
+
+// ---------------------------------------------------------------------------
+// FAQ
+// ---------------------------------------------------------------------------
+
+model Faq {
+  id           String           @id @default(cuid())
+  category     String?
+  published    Boolean          @default(true)
+  order        Int              @default(0)
+  translations FaqTranslation[]
+}
+
+model FaqTranslation {
+  id       String @id @default(cuid())
+  faq      Faq    @relation(fields: [faqId], references: [id], onDelete: Cascade)
+  faqId    String
+  locale   Locale
+  question String
+  answer   String
+
+  @@unique([faqId, locale])
+}
+
+// ---------------------------------------------------------------------------
+// Blog
+// ---------------------------------------------------------------------------
+
+model BlogCategory {
+  id           String                    @id @default(cuid())
+  key          String                    @unique
+  posts        BlogPost[]
+  translations BlogCategoryTranslation[]
+}
+
+model BlogCategoryTranslation {
+  id         String       @id @default(cuid())
+  category   BlogCategory @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  categoryId String
+  locale     Locale
+  name       String
+  slug       String
+
+  @@unique([categoryId, locale])
+  @@unique([locale, slug])
+}
+
+model BlogPost {
+  id           String                @id @default(cuid())
+  author       Author?               @relation(fields: [authorId], references: [id])
+  authorId     String?
+  user         User?                 @relation(fields: [userId], references: [id])
+  userId       String?
+  category     BlogCategory?         @relation(fields: [categoryId], references: [id])
+  categoryId   String?
+  coverImage   String?
+  readingTime  Int?
+  published    Boolean               @default(false)
+  publishedAt  DateTime?
+  translations BlogPostTranslation[]
+  createdAt    DateTime              @default(now())
+  updatedAt    DateTime              @updatedAt
+}
+
+model BlogPostTranslation {
+  id      String   @id @default(cuid())
+  post    BlogPost @relation(fields: [postId], references: [id], onDelete: Cascade)
+  postId  String
+  locale  Locale
+  title   String
+  slug    String
+  excerpt String?
+  content String
+
+  @@unique([postId, locale])
+  @@unique([locale, slug])
+}
+
+// ---------------------------------------------------------------------------
+// Testimonials
+// ---------------------------------------------------------------------------
+
+model Testimonial {
+  id           String                   @id @default(cuid())
+  rating       Int                      @default(5)
+  avatarUrl    String?
+  published    Boolean                  @default(true)
+  order        Int                      @default(0)
+  translations TestimonialTranslation[]
+}
+
+model TestimonialTranslation {
+  id            String      @id @default(cuid())
+  testimonial   Testimonial @relation(fields: [testimonialId], references: [id], onDelete: Cascade)
+  testimonialId String
+  locale        Locale
+  quote         String
+  clientName    String
+  company       String?
+
+  @@unique([testimonialId, locale])
+}
+
+// ---------------------------------------------------------------------------
+// SEO, media, settings, generic UI translations
+// ---------------------------------------------------------------------------
+
+model SEOPage {
+  id           String              @id @default(cuid())
+  path         String              @unique
+  translations SEOPageTranslation[]
+  updatedAt    DateTime            @updatedAt
+}
+
+model SEOPageTranslation {
+  id          String  @id @default(cuid())
+  page        SEOPage @relation(fields: [pageId], references: [id], onDelete: Cascade)
+  pageId      String
+  locale      Locale
+  title       String
+  description String
+  ogImage     String?
+
+  @@unique([pageId, locale])
+}
+
+model Media {
+  id        String   @id @default(cuid())
+  url       String
+  alt       String?
+  width     Int?
+  height    Int?
+  project   Project? @relation(fields: [projectId], references: [id])
+  projectId String?
+  createdAt DateTime @default(now())
+}
+
+model Settings {
+  id        String   @id @default(cuid())
+  key       String   @unique
+  value     Json
+  updatedAt DateTime @updatedAt
+}
+
+// Generic key-value UI translations (namespace.key per locale)
+model Translation {
+  id        String   @id @default(cuid())
+  namespace String
+  key       String
+  locale    Locale
+  value     String
+  updatedAt DateTime @updatedAt
+
+  @@unique([namespace, key, locale])
+}
