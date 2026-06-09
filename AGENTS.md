@@ -52,6 +52,7 @@ Instructions and project memory for coding agents working in this repository.
 ## Environment
 
 - Copy `.env.example` to `.env` before running Prisma commands.
+- `.env*` files are ignored by git; `.env.example` is intentionally kept as the committed template.
 - Required: `DATABASE_URL`, for example `postgresql://postgres:postgres@localhost:5432/saaleweb?schema=public`.
 - Public site URL: `NEXT_PUBLIC_SITE_URL`, defaulting in code to `https://saaleweb.de`.
 - `npm install` intentionally does not run Prisma generation. Generate the client manually after `.env` is configured.
@@ -90,3 +91,4 @@ Instructions and project memory for coding agents working in this repository.
 ## Project Memory
 
 - 2026-06-09: Created this file as mandatory project memory for agents. Initial project read confirmed Next.js 16, React 19.2, next-intl 4, Prisma 7, PostgreSQL, Zod 4, Tailwind CSS 3.4, FSD layout, locales `de/en/ru`, and homepage copy sourced from `messages/*.json`.
+- 2026-06-09: Updated `.gitignore` to ignore all `.env*` files while explicitly allowing `.env.example`, plus common Next.js/Node outputs, logs, Vercel state, coverage, TypeScript build info, and generated Prisma client output.
