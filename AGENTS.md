@@ -34,11 +34,12 @@ Instructions and project memory for coding agents working in this repository.
 - `src/lib/prisma.ts` - Prisma singleton with `@prisma/adapter-pg`.
 - `prisma/schema.prisma` - Prisma 7 schema.
 - `prisma.config.ts` - Prisma 7 runtime config.
-- `src/generated/prisma/` - generated Prisma client; git-ignored and created by `npm run db:generate`.
+- `src/generated/prisma/` - generated Prisma client; git-ignored and created by `postinstall` / `npm run db:generate`.
 
 ## Commands
 
 - Install dependencies: `npm install`
+- `npm install` also runs `prisma generate` through `postinstall`.
 - Start dev server: `npm run dev`
 - Typecheck: `npm run typecheck`
 - Lint: `npm run lint`
@@ -57,7 +58,7 @@ Instructions and project memory for coding agents working in this repository.
 - Local `.env` currently reserves sections for database, auth/admin CMS, email notifications, analytics/SEO, captcha, object storage, AI APIs, and webhooks.
 - Required: `DATABASE_URL`, for example `postgresql://postgres:postgres@localhost:5432/saaleweb?schema=public`.
 - Public site URL: `NEXT_PUBLIC_SITE_URL`, defaulting in code to `https://saaleweb.de`.
-- `npm install` intentionally does not run Prisma generation. Generate the client manually after `.env` is configured.
+- `npm install` runs Prisma generation through `postinstall`, so `DATABASE_URL` must be available before install in local and deployment environments.
 
 ## Stack Notes
 
@@ -65,6 +66,7 @@ Instructions and project memory for coding agents working in this repository.
 - next-intl 4 `NextIntlClientProvider` is used without explicit props because messages are inherited from `src/i18n/request.ts`.
 - `getRequestConfig` must return `locale`.
 - Prisma 7 uses the Rust-free `prisma-client` generator with required `output = "../src/generated/prisma"`.
+- The generated Prisma client is not committed. Vercel and other clean environments rely on `"postinstall": "prisma generate"` before `next build`.
 - Prisma 7 requires a driver adapter. This project uses `@prisma/adapter-pg`.
 - Zod 4 supports top-level validators such as `z.email()`.
 - Use `-LiteralPath` in PowerShell for paths containing square brackets, for example `src/app/[locale]/page.tsx`.
@@ -98,3 +100,4 @@ Instructions and project memory for coding agents working in this repository.
 - 2026-06-09: Updated `.gitignore` to ignore all `.env*` files while explicitly allowing `.env.example`, plus common Next.js/Node outputs, logs, Vercel state, coverage, TypeScript build info, and generated Prisma client output.
 - 2026-06-09: Created local `.env` with development defaults for `DATABASE_URL` and `NEXT_PUBLIC_SITE_URL`, plus empty placeholders for future auth/admin, email, analytics, captcha, storage, AI, and webhook secrets. The file is ignored by git.
 - 2026-06-09: First project run completed: installed npm dependencies, generated Prisma Client, pushed Prisma schema to the configured PostgreSQL database, ran seed successfully, started Next dev server on `http://localhost:3000`, verified `/`, `/en`, and `/ru` return `200 OK`, and confirmed `npm run typecheck` plus `npm run lint` pass.
+- 2026-06-09: Fixed Vercel build failure where `@/generated/prisma/client` was missing after clone. Added `"postinstall": "prisma generate"` so clean installs generate `src/generated/prisma` before `next build`; deployment environments must define `DATABASE_URL`.
