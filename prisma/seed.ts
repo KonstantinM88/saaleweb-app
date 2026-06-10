@@ -7,11 +7,11 @@ const prisma = new PrismaClient({ adapter });
 
 async function main() {
   await prisma.user.upsert({
-    where: { email: "konstantin@saaleweb.de" },
+    where: { email: "info@saaleweb.de" },
     update: {},
     create: {
-      email: "konstantin@saaleweb.de",
-      name: "Konstantin Michailow",
+      email: "info@saaleweb.de",
+      name: "Konstantin Mykhailov",
       role: "ADMIN",
     },
   });

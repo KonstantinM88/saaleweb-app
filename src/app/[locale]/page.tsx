@@ -15,6 +15,7 @@ import { Pricing } from "@/widgets/pricing/Pricing";
 import { Faq } from "@/widgets/faq/Faq";
 import { Contact } from "@/widgets/contact/Contact";
 import { Footer } from "@/widgets/footer/Footer";
+import { HomeJsonLd } from "@/shared/seo/HomeJsonLd";
 
 export default async function HomePage({
   params,
@@ -27,6 +28,7 @@ export default async function HomePage({
   return (
     <>
       <Navbar />
+      <HomeJsonLd locale={locale} />
       <main>
         <Hero />
         <Trust />

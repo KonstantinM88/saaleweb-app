@@ -35,6 +35,10 @@ Instructions and project memory for coding agents working in this repository.
 - `prisma/schema.prisma` - Prisma 7 schema.
 - `prisma.config.ts` - Prisma 7 runtime config.
 - `src/generated/prisma/` - generated Prisma client; git-ignored and created by `postinstall` / `npm run db:generate`.
+- `public/flags/` - static flag assets.
+- `public/images/` - static image assets.
+- `public/video/` - static video assets.
+- `public/uploads/` - local/runtime upload staging; contents are ignored by git except the folder `.gitignore`.
 
 ## Commands
 
@@ -79,6 +83,9 @@ Instructions and project memory for coding agents working in this repository.
 - Shared UI includes `Button`, `Container`, `SectionHeader`, and `Reveal`; reuse them before adding new primitives.
 - Contact form validation lives in `src/features/contact/schema.ts`; server action lives in `src/features/contact/actions.ts`.
 - Contact form stores `Lead` rows with source `homepage_contact` and has a honeypot field named `website`.
+- Public static assets should be placed in the structured `public/flags`, `public/images`, and `public/video` folders.
+- Do not commit generated or user-uploaded files from `public/uploads`. For production uploads on Vercel, use object storage because the deployment filesystem is not persistent.
+- After applying files from `public/uploads`, delete the consumed source files from `public/uploads` and keep only files still awaiting processing plus the folder `.gitignore`.
 
 ## Verification Expectations
 
@@ -89,7 +96,7 @@ Instructions and project memory for coding agents working in this repository.
 
 ## Local Workspace Notes
 
-- On 2026-06-09, this working directory did not contain a `.git` directory. Check git availability before relying on git commands.
+- On 2026-06-10, this working directory contains a `.git` directory. An earlier 2026-06-09 session did not see one, so still check git availability if the workspace changes.
 - README output in PowerShell may show mojibake for Cyrillic/dashes depending on console encoding; prefer editor view or UTF-8-aware output if exact text matters.
 - On 2026-06-09, Node.js was installed at `C:\Program Files\nodejs`, but the active PowerShell PATH did not include it. If `node` or `npm` are not recognized, run commands with a temporary PATH prefix: `$env:Path = 'C:\Program Files\nodejs;C:\Windows\System32;C:\Windows;' + $env:Path`.
 - When using a hosted PostgreSQL URL with SSL, `pg` may warn that `sslmode=require` semantics will change in a future major version. Use `sslmode=verify-full` in `DATABASE_URL` if the current strict verification behavior should be preserved.
@@ -101,3 +108,6 @@ Instructions and project memory for coding agents working in this repository.
 - 2026-06-09: Created local `.env` with development defaults for `DATABASE_URL` and `NEXT_PUBLIC_SITE_URL`, plus empty placeholders for future auth/admin, email, analytics, captcha, storage, AI, and webhook secrets. The file is ignored by git.
 - 2026-06-09: First project run completed: installed npm dependencies, generated Prisma Client, pushed Prisma schema to the configured PostgreSQL database, ran seed successfully, started Next dev server on `http://localhost:3000`, verified `/`, `/en`, and `/ru` return `200 OK`, and confirmed `npm run typecheck` plus `npm run lint` pass.
 - 2026-06-09: Fixed Vercel build failure where `@/generated/prisma/client` was missing after clone. Added `"postinstall": "prisma generate"` so clean installs generate `src/generated/prisma` before `next build`; deployment environments must define `DATABASE_URL`.
+- 2026-06-10: Created public asset folders `public/flags`, `public/images`, `public/uploads`, and `public/video`. Added `.gitkeep` markers for static asset folders and an ignore rule inside `public/uploads` so uploaded/generated files are not committed by default.
+- 2026-06-10: Applied SEO update package from `public/uploads/saaleweb-seo-update.zip`: added JSON-LD helpers, breadcrumbs, CTA banner, localized service/industry/city pages, `sitemap.ts`, `robots.ts`, `public/llms.txt`, and extended message namespaces. `public/uploads` remains a staging area; source zip/instructions are ignored. Verified JSON parsing, `npm run typecheck`, `npm run lint`, and `npm run build`.
+- 2026-06-10: Added workflow rule to delete consumed files from `public/uploads` after processing. Removed the already applied `saaleweb-seo-APPLY.md` and `saaleweb-seo-update.zip`; only `public/uploads/.gitignore` remains.

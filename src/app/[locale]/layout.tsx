@@ -6,6 +6,8 @@ import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import { routing } from "@/i18n/routing";
 import { siteConfig } from "@/shared/config/site";
+import { JsonLd } from "@/shared/seo/JsonLd";
+import { organizationSchema, websiteSchema } from "@/shared/seo/schema";
 import "../globals.css";
 
 
@@ -60,6 +62,7 @@ export default async function LocaleLayout({
       className={`${GeistSans.variable} ${GeistMono.variable}`}
     >
       <body className="font-sans">
+        <JsonLd data={[organizationSchema(), websiteSchema(locale)]} />
         {/* next-intl 4: provider auto-inherits messages from i18n/request.ts */}
         <NextIntlClientProvider>{children}</NextIntlClientProvider>
       </body>

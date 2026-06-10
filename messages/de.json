@@ -389,5 +389,21 @@
         "company": "Hotel Waldschlösschen"
       }
     ]
+  },
+  "Pages": {
+    "home": "Start",
+    "servicesLabel": "Leistungen",
+    "industriesLabel": "Branchen",
+    "locationsLabel": "Standorte",
+    "ctaTitle": "Bereit für mehr Kunden?",
+    "ctaText": "Kostenloses Erstgespräch — wir zeigen Ihnen, wie SaaleWeb Ihr Unternehmen sichtbar macht.",
+    "ctaButton": "Kostenloses Erstgespräch"
+  },
+  "Cities": {
+    "eyebrow": "Standort",
+    "metaTitle": "Webdesign & SEO in {city}",
+    "h1": "Webdesign & SEO in {city}",
+    "lead": "Moderne Websites, SEO und KI-Optimierung für Unternehmen in {city}.",
+    "body": "SaaleWeb entwickelt schnelle, moderne Websites für Unternehmen in {city} — mit lokalem SEO, das Sie bei Google und in KI-Suchen sichtbar macht. Von der Strategie über die Entwicklung bis zur laufenden Optimierung erhalten Sie alles aus einer Hand, damit Sie in {city} mehr Anfragen und Kunden gewinnen."
   }
 }

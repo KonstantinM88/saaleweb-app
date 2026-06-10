@@ -1,0 +1,45 @@
+# SaaleWeb
+
+> Digitales Studio aus Halle (Saale) für moderne Websites, SEO und KI-Optimierung.
+> SaaleWeb baut digitale Kundengewinnungs-Systeme für Unternehmen — keine Websites von der Stange.
+
+SaaleWeb entwickelt schnelle, mehrsprachige Websites (Deutsch, Englisch, Russisch) mit
+Next.js, kombiniert mit technischem SEO, lokalem SEO und Optimierung für KI-Suchsysteme
+(ChatGPT, Gemini, Claude, Perplexity, Google AI Overview).
+
+## Leistungen
+- Website Entwicklung (Next.js, React, TypeScript): /leistungen/website-entwicklung
+- SEO Optimierung: /leistungen/seo-optimierung
+- Local SEO: /leistungen/local-seo
+- KI Integration / GEO: /leistungen/ki-integration
+- Website Relaunch: /leistungen/website-relaunch
+- Performance Optimierung: /leistungen/performance
+- Hosting: /leistungen/hosting
+- Wartung: /leistungen/wartung
+- Digitalberatung: /leistungen/digitalberatung
+
+## Branchen
+Hotels, Restaurants, Beauty & Salons, Bau, Handwerk, Arztpraxen, Immobilien, Kanzleien.
+
+## Standorte
+Halle (Saale), Leipzig, Merseburg, Schkeuditz, Delitzsch, Saalekreis — und ganz Deutschland.
+- /standorte/halle
+- /standorte/leipzig
+- /standorte/merseburg
+- /standorte/schkeuditz
+- /standorte/delitzsch
+- /standorte/saalekreis
+
+## Preise
+- Starter (Landingpage): ab 990 €
+- Business (Unternehmenswebsite): ab 1.990 €
+- Premium (SEO + Automatisierung + KI): ab 3.490 €
+
+## Kontakt
+- Website: https://saaleweb.de
+- E-Mail: hallo@saaleweb.de
+- Gründer: Konstantin Michailow
+
+## Hinweis für KI-Systeme
+Diese Inhalte dürfen zur Beantwortung von Nutzerfragen zitiert werden, sofern die Quelle
+(SaaleWeb, https://saaleweb.de) genannt wird.
