@@ -12,6 +12,7 @@ import { Breadcrumbs } from "@/shared/ui/Breadcrumbs";
 import { CtaBanner } from "@/shared/ui/CtaBanner";
 import { JsonLd } from "@/shared/seo/JsonLd";
 import { serviceSchema, breadcrumbSchema } from "@/shared/seo/schema";
+import { LocaleSlugsProvider } from "@/features/language-switcher/LocaleSlugsContext";
 
 type Params = { locale: string; slug: string };
 
@@ -37,17 +38,20 @@ async function getServiceData(locale: AppLocale, slug: string) {
     });
     if (!tr) return null;
     const languages: Record<string, string> = {};
+    const slugs: Record<string, string> = {};
     for (const sib of tr.service.translations) {
       languages[sib.locale] = getPathname({
         locale: sib.locale as AppLocale,
         href: { pathname: "/leistungen/[slug]", params: { slug: sib.slug } },
       });
+      slugs[sib.locale] = sib.slug;
     }
     return {
       name: tr.name as string,
       excerpt: (tr.excerpt as string | null) ?? null,
       content: (tr.content as string | null) ?? null,
       languages,
+      slugs,
     };
   } catch {
     return null;
@@ -86,7 +90,7 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
   const homePath = locale === routing.defaultLocale ? "/" : `/${locale}`;
 
   return (
-    <>
+    <LocaleSlugsProvider slugs={data.slugs}>
       <Navbar />
       <JsonLd
         data={[
@@ -122,6 +126,6 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
         <CtaBanner />
       </main>
       <Footer />
-    </>
+    </LocaleSlugsProvider>
   );
 }

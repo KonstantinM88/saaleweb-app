@@ -3,7 +3,13 @@ import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { hasLocale } from "next-intl";
 import { routing, type AppLocale } from "@/i18n/routing";
-import { getPosts, getCategories, getAllCategoryParams } from "@/entities/blog/api";
+import {
+  getPosts,
+  getCategories,
+  getAllCategoryParams,
+  getCategoryLocaleSlugs,
+} from "@/entities/blog/api";
+import { LocaleSlugsProvider } from "@/features/language-switcher/LocaleSlugsContext";
 import { Navbar } from "@/widgets/navbar/Navbar";
 import { Footer } from "@/widgets/footer/Footer";
 import { Container } from "@/shared/ui/Container";
@@ -29,11 +35,17 @@ export async function generateMetadata({
   const current = categories.find((c) => c.slug === slug);
   if (!current) return {};
   const t = await getTranslations({ locale, namespace: "Blog" });
+  const localeSlugs = (await getCategoryLocaleSlugs(locale, slug)) ?? {};
   const languages = Object.fromEntries(
-    routing.locales.map((l) => [
-      l,
-      getPathname({ locale: l, href: { pathname: "/blog/kategorie/[slug]", params: { slug } } }),
-    ]),
+    routing.locales
+      .filter((l) => localeSlugs[l] ?? l === locale)
+      .map((l) => [
+        l,
+        getPathname({
+          locale: l,
+          href: { pathname: "/blog/kategorie/[slug]", params: { slug: localeSlugs[l] ?? slug } },
+        }),
+      ]),
   );
   return {
     title: `${current.name} — ${t("title")}`,
@@ -53,12 +65,15 @@ export default async function BlogCategoryPage({ params }: { params: Promise<Par
 
   const t = await getTranslations({ locale, namespace: "Blog" });
   const tp = await getTranslations({ locale, namespace: "Pages" });
-  const posts = await getPosts(locale as AppLocale, slug);
+  const [posts, localeSlugs] = await Promise.all([
+    getPosts(locale as AppLocale, slug),
+    getCategoryLocaleSlugs(locale as AppLocale, slug),
+  ]);
 
   const chip = "rounded-full border px-4 py-1.5 text-sm font-medium transition-colors";
 
   return (
-    <>
+    <LocaleSlugsProvider slugs={localeSlugs ?? { [locale]: slug }}>
       <Navbar />
       <main>
         <Breadcrumbs
@@ -113,6 +128,6 @@ export default async function BlogCategoryPage({ params }: { params: Promise<Par
         </section>
       </main>
       <Footer />
-    </>
+    </LocaleSlugsProvider>
   );
 }

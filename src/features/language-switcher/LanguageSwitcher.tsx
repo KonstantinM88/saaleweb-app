@@ -6,19 +6,39 @@ import { useParams } from "next/navigation";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import { cn } from "@/shared/lib/cn";
+import { useLocaleSlugs } from "./LocaleSlugsContext";
 
 export function LanguageSwitcher() {
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
   const params = useParams();
+  const localeSlugs = useLocaleSlugs();
   const [isPending, startTransition] = useTransition();
 
+  type ReplaceHref = Parameters<typeof router.replace>[0];
+
   function change(next: string) {
+    if (next === locale) return;
     startTransition(() => {
-      // Preserve the current route (and its params) when switching locale.
+      // Detail pages publish a per-locale slug map (slugs differ by language).
+      if (localeSlugs) {
+        const targetSlug = localeSlugs[next];
+        if (targetSlug) {
+          router.replace(
+            { pathname, params: { ...params, slug: targetSlug } } as unknown as ReplaceHref,
+            { locale: next },
+          );
+        } else {
+          // No translation in the target language — fall back gracefully.
+          const fallback = pathname.startsWith("/blog") ? "/blog" : "/";
+          router.replace(fallback as ReplaceHref, { locale: next });
+        }
+        return;
+      }
+      // Default: keep the current route and params (slugs identical across locales).
       router.replace(
-        { pathname, params } as unknown as Parameters<typeof router.replace>[0],
+        { pathname, params } as unknown as ReplaceHref,
         { locale: next },
       );
     });

@@ -31,6 +31,7 @@ Instructions and project memory for coding agents working in this repository.
 - `src/widgets/` - page sections.
 - `src/widgets/blog/` - blog UI pieces such as post cards, table of contents, and share buttons.
 - `src/features/` - interactive feature units such as contact and language switching.
+- `src/features/language-switcher/LocaleSlugsContext.tsx` - per-locale slug context used by detail pages for smart language switching.
 - `src/shared/` - shared UI, config, helpers.
 - `src/shared/config/site.ts` - site identity, contact data, nav keys.
 - `src/entities/blog/api.ts` - DB-backed blog queries.
@@ -90,6 +91,7 @@ Instructions and project memory for coding agents working in this repository.
 - Contact form validation lives in `src/features/contact/schema.ts`; server action lives in `src/features/contact/actions.ts`.
 - Contact form stores `Lead` rows with source `homepage_contact` and has a honeypot field named `website`.
 - Blog content is DB-backed through `BlogPost`, `BlogCategory`, `Author`, and translation tables. Article body content is Markdown stored in `BlogPostTranslation.content`.
+- Detail pages with translated slugs should wrap content in `LocaleSlugsProvider`; `LanguageSwitcher` uses that map to switch to the target locale's real slug instead of reusing the current slug.
 - `prisma/seed.ts` should remain repeatable; demo service/testimonial/FAQ/blog records must not fail on existing unique slugs.
 - Keep seed content as real UTF-8 text. If RU/DE content renders as mojibake, check `prisma/seed.ts` first before blaming PostgreSQL encoding.
 - Public static assets should be placed in the structured `public/flags`, `public/images`, and `public/video` folders.
@@ -125,3 +127,4 @@ Instructions and project memory for coding agents working in this repository.
 - 2026-06-10: Fixed mojibake source in `prisma/seed.ts` by replacing corrupted RU/DE seed strings with valid UTF-8 text and keeping the seed repeatable. `npm run typecheck` and `npm run lint` pass. Current `.env` was observed pointing to database `neondb`; switch `DATABASE_URL` to `saaleweb` before seeding the newly recreated database.
 - 2026-06-10: Confirmed `.env` points to Neon `neondb`, reran `npm run db:seed` against it, and verified RU blog/service rows now contain valid Cyrillic in the database. Scanned project files for UTF-8 BOM outside generated/dependency folders and found none; added `.editorconfig` to keep UTF-8 without BOM going forward. Port `3000` was not listening during HTTP verification.
 - 2026-06-10: Applied `saaleweb-i18n-routes-db-update.zip`: added `next-intl` localized `pathnames`, locale-aware navbar/CTA/breadcrumb/post-card/language-switcher links, DB-backed localized sitemap helpers, and blog category route `src/app/[locale]/blog/kategorie/[slug]/page.tsx`. Added `Blog.categoryEyebrow` to all message files, removed `.next`, and verified JSON parsing, `npm run typecheck`, `npm run lint`, `npm run build`, plus sitemap URL presence for `/en/locations/halle`, `/ru/lokacii/halle`, `/ru/uslugi/razrabotka-sajtov`, and `/ru/blog/kategoriya/seo`. No DB schema or seed changes were required. Consumed upload files were deleted.
+- 2026-06-10: Applied `saaleweb-smart-lang-switch-update.zip`: added `LocaleSlugsProvider` and smart `LanguageSwitcher` behavior so service, industry, blog post, and blog category detail pages switch to the target locale's translated slug. No dependencies, messages, Prisma schema, or seed changes were required. Removed `.next`; verified `npm run typecheck`, `npm run lint`, `npm run build`, provider usage, and production `200` responses for localized service/blog/category/location URLs. Temporary `next start` server was stopped and consumed upload files were deleted.

@@ -21,6 +21,7 @@ import { articleSchema, breadcrumbSchema } from "@/shared/seo/schema";
 import { Toc } from "@/widgets/blog/Toc";
 import { ShareButtons } from "@/widgets/blog/ShareButtons";
 import { PostCard } from "@/widgets/blog/PostCard";
+import { LocaleSlugsProvider } from "@/features/language-switcher/LocaleSlugsContext";
 
 type Params = { locale: string; slug: string };
 
@@ -43,7 +44,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale, slug } = await params;
   if (!hasLocale(routing.locales, locale)) return {};
-  const post = await getPost(locale, slug);
+  const post = await getPost(locale as AppLocale, slug);
   if (!post) return {};
   return {
     title: post.title,
@@ -82,7 +83,7 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
     : null;
 
   return (
-    <>
+    <LocaleSlugsProvider slugs={post.slugs}>
       <Navbar />
       <JsonLd
         data={[
@@ -171,9 +172,7 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
         {related.length > 0 && (
           <section className="py-16">
             <Container>
-              <h2 className="mb-8 text-2xl font-bold tracking-tight text-dark">
-                {t("related")}
-              </h2>
+              <h2 className="mb-8 text-2xl font-bold tracking-tight text-dark">{t("related")}</h2>
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 {related.map((p) => (
                   <PostCard key={p.slug} post={p} locale={locale} />
@@ -194,6 +193,6 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
         </Container>
       </main>
       <Footer />
-    </>
+    </LocaleSlugsProvider>
   );
 }

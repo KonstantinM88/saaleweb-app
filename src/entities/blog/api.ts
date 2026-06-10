@@ -18,6 +18,8 @@ export type PostDetail = PostListItem & {
   content: string;
   author: { name: string; role: string | null } | null;
   languages: Record<string, string>;
+  /** Per-locale slug map for smart language switching. */
+  slugs: Record<string, string>;
 };
 
 type CategoryTr = { locale: string; name: string; slug: string };
@@ -88,9 +90,11 @@ export async function getPost(
     if (!tr) return null;
 
     const languages: Record<string, string> = {};
+    const slugs: Record<string, string> = {};
     for (const sib of tr.post.translations) {
       const prefix = sib.locale === routing.defaultLocale ? "" : `/${sib.locale}`;
       languages[sib.locale] = `${prefix}/blog/${sib.slug}`;
+      slugs[sib.locale] = sib.slug;
     }
 
     const authorRole =
@@ -101,6 +105,7 @@ export async function getPost(
       content: tr.content,
       author: tr.post.author ? { name: tr.post.author.name, role: authorRole } : null,
       languages,
+      slugs,
     };
   } catch {
     return null;
@@ -156,6 +161,25 @@ export async function getCategorySlugGroups(): Promise<Record<string, string>[]>
     );
   } catch {
     return [];
+  }
+}
+
+/** Locale -> slug map for one category, located by its slug in a given locale. */
+export async function getCategoryLocaleSlugs(
+  locale: AppLocale,
+  slug: string,
+): Promise<Record<string, string> | null> {
+  try {
+    const tr = (await prisma.blogCategoryTranslation.findFirst({
+      where: { locale, slug },
+      include: {
+        category: { include: { translations: { select: { locale: true, slug: true } } } },
+      },
+    })) as { category: { translations: { locale: string; slug: string }[] } } | null;
+    if (!tr) return null;
+    return Object.fromEntries(tr.category.translations.map((t) => [t.locale, t.slug]));
+  } catch {
+    return null;
   }
 }
 
