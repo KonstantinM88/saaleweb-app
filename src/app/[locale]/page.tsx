@@ -15,7 +15,10 @@ import { Pricing } from "@/widgets/pricing/Pricing";
 import { Faq } from "@/widgets/faq/Faq";
 import { Contact } from "@/widgets/contact/Contact";
 import { Footer } from "@/widgets/footer/Footer";
+import type { AppLocale } from "@/i18n/routing";
 import { HomeJsonLd } from "@/shared/seo/HomeJsonLd";
+
+export const revalidate = 300;
 
 export default async function HomePage({
   params,
@@ -24,6 +27,7 @@ export default async function HomePage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
+  const appLocale = locale as AppLocale;
 
   return (
     <>
@@ -40,7 +44,7 @@ export default async function HomePage({
         <Comparison />
         <Process />
         <Founder />
-        <Testimonials />
+        <Testimonials locale={appLocale} />
         <Pricing />
         <Faq />
         <Contact />

@@ -19,7 +19,7 @@ Instructions and project memory for coding agents working in this repository.
 - Locale routing: German lives at `/`, English at `/en`, Russian at `/ru`.
 - Public URL segments are localized through `next-intl` `pathnames`: services use `/leistungen`, `/services`, `/uslugi`; industries use `/branchen`, `/industries`, `/otrasli`; locations use `/standorte`, `/locations`, `/lokacii`; blog categories use `/blog/kategorie`, `/blog/category`, `/blog/kategoriya`.
 - Public service and industry index pages exist at `/leistungen` and `/branchen` with localized public URLs; cards link to DB-backed detail pages.
-- Main page content is currently rendered from `messages/*.json`, so the homepage can run without a database connection.
+- Most homepage content is rendered from `messages/*.json`, so the homepage can still run without a database connection. Testimonials now prefer published DB rows and fall back to `messages` only when DB data is unavailable.
 - Database is required for contact form persistence and future CMS/content features.
 
 ## Important Paths
@@ -30,6 +30,7 @@ Instructions and project memory for coding agents working in this repository.
 - `src/i18n/` - locale routing, navigation, request config.
 - `messages/de.json`, `messages/en.json`, `messages/ru.json` - localized UI copy.
 - `src/widgets/` - page sections.
+- `src/widgets/testimonials/Testimonials.tsx` - homepage testimonial section; reads published testimonials from DB by locale and falls back to message JSON.
 - `src/widgets/blog/` - blog UI pieces such as post cards, table of contents, and share buttons.
 - `src/features/` - interactive feature units such as contact and language switching.
 - `src/features/language-switcher/LocaleSlugsContext.tsx` - per-locale slug context used by detail pages for smart language switching.
@@ -107,6 +108,7 @@ Instructions and project memory for coding agents working in this repository.
 - Contact form validation lives in `src/features/contact/schema.ts`; server action lives in `src/features/contact/actions.ts`.
 - Contact form stores `Lead` rows with source `homepage_contact` and has a honeypot field named `website`.
 - Blog content is DB-backed through `BlogPost`, `BlogCategory`, `Author`, and translation tables. Article body content is Markdown stored in `BlogPostTranslation.content`.
+- Homepage testimonials are DB-backed through `Testimonial` / `TestimonialTranslation`; admin testimonial create/update/delete/toggle actions must revalidate `/`, `/de`, `/en`, and `/ru`.
 - Detail pages with translated slugs should wrap content in `LocaleSlugsProvider`; `LanguageSwitcher` uses that map to switch to the target locale's real slug instead of reusing the current slug.
 - Admin pages are outside localized routing at `/admin`, are `noindex`, and are protected by both `src/proxy.ts` and the admin protected layout. Current admin sections cover leads, services, industries, projects/cases, blog posts, blog categories, authors, testimonials, and FAQ.
 - `prisma/seed.ts` should remain repeatable; demo service/testimonial/FAQ/blog records must not fail on existing unique slugs.
@@ -148,3 +150,4 @@ Instructions and project memory for coding agents working in this repository.
 - 2026-06-10: Applied `saaleweb-admin-cms-update.zip`: added protected `/admin` CMS for leads, services, industries, and blog posts; added env-based single-admin auth with JWT httpOnly cookie; added `jose`, `bcryptjs`, `server-only`, and `@types/bcryptjs`; added `scripts/hash-password.mjs`; updated `.env.example` and local `.env` to use `ADMIN_PASSWORD_HASH`. Prisma schema/seed did not change. Verified `npm run typecheck`, `npm run lint`, `npm run build`, password hash script, `/admin/login` 200, `/admin` 307 redirect to login, and existing localized public routes. Temporary `next start` server was stopped and consumed upload files were deleted.
 - 2026-06-10: Fixed local admin login env formatting: Next.js was expanding `$` inside the bcrypt `ADMIN_PASSWORD_HASH`, so runtime saw a corrupted hash. Local `.env` now uses escaped bcrypt dollars and a separate random `AUTH_SECRET`; `scripts/hash-password.mjs` prints a Next.js-ready escaped env value.
 - 2026-06-10: Applied `saaleweb-index-admin-update.zip`: added DB-backed ISR index pages for services and industries, updated localized nav links to route pages, and expanded admin CRUD with projects/cases, blog categories, authors, testimonials, and FAQ using `GenericForm`. Fixed the package's translation helper typing so Prisma `Locale` is preserved. Verified `npm run typecheck`, `npm run lint`, `npm run build`, and production `200` responses for `/leistungen`, `/en/services`, `/ru/uslugi`, `/branchen`, `/en/industries`, `/ru/otrasli`; protected new admin routes return `307` without a session.
+- 2026-06-10: Fixed homepage testimonial freshness: admin updates were saved to DB, but `src/widgets/testimonials/Testimonials.tsx` still rendered static `messages/*.json` items. The widget now reads published DB testimonials for the current locale with message fallback, homepage has `revalidate = 300`, and testimonial admin actions revalidate localized homepages. Verified DB contains `Elena D.`, production HTML visibly renders `Elena D.`, and `npm run typecheck`, `npm run lint`, `npm run build` pass.
