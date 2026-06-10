@@ -19,20 +19,25 @@ export function Navbar() {
     locale === routing.defaultLocale ? `/#${hash}` : `/${locale}#${hash}`;
 
   const renderItem = (item: { key: string; href: string }, onClick?: () => void) => {
-    // Route links (e.g. /blog) go through the locale-aware Link.
-    if (item.href === "/blog") {
+    // Section anchors (e.g. "/#cases") render as plain locale-prefixed links.
+    if (item.href.startsWith("/#")) {
+      const hash = item.href.slice(2);
       return (
-        <Link key={item.key} href="/blog" onClick={onClick} className="transition-colors hover:text-brand-pink">
+        <a key={item.key} href={sectionHref(hash)} onClick={onClick} className="transition-colors hover:text-brand-pink">
           {t(item.key)}
-        </Link>
+        </a>
       );
     }
-    // Section anchors render as plain locale-prefixed links.
-    const hash = item.href.startsWith("/#") ? item.href.slice(2) : item.href;
+    // Real localized routes go through the locale-aware Link.
     return (
-      <a key={item.key} href={sectionHref(hash)} onClick={onClick} className="transition-colors hover:text-brand-pink">
+      <Link
+        key={item.key}
+        href={item.href as "/leistungen" | "/branchen" | "/blog"}
+        onClick={onClick}
+        className="transition-colors hover:text-brand-pink"
+      >
         {t(item.key)}
-      </a>
+      </Link>
     );
   };
 

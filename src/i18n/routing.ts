@@ -17,11 +17,13 @@ export const routing = defineRouting({
       en: "/blog/category/[slug]",
       ru: "/blog/kategoriya/[slug]",
     },
+    "/leistungen": { de: "/leistungen", en: "/services", ru: "/uslugi" },
     "/leistungen/[slug]": {
       de: "/leistungen/[slug]",
       en: "/services/[slug]",
       ru: "/uslugi/[slug]",
     },
+    "/branchen": { de: "/branchen", en: "/industries", ru: "/otrasli" },
     "/branchen/[slug]": {
       de: "/branchen/[slug]",
       en: "/industries/[slug]",

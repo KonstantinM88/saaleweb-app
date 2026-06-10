@@ -18,6 +18,7 @@ Instructions and project memory for coding agents working in this repository.
 - Locales: `de`, `en`, `ru`; German is the default locale.
 - Locale routing: German lives at `/`, English at `/en`, Russian at `/ru`.
 - Public URL segments are localized through `next-intl` `pathnames`: services use `/leistungen`, `/services`, `/uslugi`; industries use `/branchen`, `/industries`, `/otrasli`; locations use `/standorte`, `/locations`, `/lokacii`; blog categories use `/blog/kategorie`, `/blog/category`, `/blog/kategoriya`.
+- Public service and industry index pages exist at `/leistungen` and `/branchen` with localized public URLs; cards link to DB-backed detail pages.
 - Main page content is currently rendered from `messages/*.json`, so the homepage can run without a database connection.
 - Database is required for contact form persistence and future CMS/content features.
 
@@ -37,10 +38,14 @@ Instructions and project memory for coding agents working in this repository.
 - `src/entities/blog/api.ts` - DB-backed blog queries.
 - `src/shared/lib/markdown.ts` - Markdown TOC extraction and reading-time helper.
 - `src/app/[locale]/blog/` - localized blog listing and article pages.
+- `src/app/[locale]/leistungen/page.tsx` - localized service index page from DB content.
+- `src/app/[locale]/branchen/page.tsx` - localized industry index page from DB content.
 - `src/app/admin/` - non-localized protected admin/CMS area.
 - `src/features/auth/` - env-based admin authentication, JWT session cookie, login/logout actions.
 - `src/features/admin/` - admin server actions for services, industries, blog posts, and leads.
+- `src/features/admin/crud.ts` - shared admin form helpers; keep translation rows typed with Prisma `Locale`.
 - `src/widgets/admin/` - admin UI forms, sidebar, page headers, and controls.
+- `src/widgets/admin/GenericForm.tsx` - reusable config-driven admin create/edit form for multilingual records.
 - `src/lib/prisma.ts` - Prisma singleton with `@prisma/adapter-pg`.
 - `prisma/schema.prisma` - Prisma 7 schema.
 - `prisma.config.ts` - Prisma 7 runtime config.
@@ -90,6 +95,7 @@ Instructions and project memory for coding agents working in this repository.
 - Blog Markdown rendering uses `react-markdown`, `remark-gfm`, `rehype-slug`, and `github-slugger`.
 - Admin authentication uses `jose`, `bcryptjs`, and `server-only`; bcrypt only runs in server actions, not middleware.
 - Generate admin password hashes with `node scripts/hash-password.mjs "your-password"` and copy the printed `Next.js .env value`.
+- Admin multilingual CRUD actions should use `readTranslations` from `src/features/admin/crud.ts`; Prisma translation creates require `locale` to remain typed as generated `Locale`, not widened to plain `string`.
 - Use `-LiteralPath` in PowerShell for paths containing square brackets, for example `src/app/[locale]/page.tsx`.
 
 ## UI And Content Rules
@@ -102,7 +108,7 @@ Instructions and project memory for coding agents working in this repository.
 - Contact form stores `Lead` rows with source `homepage_contact` and has a honeypot field named `website`.
 - Blog content is DB-backed through `BlogPost`, `BlogCategory`, `Author`, and translation tables. Article body content is Markdown stored in `BlogPostTranslation.content`.
 - Detail pages with translated slugs should wrap content in `LocaleSlugsProvider`; `LanguageSwitcher` uses that map to switch to the target locale's real slug instead of reusing the current slug.
-- Admin pages are outside localized routing at `/admin`, are `noindex`, and are protected by both `src/proxy.ts` and the admin protected layout.
+- Admin pages are outside localized routing at `/admin`, are `noindex`, and are protected by both `src/proxy.ts` and the admin protected layout. Current admin sections cover leads, services, industries, projects/cases, blog posts, blog categories, authors, testimonials, and FAQ.
 - `prisma/seed.ts` should remain repeatable; demo service/testimonial/FAQ/blog records must not fail on existing unique slugs.
 - Keep seed content as real UTF-8 text. If RU/DE content renders as mojibake, check `prisma/seed.ts` first before blaming PostgreSQL encoding.
 - Public static assets should be placed in the structured `public/flags`, `public/images`, and `public/video` folders.
@@ -141,3 +147,4 @@ Instructions and project memory for coding agents working in this repository.
 - 2026-06-10: Applied `saaleweb-smart-lang-switch-update.zip`: added `LocaleSlugsProvider` and smart `LanguageSwitcher` behavior so service, industry, blog post, and blog category detail pages switch to the target locale's translated slug. No dependencies, messages, Prisma schema, or seed changes were required. Removed `.next`; verified `npm run typecheck`, `npm run lint`, `npm run build`, provider usage, and production `200` responses for localized service/blog/category/location URLs. Temporary `next start` server was stopped and consumed upload files were deleted.
 - 2026-06-10: Applied `saaleweb-admin-cms-update.zip`: added protected `/admin` CMS for leads, services, industries, and blog posts; added env-based single-admin auth with JWT httpOnly cookie; added `jose`, `bcryptjs`, `server-only`, and `@types/bcryptjs`; added `scripts/hash-password.mjs`; updated `.env.example` and local `.env` to use `ADMIN_PASSWORD_HASH`. Prisma schema/seed did not change. Verified `npm run typecheck`, `npm run lint`, `npm run build`, password hash script, `/admin/login` 200, `/admin` 307 redirect to login, and existing localized public routes. Temporary `next start` server was stopped and consumed upload files were deleted.
 - 2026-06-10: Fixed local admin login env formatting: Next.js was expanding `$` inside the bcrypt `ADMIN_PASSWORD_HASH`, so runtime saw a corrupted hash. Local `.env` now uses escaped bcrypt dollars and a separate random `AUTH_SECRET`; `scripts/hash-password.mjs` prints a Next.js-ready escaped env value.
+- 2026-06-10: Applied `saaleweb-index-admin-update.zip`: added DB-backed ISR index pages for services and industries, updated localized nav links to route pages, and expanded admin CRUD with projects/cases, blog categories, authors, testimonials, and FAQ using `GenericForm`. Fixed the package's translation helper typing so Prisma `Locale` is preserved. Verified `npm run typecheck`, `npm run lint`, `npm run build`, and production `200` responses for `/leistungen`, `/en/services`, `/ru/uslugi`, `/branchen`, `/en/industries`, `/ru/otrasli`; protected new admin routes return `307` without a session.

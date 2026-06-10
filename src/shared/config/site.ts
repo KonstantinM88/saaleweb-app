@@ -6,8 +6,8 @@ export const siteConfig = {
   email: "hallo@saaleweb.de",
   locations: ["Halle (Saale)", "Leipzig", "Merseburg", "Saalekreis"],
   nav: [
-    { key: "services", href: "/#services" },
-    { key: "industries", href: "/#industries" },
+    { key: "services", href: "/leistungen" },
+    { key: "industries", href: "/branchen" },
     { key: "cases", href: "/#cases" },
     { key: "pricing", href: "/#pricing" },
     { key: "blog", href: "/blog" },

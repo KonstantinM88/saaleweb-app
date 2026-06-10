@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LayoutDashboard, Inbox, Wrench, Building2, Newspaper, LogOut } from "lucide-react";
+import { LayoutDashboard, Inbox, Wrench, Building2, Newspaper, FolderKanban, HelpCircle, Star, Users, Tags, LogOut } from "lucide-react";
 import { logout } from "@/features/auth/actions";
 import { cn } from "@/shared/lib/cn";
 
@@ -11,7 +11,12 @@ const items = [
   { href: "/admin/leads", label: "Anfragen", icon: Inbox },
   { href: "/admin/services", label: "Leistungen", icon: Wrench },
   { href: "/admin/industries", label: "Branchen", icon: Building2 },
+  { href: "/admin/projects", label: "Projekte", icon: FolderKanban },
   { href: "/admin/blog", label: "Blog", icon: Newspaper },
+  { href: "/admin/categories", label: "Kategorien", icon: Tags },
+  { href: "/admin/authors", label: "Autoren", icon: Users },
+  { href: "/admin/testimonials", label: "Testimonials", icon: Star },
+  { href: "/admin/faq", label: "FAQ", icon: HelpCircle },
 ];
 
 export function AdminSidebar({ email }: { email: string }) {
