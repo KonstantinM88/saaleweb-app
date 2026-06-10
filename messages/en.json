@@ -14,7 +14,8 @@
     "cases": "Cases",
     "pricing": "Pricing",
     "faq": "FAQ",
-    "cta": "Free call"
+    "cta": "Free call",
+    "blog": "Blog"
   },
   "Hero": {
     "badge": "Digital studio · Halle (Saale) → Germany",
@@ -405,5 +406,20 @@
     "h1": "Web design & SEO in {city}",
     "lead": "Modern websites, SEO and AI optimization for businesses in {city}.",
     "body": "SaaleWeb builds fast, modern websites for businesses in {city} — with local SEO that makes you visible on Google and in AI search. From strategy through development to ongoing optimization, you get everything from one source so you win more inquiries and customers in {city}."
+  },
+  "Blog": {
+    "eyebrow": "Blog",
+    "title": "Blog",
+    "subtitle": "Practical insights on web development, SEO, AI and local marketing.",
+    "all": "All",
+    "empty": "The first articles will appear here soon.",
+    "readingTime": "min read",
+    "toc": "Contents",
+    "related": "Related articles",
+    "share": "Share:",
+    "copy": "Copy link",
+    "copied": "Copied!",
+    "back": "Back to blog",
+    "by": "by"
   }
 }

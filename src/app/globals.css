@@ -38,3 +38,60 @@ body {
     scroll-behavior: auto !important;
   }
 }
+
+/* Blog article (markdown) styles */
+.markdown {
+  @apply text-[16.5px] leading-[1.75] text-ink;
+}
+.markdown > * + * {
+  @apply mt-5;
+}
+.markdown h2 {
+  @apply mt-12 scroll-mt-24 text-[26px] font-bold tracking-tight text-dark;
+}
+.markdown h3 {
+  @apply mt-8 scroll-mt-24 text-xl font-bold tracking-tight text-dark;
+}
+.markdown p {
+  @apply text-ink;
+}
+.markdown a {
+  @apply font-medium text-brand-purple underline underline-offset-2 hover:text-brand-pink;
+}
+.markdown ul {
+  @apply list-disc space-y-2 pl-6 marker:text-brand-purple;
+}
+.markdown ol {
+  @apply list-decimal space-y-2 pl-6;
+}
+.markdown blockquote {
+  @apply border-l-4 border-brand-pink/40 pl-5 italic text-muted;
+}
+.markdown code {
+  @apply rounded-md bg-surface px-1.5 py-0.5 font-mono text-[14px] text-ink;
+}
+.markdown pre {
+  @apply overflow-x-auto rounded-xl bg-dark p-4 text-[14px] text-white;
+}
+.markdown pre code {
+  @apply bg-transparent p-0 text-white;
+}
+.markdown img {
+  @apply rounded-xl border border-line;
+}
+.markdown hr {
+  @apply border-line;
+}
+.markdown strong {
+  @apply font-semibold text-dark;
+}
+.markdown table {
+  @apply w-full border-collapse text-[15px];
+}
+.markdown th,
+.markdown td {
+  @apply border border-line px-3 py-2 text-left;
+}
+.markdown th {
+  @apply bg-surface font-semibold;
+}

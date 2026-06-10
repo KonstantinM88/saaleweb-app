@@ -105,3 +105,27 @@ export function breadcrumbSchema(items: { name: string; path: string }[]) {
     })),
   };
 }
+
+export function articleSchema(input: {
+  title: string;
+  description?: string | null;
+  path: string;
+  locale: string;
+  datePublished?: string | null;
+  image?: string | null;
+  authorName?: string | null;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: input.title,
+    description: input.description ?? undefined,
+    inLanguage: input.locale,
+    datePublished: input.datePublished ?? undefined,
+    image: input.image ?? undefined,
+    mainEntityOfPage: `${URL}${input.path}`,
+    url: `${URL}${input.path}`,
+    author: { "@type": "Person", name: input.authorName ?? siteConfig.founder },
+    publisher: { "@id": ORG_ID },
+  };
+}

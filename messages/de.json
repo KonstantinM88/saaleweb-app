@@ -14,7 +14,8 @@
     "cases": "Cases",
     "pricing": "Preise",
     "faq": "FAQ",
-    "cta": "Erstgespräch"
+    "cta": "Erstgespräch",
+    "blog": "Blog"
   },
   "Hero": {
     "badge": "Digitales Studio · Halle (Saale) → Deutschland",
@@ -405,5 +406,20 @@
     "h1": "Webdesign & SEO in {city}",
     "lead": "Moderne Websites, SEO und KI-Optimierung für Unternehmen in {city}.",
     "body": "SaaleWeb entwickelt schnelle, moderne Websites für Unternehmen in {city} — mit lokalem SEO, das Sie bei Google und in KI-Suchen sichtbar macht. Von der Strategie über die Entwicklung bis zur laufenden Optimierung erhalten Sie alles aus einer Hand, damit Sie in {city} mehr Anfragen und Kunden gewinnen."
+  },
+  "Blog": {
+    "eyebrow": "Blog",
+    "title": "Blog",
+    "subtitle": "Praxiswissen zu Webentwicklung, SEO, KI und lokalem Marketing.",
+    "all": "Alle",
+    "empty": "Bald erscheinen hier die ersten Artikel.",
+    "readingTime": "Min. Lesezeit",
+    "toc": "Inhalt",
+    "related": "Ähnliche Artikel",
+    "share": "Teilen:",
+    "copy": "Link kopieren",
+    "copied": "Kopiert!",
+    "back": "Zurück zum Blog",
+    "by": "von"
   }
 }

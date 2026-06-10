@@ -28,9 +28,13 @@ Instructions and project memory for coding agents working in this repository.
 - `src/i18n/` - locale routing, navigation, request config.
 - `messages/de.json`, `messages/en.json`, `messages/ru.json` - localized UI copy.
 - `src/widgets/` - page sections.
+- `src/widgets/blog/` - blog UI pieces such as post cards, table of contents, and share buttons.
 - `src/features/` - interactive feature units such as contact and language switching.
 - `src/shared/` - shared UI, config, helpers.
 - `src/shared/config/site.ts` - site identity, contact data, nav keys.
+- `src/entities/blog/api.ts` - DB-backed blog queries.
+- `src/shared/lib/markdown.ts` - Markdown TOC extraction and reading-time helper.
+- `src/app/[locale]/blog/` - localized blog listing and article pages.
 - `src/lib/prisma.ts` - Prisma singleton with `@prisma/adapter-pg`.
 - `prisma/schema.prisma` - Prisma 7 schema.
 - `prisma.config.ts` - Prisma 7 runtime config.
@@ -73,6 +77,7 @@ Instructions and project memory for coding agents working in this repository.
 - The generated Prisma client is not committed. Vercel and other clean environments rely on `"postinstall": "prisma generate"` before `next build`.
 - Prisma 7 requires a driver adapter. This project uses `@prisma/adapter-pg`.
 - Zod 4 supports top-level validators such as `z.email()`.
+- Blog Markdown rendering uses `react-markdown`, `remark-gfm`, `rehype-slug`, and `github-slugger`.
 - Use `-LiteralPath` in PowerShell for paths containing square brackets, for example `src/app/[locale]/page.tsx`.
 
 ## UI And Content Rules
@@ -83,6 +88,8 @@ Instructions and project memory for coding agents working in this repository.
 - Shared UI includes `Button`, `Container`, `SectionHeader`, and `Reveal`; reuse them before adding new primitives.
 - Contact form validation lives in `src/features/contact/schema.ts`; server action lives in `src/features/contact/actions.ts`.
 - Contact form stores `Lead` rows with source `homepage_contact` and has a honeypot field named `website`.
+- Blog content is DB-backed through `BlogPost`, `BlogCategory`, `Author`, and translation tables. Article body content is Markdown stored in `BlogPostTranslation.content`.
+- `prisma/seed.ts` should remain repeatable; demo service/testimonial/FAQ/blog records must not fail on existing unique slugs.
 - Public static assets should be placed in the structured `public/flags`, `public/images`, and `public/video` folders.
 - Do not commit generated or user-uploaded files from `public/uploads`. For production uploads on Vercel, use object storage because the deployment filesystem is not persistent.
 - After applying files from `public/uploads`, delete the consumed source files from `public/uploads` and keep only files still awaiting processing plus the folder `.gitignore`.
@@ -111,3 +118,4 @@ Instructions and project memory for coding agents working in this repository.
 - 2026-06-10: Created public asset folders `public/flags`, `public/images`, `public/uploads`, and `public/video`. Added `.gitkeep` markers for static asset folders and an ignore rule inside `public/uploads` so uploaded/generated files are not committed by default.
 - 2026-06-10: Applied SEO update package from `public/uploads/saaleweb-seo-update.zip`: added JSON-LD helpers, breadcrumbs, CTA banner, localized service/industry/city pages, `sitemap.ts`, `robots.ts`, `public/llms.txt`, and extended message namespaces. `public/uploads` remains a staging area; source zip/instructions are ignored. Verified JSON parsing, `npm run typecheck`, `npm run lint`, and `npm run build`.
 - 2026-06-10: Added workflow rule to delete consumed files from `public/uploads` after processing. Removed the already applied `saaleweb-seo-APPLY.md` and `saaleweb-seo-update.zip`; only `public/uploads/.gitignore` remains.
+- 2026-06-10: Applied blog update package from `public/uploads/saaleweb-blog-update.zip`: added DB-backed localized blog listing/article routes, Markdown rendering with TOC/share/related posts, blog JSON-LD, updated founder name to `Konstantin Mykhailov`, added markdown dependencies, and seeded demo blog content. Adjusted `prisma/seed.ts` to be repeatable for existing demo slugs. Verified JSON parsing through `npm install`/Prisma generate, `npm run db:push`, `npm run db:seed`, `npm run typecheck`, `npm run lint`, and `npm run build`. Removed the consumed blog upload files afterward.
