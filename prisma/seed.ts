@@ -1,4 +1,4 @@
-﻿import "dotenv/config";
+import "dotenv/config";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { PrismaClient } from "../src/generated/prisma/client";
 
@@ -9,17 +9,7 @@ function unique(values: string[]) {
   return [...new Set(values)];
 }
 
-async function main() {
-  await prisma.user.upsert({
-    where: { email: "konstantin@saaleweb.de" },
-    update: {},
-    create: {
-      email: "konstantin@saaleweb.de",
-      name: "Konstantin Mykhailov",
-      role: "ADMIN",
-    },
-  });
-
+async function resetSeededContent() {
   const seededServiceIds = await prisma.serviceTranslation.findMany({
     where: { slug: { in: ["website-entwicklung", "web-development", "razrabotka-sajtov"] } },
     select: { serviceId: true },
@@ -37,7 +27,15 @@ async function main() {
   });
 
   const seededFaqIds = await prisma.faqTranslation.findMany({
-    where: { question: { in: ["Was kostet eine Website?", "What does a website cost?"] } },
+    where: {
+      question: {
+        in: [
+          "Was kostet eine Website?",
+          "What does a website cost?",
+          "Сколько стоит сайт?",
+        ],
+      },
+    },
     select: { faqId: true },
   });
   await prisma.faq.deleteMany({
@@ -60,73 +58,149 @@ async function main() {
   await prisma.blogPost.deleteMany({
     where: { id: { in: unique(seededBlogPostIds.map((item) => item.postId)) } },
   });
+}
 
+async function seedUser() {
+  await prisma.user.upsert({
+    where: { email: "konstantin@saaleweb.de" },
+    update: { name: "Konstantin Mykhailov", role: "ADMIN" },
+    create: {
+      email: "konstantin@saaleweb.de",
+      name: "Konstantin Mykhailov",
+      role: "ADMIN",
+    },
+  });
+}
+
+async function seedService() {
   await prisma.service.create({
     data: {
       icon: "code",
       order: 1,
       translations: {
         create: [
-          { locale: "de", name: "Website Entwicklung", slug: "website-entwicklung", excerpt: "Schnelle, moderne Websites mit Next.js." },
-          { locale: "en", name: "Web Development", slug: "web-development", excerpt: "Fast, modern websites with Next.js." },
-          { locale: "ru", name: "Р Р°Р·СЂР°Р±РѕС‚РєР° СЃР°Р№С‚РѕРІ", slug: "razrabotka-sajtov", excerpt: "Р‘С‹СЃС‚СЂС‹Рµ СЃРѕРІСЂРµРјРµРЅРЅС‹Рµ СЃР°Р№С‚С‹ РЅР° Next.js." },
+          {
+            locale: "de",
+            name: "Website Entwicklung",
+            slug: "website-entwicklung",
+            excerpt: "Schnelle, moderne Websites mit Next.js.",
+          },
+          {
+            locale: "en",
+            name: "Web Development",
+            slug: "web-development",
+            excerpt: "Fast, modern websites with Next.js.",
+          },
+          {
+            locale: "ru",
+            name: "Разработка сайтов",
+            slug: "razrabotka-sajtov",
+            excerpt: "Быстрые современные сайты на Next.js.",
+          },
         ],
       },
     },
   });
+}
 
+async function seedTestimonial() {
   await prisma.testimonial.create({
     data: {
       rating: 5,
       order: 1,
       translations: {
         create: [
-          { locale: "de", quote: "Unsere Buchungen haben sich verdreifacht.", clientName: "Elena L.", company: "Salon Elen" },
-          { locale: "en", quote: "Our bookings tripled.", clientName: "Elena L.", company: "Salon Elen" },
-          { locale: "ru", quote: "РќР°С€Рё Р·Р°РїРёСЃРё РІС‹СЂРѕСЃР»Рё РІС‚СЂРѕРµ.", clientName: "Р•Р»РµРЅР° Р›.", company: "Salon Elen" },
+          {
+            locale: "de",
+            quote: "Unsere Buchungen haben sich verdreifacht.",
+            clientName: "Elena L.",
+            company: "Salon Elen",
+          },
+          {
+            locale: "en",
+            quote: "Our bookings tripled.",
+            clientName: "Elena L.",
+            company: "Salon Elen",
+          },
+          {
+            locale: "ru",
+            quote: "Наши записи выросли втрое.",
+            clientName: "Елена Л.",
+            company: "Salon Elen",
+          },
         ],
       },
     },
   });
+}
 
+async function seedFaq() {
   await prisma.faq.create({
     data: {
       order: 1,
       category: "pricing",
       translations: {
         create: [
-          { locale: "de", question: "Was kostet eine Website?", answer: "Eine Landingpage startet bei 990 в‚¬." },
-          { locale: "en", question: "What does a website cost?", answer: "A landing page starts at в‚¬990." },
-          { locale: "ru", question: "РЎРєРѕР»СЊРєРѕ СЃС‚РѕРёС‚ СЃР°Р№С‚?", answer: "Р›РµРЅРґРёРЅРі вЂ” РѕС‚ 990 в‚¬." },
+          {
+            locale: "de",
+            question: "Was kostet eine Website?",
+            answer: "Eine Landingpage startet bei 990 EUR.",
+          },
+          {
+            locale: "en",
+            question: "What does a website cost?",
+            answer: "A landing page starts at EUR 990.",
+          },
+          {
+            locale: "ru",
+            question: "Сколько стоит сайт?",
+            answer: "Лендинг стоит от 990 EUR.",
+          },
         ],
       },
     },
   });
+}
 
-  // --- Blog ---
+async function seedBlogAuthor() {
   const existingAuthor = await prisma.author.findFirst({
     where: { name: { in: ["Konstantin Mykhailov", "Konstantin Michailow"] } },
     select: { id: true },
   });
-  const author = existingAuthor
-    ? await prisma.author.update({
-        where: { id: existingAuthor.id },
-        data: { name: "Konstantin Mykhailov" },
-      })
-    : await prisma.author.create({
-        data: {
-          name: "Konstantin Mykhailov",
-          translations: {
-            create: [
-              { locale: "de", role: "Gruender", bio: "Webentwickler & Gruender von SaaleWeb." },
-              { locale: "en", role: "Founder", bio: "Web developer & founder of SaaleWeb." },
-              { locale: "ru", role: "Osnovatel", bio: "Web developer and founder of SaaleWeb." },
-            ],
-          },
-        },
-      });
 
-  const seoCategory = await prisma.blogCategory.upsert({
+  if (existingAuthor) {
+    return prisma.author.update({
+      where: { id: existingAuthor.id },
+      data: {
+        name: "Konstantin Mykhailov",
+        translations: {
+          deleteMany: {},
+          create: [
+            { locale: "de", role: "Gründer", bio: "Webentwickler und Gründer von SaaleWeb." },
+            { locale: "en", role: "Founder", bio: "Web developer and founder of SaaleWeb." },
+            { locale: "ru", role: "Основатель", bio: "Веб-разработчик и основатель SaaleWeb." },
+          ],
+        },
+      },
+    });
+  }
+
+  return prisma.author.create({
+    data: {
+      name: "Konstantin Mykhailov",
+      translations: {
+        create: [
+          { locale: "de", role: "Gründer", bio: "Webentwickler und Gründer von SaaleWeb." },
+          { locale: "en", role: "Founder", bio: "Web developer and founder of SaaleWeb." },
+          { locale: "ru", role: "Основатель", bio: "Веб-разработчик и основатель SaaleWeb." },
+        ],
+      },
+    },
+  });
+}
+
+async function seedBlogCategory() {
+  return prisma.blogCategory.upsert({
     where: { key: "seo" },
     update: {
       translations: {
@@ -149,11 +223,13 @@ async function main() {
       },
     },
   });
+}
 
+async function seedBlogPosts(authorId: string, categoryId: string) {
   await prisma.blogPost.create({
     data: {
-      authorId: author.id,
-      categoryId: seoCategory.id,
+      authorId,
+      categoryId,
       published: true,
       publishedAt: new Date(),
       readingTime: 4,
@@ -161,11 +237,11 @@ async function main() {
         create: [
           {
             locale: "de",
-            title: "Lokales SEO fГјr Unternehmen in Halle",
+            title: "Lokales SEO für Unternehmen in Halle",
             slug: "lokales-seo-halle",
             excerpt: "So werden lokale Unternehmen bei Google und in KI-Suchen gefunden.",
             content:
-              "## Warum lokales SEO?\n\nKunden suchen heute zuerst online. Wer lokal sichtbar ist, gewinnt Anfragen.\n\n## Die wichtigsten Hebel\n\n- Google Unternehmensprofil\n- Bewertungen\n- Lokale Inhalte\n\n## Fazit\n\nLokales SEO ist die Grundlage fГјr planbares Wachstum.",
+              "## Warum lokales SEO?\n\nKunden suchen heute zuerst online. Wer lokal sichtbar ist, gewinnt Anfragen.\n\n## Die wichtigsten Hebel\n\n- Google Unternehmensprofil\n- Bewertungen\n- Lokale Inhalte\n\n## Fazit\n\nLokales SEO ist die Grundlage für planbares Wachstum.",
           },
           {
             locale: "en",
@@ -177,11 +253,11 @@ async function main() {
           },
           {
             locale: "ru",
-            title: "Р›РѕРєР°Р»СЊРЅРѕРµ SEO РґР»СЏ Р±РёР·РЅРµСЃР° РІ Р“Р°Р»Р»Рµ",
+            title: "Локальное SEO для бизнеса в Галле",
             slug: "lokalnoe-seo-halle",
-            excerpt: "РљР°Рє Р»РѕРєР°Р»СЊРЅРѕРјСѓ Р±РёР·РЅРµСЃСѓ РЅР°С…РѕРґРёС‚СЊСЃСЏ РІ Google Рё РІ РР-РїРѕРёСЃРєРµ.",
+            excerpt: "Как локальному бизнесу находиться в Google и AI-поиске.",
             content:
-              "## Р—Р°С‡РµРј Р»РѕРєР°Р»СЊРЅРѕРµ SEO?\n\nРљР»РёРµРЅС‚С‹ СЃРЅР°С‡Р°Р»Р° РёС‰СѓС‚ РѕРЅР»Р°Р№РЅ. Р’РёРґРёРјРѕСЃС‚СЊ = Р·Р°СЏРІРєРё.\n\n## Р“Р»Р°РІРЅС‹Рµ СЂС‹С‡Р°РіРё\n\n- РџСЂРѕС„РёР»СЊ РІ Google\n- РћС‚Р·С‹РІС‹\n- Р›РѕРєР°Р»СЊРЅС‹Р№ РєРѕРЅС‚РµРЅС‚\n\n## РС‚РѕРі\n\nР›РѕРєР°Р»СЊРЅРѕРµ SEO вЂ” РѕСЃРЅРѕРІР° РїСЂРµРґСЃРєР°Р·СѓРµРјРѕРіРѕ СЂРѕСЃС‚Р°.",
+              "## Зачем локальное SEO?\n\nКлиенты сначала ищут онлайн. Видимость означает заявки.\n\n## Главные рычаги\n\n- Профиль в Google\n- Отзывы\n- Локальный контент\n\n## Итог\n\nЛокальное SEO - основа предсказуемого роста.",
           },
         ],
       },
@@ -190,8 +266,8 @@ async function main() {
 
   await prisma.blogPost.create({
     data: {
-      authorId: author.id,
-      categoryId: seoCategory.id,
+      authorId,
+      categoryId,
       published: true,
       publishedAt: new Date(Date.now() - 86400000),
       readingTime: 5,
@@ -203,7 +279,7 @@ async function main() {
             slug: "nextjs-vs-wordpress",
             excerpt: "Performance, Sicherheit und SEO im direkten Vergleich.",
             content:
-              "## Performance\n\nNext.js liefert Inhalte blitzschnell aus.\n\n## Sicherheit\n\nKeine veralteten Plugins, kleinere AngriffsflГ¤che.\n\n## SEO\n\nSauberes HTML und Schema-Daten von Anfang an.",
+              "## Performance\n\nNext.js liefert Inhalte blitzschnell aus.\n\n## Sicherheit\n\nKeine veralteten Plugins, kleinere Angriffsfläche.\n\n## SEO\n\nSauberes HTML und Schema-Daten von Anfang an.",
           },
           {
             locale: "en",
@@ -215,16 +291,28 @@ async function main() {
           },
           {
             locale: "ru",
-            title: "РџРѕС‡РµРјСѓ Next.js вЂ” Р»СѓС‡С€Р°СЏ РѕСЃРЅРѕРІР°, С‡РµРј WordPress",
+            title: "Почему Next.js лучше как основа, чем WordPress",
             slug: "nextjs-vs-wordpress",
-            excerpt: "РџСЂРѕРёР·РІРѕРґРёС‚РµР»СЊРЅРѕСЃС‚СЊ, Р±РµР·РѕРїР°СЃРЅРѕСЃС‚СЊ Рё SEO РІ СЃСЂР°РІРЅРµРЅРёРё.",
+            excerpt: "Производительность, безопасность и SEO в прямом сравнении.",
             content:
-              "## РџСЂРѕРёР·РІРѕРґРёС‚РµР»СЊРЅРѕСЃС‚СЊ\n\nNext.js РѕС‚РґР°С‘С‚ РєРѕРЅС‚РµРЅС‚ РјРѕР»РЅРёРµРЅРѕСЃРЅРѕ.\n\n## Р‘РµР·РѕРїР°СЃРЅРѕСЃС‚СЊ\n\nРќРµС‚ СѓСЃС‚Р°СЂРµРІС€РёС… РїР»Р°РіРёРЅРѕРІ, РјРµРЅСЊС€Рµ СѓСЏР·РІРёРјРѕСЃС‚РµР№.\n\n## SEO\n\nР§РёСЃС‚С‹Р№ HTML Рё schema-РґР°РЅРЅС‹Рµ СЃ СЃР°РјРѕРіРѕ РЅР°С‡Р°Р»Р°.",
+              "## Производительность\n\nNext.js отдает контент очень быстро.\n\n## Безопасность\n\nНет устаревших плагинов, меньше поверхность атаки.\n\n## SEO\n\nЧистый HTML и schema-данные с самого начала.",
           },
         ],
       },
     },
   });
+}
+
+async function main() {
+  await seedUser();
+  await resetSeededContent();
+  await seedService();
+  await seedTestimonial();
+  await seedFaq();
+
+  const author = await seedBlogAuthor();
+  const seoCategory = await seedBlogCategory();
+  await seedBlogPosts(author.id, seoCategory.id);
 
   console.log("Seed complete.");
 }

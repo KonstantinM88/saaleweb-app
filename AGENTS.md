@@ -90,6 +90,7 @@ Instructions and project memory for coding agents working in this repository.
 - Contact form stores `Lead` rows with source `homepage_contact` and has a honeypot field named `website`.
 - Blog content is DB-backed through `BlogPost`, `BlogCategory`, `Author`, and translation tables. Article body content is Markdown stored in `BlogPostTranslation.content`.
 - `prisma/seed.ts` should remain repeatable; demo service/testimonial/FAQ/blog records must not fail on existing unique slugs.
+- Keep seed content as real UTF-8 text. If RU/DE content renders as mojibake, check `prisma/seed.ts` first before blaming PostgreSQL encoding.
 - Public static assets should be placed in the structured `public/flags`, `public/images`, and `public/video` folders.
 - Do not commit generated or user-uploaded files from `public/uploads`. For production uploads on Vercel, use object storage because the deployment filesystem is not persistent.
 - After applying files from `public/uploads`, delete the consumed source files from `public/uploads` and keep only files still awaiting processing plus the folder `.gitignore`.
@@ -107,6 +108,7 @@ Instructions and project memory for coding agents working in this repository.
 - README output in PowerShell may show mojibake for Cyrillic/dashes depending on console encoding; prefer editor view or UTF-8-aware output if exact text matters.
 - On 2026-06-09, Node.js was installed at `C:\Program Files\nodejs`, but the active PowerShell PATH did not include it. If `node` or `npm` are not recognized, run commands with a temporary PATH prefix: `$env:Path = 'C:\Program Files\nodejs;C:\Windows\System32;C:\Windows;' + $env:Path`.
 - When using a hosted PostgreSQL URL with SSL, `pg` may warn that `sslmode=require` semantics will change in a future major version. Use `sslmode=verify-full` in `DATABASE_URL` if the current strict verification behavior should be preserved.
+- `.editorconfig` enforces `charset = utf-8` without BOM for project files.
 
 ## Project Memory
 
@@ -119,3 +121,5 @@ Instructions and project memory for coding agents working in this repository.
 - 2026-06-10: Applied SEO update package from `public/uploads/saaleweb-seo-update.zip`: added JSON-LD helpers, breadcrumbs, CTA banner, localized service/industry/city pages, `sitemap.ts`, `robots.ts`, `public/llms.txt`, and extended message namespaces. `public/uploads` remains a staging area; source zip/instructions are ignored. Verified JSON parsing, `npm run typecheck`, `npm run lint`, and `npm run build`.
 - 2026-06-10: Added workflow rule to delete consumed files from `public/uploads` after processing. Removed the already applied `saaleweb-seo-APPLY.md` and `saaleweb-seo-update.zip`; only `public/uploads/.gitignore` remains.
 - 2026-06-10: Applied blog update package from `public/uploads/saaleweb-blog-update.zip`: added DB-backed localized blog listing/article routes, Markdown rendering with TOC/share/related posts, blog JSON-LD, updated founder name to `Konstantin Mykhailov`, added markdown dependencies, and seeded demo blog content. Adjusted `prisma/seed.ts` to be repeatable for existing demo slugs. Verified JSON parsing through `npm install`/Prisma generate, `npm run db:push`, `npm run db:seed`, `npm run typecheck`, `npm run lint`, and `npm run build`. Removed the consumed blog upload files afterward.
+- 2026-06-10: Fixed mojibake source in `prisma/seed.ts` by replacing corrupted RU/DE seed strings with valid UTF-8 text and keeping the seed repeatable. `npm run typecheck` and `npm run lint` pass. Current `.env` was observed pointing to database `neondb`; switch `DATABASE_URL` to `saaleweb` before seeding the newly recreated database.
+- 2026-06-10: Confirmed `.env` points to Neon `neondb`, reran `npm run db:seed` against it, and verified RU blog/service rows now contain valid Cyrillic in the database. Scanned project files for UTF-8 BOM outside generated/dependency folders and found none; added `.editorconfig` to keep UTF-8 without BOM going forward. Port `3000` was not listening during HTTP verification.
