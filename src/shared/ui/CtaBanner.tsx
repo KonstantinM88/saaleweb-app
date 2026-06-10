@@ -1,9 +1,12 @@
-import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
+import { useLocale, useTranslations } from "next-intl";
+import { routing } from "@/i18n/routing";
 import { Container } from "./Container";
 
 export function CtaBanner() {
   const t = useTranslations("Pages");
+  const locale = useLocale();
+  const contactHref = locale === routing.defaultLocale ? "/#contact" : `/${locale}#contact`;
+
   return (
     <section className="py-20">
       <Container>
@@ -21,12 +24,12 @@ export function CtaBanner() {
               {t("ctaTitle")}
             </h2>
             <p className="mx-auto mt-3 max-w-lg text-[16px] text-gray-400">{t("ctaText")}</p>
-            <Link
-              href="/#contact"
+            <a
+              href={contactHref}
               className="mt-7 inline-flex items-center justify-center gap-2 rounded-xl bg-brand px-6 py-3.5 text-[15px] font-semibold text-white transition hover:-translate-y-0.5"
             >
               {t("ctaButton")} →
-            </Link>
+            </a>
           </div>
         </div>
       </Container>

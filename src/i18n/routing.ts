@@ -5,6 +5,34 @@ export const routing = defineRouting({
   defaultLocale: "de",
   // German lives at "/", English at "/en", Russian at "/ru"
   localePrefix: "as-needed",
+  // Localized URL segments. The keys are the internal (canonical) pathnames
+  // that match the App Router folder structure; the values are the public,
+  // per-locale URLs that next-intl rewrites to/from.
+  pathnames: {
+    "/": "/",
+    "/blog": "/blog",
+    "/blog/[slug]": "/blog/[slug]",
+    "/blog/kategorie/[slug]": {
+      de: "/blog/kategorie/[slug]",
+      en: "/blog/category/[slug]",
+      ru: "/blog/kategoriya/[slug]",
+    },
+    "/leistungen/[slug]": {
+      de: "/leistungen/[slug]",
+      en: "/services/[slug]",
+      ru: "/uslugi/[slug]",
+    },
+    "/branchen/[slug]": {
+      de: "/branchen/[slug]",
+      en: "/industries/[slug]",
+      ru: "/otrasli/[slug]",
+    },
+    "/standorte/[slug]": {
+      de: "/standorte/[slug]",
+      en: "/locations/[slug]",
+      ru: "/lokacii/[slug]",
+    },
+  },
 });
 
 export type AppLocale = (typeof routing.locales)[number];

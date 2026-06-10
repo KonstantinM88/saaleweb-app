@@ -33,6 +33,7 @@ function pickCategory(
 export async function getCategories(locale: AppLocale): Promise<PostCategory[]> {
   try {
     const rows = (await prisma.blogCategory.findMany({
+      where: { posts: { some: { published: true } } },
       include: { translations: true },
     })) as { translations: CategoryTr[] }[];
     return rows
@@ -98,9 +99,7 @@ export async function getPost(
     return {
       ...toListItem(tr, locale),
       content: tr.content,
-      author: tr.post.author
-        ? { name: tr.post.author.name, role: authorRole }
-        : null,
+      author: tr.post.author ? { name: tr.post.author.name, role: authorRole } : null,
       languages,
     };
   } catch {
@@ -115,6 +114,49 @@ export async function getRelated(
 ): Promise<PostListItem[]> {
   const posts = await getPosts(locale, categorySlug);
   return posts.filter((p) => p.slug !== currentSlug).slice(0, 3);
+}
+
+/** { locale, slug } category pairs for generateStaticParams of the category page. */
+export async function getAllCategoryParams(): Promise<{ locale: string; slug: string }[]> {
+  try {
+    const rows = (await prisma.blogCategoryTranslation.findMany({
+      where: { category: { posts: { some: { published: true } } } },
+      select: { locale: true, slug: true },
+    })) as { locale: string; slug: string }[];
+    return rows.map((r) => ({ locale: r.locale, slug: r.slug }));
+  } catch {
+    return [];
+  }
+}
+
+/** Per-post mapping of locale -> slug (sitemap hreflang grouping). */
+export async function getBlogSlugGroups(): Promise<Record<string, string>[]> {
+  try {
+    const posts = (await prisma.blogPost.findMany({
+      where: { published: true },
+      include: { translations: { select: { locale: true, slug: true } } },
+    })) as { translations: { locale: string; slug: string }[] }[];
+    return posts.map((p) =>
+      Object.fromEntries(p.translations.map((t) => [t.locale, t.slug])),
+    );
+  } catch {
+    return [];
+  }
+}
+
+/** Per-category mapping of locale -> slug (sitemap hreflang grouping). */
+export async function getCategorySlugGroups(): Promise<Record<string, string>[]> {
+  try {
+    const cats = (await prisma.blogCategory.findMany({
+      where: { posts: { some: { published: true } } },
+      include: { translations: { select: { locale: true, slug: true } } },
+    })) as { translations: { locale: string; slug: string }[] }[];
+    return cats.map((c) =>
+      Object.fromEntries(c.translations.map((t) => [t.locale, t.slug])),
+    );
+  } catch {
+    return [];
+  }
 }
 
 // ---- internal mapping ----

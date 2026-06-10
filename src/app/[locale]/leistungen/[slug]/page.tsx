@@ -4,6 +4,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { hasLocale } from "next-intl";
 import { prisma } from "@/lib/prisma";
 import { routing, type AppLocale } from "@/i18n/routing";
+import { getPathname } from "@/i18n/navigation";
 import { Navbar } from "@/widgets/navbar/Navbar";
 import { Footer } from "@/widgets/footer/Footer";
 import { Container } from "@/shared/ui/Container";
@@ -37,8 +38,10 @@ async function getServiceData(locale: AppLocale, slug: string) {
     if (!tr) return null;
     const languages: Record<string, string> = {};
     for (const sib of tr.service.translations) {
-      const prefix = sib.locale === routing.defaultLocale ? "" : `/${sib.locale}`;
-      languages[sib.locale] = `${prefix}/leistungen/${sib.slug}`;
+      languages[sib.locale] = getPathname({
+        locale: sib.locale as AppLocale,
+        href: { pathname: "/leistungen/[slug]", params: { slug: sib.slug } },
+      });
     }
     return {
       name: tr.name as string,
@@ -76,7 +79,11 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
   if (!data) notFound();
 
   const tp = await getTranslations({ locale, namespace: "Pages" });
-  const path = `${locale === routing.defaultLocale ? "" : `/${locale}`}/leistungen/${slug}`;
+  const path = getPathname({
+    locale,
+    href: { pathname: "/leistungen/[slug]", params: { slug } },
+  });
+  const homePath = locale === routing.defaultLocale ? "/" : `/${locale}`;
 
   return (
     <>
@@ -85,7 +92,7 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
         data={[
           serviceSchema({ name: data.name, description: data.excerpt ?? undefined, path, locale }),
           breadcrumbSchema([
-            { name: tp("home"), path: locale === routing.defaultLocale ? "/" : `/${locale}` },
+            { name: tp("home"), path: homePath },
             { name: data.name, path },
           ]),
         ]}

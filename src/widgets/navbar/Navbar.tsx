@@ -1,16 +1,40 @@
 "use client";
 
 import { useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Menu, X } from "lucide-react";
 import { Link } from "@/i18n/navigation";
+import { routing } from "@/i18n/routing";
 import { Container } from "@/shared/ui/Container";
 import { siteConfig } from "@/shared/config/site";
 import { LanguageSwitcher } from "@/features/language-switcher/LanguageSwitcher";
 
 export function Navbar() {
   const t = useTranslations("Nav");
+  const locale = useLocale();
   const [open, setOpen] = useState(false);
+
+  // Locale-aware link to a homepage section (hash), works from any page.
+  const sectionHref = (hash: string) =>
+    locale === routing.defaultLocale ? `/#${hash}` : `/${locale}#${hash}`;
+
+  const renderItem = (item: { key: string; href: string }, onClick?: () => void) => {
+    // Route links (e.g. /blog) go through the locale-aware Link.
+    if (item.href === "/blog") {
+      return (
+        <Link key={item.key} href="/blog" onClick={onClick} className="transition-colors hover:text-brand-pink">
+          {t(item.key)}
+        </Link>
+      );
+    }
+    // Section anchors render as plain locale-prefixed links.
+    const hash = item.href.startsWith("/#") ? item.href.slice(2) : item.href;
+    return (
+      <a key={item.key} href={sectionHref(hash)} onClick={onClick} className="transition-colors hover:text-brand-pink">
+        {t(item.key)}
+      </a>
+    );
+  };
 
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-white/80 backdrop-blur-md backdrop-saturate-150">
@@ -23,21 +47,17 @@ export function Navbar() {
         </Link>
 
         <nav className="hidden items-center gap-8 text-[15px] font-medium text-gray-700 md:flex">
-          {siteConfig.nav.map((item) => (
-            <Link key={item.key} href={item.href} className="transition-colors hover:text-brand-pink">
-              {t(item.key)}
-            </Link>
-          ))}
+          {siteConfig.nav.map((item) => renderItem(item))}
         </nav>
 
         <div className="flex items-center gap-3.5">
           <LanguageSwitcher />
-          <Link
-            href="/#contact"
+          <a
+            href={sectionHref("contact")}
             className="hidden items-center justify-center gap-2 rounded-xl bg-brand px-5 py-2.5 text-[15px] font-semibold text-white shadow-[0_8px_24px_-8px_rgba(255,79,163,0.55)] transition-all hover:-translate-y-0.5 sm:inline-flex"
           >
             {t("cta")}
-          </Link>
+          </a>
           <button
             type="button"
             className="text-dark md:hidden"
@@ -51,24 +71,15 @@ export function Navbar() {
 
       {open && (
         <nav className="border-t border-line bg-white md:hidden">
-          <Container className="flex flex-col py-3">
-            {siteConfig.nav.map((item) => (
-              <Link
-                key={item.key}
-                href={item.href}
-                onClick={() => setOpen(false)}
-                className="py-2.5 text-[15px] font-medium text-gray-700"
-              >
-                {t(item.key)}
-              </Link>
-            ))}
-            <Link
-              href="/#contact"
+          <Container className="flex flex-col py-3 [&_a]:py-2.5 [&_a]:text-[15px] [&_a]:font-medium [&_a]:text-gray-700">
+            {siteConfig.nav.map((item) => renderItem(item, () => setOpen(false)))}
+            <a
+              href={sectionHref("contact")}
               onClick={() => setOpen(false)}
-              className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand px-5 py-3 text-[15px] font-semibold text-white"
+              className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand px-5 py-3 !text-white"
             >
               {t("cta")}
-            </Link>
+            </a>
           </Container>
         </nav>
       )}

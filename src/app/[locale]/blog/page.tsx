@@ -2,17 +2,16 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { hasLocale } from "next-intl";
-import { routing } from "@/i18n/routing";
+import { routing, type AppLocale } from "@/i18n/routing";
 import { getCategories, getPosts } from "@/entities/blog/api";
 import { Navbar } from "@/widgets/navbar/Navbar";
 import { Footer } from "@/widgets/footer/Footer";
 import { Container } from "@/shared/ui/Container";
-import { Link } from "@/i18n/navigation";
+import { Link, getPathname } from "@/i18n/navigation";
 import { PostCard } from "@/widgets/blog/PostCard";
 import { cn } from "@/shared/lib/cn";
 
 type Params = { locale: string };
-type Search = { [key: string]: string | string[] | undefined };
 
 export async function generateMetadata({
   params,
@@ -23,7 +22,7 @@ export async function generateMetadata({
   if (!hasLocale(routing.locales, locale)) return {};
   const t = await getTranslations({ locale, namespace: "Blog" });
   const languages = Object.fromEntries(
-    routing.locales.map((l) => [l, `${l === routing.defaultLocale ? "" : `/${l}`}/blog`]),
+    routing.locales.map((l) => [l, getPathname({ locale: l, href: "/blog" })]),
   );
   return {
     title: t("title"),
@@ -32,24 +31,15 @@ export async function generateMetadata({
   };
 }
 
-export default async function BlogIndexPage({
-  params,
-  searchParams,
-}: {
-  params: Promise<Params>;
-  searchParams: Promise<Search>;
-}) {
+export default async function BlogIndexPage({ params }: { params: Promise<Params> }) {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) notFound();
   setRequestLocale(locale);
 
-  const { kategorie } = await searchParams;
-  const activeCategory = typeof kategorie === "string" ? kategorie : undefined;
-
   const t = await getTranslations({ locale, namespace: "Blog" });
   const [categories, posts] = await Promise.all([
-    getCategories(locale),
-    getPosts(locale, activeCategory),
+    getCategories(locale as AppLocale),
+    getPosts(locale as AppLocale),
   ]);
 
   const chip = "rounded-full border px-4 py-1.5 text-sm font-medium transition-colors";
@@ -68,27 +58,14 @@ export default async function BlogIndexPage({
 
             {categories.length > 0 && (
               <div className="mt-8 flex flex-wrap gap-2">
-                <Link
-                  href="/blog"
-                  className={cn(
-                    chip,
-                    !activeCategory
-                      ? "border-transparent bg-dark text-white"
-                      : "border-line bg-white text-ink hover:border-brand-purple",
-                  )}
-                >
+                <span className={cn(chip, "border-transparent bg-dark text-white")}>
                   {t("all")}
-                </Link>
+                </span>
                 {categories.map((c) => (
                   <Link
                     key={c.slug}
-                    href={`/blog?kategorie=${c.slug}`}
-                    className={cn(
-                      chip,
-                      activeCategory === c.slug
-                        ? "border-transparent bg-dark text-white"
-                        : "border-line bg-white text-ink hover:border-brand-purple",
-                    )}
+                    href={{ pathname: "/blog/kategorie/[slug]", params: { slug: c.slug } }}
+                    className={cn(chip, "border-line bg-white text-ink hover:border-brand-purple")}
                   >
                     {c.name}
                   </Link>

@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { hasLocale } from "next-intl";
 import { routing } from "@/i18n/routing";
+import { getPathname } from "@/i18n/navigation";
 import { cities, getCity } from "@/shared/config/cities";
 import { Navbar } from "@/widgets/navbar/Navbar";
 import { Footer } from "@/widgets/footer/Footer";
@@ -32,7 +33,7 @@ export async function generateMetadata({
   const languages = Object.fromEntries(
     routing.locales.map((l) => [
       l,
-      `${l === routing.defaultLocale ? "" : `/${l}`}/standorte/${slug}`,
+      getPathname({ locale: l, href: { pathname: "/standorte/[slug]", params: { slug } } }),
     ]),
   );
   return {
@@ -51,7 +52,11 @@ export default async function CityPage({ params }: { params: Promise<Params> }) 
 
   const t = await getTranslations({ locale, namespace: "Cities" });
   const tp = await getTranslations({ locale, namespace: "Pages" });
-  const path = `${locale === routing.defaultLocale ? "" : `/${locale}`}/standorte/${slug}`;
+  const path = getPathname({
+    locale,
+    href: { pathname: "/standorte/[slug]", params: { slug } },
+  });
+  const homePath = locale === routing.defaultLocale ? "/" : `/${locale}`;
 
   return (
     <>
@@ -60,7 +65,7 @@ export default async function CityPage({ params }: { params: Promise<Params> }) 
         data={[
           localBusinessSchema({ areaServed: city.name }),
           breadcrumbSchema([
-            { name: tp("home"), path: locale === routing.defaultLocale ? "/" : `/${locale}` },
+            { name: tp("home"), path: homePath },
             { name: city.name, path },
           ]),
         ]}

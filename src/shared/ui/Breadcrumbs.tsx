@@ -1,7 +1,9 @@
+import type { ComponentProps } from "react";
 import { Link } from "@/i18n/navigation";
 import { Container } from "./Container";
 
-export type Crumb = { name: string; href?: string };
+type Href = ComponentProps<typeof Link>["href"];
+export type Crumb = { name: string; href?: Href };
 
 export function Breadcrumbs({ items }: { items: Crumb[] }) {
   return (

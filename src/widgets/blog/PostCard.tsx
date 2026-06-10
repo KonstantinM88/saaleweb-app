@@ -12,7 +12,7 @@ export function PostCard({ post, locale }: { post: PostListItem; locale: string 
 
   return (
     <Link
-      href={`/blog/${post.slug}`}
+      href={{ pathname: "/blog/[slug]", params: { slug: post.slug } }}
       className="group flex h-full flex-col overflow-hidden rounded-[18px] border border-line bg-white transition-all hover:-translate-y-1.5 hover:border-transparent hover:shadow-lift"
     >
       <div className="relative h-[170px] overflow-hidden bg-brand">
@@ -32,9 +32,7 @@ export function PostCard({ post, locale }: { post: PostListItem; locale: string 
           </span>
         )}
         <h3 className="mb-2 text-lg font-bold leading-snug text-dark">{post.title}</h3>
-        {post.excerpt && (
-          <p className="line-clamp-3 text-sm text-muted">{post.excerpt}</p>
-        )}
+        {post.excerpt && <p className="line-clamp-3 text-sm text-muted">{post.excerpt}</p>}
         <div className="mt-auto flex items-center gap-2 pt-4 text-[12.5px] text-muted">
           {date && <span>{date}</span>}
           {date && <span className="text-line">·</span>}
