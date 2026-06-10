@@ -3,6 +3,7 @@
 import { useActionState } from "react";
 import { routing } from "@/i18n/routing";
 import { adminInput, adminLabel, adminBtn } from "./ui";
+import { ImageUpload } from "./ImageUpload";
 
 export type PostState = { error?: string };
 export type PostTranslation = { title: string; slug: string; excerpt: string; content: string };
@@ -60,8 +61,8 @@ export function PostForm({
           </select>
         </label>
         <label className={adminLabel}>
-          Cover-URL
-          <input name="coverImage" defaultValue={defaults.coverImage} className={adminInput} />
+          Cover-Bild
+          <ImageUpload name="coverImage" defaultValue={defaults.coverImage} hint="1200×630 px (OG)" maxWidth={1600} />
         </label>
         <label className={adminLabel}>
           Lesezeit (Min.)

@@ -1,3 +1,4 @@
+// src/app/[locale]/page.tsx
 import { setRequestLocale } from "next-intl/server";
 import { Navbar } from "@/widgets/navbar/Navbar";
 import { Hero } from "@/widgets/hero/Hero";

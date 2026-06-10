@@ -1,3 +1,4 @@
+// src/widgets/testimonials/Testimonials.tsx
 import { getTranslations } from "next-intl/server";
 import { Star } from "lucide-react";
 import { prisma } from "@/lib/prisma";

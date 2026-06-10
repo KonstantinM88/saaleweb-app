@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LayoutDashboard, Inbox, Wrench, Building2, Newspaper, FolderKanban, HelpCircle, Star, Users, Tags, LogOut } from "lucide-react";
+import { LayoutDashboard, Inbox, Wrench, Building2, Newspaper, FolderKanban, Layers, HelpCircle, Star, Users, Tags, LogOut } from "lucide-react";
 import { logout } from "@/features/auth/actions";
 import { cn } from "@/shared/lib/cn";
 
@@ -12,6 +12,7 @@ const items = [
   { href: "/admin/services", label: "Leistungen", icon: Wrench },
   { href: "/admin/industries", label: "Branchen", icon: Building2 },
   { href: "/admin/projects", label: "Projekte", icon: FolderKanban },
+  { href: "/admin/project-categories", label: "Projekt-Kat.", icon: Layers },
   { href: "/admin/blog", label: "Blog", icon: Newspaper },
   { href: "/admin/categories", label: "Kategorien", icon: Tags },
   { href: "/admin/authors", label: "Autoren", icon: Users },

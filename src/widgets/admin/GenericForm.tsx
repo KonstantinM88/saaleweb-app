@@ -3,14 +3,17 @@
 import { useActionState } from "react";
 import { routing } from "@/i18n/routing";
 import { adminInput, adminLabel, adminBtn } from "./ui";
+import { ImageUpload } from "./ImageUpload";
 
-export type FieldType = "text" | "textarea" | "number" | "checkbox" | "select";
+export type FieldType = "text" | "textarea" | "number" | "checkbox" | "select" | "image";
 export type Field = {
   name: string;
   label: string;
   type: FieldType;
   options?: { value: string; label: string }[];
   span2?: boolean;
+  hint?: string;
+  maxWidth?: number;
 };
 export type GenericState = { error?: string };
 export type GenericDefaults = {
@@ -74,6 +77,16 @@ export function GenericForm({
                 />
                 {f.label}
               </label>
+            ) : f.type === "image" ? (
+              <div key={f.name} className={`${adminLabel} ${f.span2 ? "sm:col-span-2" : ""}`}>
+                {f.label}
+                <ImageUpload
+                  name={f.name}
+                  defaultValue={String(defaults.top[f.name] ?? "")}
+                  hint={f.hint}
+                  maxWidth={f.maxWidth}
+                />
+              </div>
             ) : (
               <label key={f.name} className={`${adminLabel} ${f.span2 ? "sm:col-span-2" : ""}`}>
                 {f.label}

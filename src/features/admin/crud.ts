@@ -1,10 +1,8 @@
-import { routing } from "@/i18n/routing";
-import type { Locale } from "@/generated/prisma/enums";
+import { routing, type AppLocale } from "@/i18n/routing";
 
 export type CrudState = { error?: string };
-type TranslationRow = { locale: Locale } & Record<string, string>;
 
-export const LOCALES = routing.locales as readonly Locale[];
+export const LOCALES = routing.locales;
 
 export function str(fd: FormData, key: string): string {
   return String(fd.get(key) ?? "").trim();
@@ -25,11 +23,14 @@ export function bool(fd: FormData, key: string): boolean {
 }
 
 /** Reads `${field}_${locale}` values into translation rows. */
-export function readTranslations(fd: FormData, fields: string[]): TranslationRow[] {
+export function readTranslations(
+  fd: FormData,
+  fields: string[],
+): Array<{ locale: AppLocale } & Record<string, string>> {
   return LOCALES.map((locale) => {
-    const row: TranslationRow = { locale };
+    const row: Record<string, string> = {};
     for (const f of fields) row[f] = String(fd.get(`${f}_${locale}`) ?? "").trim();
-    return row;
+    return { locale, ...row };
   });
 }
 

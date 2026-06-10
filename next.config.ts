@@ -7,6 +7,8 @@ const nextConfig: NextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
   },
+  // sharp must stay external (native binaries) for the image-upload route.
+  serverExternalPackages: ["sharp"],
   experimental: {
     optimizePackageImports: ["lucide-react"],
   },

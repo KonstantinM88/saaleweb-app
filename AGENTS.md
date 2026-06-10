@@ -21,6 +21,7 @@ Instructions and project memory for coding agents working in this repository.
 - Public service and industry index pages exist at `/leistungen` and `/branchen` with localized public URLs; cards link to DB-backed detail pages.
 - Most homepage content is rendered from `messages/*.json`, so the homepage can still run without a database connection. Testimonials now prefer published DB rows and fall back to `messages` only when DB data is unavailable.
 - Database is required for contact form persistence and future CMS/content features.
+- Admin image uploads convert images to WebP with `sharp`; production storage uses Vercel Blob when `BLOB_READ_WRITE_TOKEN` is set, otherwise local dev writes to `public/uploads`.
 
 ## Important Paths
 
@@ -45,8 +46,11 @@ Instructions and project memory for coding agents working in this repository.
 - `src/features/auth/` - env-based admin authentication, JWT session cookie, login/logout actions.
 - `src/features/admin/` - admin server actions for services, industries, blog posts, and leads.
 - `src/features/admin/crud.ts` - shared admin form helpers; keep translation rows typed with Prisma `Locale`.
+- `src/features/admin/upload/storage.ts` - admin image storage abstraction for Vercel Blob and local `public/uploads` fallback.
+- `src/app/admin/api/upload/route.ts` - protected image upload route; converts uploads to WebP.
 - `src/widgets/admin/` - admin UI forms, sidebar, page headers, and controls.
 - `src/widgets/admin/GenericForm.tsx` - reusable config-driven admin create/edit form for multilingual records.
+- `src/widgets/admin/ImageUpload.tsx` - admin image upload field with preview and editable URL.
 - `src/lib/prisma.ts` - Prisma singleton with `@prisma/adapter-pg`.
 - `prisma/schema.prisma` - Prisma 7 schema.
 - `prisma.config.ts` - Prisma 7 runtime config.
@@ -82,6 +86,7 @@ Instructions and project memory for coding agents working in this repository.
 - Next.js expands `$` references while loading `.env`; bcrypt hashes in `ADMIN_PASSWORD_HASH` must escape every dollar sign as `\$`, or login will fail because the hash is corrupted at runtime.
 - Required: `DATABASE_URL`, for example `postgresql://postgres:postgres@localhost:5432/saaleweb?schema=public`.
 - Public site URL: `NEXT_PUBLIC_SITE_URL`, defaulting in code to `https://saaleweb.de`.
+- Optional production upload storage: `BLOB_READ_WRITE_TOKEN` for Vercel Blob. Without it, admin uploads are stored locally under `public/uploads` and served as `/uploads/...`.
 - `npm install` runs Prisma generation through `postinstall`, so `DATABASE_URL` must be available before install in local and deployment environments.
 
 ## Stack Notes
@@ -97,6 +102,7 @@ Instructions and project memory for coding agents working in this repository.
 - Admin authentication uses `jose`, `bcryptjs`, and `server-only`; bcrypt only runs in server actions, not middleware.
 - Generate admin password hashes with `node scripts/hash-password.mjs "your-password"` and copy the printed `Next.js .env value`.
 - Admin multilingual CRUD actions should use `readTranslations` from `src/features/admin/crud.ts`; Prisma translation creates require `locale` to remain typed as generated `Locale`, not widened to plain `string`.
+- Admin image uploads require `sharp`; `next.config.ts` keeps `sharp` in `serverExternalPackages` because it ships native binaries.
 - Use `-LiteralPath` in PowerShell for paths containing square brackets, for example `src/app/[locale]/page.tsx`.
 
 ## UI And Content Rules
@@ -111,11 +117,12 @@ Instructions and project memory for coding agents working in this repository.
 - Homepage testimonials are DB-backed through `Testimonial` / `TestimonialTranslation`; admin testimonial create/update/delete/toggle actions must revalidate `/`, `/de`, `/en`, and `/ru`.
 - Detail pages with translated slugs should wrap content in `LocaleSlugsProvider`; `LanguageSwitcher` uses that map to switch to the target locale's real slug instead of reusing the current slug.
 - Admin pages are outside localized routing at `/admin`, are `noindex`, and are protected by both `src/proxy.ts` and the admin protected layout. Current admin sections cover leads, services, industries, projects/cases, blog posts, blog categories, authors, testimonials, and FAQ.
+- Project categories are managed separately at `/admin/project-categories` and can be selected in project/case forms.
 - `prisma/seed.ts` should remain repeatable; demo service/testimonial/FAQ/blog records must not fail on existing unique slugs.
 - Keep seed content as real UTF-8 text. If RU/DE content renders as mojibake, check `prisma/seed.ts` first before blaming PostgreSQL encoding.
 - Public static assets should be placed in the structured `public/flags`, `public/images`, and `public/video` folders.
 - Do not commit generated or user-uploaded files from `public/uploads`. For production uploads on Vercel, use object storage because the deployment filesystem is not persistent.
-- After applying files from `public/uploads`, delete the consumed source files from `public/uploads` and keep only files still awaiting processing plus the folder `.gitignore`.
+- After applying package files from `public/uploads`, delete the consumed source package files from `public/uploads` and keep only files still awaiting processing plus the folder `.gitignore`. Do not delete runtime image files generated there by the local admin upload fallback unless explicitly cleaning local media.
 
 ## Verification Expectations
 
@@ -151,3 +158,4 @@ Instructions and project memory for coding agents working in this repository.
 - 2026-06-10: Fixed local admin login env formatting: Next.js was expanding `$` inside the bcrypt `ADMIN_PASSWORD_HASH`, so runtime saw a corrupted hash. Local `.env` now uses escaped bcrypt dollars and a separate random `AUTH_SECRET`; `scripts/hash-password.mjs` prints a Next.js-ready escaped env value.
 - 2026-06-10: Applied `saaleweb-index-admin-update.zip`: added DB-backed ISR index pages for services and industries, updated localized nav links to route pages, and expanded admin CRUD with projects/cases, blog categories, authors, testimonials, and FAQ using `GenericForm`. Fixed the package's translation helper typing so Prisma `Locale` is preserved. Verified `npm run typecheck`, `npm run lint`, `npm run build`, and production `200` responses for `/leistungen`, `/en/services`, `/ru/uslugi`, `/branchen`, `/en/industries`, `/ru/otrasli`; protected new admin routes return `307` without a session.
 - 2026-06-10: Fixed homepage testimonial freshness: admin updates were saved to DB, but `src/widgets/testimonials/Testimonials.tsx` still rendered static `messages/*.json` items. The widget now reads published DB testimonials for the current locale with message fallback, homepage has `revalidate = 300`, and testimonial admin actions revalidate localized homepages. Verified DB contains `Elena D.`, production HTML visibly renders `Elena D.`, and `npm run typecheck`, `npm run lint`, `npm run build` pass.
+- 2026-06-11: Applied `saaleweb-projcat-upload-update.zip`: added `/admin/project-categories` CRUD for `ProjectCategory`, admin image upload route `/admin/api/upload`, `ImageUpload`, WebP conversion via `sharp`, Vercel Blob storage via `@vercel/blob`, and local fallback to `public/uploads`. Added `BLOB_READ_WRITE_TOKEN` to `.env.example`; pinned `sharp` to `0.34.5` because `0.35.0` did not expose types correctly with TypeScript `moduleResolution: bundler`. Verified `npm run typecheck`, `npm run lint`, `npm run build`, and production `307` protection for project-category routes and upload endpoint without a session.
