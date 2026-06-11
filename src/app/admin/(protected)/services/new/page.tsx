@@ -7,6 +7,7 @@ const emptyDefaults: EntityDefaults = {
   primary: "",
   order: 0,
   published: true,
+  coverImage: "",
   translations: Object.fromEntries(
     routing.locales.map((l) => [l, { name: "", slug: "", excerpt: "", content: "" }]),
   ),

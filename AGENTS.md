@@ -22,6 +22,7 @@ Instructions and project memory for coding agents working in this repository.
 - Public project/case pages exist at `/projekte`, `/projects`, `/proekty` and detail pages at localized `/projekte/[slug]`, `/projects/[slug]`, `/proekty/[slug]`.
 - Most homepage sections now prefer published DB rows and fall back to `messages/*.json` when DB data is unavailable, empty, or incomplete. DB-backed homepage sections include services, industries, case studies/projects, FAQ, and testimonials.
 - Database is required for contact form persistence and future CMS/content features.
+- First-party analytics stores page views in `PageView` via `/api/track` without cookies or IP storage; admin routes are not tracked.
 - Admin image uploads convert images to WebP with `sharp`; production storage uses Vercel Blob when `BLOB_READ_WRITE_TOKEN` is set, otherwise local dev writes to `public/uploads`.
 
 ## Important Paths
@@ -36,6 +37,8 @@ Instructions and project memory for coding agents working in this repository.
 - `src/widgets/services/Services.tsx`, `src/widgets/industries/Industries.tsx`, `src/widgets/case-studies/CaseStudies.tsx`, `src/widgets/faq/Faq.tsx` - homepage sections that read published DB content by locale with message fallbacks.
 - `src/widgets/blog/` - blog UI pieces such as post cards, table of contents, and share buttons.
 - `src/features/` - interactive feature units such as contact and language switching.
+- `src/features/analytics/PageViewTracker.tsx` - client-side first-party page-view tracker mounted in the locale layout.
+- `src/features/admin/analytics/data.ts` - admin dashboard aggregations for page views, leads, and top paths.
 - `src/features/language-switcher/LocaleSlugsContext.tsx` - per-locale slug context used by detail pages for smart language switching.
 - `src/shared/` - shared UI, config, helpers.
 - `src/shared/config/site.ts` - site identity, contact data, nav keys.
@@ -55,6 +58,8 @@ Instructions and project memory for coding agents working in this repository.
 - `src/features/admin/upload/storage.ts` - admin image storage abstraction for Vercel Blob and local `public/uploads` fallback.
 - `src/app/admin/api/upload/route.ts` - protected image upload route; converts uploads to WebP.
 - `src/app/api/og/route.tsx` - dynamic Open Graph image endpoint using `next/og`.
+- `src/app/api/track/route.ts` - page-view ingestion endpoint for `PageView` analytics.
+- `src/app/blog/rss.xml/route.ts` - RSS 2.0 feed for blog posts; default German, with `?lang=en` and `?lang=ru`.
 - `src/widgets/admin/` - admin UI forms, sidebar, page headers, and controls.
 - `src/widgets/admin/GenericForm.tsx` - reusable config-driven admin create/edit form for multilingual records.
 - `src/widgets/admin/ImageUpload.tsx` - admin image upload field with preview and editable URL.
@@ -111,6 +116,7 @@ Instructions and project memory for coding agents working in this repository.
 - Generate admin password hashes with `node scripts/hash-password.mjs "your-password"` and copy the printed `Next.js .env value`.
 - Admin multilingual CRUD actions should use `readTranslations` from `src/features/admin/crud.ts`; Prisma translation creates require `locale` to remain typed as generated `Locale`, not widened to plain `string`.
 - Admin image uploads require `sharp`; `next.config.ts` keeps `sharp` in `serverExternalPackages` because it ships native binaries.
+- Prisma 7 `prisma db execute` reads the datasource from `prisma.config.ts`; do not pass the old `--schema` flag.
 - Use `-LiteralPath` in PowerShell for paths containing square brackets, for example `src/app/[locale]/page.tsx`.
 
 ## UI And Content Rules
@@ -124,6 +130,9 @@ Instructions and project memory for coding agents working in this repository.
 - Blog content is DB-backed through `BlogPost`, `BlogCategory`, `Author`, and translation tables. Article body content is Markdown stored in `BlogPostTranslation.content`.
 - Homepage testimonials are DB-backed through `Testimonial` / `TestimonialTranslation`; admin testimonial create/update/delete/toggle actions must revalidate `/`, `/de`, `/en`, and `/ru`.
 - Homepage services, industries, case studies/projects, FAQ, and testimonials are DB-backed with message fallbacks. For services/industries/cases/FAQ, partial DB datasets must not hide the fuller message fallback; use DB rows only when they are at least as complete as the fallback set. Admin changes for those entities should call `revalidateHome()` from `src/features/admin/crud.ts`.
+- Services and industries have optional `coverImage` fields. Admin forms use `ImageUpload`; public homepage/index/detail views show the cover when present and fall back to the icon/emoji when absent.
+- Blog RSS is available at `/blog/rss.xml`, `/blog/rss.xml?lang=en`, and `/blog/rss.xml?lang=ru`; localized blog index metadata should expose the matching RSS alternate link.
+- Page-view analytics are privacy-light first-party tracking only: store path, locale, referrer, and timestamp, with no cookies and no IP address. Keep `/admin` excluded.
 - `npm run db:sync-home` copies the original homepage message content into editable DB records for services, industries, projects/cases, project categories, and FAQ. It is intentional overwrite/restore tooling; do not run it after manual admin edits unless you want to reset those sections back to message content.
 - SEO overrides are managed at `/admin/seo` through `SEOPage` / `SEOPageTranslation`. Store canonical internal paths there (`/`, `/leistungen`, `/branchen`, `/projekte`, `/blog`), not localized public aliases such as `/services` or `/ru/uslugi`.
 - Detail-page SEO overrides also use German canonical internal paths, for example `/leistungen/website-entwicklung`, `/branchen/hotels`, `/projekte/online-buchungen-verdreifacht`, and `/blog/lokales-seo-halle`; one `SEOPage` entry covers all locales through per-locale translations.
@@ -180,3 +189,4 @@ Instructions and project memory for coding agents working in this repository.
 - 2026-06-11: Applied `saaleweb-projekte-pages-update.zip`: added localized public project/case index and detail pages, `Projects` message namespace, `caseStudySchema`, sitemap entries for project index/detail URLs, and homepage case-card links to project detail pages while preserving the full-data fallback rule. Detail pages use `LocaleSlugsProvider`, `CreativeWork` JSON-LD, cover/gallery media, technologies, result, year, and 404 unpublished projects. Verified JSON parsing, `npm run typecheck`, `npm run lint`, `npm run build`, runtime `200` responses for `/projekte`, `/en/projects`, `/ru/proekty` and localized detail URLs, sitemap project URL presence, and homepage links. Consumed upload files were deleted.
 - 2026-06-11: Applied `saaleweb-seo-og-update.zip`: added `/admin/seo` CRUD for `SEOPage`, `buildMetadata()` / `getSeoOverride()`, generated OG helper `/api/og`, Open Graph/Twitter metadata for the homepage layout and index pages `/leistungen`, `/branchen`, `/projekte`, and image-field support inside translated admin form fields. Fixed the package's OG route by bundling `src/app/api/og/Geist-Bold.ttf` so `ImageResponse` always has a font when Google font loading fails. Verified `npm run typecheck`, `npm run lint`, `npm run build`, runtime OG/Twitter tags on `/`, `/leistungen`, `/branchen`, `/projekte`, `/api/og` returns `image/png`, and `/admin/seo` redirects to login without a session. Consumed upload files were deleted.
 - 2026-06-11: Applied `saaleweb-detail-seo-nav-update.zip`: extended `buildMetadata()` with `image` and `ogType`, moved service/industry/project/blog detail page metadata to `buildMetadata()` with German canonical SEOPage paths, cover-image OG fallback for projects/blog posts, and article OG type for blog posts. Replaced the top nav `cases` anchor with a localized `projects` link to `/projekte`, added a footer Projects link, and added an "All projects" button under homepage Cases while preserving the complete-DB fallback rule. Added `Nav.projects` and `Projects.all` to all message files. Verified JSON parsing, `npm run typecheck`, `npm run lint`, `npm run build`, runtime OG/Twitter tags on representative detail pages, localized project nav links for `/en` and `/ru`, and homepage `/projekte` links. Consumed upload files were deleted.
+- 2026-06-11: Applied `saaleweb-analytics-covers-rss-update.zip`: added privacy-light `PageView` analytics through `/api/track` and `PageViewTracker`, upgraded `/admin` dashboard with 7/30/90 day views/leads/top pages, added optional `coverImage` fields for services and industries with admin upload and public homepage/index/detail rendering, and added localized blog RSS at `/blog/rss.xml` plus `?lang=en` / `?lang=ru`. Ran `npm run db:push`, `npm run db:generate`, `npm run typecheck`, `npm run lint`, `npm run build`, verified RSS responses, `/api/track`, and `/admin` redirect without a session. Consumed upload files were deleted.

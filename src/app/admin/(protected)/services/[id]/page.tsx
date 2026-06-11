@@ -8,7 +8,14 @@ import { updateService } from "@/features/admin/services/actions";
 export const dynamic = "force-dynamic";
 
 type Tr = { locale: string; name: string; slug: string; excerpt: string | null; content: string | null };
-type Entity = { id: string; icon: string | null; order: number; published: boolean; translations: Tr[] };
+type Entity = {
+  id: string;
+  icon: string | null;
+  coverImage: string | null;
+  order: number;
+  published: boolean;
+  translations: Tr[];
+};
 
 export default async function EditServicePage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
@@ -27,6 +34,7 @@ export default async function EditServicePage({ params }: { params: Promise<{ id
     primary: entity.icon ?? "",
     order: entity.order,
     published: entity.published,
+    coverImage: entity.coverImage ?? "",
     translations: Object.fromEntries(
       routing.locales.map((l) => {
         const t = entity!.translations.find((x) => x.locale === l);

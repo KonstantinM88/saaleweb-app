@@ -6,7 +6,7 @@ import { Reveal } from "@/shared/ui/Reveal";
 import { SectionHeader } from "@/shared/ui/SectionHeader";
 
 type StaticItem = { name: string; desc: string };
-type Item = { name: string; desc: string; emoji: string };
+type Item = { name: string; desc: string; emoji: string; coverImage: string | null };
 const emojis = ["🏨", "🍽️", "💇", "🏗️", "🔧", "🩺", "🏠", "⚖️"];
 
 async function getDbIndustries(locale: AppLocale): Promise<Item[]> {
@@ -19,7 +19,12 @@ async function getDbIndustries(locale: AppLocale): Promise<Item[]> {
     return rows.flatMap((row, i) => {
       const tr = row.translations[0];
       if (!tr) return [];
-      return { name: tr.name, desc: tr.excerpt ?? "", emoji: row.emoji || emojis[i % emojis.length] };
+      return {
+        name: tr.name,
+        desc: tr.excerpt ?? "",
+        emoji: row.emoji || emojis[i % emojis.length],
+        coverImage: row.coverImage ?? null,
+      };
     });
   } catch {
     return [];
@@ -32,6 +37,7 @@ export async function Industries() {
   const fallback = (t.raw("items") as StaticItem[]).map((item, i) => ({
     ...item,
     emoji: emojis[i % emojis.length],
+    coverImage: null,
   }));
   const dbItems = await getDbIndustries(locale);
   const items = dbItems.length >= fallback.length ? dbItems : fallback;
@@ -44,7 +50,12 @@ export async function Industries() {
           {items.map((item, i) => (
             <Reveal key={i} delay={i * 50}>
               <div className="group h-full rounded-2xl border border-line bg-white p-5 text-center transition-all hover:-translate-y-1 hover:bg-dark">
-                <span className="mb-3 block text-2xl">{item.emoji}</span>
+                {item.coverImage ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img src={item.coverImage} alt="" className="mx-auto mb-3 h-12 w-12 rounded-lg object-cover" />
+                ) : (
+                  <span className="mb-3 block text-2xl">{item.emoji}</span>
+                )}
                 <h3 className="mb-1 text-[15.5px] font-bold text-dark transition-colors group-hover:text-white">
                   {item.name}
                 </h3>

@@ -28,6 +28,7 @@ function validate(trs: { locale: string; name: string; slug: string }[]): string
 function topLevel(fd: FormData) {
   return {
     icon: String(fd.get("icon") ?? "").trim() || null,
+    coverImage: String(fd.get("coverImage") ?? "").trim() || null,
     order: Number(fd.get("order") ?? 0) || 0,
     published: fd.get("published") === "on",
   };

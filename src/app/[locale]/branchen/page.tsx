@@ -17,15 +17,37 @@ import { buildMetadata } from "@/shared/seo/metadata";
 export const revalidate = 300;
 
 type Params = { locale: string };
-type Item = { name: string; slug: string; excerpt: string | null };
+type Item = {
+  name: string;
+  slug: string;
+  excerpt: string | null;
+  coverImage: string | null;
+};
 
 async function getItems(locale: AppLocale): Promise<Item[]> {
   try {
-    return (await prisma.industryTranslation.findMany({
+    const rows = (await prisma.industryTranslation.findMany({
       where: { locale, industry: { published: true } },
       orderBy: { industry: { order: "asc" } },
-      select: { name: true, slug: true, excerpt: true },
-    })) as Item[];
+      select: {
+        name: true,
+        slug: true,
+        excerpt: true,
+        industry: { select: { coverImage: true } },
+      },
+    })) as {
+      name: string;
+      slug: string;
+      excerpt: string | null;
+      industry: { coverImage: string | null };
+    }[];
+
+    return rows.map((row) => ({
+      name: row.name,
+      slug: row.slug,
+      excerpt: row.excerpt,
+      coverImage: row.industry.coverImage,
+    }));
   } catch {
     return [];
   }
@@ -89,6 +111,10 @@ export default async function IndustriesIndexPage({ params }: { params: Promise<
                     href={{ pathname: "/branchen/[slug]", params: { slug: s.slug } }}
                     className="group flex h-full flex-col rounded-[18px] border border-line bg-white p-6 transition-all hover:-translate-y-1.5 hover:border-transparent hover:shadow-lift"
                   >
+                    {s.coverImage && (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img src={s.coverImage} alt="" className="mb-4 h-36 w-full rounded-xl object-cover" />
+                    )}
                     <h2 className="text-lg font-bold text-dark group-hover:text-brand-purple">
                       {s.name}
                     </h2>

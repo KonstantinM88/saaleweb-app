@@ -4,7 +4,7 @@ import type { AppLocale } from "@/i18n/routing";
 import { Container } from "@/shared/ui/Container";
 
 type StaticItem = { title: string; desc: string };
-type Item = { title: string; desc: string; icon: string };
+type Item = { title: string; desc: string; icon: string; coverImage: string | null };
 const icons = ["⌘", "↗", "⌖", "✦", "⟳", "⚡", "☁", "⛭", "◎"];
 
 async function getDbServices(locale: AppLocale): Promise<Item[]> {
@@ -17,7 +17,12 @@ async function getDbServices(locale: AppLocale): Promise<Item[]> {
     return rows.flatMap((row, i) => {
       const tr = row.translations[0];
       if (!tr) return [];
-      return { title: tr.name, desc: tr.excerpt ?? "", icon: row.icon || icons[i % icons.length] };
+      return {
+        title: tr.name,
+        desc: tr.excerpt ?? "",
+        icon: row.icon || icons[i % icons.length],
+        coverImage: row.coverImage ?? null,
+      };
     });
   } catch {
     return [];
@@ -30,6 +35,7 @@ export async function Services() {
   const fallback = (t.raw("items") as StaticItem[]).map((item, i) => ({
     ...item,
     icon: icons[i % icons.length],
+    coverImage: null,
   }));
   const dbItems = await getDbServices(locale);
   const items = dbItems.length >= fallback.length ? dbItems : fallback;
@@ -53,8 +59,13 @@ export async function Services() {
               key={i}
               className="rounded-[18px] border border-line bg-white p-7 transition-all hover:-translate-y-1 hover:border-transparent hover:shadow-card"
             >
-              <div className="mb-[18px] grid h-[46px] w-[46px] place-items-center rounded-[13px] bg-brand-soft text-brand-purple">
-                {item.icon}
+              <div className="mb-[18px] grid h-[46px] w-[46px] place-items-center overflow-hidden rounded-[13px] bg-brand-soft text-brand-purple">
+                {item.coverImage ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img src={item.coverImage} alt="" className="h-full w-full object-cover" />
+                ) : (
+                  item.icon
+                )}
               </div>
               <h3 className="mb-2 text-lg font-bold text-dark">{item.title}</h3>
               <p className="text-[14.5px] text-muted">{item.desc}</p>

@@ -24,10 +24,17 @@ export async function generateMetadata({
   const languages = Object.fromEntries(
     routing.locales.map((l) => [l, getPathname({ locale: l, href: "/blog" })]),
   );
+  const rssHref =
+    locale === routing.defaultLocale ? "/blog/rss.xml" : `/blog/rss.xml?lang=${locale}`;
   return {
     title: t("title"),
     description: t("subtitle"),
-    alternates: { languages },
+    alternates: {
+      languages,
+      types: {
+        "application/rss+xml": rssHref,
+      },
+    },
   };
 }
 

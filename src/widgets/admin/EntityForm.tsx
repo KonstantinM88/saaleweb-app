@@ -3,6 +3,7 @@
 import { useActionState } from "react";
 import { routing } from "@/i18n/routing";
 import { adminInput, adminLabel, adminBtn } from "./ui";
+import { ImageUpload } from "./ImageUpload";
 
 export type EntityState = { error?: string };
 export type EntityTranslation = {
@@ -15,6 +16,7 @@ export type EntityDefaults = {
   primary: string;
   order: number;
   published: boolean;
+  coverImage?: string;
   translations: Record<string, EntityTranslation>;
 };
 
@@ -60,6 +62,16 @@ export function EntityForm({
           />
           Veröffentlicht
         </label>
+      </div>
+
+      <div className={adminLabel}>
+        Cover-Bild (optional)
+        <ImageUpload
+          name="coverImage"
+          defaultValue={defaults.coverImage ?? ""}
+          hint="800x600 px"
+          maxWidth={1000}
+        />
       </div>
 
       {routing.locales.map((locale) => {

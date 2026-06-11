@@ -8,7 +8,14 @@ import { updateIndustry } from "@/features/admin/industries/actions";
 export const dynamic = "force-dynamic";
 
 type Tr = { locale: string; name: string; slug: string; excerpt: string | null; content: string | null };
-type Entity = { id: string; emoji: string | null; order: number; published: boolean; translations: Tr[] };
+type Entity = {
+  id: string;
+  emoji: string | null;
+  coverImage: string | null;
+  order: number;
+  published: boolean;
+  translations: Tr[];
+};
 
 export default async function EditIndustryPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
@@ -25,6 +32,7 @@ export default async function EditIndustryPage({ params }: { params: Promise<{ i
 
   const defaults: EntityDefaults = {
     primary: entity.emoji ?? "",
+    coverImage: entity.coverImage ?? "",
     order: entity.order,
     published: entity.published,
     translations: Object.fromEntries(

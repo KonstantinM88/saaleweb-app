@@ -169,6 +169,7 @@ model ProjectTranslation {
 model Service {
   id           String               @id @default(cuid())
   icon         String?
+  coverImage   String?
   published    Boolean              @default(true)
   order        Int                  @default(0)
   translations ServiceTranslation[]
@@ -191,6 +192,7 @@ model ServiceTranslation {
 model Industry {
   id           String                @id @default(cuid())
   emoji        String?
+  coverImage   String?
   published    Boolean               @default(true)
   order        Int                   @default(0)
   translations IndustryTranslation[]
@@ -333,6 +335,17 @@ model SEOPageTranslation {
   ogImage     String?
 
   @@unique([pageId, locale])
+}
+
+model PageView {
+  id        String   @id @default(cuid())
+  path      String
+  locale    String
+  referrer  String?
+  createdAt DateTime @default(now())
+
+  @@index([createdAt])
+  @@index([path])
 }
 
 model Media {

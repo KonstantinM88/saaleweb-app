@@ -10,6 +10,7 @@ import { JsonLd } from "@/shared/seo/JsonLd";
 import { organizationSchema, websiteSchema } from "@/shared/seo/schema";
 import { getSeoOverride } from "@/shared/seo/metadata";
 import { ogImageUrl } from "@/shared/seo/og";
+import { PageViewTracker } from "@/features/analytics/PageViewTracker";
 import "../globals.css";
 
 
@@ -77,6 +78,7 @@ export default async function LocaleLayout({
     >
       <body className="font-sans">
         <JsonLd data={[organizationSchema(), websiteSchema(locale)]} />
+        <PageViewTracker locale={locale} />
         {/* next-intl 4: provider auto-inherits messages from i18n/request.ts */}
         <NextIntlClientProvider>{children}</NextIntlClientProvider>
       </body>

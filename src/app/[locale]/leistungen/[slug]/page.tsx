@@ -51,6 +51,7 @@ async function getServiceData(locale: AppLocale, slug: string) {
       name: tr.name as string,
       excerpt: (tr.excerpt as string | null) ?? null,
       content: (tr.content as string | null) ?? null,
+      coverImage: tr.service.coverImage as string | null,
       languages,
       slugs,
     };
@@ -75,6 +76,7 @@ export async function generateMetadata({
     title: data.name,
     description: data.excerpt ?? undefined,
     eyebrow: tp("servicesLabel"),
+    image: data.coverImage ?? undefined,
     languages: data.languages,
   });
 }
@@ -121,6 +123,14 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
               {data.name}
             </h1>
             {data.excerpt && <p className="mt-5 text-xl text-muted">{data.excerpt}</p>}
+            {data.coverImage && (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={data.coverImage}
+                alt={data.name}
+                className="mt-8 aspect-[16/9] w-full rounded-[18px] border border-line object-cover"
+              />
+            )}
             {data.content && (
               <div className="prose mt-8 max-w-none whitespace-pre-line text-[16px] leading-relaxed text-ink">
                 {data.content}
