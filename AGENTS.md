@@ -17,9 +17,10 @@ Instructions and project memory for coding agents working in this repository.
 - Architecture: Feature-Sliced Design.
 - Locales: `de`, `en`, `ru`; German is the default locale.
 - Locale routing: German lives at `/`, English at `/en`, Russian at `/ru`.
-- Public URL segments are localized through `next-intl` `pathnames`: services use `/leistungen`, `/services`, `/uslugi`; industries use `/branchen`, `/industries`, `/otrasli`; locations use `/standorte`, `/locations`, `/lokacii`; blog categories use `/blog/kategorie`, `/blog/category`, `/blog/kategoriya`.
+- Public URL segments are localized through `next-intl` `pathnames`: services use `/leistungen`, `/services`, `/uslugi`; industries use `/branchen`, `/industries`, `/otrasli`; pricing uses `/preise`, `/pricing`, `/tseny`; locations use `/standorte`, `/locations`, `/lokacii`; blog categories use `/blog/kategorie`, `/blog/category`, `/blog/kategoriya`.
 - Public service and industry index pages exist at `/leistungen` and `/branchen` with localized public URLs; cards link to DB-backed detail pages.
 - Public project/case pages exist at `/projekte`, `/projects`, `/proekty` and detail pages at localized `/projekte/[slug]`, `/projects/[slug]`, `/proekty/[slug]`.
+- Public pricing page exists at `/preise`, `/en/pricing`, and `/ru/tseny`; homepage pricing section remains available at `#pricing`.
 - Most homepage sections now prefer published DB rows and fall back to `messages/*.json` when DB data is unavailable, empty, or incomplete. DB-backed homepage sections include services, industries, case studies/projects, FAQ, and testimonials.
 - Database is required for contact form persistence and future CMS/content features.
 - First-party analytics stores page views in `PageView` via `/api/track` without cookies or IP storage; admin routes are not tracked.
@@ -35,6 +36,7 @@ Instructions and project memory for coding agents working in this repository.
 - `src/widgets/` - page sections.
 - `src/widgets/testimonials/Testimonials.tsx` - homepage testimonial section; reads published testimonials from DB by locale and falls back to message JSON.
 - `src/widgets/services/Services.tsx`, `src/widgets/industries/Industries.tsx`, `src/widgets/case-studies/CaseStudies.tsx`, `src/widgets/faq/Faq.tsx` - homepage sections that read published DB content by locale with message fallbacks.
+- `src/widgets/pricing/Pricing.tsx` and `src/widgets/pricing/PricingPlans.tsx` - homepage and pricing-page tariff rendering with DB rows and message fallback.
 - `src/widgets/blog/` - blog UI pieces such as post cards, table of contents, and share buttons.
 - `src/features/` - interactive feature units such as contact and language switching.
 - `src/features/analytics/PageViewTracker.tsx` - client-side first-party page-view tracker mounted in the locale layout.
@@ -50,9 +52,10 @@ Instructions and project memory for coding agents working in this repository.
 - `src/app/[locale]/leistungen/page.tsx` - localized service index page from DB content.
 - `src/app/[locale]/branchen/page.tsx` - localized industry index page from DB content.
 - `src/app/[locale]/projekte/` - localized project/case index and detail pages from DB content.
+- `src/app/[locale]/preise/page.tsx` - localized pricing page from DB-backed tariff plans.
 - `src/app/admin/` - non-localized protected admin/CMS area.
 - `src/features/auth/` - env-based admin authentication, JWT session cookie, login/logout actions.
-- `src/features/admin/` - admin server actions for services, industries, blog posts, and leads.
+- `src/features/admin/` - admin server actions for services, industries, pricing plans, blog posts, and leads.
 - `src/features/admin/crud.ts` - shared admin form helpers; keep translation rows typed with Prisma `Locale`.
 - `src/features/admin/projects/media.ts` - server actions for project media create/update/delete and homepage/admin revalidation.
 - `src/features/admin/upload/storage.ts` - admin image storage abstraction for Vercel Blob and local `public/uploads` fallback.
@@ -85,6 +88,7 @@ Instructions and project memory for coding agents working in this repository.
 - Create migration: `npm run db:migrate`
 - Seed database: `npm run db:seed`
 - Sync original homepage message content into editable DB rows: `npm run db:sync-home`
+- Sync original pricing message content into editable DB rows: `npm run db:sync-pricing`
 - Open Prisma Studio: `npm run db:studio`
 - Generate admin password hash: `node scripts/hash-password.mjs "your-password"`
 
@@ -140,7 +144,9 @@ Instructions and project memory for coding agents working in this repository.
 - Project media uses `Media` rows. `Media.order` controls ordering; the lowest-order image is treated as the project cover on the homepage and the remaining rows are gallery-ready.
 - Public project detail pages use DB `ProjectTranslation` challenge/solution/results, `Project.technologies`, `Project.resultValue`, `Project.year`, and `Media` rows. Unpublished projects must not be reachable by direct slug.
 - Detail pages with translated slugs should wrap content in `LocaleSlugsProvider`; `LanguageSwitcher` uses that map to switch to the target locale's real slug instead of reusing the current slug.
-- Admin pages are outside localized routing at `/admin`, are `noindex`, and are protected by both `src/proxy.ts` and the admin protected layout. Current admin sections cover leads, services, industries, projects/cases, blog posts, blog categories, authors, testimonials, and FAQ.
+- Pricing plans are DB-backed through `PricingPlan` / `PricingPlanTranslation`; features are stored as `String[]` and edited one item per line in `/admin/pricing`.
+- `npm run db:sync-pricing` copies the original `messages/*.json` pricing packages into editable DB records. It updates plans by German name or order, so do not run it after manual admin edits unless you intentionally want to reset the public pricing content back to message values.
+- Admin pages are outside localized routing at `/admin`, are `noindex`, and are protected by both `src/proxy.ts` and the admin protected layout. Current admin sections cover leads, services, industries, pricing, projects/cases, blog posts, blog categories, authors, testimonials, SEO, and FAQ.
 - Project categories are managed separately at `/admin/project-categories` and can be selected in project/case forms.
 - `prisma/seed.ts` should remain repeatable; demo service/testimonial/FAQ/blog records must not fail on existing unique slugs.
 - Keep seed content as real UTF-8 text. If RU/DE content renders as mojibake, check `prisma/seed.ts` first before blaming PostgreSQL encoding.
@@ -190,3 +196,5 @@ Instructions and project memory for coding agents working in this repository.
 - 2026-06-11: Applied `saaleweb-seo-og-update.zip`: added `/admin/seo` CRUD for `SEOPage`, `buildMetadata()` / `getSeoOverride()`, generated OG helper `/api/og`, Open Graph/Twitter metadata for the homepage layout and index pages `/leistungen`, `/branchen`, `/projekte`, and image-field support inside translated admin form fields. Fixed the package's OG route by bundling `src/app/api/og/Geist-Bold.ttf` so `ImageResponse` always has a font when Google font loading fails. Verified `npm run typecheck`, `npm run lint`, `npm run build`, runtime OG/Twitter tags on `/`, `/leistungen`, `/branchen`, `/projekte`, `/api/og` returns `image/png`, and `/admin/seo` redirects to login without a session. Consumed upload files were deleted.
 - 2026-06-11: Applied `saaleweb-detail-seo-nav-update.zip`: extended `buildMetadata()` with `image` and `ogType`, moved service/industry/project/blog detail page metadata to `buildMetadata()` with German canonical SEOPage paths, cover-image OG fallback for projects/blog posts, and article OG type for blog posts. Replaced the top nav `cases` anchor with a localized `projects` link to `/projekte`, added a footer Projects link, and added an "All projects" button under homepage Cases while preserving the complete-DB fallback rule. Added `Nav.projects` and `Projects.all` to all message files. Verified JSON parsing, `npm run typecheck`, `npm run lint`, `npm run build`, runtime OG/Twitter tags on representative detail pages, localized project nav links for `/en` and `/ru`, and homepage `/projekte` links. Consumed upload files were deleted.
 - 2026-06-11: Applied `saaleweb-analytics-covers-rss-update.zip`: added privacy-light `PageView` analytics through `/api/track` and `PageViewTracker`, upgraded `/admin` dashboard with 7/30/90 day views/leads/top pages, added optional `coverImage` fields for services and industries with admin upload and public homepage/index/detail rendering, and added localized blog RSS at `/blog/rss.xml` plus `?lang=en` / `?lang=ru`. Ran `npm run db:push`, `npm run db:generate`, `npm run typecheck`, `npm run lint`, `npm run build`, verified RSS responses, `/api/track`, and `/admin` redirect without a session. Consumed upload files were deleted.
+- 2026-06-11: Applied `saaleweb-pricing-page-update.zip`: added DB-backed `PricingPlan` / `PricingPlanTranslation`, public localized pricing page `/preise` with public aliases `/en/pricing` and `/ru/tseny`, shared `PricingPlans` rendering, DB-backed homepage pricing fallback to `messages`, `/admin/pricing` CRUD, navbar/footer links to the pricing page, and sitemap pricing entries. Ran `npm run db:push`, `npm run db:generate`, `npm run typecheck`, `npm run lint`, `npm run build`, verified production `200` responses for `/preise`, `/en/pricing`, `/ru/tseny`, sitemap localized pricing URLs, and protected `/admin/pricing` redirect without a session. Consumed upload files were deleted.
+- 2026-06-11: Added `scripts/sync-pricing-content.ts` and `npm run db:sync-pricing`, then synced the original `messages` pricing packages into the current DB so they are editable from `/admin/pricing`. The sync produced 3 published plans: Starter, Business, and Premium, each with DE/EN/RU translations; Business is marked featured. Verified DB rows, `npm run typecheck`, and `npm run lint`.

@@ -9,7 +9,7 @@ export const siteConfig = {
     { key: "services", href: "/leistungen" },
     { key: "industries", href: "/branchen" },
     { key: "projects", href: "/projekte" },
-    { key: "pricing", href: "/#pricing" },
+    { key: "pricing", href: "/preise" },
     { key: "blog", href: "/blog" },
     { key: "faq", href: "/#faq" },
   ],

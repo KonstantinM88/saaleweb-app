@@ -29,6 +29,7 @@ export const routing = defineRouting({
       en: "/industries/[slug]",
       ru: "/otrasli/[slug]",
     },
+    "/preise": { de: "/preise", en: "/pricing", ru: "/tseny" },
     "/projekte": { de: "/projekte", en: "/projects", ru: "/proekty" },
     "/projekte/[slug]": {
       de: "/projekte/[slug]",

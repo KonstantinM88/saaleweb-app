@@ -162,6 +162,27 @@ model ProjectTranslation {
   @@unique([locale, slug])
 }
 
+model PricingPlan {
+  id           String                   @id @default(cuid())
+  featured     Boolean                  @default(false)
+  published    Boolean                  @default(true)
+  order        Int                      @default(0)
+  translations PricingPlanTranslation[]
+}
+
+model PricingPlanTranslation {
+  id       String      @id @default(cuid())
+  plan     PricingPlan @relation(fields: [planId], references: [id], onDelete: Cascade)
+  planId   String
+  locale   Locale
+  name     String
+  sub      String?
+  price    String
+  features String[]
+
+  @@unique([planId, locale])
+}
+
 // ---------------------------------------------------------------------------
 // Services & industries
 // ---------------------------------------------------------------------------

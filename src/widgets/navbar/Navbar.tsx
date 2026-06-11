@@ -32,7 +32,7 @@ export function Navbar() {
     return (
       <Link
         key={item.key}
-        href={item.href as "/leistungen" | "/branchen" | "/projekte" | "/blog"}
+        href={item.href as "/leistungen" | "/branchen" | "/projekte" | "/preise" | "/blog"}
         onClick={onClick}
         className="transition-colors hover:text-brand-pink"
       >
