@@ -12,6 +12,7 @@ import { Breadcrumbs } from "@/shared/ui/Breadcrumbs";
 import { CtaBanner } from "@/shared/ui/CtaBanner";
 import { JsonLd } from "@/shared/seo/JsonLd";
 import { breadcrumbSchema } from "@/shared/seo/schema";
+import { buildMetadata } from "@/shared/seo/metadata";
 
 export const revalidate = 300;
 
@@ -37,7 +38,14 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   const languages = Object.fromEntries(
     routing.locales.map((l) => [l, getPathname({ locale: l, href: "/leistungen" })]),
   );
-  return { title: t("title"), description: t("lead"), alternates: { languages } };
+  return buildMetadata({
+    path: "/leistungen",
+    locale,
+    title: t("title"),
+    description: t("lead"),
+    eyebrow: t("eyebrow"),
+    languages,
+  });
 }
 
 export default async function ServicesIndexPage({ params }: { params: Promise<Params> }) {

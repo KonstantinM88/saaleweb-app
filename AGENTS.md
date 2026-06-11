@@ -39,6 +39,8 @@ Instructions and project memory for coding agents working in this repository.
 - `src/features/language-switcher/LocaleSlugsContext.tsx` - per-locale slug context used by detail pages for smart language switching.
 - `src/shared/` - shared UI, config, helpers.
 - `src/shared/config/site.ts` - site identity, contact data, nav keys.
+- `src/shared/seo/metadata.ts` - admin-managed `SEOPage` overrides and Open Graph/Twitter metadata builder.
+- `src/shared/seo/og.ts` - absolute dynamic OG image URL helper for `/api/og`.
 - `src/entities/blog/api.ts` - DB-backed blog queries.
 - `src/shared/lib/markdown.ts` - Markdown TOC extraction and reading-time helper.
 - `src/app/[locale]/blog/` - localized blog listing and article pages.
@@ -52,6 +54,7 @@ Instructions and project memory for coding agents working in this repository.
 - `src/features/admin/projects/media.ts` - server actions for project media create/update/delete and homepage/admin revalidation.
 - `src/features/admin/upload/storage.ts` - admin image storage abstraction for Vercel Blob and local `public/uploads` fallback.
 - `src/app/admin/api/upload/route.ts` - protected image upload route; converts uploads to WebP.
+- `src/app/api/og/route.tsx` - dynamic Open Graph image endpoint using `next/og`.
 - `src/widgets/admin/` - admin UI forms, sidebar, page headers, and controls.
 - `src/widgets/admin/GenericForm.tsx` - reusable config-driven admin create/edit form for multilingual records.
 - `src/widgets/admin/ImageUpload.tsx` - admin image upload field with preview and editable URL.
@@ -122,6 +125,8 @@ Instructions and project memory for coding agents working in this repository.
 - Homepage testimonials are DB-backed through `Testimonial` / `TestimonialTranslation`; admin testimonial create/update/delete/toggle actions must revalidate `/`, `/de`, `/en`, and `/ru`.
 - Homepage services, industries, case studies/projects, FAQ, and testimonials are DB-backed with message fallbacks. For services/industries/cases/FAQ, partial DB datasets must not hide the fuller message fallback; use DB rows only when they are at least as complete as the fallback set. Admin changes for those entities should call `revalidateHome()` from `src/features/admin/crud.ts`.
 - `npm run db:sync-home` copies the original homepage message content into editable DB records for services, industries, projects/cases, project categories, and FAQ. It is intentional overwrite/restore tooling; do not run it after manual admin edits unless you want to reset those sections back to message content.
+- SEO overrides are managed at `/admin/seo` through `SEOPage` / `SEOPageTranslation`. Store canonical internal paths there (`/`, `/leistungen`, `/branchen`, `/projekte`, `/blog`), not localized public aliases such as `/services` or `/ru/uslugi`.
+- The dynamic OG endpoint `/api/og` requires at least one bundled font for `ImageResponse`; keep `src/app/api/og/Geist-Bold.ttf` in place as the local fallback if Google font loading fails.
 - Project media uses `Media` rows. `Media.order` controls ordering; the lowest-order image is treated as the project cover on the homepage and the remaining rows are gallery-ready.
 - Public project detail pages use DB `ProjectTranslation` challenge/solution/results, `Project.technologies`, `Project.resultValue`, `Project.year`, and `Media` rows. Unpublished projects must not be reachable by direct slug.
 - Detail pages with translated slugs should wrap content in `LocaleSlugsProvider`; `LanguageSwitcher` uses that map to switch to the target locale's real slug instead of reusing the current slug.
@@ -172,3 +177,4 @@ Instructions and project memory for coding agents working in this repository.
 - 2026-06-11: Restored the complete pre-DB homepage content for Services/Industries/CaseStudies/FAQ when the DB contains only a partial dataset. Those widgets now use DB rows only when `dbItems.length >= fallback.length`; otherwise they render the original `messages` data. Verified `npm run typecheck`, `npm run lint`, `npm run build`, and production HTML contains old service cards such as `SEO Optimierung`, `KI Integration`, and `Hosting`.
 - 2026-06-11: Added `scripts/sync-homepage-content.ts` and `npm run db:sync-home`, then synced the original homepage message content into the current DB so it is editable from admin. The sync produced 9 published services, 8 industries, 6 FAQ rows, and 3 published projects/cases with project categories. Verified `npm run typecheck`, `npm run lint`, `npm run build`, and production HTML contains synced items such as `SEO Optimierung`, `KI Integration`, `Hosting`, and `Online-Buchungen verdreifacht`.
 - 2026-06-11: Applied `saaleweb-projekte-pages-update.zip`: added localized public project/case index and detail pages, `Projects` message namespace, `caseStudySchema`, sitemap entries for project index/detail URLs, and homepage case-card links to project detail pages while preserving the full-data fallback rule. Detail pages use `LocaleSlugsProvider`, `CreativeWork` JSON-LD, cover/gallery media, technologies, result, year, and 404 unpublished projects. Verified JSON parsing, `npm run typecheck`, `npm run lint`, `npm run build`, runtime `200` responses for `/projekte`, `/en/projects`, `/ru/proekty` and localized detail URLs, sitemap project URL presence, and homepage links. Consumed upload files were deleted.
+- 2026-06-11: Applied `saaleweb-seo-og-update.zip`: added `/admin/seo` CRUD for `SEOPage`, `buildMetadata()` / `getSeoOverride()`, generated OG helper `/api/og`, Open Graph/Twitter metadata for the homepage layout and index pages `/leistungen`, `/branchen`, `/projekte`, and image-field support inside translated admin form fields. Fixed the package's OG route by bundling `src/app/api/og/Geist-Bold.ttf` so `ImageResponse` always has a font when Google font loading fails. Verified `npm run typecheck`, `npm run lint`, `npm run build`, runtime OG/Twitter tags on `/`, `/leistungen`, `/branchen`, `/projekte`, `/api/og` returns `image/png`, and `/admin/seo` redirects to login without a session. Consumed upload files were deleted.

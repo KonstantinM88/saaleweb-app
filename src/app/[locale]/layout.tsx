@@ -8,6 +8,8 @@ import { routing } from "@/i18n/routing";
 import { siteConfig } from "@/shared/config/site";
 import { JsonLd } from "@/shared/seo/JsonLd";
 import { organizationSchema, websiteSchema } from "@/shared/seo/schema";
+import { getSeoOverride } from "@/shared/seo/metadata";
+import { ogImageUrl } from "@/shared/seo/og";
 import "../globals.css";
 
 
@@ -27,18 +29,30 @@ export async function generateMetadata({
     routing.locales.map((l) => [l, l === routing.defaultLocale ? "/" : `/${l}`]),
   );
 
+  const override = await getSeoOverride("/", locale);
+  const title = override?.title || t("title");
+  const description = override?.description || t("description");
+  const ogImage = override?.ogImage || ogImageUrl({ title });
+
   return {
     metadataBase: new URL(siteConfig.url),
-    title: { default: t("title"), template: `%s · ${siteConfig.name}` },
-    description: t("description"),
+    title: { default: title, template: `%s · ${siteConfig.name}` },
+    description,
     alternates: { canonical: "/", languages },
     openGraph: {
-      title: t("title"),
-      description: t("description"),
+      title,
+      description,
       url: siteConfig.url,
       siteName: siteConfig.name,
       locale,
       type: "website",
+      images: [{ url: ogImage, width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [ogImage],
     },
   };
 }

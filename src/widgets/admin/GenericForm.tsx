@@ -105,15 +105,27 @@ export function GenericForm({
               {LOCALE_LABEL[locale] ?? locale}
             </legend>
             <div className="grid gap-4 sm:grid-cols-2">
-              {localeFields.map((f) => (
-                <label
-                  key={f.name}
-                  className={`${adminLabel} ${f.type === "textarea" || f.span2 ? "sm:col-span-2" : ""}`}
-                >
-                  {f.label}
-                  <Input field={f} name={`${f.name}_${locale}`} value={tr[f.name] ?? ""} />
-                </label>
-              ))}
+              {localeFields.map((f) =>
+                f.type === "image" ? (
+                  <div key={f.name} className={`${adminLabel} sm:col-span-2`}>
+                    {f.label}
+                    <ImageUpload
+                      name={`${f.name}_${locale}`}
+                      defaultValue={tr[f.name] ?? ""}
+                      hint={f.hint}
+                      maxWidth={f.maxWidth}
+                    />
+                  </div>
+                ) : (
+                  <label
+                    key={f.name}
+                    className={`${adminLabel} ${f.type === "textarea" || f.span2 ? "sm:col-span-2" : ""}`}
+                  >
+                    {f.label}
+                    <Input field={f} name={`${f.name}_${locale}`} value={tr[f.name] ?? ""} />
+                  </label>
+                ),
+              )}
             </div>
           </fieldset>
         );

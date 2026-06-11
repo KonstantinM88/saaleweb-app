@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LayoutDashboard, Inbox, Wrench, Building2, Newspaper, FolderKanban, Layers, HelpCircle, Star, Users, Tags, LogOut } from "lucide-react";
+import { LayoutDashboard, Inbox, Wrench, Building2, Newspaper, FolderKanban, Layers, HelpCircle, Star, Users, Tags, Search, LogOut } from "lucide-react";
 import { logout } from "@/features/auth/actions";
 import { cn } from "@/shared/lib/cn";
 
@@ -18,6 +18,7 @@ const items = [
   { href: "/admin/authors", label: "Autoren", icon: Users },
   { href: "/admin/testimonials", label: "Testimonials", icon: Star },
   { href: "/admin/faq", label: "FAQ", icon: HelpCircle },
+  { href: "/admin/seo", label: "SEO", icon: Search },
 ];
 
 export function AdminSidebar({ email }: { email: string }) {
