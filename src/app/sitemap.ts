@@ -30,8 +30,8 @@ function entry(
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const entries: MetadataRoute.Sitemap = [];
 
-  // Home + blog index (same path key across locales, prefix differs)
-  for (const href of ["/", "/blog"] as const) {
+  // Home + index pages (same path key across locales, prefix/pathnames differ)
+  for (const href of ["/", "/blog", "/leistungen", "/branchen", "/projekte"] as const) {
     const languages = Object.fromEntries(
       routing.locales.map((l) => [l, abs(getPathname({ locale: l, href }))]),
     );
@@ -106,6 +106,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       select: { locale: true, slug: true, industryId: true },
     })) as { locale: string; slug: string; industryId: string }[];
     entries.push(...groupDbEntries(industries, (r) => r.industryId, "/branchen/[slug]"));
+
+    const projects = (await prisma.projectTranslation.findMany({
+      where: { project: { published: true } },
+      select: { locale: true, slug: true, projectId: true },
+    })) as { locale: string; slug: string; projectId: string }[];
+    entries.push(...groupDbEntries(projects, (r) => r.projectId, "/projekte/[slug]"));
   } catch {
     // No DB during build — file-based routes are emitted regardless.
   }
@@ -116,7 +122,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 function groupDbEntries<T extends { locale: string; slug: string }>(
   rows: T[],
   idOf: (r: T) => string,
-  pathname: "/leistungen/[slug]" | "/branchen/[slug]",
+  pathname: "/leistungen/[slug]" | "/branchen/[slug]" | "/projekte/[slug]",
 ): MetadataRoute.Sitemap {
   const groups = new Map<string, T[]>();
   for (const r of rows) {

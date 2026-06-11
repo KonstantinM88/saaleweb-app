@@ -208,6 +208,17 @@
       }
     ]
   },
+  "Projects": {
+    "label": "Projekte",
+    "lead": "Ausgewählte Projekte und Ergebnisse aus der Praxis.",
+    "challenge": "Herausforderung",
+    "solution": "Lösung",
+    "results": "Ergebnisse",
+    "gallery": "Galerie",
+    "tech": "Eingesetzte Technologien",
+    "result": "Ergebnis",
+    "empty": "Noch keine Projekte veröffentlicht."
+  },
   "Industries": {
     "eyebrow": "Branchen",
     "title": "Spezialisiert auf Ihre Branche",

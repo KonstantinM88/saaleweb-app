@@ -208,6 +208,17 @@
       }
     ]
   },
+  "Projects": {
+    "label": "Projects",
+    "lead": "Selected projects and real-world results.",
+    "challenge": "Challenge",
+    "solution": "Solution",
+    "results": "Results",
+    "gallery": "Gallery",
+    "tech": "Technologies used",
+    "result": "Result",
+    "empty": "No projects published yet."
+  },
   "Industries": {
     "eyebrow": "Industries",
     "title": "Specialized in your industry",

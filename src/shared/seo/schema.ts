@@ -106,6 +106,26 @@ export function breadcrumbSchema(items: { name: string; path: string }[]) {
   };
 }
 
+export function caseStudySchema(input: {
+  title: string;
+  description?: string | null;
+  path: string;
+  locale: string;
+  image?: string | null;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    name: input.title,
+    description: input.description ?? undefined,
+    inLanguage: input.locale,
+    image: input.image ?? undefined,
+    url: `${URL}${input.path}`,
+    creator: { "@id": ORG_ID },
+    provider: { "@id": ORG_ID },
+  };
+}
+
 export function articleSchema(input: {
   title: string;
   description?: string | null;
