@@ -31,11 +31,13 @@ export async function buildMetadata(opts: {
   description?: string;
   eyebrow?: string;
   languages?: Record<string, string>;
+  image?: string | null;
+  ogType?: "website" | "article";
 }): Promise<Metadata> {
   const override = await getSeoOverride(opts.path, opts.locale);
   const title = override?.title || opts.title;
   const description = override?.description || opts.description;
-  const ogImage = override?.ogImage || ogImageUrl({ title, eyebrow: opts.eyebrow });
+  const ogImage = override?.ogImage || opts.image || ogImageUrl({ title, eyebrow: opts.eyebrow });
 
   return {
     title,
@@ -44,7 +46,7 @@ export async function buildMetadata(opts: {
     openGraph: {
       title,
       description,
-      type: "website",
+      type: opts.ogType ?? "website",
       images: [{ url: ogImage, width: 1200, height: 630 }],
     },
     twitter: {

@@ -12,6 +12,7 @@ import { Breadcrumbs } from "@/shared/ui/Breadcrumbs";
 import { CtaBanner } from "@/shared/ui/CtaBanner";
 import { JsonLd } from "@/shared/seo/JsonLd";
 import { serviceSchema, breadcrumbSchema } from "@/shared/seo/schema";
+import { buildMetadata } from "@/shared/seo/metadata";
 import { LocaleSlugsProvider } from "@/features/language-switcher/LocaleSlugsContext";
 
 type Params = { locale: string; slug: string };
@@ -65,11 +66,15 @@ export async function generateMetadata({
   if (!hasLocale(routing.locales, locale)) return {};
   const data = await getIndustryData(locale, slug);
   if (!data) return {};
-  return {
+  const tp = await getTranslations({ locale, namespace: "Pages" });
+  return buildMetadata({
+    path: `/branchen/${data.slugs.de ?? slug}`,
+    locale,
     title: data.name,
     description: data.excerpt ?? undefined,
-    alternates: { languages: data.languages },
-  };
+    eyebrow: tp("industriesLabel"),
+    languages: data.languages,
+  });
 }
 
 export default async function IndustryPage({ params }: { params: Promise<Params> }) {

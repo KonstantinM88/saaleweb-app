@@ -12,6 +12,7 @@ import { Breadcrumbs } from "@/shared/ui/Breadcrumbs";
 import { CtaBanner } from "@/shared/ui/CtaBanner";
 import { JsonLd } from "@/shared/seo/JsonLd";
 import { caseStudySchema, breadcrumbSchema } from "@/shared/seo/schema";
+import { buildMetadata } from "@/shared/seo/metadata";
 import { LocaleSlugsProvider } from "@/features/language-switcher/LocaleSlugsContext";
 
 type Params = { locale: string; slug: string };
@@ -81,12 +82,16 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   if (!hasLocale(routing.locales, locale)) return {};
   const data = await getProjectData(locale, slug);
   if (!data) return {};
-  return {
+  const tp = await getTranslations({ locale, namespace: "Projects" });
+  return buildMetadata({
+    path: `/projekte/${data.slugs.de ?? slug}`,
+    locale,
     title: data.title,
     description: data.challenge ?? data.results ?? undefined,
-    alternates: { languages: data.languages },
-    openGraph: data.cover ? { images: [{ url: data.cover }] } : undefined,
-  };
+    eyebrow: data.tag || tp("label"),
+    languages: data.languages,
+    image: data.cover,
+  });
 }
 
 export default async function ProjectPage({ params }: { params: Promise<Params> }) {

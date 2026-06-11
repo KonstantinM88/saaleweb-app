@@ -12,6 +12,7 @@
     "services": "Leistungen",
     "industries": "Branchen",
     "cases": "Cases",
+    "projects": "Projekte",
     "pricing": "Preise",
     "faq": "FAQ",
     "cta": "Erstgespräch",
@@ -217,6 +218,7 @@
     "gallery": "Galerie",
     "tech": "Eingesetzte Technologien",
     "result": "Ergebnis",
+    "all": "Alle Projekte",
     "empty": "Noch keine Projekte veröffentlicht."
   },
   "Industries": {

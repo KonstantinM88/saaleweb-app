@@ -8,7 +8,7 @@ export const siteConfig = {
   nav: [
     { key: "services", href: "/leistungen" },
     { key: "industries", href: "/branchen" },
-    { key: "cases", href: "/#cases" },
+    { key: "projects", href: "/projekte" },
     { key: "pricing", href: "/#pricing" },
     { key: "blog", href: "/blog" },
     { key: "faq", href: "/#faq" },

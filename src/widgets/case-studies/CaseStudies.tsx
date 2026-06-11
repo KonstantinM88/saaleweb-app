@@ -61,6 +61,7 @@ async function getDbCases(locale: AppLocale): Promise<Card[]> {
 export async function CaseStudies() {
   const locale = (await getLocale()) as AppLocale;
   const t = await getTranslations({ locale, namespace: "CaseStudies" });
+  const tp = await getTranslations({ locale, namespace: "Projects" });
   const fallback: Card[] = (t.raw("items") as StaticItem[]).map((item, i) => ({
     slug: null,
     tag: item.tag,
@@ -132,6 +133,14 @@ export async function CaseStudies() {
               </Reveal>
             );
           })}
+        </div>
+        <div className="mt-10 text-center">
+          <Link
+            href="/projekte"
+            className="inline-flex items-center gap-2 rounded-xl border border-line bg-white px-6 py-3 text-sm font-semibold text-dark transition-all hover:-translate-y-0.5 hover:border-brand-purple hover:text-brand-purple"
+          >
+            {tp("all")} -&gt;
+          </Link>
         </div>
       </Container>
     </section>

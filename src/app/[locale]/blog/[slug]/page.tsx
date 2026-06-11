@@ -18,6 +18,7 @@ import { CtaBanner } from "@/shared/ui/CtaBanner";
 import { Link } from "@/i18n/navigation";
 import { JsonLd } from "@/shared/seo/JsonLd";
 import { articleSchema, breadcrumbSchema } from "@/shared/seo/schema";
+import { buildMetadata } from "@/shared/seo/metadata";
 import { Toc } from "@/widgets/blog/Toc";
 import { ShareButtons } from "@/widgets/blog/ShareButtons";
 import { PostCard } from "@/widgets/blog/PostCard";
@@ -46,17 +47,16 @@ export async function generateMetadata({
   if (!hasLocale(routing.locales, locale)) return {};
   const post = await getPost(locale as AppLocale, slug);
   if (!post) return {};
-  return {
+  return buildMetadata({
+    path: `/blog/${post.slugs.de ?? slug}`,
+    locale,
     title: post.title,
     description: post.excerpt ?? undefined,
-    alternates: { languages: post.languages },
-    openGraph: {
-      type: "article",
-      title: post.title,
-      description: post.excerpt ?? undefined,
-      images: post.coverImage ? [post.coverImage] : undefined,
-    },
-  };
+    eyebrow: post.category?.name ?? "Blog",
+    languages: post.languages,
+    image: post.coverImage,
+    ogType: "article",
+  });
 }
 
 export default async function BlogPostPage({ params }: { params: Promise<Params> }) {

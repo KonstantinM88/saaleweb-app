@@ -12,6 +12,7 @@
     "services": "Services",
     "industries": "Industries",
     "cases": "Cases",
+    "projects": "Projects",
     "pricing": "Pricing",
     "faq": "FAQ",
     "cta": "Free call",
@@ -217,6 +218,7 @@
     "gallery": "Gallery",
     "tech": "Technologies used",
     "result": "Result",
+    "all": "All projects",
     "empty": "No projects published yet."
   },
   "Industries": {

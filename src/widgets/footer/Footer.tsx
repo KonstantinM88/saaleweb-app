@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 import { Container } from "@/shared/ui/Container";
 import { siteConfig } from "@/shared/config/site";
+import { Link } from "@/i18n/navigation";
 
 export function Footer() {
   const t = useTranslations("Footer");
@@ -35,7 +36,7 @@ export function Footer() {
           </FooterCol>
 
           <FooterCol title={t("company")}>
-            <a href="#cases">{tn("cases")}</a>
+            <Link href="/projekte">{tn("projects")}</Link>
             <a href="#pricing">{tn("pricing")}</a>
             <a href="#faq">{tn("faq")}</a>
             <a href="#contact">{t("contact")}</a>
