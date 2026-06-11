@@ -33,12 +33,17 @@ export async function POST(req: Request) {
   const buffer = Buffer.from(await file.arrayBuffer());
 
   let webp: Buffer;
+  let width: number | undefined;
+  let height: number | undefined;
   try {
-    webp = await sharp(buffer)
+    const result = await sharp(buffer)
       .rotate() // respect EXIF orientation
       .resize({ width: maxWidth, withoutEnlargement: true })
       .webp({ quality: 82 })
-      .toBuffer();
+      .toBuffer({ resolveWithObject: true });
+    webp = result.data;
+    width = result.info.width;
+    height = result.info.height;
   } catch {
     return NextResponse.json({ error: "Bild konnte nicht verarbeitet werden." }, { status: 400 });
   }
@@ -46,7 +51,7 @@ export async function POST(req: Request) {
   const filename = `${Date.now()}-${slugify(file.name)}.webp`;
   try {
     const url = await storeImage(webp, filename);
-    return NextResponse.json({ url });
+    return NextResponse.json({ url, width, height });
   } catch {
     return NextResponse.json({ error: "Upload fehlgeschlagen." }, { status: 500 });
   }

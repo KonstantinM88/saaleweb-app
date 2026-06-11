@@ -1,17 +1,32 @@
-"use client";
-
-import { useState } from "react";
-import { useTranslations } from "next-intl";
-import { Plus } from "lucide-react";
+import { getTranslations, getLocale } from "next-intl/server";
+import { prisma } from "@/lib/prisma";
+import type { AppLocale } from "@/i18n/routing";
 import { Container } from "@/shared/ui/Container";
-import { cn } from "@/shared/lib/cn";
+import { FaqAccordion, type QA } from "./FaqAccordion";
 
-type QA = { q: string; a: string };
+async function getDbFaq(locale: AppLocale): Promise<QA[]> {
+  try {
+    const rows = await prisma.faq.findMany({
+      where: { published: true },
+      orderBy: { order: "asc" },
+      include: { translations: { where: { locale }, take: 1 } },
+    });
+    return rows.flatMap((row) => {
+      const tr = row.translations[0];
+      if (!tr) return [];
+      return { q: tr.question, a: tr.answer };
+    });
+  } catch {
+    return [];
+  }
+}
 
-export function Faq() {
-  const t = useTranslations("Faq");
-  const items = t.raw("items") as QA[];
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+export async function Faq() {
+  const locale = (await getLocale()) as AppLocale;
+  const t = await getTranslations({ locale, namespace: "Faq" });
+  const fallback = t.raw("items") as QA[];
+  const dbItems = await getDbFaq(locale);
+  const items = dbItems.length >= fallback.length ? dbItems : fallback;
 
   return (
     <section id="faq" className="bg-surface py-24">
@@ -22,40 +37,7 @@ export function Faq() {
             {t("title")}
           </h2>
         </div>
-
-        <div className="mx-auto grid max-w-[780px] gap-3">
-          {items.map((item, i) => {
-            const open = openIndex === i;
-            return (
-              <div key={i} className="overflow-hidden rounded-[14px] border border-line bg-white">
-                <button
-                  type="button"
-                  onClick={() => setOpenIndex(open ? null : i)}
-                  aria-expanded={open}
-                  className="flex w-full items-center justify-between gap-4 px-[22px] py-5 text-left text-base font-semibold text-dark"
-                >
-                  {item.q}
-                  <span
-                    className={cn(
-                      "grid h-6 w-6 shrink-0 place-items-center rounded-[7px] transition-all",
-                      open ? "rotate-45 bg-brand text-white" : "bg-surface text-brand-purple",
-                    )}
-                  >
-                    <Plus size={16} />
-                  </span>
-                </button>
-                <div
-                  className="grid transition-all duration-300 ease-out"
-                  style={{ gridTemplateRows: open ? "1fr" : "0fr" }}
-                >
-                  <div className="overflow-hidden">
-                    <p className="px-[22px] pb-5 text-[15px] text-muted">{item.a}</p>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+        <FaqAccordion items={items} />
       </Container>
     </section>
   );

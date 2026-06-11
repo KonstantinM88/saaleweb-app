@@ -3,7 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/prisma";
-import { readTranslations, strOrNull, num, bool, type CrudState } from "@/features/admin/crud";
+import { revalidateHome, readTranslations, strOrNull, num, bool, type CrudState } from "@/features/admin/crud";
 import { FAQ_TR_FIELDS } from "./config";
 
 function read(fd: FormData) {
@@ -19,7 +19,7 @@ export async function createFaq(_p: CrudState, fd: FormData): Promise<CrudState>
   const r = read(fd);
   if ("error" in r) return r;
   await prisma.faq.create({ data: { ...r.top, translations: { create: r.trs } } });
-  revalidatePath("/admin/faq");
+  revalidatePath("/admin/faq"); revalidateHome();
   redirect("/admin/faq");
 }
 
@@ -30,16 +30,16 @@ export async function updateFaq(id: string, _p: CrudState, fd: FormData): Promis
     where: { id },
     data: { ...r.top, translations: { deleteMany: {}, create: r.trs } },
   });
-  revalidatePath("/admin/faq");
+  revalidatePath("/admin/faq"); revalidateHome();
   redirect("/admin/faq");
 }
 
 export async function deleteFaq(id: string) {
   await prisma.faq.delete({ where: { id } });
-  revalidatePath("/admin/faq");
+  revalidatePath("/admin/faq"); revalidateHome();
 }
 
 export async function toggleFaqPublished(id: string, published: boolean) {
   await prisma.faq.update({ where: { id }, data: { published } });
-  revalidatePath("/admin/faq");
+  revalidatePath("/admin/faq"); revalidateHome();
 }

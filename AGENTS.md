@@ -19,7 +19,7 @@ Instructions and project memory for coding agents working in this repository.
 - Locale routing: German lives at `/`, English at `/en`, Russian at `/ru`.
 - Public URL segments are localized through `next-intl` `pathnames`: services use `/leistungen`, `/services`, `/uslugi`; industries use `/branchen`, `/industries`, `/otrasli`; locations use `/standorte`, `/locations`, `/lokacii`; blog categories use `/blog/kategorie`, `/blog/category`, `/blog/kategoriya`.
 - Public service and industry index pages exist at `/leistungen` and `/branchen` with localized public URLs; cards link to DB-backed detail pages.
-- Most homepage content is rendered from `messages/*.json`, so the homepage can still run without a database connection. Testimonials now prefer published DB rows and fall back to `messages` only when DB data is unavailable.
+- Most homepage sections now prefer published DB rows and fall back to `messages/*.json` when DB data is unavailable, empty, or incomplete. DB-backed homepage sections include services, industries, case studies/projects, FAQ, and testimonials.
 - Database is required for contact form persistence and future CMS/content features.
 - Admin image uploads convert images to WebP with `sharp`; production storage uses Vercel Blob when `BLOB_READ_WRITE_TOKEN` is set, otherwise local dev writes to `public/uploads`.
 
@@ -32,6 +32,7 @@ Instructions and project memory for coding agents working in this repository.
 - `messages/de.json`, `messages/en.json`, `messages/ru.json` - localized UI copy.
 - `src/widgets/` - page sections.
 - `src/widgets/testimonials/Testimonials.tsx` - homepage testimonial section; reads published testimonials from DB by locale and falls back to message JSON.
+- `src/widgets/services/Services.tsx`, `src/widgets/industries/Industries.tsx`, `src/widgets/case-studies/CaseStudies.tsx`, `src/widgets/faq/Faq.tsx` - homepage sections that read published DB content by locale with message fallbacks.
 - `src/widgets/blog/` - blog UI pieces such as post cards, table of contents, and share buttons.
 - `src/features/` - interactive feature units such as contact and language switching.
 - `src/features/language-switcher/LocaleSlugsContext.tsx` - per-locale slug context used by detail pages for smart language switching.
@@ -46,6 +47,7 @@ Instructions and project memory for coding agents working in this repository.
 - `src/features/auth/` - env-based admin authentication, JWT session cookie, login/logout actions.
 - `src/features/admin/` - admin server actions for services, industries, blog posts, and leads.
 - `src/features/admin/crud.ts` - shared admin form helpers; keep translation rows typed with Prisma `Locale`.
+- `src/features/admin/projects/media.ts` - server actions for project media create/update/delete and homepage/admin revalidation.
 - `src/features/admin/upload/storage.ts` - admin image storage abstraction for Vercel Blob and local `public/uploads` fallback.
 - `src/app/admin/api/upload/route.ts` - protected image upload route; converts uploads to WebP.
 - `src/widgets/admin/` - admin UI forms, sidebar, page headers, and controls.
@@ -72,6 +74,7 @@ Instructions and project memory for coding agents working in this repository.
 - Push schema to database: `npm run db:push`
 - Create migration: `npm run db:migrate`
 - Seed database: `npm run db:seed`
+- Sync original homepage message content into editable DB rows: `npm run db:sync-home`
 - Open Prisma Studio: `npm run db:studio`
 - Generate admin password hash: `node scripts/hash-password.mjs "your-password"`
 
@@ -115,6 +118,9 @@ Instructions and project memory for coding agents working in this repository.
 - Contact form stores `Lead` rows with source `homepage_contact` and has a honeypot field named `website`.
 - Blog content is DB-backed through `BlogPost`, `BlogCategory`, `Author`, and translation tables. Article body content is Markdown stored in `BlogPostTranslation.content`.
 - Homepage testimonials are DB-backed through `Testimonial` / `TestimonialTranslation`; admin testimonial create/update/delete/toggle actions must revalidate `/`, `/de`, `/en`, and `/ru`.
+- Homepage services, industries, case studies/projects, FAQ, and testimonials are DB-backed with message fallbacks. For services/industries/cases/FAQ, partial DB datasets must not hide the fuller message fallback; use DB rows only when they are at least as complete as the fallback set. Admin changes for those entities should call `revalidateHome()` from `src/features/admin/crud.ts`.
+- `npm run db:sync-home` copies the original homepage message content into editable DB records for services, industries, projects/cases, project categories, and FAQ. It is intentional overwrite/restore tooling; do not run it after manual admin edits unless you want to reset those sections back to message content.
+- Project media uses `Media` rows. `Media.order` controls ordering; the lowest-order image is treated as the project cover on the homepage and the remaining rows are gallery-ready.
 - Detail pages with translated slugs should wrap content in `LocaleSlugsProvider`; `LanguageSwitcher` uses that map to switch to the target locale's real slug instead of reusing the current slug.
 - Admin pages are outside localized routing at `/admin`, are `noindex`, and are protected by both `src/proxy.ts` and the admin protected layout. Current admin sections cover leads, services, industries, projects/cases, blog posts, blog categories, authors, testimonials, and FAQ.
 - Project categories are managed separately at `/admin/project-categories` and can be selected in project/case forms.
@@ -159,3 +165,6 @@ Instructions and project memory for coding agents working in this repository.
 - 2026-06-10: Applied `saaleweb-index-admin-update.zip`: added DB-backed ISR index pages for services and industries, updated localized nav links to route pages, and expanded admin CRUD with projects/cases, blog categories, authors, testimonials, and FAQ using `GenericForm`. Fixed the package's translation helper typing so Prisma `Locale` is preserved. Verified `npm run typecheck`, `npm run lint`, `npm run build`, and production `200` responses for `/leistungen`, `/en/services`, `/ru/uslugi`, `/branchen`, `/en/industries`, `/ru/otrasli`; protected new admin routes return `307` without a session.
 - 2026-06-10: Fixed homepage testimonial freshness: admin updates were saved to DB, but `src/widgets/testimonials/Testimonials.tsx` still rendered static `messages/*.json` items. The widget now reads published DB testimonials for the current locale with message fallback, homepage has `revalidate = 300`, and testimonial admin actions revalidate localized homepages. Verified DB contains `Elena D.`, production HTML visibly renders `Elena D.`, and `npm run typecheck`, `npm run lint`, `npm run build` pass.
 - 2026-06-11: Applied `saaleweb-projcat-upload-update.zip`: added `/admin/project-categories` CRUD for `ProjectCategory`, admin image upload route `/admin/api/upload`, `ImageUpload`, WebP conversion via `sharp`, Vercel Blob storage via `@vercel/blob`, and local fallback to `public/uploads`. Added `BLOB_READ_WRITE_TOKEN` to `.env.example`; pinned `sharp` to `0.34.5` because `0.35.0` did not expose types correctly with TypeScript `moduleResolution: bundler`. Verified `npm run typecheck`, `npm run lint`, `npm run build`, and production `307` protection for project-category routes and upload endpoint without a session.
+- 2026-06-11: Applied `saaleweb-media-home-db-update.zip`: added project media management through `Media` rows, added `Media.order` and `onDelete: Cascade` to Prisma schema, updated upload route to return image dimensions, moved homepage Services/Industries/CaseStudies/FAQ to DB-first rendering with `messages` fallback, and added `revalidateHome()` usage for services, industries, projects, FAQ, and project media. Ran `npm run db:push`, `npm run db:generate`, `npm run typecheck`, `npm run lint`, `npm run build`, and verified production `200` responses for `/` and `/ru` plus protected `307` responses for `/admin/projects` and `/admin/api/upload` without a session.
+- 2026-06-11: Restored the complete pre-DB homepage content for Services/Industries/CaseStudies/FAQ when the DB contains only a partial dataset. Those widgets now use DB rows only when `dbItems.length >= fallback.length`; otherwise they render the original `messages` data. Verified `npm run typecheck`, `npm run lint`, `npm run build`, and production HTML contains old service cards such as `SEO Optimierung`, `KI Integration`, and `Hosting`.
+- 2026-06-11: Added `scripts/sync-homepage-content.ts` and `npm run db:sync-home`, then synced the original homepage message content into the current DB so it is editable from admin. The sync produced 9 published services, 8 industries, 6 FAQ rows, and 3 published projects/cases with project categories. Verified `npm run typecheck`, `npm run lint`, `npm run build`, and production HTML contains synced items such as `SEO Optimierung`, `KI Integration`, `Hosting`, and `Online-Buchungen verdreifacht`.

@@ -3,6 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/prisma";
+import { revalidateHome } from "@/features/admin/crud";
 import { routing } from "@/i18n/routing";
 
 export type EntityState = { error?: string };
@@ -41,7 +42,7 @@ export async function createService(_prev: EntityState, fd: FormData): Promise<E
   } catch {
     return { error: "Speichern fehlgeschlagen — Slug evtl. nicht eindeutig." };
   }
-  revalidatePath("/admin/services");
+  revalidatePath("/admin/services"); revalidateHome();
   redirect("/admin/services");
 }
 
@@ -61,16 +62,16 @@ export async function updateService(
   } catch {
     return { error: "Speichern fehlgeschlagen — Slug evtl. nicht eindeutig." };
   }
-  revalidatePath("/admin/services");
+  revalidatePath("/admin/services"); revalidateHome();
   redirect("/admin/services");
 }
 
 export async function deleteService(id: string) {
   await prisma.service.delete({ where: { id } });
-  revalidatePath("/admin/services");
+  revalidatePath("/admin/services"); revalidateHome();
 }
 
 export async function toggleServicePublished(id: string, published: boolean) {
   await prisma.service.update({ where: { id }, data: { published } });
-  revalidatePath("/admin/services");
+  revalidatePath("/admin/services"); revalidateHome();
 }

@@ -1,8 +1,16 @@
 import { routing, type AppLocale } from "@/i18n/routing";
+import { revalidatePath } from "next/cache";
 
 export type CrudState = { error?: string };
 
 export const LOCALES = routing.locales;
+
+/** Revalidates the localized homepages so CMS edits surface on "/". */
+export function revalidateHome() {
+  for (const path of ["/", "/de", "/en", "/ru"]) {
+    revalidatePath(path);
+  }
+}
 
 export function str(fd: FormData, key: string): string {
   return String(fd.get(key) ?? "").trim();

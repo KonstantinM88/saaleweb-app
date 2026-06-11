@@ -3,6 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/prisma";
+import { revalidateHome } from "@/features/admin/crud";
 import { routing } from "@/i18n/routing";
 
 export type EntityState = { error?: string };
@@ -41,7 +42,7 @@ export async function createIndustry(_prev: EntityState, fd: FormData): Promise<
   } catch {
     return { error: "Speichern fehlgeschlagen — Slug evtl. nicht eindeutig." };
   }
-  revalidatePath("/admin/industries");
+  revalidatePath("/admin/industries"); revalidateHome();
   redirect("/admin/industries");
 }
 
@@ -61,16 +62,16 @@ export async function updateIndustry(
   } catch {
     return { error: "Speichern fehlgeschlagen — Slug evtl. nicht eindeutig." };
   }
-  revalidatePath("/admin/industries");
+  revalidatePath("/admin/industries"); revalidateHome();
   redirect("/admin/industries");
 }
 
 export async function deleteIndustry(id: string) {
   await prisma.industry.delete({ where: { id } });
-  revalidatePath("/admin/industries");
+  revalidatePath("/admin/industries"); revalidateHome();
 }
 
 export async function toggleIndustryPublished(id: string, published: boolean) {
   await prisma.industry.update({ where: { id }, data: { published } });
-  revalidatePath("/admin/industries");
+  revalidatePath("/admin/industries"); revalidateHome();
 }
