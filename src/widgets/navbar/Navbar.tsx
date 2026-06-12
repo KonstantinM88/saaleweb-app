@@ -69,7 +69,10 @@ export function Navbar() {
           <span className="grid h-[30px] w-[30px] place-items-center rounded-[9px] bg-brand text-[15px] font-extrabold text-white shadow-[0_6px_16px_-6px_rgba(255,79,163,0.6)] transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-110">
             S
           </span>
-          SaaleWeb
+          <span>
+            Saale
+            <span className="bg-brand bg-clip-text text-transparent">Web</span>
+          </span>
         </Link>
 
         <nav className="hidden items-center gap-8 text-[15px] font-medium text-gray-700 md:flex">
