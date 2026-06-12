@@ -308,7 +308,7 @@
   },
   "Comparison": {
     "eyebrow": "Comparison",
-    "title": "Modern website vs. classic WordPress",
+    "title": "Modern website compared with classic WordPress",
     "them": "WordPress",
     "rows": [
       {
@@ -440,8 +440,8 @@
   },
   "LocalSeo": {
     "eyebrow": "Local SEO",
-    "title": "Visible in Halle, Leipzig & the region",
-    "lead": "We put your business right where your customers search - from Halle (Saale) to Leipzig.",
+    "title": "Visible in Halle, Leipzig and every city around",
+    "lead": "We make your business visible across the map - Halle (Saale), Leipzig, Merseburg, Schkeuditz, Delitzsch, Markkleeberg and Landsberg.",
     "floatA": "Top local rankings",
     "floatB": "~50 km radius"
   }

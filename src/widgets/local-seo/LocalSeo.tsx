@@ -5,8 +5,10 @@ import { SectionHeader } from "@/shared/ui/SectionHeader";
 
 type City = { name: string; x: number; y: number; major?: boolean; delay: number };
 
+const HALLE: City = { name: "Halle (Saale)", x: 26, y: 30, major: true, delay: 0 };
+
 const CITIES: City[] = [
-  { name: "Halle (Saale)", x: 26, y: 30, major: true, delay: 0 },
+  HALLE,
   { name: "Leipzig", x: 70, y: 40, major: true, delay: 0.8 },
   { name: "Merseburg", x: 23, y: 47, delay: 1.5 },
   { name: "Schkeuditz", x: 50, y: 28, delay: 2.1 },
@@ -15,8 +17,19 @@ const CITIES: City[] = [
   { name: "Landsberg", x: 40, y: 18, delay: 3.9 },
 ];
 
+const HUB = { x: HALLE.x, y: HALLE.y };
+const REACH_CITIES = CITIES.filter((city) => city.name !== HALLE.name);
+
+function reachPath(city: City, index: number) {
+  const midX = (HUB.x + city.x) / 2;
+  const midY = (HUB.y + city.y) / 2;
+  const bend = [-5, 5, -4, -8, 8, -6][index] ?? 0;
+
+  return `M ${HUB.x} ${HUB.y} Q ${midX} ${midY + bend} ${city.x} ${city.y}`;
+}
+
 function CityDot({ city }: { city: City }) {
-  const size = city.major ? 14 : 8;
+  const size = city.major ? 13 : 9;
 
   return (
     <div
@@ -41,7 +54,7 @@ function CityDot({ city }: { city: City }) {
           className={
             city.major
               ? "absolute top-full mt-2 whitespace-nowrap rounded-full border border-white/15 bg-white/10 px-2.5 py-1 text-[11px] font-bold text-white backdrop-blur-sm"
-              : "absolute top-full mt-1.5 whitespace-nowrap text-[10px] font-medium text-white/55"
+              : "absolute top-full mt-1.5 whitespace-nowrap rounded-full border border-white/10 bg-white/5 px-2 py-0.5 text-[10px] font-semibold text-white/70 backdrop-blur-sm"
           }
         >
           {city.name}
@@ -94,17 +107,44 @@ export function LocalSeo() {
                 />
                 <path d="M 4 46 C 30 38, 60 28, 96 20" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="1" />
                 <path d="M 56 0 C 60 24, 62 46, 67 70" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="1" />
-                <path
-                  d="M 26 30 C 38 24, 56 30, 70 40"
-                  fill="none"
-                  stroke="rgba(255,79,163,0.65)"
-                  strokeWidth="0.9"
-                  strokeDasharray="2.5 3.5"
-                  strokeLinecap="round"
-                  style={{ animation: "dash-march 1.4s linear infinite" }}
-                />
-                <circle r="1.5" fill="#FF4FA3" className="map-travel" />
+                <g>
+                  {REACH_CITIES.map((city, index) => {
+                    const path = reachPath(city, index);
+
+                    return (
+                      <g key={`reach-${city.name}`}>
+                        <path
+                          d={path}
+                          fill="none"
+                          stroke="rgba(255,79,163,0.62)"
+                          strokeWidth={city.major ? "0.95" : "0.72"}
+                          strokeDasharray="2.2 3.2"
+                          strokeLinecap="round"
+                          style={{ animation: `dash-march 1.6s linear ${index * 0.12}s infinite` }}
+                        />
+                        <circle r={city.major ? "1.25" : "0.95"} fill="#FF4FA3" opacity="0.95">
+                          <animateMotion
+                            begin={`${index * 0.28}s`}
+                            dur={`${3.4 + index * 0.12}s`}
+                            path={path}
+                            repeatCount="indefinite"
+                          />
+                        </circle>
+                      </g>
+                    );
+                  })}
+                </g>
+                <circle cx={HUB.x} cy={HUB.y} r="2.8" fill="#FF4FA3" opacity="0.35" />
+                <circle cx={HUB.x} cy={HUB.y} r="1.65" fill="#FF4FA3" />
               </svg>
+
+              <div
+                aria-hidden
+                className="absolute grid h-10 w-10 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-brand-pink/40 bg-brand-pink/20 text-[10px] font-black text-white shadow-[0_0_26px_rgba(255,79,163,0.55)] backdrop-blur-sm"
+                style={{ left: `${HUB.x}%`, top: `${(HUB.y / 70) * 100}%` }}
+              >
+                SEO
+              </div>
 
               {CITIES.map((city) => (
                 <CityDot key={city.name} city={city} />
