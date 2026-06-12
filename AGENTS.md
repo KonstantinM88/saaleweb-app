@@ -23,7 +23,7 @@ Instructions and project memory for coding agents working in this repository.
 - Public pricing page exists at `/preise`, `/en/pricing`, and `/ru/tseny`; homepage pricing section remains available at `#pricing`.
 - Most homepage sections now prefer published DB rows and fall back to `messages/*.json` when DB data is unavailable, empty, or incomplete. DB-backed homepage sections include services, industries, case studies/projects, FAQ, and testimonials.
 - Database is required for contact form persistence and future CMS/content features.
-- First-party analytics stores page views in `PageView` via `/api/track` without cookies or IP storage; admin routes are not tracked.
+- First-party analytics stores page views in `PageView` via `/api/track` without cookies or raw IP storage; bot user agents and admin routes are not tracked, and unique visitors are counted through a daily salted `visitorHash`.
 - Admin image uploads convert images to WebP with `sharp`; production storage uses Vercel Blob when `BLOB_READ_WRITE_TOKEN` is set, otherwise local dev writes to `public/uploads`.
 
 ## Important Paths
@@ -104,6 +104,7 @@ Instructions and project memory for coding agents working in this repository.
 - Required: `DATABASE_URL`, for example `postgresql://postgres:postgres@localhost:5432/saaleweb?schema=public`.
 - Public site URL: `NEXT_PUBLIC_SITE_URL`, defaulting in code to `https://saaleweb.de`.
 - Optional production upload storage: `BLOB_READ_WRITE_TOKEN` for Vercel Blob. Without it, admin uploads are stored locally under `public/uploads` and served as `/uploads/...`.
+- Optional analytics salt: `ANALYTICS_SALT` for stable daily unique-visitor hashes. If it is empty, `AUTH_SECRET` is used as fallback.
 - `npm install` runs Prisma generation through `postinstall`, so `DATABASE_URL` must be available before install in local and deployment environments.
 
 ## Stack Notes
@@ -120,6 +121,7 @@ Instructions and project memory for coding agents working in this repository.
 - Generate admin password hashes with `node scripts/hash-password.mjs "your-password"` and copy the printed `Next.js .env value`.
 - Admin multilingual CRUD actions should use `readTranslations` from `src/features/admin/crud.ts`; Prisma translation creates require `locale` to remain typed as generated `Locale`, not widened to plain `string`.
 - Admin image uploads require `sharp`; `next.config.ts` keeps `sharp` in `serverExternalPackages` because it ships native binaries.
+- Analytics bot filtering uses the `isbot` package inside `/api/track`; update the package periodically if crawler detection quality matters.
 - Prisma 7 `prisma db execute` reads the datasource from `prisma.config.ts`; do not pass the old `--schema` flag.
 - Use `-LiteralPath` in PowerShell for paths containing square brackets, for example `src/app/[locale]/page.tsx`.
 
@@ -136,7 +138,7 @@ Instructions and project memory for coding agents working in this repository.
 - Homepage services, industries, case studies/projects, FAQ, and testimonials are DB-backed with message fallbacks. For services/industries/cases/FAQ, partial DB datasets must not hide the fuller message fallback; use DB rows only when they are at least as complete as the fallback set. Admin changes for those entities should call `revalidateHome()` from `src/features/admin/crud.ts`.
 - Services and industries have optional `coverImage` fields. Admin forms use `ImageUpload`; public homepage/index/detail views show the cover when present and fall back to the icon/emoji when absent.
 - Blog RSS is available at `/blog/rss.xml`, `/blog/rss.xml?lang=en`, and `/blog/rss.xml?lang=ru`; localized blog index metadata should expose the matching RSS alternate link.
-- Page-view analytics are privacy-light first-party tracking only: store path, locale, referrer, and timestamp, with no cookies and no IP address. Keep `/admin` excluded.
+- Page-view analytics are privacy-light first-party tracking only: store path, locale, referrer, timestamp, and a daily salted `visitorHash`, with no cookies and no raw IP address. Keep `/admin` excluded. Existing historical `PageView` rows without `visitorHash` count as views but do not contribute to unique-visitor metrics.
 - `npm run db:sync-home` copies the original homepage message content into editable DB records for services, industries, projects/cases, project categories, and FAQ. It is intentional overwrite/restore tooling; do not run it after manual admin edits unless you want to reset those sections back to message content.
 - SEO overrides are managed at `/admin/seo` through `SEOPage` / `SEOPageTranslation`. Store canonical internal paths there (`/`, `/leistungen`, `/branchen`, `/projekte`, `/blog`), not localized public aliases such as `/services` or `/ru/uslugi`.
 - Detail-page SEO overrides also use German canonical internal paths, for example `/leistungen/website-entwicklung`, `/branchen/hotels`, `/projekte/online-buchungen-verdreifacht`, and `/blog/lokales-seo-halle`; one `SEOPage` entry covers all locales through per-locale translations.
@@ -198,3 +200,4 @@ Instructions and project memory for coding agents working in this repository.
 - 2026-06-11: Applied `saaleweb-analytics-covers-rss-update.zip`: added privacy-light `PageView` analytics through `/api/track` and `PageViewTracker`, upgraded `/admin` dashboard with 7/30/90 day views/leads/top pages, added optional `coverImage` fields for services and industries with admin upload and public homepage/index/detail rendering, and added localized blog RSS at `/blog/rss.xml` plus `?lang=en` / `?lang=ru`. Ran `npm run db:push`, `npm run db:generate`, `npm run typecheck`, `npm run lint`, `npm run build`, verified RSS responses, `/api/track`, and `/admin` redirect without a session. Consumed upload files were deleted.
 - 2026-06-11: Applied `saaleweb-pricing-page-update.zip`: added DB-backed `PricingPlan` / `PricingPlanTranslation`, public localized pricing page `/preise` with public aliases `/en/pricing` and `/ru/tseny`, shared `PricingPlans` rendering, DB-backed homepage pricing fallback to `messages`, `/admin/pricing` CRUD, navbar/footer links to the pricing page, and sitemap pricing entries. Ran `npm run db:push`, `npm run db:generate`, `npm run typecheck`, `npm run lint`, `npm run build`, verified production `200` responses for `/preise`, `/en/pricing`, `/ru/tseny`, sitemap localized pricing URLs, and protected `/admin/pricing` redirect without a session. Consumed upload files were deleted.
 - 2026-06-11: Added `scripts/sync-pricing-content.ts` and `npm run db:sync-pricing`, then synced the original `messages` pricing packages into the current DB so they are editable from `/admin/pricing`. The sync produced 3 published plans: Starter, Business, and Premium, each with DE/EN/RU translations; Business is marked featured. Verified DB rows, `npm run typecheck`, and `npm run lint`.
+- 2026-06-12: Applied `saaleweb-bot-unique-analytics-update.zip`: added `isbot`, bot filtering in `/api/track`, client-side `navigator.webdriver` skip, daily salted `PageView.visitorHash` for cookieless unique-visitor metrics, `ANALYTICS_SALT` in `.env.example`, and unique visitor total/series in the admin dashboard. Ran `npm run db:push`, `npm run db:generate`, `npm run typecheck`, `npm run lint`, `npm run build`, and runtime-verified that browser UA writes a hashed page view while Googlebot UA is ignored. Consumed upload files were deleted.

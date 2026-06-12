@@ -9,6 +9,7 @@ export function PageViewTracker({ locale }: { locale: string }) {
 
   useEffect(() => {
     if (!pathname || pathname.startsWith("/admin")) return;
+    if (typeof navigator !== "undefined" && navigator.webdriver) return;
     const body = JSON.stringify({
       path: pathname,
       locale,

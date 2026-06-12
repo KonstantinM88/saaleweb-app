@@ -359,14 +359,16 @@ model SEOPageTranslation {
 }
 
 model PageView {
-  id        String   @id @default(cuid())
-  path      String
-  locale    String
-  referrer  String?
-  createdAt DateTime @default(now())
+  id          String   @id @default(cuid())
+  path        String
+  locale      String
+  referrer    String?
+  visitorHash String?
+  createdAt   DateTime @default(now())
 
   @@index([createdAt])
   @@index([path])
+  @@index([visitorHash])
 }
 
 model Media {

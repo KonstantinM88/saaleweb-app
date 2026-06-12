@@ -64,9 +64,9 @@ export default async function AdminDashboard({
 
   const metrics = [
     { label: `Aufrufe (${range} T.)`, value: analytics.viewsTotal },
+    { label: `Eindeutige Besucher (${range} T.)`, value: analytics.uniqueTotal },
     { label: `Anfragen (${range} T.)`, value: analytics.leadsTotal },
     { label: "Neue Anfragen", value: analytics.leadsNew, href: "/admin/leads" },
-    { label: "Anfragen gesamt", value: analytics.leadsAllTime, href: "/admin/leads" },
   ];
 
   const formatDay = (value: string) => value.slice(5).replace("-", ".");
@@ -138,8 +138,30 @@ export default async function AdminDashboard({
 
         <div className={`${adminCard} p-5`}>
           <div className="mb-3 flex items-center justify-between">
+            <h2 className="font-semibold text-dark">Eindeutige Besucher</h2>
+            <span className="text-sm text-muted">{analytics.uniqueTotal}</span>
+          </div>
+          <Bars data={analytics.uniqueSeries} color="#10B981" />
+          <div className="mt-1 flex justify-between text-[11px] text-muted">
+            <span>
+              {analytics.uniqueSeries.length ? formatDay(analytics.uniqueSeries[0].day) : ""}
+            </span>
+            <span>
+              {analytics.uniqueSeries.length
+                ? formatDay(analytics.uniqueSeries[analytics.uniqueSeries.length - 1].day)
+                : ""}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-6 grid gap-4 lg:grid-cols-2">
+        <div className={`${adminCard} p-5`}>
+          <div className="mb-3 flex items-center justify-between">
             <h2 className="font-semibold text-dark">Anfragen</h2>
-            <span className="text-sm text-muted">{analytics.leadsTotal}</span>
+            <span className="text-sm text-muted">
+              {analytics.leadsTotal} - gesamt {analytics.leadsAllTime}
+            </span>
           </div>
           <Bars data={analytics.leadsSeries} color="#8B5CF6" />
           <div className="mt-1 flex justify-between text-[11px] text-muted">
@@ -153,9 +175,7 @@ export default async function AdminDashboard({
             </span>
           </div>
         </div>
-      </div>
 
-      <div className="mt-6 grid gap-4 lg:grid-cols-2">
         <div className={`${adminCard} p-5`}>
           <h2 className="mb-3 font-semibold text-dark">Top-Seiten ({range} T.)</h2>
           {analytics.topPaths.length === 0 ? (
@@ -171,7 +191,9 @@ export default async function AdminDashboard({
             </ul>
           )}
         </div>
+      </div>
 
+      <div className="mt-6 grid gap-4 lg:grid-cols-2">
         <div className={`${adminCard} p-5`}>
           <h2 className="mb-3 font-semibold text-dark">Inhalte</h2>
           <ul className="space-y-2 text-sm">
