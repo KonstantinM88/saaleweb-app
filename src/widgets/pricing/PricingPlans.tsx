@@ -1,5 +1,6 @@
 import { Check } from "lucide-react";
 import { Button } from "@/shared/ui/Button";
+import { Reveal } from "@/shared/ui/Reveal";
 import { cn } from "@/shared/lib/cn";
 
 export type PricingPlanView = {
@@ -25,14 +26,13 @@ export function PricingPlans({
     <div className="grid grid-cols-1 items-stretch gap-5 md:grid-cols-3">
       {plans.map((pkg, i) => {
         const featured = pkg.featured;
-        return (
+        const card = (
           <div
-            key={i}
             className={cn(
-              "relative flex flex-col rounded-[22px] p-8 transition-all hover:-translate-y-1.5",
+              "relative flex h-full flex-col rounded-[22px] p-8 transition-all duration-300",
               featured
-                ? "bg-dark text-white shadow-lift"
-                : "border border-line bg-white hover:shadow-lift",
+                ? "bg-dark text-white"
+                : "card-border-glow border border-line bg-white hover:-translate-y-1.5 hover:shadow-lift",
             )}
           >
             {featured && (
@@ -72,6 +72,18 @@ export function PricingPlans({
               {buttonLabel}
             </Button>
           </div>
+        );
+
+        return (
+          <Reveal key={i} delay={i * 100} className="h-full">
+            {featured ? (
+              <div className="glow-card h-full shadow-lift transition-transform duration-300 hover:-translate-y-1.5">
+                {card}
+              </div>
+            ) : (
+              card
+            )}
+          </Reveal>
         );
       })}
     </div>

@@ -43,6 +43,7 @@ Instructions and project memory for coding agents working in this repository.
 - `src/features/admin/analytics/data.ts` - admin dashboard aggregations for page views, leads, and top paths.
 - `src/features/language-switcher/LocaleSlugsContext.tsx` - per-locale slug context used by detail pages for smart language switching.
 - `src/shared/` - shared UI, config, helpers.
+- `src/shared/ui/ScrollProgress.tsx` - client-side gradient scroll progress bar mounted inside the sticky navbar.
 - `src/shared/config/site.ts` - site identity, contact data, nav keys.
 - `src/shared/seo/metadata.ts` - admin-managed `SEOPage` overrides and Open Graph/Twitter metadata builder.
 - `src/shared/seo/og.ts` - absolute dynamic OG image URL helper for `/api/og`.
@@ -134,6 +135,7 @@ Instructions and project memory for coding agents working in this repository.
 - Keep localized copy in all three message files when user-facing text changes.
 - Use existing design tokens from `tailwind.config.ts`: brand pink/purple, `dark`, `ink`, `muted`, `surface`, `line`.
 - Shared UI includes `Button`, `Container`, `SectionHeader`, and `Reveal`; reuse them before adding new primitives.
+- The public motion system is CSS-first and must respect `prefers-reduced-motion`. Current motion primitives include `btn-shine`, `card-border-glow`, `hero-gradient-field`, `marquee`, `glow-card`, directional `Reveal`, navbar scroll shadow/progress, and dashboard pointer tilt guarded by pointer/reduced-motion checks.
 - Contact form validation lives in `src/features/contact/schema.ts`; server action lives in `src/features/contact/actions.ts`.
 - Contact form stores `Lead` rows with source `homepage_contact` and has a honeypot field named `website`.
 - Contact form optionally sends a Resend email notification after storing a lead. `sendLeadNotification()` must never throw or block a successful form submission if email delivery fails.
@@ -207,3 +209,4 @@ Instructions and project memory for coding agents working in this repository.
 - 2026-06-11: Added `scripts/sync-pricing-content.ts` and `npm run db:sync-pricing`, then synced the original `messages` pricing packages into the current DB so they are editable from `/admin/pricing`. The sync produced 3 published plans: Starter, Business, and Premium, each with DE/EN/RU translations; Business is marked featured. Verified DB rows, `npm run typecheck`, and `npm run lint`.
 - 2026-06-12: Applied `saaleweb-bot-unique-analytics-update.zip`: added `isbot`, bot filtering in `/api/track`, client-side `navigator.webdriver` skip, daily salted `PageView.visitorHash` for cookieless unique-visitor metrics, `ANALYTICS_SALT` in `.env.example`, and unique visitor total/series in the admin dashboard. Ran `npm run db:push`, `npm run db:generate`, `npm run typecheck`, `npm run lint`, `npm run build`, and runtime-verified that browser UA writes a hashed page view while Googlebot UA is ignored. Consumed upload files were deleted.
 - 2026-06-12: Applied `saaleweb-leads-csv-email-update.zip`: added protected `/admin/leads/export` CSV download with UTF-8 BOM and `;` delimiter, added optional Resend lead notifications through `src/features/notifications/mailer.ts`, wired notifications after contact-form lead creation, and documented `RESEND_API_KEY`, `LEAD_NOTIFY_FROM`, and `LEAD_NOTIFY_TO` in `.env.example`. Verified `npm run typecheck`, `npm run lint`, `npm run build`, unauthenticated export redirect, and authenticated CSV response headers/content. Consumed upload files were deleted.
+- 2026-06-12: Applied `saaleweb-motion-design-update.zip`: added CSS-first motion design with `ScrollProgress`, animated navbar/hero/dashboard/trust marquee/services/pricing cards, directional `Reveal`, and button/card microinteractions. Preserved complete-content DB fallback rules for Services and FAQ (`dbItems.length >= fallback.length`) instead of the package's partial-DB condition, and used a full-surface hero gradient field rather than discrete decorative gradient blobs. Verified `npm run typecheck`, `npm run lint`, `npm run build`, runtime `200` responses for `/`, `/ru`, and `/preise`, and motion class presence in rendered HTML.
