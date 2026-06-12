@@ -1,7 +1,7 @@
 import { prisma } from "@/lib/prisma";
 import { PageHeader } from "@/widgets/admin/PageHeader";
 import { ConfirmButton } from "@/widgets/admin/ConfirmButton";
-import { adminCard } from "@/widgets/admin/ui";
+import { adminCard, adminBtnGhost } from "@/widgets/admin/ui";
 import { updateLeadStatus, deleteLead } from "@/features/admin/leads/actions";
 import { LEAD_STATUSES } from "@/features/admin/leads/constants";
 
@@ -33,6 +33,11 @@ export default async function LeadsAdminPage() {
   return (
     <>
       <PageHeader title="Anfragen" subtitle="Eingegangene Leads aus dem Kontaktformular." />
+      <div className="mb-4 flex justify-end">
+        <a href="/admin/leads/export" className={adminBtnGhost} download>
+          CSV Export
+        </a>
+      </div>
       <div className={`${adminCard} overflow-x-auto`}>
         <table className="w-full text-sm">
           <thead className="border-b border-line bg-surface text-left text-xs uppercase tracking-wide text-muted">

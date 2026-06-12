@@ -1,6 +1,7 @@
 "use server";
 
 import { prisma } from "@/lib/prisma";
+import { sendLeadNotification } from "@/features/notifications/mailer";
 import { contactSchema } from "./schema";
 
 export type ContactState = {
@@ -41,7 +42,14 @@ export async function submitContact(
         locale: parsed.data.locale,
       },
     });
-    // TODO: send notification email, push analytics event
+    await sendLeadNotification({
+      name: parsed.data.name,
+      email: parsed.data.email,
+      company: parsed.data.company || null,
+      message: parsed.data.message,
+      locale: parsed.data.locale,
+      source: "homepage_contact",
+    });
     return { status: "success" };
   } catch {
     return { status: "error", message: "server" };

@@ -60,12 +60,14 @@ Instructions and project memory for coding agents working in this repository.
 - `src/features/admin/projects/media.ts` - server actions for project media create/update/delete and homepage/admin revalidation.
 - `src/features/admin/upload/storage.ts` - admin image storage abstraction for Vercel Blob and local `public/uploads` fallback.
 - `src/app/admin/api/upload/route.ts` - protected image upload route; converts uploads to WebP.
+- `src/app/admin/(protected)/leads/export/route.ts` - protected CSV export for leads; returns UTF-8 BOM CSV with `;` delimiter for Excel-friendly opening.
 - `src/app/api/og/route.tsx` - dynamic Open Graph image endpoint using `next/og`.
 - `src/app/api/track/route.ts` - page-view ingestion endpoint for `PageView` analytics.
 - `src/app/blog/rss.xml/route.ts` - RSS 2.0 feed for blog posts; default German, with `?lang=en` and `?lang=ru`.
 - `src/widgets/admin/` - admin UI forms, sidebar, page headers, and controls.
 - `src/widgets/admin/GenericForm.tsx` - reusable config-driven admin create/edit form for multilingual records.
 - `src/widgets/admin/ImageUpload.tsx` - admin image upload field with preview and editable URL.
+- `src/features/notifications/mailer.ts` - optional Resend HTTP email notification helper for new contact leads.
 - `src/lib/prisma.ts` - Prisma singleton with `@prisma/adapter-pg`.
 - `prisma/schema.prisma` - Prisma 7 schema.
 - `prisma.config.ts` - Prisma 7 runtime config.
@@ -104,6 +106,7 @@ Instructions and project memory for coding agents working in this repository.
 - Required: `DATABASE_URL`, for example `postgresql://postgres:postgres@localhost:5432/saaleweb?schema=public`.
 - Public site URL: `NEXT_PUBLIC_SITE_URL`, defaulting in code to `https://saaleweb.de`.
 - Optional production upload storage: `BLOB_READ_WRITE_TOKEN` for Vercel Blob. Without it, admin uploads are stored locally under `public/uploads` and served as `/uploads/...`.
+- Optional lead email notifications: `RESEND_API_KEY`, `LEAD_NOTIFY_FROM`, and `LEAD_NOTIFY_TO`. If `LEAD_NOTIFY_TO` is empty, `ADMIN_EMAIL` is used. Missing values silently disable notification sending.
 - Optional analytics salt: `ANALYTICS_SALT` for stable daily unique-visitor hashes. If it is empty, `AUTH_SECRET` is used as fallback.
 - `npm install` runs Prisma generation through `postinstall`, so `DATABASE_URL` must be available before install in local and deployment environments.
 
@@ -133,6 +136,7 @@ Instructions and project memory for coding agents working in this repository.
 - Shared UI includes `Button`, `Container`, `SectionHeader`, and `Reveal`; reuse them before adding new primitives.
 - Contact form validation lives in `src/features/contact/schema.ts`; server action lives in `src/features/contact/actions.ts`.
 - Contact form stores `Lead` rows with source `homepage_contact` and has a honeypot field named `website`.
+- Contact form optionally sends a Resend email notification after storing a lead. `sendLeadNotification()` must never throw or block a successful form submission if email delivery fails.
 - Blog content is DB-backed through `BlogPost`, `BlogCategory`, `Author`, and translation tables. Article body content is Markdown stored in `BlogPostTranslation.content`.
 - Homepage testimonials are DB-backed through `Testimonial` / `TestimonialTranslation`; admin testimonial create/update/delete/toggle actions must revalidate `/`, `/de`, `/en`, and `/ru`.
 - Homepage services, industries, case studies/projects, FAQ, and testimonials are DB-backed with message fallbacks. For services/industries/cases/FAQ, partial DB datasets must not hide the fuller message fallback; use DB rows only when they are at least as complete as the fallback set. Admin changes for those entities should call `revalidateHome()` from `src/features/admin/crud.ts`.
@@ -149,6 +153,7 @@ Instructions and project memory for coding agents working in this repository.
 - Pricing plans are DB-backed through `PricingPlan` / `PricingPlanTranslation`; features are stored as `String[]` and edited one item per line in `/admin/pricing`.
 - `npm run db:sync-pricing` copies the original `messages/*.json` pricing packages into editable DB records. It updates plans by German name or order, so do not run it after manual admin edits unless you intentionally want to reset the public pricing content back to message values.
 - Admin pages are outside localized routing at `/admin`, are `noindex`, and are protected by both `src/proxy.ts` and the admin protected layout. Current admin sections cover leads, services, industries, pricing, projects/cases, blog posts, blog categories, authors, testimonials, SEO, and FAQ.
+- Leads can be exported from `/admin/leads/export`; keep this route protected with both middleware and a server-side session check.
 - Project categories are managed separately at `/admin/project-categories` and can be selected in project/case forms.
 - `prisma/seed.ts` should remain repeatable; demo service/testimonial/FAQ/blog records must not fail on existing unique slugs.
 - Keep seed content as real UTF-8 text. If RU/DE content renders as mojibake, check `prisma/seed.ts` first before blaming PostgreSQL encoding.
@@ -201,3 +206,4 @@ Instructions and project memory for coding agents working in this repository.
 - 2026-06-11: Applied `saaleweb-pricing-page-update.zip`: added DB-backed `PricingPlan` / `PricingPlanTranslation`, public localized pricing page `/preise` with public aliases `/en/pricing` and `/ru/tseny`, shared `PricingPlans` rendering, DB-backed homepage pricing fallback to `messages`, `/admin/pricing` CRUD, navbar/footer links to the pricing page, and sitemap pricing entries. Ran `npm run db:push`, `npm run db:generate`, `npm run typecheck`, `npm run lint`, `npm run build`, verified production `200` responses for `/preise`, `/en/pricing`, `/ru/tseny`, sitemap localized pricing URLs, and protected `/admin/pricing` redirect without a session. Consumed upload files were deleted.
 - 2026-06-11: Added `scripts/sync-pricing-content.ts` and `npm run db:sync-pricing`, then synced the original `messages` pricing packages into the current DB so they are editable from `/admin/pricing`. The sync produced 3 published plans: Starter, Business, and Premium, each with DE/EN/RU translations; Business is marked featured. Verified DB rows, `npm run typecheck`, and `npm run lint`.
 - 2026-06-12: Applied `saaleweb-bot-unique-analytics-update.zip`: added `isbot`, bot filtering in `/api/track`, client-side `navigator.webdriver` skip, daily salted `PageView.visitorHash` for cookieless unique-visitor metrics, `ANALYTICS_SALT` in `.env.example`, and unique visitor total/series in the admin dashboard. Ran `npm run db:push`, `npm run db:generate`, `npm run typecheck`, `npm run lint`, `npm run build`, and runtime-verified that browser UA writes a hashed page view while Googlebot UA is ignored. Consumed upload files were deleted.
+- 2026-06-12: Applied `saaleweb-leads-csv-email-update.zip`: added protected `/admin/leads/export` CSV download with UTF-8 BOM and `;` delimiter, added optional Resend lead notifications through `src/features/notifications/mailer.ts`, wired notifications after contact-form lead creation, and documented `RESEND_API_KEY`, `LEAD_NOTIFY_FROM`, and `LEAD_NOTIFY_TO` in `.env.example`. Verified `npm run typecheck`, `npm run lint`, `npm run build`, unauthenticated export redirect, and authenticated CSV response headers/content. Consumed upload files were deleted.
