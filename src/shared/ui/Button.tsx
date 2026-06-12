@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { cn } from "@/shared/lib/cn";
+import { Magnetic } from "./Magnetic";
 
 type Variant = "primary" | "ghost" | "dark";
 
@@ -29,16 +30,23 @@ export function Button({
   ...rest
 }: Props) {
   const classes = cn(base, variants[variant], className);
+  const wrapperClassName = className?.includes("w-full") ? "block w-full" : undefined;
+
   if (href) {
     return (
-      <Link href={href} className={classes}>
-        {children}
-      </Link>
+      <Magnetic className={wrapperClassName}>
+        <Link href={href} className={classes}>
+          {children}
+        </Link>
+      </Magnetic>
     );
   }
+
   return (
-    <button className={classes} {...rest}>
-      {children}
-    </button>
+    <Magnetic className={wrapperClassName}>
+      <button className={classes} {...rest}>
+        {children}
+      </button>
+    </Magnetic>
   );
 }

@@ -176,6 +176,94 @@ body {
   }
 }
 
+/* ============================================================
+   Signature 3D cursor (desktop / fine pointer only)
+   ============================================================ */
+html.custom-cursor *:not(input):not(textarea):not(select) {
+  cursor: none !important;
+}
+
+.cursor-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+}
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  left: 0;
+  top: 0;
+  will-change: transform;
+}
+
+.cursor-dot-core {
+  height: 10px;
+  width: 10px;
+  border-radius: 9999px;
+  background:
+    radial-gradient(
+      circle at 32% 28%,
+      rgba(255, 255, 255, 0.95) 0%,
+      rgba(255, 255, 255, 0.5) 20%,
+      rgba(255, 255, 255, 0) 46%
+    ),
+    var(--brand-grad);
+  box-shadow:
+    0 2px 8px rgba(139, 92, 246, 0.5),
+    0 0 2px rgba(255, 79, 163, 0.6);
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.cursor-ring-core {
+  position: relative;
+  height: 40px;
+  width: 40px;
+  border-radius: 9999px;
+  box-shadow: 0 0 28px -8px rgba(139, 92, 246, 0.55);
+  transition:
+    transform 0.3s cubic-bezier(0.3, 1.4, 0.4, 1),
+    opacity 0.3s ease;
+}
+.cursor-ring-core::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: conic-gradient(from 0deg, #ff4fa3, #8b5cf6, #ff4fa3);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+}
+
+.cursor-layer.is-hover .cursor-ring-core {
+  transform: scale(1.55);
+}
+.cursor-layer.is-hover .cursor-dot-core {
+  transform: scale(0.5);
+}
+.cursor-layer.is-down .cursor-ring-core {
+  transform: scale(0.82);
+}
+.cursor-layer.is-down .cursor-dot-core {
+  transform: scale(0.7);
+}
+.cursor-layer.is-text .cursor-ring-core,
+.cursor-layer.is-text .cursor-dot-core,
+.cursor-layer.is-hidden .cursor-ring-core,
+.cursor-layer.is-hidden .cursor-dot-core {
+  transform: scale(0);
+  opacity: 0;
+}
+
 /* Entrance choreography (disabled when user prefers reduced motion,
    otherwise opacity:0 start values would make content invisible). */
 @media (prefers-reduced-motion: no-preference) {

@@ -7,6 +7,7 @@ import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import { Container } from "@/shared/ui/Container";
 import { ScrollProgress } from "@/shared/ui/ScrollProgress";
+import { Magnetic } from "@/shared/ui/Magnetic";
 import { siteConfig } from "@/shared/config/site";
 import { cn } from "@/shared/lib/cn";
 import { LanguageSwitcher } from "@/features/language-switcher/LanguageSwitcher";
@@ -77,12 +78,14 @@ export function Navbar() {
 
         <div className="flex items-center gap-3.5">
           <LanguageSwitcher />
-          <a
-            href={sectionHref("contact")}
-            className="btn-shine hidden items-center justify-center gap-2 rounded-xl bg-brand px-5 py-2.5 text-[15px] font-semibold text-white shadow-[0_8px_24px_-8px_rgba(255,79,163,0.55)] transition-all hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] sm:inline-flex"
-          >
-            {t("cta")}
-          </a>
+          <Magnetic className="hidden sm:inline-block">
+            <a
+              href={sectionHref("contact")}
+              className="btn-shine inline-flex items-center justify-center gap-2 rounded-xl bg-brand px-5 py-2.5 text-[15px] font-semibold text-white shadow-[0_8px_24px_-8px_rgba(255,79,163,0.55)] transition-all hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]"
+            >
+              {t("cta")}
+            </a>
+          </Magnetic>
           <button
             type="button"
             className="text-dark md:hidden"

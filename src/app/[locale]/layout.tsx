@@ -11,6 +11,7 @@ import { organizationSchema, websiteSchema } from "@/shared/seo/schema";
 import { getSeoOverride } from "@/shared/seo/metadata";
 import { ogImageUrl } from "@/shared/seo/og";
 import { PageViewTracker } from "@/features/analytics/PageViewTracker";
+import { CustomCursor } from "@/shared/ui/CustomCursor";
 import "../globals.css";
 
 
@@ -79,6 +80,7 @@ export default async function LocaleLayout({
       <body className="font-sans">
         <JsonLd data={[organizationSchema(), websiteSchema(locale)]} />
         <PageViewTracker locale={locale} />
+        <CustomCursor />
         {/* next-intl 4: provider auto-inherits messages from i18n/request.ts */}
         <NextIntlClientProvider>{children}</NextIntlClientProvider>
       </body>

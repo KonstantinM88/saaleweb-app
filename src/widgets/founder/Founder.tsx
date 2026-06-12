@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 import { Container } from "@/shared/ui/Container";
 import { Reveal } from "@/shared/ui/Reveal";
+import { CountUp } from "@/shared/ui/CountUp";
 
 type Stat = { value: string; label: string };
 
@@ -33,7 +34,9 @@ export function Founder() {
               <div className="flex flex-wrap gap-9">
                 {stats.map((s, i) => (
                   <div key={i}>
-                    <b className="block text-2xl text-dark">{s.value}</b>
+                    <b className="block text-2xl text-dark">
+                      <CountUp value={s.value} />
+                    </b>
                     <span className="text-[13px] text-muted">{s.label}</span>
                   </div>
                 ))}
