@@ -163,6 +163,81 @@ body {
   will-change: transform;
 }
 
+/* ============================================================
+   Animated code-native scenes (AI orbit, code window, founder card)
+   ============================================================ */
+@keyframes spin-reverse {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes ping-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  80%,
+  100% {
+    transform: scale(1.9);
+    opacity: 0;
+  }
+}
+
+@keyframes code-cascade {
+  0% {
+    opacity: 0;
+    transform: translateX(-12px);
+  }
+  6%,
+  78% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  90%,
+  100% {
+    opacity: 0;
+    transform: translateX(0);
+  }
+}
+
+@keyframes caret-blink {
+  0%,
+  45% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.auto-shine {
+  position: relative;
+  overflow: hidden;
+}
+.auto-shine::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -80%;
+  height: 100%;
+  width: 50%;
+  transform: skewX(-20deg);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  animation: auto-shine 5s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes auto-shine {
+  0%,
+  55% {
+    left: -80%;
+  }
+  100% {
+    left: 135%;
+  }
+}
+
 /* Pulsing status dot (hero badge) */
 @keyframes pulse-dot {
   0% {

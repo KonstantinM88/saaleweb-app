@@ -2,9 +2,9 @@ import { useTranslations } from "next-intl";
 import { FileCode2, Network, Braces, Quote } from "lucide-react";
 import { Container } from "@/shared/ui/Container";
 import { Reveal } from "@/shared/ui/Reveal";
+import { AiOrbit } from "./AiOrbit";
 
 type Feature = { title: string; desc: string };
-const engines = ["ChatGPT", "Gemini", "Claude", "Perplexity", "Google AI Overview"];
 const icons = [FileCode2, Network, Braces, Quote];
 
 export function AiReady() {
@@ -35,36 +35,27 @@ export function AiReady() {
                 <p className="mt-4 max-w-md text-[clamp(16px,1.6vw,18px)] text-gray-400">
                   {t("lead")}
                 </p>
-                <div className="mt-7 flex flex-wrap gap-3">
-                  {engines.map((e) => (
-                    <div
-                      key={e}
-                      className="flex items-center gap-2.5 rounded-xl border border-white/10 bg-white/[0.06] px-4 py-3 text-sm font-semibold text-white"
-                    >
-                      <span className="h-2 w-2 rounded-full bg-brand-pink" />
-                      {e}
-                    </div>
-                  ))}
+
+                <div className="mt-8 grid gap-3">
+                  {features.map((f, i) => {
+                    const Icon = icons[i];
+                    return (
+                      <div
+                        key={i}
+                        className="flex items-center gap-3.5 rounded-2xl border border-white/10 bg-white/[0.05] px-[18px] py-4 transition-colors hover:border-brand-pink/40"
+                      >
+                        <Icon size={22} className="shrink-0 text-brand-pink" />
+                        <div>
+                          <b className="block text-[15px] text-white">{f.title}</b>
+                          <span className="text-[13px] text-gray-400">{f.desc}</span>
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
 
-              <div className="grid gap-3">
-                {features.map((f, i) => {
-                  const Icon = icons[i];
-                  return (
-                    <div
-                      key={i}
-                      className="flex items-center gap-3.5 rounded-2xl border border-white/10 bg-white/[0.05] px-[18px] py-4"
-                    >
-                      <Icon size={22} className="shrink-0 text-brand-pink" />
-                      <div>
-                        <b className="block text-[15px] text-white">{f.title}</b>
-                        <span className="text-[13px] text-gray-400">{f.desc}</span>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
+              <AiOrbit />
             </div>
           </div>
         </Reveal>

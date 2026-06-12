@@ -2,6 +2,7 @@ import { useTranslations } from "next-intl";
 import { Zap, TrendingUp, Lock, Layers } from "lucide-react";
 import { Container } from "@/shared/ui/Container";
 import { Reveal } from "@/shared/ui/Reveal";
+import { CodeWindow } from "./CodeWindow";
 
 type Benefit = { title: string; desc: string };
 const stack = ["Next.js", "React", "TypeScript", "Prisma", "PostgreSQL", "Vercel"];
@@ -26,12 +27,15 @@ export function TechStack() {
             {stack.map((s) => (
               <div
                 key={s}
-                className="flex items-center gap-2.5 rounded-xl border border-line bg-white px-[18px] py-3 text-[15px] font-semibold"
+                className="flex items-center gap-2.5 rounded-xl border border-line bg-white px-[18px] py-3 text-[15px] font-semibold transition-colors hover:border-brand-purple"
               >
                 <i className="h-2 w-2 rounded-sm bg-brand" />
                 {s}
               </div>
             ))}
+          </div>
+          <div className="mt-8">
+            <CodeWindow />
           </div>
         </Reveal>
 
