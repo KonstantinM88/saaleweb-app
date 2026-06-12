@@ -59,37 +59,41 @@ function Orbit({
 
 export function AiOrbit() {
   return (
-    <div className="relative mx-auto h-[340px] w-[340px] select-none sm:h-[380px] sm:w-[380px]">
-      <div
-        aria-hidden
-        className="absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(circle at 50% 50%, rgba(255,79,163,0.22), rgba(139,92,246,0.10) 45%, transparent 70%)",
-        }}
-      />
+    <div className="relative mx-auto h-[290px] w-[290px] select-none sm:h-[380px] sm:w-[380px]">
+      <div className="absolute inset-0 origin-center scale-[0.76] sm:scale-100">
+        <div className="relative h-full w-full">
+          <div
+            aria-hidden
+            className="absolute inset-[-40px]"
+            style={{
+              background:
+                "radial-gradient(circle at 50% 50%, rgba(255,79,163,0.22), rgba(139,92,246,0.10) 45%, transparent 70%)",
+            }}
+          />
 
-      <div className="absolute left-1/2 top-1/2 h-[190px] w-[190px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-white/15" />
-      <div className="absolute left-1/2 top-1/2 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10" />
+          <div className="absolute left-1/2 top-1/2 h-[190px] w-[190px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-white/15" />
+          <div className="absolute left-1/2 top-1/2 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10" />
 
-      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-        <span
-          aria-hidden
-          className="absolute inset-0 rounded-full border-2 border-brand-pink/40"
-          style={{ animation: "ping-ring 3.2s ease-out infinite" }}
-        />
-        <span
-          aria-hidden
-          className="absolute inset-0 rounded-full border-2 border-brand-purple/40"
-          style={{ animation: "ping-ring 3.2s ease-out 1.6s infinite" }}
-        />
-        <div className="relative grid h-[78px] w-[78px] place-items-center rounded-[24px] bg-brand text-3xl font-extrabold text-white shadow-[0_14px_40px_-10px_rgba(255,79,163,0.7)]">
-          S
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+            <span
+              aria-hidden
+              className="absolute inset-0 rounded-full border-2 border-brand-pink/40"
+              style={{ animation: "ping-ring 3.2s ease-out infinite" }}
+            />
+            <span
+              aria-hidden
+              className="absolute inset-0 rounded-full border-2 border-brand-purple/40"
+              style={{ animation: "ping-ring 3.2s ease-out 1.6s infinite" }}
+            />
+            <div className="relative grid h-[78px] w-[78px] place-items-center rounded-[24px] bg-brand text-3xl font-extrabold text-white shadow-[0_14px_40px_-10px_rgba(255,79,163,0.7)]">
+              S
+            </div>
+          </div>
+
+          <Orbit nodes={OUTER} radius={150} duration={38} />
+          <Orbit nodes={INNER} radius={95} duration={26} reverse />
         </div>
       </div>
-
-      <Orbit nodes={OUTER} radius={150} duration={38} />
-      <Orbit nodes={INNER} radius={95} duration={26} reverse />
     </div>
   );
 }

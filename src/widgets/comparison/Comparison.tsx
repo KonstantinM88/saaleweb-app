@@ -2,6 +2,7 @@ import { useTranslations } from "next-intl";
 import { Container } from "@/shared/ui/Container";
 import { Reveal } from "@/shared/ui/Reveal";
 import { SectionHeader } from "@/shared/ui/SectionHeader";
+import { BeforeAfter } from "./BeforeAfter";
 
 type Row = { feature: string; us: string; them: string };
 
@@ -10,11 +11,15 @@ export function Comparison() {
   const rows = t.raw("rows") as Row[];
 
   return (
-    <section className="bg-surface py-24">
+    <section className="bg-surface py-16 md:py-24">
       <Container>
         <SectionHeader eyebrow={t("eyebrow")} title={t("title")} />
+        <Reveal className="mx-auto mb-10 max-w-[860px] md:mb-14">
+          <BeforeAfter beforeLabel={t("before")} afterLabel={t("after")} />
+        </Reveal>
         <Reveal>
-          <div className="overflow-hidden rounded-[20px] border border-line bg-white shadow-card">
+          <div className="overflow-x-auto rounded-[20px] border border-line bg-white shadow-card">
+            <div className="min-w-[600px]">
             <div className="grid grid-cols-[1.4fr_1fr_1fr]">
               <div className="bg-surface px-5 py-4 text-sm font-bold text-dark" />
               <div className="bg-brand px-5 py-4 text-sm font-bold text-white">SaaleWeb</div>
@@ -38,6 +43,7 @@ export function Comparison() {
                 </div>
               </div>
             ))}
+            </div>
           </div>
         </Reveal>
       </Container>

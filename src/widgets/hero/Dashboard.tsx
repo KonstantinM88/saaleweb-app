@@ -108,13 +108,13 @@ export function Dashboard() {
         ref={tiltRef}
         className="relative transition-transform duration-300 ease-out will-change-transform [transform-style:preserve-3d]"
       >
-        <div className="absolute -right-4 -top-5 z-10 [transform:translateZ(46px)]">
+        <div className="absolute -top-4 right-0 z-10 [transform:translateZ(46px)] sm:-right-4 sm:-top-5">
           <div className="flex animate-bob items-center gap-2.5 rounded-xl border border-line bg-white px-3.5 py-2.5 text-[13px] font-semibold shadow-card">
             <span className="grid h-7 w-7 place-items-center rounded-lg bg-brand text-white">↑</span>
             {tf("a")}
           </div>
         </div>
-        <div className="absolute -bottom-5 -left-5 z-10 [transform:translateZ(46px)]">
+        <div className="absolute -bottom-4 left-0 z-10 [transform:translateZ(46px)] sm:-bottom-5 sm:-left-5">
           <div className="flex animate-bob items-center gap-2.5 rounded-xl border border-line bg-white px-3.5 py-2.5 text-[13px] font-semibold shadow-card [animation-delay:0.4s]">
             <span className="grid h-7 w-7 place-items-center rounded-lg bg-brand text-white">★</span>
             {tf("b")}

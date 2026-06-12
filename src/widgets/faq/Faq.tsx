@@ -30,7 +30,7 @@ export async function Faq() {
   const items = dbItems.length >= fallback.length ? dbItems : fallback;
 
   return (
-    <section id="faq" className="bg-surface py-24">
+    <section id="faq" className="bg-surface py-16 md:py-24">
       <Container>
         <SectionHeader eyebrow={t("eyebrow")} title={t("title")} />
         <FaqAccordion items={items} />

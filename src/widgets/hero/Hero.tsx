@@ -8,7 +8,7 @@ export function Hero() {
   const t = useTranslations("Hero");
 
   return (
-    <section id="top" className="relative overflow-hidden py-20 md:py-24">
+    <section id="top" className="relative overflow-hidden py-12 md:py-24">
       {/* Living-gradient backdrop and engineering grid */}
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
         <div
@@ -31,7 +31,7 @@ export function Hero() {
         />
       </div>
 
-      <Container className="grid items-center gap-14 md:grid-cols-[1.02fr_0.98fr]">
+      <Container className="grid items-center gap-10 md:grid-cols-[1.02fr_0.98fr] md:gap-14">
         <div className="hero-stagger">
           <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-line bg-white/70 px-3.5 py-1.5 text-[13px] font-medium text-gray-700 backdrop-blur-sm">
             <span className="h-[7px] w-[7px] rounded-full bg-success [animation:pulse-dot_2.4s_ease-out_infinite]" />

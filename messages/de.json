@@ -341,7 +341,9 @@
         "us": "Premium",
         "them": "Template"
       }
-    ]
+    ],
+    "before": "Vorher",
+    "after": "Nachher"
   },
   "Process": {
     "eyebrow": "Prozess",
@@ -435,5 +437,12 @@
     "back": "Zurück zum Blog",
     "by": "von",
     "categoryEyebrow": "Kategorie"
+  },
+  "LocalSeo": {
+    "eyebrow": "Lokales SEO",
+    "title": "Sichtbar in Halle, Leipzig & Umgebung",
+    "lead": "Wir bringen Ihr Unternehmen genau dorthin, wo Ihre Kunden suchen - von Halle (Saale) bis Leipzig.",
+    "floatA": "Top-Rankings lokal",
+    "floatB": "~50 km Radius"
   }
 }

@@ -13,7 +13,7 @@ export function TechStack() {
   const benefits = t.raw("benefits") as Benefit[];
 
   return (
-    <section className="py-24">
+    <section className="py-16 md:py-24">
       <Container className="grid items-center gap-12 md:grid-cols-2">
         <Reveal>
           <span className="eyebrow">{t("eyebrow")}</span>

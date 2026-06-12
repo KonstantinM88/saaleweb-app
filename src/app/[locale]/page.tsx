@@ -6,6 +6,7 @@ import { Trust } from "@/widgets/trust/Trust";
 import { CaseStudies } from "@/widgets/case-studies/CaseStudies";
 import { Services } from "@/widgets/services/Services";
 import { Industries } from "@/widgets/industries/Industries";
+import { LocalSeo } from "@/widgets/local-seo/LocalSeo";
 import { TechStack } from "@/widgets/tech-stack/TechStack";
 import { AiReady } from "@/widgets/ai-ready/AiReady";
 import { Comparison } from "@/widgets/comparison/Comparison";
@@ -40,6 +41,7 @@ export default async function HomePage({
         <CaseStudies />
         <Services />
         <Industries />
+        <LocalSeo />
         <TechStack />
         <AiReady />
         <Comparison />

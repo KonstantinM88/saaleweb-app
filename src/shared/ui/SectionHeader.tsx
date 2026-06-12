@@ -10,7 +10,7 @@ export function SectionHeader({
   lead?: string;
 }) {
   return (
-    <Reveal className="mx-auto mb-14 max-w-[680px] text-center">
+    <Reveal className="mx-auto mb-10 max-w-[680px] text-center md:mb-14">
       <span className="eyebrow">{eyebrow}</span>
       <h2 className="mt-4 text-[clamp(28px,4vw,46px)] font-bold tracking-tight text-dark">
         {title}

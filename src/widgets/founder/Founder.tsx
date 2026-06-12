@@ -10,10 +10,10 @@ export function Founder() {
   const stats = t.raw("stats") as Stat[];
 
   return (
-    <section className="bg-surface py-24">
+    <section className="bg-surface py-16 md:py-24">
       <Container>
         <Reveal>
-          <div className="grid items-center gap-11 rounded-3xl border border-line bg-white p-8 shadow-card md:grid-cols-[280px_1fr] md:p-11">
+          <div className="grid items-center gap-8 rounded-3xl border border-line bg-white p-6 shadow-card sm:p-8 md:grid-cols-[280px_1fr] md:gap-11 md:p-11">
             <div className="glow-card mx-auto w-full max-w-[260px] shadow-card">
               <div className="auto-shine relative grid aspect-square w-full place-items-center overflow-hidden rounded-[22px] bg-brand">
                 <span className="text-6xl font-extrabold text-white/90">KM</span>
@@ -36,7 +36,7 @@ export function Founder() {
               </div>
               <h3 className="mb-3.5 mt-2 text-2xl font-bold text-dark">Konstantin Mykhailov</h3>
               <p className="mb-5 max-w-[560px] text-[15.5px] text-muted">{t("bio")}</p>
-              <div className="flex flex-wrap gap-9">
+              <div className="flex flex-wrap gap-6 sm:gap-9">
                 {stats.map((s, i) => (
                   <div key={i}>
                     <b className="block text-2xl text-dark">

@@ -341,7 +341,9 @@
         "us": "Premium",
         "them": "Template"
       }
-    ]
+    ],
+    "before": "Before",
+    "after": "After"
   },
   "Process": {
     "eyebrow": "Process",
@@ -435,5 +437,12 @@
     "back": "Back to blog",
     "by": "by",
     "categoryEyebrow": "Category"
+  },
+  "LocalSeo": {
+    "eyebrow": "Local SEO",
+    "title": "Visible in Halle, Leipzig & the region",
+    "lead": "We put your business right where your customers search - from Halle (Saale) to Leipzig.",
+    "floatA": "Top local rankings",
+    "floatB": "~50 km radius"
   }
 }

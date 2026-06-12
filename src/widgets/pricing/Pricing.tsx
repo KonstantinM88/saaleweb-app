@@ -47,7 +47,7 @@ export async function Pricing() {
   const contactHref = locale === routing.defaultLocale ? "/#contact" : `/${locale}#contact`;
 
   return (
-    <section id="pricing" className="py-24">
+    <section id="pricing" className="py-16 md:py-24">
       <Container>
         <div className="mx-auto mb-14 max-w-[680px] text-center">
           <span className="eyebrow">{t("eyebrow")}</span>

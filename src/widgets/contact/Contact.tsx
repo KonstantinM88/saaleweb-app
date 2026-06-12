@@ -16,9 +16,9 @@ export function Contact() {
     "w-full rounded-xl border border-line bg-white px-4 py-3 text-[15px] text-ink outline-none transition focus:border-brand-purple focus:ring-2 focus:ring-brand-purple/20";
 
   return (
-    <section id="contact" className="py-24">
+    <section id="contact" className="py-16 md:py-24">
       <Container>
-        <div className="relative overflow-hidden rounded-[28px] bg-dark p-10 md:p-14">
+        <div className="relative overflow-hidden rounded-[24px] bg-dark p-6 sm:p-10 md:rounded-[28px] md:p-14">
           <div
             aria-hidden
             className="pointer-events-none absolute inset-0"

@@ -238,6 +238,66 @@ body {
   }
 }
 
+/* Industries: glow wave travelling through cards */
+.industry-card {
+  animation: card-wave 9s ease-in-out infinite;
+  animation-delay: calc(var(--i, 0) * 0.5s);
+}
+.industry-card:hover {
+  animation-play-state: paused;
+}
+@keyframes card-wave {
+  0%,
+  14%,
+  100% {
+    border-color: #e5e7eb;
+    box-shadow: 0 0 0 0 rgba(139, 92, 246, 0);
+  }
+  7% {
+    border-color: rgba(139, 92, 246, 0.55);
+    box-shadow: 0 14px 34px -14px rgba(139, 92, 246, 0.5);
+  }
+}
+.industry-card:hover .industry-emoji {
+  animation: wiggle 0.55s ease;
+}
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(0) scale(1);
+  }
+  30% {
+    transform: rotate(-12deg) scale(1.18);
+  }
+  65% {
+    transform: rotate(9deg) scale(1.18);
+  }
+}
+
+@keyframes dash-march {
+  to {
+    stroke-dashoffset: -20;
+  }
+}
+.map-travel {
+  offset-path: path("M 26 30 C 38 24, 56 30, 70 40");
+  animation: travel 4.5s ease-in-out infinite;
+}
+@keyframes travel {
+  0% {
+    offset-distance: 0%;
+    opacity: 0;
+  }
+  12%,
+  88% {
+    opacity: 1;
+  }
+  100% {
+    offset-distance: 100%;
+    opacity: 0;
+  }
+}
+
 /* Pulsing status dot (hero badge) */
 @keyframes pulse-dot {
   0% {

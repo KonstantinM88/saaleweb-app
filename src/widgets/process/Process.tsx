@@ -10,7 +10,7 @@ export function Process() {
   const steps = t.raw("steps") as Step[];
 
   return (
-    <section className="py-24">
+    <section className="py-16 md:py-24">
       <Container>
         <SectionHeader eyebrow={t("eyebrow")} title={t("title")} />
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">

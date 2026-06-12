@@ -38,7 +38,7 @@ export async function Services() {
   const items = dbItems.length >= fallback.length ? dbItems : fallback;
 
   return (
-    <section id="services" className="bg-surface py-24">
+    <section id="services" className="bg-surface py-16 md:py-24">
       <Container>
         <SectionHeader eyebrow={t("eyebrow")} title={t("title")} lead={t("lead")} />
 

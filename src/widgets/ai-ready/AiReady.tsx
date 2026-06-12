@@ -12,10 +12,10 @@ export function AiReady() {
   const features = t.raw("features") as Feature[];
 
   return (
-    <section className="py-24">
+    <section className="py-16 md:py-24">
       <Container>
         <Reveal>
-          <div className="relative overflow-hidden rounded-[28px] bg-dark p-10 md:p-14">
+          <div className="relative overflow-hidden rounded-[24px] bg-dark p-6 sm:p-10 md:rounded-[28px] md:p-14">
             <div
               aria-hidden
               className="pointer-events-none absolute inset-0"

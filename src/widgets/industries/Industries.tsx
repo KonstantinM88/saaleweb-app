@@ -1,4 +1,5 @@
 import { getTranslations, getLocale } from "next-intl/server";
+import type { CSSProperties } from "react";
 import { prisma } from "@/lib/prisma";
 import type { AppLocale } from "@/i18n/routing";
 import { Container } from "@/shared/ui/Container";
@@ -43,18 +44,21 @@ export async function Industries() {
   const items = dbItems.length >= fallback.length ? dbItems : fallback;
 
   return (
-    <section id="industries" className="bg-surface py-24">
+    <section id="industries" className="bg-surface py-16 md:py-24">
       <Container>
         <SectionHeader eyebrow={t("eyebrow")} title={t("title")} lead={t("lead")} />
         <div className="grid grid-cols-2 gap-3.5 md:grid-cols-4">
           {items.map((item, i) => (
-            <Reveal key={i} delay={i * 50}>
-              <div className="group h-full rounded-2xl border border-line bg-white p-5 text-center transition-all hover:-translate-y-1 hover:bg-dark">
+            <Reveal key={i} delay={i * 50} className="h-full">
+              <div
+                className="industry-card group h-full rounded-2xl border border-line bg-white p-4 text-center transition-all hover:-translate-y-1 hover:bg-dark sm:p-5"
+                style={{ "--i": i } as CSSProperties}
+              >
                 {item.coverImage ? (
                   // eslint-disable-next-line @next/next/no-img-element
-                  <img src={item.coverImage} alt="" className="mx-auto mb-3 h-12 w-12 rounded-lg object-cover" />
+                  <img src={item.coverImage} alt="" className="industry-emoji mx-auto mb-3 h-12 w-12 rounded-lg object-cover" />
                 ) : (
-                  <span className="mb-3 block text-2xl">{item.emoji}</span>
+                  <span className="industry-emoji mb-3 block text-2xl">{item.emoji}</span>
                 )}
                 <h3 className="mb-1 text-[15.5px] font-bold text-dark transition-colors group-hover:text-white">
                   {item.name}
