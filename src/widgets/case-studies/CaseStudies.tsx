@@ -1,4 +1,5 @@
 import { getTranslations, getLocale } from "next-intl/server";
+import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { prisma } from "@/lib/prisma";
@@ -80,22 +81,35 @@ export async function CaseStudies() {
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {items.map((item, i) => {
             const hex = item.cover.color?.startsWith("#");
+            const isLocalImage = item.cover.image?.startsWith("/");
             const inner = (
               <>
                 <div
                   className={cn(
-                    "relative h-[150px]",
-                    item.cover.image ? "bg-dark" : !hex ? item.cover.color ?? "bg-brand" : undefined,
+                    "relative aspect-[3/2] overflow-hidden",
+                    item.cover.image ? "bg-[#fbf7fc]" : !hex ? item.cover.color ?? "bg-brand" : undefined,
                   )}
                   style={!item.cover.image && hex ? { background: item.cover.color ?? undefined } : undefined}
                 >
-                  {item.cover.image ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img
+                  {item.cover.image && isLocalImage ? (
+                    <Image
                       src={item.cover.image}
                       alt={item.title}
-                      className="absolute inset-0 h-full w-full object-cover"
+                      fill
+                      sizes="(min-width: 1024px) 370px, (min-width: 768px) 33vw, 100vw"
+                      className="object-contain object-center"
                     />
+                  ) : item.cover.image ? (
+                    <>
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={item.cover.image}
+                        alt={item.title}
+                        loading="lazy"
+                        decoding="async"
+                        className="absolute inset-0 h-full w-full object-contain object-center"
+                      />
+                    </>
                   ) : (
                     <span className="absolute bottom-3.5 left-4 text-xl font-bold tracking-tight text-white">
                       {item.cover.label}

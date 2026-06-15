@@ -41,6 +41,7 @@ Instructions and project memory for coding agents working in this repository.
 - `src/widgets/local-seo/LocalSeo.tsx` - code-native animated multi-city regional visibility map section on the homepage.
 - `src/widgets/comparison/BeforeAfter.tsx` - client-side before/after visual comparison slider used above the comparison table.
 - `public/images/comparison/` - static WebP assets used by the before/after comparison slider.
+- `public/images/cases/` - static WebP assets used as project/case study covers when media should live in the committed public asset tree.
 - `src/widgets/tech-stack/CodeWindow.tsx` - code-native animated editor/build scene used inside the tech-stack homepage section.
 - `src/widgets/blog/` - blog UI pieces such as post cards, table of contents, and share buttons.
 - `src/features/` - interactive feature units such as contact and language switching.
@@ -232,3 +233,7 @@ Instructions and project memory for coding agents working in this repository.
 - 2026-06-15: Improved the `LocalSeo` map marker hierarchy: Halle (Saale) now renders as a prominent branded `SEO` hub badge with its own label, while all other cities remain secondary reach points.
 - 2026-06-15: Added code-native SVG icons to `AiOrbit` labels for ChatGPT, Gemini, Perplexity, Claude, Google AI, and Copilot. Keep these icons inline unless a future brand-asset system is introduced.
 - 2026-06-15: Replaced the drawn `BeforeAfter` comparison mockups with real WebP assets: `public/images/comparison/old-fashioned.webp` for the old-fashioned side and `public/images/comparison/premium-modern.webp` for the premium modern side. Converted the uploaded PNG sources from `public/uploads` with `sharp` and deleted the consumed upload files.
+- 2026-06-16: Converted `public/uploads/permanent-halle.png` to `public/images/cases/permanent-halle.webp`, assigned it as the first `Media` cover for the `online-buchungen-verdreifacht` project, and made homepage case-study covers render responsively while keeping external admin-upload URLs supported. Deleted the consumed upload PNG afterward.
+- 2026-06-16: Adjusted homepage and project-index case cards to use a 3:2 cover area with `object-contain`, so the `permanent-halle.webp` project mockup is shown fully instead of being cropped by fixed-height card headers.
+- 2026-06-16: Converted `public/uploads/waldschlosschen.png` to `public/images/cases/waldschlosschen.webp` and assigned it as the first `Media` cover for the `direktbuchungen-ohne-portale` / `direct-bookings-without-portals` / `pryamye-broni-bez-agregatorov` project. Deleted the consumed upload PNG afterward.
+- 2026-06-16: Converted `public/uploads/SorafalBau-mix.png` to `public/images/cases/sorgfaltbau-mix.webp` and assigned it as the first `Media` cover for the `qualifizierte-bauanfragen` / `qualified-construction-leads` / `kvalificirovannye-zayavki` project. Deleted the consumed upload PNG afterward.
