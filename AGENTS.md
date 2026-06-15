@@ -40,6 +40,7 @@ Instructions and project memory for coding agents working in this repository.
 - `src/widgets/ai-ready/AiOrbit.tsx` - code-native animated AI engine orbit scene used inside the AI-ready homepage section.
 - `src/widgets/local-seo/LocalSeo.tsx` - code-native animated multi-city regional visibility map section on the homepage.
 - `src/widgets/comparison/BeforeAfter.tsx` - client-side before/after visual comparison slider used above the comparison table.
+- `public/images/comparison/` - static WebP assets used by the before/after comparison slider.
 - `src/widgets/tech-stack/CodeWindow.tsx` - code-native animated editor/build scene used inside the tech-stack homepage section.
 - `src/widgets/blog/` - blog UI pieces such as post cards, table of contents, and share buttons.
 - `src/features/` - interactive feature units such as contact and language switching.
@@ -230,3 +231,4 @@ Instructions and project memory for coding agents working in this repository.
 - 2026-06-13: Updated the public SaaleWeb wordmark in navbar and footer so `Web` uses the brand gradient while `Saale` remains dark.
 - 2026-06-15: Improved the `LocalSeo` map marker hierarchy: Halle (Saale) now renders as a prominent branded `SEO` hub badge with its own label, while all other cities remain secondary reach points.
 - 2026-06-15: Added code-native SVG icons to `AiOrbit` labels for ChatGPT, Gemini, Perplexity, Claude, Google AI, and Copilot. Keep these icons inline unless a future brand-asset system is introduced.
+- 2026-06-15: Replaced the drawn `BeforeAfter` comparison mockups with real WebP assets: `public/images/comparison/old-fashioned.webp` for the old-fashioned side and `public/images/comparison/premium-modern.webp` for the premium modern side. Converted the uploaded PNG sources from `public/uploads` with `sharp` and deleted the consumed upload files.

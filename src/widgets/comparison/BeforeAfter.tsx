@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 export function BeforeAfter({ beforeLabel, afterLabel }: { beforeLabel: string; afterLabel: string }) {
@@ -50,59 +51,28 @@ export function BeforeAfter({ beforeLabel, afterLabel }: { beforeLabel: string; 
         dragging.current = false;
       }}
     >
-      <div className="absolute inset-0 bg-[#ece9e0]">
-        <div className="flex h-[12%] items-center gap-2 bg-[#cfcabc] px-[3%]">
-          <span className="h-[46%] w-[10%] rounded-sm bg-[#8e8a7d]" />
-          <span className="ml-auto h-[26%] w-[8%] rounded-sm bg-[#a39e8f]" />
-          <span className="h-[26%] w-[8%] rounded-sm bg-[#a39e8f]" />
-          <span className="h-[26%] w-[8%] rounded-sm bg-[#a39e8f]" />
-        </div>
-        <div className="flex h-[8%] items-center bg-[#e7c84f]/70 px-[3%]">
-          <span className="h-[30%] w-[55%] rounded-sm bg-[#9c8b3a]/70" />
-        </div>
-        <div className="grid h-[80%] grid-cols-[1.5fr_1fr] gap-[3%] p-[4%]">
-          <div className="space-y-[5%]">
-            <span className="block h-[7%] w-[70%] rounded-sm bg-[#b4af9f]" />
-            <span className="block h-[4%] w-full rounded-sm bg-[#c9c4b4]" />
-            <span className="block h-[4%] w-[92%] rounded-sm bg-[#c9c4b4]" />
-            <span className="block h-[4%] w-[96%] rounded-sm bg-[#c9c4b4]" />
-            <span className="block h-[4%] w-[40%] rounded-sm bg-[#7d9ec9] underline" />
-            <span className="block h-[4%] w-[88%] rounded-sm bg-[#c9c4b4]" />
-            <span className="block h-[4%] w-[60%] rounded-sm bg-[#c9c4b4]" />
-            <span className="mt-[4%] inline-block h-[9%] w-[34%] rounded-sm border-2 border-[#8e8a7d] bg-[#d6d1c2]" />
-          </div>
-          <div className="relative rounded-sm border-2 border-[#b4af9f] bg-[#dcd7c8]">
-            <span className="absolute left-0 top-0 h-full w-full bg-[linear-gradient(45deg,transparent_48%,#b4af9f_48%,#b4af9f_52%,transparent_52%),linear-gradient(-45deg,transparent_48%,#b4af9f_48%,#b4af9f_52%,transparent_52%)]" />
-          </div>
-        </div>
+      <Image
+        src="/images/comparison/old-fashioned.webp"
+        alt=""
+        fill
+        sizes="(min-width: 768px) 860px, calc(100vw - 32px)"
+        draggable={false}
+        className="absolute inset-0 h-full w-full object-cover"
+      />
+      <div className="absolute inset-0" style={{ clipPath: `inset(0 0 0 ${pos}%)` }}>
+        <Image
+          src="/images/comparison/premium-modern.webp"
+          alt=""
+          fill
+          sizes="(min-width: 768px) 860px, calc(100vw - 32px)"
+          draggable={false}
+          className="h-full w-full object-cover"
+        />
       </div>
-
-      <div className="absolute inset-0 bg-white" style={{ clipPath: `inset(0 0 0 ${pos}%)` }}>
-        <div className="flex h-[12%] items-center gap-2 border-b border-line bg-white/90 px-[3%]">
-          <span className="grid aspect-square h-[46%] place-items-center rounded-md bg-brand text-[9px] font-extrabold text-white">
-            S
-          </span>
-          <span className="ml-auto h-[22%] w-[7%] rounded-full bg-surface" />
-          <span className="h-[22%] w-[7%] rounded-full bg-surface" />
-          <span className="h-[42%] w-[11%] rounded-md bg-brand" />
-        </div>
-        <div className="relative h-[42%] overflow-hidden bg-gradient-to-br from-brand-pink to-brand-purple px-[4%] py-[3%]">
-          <span className="block h-[16%] w-[44%] rounded-md bg-white/90" />
-          <span className="mt-[2%] block h-[16%] w-[30%] rounded-md bg-white/60" />
-          <span className="mt-[3%] inline-block h-[18%] w-[18%] rounded-full bg-white" />
-          <span className="absolute -right-[6%] -top-[20%] h-[120%] w-[34%] rounded-full bg-white/15 blur-xl" />
-        </div>
-        <div className="grid h-[46%] grid-cols-3 gap-[3%] p-[4%]">
-          {[0, 1, 2].map((card) => (
-            <div key={card} className="rounded-xl border border-line bg-white p-[8%] shadow-card">
-              <span className="block aspect-square w-[34%] rounded-lg bg-brand-soft" />
-              <span className="mt-[10%] block h-[8%] w-[80%] rounded-sm bg-ink/70" />
-              <span className="mt-[6%] block h-[6%] w-full rounded-sm bg-line" />
-              <span className="mt-[5%] block h-[6%] w-[70%] rounded-sm bg-line" />
-            </div>
-          ))}
-        </div>
-      </div>
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.18),transparent_32%),linear-gradient(180deg,rgba(17,24,39,0.08),rgba(17,24,39,0.18))]"
+      />
 
       <span className="pointer-events-none absolute left-3 top-3 rounded-md bg-dark/70 px-2.5 py-1 font-mono text-[11px] font-semibold text-white backdrop-blur-sm">
         {beforeLabel}
