@@ -19,6 +19,7 @@ const CITIES: City[] = [
 
 const HUB = { x: HALLE.x, y: HALLE.y };
 const REACH_CITIES = CITIES.filter((city) => city.name !== HALLE.name);
+const MAP_CITIES = CITIES.filter((city) => city.name !== HALLE.name);
 
 function reachPath(city: City, index: number) {
   const midX = (HUB.x + city.x) / 2;
@@ -60,6 +61,25 @@ function CityDot({ city }: { city: City }) {
           {city.name}
         </span>
       </div>
+    </div>
+  );
+}
+
+function HubMarker() {
+  return (
+    <div
+      aria-hidden
+      className="absolute z-20 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-1.5"
+      style={{ left: `${HUB.x}%`, top: `${(HUB.y / 70) * 100}%` }}
+    >
+      <div className="relative grid h-12 w-12 place-items-center rounded-2xl bg-brand text-[12px] font-black text-white shadow-[0_0_34px_rgba(255,79,163,0.72)]">
+        <span className="absolute inset-[-9px] rounded-[22px] border border-brand-pink/50 bg-brand-pink/10 animate-pulse" />
+        <span className="absolute inset-[-17px] rounded-[28px] border border-brand-purple/25" />
+        <span className="relative tracking-[0.08em]">SEO</span>
+      </div>
+      <span className="whitespace-nowrap rounded-full border border-white/20 bg-white/15 px-3 py-1 text-[11px] font-extrabold text-white shadow-card backdrop-blur-sm">
+        Halle (Saale)
+      </span>
     </div>
   );
 }
@@ -138,15 +158,9 @@ export function LocalSeo() {
                 <circle cx={HUB.x} cy={HUB.y} r="1.65" fill="#FF4FA3" />
               </svg>
 
-              <div
-                aria-hidden
-                className="absolute grid h-10 w-10 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-brand-pink/40 bg-brand-pink/20 text-[10px] font-black text-white shadow-[0_0_26px_rgba(255,79,163,0.55)] backdrop-blur-sm"
-                style={{ left: `${HUB.x}%`, top: `${(HUB.y / 70) * 100}%` }}
-              >
-                SEO
-              </div>
+              <HubMarker />
 
-              {CITIES.map((city) => (
+              {MAP_CITIES.map((city) => (
                 <CityDot key={city.name} city={city} />
               ))}
 
