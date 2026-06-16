@@ -306,6 +306,79 @@
       }
     ]
   },
+  "WhySaaleWeb": {
+    "eyebrow": "More than web design",
+    "title": "Why businesses choose SaaleWeb",
+    "lead": "Modern websites that do more than look good — they become visible, build trust and bring new inquiries.",
+    "intro": "We combine modern design, SEO, performance and AI optimization into a digital system that works for your business.",
+    "benefits": [
+      {
+        "key": "visibility",
+        "title": "More visibility",
+        "text": "SEO-optimized page structures, local keywords and clear content help your business get found more often on Google.",
+        "metric": "Google & Local SEO"
+      },
+      {
+        "key": "inquiries",
+        "title": "More inquiries",
+        "text": "Clear calls to action, fast loading times and convincing content guide visitors directly toward contacting you.",
+        "metric": "Conversion focus"
+      },
+      {
+        "key": "ai",
+        "title": "AI ready",
+        "text": "Your content is structured so ChatGPT, Gemini, Claude, Perplexity and Google AI can understand it.",
+        "metric": "AI Search"
+      },
+      {
+        "key": "speed",
+        "title": "Fast & modern",
+        "text": "Modern technology enables short loading times, a better user experience and strong Core Web Vitals.",
+        "metric": "Performance"
+      },
+      {
+        "key": "safe",
+        "title": "Secure & maintainable",
+        "text": "Less plugin dependency, clean architecture and long-term maintainability reduce technical risks.",
+        "metric": "Future-proof"
+      },
+      {
+        "key": "partner",
+        "title": "Direct contact",
+        "text": "You work directly with the developer and founder of SaaleWeb — without anonymous agency processes.",
+        "metric": "Personal"
+      }
+    ],
+    "comparisonTitle": "The difference is in the result",
+    "standardTitle": "Standard website",
+    "systemTitle": "SaaleWeb System",
+    "standard": [
+      "Looks good",
+      "Rarely gets updated",
+      "Little SEO structure",
+      "Limited focus on inquiries",
+      "Not prepared for AI Search"
+    ],
+    "system": [
+      "Modern design",
+      "SEO from the start",
+      "Performance optimized",
+      "Conversion focus",
+      "AI-ready content",
+      "Long-term support"
+    ],
+    "cta": {
+      "text": "Would you like to know what your current website could improve?",
+      "button": "Request a free website analysis",
+      "secondary": "View projects"
+    },
+    "links": {
+      "projects": "Projects",
+      "contact": "Contact",
+      "seoHalle": "SEO in Halle",
+      "aiHalle": "AI agency Halle"
+    }
+  },
   "Comparison": {
     "eyebrow": "Comparison",
     "title": "Modern website compared with classic WordPress",

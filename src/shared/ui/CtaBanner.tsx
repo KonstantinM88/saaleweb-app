@@ -1,5 +1,7 @@
 import { useLocale, useTranslations } from "next-intl";
+import { ArrowRight } from "lucide-react";
 import { routing } from "@/i18n/routing";
+import { BrandText } from "./BrandText";
 import { Container } from "./Container";
 
 export function CtaBanner() {
@@ -23,12 +25,15 @@ export function CtaBanner() {
             <h2 className="text-[clamp(24px,3vw,38px)] font-bold tracking-tight text-white">
               {t("ctaTitle")}
             </h2>
-            <p className="mx-auto mt-3 max-w-lg text-[16px] text-gray-400">{t("ctaText")}</p>
+            <p className="mx-auto mt-3 max-w-lg text-[16px] text-gray-400">
+              <BrandText text={t("ctaText")} />
+            </p>
             <a
               href={contactHref}
               className="mt-7 inline-flex items-center justify-center gap-2 rounded-xl bg-brand px-6 py-3.5 text-[15px] font-semibold text-white transition hover:-translate-y-0.5"
             >
-              {t("ctaButton")} →
+              {t("ctaButton")}
+              <ArrowRight className="h-4 w-4" aria-hidden />
             </a>
           </div>
         </div>

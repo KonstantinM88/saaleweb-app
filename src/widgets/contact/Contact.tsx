@@ -3,6 +3,7 @@
 import { useActionState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { Container } from "@/shared/ui/Container";
+import { BrandText } from "@/shared/ui/BrandText";
 import { submitContact, type ContactState } from "@/features/contact/actions";
 
 const initialState: ContactState = { status: "idle" };
@@ -35,7 +36,9 @@ export function Contact() {
               <h2 className="mt-3 text-[clamp(26px,3.5vw,40px)] font-bold tracking-tight text-white">
                 {t("title")}
               </h2>
-              <p className="mt-4 max-w-md text-[17px] text-gray-400">{t("lead")}</p>
+              <p className="mt-4 max-w-md text-[17px] text-gray-400">
+                <BrandText text={t("lead")} />
+              </p>
             </div>
 
             {state.status === "success" ? (

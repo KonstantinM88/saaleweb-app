@@ -2,6 +2,7 @@ import { useTranslations } from "next-intl";
 import { Container } from "@/shared/ui/Container";
 import { Reveal } from "@/shared/ui/Reveal";
 import { CountUp } from "@/shared/ui/CountUp";
+import { BrandText } from "@/shared/ui/BrandText";
 
 type Stat = { value: string; label: string };
 
@@ -32,10 +33,12 @@ export function Founder() {
             </div>
             <div>
               <div className="font-mono text-xs uppercase tracking-[0.1em] text-brand-purple">
-                {t("role")}
+                <BrandText text={t("role")} />
               </div>
               <h3 className="mb-3.5 mt-2 text-2xl font-bold text-dark">Konstantin Mykhailov</h3>
-              <p className="mb-5 max-w-[560px] text-[15.5px] text-muted">{t("bio")}</p>
+              <p className="mb-5 max-w-[560px] text-[15.5px] text-muted">
+                <BrandText text={t("bio")} />
+              </p>
               <div className="flex flex-wrap gap-6 sm:gap-9">
                 {stats.map((s, i) => (
                   <div key={i}>

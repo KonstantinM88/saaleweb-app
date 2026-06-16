@@ -306,6 +306,79 @@
       }
     ]
   },
+  "WhySaaleWeb": {
+    "eyebrow": "Mehr als nur Webdesign",
+    "title": "Warum Unternehmen SaaleWeb wählen",
+    "lead": "Moderne Websites, die nicht nur gut aussehen — sondern sichtbar werden, Vertrauen schaffen und neue Anfragen bringen.",
+    "intro": "Wir verbinden modernes Design, SEO, Performance und KI-Optimierung zu einem digitalen System, das für Ihr Unternehmen arbeitet.",
+    "benefits": [
+      {
+        "key": "visibility",
+        "title": "Mehr Sichtbarkeit",
+        "text": "SEO-optimierte Seitenstrukturen, lokale Keywords und klare Inhalte helfen Ihrem Unternehmen, bei Google besser gefunden zu werden.",
+        "metric": "Google & Local SEO"
+      },
+      {
+        "key": "inquiries",
+        "title": "Mehr Anfragen",
+        "text": "Klare Call-to-Actions, schnelle Ladezeiten und überzeugende Inhalte führen Besucher gezielt zur Kontaktaufnahme.",
+        "metric": "Conversion-Fokus"
+      },
+      {
+        "key": "ai",
+        "title": "AI Ready",
+        "text": "Ihre Inhalte werden so strukturiert, dass sie auch für ChatGPT, Gemini, Claude, Perplexity und Google AI verständlich sind.",
+        "metric": "AI Search"
+      },
+      {
+        "key": "speed",
+        "title": "Schnell & modern",
+        "text": "Moderne Technologie sorgt für kurze Ladezeiten, bessere Nutzererfahrung und starke Core Web Vitals.",
+        "metric": "Performance"
+      },
+      {
+        "key": "safe",
+        "title": "Sicher & wartbar",
+        "text": "Weniger Plugin-Abhängigkeit, saubere Architektur und langfristige Wartbarkeit reduzieren technische Risiken.",
+        "metric": "Zukunftssicher"
+      },
+      {
+        "key": "partner",
+        "title": "Direkter Ansprechpartner",
+        "text": "Sie arbeiten direkt mit dem Entwickler und Gründer von SaaleWeb — ohne anonyme Agenturprozesse.",
+        "metric": "Persönlich"
+      }
+    ],
+    "comparisonTitle": "Der Unterschied liegt im Ergebnis",
+    "standardTitle": "Standard Website",
+    "systemTitle": "SaaleWeb System",
+    "standard": [
+      "Sieht gut aus",
+      "Wird selten aktualisiert",
+      "Kaum SEO-Struktur",
+      "Wenig Fokus auf Anfragen",
+      "Nicht für AI Search vorbereitet"
+    ],
+    "system": [
+      "Modernes Design",
+      "SEO von Anfang an",
+      "Performance optimiert",
+      "Conversion-Fokus",
+      "AI-ready Inhalte",
+      "Langfristige Betreuung"
+    ],
+    "cta": {
+      "text": "Sie möchten wissen, was Ihre aktuelle Website verbessern könnte?",
+      "button": "Kostenlose Website-Analyse anfragen",
+      "secondary": "Projekte ansehen"
+    },
+    "links": {
+      "projects": "Projekte",
+      "contact": "Kontakt",
+      "seoHalle": "SEO in Halle",
+      "aiHalle": "KI-Agentur Halle"
+    }
+  },
   "Comparison": {
     "eyebrow": "Vergleich",
     "title": "Moderne Website im Vergleich zu klassischem WordPress",

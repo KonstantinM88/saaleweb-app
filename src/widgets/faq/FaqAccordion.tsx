@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Plus } from "lucide-react";
+import { BrandText } from "@/shared/ui/BrandText";
 import { cn } from "@/shared/lib/cn";
 
 export type QA = { q: string; a: string };
@@ -21,7 +22,9 @@ export function FaqAccordion({ items }: { items: QA[] }) {
               aria-expanded={open}
               className="flex w-full items-center justify-between gap-4 px-[22px] py-5 text-left text-base font-semibold text-dark"
             >
-              {item.q}
+              <span>
+                <BrandText text={item.q} />
+              </span>
               <span
                 className={cn(
                   "grid h-6 w-6 shrink-0 place-items-center rounded-[7px] transition-all",
@@ -36,7 +39,9 @@ export function FaqAccordion({ items }: { items: QA[] }) {
               style={{ gridTemplateRows: open ? "1fr" : "0fr" }}
             >
               <div className="overflow-hidden">
-                <p className="px-[22px] pb-5 text-[15px] text-muted">{item.a}</p>
+                <p className="px-[22px] pb-5 text-[15px] text-muted">
+                  <BrandText text={item.a} />
+                </p>
               </div>
             </div>
           </div>

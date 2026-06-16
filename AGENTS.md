@@ -39,8 +39,9 @@ Instructions and project memory for coding agents working in this repository.
 - `src/widgets/pricing/Pricing.tsx` and `src/widgets/pricing/PricingPlans.tsx` - homepage and pricing-page tariff rendering with DB rows and message fallback.
 - `src/widgets/ai-ready/AiOrbit.tsx` - code-native animated AI engine orbit scene used inside the AI-ready homepage section.
 - `src/widgets/local-seo/LocalSeo.tsx` - code-native animated multi-city regional visibility map section on the homepage.
-- `src/widgets/comparison/BeforeAfter.tsx` - client-side before/after visual comparison slider used above the comparison table.
-- `public/images/comparison/` - static WebP assets used by the before/after comparison slider.
+- `src/widgets/why-saaleweb/WhySaaleWebSection.tsx` - conversion-focused homepage value section that replaced the old technical SaaleWeb-vs-WordPress comparison.
+- `src/widgets/comparison/BeforeAfter.tsx` - legacy client-side before/after visual comparison slider retained for reference; no longer rendered on the homepage after `WhySaaleWebSection` replaced the comparison block.
+- `public/images/comparison/` - static WebP assets for the legacy before/after comparison slider.
 - `public/images/cases/` - static WebP assets used as project/case study covers when media should live in the committed public asset tree.
 - `src/widgets/tech-stack/CodeWindow.tsx` - code-native animated editor/build scene used inside the tech-stack homepage section.
 - `src/widgets/blog/` - blog UI pieces such as post cards, table of contents, and share buttons.
@@ -50,6 +51,7 @@ Instructions and project memory for coding agents working in this repository.
 - `src/features/language-switcher/LocaleSlugsContext.tsx` - per-locale slug context used by detail pages for smart language switching.
 - `src/shared/` - shared UI, config, helpers.
 - `src/shared/ui/ScrollProgress.tsx` - client-side gradient scroll progress bar mounted inside the sticky navbar.
+- `src/shared/ui/BrandText.tsx` - shared `BrandWord` / `BrandText` helpers for rendering visible `SaaleWeb` text with the same brand-gradient `Web` styling as the public logo.
 - `src/shared/ui/CustomCursor.tsx` - public desktop-only custom gradient cursor; mounted only in localized public layout.
 - `src/shared/ui/Magnetic.tsx` - desktop-only reduced-motion-aware magnetic wrapper used by primary buttons/CTA.
 - `src/shared/ui/CountUp.tsx` - client-side numeric stat counter used in the founder section.
@@ -145,10 +147,12 @@ Instructions and project memory for coding agents working in this repository.
 - Use existing design tokens from `tailwind.config.ts`: brand pink/purple, `dark`, `ink`, `muted`, `surface`, `line`.
 - Shared UI includes `Button`, `Container`, `SectionHeader`, and `Reveal`; reuse them before adding new primitives.
 - The public wordmark styling keeps `Saale` dark and renders `Web` with the brand gradient.
+- For visible UI text that contains `SaaleWeb`, render it through `BrandText` / `BrandWord` so the brand mark stays visually consistent. Metadata, JSON-LD, and plain text SEO fields should remain unstyled strings.
 - The public motion system is CSS-first and must respect `prefers-reduced-motion`. Current motion primitives include `btn-shine`, `card-border-glow`, `hero-gradient-field`, `marquee`, `glow-card`, directional `Reveal`, navbar scroll shadow/progress, magnetic buttons, founder `CountUp`, custom desktop cursor, and dashboard pointer tilt guarded by pointer/reduced-motion checks.
 - Keep `CustomCursor` mounted only in `src/app/[locale]/layout.tsx` so admin pages keep the native cursor. Do not mount it in `src/app/admin/layout.tsx`.
 - Code-native animated scenes live in widgets and use existing CSS keyframes in `globals.css`. When applying future scene/motion packages, merge `globals.css` manually so `hero-gradient-field`, `gradient-field-drift`, and cursor styles are not reverted to older package versions.
-- The homepage includes `LocalSeo` immediately after `Industries`; its text lives in the `LocalSeo` namespace in all three message files. `Comparison` also requires localized `before` and `after` labels for the before/after slider.
+- The homepage includes `LocalSeo` immediately after `Industries`; its text lives in the `LocalSeo` namespace in all three message files. The former technical `Comparison` block is replaced on the homepage by `WhySaaleWebSection`, with copy in the `WhySaaleWeb` namespace.
+- German public URLs are unprefixed because `localePrefix` is `as-needed`; use `next-intl` `Link`/`getPathname` for public links instead of hardcoding `/de/...`.
 - Contact form validation lives in `src/features/contact/schema.ts`; server action lives in `src/features/contact/actions.ts`.
 - Contact form stores `Lead` rows with source `homepage_contact` and has a honeypot field named `website`.
 - Contact form optionally sends a Resend email notification after storing a lead. `sendLeadNotification()` must never throw or block a successful form submission if email delivery fails.
@@ -237,3 +241,5 @@ Instructions and project memory for coding agents working in this repository.
 - 2026-06-16: Adjusted homepage and project-index case cards to use a 3:2 cover area with `object-contain`, so the `permanent-halle.webp` project mockup is shown fully instead of being cropped by fixed-height card headers.
 - 2026-06-16: Converted `public/uploads/waldschlosschen.png` to `public/images/cases/waldschlosschen.webp` and assigned it as the first `Media` cover for the `direktbuchungen-ohne-portale` / `direct-bookings-without-portals` / `pryamye-broni-bez-agregatorov` project. Deleted the consumed upload PNG afterward.
 - 2026-06-16: Converted `public/uploads/SorafalBau-mix.png` to `public/images/cases/sorgfaltbau-mix.webp` and assigned it as the first `Media` cover for the `qualifizierte-bauanfragen` / `qualified-construction-leads` / `kvalificirovannye-zayavki` project. Deleted the consumed upload PNG afterward.
+- 2026-06-16: Replaced the technical homepage SaaleWeb-vs-WordPress comparison with `WhySaaleWebSection`, a conversion-focused business value block with 6 benefit cards, a Standard Website vs SaaleWeb System result comparison, CTA, and localized DE/EN/RU copy. Links use existing localized routes (`/projekte`, contact anchor, Halle location page, and AI integration service) rather than hardcoded `/de/...` paths.
+- 2026-06-16: Added shared `BrandWord` / `BrandText` helpers and applied them to visible UI text where `SaaleWeb` appears, including the homepage value block, FAQ, contact, founder, CTA banner, city pages, footer, navbar, and admin login. Metadata/JSON-LD remain plain strings. Also fixed mojibake copy/arrow artifacts in `Footer` and `CtaBanner` while touching those files.

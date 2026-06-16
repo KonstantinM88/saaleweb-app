@@ -10,6 +10,7 @@ import { Footer } from "@/widgets/footer/Footer";
 import { Container } from "@/shared/ui/Container";
 import { Breadcrumbs } from "@/shared/ui/Breadcrumbs";
 import { CtaBanner } from "@/shared/ui/CtaBanner";
+import { BrandText } from "@/shared/ui/BrandText";
 import { JsonLd } from "@/shared/seo/JsonLd";
 import { localBusinessSchema, breadcrumbSchema } from "@/shared/seo/schema";
 
@@ -86,7 +87,7 @@ export default async function CityPage({ params }: { params: Promise<Params> }) 
             </h1>
             <p className="mt-5 text-xl text-muted">{t("lead", { city: city.name })}</p>
             <p className="mt-6 text-[16px] leading-relaxed text-ink">
-              {t("body", { city: city.name })}
+              <BrandText text={t("body", { city: city.name })} />
             </p>
           </Container>
         </section>

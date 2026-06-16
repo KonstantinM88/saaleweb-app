@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
 import { Container } from "@/shared/ui/Container";
+import { BrandText, BrandWord } from "@/shared/ui/BrandText";
 import { siteConfig } from "@/shared/config/site";
 import { Link } from "@/i18n/navigation";
 
@@ -18,23 +19,26 @@ export function Footer() {
               <span className="grid h-[30px] w-[30px] place-items-center rounded-[9px] bg-brand text-[15px] font-extrabold text-white">
                 S
               </span>
-              <span>
-                Saale
-                <span className="bg-brand bg-clip-text text-transparent">Web</span>
-              </span>
+              <BrandWord />
             </div>
-            <p className="mt-4 max-w-[280px] text-[14.5px] text-muted">{t("tagline")}</p>
+            <p className="mt-4 max-w-[280px] text-[14.5px] text-muted">
+              <BrandText text={t("tagline")} />
+            </p>
           </div>
 
           <FooterCol title={t("services")}>
             {services.map((s, i) => (
-              <a key={i} href="#services">{s.title}</a>
+              <a key={i} href="#services">
+                {s.title}
+              </a>
             ))}
           </FooterCol>
 
           <FooterCol title={t("locations")}>
             {siteConfig.locations.map((l) => (
-              <a key={l} href="#">{l}</a>
+              <a key={l} href="#">
+                {l}
+              </a>
             ))}
           </FooterCol>
 
@@ -47,7 +51,9 @@ export function Footer() {
         </div>
 
         <div className="flex flex-wrap justify-between gap-3.5 border-t border-line pt-6 text-[13.5px] text-muted">
-          <div>© {new Date().getFullYear()} SaaleWeb · {siteConfig.founder}</div>
+          <div>
+            &copy; {new Date().getFullYear()} <BrandWord /> &middot; {siteConfig.founder}
+          </div>
           <div>{t("legal")}</div>
         </div>
       </Container>

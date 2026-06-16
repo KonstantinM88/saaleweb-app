@@ -9,7 +9,7 @@ import { Industries } from "@/widgets/industries/Industries";
 import { LocalSeo } from "@/widgets/local-seo/LocalSeo";
 import { TechStack } from "@/widgets/tech-stack/TechStack";
 import { AiReady } from "@/widgets/ai-ready/AiReady";
-import { Comparison } from "@/widgets/comparison/Comparison";
+import { WhySaaleWebSection } from "@/widgets/why-saaleweb/WhySaaleWebSection";
 import { Process } from "@/widgets/process/Process";
 import { Founder } from "@/widgets/founder/Founder";
 import { Testimonials } from "@/widgets/testimonials/Testimonials";
@@ -44,7 +44,7 @@ export default async function HomePage({
         <LocalSeo />
         <TechStack />
         <AiReady />
-        <Comparison />
+        <WhySaaleWebSection />
         <Process />
         <Founder />
         <Testimonials locale={appLocale} />
