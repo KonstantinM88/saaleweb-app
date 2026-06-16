@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-labelledby="title">
+  <title id="title">SaaleWeb app icon</title>
+  <defs>
+    <linearGradient id="bg" x1="126" y1="94" x2="910" y2="930" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FF4FA3"/>
+      <stop offset=".5" stop-color="#B855E6"/>
+      <stop offset="1" stop-color="#8B5CF6"/>
+    </linearGradient>
+    <radialGradient id="shine" cx="0" cy="0" r="1" gradientTransform="matrix(420 330 -330 420 330 230)">
+      <stop stop-color="#fff" stop-opacity=".55"/>
+      <stop offset=".65" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect x="96" y="96" width="832" height="832" rx="254" fill="url(#bg)"/>
+  <rect x="96" y="96" width="832" height="832" rx="254" fill="url(#shine)"/>
+  <path d="M673 276C586 184 389 207 327 337C239 520 696 454 666 653C640 834 392 855 273 711" fill="none" stroke="#111827" stroke-opacity=".2" stroke-width="137" stroke-linecap="round" stroke-linejoin="round" transform="translate(18 22)"/>
+  <path d="M673 276C586 184 389 207 327 337C239 520 696 454 666 653C640 834 392 855 273 711" fill="none" stroke="#fff" stroke-width="120" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M620 247C532 208 386 244 333 345" fill="none" stroke="#fff" stroke-opacity=".58" stroke-width="30" stroke-linecap="round"/>
+  <circle cx="675" cy="273" r="44" fill="#fff"/>
+  <circle cx="275" cy="713" r="36" fill="#fff" opacity=".72"/>
+</svg>

@@ -1,3 +1,5 @@
+import { BrandLogo } from "@/shared/ui/BrandLogo";
+
 type AiName = "ChatGPT" | "Gemini" | "Perplexity" | "Claude" | "Google AI" | "Copilot";
 type OrbitNode = { label: AiName; angle: number };
 
@@ -171,9 +173,7 @@ export function AiOrbit() {
               className="absolute inset-0 rounded-full border-2 border-brand-purple/40"
               style={{ animation: "ping-ring 3.2s ease-out 1.6s infinite" }}
             />
-            <div className="relative grid h-[78px] w-[78px] place-items-center rounded-[24px] bg-brand text-3xl font-extrabold text-white shadow-[0_14px_40px_-10px_rgba(255,79,163,0.7)]">
-              S
-            </div>
+            <BrandLogo variant="icon" size="lg" />
           </div>
 
           <Orbit nodes={OUTER} radius={150} duration={38} />

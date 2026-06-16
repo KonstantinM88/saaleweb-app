@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { LayoutDashboard, Inbox, Wrench, Building2, Newspaper, FolderKanban, Layers, BadgeEuro, HelpCircle, Star, Users, Tags, Search, LogOut } from "lucide-react";
 import { logout } from "@/features/auth/actions";
+import { BrandLogo } from "@/shared/ui/BrandLogo";
 import { cn } from "@/shared/lib/cn";
 
 const items = [
@@ -28,9 +29,7 @@ export function AdminSidebar({ email }: { email: string }) {
   return (
     <aside className="flex w-[230px] shrink-0 flex-col border-r border-line bg-white">
       <div className="flex items-center gap-2.5 px-5 py-5">
-        <span className="grid h-8 w-8 place-items-center rounded-[9px] bg-brand text-[15px] font-extrabold text-white">
-          S
-        </span>
+        <BrandLogo variant="icon" size="sm" />
         <span className="font-bold text-dark">Admin</span>
       </div>
       <nav className="flex-1 px-3">

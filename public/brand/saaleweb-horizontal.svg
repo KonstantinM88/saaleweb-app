@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 104" role="img" aria-labelledby="title">
+  <title id="title">SaaleWeb horizontal logo</title>
+  <defs>
+    <linearGradient id="bg" x1="13" y1="12" x2="84" y2="90" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FF4FA3"/>
+      <stop offset=".52" stop-color="#B855E6"/>
+      <stop offset="1" stop-color="#8B5CF6"/>
+    </linearGradient>
+    <linearGradient id="word" x1="238" y1="28" x2="381" y2="72" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FF4FA3"/>
+      <stop offset="1" stop-color="#8B5CF6"/>
+    </linearGradient>
+  </defs>
+  <rect x="12" y="12" width="80" height="80" rx="25" fill="url(#bg)"/>
+  <path d="M66.5 31C58.8 22.8 41.4 24.8 36 36.2C28.2 52.4 68.8 46.7 66.1 64.2C63.7 80.2 41.7 82.1 31.1 69.4" fill="none" stroke="#111827" stroke-opacity=".2" stroke-width="12.7" stroke-linecap="round" stroke-linejoin="round" transform="translate(1.5 1.9)"/>
+  <path d="M66.5 31C58.8 22.8 41.4 24.8 36 36.2C28.2 52.4 68.8 46.7 66.1 64.2C63.7 80.2 41.7 82.1 31.1 69.4" fill="none" stroke="#fff" stroke-width="11.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M62 28.9C53.5 25.2 41.2 28.5 36.7 37.2" fill="none" stroke="#fff" stroke-opacity=".58" stroke-width="2.9" stroke-linecap="round"/>
+  <circle cx="66.8" cy="30.8" r="4.2" fill="#fff"/>
+  <circle cx="31.3" cy="69.5" r="3.5" fill="#fff" opacity=".72"/>
+  <text x="122" y="66" fill="#111827" font-family="Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="48" font-weight="800" letter-spacing="-1">Saale</text>
+  <text x="254" y="66" fill="url(#word)" font-family="Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="48" font-weight="800" letter-spacing="-1">Web</text>
+</svg>

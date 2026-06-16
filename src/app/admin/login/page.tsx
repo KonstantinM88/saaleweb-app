@@ -1,14 +1,13 @@
 import { LoginForm } from "@/widgets/admin/LoginForm";
 import { BrandWord } from "@/shared/ui/BrandText";
+import { BrandLogo } from "@/shared/ui/BrandLogo";
 
 export default function AdminLoginPage() {
   return (
     <div className="grid min-h-screen place-items-center px-4">
       <div className="w-full max-w-sm">
         <div className="mb-6 flex items-center gap-2.5">
-          <span className="grid h-8 w-8 place-items-center rounded-[9px] bg-brand text-[15px] font-extrabold text-white">
-            S
-          </span>
+          <BrandLogo variant="icon" size="sm" />
           <span className="text-lg font-bold text-dark">
             <BrandWord /> Admin
           </span>

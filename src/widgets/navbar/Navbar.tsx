@@ -8,7 +8,7 @@ import { routing } from "@/i18n/routing";
 import { Container } from "@/shared/ui/Container";
 import { ScrollProgress } from "@/shared/ui/ScrollProgress";
 import { Magnetic } from "@/shared/ui/Magnetic";
-import { BrandWord } from "@/shared/ui/BrandText";
+import { BrandLogo } from "@/shared/ui/BrandLogo";
 import { siteConfig } from "@/shared/config/site";
 import { cn } from "@/shared/lib/cn";
 import { LanguageSwitcher } from "@/features/language-switcher/LanguageSwitcher";
@@ -62,15 +62,13 @@ export function Navbar() {
           : "bg-white/80",
       )}
     >
-      <Container className="flex h-[66px] items-center justify-between">
+      <Container className="flex h-[72px] items-center justify-between">
         <Link
           href="/"
-          className="group flex items-center gap-2.5 text-[19px] font-bold tracking-tight text-dark"
+          aria-label="SaaleWeb"
+          className="group flex items-center text-dark"
         >
-          <span className="grid h-[30px] w-[30px] place-items-center rounded-[9px] bg-brand text-[15px] font-extrabold text-white shadow-[0_6px_16px_-6px_rgba(255,79,163,0.6)] transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-110">
-            S
-          </span>
-          <BrandWord />
+          <BrandLogo size="md" animated />
         </Link>
 
         <nav className="hidden items-center gap-8 text-[15px] font-medium text-gray-700 md:flex">

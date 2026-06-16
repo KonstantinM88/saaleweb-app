@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 import { Container } from "@/shared/ui/Container";
 import { BrandText, BrandWord } from "@/shared/ui/BrandText";
+import { BrandLogo } from "@/shared/ui/BrandLogo";
 import { siteConfig } from "@/shared/config/site";
 import { Link } from "@/i18n/navigation";
 
@@ -15,11 +16,8 @@ export function Footer() {
       <Container>
         <div className="mb-11 grid gap-10 md:grid-cols-[1.5fr_1fr_1fr_1fr]">
           <div>
-            <div className="flex items-center gap-2.5 text-[19px] font-bold tracking-tight text-dark">
-              <span className="grid h-[30px] w-[30px] place-items-center rounded-[9px] bg-brand text-[15px] font-extrabold text-white">
-                S
-              </span>
-              <BrandWord />
+            <div className="text-dark">
+              <BrandLogo size="sm" />
             </div>
             <p className="mt-4 max-w-[280px] text-[14.5px] text-muted">
               <BrandText text={t("tagline")} />

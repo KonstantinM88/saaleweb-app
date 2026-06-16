@@ -36,12 +36,38 @@ async function loadFont(text: string): Promise<ArrayBuffer> {
   return fetch(new URL("./Geist-Bold.ttf", import.meta.url)).then((res) => res.arrayBuffer());
 }
 
+function OgMark() {
+  return (
+    <svg width="64" height="64" viewBox="0 0 64 64" aria-hidden="true">
+      <path
+        d="M42.8 16.6C37.3 10.8 24.8 12.2 20.9 20.4C15.3 32 44.4 27.8 42.5 40.4C40.8 51.9 25 53.2 17.4 44.1"
+        fill="none"
+        stroke="rgba(17,24,39,0.2)"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="9.4"
+        transform="translate(1.2 1.5)"
+      />
+      <path
+        d="M42.8 16.6C37.3 10.8 24.8 12.2 20.9 20.4C15.3 32 44.4 27.8 42.5 40.4C40.8 51.9 25 53.2 17.4 44.1"
+        fill="none"
+        stroke="#fff"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="8.2"
+      />
+      <circle cx="43" cy="16.4" r="3.1" fill="#fff" />
+      <circle cx="17.5" cy="44.2" r="2.5" fill="#fff" opacity=".72" />
+    </svg>
+  );
+}
+
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
   const title = (searchParams.get("title") ?? siteConfig.name).slice(0, 120);
   const eyebrow = (searchParams.get("eyebrow") ?? "").slice(0, 60);
 
-  const font = await loadFont(`${title}${eyebrow}${siteConfig.name}S`);
+  const font = await loadFont(`${title}${eyebrow}${siteConfig.name}`);
 
   return new ImageResponse(
     (
@@ -68,11 +94,10 @@ export async function GET(req: Request) {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              fontSize: 38,
-              fontWeight: 700,
+              boxShadow: "inset 0 1px 0 rgba(255,255,255,0.25)",
             }}
           >
-            S
+            <OgMark />
           </div>
           <div style={{ fontSize: 30, fontWeight: 700 }}>{siteConfig.name}</div>
         </div>

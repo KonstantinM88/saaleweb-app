@@ -14,7 +14,6 @@ import { PageViewTracker } from "@/features/analytics/PageViewTracker";
 import { CustomCursor } from "@/shared/ui/CustomCursor";
 import "../globals.css";
 
-
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
@@ -41,6 +40,12 @@ export async function generateMetadata({
     title: { default: title, template: `%s · ${siteConfig.name}` },
     description,
     alternates: { canonical: "/", languages },
+    icons: {
+      icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+      shortcut: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+      apple: [{ url: "/apple-icon.svg", type: "image/svg+xml" }],
+      other: [{ rel: "mask-icon", url: "/brand/saaleweb-mark-mono.svg", color: "#111827" }],
+    },
     openGraph: {
       title,
       description,
@@ -73,10 +78,7 @@ export default async function LocaleLayout({
   setRequestLocale(locale);
 
   return (
-    <html
-      lang={locale}
-      className={`${GeistSans.variable} ${GeistMono.variable}`}
-    >
+    <html lang={locale} className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <body className="font-sans">
         <JsonLd data={[organizationSchema(), websiteSchema(locale)]} />
         <PageViewTracker locale={locale} />

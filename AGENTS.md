@@ -52,6 +52,7 @@ Instructions and project memory for coding agents working in this repository.
 - `src/shared/` - shared UI, config, helpers.
 - `src/shared/ui/ScrollProgress.tsx` - client-side gradient scroll progress bar mounted inside the sticky navbar.
 - `src/shared/ui/BrandText.tsx` - shared `BrandWord` / `BrandText` helpers for rendering visible `SaaleWeb` text with the same brand-gradient `Web` styling as the public logo.
+- `src/shared/ui/BrandLogo.tsx` - shared SVG monogram logo component with icon/horizontal variants, light/dark/mono tones, and optional one-shot intro animation.
 - `src/shared/ui/CustomCursor.tsx` - public desktop-only custom gradient cursor; mounted only in localized public layout.
 - `src/shared/ui/Magnetic.tsx` - desktop-only reduced-motion-aware magnetic wrapper used by primary buttons/CTA.
 - `src/shared/ui/CountUp.tsx` - client-side numeric stat counter used in the founder section.
@@ -86,6 +87,7 @@ Instructions and project memory for coding agents working in this repository.
 - `src/generated/prisma/` - generated Prisma client; git-ignored and created by `postinstall` / `npm run db:generate`.
 - `public/flags/` - static flag assets.
 - `public/images/` - static image assets.
+- `public/brand/` - static SVG brand assets: main logo, icon-only mark, horizontal logo, favicon, app icon, social avatar, dark version, and monochrome version.
 - `public/video/` - static video assets.
 - `public/uploads/` - local/runtime upload staging; contents are ignored by git except the folder `.gitignore`.
 
@@ -146,7 +148,7 @@ Instructions and project memory for coding agents working in this repository.
 - Keep localized copy in all three message files when user-facing text changes.
 - Use existing design tokens from `tailwind.config.ts`: brand pink/purple, `dark`, `ink`, `muted`, `surface`, `line`.
 - Shared UI includes `Button`, `Container`, `SectionHeader`, and `Reveal`; reuse them before adding new primitives.
-- The public wordmark styling keeps `Saale` dark and renders `Web` with the brand gradient.
+- The public brand system uses `BrandLogo` for logo marks and `BrandText` / `BrandWord` for inline visible text. The logo mark is a minimal flowing `S` monogram, not a generic web-agency icon.
 - For visible UI text that contains `SaaleWeb`, render it through `BrandText` / `BrandWord` so the brand mark stays visually consistent. Metadata, JSON-LD, and plain text SEO fields should remain unstyled strings.
 - The public motion system is CSS-first and must respect `prefers-reduced-motion`. Current motion primitives include `btn-shine`, `card-border-glow`, `hero-gradient-field`, `marquee`, `glow-card`, directional `Reveal`, navbar scroll shadow/progress, magnetic buttons, founder `CountUp`, custom desktop cursor, and dashboard pointer tilt guarded by pointer/reduced-motion checks.
 - Keep `CustomCursor` mounted only in `src/app/[locale]/layout.tsx` so admin pages keep the native cursor. Do not mount it in `src/app/admin/layout.tsx`.
@@ -243,3 +245,4 @@ Instructions and project memory for coding agents working in this repository.
 - 2026-06-16: Converted `public/uploads/SorafalBau-mix.png` to `public/images/cases/sorgfaltbau-mix.webp` and assigned it as the first `Media` cover for the `qualifizierte-bauanfragen` / `qualified-construction-leads` / `kvalificirovannye-zayavki` project. Deleted the consumed upload PNG afterward.
 - 2026-06-16: Replaced the technical homepage SaaleWeb-vs-WordPress comparison with `WhySaaleWebSection`, a conversion-focused business value block with 6 benefit cards, a Standard Website vs SaaleWeb System result comparison, CTA, and localized DE/EN/RU copy. Links use existing localized routes (`/projekte`, contact anchor, Halle location page, and AI integration service) rather than hardcoded `/de/...` paths.
 - 2026-06-16: Added shared `BrandWord` / `BrandText` helpers and applied them to visible UI text where `SaaleWeb` appears, including the homepage value block, FAQ, contact, founder, CTA banner, city pages, footer, navbar, and admin login. Metadata/JSON-LD remain plain strings. Also fixed mojibake copy/arrow artifacts in `Footer` and `CtaBanner` while touching those files.
+- 2026-06-16: Upgraded the SaaleWeb logo from a simple `S` favicon-style square to a premium SVG monogram system. Added `BrandLogo` with icon/horizontal variants, light/dark/mono tones, CSS-only one-shot intro animation, hover glow, and larger header presence. Added static SVG assets under `public/brand/` plus `public/favicon.svg`, `public/icon.svg`, and `public/apple-icon.svg`; locale metadata now exposes these icons.
