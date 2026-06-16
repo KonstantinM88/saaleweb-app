@@ -260,6 +260,20 @@
       }
     ]
   },
+  "GrowthWindow": {
+    "eyebrow": "Digitales Wachstumssystem",
+    "title": "Ein Blick in das System hinter Ihrer Sichtbarkeit",
+    "lead": "Design, SEO, Performance und KI-Optimierung arbeiten zusammen wie ein digitales Cockpit - damit aus Besuchern echte Anfragen werden.",
+    "metric": "+ Sichtbarkeit",
+    "status": "Live optimiert",
+    "caption": "Premium-Technologie im Hintergrund. Klarer Nutzen für Ihr Unternehmen im Vordergrund: mehr Vertrauen, mehr Sichtbarkeit und weniger technische Reibung.",
+    "imageAlt": "Futuristische SaaleWeb Technologie-Illustration mit Analyse-Dashboards und Wachstumselementen",
+    "badges": {
+      "seo": "Local SEO",
+      "ai": "AI Search",
+      "performance": "Performance"
+    }
+  },
   "TechStack": {
     "eyebrow": "Technologie",
     "title": "Gebaut auf modernster Technologie",

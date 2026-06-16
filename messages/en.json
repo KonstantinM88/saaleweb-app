@@ -260,6 +260,20 @@
       }
     ]
   },
+  "GrowthWindow": {
+    "eyebrow": "Digital growth system",
+    "title": "A view into the system behind your visibility",
+    "lead": "Design, SEO, performance and AI optimization work together like a digital cockpit - turning visitors into real enquiries.",
+    "metric": "+ Visibility",
+    "status": "Live optimized",
+    "caption": "Premium technology in the background. Clear business value in the foreground: more trust, more visibility and fewer technical problems.",
+    "imageAlt": "Futuristic SaaleWeb technology illustration with analytics dashboards and growth elements",
+    "badges": {
+      "seo": "Local SEO",
+      "ai": "AI Search",
+      "performance": "Performance"
+    }
+  },
   "TechStack": {
     "eyebrow": "Technology",
     "title": "Built on cutting-edge technology",
