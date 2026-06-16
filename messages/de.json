@@ -318,7 +318,12 @@
         "title": "Zitierfähig",
         "desc": "Architektur, die als Quelle empfohlen wird"
       }
-    ]
+    ],
+    "window": {
+      "label": "AI Search Ecosystem",
+      "metric": "Maschinenlesbar",
+      "caption": "Ihre Inhalte werden als klare Signale für Google, ChatGPT, Gemini, Claude und Perplexity vorbereitet - damit Ihr Unternehmen auch in KI-Antworten verstanden werden kann."
+    }
   },
   "WhySaaleWeb": {
     "eyebrow": "Mehr als nur Webdesign",

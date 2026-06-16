@@ -3,6 +3,7 @@ import { FileCode2, Network, Braces, Quote } from "lucide-react";
 import { Container } from "@/shared/ui/Container";
 import { Reveal } from "@/shared/ui/Reveal";
 import { AiOrbit } from "./AiOrbit";
+import { AiSearchWindow } from "./AiSearchWindow";
 
 type Feature = { title: string; desc: string };
 const icons = [FileCode2, Network, Braces, Quote];
@@ -57,6 +58,11 @@ export function AiReady() {
 
               <AiOrbit />
             </div>
+            <AiSearchWindow
+              label={t("window.label")}
+              metric={t("window.metric")}
+              caption={t("window.caption")}
+            />
           </div>
         </Reveal>
       </Container>
