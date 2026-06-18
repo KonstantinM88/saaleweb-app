@@ -25,6 +25,7 @@ import { JsonLd } from "@/shared/seo/JsonLd";
 import { breadcrumbSchema, faqPageSchema, serviceSchema } from "@/shared/seo/schema";
 import { buildMetadata } from "@/shared/seo/metadata";
 import { ServiceCard, type ServiceCardData } from "@/widgets/services-page/ServiceCard";
+import { ServiceTrustMetrics } from "@/widgets/services-page/ServiceTrustMetrics";
 import { FaqAccordion, type QA } from "@/widgets/faq/FaqAccordion";
 
 export const revalidate = 300;
@@ -195,16 +196,9 @@ export default async function ServicesIndexPage({ params }: { params: Promise<Pa
             </div>
 
             <Reveal delay={120}>
-              <dl className="mt-12 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
-                {trust.map((s) => (
-                  <div key={s.label} className="rounded-2xl border border-line bg-white/70 p-5 backdrop-blur-sm">
-                    <dt className="text-[26px] font-extrabold tracking-tight text-dark sm:text-[30px]">
-                      {s.value}
-                    </dt>
-                    <dd className="mt-1 text-[13px] text-muted">{s.label}</dd>
-                  </div>
-                ))}
-              </dl>
+              <div className="mt-12">
+                <ServiceTrustMetrics items={trust} />
+              </div>
             </Reveal>
           </Container>
         </section>

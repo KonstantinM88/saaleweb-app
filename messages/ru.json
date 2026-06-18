@@ -123,7 +123,7 @@
           "Всё из Business",
           "ИИ-оптимизация (GEO)",
           "Автоматизация и лиды",
-          "Мультиязычность (DE/EN/RU)",
+          "DE/EN/RU включены · другие языки по запросу",
           "Постоянное сопровождение"
         ]
       }
@@ -472,8 +472,8 @@
         "label": "Lighthouse Score"
       },
       {
-        "value": "3",
-        "label": "Языка"
+        "value": "3+",
+        "label": "Языков включено · другие по запросу"
       }
     ]
   },
@@ -549,8 +549,8 @@
     "trust1Label": "Google PageSpeed",
     "trust2Value": "< 1 сек",
     "trust2Label": "Загрузка",
-    "trust3Value": "3 языка",
-    "trust3Label": "DE · EN · RU",
+    "trust3Value": "3+ языков",
+    "trust3Label": "DE · EN · RU в базе · другие по запросу",
     "trust4Value": "100 %",
     "trust4Label": "Принадлежит вам",
     "servicesEyebrow": "Что мы делаем для вас",
@@ -641,8 +641,8 @@
     "trust1Label": "Google PageSpeed",
     "trust2Value": "< 1 сек",
     "trust2Label": "Загрузка",
-    "trust3Value": "3 языка",
-    "trust3Label": "DE · EN · RU",
+    "trust3Value": "3+ языков",
+    "trust3Label": "DE · EN · RU в базе · другие по запросу",
     "trust4Value": "100 %",
     "trust4Label": "Принадлежит вам",
     "explore": "Подробнее",

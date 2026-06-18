@@ -123,7 +123,7 @@
           "Everything in Business",
           "AI optimization (GEO)",
           "Automation & leads",
-          "Multilingual (DE/EN/RU)",
+          "DE/EN/RU included · more languages on request",
           "Ongoing support"
         ]
       }
@@ -472,8 +472,8 @@
         "label": "Lighthouse score"
       },
       {
-        "value": "3",
-        "label": "Languages"
+        "value": "3+",
+        "label": "Languages included · more on request"
       }
     ]
   },
@@ -549,8 +549,8 @@
     "trust1Label": "Google PageSpeed",
     "trust2Value": "< 1 sec",
     "trust2Label": "Load time",
-    "trust3Value": "3 languages",
-    "trust3Label": "DE · EN · RU",
+    "trust3Value": "3+ languages",
+    "trust3Label": "DE · EN · RU included · more on request",
     "trust4Value": "100 %",
     "trust4Label": "Owned by you",
     "servicesEyebrow": "What we do for you",
@@ -641,8 +641,8 @@
     "trust1Label": "Google PageSpeed",
     "trust2Value": "< 1 sec",
     "trust2Label": "Load time",
-    "trust3Value": "3 languages",
-    "trust3Label": "DE · EN · RU",
+    "trust3Value": "3+ languages",
+    "trust3Label": "DE · EN · RU included · more on request",
     "trust4Value": "100 %",
     "trust4Label": "Owned by you",
     "explore": "Learn more",

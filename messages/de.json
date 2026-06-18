@@ -123,7 +123,7 @@
           "Alles aus Business",
           "KI-Optimierung (GEO)",
           "Automatisierung & Leads",
-          "Mehrsprachig (DE/EN/RU)",
+          "DE/EN/RU inklusive · weitere Sprachen auf Wunsch",
           "Laufende Betreuung"
         ]
       }
@@ -472,8 +472,8 @@
         "label": "Lighthouse Score"
       },
       {
-        "value": "3",
-        "label": "Sprachen"
+        "value": "3+",
+        "label": "Sprachen inklusive · weitere auf Wunsch"
       }
     ]
   },
@@ -549,8 +549,8 @@
     "trust1Label": "Google PageSpeed",
     "trust2Value": "< 1 Sek.",
     "trust2Label": "Ladezeit",
-    "trust3Value": "3 Sprachen",
-    "trust3Label": "DE · EN · RU",
+    "trust3Value": "3+ Sprachen",
+    "trust3Label": "DE · EN · RU inklusive · weitere auf Wunsch",
     "trust4Value": "100 %",
     "trust4Label": "Ihr Eigentum",
     "servicesEyebrow": "Was wir für Sie tun",
@@ -641,8 +641,8 @@
     "trust1Label": "Google PageSpeed",
     "trust2Value": "< 1 Sek.",
     "trust2Label": "Ladezeit",
-    "trust3Value": "3 Sprachen",
-    "trust3Label": "DE · EN · RU",
+    "trust3Value": "3+ Sprachen",
+    "trust3Label": "DE · EN · RU inklusive · weitere auf Wunsch",
     "trust4Value": "100 %",
     "trust4Label": "Ihr Eigentum",
     "explore": "Mehr erfahren",
