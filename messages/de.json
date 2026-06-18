@@ -623,6 +623,17 @@
         "q": "Kümmern Sie sich auch nach dem Launch?",
         "a": "Gerne. Auf Wunsch übernehmen wir Updates, Sicherheit, Backups und laufende Optimierung, damit Ihre Seite dauerhaft Anfragen bringt."
       }
-    ]
+    ],
+    "detail": {
+      "detailEyebrow": "Leistung",
+      "ctaTitle": "Lassen Sie uns darüber sprechen",
+      "ctaText": "Kostenloses Erstgespräch — wir zeigen Ihnen, wie das für Ihr Unternehmen aussehen kann.",
+      "ctaButton": "Kostenloses Erstgespräch",
+      "backToServices": "Alle Leistungen",
+      "faqTitle": "Häufige Fragen",
+      "sidebarTitle": "Bereit anzufangen?",
+      "sidebarText": "Unverbindlich, ehrlich und ohne Fachchinesisch.",
+      "detailsTitle": "Mehr Details"
+    }
   }
 }

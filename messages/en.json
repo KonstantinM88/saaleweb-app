@@ -623,6 +623,17 @@
         "q": "Do you support me after launch?",
         "a": "Happily. On request we handle updates, security, backups and ongoing optimisation so your site keeps bringing enquiries."
       }
-    ]
+    ],
+    "detail": {
+      "detailEyebrow": "Service",
+      "ctaTitle": "Let's talk about it",
+      "ctaText": "Free first consultation — we'll show you what this could look like for your business.",
+      "ctaButton": "Free first consultation",
+      "backToServices": "All services",
+      "faqTitle": "Common questions",
+      "sidebarTitle": "Ready to start?",
+      "sidebarText": "No obligation, honest and without jargon.",
+      "detailsTitle": "More details"
+    }
   }
 }
