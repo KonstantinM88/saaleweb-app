@@ -536,5 +536,93 @@
     "lead": "We make your business visible across the map - Halle (Saale), Leipzig, Merseburg, Schkeuditz, Delitzsch, Markkleeberg and Landsberg.",
     "floatA": "Top local rankings",
     "floatB": "~50 km radius"
+  },
+  "ServicesPage": {
+    "metaTitle": "Web Design, SEO & AI Optimisation for Halle, Leipzig & Saalekreis",
+    "metaDescription": "We build websites that get found and bring customers — fast, modern and optimised for Google and AI. Web design, SEO and maintenance from a single partner.",
+    "heroEyebrow": "Our Services",
+    "heroTitle": "Websites that win customers — not just look good",
+    "heroLead": "You get more than a pretty page: a digital system that brings in new enquiries around the clock. Explained in plain language, fairly priced, built to grow.",
+    "heroCta": "Free first consultation",
+    "heroCta2": "See pricing",
+    "trust1Value": "100/100",
+    "trust1Label": "Google PageSpeed",
+    "trust2Value": "< 1 sec",
+    "trust2Label": "Load time",
+    "trust3Value": "3 languages",
+    "trust3Label": "DE · EN · RU",
+    "trust4Value": "100 %",
+    "trust4Label": "Owned by you",
+    "servicesEyebrow": "What we do for you",
+    "servicesTitle": "Everything for your online visibility — from one partner",
+    "servicesLead": "No need to juggle several agencies. From the first idea to ongoing care, we handle it all.",
+    "outcomesLabel": "What this means for you:",
+    "learnMore": "Learn more",
+    "processEyebrow": "How we work",
+    "processTitle": "Your new website in 4 clear steps",
+    "processLead": "No jargon, no nasty surprises. You always know exactly what we're working on.",
+    "process": [
+      {
+        "title": "Get to know & strategy",
+        "desc": "In a free call we understand your business, goals and customers. You get a clear plan — with no obligation."
+      },
+      {
+        "title": "Design & concept",
+        "desc": "We craft a modern design that fits your brand. You see it before we write any code and decide together with us."
+      },
+      {
+        "title": "Build & content",
+        "desc": "We build everything blazing fast and optimised for Google and AI search. We prepare texts and images together with you."
+      },
+      {
+        "title": "Launch & care",
+        "desc": "We put your site live and keep looking after it: updates, security and ongoing optimisation for more enquiries."
+      }
+    ],
+    "resultsEyebrow": "Why SaaleWeb",
+    "resultsTitle": "A website that works for you",
+    "resultsLead": "Good looks alone don't bring customers. We build sites that load fast, rank at the top and turn visitors into enquiries.",
+    "results": [
+      {
+        "title": "Found on Google",
+        "desc": "Technical and content SEO that puts you exactly where your customers are searching."
+      },
+      {
+        "title": "Recommended by AI",
+        "desc": "We prepare your content so ChatGPT, Gemini & co. mention and recommend your business."
+      },
+      {
+        "title": "More enquiries",
+        "desc": "Clear structure, convincing copy and visible contact paths turn visitors into real customers."
+      },
+      {
+        "title": "Lightning fast",
+        "desc": "Load times under one second — great for your visitors and your Google ranking."
+      }
+    ],
+    "faqEyebrow": "Common questions",
+    "faqTitle": "What customers ask us most",
+    "faq": [
+      {
+        "q": "How much does a website cost?",
+        "a": "It depends on the scope. A modern business site starts in a clearly calculable range — transparent and with no hidden costs. In the free first call we give you a fixed price. You'll also find concrete packages on our pricing page."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Most projects go live in 3 to 6 weeks. The pace mainly depends on the content — and we actively help you prepare it."
+      },
+      {
+        "q": "Can I edit the content myself later?",
+        "a": "Yes. You get a simple admin area to manage texts, images, prices and posts yourself — no technical knowledge required."
+      },
+      {
+        "q": "Does the website really belong to me?",
+        "a": "100 %. The code, content and domain are yours. No lock-in to website builders and no hidden licence fees."
+      },
+      {
+        "q": "Do you support me after launch?",
+        "a": "Happily. On request we handle updates, security, backups and ongoing optimisation so your site keeps bringing enquiries."
+      }
+    ]
   }
 }

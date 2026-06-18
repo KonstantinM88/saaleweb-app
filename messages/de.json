@@ -536,5 +536,93 @@
     "lead": "Wir machen Ihr Unternehmen auf der Karte sichtbar - in Halle (Saale), Leipzig, Merseburg, Schkeuditz, Delitzsch, Markkleeberg und Landsberg.",
     "floatA": "Top-Rankings lokal",
     "floatB": "~50 km Radius"
+  },
+  "ServicesPage": {
+    "metaTitle": "Webdesign, SEO & KI-Optimierung für Halle, Leipzig & Saalekreis",
+    "metaDescription": "Wir bauen Websites, die gefunden werden und Kunden bringen — schnell, modern und für Google und KI optimiert. Webdesign, SEO und Wartung aus einer Hand.",
+    "heroEyebrow": "Unsere Leistungen",
+    "heroTitle": "Websites, die Kunden bringen — nicht nur gut aussehen",
+    "heroLead": "Sie bekommen mehr als eine schöne Seite: ein digitales System, das rund um die Uhr neue Anfragen für Ihr Unternehmen gewinnt. Verständlich erklärt, fair im Preis, gebaut für Wachstum.",
+    "heroCta": "Kostenloses Erstgespräch",
+    "heroCta2": "Preise ansehen",
+    "trust1Value": "100/100",
+    "trust1Label": "Google PageSpeed",
+    "trust2Value": "< 1 Sek.",
+    "trust2Label": "Ladezeit",
+    "trust3Value": "3 Sprachen",
+    "trust3Label": "DE · EN · RU",
+    "trust4Value": "100 %",
+    "trust4Label": "Ihr Eigentum",
+    "servicesEyebrow": "Was wir für Sie tun",
+    "servicesTitle": "Alles für Ihre digitale Sichtbarkeit — aus einer Hand",
+    "servicesLead": "Sie müssen nicht mehrere Dienstleister koordinieren. Von der Idee bis zur laufenden Betreuung kümmern wir uns um alles.",
+    "outcomesLabel": "Das bringt Ihnen das:",
+    "learnMore": "Mehr erfahren",
+    "processEyebrow": "So arbeiten wir",
+    "processTitle": "In 4 klaren Schritten zu Ihrer neuen Website",
+    "processLead": "Kein Fachchinesisch, keine bösen Überraschungen. Sie wissen jederzeit, woran wir arbeiten.",
+    "process": [
+      {
+        "title": "Kennenlernen & Strategie",
+        "desc": "In einem kostenlosen Gespräch verstehen wir Ihr Geschäft, Ihre Ziele und Ihre Kunden. Sie bekommen einen klaren Plan — ohne Verpflichtung."
+      },
+      {
+        "title": "Design & Konzept",
+        "desc": "Wir gestalten eine moderne Website, die zu Ihrer Marke passt. Sie sehen das Design, bevor wir programmieren, und entscheiden mit."
+      },
+      {
+        "title": "Umsetzung & Inhalte",
+        "desc": "Wir bauen alles blitzschnell und für Google sowie KI-Suche optimiert. Texte und Bilder bereiten wir gemeinsam mit Ihnen vor."
+      },
+      {
+        "title": "Launch & Betreuung",
+        "desc": "Wir bringen Ihre Seite online und kümmern uns weiter: Updates, Sicherheit und laufende Optimierung für mehr Anfragen."
+      }
+    ],
+    "resultsEyebrow": "Warum SaaleWeb",
+    "resultsTitle": "Eine Website, die für Sie arbeitet",
+    "resultsLead": "Schöne Optik allein bringt keine Kunden. Wir bauen Seiten, die schnell laden, ganz oben ranken und Besucher zu Anfragen machen.",
+    "results": [
+      {
+        "title": "Gefunden bei Google",
+        "desc": "Technisches und inhaltliches SEO, mit dem Sie genau dort auftauchen, wo Ihre Kunden suchen."
+      },
+      {
+        "title": "Empfohlen von KI",
+        "desc": "Wir bereiten Ihre Inhalte so auf, dass ChatGPT, Gemini & Co. Ihr Unternehmen nennen und weiterempfehlen."
+      },
+      {
+        "title": "Mehr Anfragen",
+        "desc": "Klare Struktur, überzeugende Texte und sichtbare Kontaktwege verwandeln Besucher in echte Kunden."
+      },
+      {
+        "title": "Blitzschnell",
+        "desc": "Ladezeiten unter einer Sekunde — gut für Ihre Besucher und für Ihr Google-Ranking."
+      }
+    ],
+    "faqEyebrow": "Häufige Fragen",
+    "faqTitle": "Das fragen uns Kunden am häufigsten",
+    "faq": [
+      {
+        "q": "Was kostet eine Website bei Ihnen?",
+        "a": "Das hängt vom Umfang ab. Eine moderne Unternehmensseite startet im klar kalkulierbaren Bereich — transparent und ohne versteckte Kosten. Im kostenlosen Erstgespräch nennen wir Ihnen einen festen Preis. Konkrete Pakete finden Sie auch auf unserer Preisseite."
+      },
+      {
+        "q": "Wie lange dauert die Umsetzung?",
+        "a": "Die meisten Projekte sind in 3 bis 6 Wochen online. Das Tempo bestimmen vor allem die Inhalte — bei der Vorbereitung helfen wir Ihnen aktiv."
+      },
+      {
+        "q": "Kann ich die Inhalte später selbst ändern?",
+        "a": "Ja. Sie bekommen einen einfachen Admin-Bereich, in dem Sie Texte, Bilder, Preise und Beiträge selbst pflegen können — ganz ohne technisches Wissen."
+      },
+      {
+        "q": "Gehört die Website wirklich mir?",
+        "a": "Zu 100 %. Code, Inhalte und Domain gehören Ihnen. Es gibt keine Abhängigkeit von Baukästen oder versteckte Lizenzgebühren."
+      },
+      {
+        "q": "Kümmern Sie sich auch nach dem Launch?",
+        "a": "Gerne. Auf Wunsch übernehmen wir Updates, Sicherheit, Backups und laufende Optimierung, damit Ihre Seite dauerhaft Anfragen bringt."
+      }
+    ]
   }
 }
