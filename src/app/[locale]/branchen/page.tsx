@@ -12,6 +12,7 @@ import { Container } from "@/shared/ui/Container";
 import { Breadcrumbs } from "@/shared/ui/Breadcrumbs";
 import { Reveal } from "@/shared/ui/Reveal";
 import { Magnetic } from "@/shared/ui/Magnetic";
+import { TrustMetrics } from "@/shared/ui/TrustMetrics";
 import { CtaBanner } from "@/shared/ui/CtaBanner";
 import { JsonLd } from "@/shared/seo/JsonLd";
 import { breadcrumbSchema } from "@/shared/seo/schema";
@@ -153,14 +154,9 @@ export default async function IndustriesIndexPage({ params }: { params: Promise<
             </div>
 
             <Reveal delay={120}>
-              <dl className="mt-12 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
-                {trust.map((s) => (
-                  <div key={s.label} className="rounded-2xl border border-line bg-white/70 p-5 backdrop-blur-sm">
-                    <dt className="text-[26px] font-extrabold tracking-tight text-dark sm:text-[30px]">{s.value}</dt>
-                    <dd className="mt-1 text-[13px] text-muted">{s.label}</dd>
-                  </div>
-                ))}
-              </dl>
+              <div className="mt-12">
+                <TrustMetrics items={trust} />
+              </div>
             </Reveal>
           </Container>
         </section>

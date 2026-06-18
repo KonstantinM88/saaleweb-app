@@ -439,23 +439,24 @@
   },
   "Process": {
     "eyebrow": "Process",
-    "title": "Growth in 4 steps",
+    "title": "Four clear steps to more enquiries",
+    "lead": "No opaque agency process: you always know what happens next — and how every step moves you towards your goal.",
     "steps": [
       {
-        "title": "Analysis",
-        "desc": "We understand your business, your customers and your market."
+        "title": "Find the opportunity",
+        "desc": "We analyse your goals, customers and competitors — and identify your strongest growth lever."
       },
       {
-        "title": "Strategy",
-        "desc": "A clear plan for website, SEO and customer acquisition."
+        "title": "Build the roadmap",
+        "desc": "You get a clear plan for your website, SEO and predictable customer acquisition."
       },
       {
-        "title": "Development",
-        "desc": "We build a fast, modern and visible system."
+        "title": "Create the system",
+        "desc": "We turn the strategy into a fast, convincing experience that builds trust and guides visitors to enquire."
       },
       {
-        "title": "Growth",
-        "desc": "Ongoing optimization for more inquiries and revenue."
+        "title": "Grow measurably",
+        "desc": "After launch, we keep optimising for more visibility, qualified enquiries and revenue."
       }
     ]
   },

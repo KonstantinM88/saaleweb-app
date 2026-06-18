@@ -4,7 +4,7 @@ import type { CSSProperties, PointerEvent } from "react";
 import { Gauge, Languages, ShieldCheck, Zap, type LucideIcon } from "lucide-react";
 import { CountUp } from "@/shared/ui/CountUp";
 
-export type ServiceTrustMetric = {
+export type TrustMetric = {
   value: string;
   label: string;
 };
@@ -43,7 +43,7 @@ function handlePointerLeave(event: PointerEvent<HTMLDivElement>) {
   delete card.dataset.active;
 }
 
-export function ServiceTrustMetrics({ items }: { items: ServiceTrustMetric[] }) {
+export function TrustMetrics({ items }: { items: TrustMetric[] }) {
   return (
     <div className="service-trust-shell">
       <div aria-hidden className="service-trust-aura service-trust-aura-left" />

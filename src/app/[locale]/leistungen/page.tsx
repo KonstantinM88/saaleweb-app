@@ -24,8 +24,8 @@ import { BrandText } from "@/shared/ui/BrandText";
 import { JsonLd } from "@/shared/seo/JsonLd";
 import { breadcrumbSchema, faqPageSchema, serviceSchema } from "@/shared/seo/schema";
 import { buildMetadata } from "@/shared/seo/metadata";
+import { TrustMetrics } from "@/shared/ui/TrustMetrics";
 import { ServiceCard, type ServiceCardData } from "@/widgets/services-page/ServiceCard";
-import { ServiceTrustMetrics } from "@/widgets/services-page/ServiceTrustMetrics";
 import { FaqAccordion, type QA } from "@/widgets/faq/FaqAccordion";
 
 export const revalidate = 300;
@@ -197,7 +197,7 @@ export default async function ServicesIndexPage({ params }: { params: Promise<Pa
 
             <Reveal delay={120}>
               <div className="mt-12">
-                <ServiceTrustMetrics items={trust} />
+                <TrustMetrics items={trust} />
               </div>
             </Reveal>
           </Container>

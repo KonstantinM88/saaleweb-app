@@ -439,23 +439,24 @@
   },
   "Process": {
     "eyebrow": "Prozess",
-    "title": "In 4 Schritten zum Wachstum",
+    "title": "In 4 klaren Schritten zu mehr Anfragen",
+    "lead": "Keine undurchsichtigen Agenturprozesse: Sie wissen jederzeit, was als Nächstes passiert — und wie jeder Schritt auf Ihr Ziel einzahlt.",
     "steps": [
       {
-        "title": "Analyse",
-        "desc": "Wir verstehen Ihr Geschäft, Ihre Kunden und Ihren Markt."
+        "title": "Potenzial erkennen",
+        "desc": "Wir analysieren Ziele, Kunden und Wettbewerb — und finden den stärksten Hebel für Ihr Wachstum."
       },
       {
-        "title": "Strategie",
-        "desc": "Klarer Plan für Website, SEO und Kundengewinnung."
+        "title": "Erfolgsplan entwickeln",
+        "desc": "Sie erhalten eine klare Roadmap für Website, SEO und planbare Kundengewinnung."
       },
       {
-        "title": "Entwicklung",
-        "desc": "Wir bauen ein schnelles, modernes und sichtbares System."
+        "title": "System aufbauen",
+        "desc": "Wir verwandeln die Strategie in einen schnellen Auftritt, der Vertrauen schafft und Besucher zur Anfrage führt."
       },
       {
-        "title": "Wachstum",
-        "desc": "Laufende Optimierung für mehr Anfragen und Umsatz."
+        "title": "Messbar wachsen",
+        "desc": "Nach dem Launch optimieren wir weiter — für mehr Sichtbarkeit, qualifizierte Anfragen und Umsatz."
       }
     ]
   },
