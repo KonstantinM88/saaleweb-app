@@ -635,5 +635,30 @@
       "sidebarText": "Unverbindlich, ehrlich und ohne Fachchinesisch.",
       "detailsTitle": "Mehr Details"
     }
+  },
+  "IndustriesPage": {
+    "trust1Value": "100/100",
+    "trust1Label": "Google PageSpeed",
+    "trust2Value": "< 1 Sek.",
+    "trust2Label": "Ladezeit",
+    "trust3Value": "3 Sprachen",
+    "trust3Label": "DE · EN · RU",
+    "trust4Value": "100 %",
+    "trust4Label": "Ihr Eigentum",
+    "explore": "Mehr erfahren",
+    "detail": {
+      "eyebrow": "Branche",
+      "painsTitle": "Typische Herausforderungen",
+      "resultsTitle": "Das bringt es Ihnen",
+      "faqTitle": "Häufige Fragen",
+      "sidebarTitle": "Bereit anzufangen?",
+      "sidebarText": "Kostenloses Erstgespräch — ehrlich und ohne Fachchinesisch.",
+      "ctaButton": "Kostenloses Erstgespräch",
+      "ctaTitle": "Lassen Sie uns über Ihre Branche sprechen",
+      "ctaText": "Wir kennen die Anforderungen Ihrer Branche und zeigen Ihnen, was möglich ist.",
+      "backToIndustries": "Alle Branchen",
+      "detailsTitle": "Mehr Details",
+      "pricingCta": "Preise ansehen"
+    }
   }
 }

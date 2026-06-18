@@ -635,5 +635,30 @@
       "sidebarText": "Без обязательств, честно и без сложных терминов.",
       "detailsTitle": "Подробнее"
     }
+  },
+  "IndustriesPage": {
+    "trust1Value": "100/100",
+    "trust1Label": "Google PageSpeed",
+    "trust2Value": "< 1 сек",
+    "trust2Label": "Загрузка",
+    "trust3Value": "3 языка",
+    "trust3Label": "DE · EN · RU",
+    "trust4Value": "100 %",
+    "trust4Label": "Принадлежит вам",
+    "explore": "Подробнее",
+    "detail": {
+      "eyebrow": "Отрасль",
+      "painsTitle": "Типичные сложности",
+      "resultsTitle": "Что вы получаете",
+      "faqTitle": "Частые вопросы",
+      "sidebarTitle": "Готовы начать?",
+      "sidebarText": "Бесплатная консультация — честно и без сложных терминов.",
+      "ctaButton": "Бесплатная консультация",
+      "ctaTitle": "Давайте обсудим вашу отрасль",
+      "ctaText": "Мы знаем требования вашей отрасли и покажем, что возможно.",
+      "backToIndustries": "Все отрасли",
+      "detailsTitle": "Подробнее",
+      "pricingCta": "Смотреть цены"
+    }
   }
 }

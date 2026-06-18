@@ -635,5 +635,30 @@
       "sidebarText": "No obligation, honest and without jargon.",
       "detailsTitle": "More details"
     }
+  },
+  "IndustriesPage": {
+    "trust1Value": "100/100",
+    "trust1Label": "Google PageSpeed",
+    "trust2Value": "< 1 sec",
+    "trust2Label": "Load time",
+    "trust3Value": "3 languages",
+    "trust3Label": "DE · EN · RU",
+    "trust4Value": "100 %",
+    "trust4Label": "Owned by you",
+    "explore": "Learn more",
+    "detail": {
+      "eyebrow": "Industry",
+      "painsTitle": "Typical challenges",
+      "resultsTitle": "What you get",
+      "faqTitle": "Common questions",
+      "sidebarTitle": "Ready to start?",
+      "sidebarText": "Free first consultation — honest and without jargon.",
+      "ctaButton": "Free first consultation",
+      "ctaTitle": "Let's talk about your industry",
+      "ctaText": "We know your industry's needs and show you what's possible.",
+      "backToIndustries": "All industries",
+      "detailsTitle": "More details",
+      "pricingCta": "See pricing"
+    }
   }
 }
