@@ -1,39 +1,29 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { hasLocale } from "next-intl";
+import { ArrowRight } from "lucide-react";
 import { routing, type AppLocale } from "@/i18n/routing";
-import { getPathname, Link } from "@/i18n/navigation";
+import { getPathname } from "@/i18n/navigation";
 import { prisma } from "@/lib/prisma";
 import { Navbar } from "@/widgets/navbar/Navbar";
 import { Footer } from "@/widgets/footer/Footer";
+import { ProjectGrid, type ProjectCard } from "@/widgets/projects-page/ProjectGrid";
 import { Container } from "@/shared/ui/Container";
 import { Breadcrumbs } from "@/shared/ui/Breadcrumbs";
+import { Reveal } from "@/shared/ui/Reveal";
+import { Magnetic } from "@/shared/ui/Magnetic";
+import { TrustMetrics } from "@/shared/ui/TrustMetrics";
 import { CtaBanner } from "@/shared/ui/CtaBanner";
 import { JsonLd } from "@/shared/seo/JsonLd";
 import { breadcrumbSchema } from "@/shared/seo/schema";
 import { buildMetadata } from "@/shared/seo/metadata";
-import { cn } from "@/shared/lib/cn";
 
 export const revalidate = 300;
 
 type Params = { locale: string };
-type Card = {
-  slug: string;
-  title: string;
-  tag: string;
-  result: string;
-  cover: { image: string | null; color: string | null };
-};
 
-const covers = [
-  "bg-brand",
-  "bg-gradient-to-br from-sky-500 to-brand-purple",
-  "bg-gradient-to-br from-amber-500 to-brand-pink",
-];
-
-async function getItems(locale: AppLocale): Promise<Card[]> {
+async function getItems(locale: AppLocale): Promise<ProjectCard[]> {
   try {
     const rows = await prisma.project.findMany({
       where: { published: true },
@@ -44,132 +34,164 @@ async function getItems(locale: AppLocale): Promise<Card[]> {
         media: { orderBy: { order: "asc" }, take: 1 },
       },
     });
-    return rows.flatMap((row, i) => {
-      const tr = row.translations[0];
-      if (!tr) return [];
-      return {
-        slug: tr.slug,
-        title: tr.title,
-        tag: row.category?.translations?.[0]?.name ?? "",
-        result: row.resultValue ?? "",
-        cover: { image: row.media?.[0]?.url ?? null, color: row.coverColor ?? covers[i % covers.length] },
-      } as Card;
+
+    return rows.flatMap((row) => {
+      const translation = row.translations[0];
+      if (!translation) return [];
+
+      return [
+        {
+          slug: translation.slug,
+          title: translation.title,
+          tag: row.category?.translations?.[0]?.name ?? "",
+          result: row.resultValue ?? "",
+          cover: {
+            image: row.media?.[0]?.url ?? null,
+            color: row.coverColor ?? null,
+          },
+        },
+      ];
     });
   } catch {
     return [];
   }
 }
 
-export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<Params>;
+}): Promise<Metadata> {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) return {};
-  const t = await getTranslations({ locale, namespace: "CaseStudies" });
+
+  const t = await getTranslations({ locale, namespace: "Projects" });
   const languages = Object.fromEntries(
-    routing.locales.map((l) => [l, getPathname({ locale: l, href: "/projekte" })]),
+    routing.locales.map((targetLocale) => [
+      targetLocale,
+      getPathname({ locale: targetLocale, href: "/projekte" }),
+    ]),
   );
+
   return buildMetadata({
     path: "/projekte",
     locale,
-    title: t("title"),
-    description: t("lead"),
-    eyebrow: t("eyebrow"),
+    title: t("pageTitle"),
+    description: t("pageLead"),
+    eyebrow: t("label"),
     languages,
   });
 }
 
-export default async function ProjectsIndexPage({ params }: { params: Promise<Params> }) {
+export default async function ProjectsIndexPage({
+  params,
+}: {
+  params: Promise<Params>;
+}) {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) notFound();
   setRequestLocale(locale);
 
-  const t = await getTranslations({ locale, namespace: "CaseStudies" });
-  const tp = await getTranslations({ locale, namespace: "Projects" });
-  const th = await getTranslations({ locale, namespace: "Pages" });
+  const t = await getTranslations({ locale, namespace: "Projects" });
+  const pages = await getTranslations({ locale, namespace: "Pages" });
   const items = await getItems(locale);
   const homePath = locale === routing.defaultLocale ? "/" : `/${locale}`;
+  const projectsPath = getPathname({ locale, href: "/projekte" });
+  const contactHref = locale === routing.defaultLocale ? "/#contact" : `/${locale}#contact`;
+
+  const trust = [
+    { value: t("trust1Value"), label: t("trust1Label") },
+    { value: t("trust2Value"), label: t("trust2Label") },
+    { value: t("trust3Value"), label: t("trust3Label") },
+    { value: t("trust4Value"), label: t("trust4Label") },
+  ];
 
   return (
     <>
       <Navbar />
       <JsonLd
         data={breadcrumbSchema([
-          { name: th("home"), path: homePath },
-          { name: tp("label"), path: getPathname({ locale, href: "/projekte" }) },
+          { name: pages("home"), path: homePath },
+          { name: t("label"), path: projectsPath },
         ])}
       />
-      <main>
-        <Breadcrumbs items={[{ name: th("home"), href: "/" }, { name: tp("label") }]} />
-        <section className="py-12">
-          <Container>
-            <span className="eyebrow">{t("eyebrow")}</span>
-            <h1 className="mt-4 text-[clamp(32px,5vw,56px)] font-bold tracking-tight text-dark">
-              {t("title")}
-            </h1>
-            <p className="mt-4 max-w-2xl text-lg text-muted">{t("lead")}</p>
 
+      <main>
+        <Breadcrumbs items={[{ name: pages("home"), href: "/" }, { name: t("label") }]} />
+
+        <section className="relative overflow-hidden pb-10 pt-6 md:pb-16 md:pt-10">
+          <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  "radial-gradient(620px 360px at 82% 0%, rgba(139,92,246,0.10), transparent 60%), radial-gradient(560px 320px at 8% 4%, rgba(255,79,163,0.08), transparent 58%)",
+              }}
+            />
+            <div
+              className="absolute inset-0 opacity-40"
+              style={{
+                backgroundImage:
+                  "linear-gradient(to right, rgba(17,24,39,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(17,24,39,0.05) 1px, transparent 1px)",
+                backgroundSize: "54px 54px",
+                maskImage:
+                  "radial-gradient(ellipse 80% 60% at 50% 0%, #000 25%, transparent 78%)",
+                WebkitMaskImage:
+                  "radial-gradient(ellipse 80% 60% at 50% 0%, #000 25%, transparent 78%)",
+              }}
+            />
+          </div>
+
+          <Container>
+            <div className="hero-stagger max-w-3xl">
+              <span className="eyebrow">{t("label")}</span>
+              <h1 className="mt-4 text-[clamp(32px,5.2vw,58px)] font-bold leading-[1.08] tracking-tight text-dark">
+                {t("pageTitle")}
+              </h1>
+              <p className="mt-5 max-w-2xl text-[clamp(16px,1.7vw,20px)] text-muted">
+                {t("pageLead")}
+              </p>
+              <div className="mt-8">
+                <Magnetic>
+                  <a
+                    href={contactHref}
+                    className="btn-shine group inline-flex items-center justify-center gap-2 rounded-xl bg-brand px-6 py-3.5 text-[15px] font-semibold text-white shadow-[0_8px_24px_-8px_rgba(255,79,163,0.55)] transition-all hover:-translate-y-0.5"
+                  >
+                    {t("ctaButton")}
+                    <ArrowRight
+                      size={17}
+                      className="transition-transform group-hover:translate-x-1"
+                      aria-hidden
+                    />
+                  </a>
+                </Magnetic>
+              </div>
+            </div>
+
+            <Reveal delay={120}>
+              <div className="mt-12">
+                <TrustMetrics items={trust} />
+              </div>
+            </Reveal>
+          </Container>
+        </section>
+
+        <section className="py-12 md:py-16">
+          <Container>
             {items.length === 0 ? (
-              <p className="mt-12 rounded-2xl border border-dashed border-line bg-surface p-10 text-center text-muted">
-                {tp("empty")}
+              <p className="mx-auto max-w-md rounded-2xl border border-dashed border-line bg-surface p-10 text-center text-muted">
+                {t("empty")}
               </p>
             ) : (
-              <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
-                {items.map((item) => {
-                  const hex = item.cover.color?.startsWith("#");
-                  const isLocalImage = item.cover.image?.startsWith("/");
-                  return (
-                    <Link
-                      key={item.slug}
-                      href={{ pathname: "/projekte/[slug]", params: { slug: item.slug } }}
-                      className="group flex h-full flex-col overflow-hidden rounded-[18px] border border-line bg-white transition-all hover:-translate-y-1.5 hover:border-transparent hover:shadow-lift"
-                    >
-                      <div
-                        className={cn(
-                          "relative aspect-[3/2] overflow-hidden",
-                          item.cover.image ? "bg-[#fbf7fc]" : !hex ? item.cover.color ?? "bg-brand" : undefined,
-                        )}
-                        style={!item.cover.image && hex ? { background: item.cover.color ?? undefined } : undefined}
-                      >
-                        {item.cover.image && isLocalImage ? (
-                          <Image
-                            src={item.cover.image}
-                            alt={item.title}
-                            fill
-                            sizes="(min-width: 1024px) 370px, (min-width: 768px) 33vw, 100vw"
-                            className="object-contain object-center"
-                          />
-                        ) : item.cover.image ? (
-                          // eslint-disable-next-line @next/next/no-img-element
-                          <img
-                            src={item.cover.image}
-                            alt={item.title}
-                            loading="lazy"
-                            decoding="async"
-                            className="absolute inset-0 h-full w-full object-contain object-center"
-                          />
-                        ) : (
-                          <span className="absolute bottom-3.5 left-4 text-xl font-bold tracking-tight text-white">
-                            {item.title}
-                          </span>
-                        )}
-                      </div>
-                      <div className="flex flex-1 flex-col p-[18px]">
-                        {item.tag && (
-                          <span className="mb-2.5 w-fit rounded-md bg-brand-soft px-2 py-1 font-mono text-[11px] font-semibold text-brand-purple">
-                            {item.tag}
-                          </span>
-                        )}
-                        <h2 className="text-lg font-bold text-dark group-hover:text-brand-purple">{item.title}</h2>
-                        {item.result && (
-                          <b className="mt-auto pt-3 text-[22px] text-success">{item.result}</b>
-                        )}
-                      </div>
-                    </Link>
-                  );
-                })}
-              </div>
+              <ProjectGrid
+                items={items}
+                allLabel={t("all_")}
+                viewLabel={t("viewProject")}
+              />
             )}
           </Container>
         </section>
+
         <CtaBanner />
       </main>
       <Footer />
