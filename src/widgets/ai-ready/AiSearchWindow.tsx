@@ -199,12 +199,11 @@ export function AiSearchWindow({
             <BrandLogo variant="icon" tone="light" animated={false} className="relative h-14 w-14 md:h-16 md:w-16" />
           </div>
 
-          <div aria-label={label} className="absolute inset-0">
+          <div aria-hidden="true" className="absolute inset-0">
             {nodes.map((node) => (
               <div
                 key={node.label}
                 className={`${nodeBaseClass} ${node.className} ${node.mobilePosition} ${node.desktopPosition}`}
-                aria-label={node.label}
                 title={node.label}
               >
                 <node.Icon />

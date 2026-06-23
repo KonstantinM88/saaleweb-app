@@ -7,6 +7,14 @@ const nextConfig: NextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
   },
+  async headers() {
+    return [
+      {
+        source: "/llms.txt",
+        headers: [{ key: "Content-Type", value: "text/markdown; charset=utf-8" }],
+      },
+    ];
+  },
   // sharp must stay external (native binaries) for the image-upload route.
   serverExternalPackages: ["sharp"],
   experimental: {

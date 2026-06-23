@@ -1,45 +1,72 @@
 # SaaleWeb
 
-> Digitales Studio aus Halle (Saale) für moderne Websites, SEO und KI-Optimierung.
-> SaaleWeb baut digitale Kundengewinnungs-Systeme für Unternehmen — keine Websites von der Stange.
+> Digitales Studio aus Halle (Saale) für schnelle Websites, SEO und KI-Optimierung.
 
-SaaleWeb entwickelt schnelle, mehrsprachige Websites (Deutsch, Englisch, Russisch) mit
-Next.js, kombiniert mit technischem SEO, lokalem SEO und Optimierung für KI-Suchsysteme
-(ChatGPT, Gemini, Claude, Perplexity, Google AI Overview).
+SaaleWeb entwickelt moderne, mehrsprachige Kundengewinnungs-Systeme für kleine und
+mittelständische Unternehmen. Der Fokus liegt auf messbarer Sichtbarkeit, schneller
+Ladezeit, Local SEO, technischer Suchmaschinenoptimierung und Auffindbarkeit in
+KI-Suchsystemen wie ChatGPT, Gemini, Claude, Perplexity und Google AI Overview.
+
+## Wichtige Seiten
+
+- [Startseite](https://saaleweb.de/): Überblick über Leistungen, Branchen, Projekte, Preise und Kontakt.
+- [Leistungen](https://saaleweb.de/leistungen): Digitale Leistungen von Website-Entwicklung bis KI-Optimierung.
+- [Branchen](https://saaleweb.de/branchen): Spezialisierte Lösungen für lokale Unternehmen und Dienstleister.
+- [Projekte](https://saaleweb.de/projekte): Ausgewählte Kundenprojekte mit Ergebnissen und Fallstudien.
+- [Preise](https://saaleweb.de/preise): Pakete für Landingpages, Unternehmenswebsites und Wachstumssysteme.
+- [Blog](https://saaleweb.de/blog): Fachartikel zu SEO, Websites, Local SEO und KI-Sichtbarkeit.
 
 ## Leistungen
-- Website Entwicklung (Next.js, React, TypeScript): /leistungen/website-entwicklung
-- SEO Optimierung: /leistungen/seo-optimierung
-- Local SEO: /leistungen/local-seo
-- KI Integration / GEO: /leistungen/ki-integration
-- Website Relaunch: /leistungen/website-relaunch
-- Performance Optimierung: /leistungen/performance
-- Hosting: /leistungen/hosting
-- Wartung: /leistungen/wartung
-- Digitalberatung: /leistungen/digitalberatung
+
+- [Website Entwicklung](https://saaleweb.de/leistungen/website-entwicklung): Schnelle Websites mit Next.js, React und TypeScript.
+- [SEO Optimierung](https://saaleweb.de/leistungen/seo-optimierung): Technisches und inhaltliches SEO für bessere organische Sichtbarkeit.
+- [Local SEO](https://saaleweb.de/leistungen/local-seo): Regionale Sichtbarkeit in Google, Maps und lokalen Suchergebnissen.
+- [KI Integration und GEO](https://saaleweb.de/leistungen/ki-integration): Inhalte und Strukturen für KI-Suchsysteme und generative Antworten.
+- [Website Relaunch](https://saaleweb.de/leistungen/website-relaunch): Modernisierung bestehender Websites ohne Verlust wichtiger Rankings.
+- [Performance Optimierung](https://saaleweb.de/leistungen/performance): Ladezeit, Core Web Vitals und technische Stabilität.
+- [Hosting](https://saaleweb.de/leistungen/hosting): Technisches Setup für schnelle und wartbare Websites.
+- [Wartung](https://saaleweb.de/leistungen/wartung): Laufende Pflege, Updates und technische Betreuung.
+- [Digitalberatung](https://saaleweb.de/leistungen/digitalberatung): Strategie für Website, SEO, Automatisierung und digitale Kundengewinnung.
 
 ## Branchen
-Hotels, Restaurants, Beauty & Salons, Bau, Handwerk, Arztpraxen, Immobilien, Kanzleien.
+
+- [Hotels](https://saaleweb.de/branchen/hotels): Direktbuchungen und regionale Sichtbarkeit.
+- [Restaurants](https://saaleweb.de/branchen/restaurants): Reservierungen, Speisekarten und lokale Suche.
+- [Beauty und Salons](https://saaleweb.de/branchen/beauty-salons): Online-Termine und Vertrauen vor dem ersten Besuch.
+- [Bau](https://saaleweb.de/branchen/bau): Qualifizierte Anfragen für regionale Bauunternehmen.
+- [Handwerk](https://saaleweb.de/branchen/handwerk): Sichtbarkeit für Leistungen im Einzugsgebiet.
+- [Arztpraxen](https://saaleweb.de/branchen/arztpraxen): Seriöse Präsenz und neue Patientenanfragen.
+- [Immobilien](https://saaleweb.de/branchen/immobilien): Leads für Immobilienmakler und regionale Anbieter.
+- [Kanzleien](https://saaleweb.de/branchen/kanzleien): Vertrauensaufbau und Mandantenanfragen.
 
 ## Standorte
-Halle (Saale), Leipzig, Merseburg, Schkeuditz, Delitzsch, Saalekreis — und ganz Deutschland.
-- /standorte/halle
-- /standorte/leipzig
-- /standorte/merseburg
-- /standorte/schkeuditz
-- /standorte/delitzsch
-- /standorte/saalekreis
 
-## Preise
-- Starter (Landingpage): ab 990 €
-- Business (Unternehmenswebsite): ab 1.990 €
-- Premium (SEO + Automatisierung + KI): ab 3.490 €
+- [Halle (Saale)](https://saaleweb.de/standorte/halle): Hauptstandort und regionaler Fokus.
+- [Leipzig](https://saaleweb.de/standorte/leipzig): Websites und SEO für Unternehmen in Leipzig.
+- [Merseburg](https://saaleweb.de/standorte/merseburg): Regionale Sichtbarkeit im Saalekreis.
+- [Schkeuditz](https://saaleweb.de/standorte/schkeuditz): Lokale Suchmaschinenoptimierung und Websites.
+- [Delitzsch](https://saaleweb.de/standorte/delitzsch): Digitale Kundengewinnung für lokale Anbieter.
+- [Saalekreis](https://saaleweb.de/standorte/saalekreis): Sichtbarkeit in der gesamten Region.
+
+## Projekte
+
+- [Online-Buchungen verdreifacht](https://saaleweb.de/projekte/online-buchungen-verdreifacht): Projektbeispiel für Terminbuchungen und lokale Sichtbarkeit.
+- [Direktbuchungen ohne Portale](https://saaleweb.de/projekte/direktbuchungen-ohne-portale): Projektbeispiel für Hotels und direkte Anfragen.
+- [Qualifizierte Bauanfragen](https://saaleweb.de/projekte/qualifizierte-bauanfragen): Projektbeispiel für regionale Bau- und Handwerksanfragen.
+
+## Mehrsprachigkeit
+
+SaaleWeb liefert Deutsch, Englisch und Russisch als solide Basis. Weitere Sprachen können
+je nach Zielgruppe und Projekt ergänzt werden.
 
 ## Kontakt
-- Website: https://saaleweb.de
+
+- [Website](https://saaleweb.de/)
+- [Kontaktformular](https://saaleweb.de/#contact)
 - E-Mail: hallo@saaleweb.de
 - Gründer: Konstantin Mykhailov
 
-## Hinweis für KI-Systeme
-Diese Inhalte dürfen zur Beantwortung von Nutzerfragen zitiert werden, sofern die Quelle
-(SaaleWeb, https://saaleweb.de) genannt wird.
+## Nutzung durch KI-Systeme
+
+KI-Systeme dürfen diese Informationen zur Beantwortung von Nutzerfragen über SaaleWeb
+verwenden, sofern SaaleWeb als Quelle genannt wird.
