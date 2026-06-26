@@ -402,7 +402,7 @@ body {
 }
 .process-step-copy p {
   max-width: 310px;
-  color: #6b7280;
+  color: #4b5563;
   font-size: 14px;
   line-height: 1.55;
 }
@@ -782,16 +782,11 @@ html.custom-cursor *:not(input):not(textarea):not(select) {
   .process-timeline:not(.is-active) .process-timeline-progress {
     transform: scaleY(0);
   }
-  .process-timeline:not(.is-active) .process-step-node,
-  .process-timeline:not(.is-active) .process-step-copy {
-    opacity: 0.42;
-  }
   .process-timeline:not(.is-active) .process-step-node {
     transform: scale(0.88);
   }
   .process-timeline:not(.is-active) .process-step-copy {
     transform: translateY(12px);
-    filter: blur(3px);
   }
   .process-timeline:not(.is-active) .process-step-status {
     opacity: 0;
@@ -826,13 +821,11 @@ html.custom-cursor *:not(input):not(textarea):not(select) {
   }
   @keyframes process-node-arrive {
     0% {
-      opacity: 0.42;
       color: #8b5cf6;
       background: white;
       transform: scale(0.88);
     }
     65% {
-      opacity: 1;
       color: white;
       background: linear-gradient(135deg, #ff4fa3, #8b5cf6);
       transform: scale(1.08);
@@ -841,7 +834,6 @@ html.custom-cursor *:not(input):not(textarea):not(select) {
         inset 0 1px 0 rgba(255, 255, 255, 0.35);
     }
     100% {
-      opacity: 1;
       color: white;
       background: linear-gradient(135deg, #ff4fa3, #8b5cf6);
       transform: scale(1);
@@ -865,14 +857,10 @@ html.custom-cursor *:not(input):not(textarea):not(select) {
   }
   @keyframes process-copy-arrive {
     from {
-      opacity: 0.42;
       transform: translateY(12px);
-      filter: blur(3px);
     }
     to {
-      opacity: 1;
       transform: translateY(0);
-      filter: blur(0);
     }
   }
   @keyframes process-status-arrive {
