@@ -97,7 +97,7 @@ export function Dashboard() {
   const { ref, inView } = useInView<HTMLDivElement>();
   const tiltRef = useTilt<HTMLDivElement>();
 
-  const seo = useCountUp(98, inView);
+  const seo = useCountUp(100, inView);
   const speed = useCountUp(100, inView);
   const ai = useCountUp(92, inView);
   const leads = useCountUp(47, inView);
@@ -136,7 +136,7 @@ export function Dashboard() {
 
           <div className="p-5">
             <div className="mb-3.5 grid grid-cols-1 gap-3.5 sm:grid-cols-2">
-              <Metric label="SEO Score" value={seo} ring={<Ring value={98} run={inView} />} trend={`▲ ${t("seoTrend")}`} />
+              <Metric label="SEO Score" value={seo} ring={<Ring value={100} run={inView} />} trend={`▲ ${t("seoTrend")}`} />
               <Metric label="PageSpeed" value={speed} ring={<Ring value={100} run={inView} />} trend="▲ Core Web Vitals" />
             </div>
             <div className="mb-3.5 grid grid-cols-1 gap-3.5 sm:grid-cols-2">

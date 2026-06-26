@@ -47,6 +47,18 @@
     "title": "Digital systems for more visibility and more inquiries",
     "lead": "Strategy, web design, SEO, performance and support — connected into one system that helps your business grow.",
     "more": "Learn more",
+    "techNote": {
+      "title": "Next.js, WordPress or a custom solution — depending on what makes sense for your business.",
+      "text": "We do not only build modern Next.js systems. If WordPress is better for existing workflows, internal content editing or budget, we also develop and support professional WordPress websites. The platform is not the goal — visibility, trust and measurable inquiries are.",
+      "chips": [
+        "Next.js",
+        "React",
+        "WordPress",
+        "Java",
+        "Headless CMS",
+        "Booking systems"
+      ]
+    },
     "items": [
       {
         "title": "Web Development",
@@ -545,14 +557,16 @@
     "lead": "We do not recommend one fixed platform. We recommend the solution that creates the strongest measurable outcome for your business.",
     "stack": [
       "Next.js",
+      "React",
       "WordPress",
+      "Java",
       "Headless CMS",
       "Custom Solutions",
       "Booking Systems",
       "E-Commerce"
     ],
     "noteTitle": "The framework is not the goal.",
-    "noteText": "Whether a modern Next.js platform for maximum performance or a professionally managed WordPress solution for existing systems: the technology is only useful when it improves the business result.",
+    "noteText": "Whether a modern Next.js and React platform for maximum performance, Java integration for existing systems or a professionally managed WordPress solution: the technology is only useful when it improves the business result.",
     "benefits": [
       {
         "title": "Performance",

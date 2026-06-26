@@ -7,6 +7,7 @@ import { Reveal } from "@/shared/ui/Reveal";
 import { SectionHeader } from "@/shared/ui/SectionHeader";
 
 type StaticItem = { title: string; desc: string };
+type TechNote = { title: string; text: string; chips: string[] };
 type Item = {
   title: string;
   desc: string;
@@ -77,6 +78,7 @@ async function getDbServices(locale: AppLocale): Promise<Item[]> {
 export async function Services() {
   const locale = (await getLocale()) as AppLocale;
   const t = await getTranslations({ locale, namespace: "Services" });
+  const techNote = t.raw("techNote") as TechNote;
   const fallback = (t.raw("items") as StaticItem[]).map((item, i) => ({
     ...item,
     slug: fallbackSlugs[locale][i],
@@ -123,6 +125,27 @@ export async function Services() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal delay={120} className="mt-8">
+          <div className="rounded-[22px] border border-brand-purple/15 bg-white p-5 shadow-[0_22px_70px_-52px_rgba(139,92,246,0.58)] md:p-6">
+            <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+              <div className="max-w-3xl">
+                <h3 className="text-xl font-extrabold tracking-tight text-dark">{techNote.title}</h3>
+                <p className="mt-2 text-[15px] leading-relaxed text-muted">{techNote.text}</p>
+              </div>
+              <div className="flex shrink-0 flex-wrap gap-2">
+                {techNote.chips.map((chip) => (
+                  <span
+                    key={chip}
+                    className="rounded-full border border-line bg-surface px-3 py-1.5 text-[12px] font-bold text-ink"
+                  >
+                    {chip}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </Reveal>
       </Container>
     </section>
   );

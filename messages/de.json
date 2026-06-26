@@ -47,6 +47,18 @@
     "title": "Digitale Systeme für mehr Sichtbarkeit und mehr Anfragen",
     "lead": "Strategie, Webdesign, SEO, Performance und Betreuung — sauber verbunden zu einem System, das Ihrem Unternehmen Wachstum ermöglicht.",
     "more": "Mehr erfahren",
+    "techNote": {
+      "title": "Next.js, WordPress oder eine individuelle Lösung — je nachdem, was für Ihr Unternehmen sinnvoll ist.",
+      "text": "Wir bauen nicht nur moderne Next.js-Systeme. Wenn WordPress für bestehende Prozesse, interne Pflege oder Budget sinnvoller ist, entwickeln und betreuen wir auch professionelle WordPress-Websites. Entscheidend ist nicht die Plattform, sondern Sichtbarkeit, Vertrauen und messbare Anfragen.",
+      "chips": [
+        "Next.js",
+        "React",
+        "WordPress",
+        "Java",
+        "Headless CMS",
+        "Buchungssysteme"
+      ]
+    },
     "items": [
       {
         "title": "Website Entwicklung",
@@ -545,14 +557,16 @@
     "lead": "Wir empfehlen nicht eine bestimmte Plattform. Wir empfehlen die Lösung, die für Ihr Unternehmen messbar am meisten bringt.",
     "stack": [
       "Next.js",
+      "React",
       "WordPress",
+      "Java",
       "Headless CMS",
       "Custom Solutions",
       "Booking Systems",
       "E-Commerce"
     ],
     "noteTitle": "Das Framework ist nicht das Ziel.",
-    "noteText": "Ob moderne Next.js-Plattform für maximale Performance oder professionell betreute WordPress-Lösung für bestehende Systeme: Entscheidend ist nicht die Technologie, sondern das Geschäftsergebnis.",
+    "noteText": "Ob moderne Next.js- und React-Plattform für maximale Performance, Java-Anbindung für bestehende Systeme oder professionell betreute WordPress-Lösung: Entscheidend ist nicht die Technologie, sondern das Geschäftsergebnis.",
     "benefits": [
       {
         "title": "Performance",
