@@ -35,7 +35,9 @@ export function Founder() {
               <div className="font-mono text-xs uppercase tracking-[0.1em] text-brand-purple">
                 <BrandText text={t("role")} />
               </div>
-              <h3 className="mb-3.5 mt-2 text-2xl font-bold text-dark">Konstantin Mykhailov</h3>
+              <h3 className="mb-3.5 mt-2 text-2xl font-bold text-dark">
+                <BrandText text={t("title")} />
+              </h3>
               <p className="mb-5 max-w-[560px] text-[15.5px] text-muted">
                 <BrandText text={t("bio")} />
               </p>

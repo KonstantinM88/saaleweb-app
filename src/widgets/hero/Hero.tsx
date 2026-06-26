@@ -8,6 +8,7 @@ import { Dashboard } from "./Dashboard";
 export function Hero() {
   const t = useTranslations("Hero");
   const locale = useLocale();
+  const projectsHref = locale === "en" ? "/en/projects" : locale === "ru" ? "/ru/proekty" : "/projekte";
 
   return (
     <section id="top" className="relative overflow-hidden py-12 md:py-24">
@@ -61,7 +62,7 @@ export function Hero() {
                 →
               </span>
             </Button>
-            <Button href="#pricing" variant="ghost">
+            <Button href={projectsHref} variant="ghost">
               {t("ctaSecondary")}
             </Button>
           </div>

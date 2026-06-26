@@ -23,10 +23,10 @@
     "badge": "Digital studio · Halle (Saale) → Germany",
     "titleA": "Websites that ",
     "titleB": "win customers.",
-    "lead1": "SEO-optimized. AI-ready. Made in Halle.",
-    "lead2": "We don't sell websites — we build digital customer-acquisition systems.",
+    "lead1": "We build digital systems that make businesses visible, create trust and support sustainable growth.",
+    "lead2": "From modern company websites to local SEO and AI-optimized content — every solution is built with one clear goal: more qualified inquiries and long-term growth.",
     "ctaPrimary": "Free consultation",
-    "ctaSecondary": "View pricing",
+    "ctaSecondary": "View our projects",
     "note": "Reply in 24 h · No upfront payment · Fixed price",
     "metrics": {
       "aiVisibility": "AI Visibility",
@@ -44,12 +44,12 @@
   },
   "Services": {
     "eyebrow": "Services",
-    "title": "Digital systems for more visibility and more inquiries",
-    "lead": "Strategy, web design, SEO, performance and support — connected into one system that helps your business grow.",
+    "title": "Digital solutions for sustainable growth.",
+    "lead": "Every business has different goals. That is why we do not build standard packages, but digital systems that fit your company.",
     "more": "Learn more",
     "techNote": {
-      "title": "Next.js, WordPress or a custom solution — depending on what makes sense for your business.",
-      "text": "We do not only build modern Next.js systems. If WordPress is better for existing workflows, internal content editing or budget, we also develop and support professional WordPress websites. The platform is not the goal — visibility, trust and measurable inquiries are.",
+      "title": "Flexible technologies",
+      "text": "Not every business needs the same technology. That is why we do not recommend a platform first, but the solution that best fits your goals. For new premium projects we usually prefer modern technologies such as Next.js and React. Existing WordPress websites can of course be modernized, extended or supported as well. For individual systems and integrations, Java can also be the right choice. The framework is not the deciding factor. The result is.",
       "chips": [
         "Next.js",
         "React",
@@ -59,6 +59,24 @@
         "Booking systems"
       ]
     },
+    "solutions": [
+      {
+        "title": "Win more customers",
+        "desc": "Professional company websites that create trust and turn visitors into customers."
+      },
+      {
+        "title": "Gain more visibility",
+        "desc": "Local SEO, structured content and technical optimization for better findability."
+      },
+      {
+        "title": "Simplify processes",
+        "desc": "Booking systems, automation and custom functions save time and reduce manual work."
+      },
+      {
+        "title": "Grow long term",
+        "desc": "Ongoing support, development and optimization of your digital presence."
+      }
+    ],
     "items": [
       {
         "title": "Web Development",
@@ -442,26 +460,48 @@
     "items": [
       {
         "name": "Salon Elen",
-        "tag": "Beauty · Bookings",
-        "title": "Online bookings tripled",
+        "tag": "Beauty studio",
+        "title": "More online appointments.",
         "desc": "A clear digital presence that builds trust and increases direct appointment bookings.",
         "result": "+212%"
       },
       {
         "name": "Waldschlösschen",
-        "tag": "Hotel · SEO",
-        "title": "Direct bookings without portals",
-        "desc": "Hotel website that wins guests through Google instead of expensive booking portals.",
+        "tag": "Hotel",
+        "title": "More direct bookings.",
+        "desc": "Guests find the hotel directly, understand the offer faster and book more often without portal detours.",
         "result": "+148%"
       },
       {
         "name": "SorgfaltBau",
-        "tag": "Construction · Inquiries",
-        "title": "Qualified construction leads",
-        "desc": "More regional visibility and better inquiries for profitable construction projects.",
+        "tag": "Trades & construction",
+        "title": "More qualified inquiries.",
+        "desc": "More regional visibility and better inquiries for profitable projects.",
         "result": "#1"
       }
-    ]
+    ],
+    "impacts": {
+      "online-bookings-tripled": {
+        "tag": "Beauty studio",
+        "title": "More online appointments.",
+        "desc": "Visitors find services faster, trust the presentation and book appointments directly online."
+      },
+      "direct-bookings-without-portals": {
+        "tag": "Hotel",
+        "title": "More direct bookings.",
+        "desc": "Guests find the hotel directly, understand the offer faster and book more often without portal detours."
+      },
+      "qualified-construction-leads": {
+        "tag": "Trades & construction",
+        "title": "More qualified inquiries.",
+        "desc": "More regional visibility and better inquiries for profitable projects."
+      },
+      "neue-liebe-nebra": {
+        "tag": "Restaurant",
+        "title": "More reservations.",
+        "desc": "An emotional presence for restaurant, terrace and events that makes the atmosphere visible and simplifies reservations."
+      }
+    }
   },
   "Projects": {
     "label": "Projects",
@@ -588,8 +628,9 @@
   },
   "AiReady": {
     "eyebrow": "AI ready websites",
-    "title": "Ready for the next generation of search",
-    "lead": "More people are no longer searching only through Google. We make sure your business remains visible and understandable inside modern AI systems.",
+    "title": "Ready for the next generation of search.",
+    "lead": "More people no longer ask their questions only on Google. AI systems such as ChatGPT, Claude, Gemini and Perplexity are increasingly becoming the first place they turn to. We create content and websites that are structured so modern AI systems can understand and classify them more easily.",
+    "subtitle": "Visible today. Relevant tomorrow.",
     "features": [
       {
         "title": "Visibility in new search paths",
@@ -631,19 +672,19 @@
       {
         "key": "seo",
         "title": "SEO & visibility",
-        "text": "More visibility through structured content, modern technology and local search optimization.",
+        "text": "Structured content, modern technology and local search optimization help your business appear where customers look for your services.",
         "metric": "Findability"
       },
       {
         "key": "ai",
         "title": "AI ready",
-        "text": "Prepared for ChatGPT, Claude, Gemini, Perplexity and Google AI.",
+        "text": "We create content that is understandable and relevant not only for search engines, but also for modern AI systems.",
         "metric": "Future search"
       },
       {
         "key": "results",
         "title": "Measurable results",
-        "text": "Performance, Core Web Vitals and conversion are continuously optimized and measurably improved.",
+        "text": "Every optimization follows one clear goal: better performance, more visibility and more qualified inquiries.",
         "metric": "Growth"
       }
     ],
@@ -654,32 +695,32 @@
       {
         "key": "visibility",
         "title": "More visibility",
-        "text": "Your services are clearly structured and visible where customers are actively searching."
+        "text": "Your services are described clearly, positioned locally and made visible where customers search for solutions."
       },
       {
         "key": "inquiries",
-        "title": "More inquiries",
-        "text": "Visitors understand your offer faster and find an easier path to contact you."
+        "title": "More qualified inquiries",
+        "text": "The path from first impression to contacting you becomes simpler, clearer and more trustworthy."
       },
       {
         "key": "performance",
-        "title": "Performance",
-        "text": "Fast loading times and strong Core Web Vitals improve user experience, SEO and conversion."
+        "title": "Better user experience",
+        "text": "Fast loading times and clear structures help visitors understand faster and take action."
       },
       {
         "key": "security",
-        "title": "Security",
-        "text": "Clean processes, modern standards and maintainability reduce technical risk."
+        "title": "More operational confidence",
+        "text": "Clean implementation, clear processes and maintainable systems reduce technical risk."
       },
       {
         "key": "support",
-        "title": "Long-term support",
-        "text": "Your digital system stays current, measurable and adaptable as your business grows."
+        "title": "Long-term development",
+        "text": "Your digital presence stays current, measurable and adaptable as your business grows."
       },
       {
         "key": "contact",
-        "title": "Direct contact",
-        "text": "You speak directly with SaaleWeb — clearly, personally and without anonymous agency processes."
+        "title": "Personal contact",
+        "text": "You work directly with SaaleWeb — clearly, personally and without anonymous agency processes."
       }
     ],
     "cta": {
@@ -695,8 +736,8 @@
   },
   "PerformanceProof": {
     "eyebrow": "Proven quality",
-    "title": "Digital systems that perform measurably better.",
-    "lead": "Modern technology is only valuable when it creates measurable results. That is why we build websites that load faster, rank better and generate more inquiries.",
+    "title": "Websites that perform measurably better.",
+    "lead": "Speed is more than a technical value. Fast websites improve user experience, strengthen trust and create better conditions for visibility in search engines.",
     "imageAlt": "SaaleWeb performance proof with Lighthouse scores and digital dashboard",
     "metrics": [
       {
@@ -732,13 +773,13 @@
     ],
     "flow": {
       "title": "Business flow",
-      "heading": "Technical quality becomes business impact.",
+      "heading": "Speed turns into business impact.",
       "items": [
         "Faster websites",
+        "More trust",
         "Better rankings",
         "More visibility",
-        "More qualified visitors",
-        "More inquiries"
+        "More qualified inquiries"
       ]
     },
     "disclaimer": "Average values from selected SaaleWeb projects. Measured with Google PageSpeed Insights. Actual results can vary depending on project scope, hosting and implemented features.",
@@ -810,8 +851,9 @@
     ]
   },
   "Founder": {
-    "role": "Web developer & founder of SaaleWeb",
-    "bio": "SaaleWeb combines modern technology with real business understanding. I work directly with my clients — together with selected partners and specialists — to build websites that win customers long term.",
+    "role": "Founder & personal contact",
+    "title": "Your long-term digital partner.",
+    "bio": "You work directly with the developer who supports your project from the first idea to long-term development. No anonymous agency process. No changing contacts. Just a long-term collaboration at eye level.",
     "stats": [
       {
         "value": "30+",
@@ -853,9 +895,10 @@
     "servicesLabel": "Services",
     "industriesLabel": "Industries",
     "locationsLabel": "Locations",
-    "ctaTitle": "Ready for more customers?",
-    "ctaText": "Free initial call — we'll show you how SaaleWeb can make your business visible.",
-    "ctaButton": "Free consultation"
+    "ctaTitle": "Ready for a website that helps your business grow?",
+    "ctaText": "Let us find out together which digital solution creates the highest value for your business.",
+    "ctaButton": "Free consultation",
+    "ctaSecondary": "Analyze website"
   },
   "Cities": {
     "eyebrow": "Location",

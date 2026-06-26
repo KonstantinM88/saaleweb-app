@@ -10,6 +10,7 @@ import { SectionHeader } from "@/shared/ui/SectionHeader";
 import { cn } from "@/shared/lib/cn";
 
 type StaticItem = { tag: string; title: string; desc: string; result: string; name: string };
+type ImpactOverride = Partial<Pick<Card, "tag" | "title" | "desc">>;
 type Card = {
   slug: string | null;
   tag: string;
@@ -63,6 +64,7 @@ export async function CaseStudies() {
   const locale = (await getLocale()) as AppLocale;
   const t = await getTranslations({ locale, namespace: "CaseStudies" });
   const tp = await getTranslations({ locale, namespace: "Projects" });
+  const impacts = t.raw("impacts") as Record<string, ImpactOverride>;
   const fallback: Card[] = (t.raw("items") as StaticItem[]).map((item, i) => ({
     slug: null,
     tag: item.tag,
@@ -72,7 +74,11 @@ export async function CaseStudies() {
     cover: { image: null, color: covers[i % covers.length], label: item.name },
   }));
   const dbItems = await getDbCases(locale);
-  const items = dbItems.length >= fallback.length ? dbItems : fallback;
+  const sourceItems = dbItems.length >= fallback.length ? dbItems : fallback;
+  const items = sourceItems.map((item) => {
+    const override = item.slug ? impacts[item.slug] : undefined;
+    return override ? { ...item, ...override } : item;
+  });
 
   return (
     <section id="cases" className="py-16 md:py-24">

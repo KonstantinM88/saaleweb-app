@@ -23,10 +23,10 @@
     "badge": "Digitales Studio · Halle (Saale) → Deutschland",
     "titleA": "Websites, die ",
     "titleB": "Kunden bringen.",
-    "lead1": "SEO-optimiert. KI-gestützt. Made in Halle.",
-    "lead2": "Wir verkaufen keine Websites — wir bauen digitale Kundengewinnungs-Systeme.",
+    "lead1": "Wir entwickeln digitale Systeme, die Unternehmen sichtbar machen, Vertrauen schaffen und nachhaltig wachsen lassen.",
+    "lead2": "Von modernen Unternehmenswebsites über lokale SEO bis hin zu KI-optimierten Inhalten – jede Lösung entsteht mit einem klaren Ziel: mehr qualifizierte Anfragen und langfristiges Wachstum.",
     "ctaPrimary": "Kostenloses Erstgespräch",
-    "ctaSecondary": "Preise ansehen",
+    "ctaSecondary": "Unsere Projekte ansehen",
     "note": "Antwort in 24 h · Keine Vorkasse · Festpreis",
     "metrics": {
       "aiVisibility": "AI Visibility",
@@ -44,12 +44,12 @@
   },
   "Services": {
     "eyebrow": "Leistungen",
-    "title": "Digitale Systeme für mehr Sichtbarkeit und mehr Anfragen",
-    "lead": "Strategie, Webdesign, SEO, Performance und Betreuung — sauber verbunden zu einem System, das Ihrem Unternehmen Wachstum ermöglicht.",
+    "title": "Digitale Lösungen für nachhaltiges Wachstum.",
+    "lead": "Jedes Unternehmen hat andere Ziele. Deshalb entwickeln wir keine Standardlösungen, sondern digitale Systeme, die zu Ihrem Unternehmen passen.",
     "more": "Mehr erfahren",
     "techNote": {
-      "title": "Next.js, WordPress oder eine individuelle Lösung — je nachdem, was für Ihr Unternehmen sinnvoll ist.",
-      "text": "Wir bauen nicht nur moderne Next.js-Systeme. Wenn WordPress für bestehende Prozesse, interne Pflege oder Budget sinnvoller ist, entwickeln und betreuen wir auch professionelle WordPress-Websites. Entscheidend ist nicht die Plattform, sondern Sichtbarkeit, Vertrauen und messbare Anfragen.",
+      "title": "Flexible Technologien",
+      "text": "Nicht jedes Unternehmen benötigt dieselbe Technologie. Deshalb empfehlen wir keine Plattform – sondern die Lösung, die am besten zu Ihren Zielen passt. Für neue Premium-Projekte setzen wir bevorzugt auf moderne Technologien wie Next.js und React. Bestehende WordPress-Websites modernisieren, erweitern oder betreuen wir selbstverständlich ebenfalls. Für individuelle Systeme und Integrationen kann auch Java sinnvoll sein. Entscheidend ist nicht das Framework. Entscheidend ist das Ergebnis.",
       "chips": [
         "Next.js",
         "React",
@@ -59,6 +59,24 @@
         "Buchungssysteme"
       ]
     },
+    "solutions": [
+      {
+        "title": "Mehr Kunden gewinnen",
+        "desc": "Professionelle Unternehmenswebsites, die Vertrauen schaffen und Besucher in Kunden verwandeln."
+      },
+      {
+        "title": "Mehr Sichtbarkeit erreichen",
+        "desc": "Lokale SEO, strukturierte Inhalte und technische Optimierung für bessere Auffindbarkeit."
+      },
+      {
+        "title": "Prozesse vereinfachen",
+        "desc": "Buchungssysteme, Automatisierungen und individuelle Funktionen sparen Zeit und reduzieren manuellen Aufwand."
+      },
+      {
+        "title": "Langfristig wachsen",
+        "desc": "Kontinuierliche Betreuung, Weiterentwicklung und Optimierung Ihrer digitalen Präsenz."
+      }
+    ],
     "items": [
       {
         "title": "Website Entwicklung",
@@ -442,26 +460,48 @@
     "items": [
       {
         "name": "Salon Elen",
-        "tag": "Beauty · Buchungen",
-        "title": "Online-Buchungen verdreifacht",
+        "tag": "Beauty Studio",
+        "title": "Mehr Online-Termine.",
         "desc": "Ein klarer digitaler Auftritt, der Vertrauen schafft und Terminbuchungen direkt auf der Website erhöht.",
         "result": "+212%"
       },
       {
         "name": "Waldschlösschen",
-        "tag": "Hotel · SEO",
-        "title": "Direktbuchungen ohne Portale",
-        "desc": "Hotel-Website, die Gäste über Google statt über teure Buchungsportale gewinnt.",
+        "tag": "Hotel",
+        "title": "Mehr Direktbuchungen.",
+        "desc": "Gäste finden das Hotel direkt, verstehen das Angebot schneller und buchen häufiger ohne Portalumwege.",
         "result": "+148%"
       },
       {
         "name": "SorgfaltBau",
-        "tag": "Bau · Anfragen",
-        "title": "Qualifizierte Bauanfragen",
-        "desc": "Mehr regionale Sichtbarkeit und bessere Anfragen für profitable Bauprojekte.",
+        "tag": "Handwerk & Bau",
+        "title": "Mehr qualifizierte Anfragen.",
+        "desc": "Mehr regionale Sichtbarkeit und bessere Anfragen für profitable Projekte.",
         "result": "Platz 1"
       }
-    ]
+    ],
+    "impacts": {
+      "online-buchungen-verdreifacht": {
+        "tag": "Beauty Studio",
+        "title": "Mehr Online-Termine.",
+        "desc": "Besucher finden Leistungen schneller, vertrauen dem Auftritt und buchen Termine direkt online."
+      },
+      "direktbuchungen-ohne-portale": {
+        "tag": "Hotel",
+        "title": "Mehr Direktbuchungen.",
+        "desc": "Gäste finden das Hotel direkt, verstehen das Angebot schneller und buchen häufiger ohne Portalumwege."
+      },
+      "qualifizierte-bauanfragen": {
+        "tag": "Handwerk & Bau",
+        "title": "Mehr qualifizierte Anfragen.",
+        "desc": "Mehr regionale Sichtbarkeit und bessere Anfragen für profitable Projekte."
+      },
+      "neue-liebe-nebra": {
+        "tag": "Restaurant",
+        "title": "Mehr Reservierungen.",
+        "desc": "Ein emotionaler Auftritt für Restaurant, Terrasse und Events, der Atmosphäre sichtbar macht und Reservierungen erleichtert."
+      }
+    }
   },
   "Projects": {
     "label": "Projekte",
@@ -588,8 +628,9 @@
   },
   "AiReady": {
     "eyebrow": "AI Ready Websites",
-    "title": "Bereit für die nächste Generation der Suche",
-    "lead": "Immer mehr Menschen suchen nicht mehr ausschließlich über Google. Wir sorgen dafür, dass Ihr Unternehmen auch in modernen KI-Systemen sichtbar und verständlich bleibt.",
+    "title": "Bereit für die nächste Generation der Suche.",
+    "lead": "Immer mehr Menschen stellen ihre Fragen nicht mehr ausschließlich bei Google. KI-Systeme wie ChatGPT, Claude, Gemini oder Perplexity werden zunehmend zur ersten Anlaufstelle. Wir entwickeln Inhalte und Webseiten, die so strukturiert sind, dass sie auch von modernen KI-Systemen besser verstanden und eingeordnet werden können.",
+    "subtitle": "Heute sichtbar. Morgen relevant.",
     "features": [
       {
         "title": "Sichtbarkeit in neuen Suchwegen",
@@ -631,19 +672,19 @@
       {
         "key": "seo",
         "title": "SEO & Sichtbarkeit",
-        "text": "Mehr Sichtbarkeit durch strukturierte Inhalte, moderne Technik und lokale Suchmaschinenoptimierung.",
+        "text": "Strukturierte Inhalte, moderne Technik und lokale Suchmaschinenoptimierung sorgen dafür, dass Ihr Unternehmen dort gefunden wird, wo Kunden nach Ihren Leistungen suchen.",
         "metric": "Gefunden werden"
       },
       {
         "key": "ai",
         "title": "AI Ready",
-        "text": "Bereit für ChatGPT, Claude, Gemini, Perplexity und Google AI.",
+        "text": "Wir entwickeln Inhalte, die nicht nur für Suchmaschinen, sondern auch für moderne KI-Systeme verständlich und relevant sind.",
         "metric": "Zukunftssuche"
       },
       {
         "key": "results",
         "title": "Messbare Ergebnisse",
-        "text": "Performance, Core Web Vitals und Conversion werden kontinuierlich optimiert und messbar verbessert.",
+        "text": "Jede Optimierung verfolgt ein klares Ziel: bessere Performance, mehr Sichtbarkeit und mehr qualifizierte Anfragen.",
         "metric": "Wachstum"
       }
     ],
@@ -654,32 +695,32 @@
       {
         "key": "visibility",
         "title": "Mehr Sichtbarkeit",
-        "text": "Ihre Leistungen werden klar strukturiert und dort sichtbar, wo Kunden aktiv suchen."
+        "text": "Ihre Leistungen werden klar beschrieben, lokal eingeordnet und dort sichtbar gemacht, wo Kunden nach Lösungen suchen."
       },
       {
         "key": "inquiries",
-        "title": "Mehr Anfragen",
-        "text": "Besucher verstehen schneller Ihr Angebot und finden leichter den Weg zur Kontaktaufnahme."
+        "title": "Mehr qualifizierte Anfragen",
+        "text": "Der Weg vom ersten Eindruck zur Kontaktaufnahme wird einfacher, klarer und vertrauenswürdiger."
       },
       {
         "key": "performance",
-        "title": "Performance",
-        "text": "Schnelle Ladezeiten und starke Core Web Vitals verbessern Nutzererlebnis, SEO und Conversion."
+        "title": "Bessere Nutzererfahrung",
+        "text": "Schnelle Ladezeiten und klare Strukturen helfen Besuchern, schneller zu verstehen und zu handeln."
       },
       {
         "key": "security",
-        "title": "Sicherheit",
-        "text": "Saubere Prozesse, moderne Standards und Wartbarkeit reduzieren technische Risiken."
+        "title": "Mehr Sicherheit im Alltag",
+        "text": "Saubere Umsetzung, klare Prozesse und wartbare Systeme reduzieren technische Risiken."
       },
       {
         "key": "support",
-        "title": "Langfristige Betreuung",
-        "text": "Ihr digitales System bleibt aktuell, messbar und anpassbar, wenn Ihr Unternehmen wächst."
+        "title": "Langfristige Weiterentwicklung",
+        "text": "Ihre digitale Präsenz bleibt aktuell, messbar und anpassbar, wenn Ihr Unternehmen wächst."
       },
       {
         "key": "contact",
-        "title": "Direkter Ansprechpartner",
-        "text": "Sie sprechen direkt mit SaaleWeb — klar, persönlich und ohne anonyme Agenturprozesse."
+        "title": "Persönlicher Ansprechpartner",
+        "text": "Sie arbeiten direkt mit SaaleWeb – klar, persönlich und ohne anonyme Agenturprozesse."
       }
     ],
     "cta": {
@@ -695,8 +736,8 @@
   },
   "PerformanceProof": {
     "eyebrow": "Nachweisbare Qualität",
-    "title": "Digitale Systeme, die messbar besser performen.",
-    "lead": "Moderne Technologie ist nur dann wertvoll, wenn sie messbare Ergebnisse liefert. Deshalb entwickeln wir Websites, die schneller laden, besser ranken und mehr Anfragen generieren.",
+    "title": "Websites, die messbar besser performen.",
+    "lead": "Geschwindigkeit ist mehr als ein technischer Wert. Schnelle Websites verbessern die Nutzererfahrung, stärken das Vertrauen und schaffen bessere Voraussetzungen für Sichtbarkeit in Suchmaschinen.",
     "imageAlt": "SaaleWeb Performance Proof mit Lighthouse-Werten und digitalem Dashboard",
     "metrics": [
       {
@@ -732,13 +773,13 @@
     ],
     "flow": {
       "title": "Business Flow",
-      "heading": "Technische Qualität wird zu geschäftlicher Wirkung.",
+      "heading": "Aus Geschwindigkeit entsteht geschäftliche Wirkung.",
       "items": [
         "Schnellere Websites",
+        "Mehr Vertrauen",
         "Bessere Rankings",
         "Mehr Sichtbarkeit",
-        "Mehr qualifizierte Besucher",
-        "Mehr Anfragen"
+        "Mehr qualifizierte Anfragen"
       ]
     },
     "disclaimer": "Durchschnittliche Werte ausgewählter SaaleWeb-Projekte. Gemessen mit Google PageSpeed Insights. Die tatsächlichen Ergebnisse können je nach Projektumfang, Hosting und eingesetzten Funktionen variieren.",
@@ -810,8 +851,9 @@
     ]
   },
   "Founder": {
-    "role": "Webentwickler & Gründer von SaaleWeb",
-    "bio": "SaaleWeb verbindet moderne Technologie mit echtem Geschäftsverständnis. Ich arbeite direkt mit meinen Kunden — und gemeinsam mit ausgewählten Partnern und Spezialisten, um Websites zu bauen, die langfristig Kunden gewinnen.",
+    "role": "Gründer & persönlicher Ansprechpartner",
+    "title": "Ihr langfristiger digitaler Partner.",
+    "bio": "Sie arbeiten direkt mit dem Entwickler, der Ihr Projekt von der ersten Idee bis zur langfristigen Weiterentwicklung begleitet. Keine anonymen Agenturprozesse. Keine wechselnden Ansprechpartner. Sondern eine langfristige Zusammenarbeit auf Augenhöhe.",
     "stats": [
       {
         "value": "30+",
@@ -853,9 +895,10 @@
     "servicesLabel": "Leistungen",
     "industriesLabel": "Branchen",
     "locationsLabel": "Standorte",
-    "ctaTitle": "Bereit für mehr Kunden?",
-    "ctaText": "Kostenloses Erstgespräch — wir zeigen Ihnen, wie SaaleWeb Ihr Unternehmen sichtbar macht.",
-    "ctaButton": "Kostenloses Erstgespräch"
+    "ctaTitle": "Bereit für eine Website, die Ihr Unternehmen wachsen lässt?",
+    "ctaText": "Lassen Sie uns gemeinsam herausfinden, welche digitale Lösung den größten Mehrwert für Ihr Unternehmen schafft.",
+    "ctaButton": "Kostenloses Erstgespräch",
+    "ctaSecondary": "Website analysieren"
   },
   "Cities": {
     "eyebrow": "Standort",

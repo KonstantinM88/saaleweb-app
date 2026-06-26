@@ -26,13 +26,22 @@ export function CtaBanner() {
             <p className="mx-auto mt-3 max-w-lg text-[16px] text-gray-400">
               <BrandText text={t("ctaText")} />
             </p>
-            <Link
-              href="/kontakt"
-              className="mt-7 inline-flex items-center justify-center gap-2 rounded-xl bg-brand px-6 py-3.5 text-[15px] font-semibold text-white transition hover:-translate-y-0.5"
-            >
-              {t("ctaButton")}
-              <ArrowRight className="h-4 w-4" aria-hidden />
-            </Link>
+            <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <Link
+                href="/kontakt"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand px-6 py-3.5 text-[15px] font-semibold text-white transition hover:-translate-y-0.5"
+              >
+                {t("ctaButton")}
+                <ArrowRight className="h-4 w-4" aria-hidden />
+              </Link>
+              <Link
+                href="/kontakt"
+                className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/[0.15] bg-white/[0.08] px-6 py-3.5 text-[15px] font-semibold text-white transition hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/[0.12]"
+              >
+                {t("ctaSecondary")}
+                <ArrowRight className="h-4 w-4" aria-hidden />
+              </Link>
+            </div>
           </div>
         </div>
       </Container>

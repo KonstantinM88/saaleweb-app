@@ -36,6 +36,9 @@ export function AiReady() {
                 <p className="mt-4 max-w-md text-[clamp(16px,1.6vw,18px)] text-gray-400">
                   {t("lead")}
                 </p>
+                <p className="mt-5 text-lg font-bold leading-tight text-white">
+                  {t("subtitle")}
+                </p>
 
                 <div className="mt-8 grid gap-3">
                   {features.map((f, i) => {
