@@ -17,6 +17,7 @@ import { CtaBanner } from "@/shared/ui/CtaBanner";
 import { JsonLd } from "@/shared/seo/JsonLd";
 import { breadcrumbSchema } from "@/shared/seo/schema";
 import { buildMetadata } from "@/shared/seo/metadata";
+import { getContactHref } from "@/shared/lib/contactHref";
 import { IndustryCard, type IndustryCardData } from "@/widgets/industries-page/IndustryCard";
 
 export const revalidate = 300;
@@ -91,7 +92,7 @@ export default async function IndustriesIndexPage({ params }: { params: Promise<
   const tp = await getTranslations({ locale, namespace: "Pages" });
   const items = await getItems(locale);
   const homePath = locale === routing.defaultLocale ? "/" : `/${locale}`;
-  const contactHref = locale === routing.defaultLocale ? "/#contact" : `/${locale}#contact`;
+  const contactHref = getContactHref(locale);
 
   const trust = [
     { value: ti("trust1Value"), label: ti("trust1Label") },

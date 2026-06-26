@@ -1,11 +1,13 @@
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Check } from "lucide-react";
 import { Container } from "@/shared/ui/Container";
 import { Button } from "@/shared/ui/Button";
+import { getContactHref } from "@/shared/lib/contactHref";
 import { Dashboard } from "./Dashboard";
 
 export function Hero() {
   const t = useTranslations("Hero");
+  const locale = useLocale();
 
   return (
     <section id="top" className="relative overflow-hidden py-12 md:py-24">
@@ -50,7 +52,7 @@ export function Hero() {
           </p>
 
           <div className="flex flex-wrap items-center gap-3.5">
-            <Button href="#contact">
+            <Button href={getContactHref(locale)}>
               {t("ctaPrimary")}
               <span
                 aria-hidden

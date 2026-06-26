@@ -16,7 +16,8 @@
     "pricing": "Pricing",
     "faq": "FAQ",
     "cta": "Free call",
-    "blog": "Blog"
+    "blog": "Blog",
+    "contact": "Contact"
   },
   "Hero": {
     "badge": "Digital studio · Halle (Saale) → Germany",
@@ -171,6 +172,119 @@
     "sending": "Sending …",
     "success": "Thanks! We'll get back to you within 24 hours.",
     "error": "Please check your input and try again."
+  },
+  "ContactPage": {
+    "label": "Contact",
+    "metaTitle": "Contact SaaleWeb — Web Design, SEO & GEO from Halle",
+    "metaDescription": "Talk to SaaleWeb about modern websites, Local SEO and GEO for AI search systems. Free first consultation for businesses in Halle, Leipzig, Saalekreis and across Germany.",
+    "heroEyebrow": "Contact & first consultation",
+    "heroTitle": "Let's make your digital visibility predictable",
+    "heroLead": "Whether you need a new website, Local SEO, a relaunch or GEO for AI search systems: we identify the strongest growth lever and turn it into measurable enquiries.",
+    "primaryCta": "Request a project",
+    "secondaryCta": "Write an email",
+    "responseNote": "Reply within 24 hours · free first consultation · clear recommendation",
+    "visualStatus": "Request prioritised",
+    "visualTitle": "From your enquiry to a growth roadmap",
+    "visualLead": "We connect your audience, regional search, Google signals and AI visibility into one clear plan.",
+    "visualLeadLabel": "Lead",
+    "visualSeoLabel": "SEO",
+    "visualGeoLabel": "GEO",
+    "visualAiLabel": "AI",
+    "visualSeoValue": "Google",
+    "visualGeoValue": "AI answers",
+    "visualAiValue": "LLM-ready",
+    "proof": [
+      {
+        "title": "Free first consultation",
+        "text": "You get an honest assessment before any proposal is created."
+      },
+      {
+        "title": "Reply within 24 hours",
+        "text": "Short paths, clear questions and no agency waiting room."
+      },
+      {
+        "title": "Strategy, not guesswork",
+        "text": "We look at website, SEO, Local SEO and GEO together."
+      }
+    ],
+    "focusEyebrow": "How we help",
+    "focusTitle": "A conversation that creates clarity fast",
+    "focusLead": "We do not talk about design trends first. We talk about visibility, trust and enquiries. Afterwards you know which steps make sense.",
+    "focus": [
+      {
+        "title": "A website that sells",
+        "text": "Structure, copy and technology are planned so visitors quickly understand why they should choose you."
+      },
+      {
+        "title": "SEO for Google",
+        "text": "Technical foundations, local search terms, content and internal structure are aligned for sustainable rankings."
+      },
+      {
+        "title": "GEO for AI search",
+        "text": "Your content is structured so ChatGPT, Gemini, Perplexity and AI Overviews can understand your business better."
+      }
+    ],
+    "geoEyebrow": "SEO + GEO",
+    "geoTitle": "Visible in the region — and in generative answers",
+    "geoLead": "SaaleWeb works from Halle (Saale) for businesses across the region and Germany. We connect regional demand with modern visibility in search engines and AI systems.",
+    "regions": [
+      "Halle (Saale)",
+      "Leipzig",
+      "Merseburg",
+      "Saalekreis",
+      "Schkeuditz",
+      "Delitzsch"
+    ],
+    "geoCards": [
+      {
+        "title": "Local demand",
+        "text": "We show what customers in your city actually search for."
+      },
+      {
+        "title": "Trust signals",
+        "text": "References, services, reviews and clear contact paths become visible."
+      },
+      {
+        "title": "AI understanding",
+        "text": "Structured content helps search engines and AI systems classify your offer correctly."
+      }
+    ],
+    "processEyebrow": "Process",
+    "processTitle": "How the enquiry works",
+    "process": [
+      {
+        "title": "1. Short message",
+        "text": "You briefly describe your business, your goal and what is not working today."
+      },
+      {
+        "title": "2. First assessment",
+        "text": "We check website, visibility, competition and possible growth levers."
+      },
+      {
+        "title": "3. Clear proposal",
+        "text": "You receive an understandable recommendation with scope, timeline and fixed price."
+      }
+    ],
+    "faqEyebrow": "FAQ",
+    "faqTitle": "Questions before the first call",
+    "faq": [
+      {
+        "q": "Is the first consultation really free?",
+        "a": "Yes. The call is non-binding. We clarify whether and how we can help in a useful way."
+      },
+      {
+        "q": "Do I need prepared content already?",
+        "a": "No. A short description of your business is enough. We develop content, structure and priorities together."
+      },
+      {
+        "q": "Do you only work for businesses in Halle?",
+        "a": "No. We are based in Halle (Saale), but work for businesses across the region and Germany."
+      },
+      {
+        "q": "What does GEO mean on this contact page?",
+        "a": "Here GEO means Generative Engine Optimization: content is structured so AI search systems can understand and classify your business better."
+      }
+    ]
   },
   "Footer": {
     "tagline": "Digital studio for modern websites, SEO and AI — from Halle (Saale) for all of Germany.",

@@ -51,6 +51,30 @@ export function localBusinessSchema(opts?: { areaServed?: string }) {
   };
 }
 
+export function contactPageSchema(input: {
+  name: string;
+  description: string;
+  path: string;
+  locale: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    name: input.name,
+    description: input.description,
+    url: `${URL}${input.path}`,
+    inLanguage: input.locale,
+    about: { "@id": ORG_ID },
+    mainEntity: {
+      "@type": "ContactPoint",
+      email: siteConfig.email,
+      contactType: "sales",
+      areaServed: "DE",
+      availableLanguage: ["German", "English", "Russian"],
+    },
+  };
+}
+
 export function personSchema() {
   return {
     "@context": "https://schema.org",

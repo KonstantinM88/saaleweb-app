@@ -31,7 +31,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const entries: MetadataRoute.Sitemap = [];
 
   // Home + index pages (same path key across locales, prefix/pathnames differ)
-  for (const href of ["/", "/blog", "/leistungen", "/branchen", "/preise", "/projekte"] as const) {
+  for (const href of ["/", "/blog", "/leistungen", "/branchen", "/kontakt", "/preise", "/projekte"] as const) {
     const languages = Object.fromEntries(
       routing.locales.map((l) => [l, abs(getPathname({ locale: l, href }))]),
     );

@@ -8,6 +8,7 @@ export const contactSchema = z.object({
   // Honeypot: must stay empty
   website: z.string().max(0).optional().or(z.literal("")),
   locale: z.enum(["de", "en", "ru"]).default("de"),
+  source: z.enum(["homepage_contact", "contact_page"]).default("homepage_contact"),
 });
 
 export type ContactInput = z.infer<typeof contactSchema>;

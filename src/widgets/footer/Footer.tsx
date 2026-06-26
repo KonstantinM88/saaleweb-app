@@ -44,7 +44,7 @@ export function Footer() {
             <Link href="/projekte">{tn("projects")}</Link>
             <Link href="/preise">{tn("pricing")}</Link>
             <a href="#faq">{tn("faq")}</a>
-            <a href="#contact">{t("contact")}</a>
+            <Link href="/kontakt">{t("contact")}</Link>
           </FooterCol>
         </div>
 

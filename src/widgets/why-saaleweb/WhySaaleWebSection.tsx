@@ -12,11 +12,12 @@ import {
 } from "lucide-react";
 import { getLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { routing, type AppLocale } from "@/i18n/routing";
+import type { AppLocale } from "@/i18n/routing";
 import { Container } from "@/shared/ui/Container";
 import { Reveal } from "@/shared/ui/Reveal";
 import { BrandText } from "@/shared/ui/BrandText";
 import { cn } from "@/shared/lib/cn";
+import { getContactHref } from "@/shared/lib/contactHref";
 
 type BenefitKey = "visibility" | "inquiries" | "ai" | "speed" | "safe" | "partner";
 
@@ -44,10 +45,6 @@ const aiServiceSlugs: Record<AppLocale, string> = {
 
 const quickLinkClass =
   "inline-flex items-center rounded-full border border-line bg-white/80 px-3 py-1.5 text-[13px] font-semibold text-muted transition-colors hover:border-brand-purple/30 hover:text-brand-purple";
-
-function contactHref(locale: AppLocale) {
-  return locale === routing.defaultLocale ? "/#contact" : `/${locale}#contact`;
-}
 
 function ListItem({
   children,
@@ -186,7 +183,7 @@ export async function WhySaaleWebSection() {
                   <Link href="/projekte" className={quickLinkClass}>
                     {t("links.projects")}
                   </Link>
-                  <a href={contactHref(locale)} className={quickLinkClass}>
+                  <a href={getContactHref(locale)} className={quickLinkClass}>
                     {t("links.contact")}
                   </a>
                   <Link
@@ -208,7 +205,7 @@ export async function WhySaaleWebSection() {
               </div>
               <div className="flex shrink-0 flex-col gap-3 sm:flex-row">
                 <a
-                  href={contactHref(locale)}
+                  href={getContactHref(locale)}
                   className={cn(
                     "inline-flex min-h-12 items-center justify-center gap-2 rounded-2xl bg-brand px-5 py-3 text-center text-sm font-bold text-white shadow-[0_18px_38px_-18px_rgba(139,92,246,0.85)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_22px_48px_-20px_rgba(139,92,246,0.95)]",
                   )}

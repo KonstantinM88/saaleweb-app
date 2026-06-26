@@ -8,7 +8,7 @@ import { submitContact, type ContactState } from "@/features/contact/actions";
 
 const initialState: ContactState = { status: "idle" };
 
-export function Contact() {
+export function Contact({ source = "homepage_contact" }: { source?: "homepage_contact" | "contact_page" }) {
   const t = useTranslations("Contact");
   const locale = useLocale();
   const [state, formAction, pending] = useActionState(submitContact, initialState);
@@ -49,6 +49,7 @@ export function Contact() {
             ) : (
               <form action={formAction} className="grid gap-3">
                 <input type="hidden" name="locale" value={locale} />
+                <input type="hidden" name="source" value={source} />
                 {/* honeypot */}
                 <input
                   type="text"

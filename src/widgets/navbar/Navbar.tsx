@@ -11,6 +11,7 @@ import { Magnetic } from "@/shared/ui/Magnetic";
 import { BrandLogo } from "@/shared/ui/BrandLogo";
 import { siteConfig } from "@/shared/config/site";
 import { cn } from "@/shared/lib/cn";
+import { getContactHref } from "@/shared/lib/contactHref";
 import { LanguageSwitcher } from "@/features/language-switcher/LanguageSwitcher";
 
 export function Navbar() {
@@ -44,7 +45,7 @@ export function Navbar() {
     return (
       <Link
         key={item.key}
-        href={item.href as "/leistungen" | "/branchen" | "/projekte" | "/preise" | "/blog"}
+        href={item.href as "/leistungen" | "/branchen" | "/projekte" | "/preise" | "/blog" | "/kontakt"}
         onClick={onClick}
         className="nav-link transition-colors hover:text-dark"
       >
@@ -79,7 +80,7 @@ export function Navbar() {
           <LanguageSwitcher />
           <Magnetic className="hidden sm:inline-block">
             <a
-              href={sectionHref("contact")}
+              href={getContactHref(locale)}
               className="btn-shine inline-flex items-center justify-center gap-2 rounded-xl bg-brand px-5 py-2.5 text-[15px] font-semibold text-white shadow-[0_8px_24px_-8px_rgba(255,79,163,0.55)] transition-all hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]"
             >
               {t("cta")}
@@ -103,7 +104,7 @@ export function Navbar() {
           <Container className="flex flex-col py-3 [&_a]:py-2.5 [&_a]:text-[15px] [&_a]:font-medium [&_a]:text-gray-700">
             {siteConfig.nav.map((item) => renderItem(item, () => setOpen(false)))}
             <a
-              href={sectionHref("contact")}
+              href={getContactHref(locale)}
               onClick={() => setOpen(false)}
               className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand px-5 py-3 !text-white"
             >

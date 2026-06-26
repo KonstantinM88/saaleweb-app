@@ -16,7 +16,8 @@
     "pricing": "Preise",
     "faq": "FAQ",
     "cta": "Erstgespräch",
-    "blog": "Blog"
+    "blog": "Blog",
+    "contact": "Kontakt"
   },
   "Hero": {
     "badge": "Digitales Studio · Halle (Saale) → Deutschland",
@@ -171,6 +172,119 @@
     "sending": "Wird gesendet …",
     "success": "Danke! Wir melden uns innerhalb von 24 Stunden.",
     "error": "Bitte prüfen Sie Ihre Eingaben und versuchen Sie es erneut."
+  },
+  "ContactPage": {
+    "label": "Kontakt",
+    "metaTitle": "Kontakt zu SaaleWeb — Webdesign, SEO & GEO aus Halle",
+    "metaDescription": "Sprechen Sie mit SaaleWeb über moderne Websites, Local SEO und GEO für KI-Suchsysteme. Kostenlose Erstberatung für Unternehmen in Halle, Leipzig, Saalekreis und ganz Deutschland.",
+    "heroEyebrow": "Kontakt & Erstgespräch",
+    "heroTitle": "Lassen Sie uns Ihre digitale Sichtbarkeit planbar machen",
+    "heroLead": "Ob neue Website, Local SEO, Relaunch oder GEO für KI-Suchsysteme: Wir prüfen ehrlich, wo Ihr größter Hebel liegt und wie daraus messbare Anfragen werden.",
+    "primaryCta": "Projekt anfragen",
+    "secondaryCta": "E-Mail schreiben",
+    "responseNote": "Antwort in 24 Stunden · kostenloses Erstgespräch · klare Empfehlung",
+    "visualStatus": "Anfrage priorisiert",
+    "visualTitle": "Von Ihrer Anfrage zum Wachstumsplan",
+    "visualLead": "Wir verbinden Zielgruppe, regionale Suche, Google-Signale und KI-Auffindbarkeit zu einem klaren Fahrplan.",
+    "visualLeadLabel": "Lead",
+    "visualSeoLabel": "SEO",
+    "visualGeoLabel": "GEO",
+    "visualAiLabel": "KI",
+    "visualSeoValue": "Google",
+    "visualGeoValue": "KI-Antworten",
+    "visualAiValue": "LLM-fähig",
+    "proof": [
+      {
+        "title": "Kostenloses Erstgespräch",
+        "text": "Sie bekommen eine ehrliche Einschätzung, bevor ein Angebot entsteht."
+      },
+      {
+        "title": "Antwort in 24 Stunden",
+        "text": "Kurze Wege, klare Rückfragen und kein Agentur-Wartesaal."
+      },
+      {
+        "title": "Strategie statt Bauchgefühl",
+        "text": "Wir betrachten Website, SEO, Local SEO und GEO gemeinsam."
+      }
+    ],
+    "focusEyebrow": "Wobei wir helfen",
+    "focusTitle": "Ein Gespräch, das direkt Klarheit schafft",
+    "focusLead": "Wir sprechen nicht über Designtrends, sondern über Sichtbarkeit, Vertrauen und Anfragen. Danach wissen Sie, welche Schritte sinnvoll sind.",
+    "focus": [
+      {
+        "title": "Website, die verkauft",
+        "text": "Struktur, Texte und Technik werden so geplant, dass Besucher schneller verstehen, warum sie Sie wählen sollten."
+      },
+      {
+        "title": "SEO für Google",
+        "text": "Technische Basis, lokale Suchbegriffe, Inhalte und interne Struktur werden auf nachhaltige Rankings ausgerichtet."
+      },
+      {
+        "title": "GEO für KI-Suche",
+        "text": "Ihre Inhalte werden so aufgebaut, dass ChatGPT, Gemini, Perplexity und AI Overviews Ihr Unternehmen besser verstehen."
+      }
+    ],
+    "geoEyebrow": "SEO + GEO",
+    "geoTitle": "Sichtbar in der Region — und in generativen Antworten",
+    "geoLead": "SaaleWeb arbeitet aus Halle (Saale) für Unternehmen in der Region und deutschlandweit. Wir verbinden regionale Nachfrage mit moderner Auffindbarkeit in Suchmaschinen und KI-Systemen.",
+    "regions": [
+      "Halle (Saale)",
+      "Leipzig",
+      "Merseburg",
+      "Saalekreis",
+      "Schkeuditz",
+      "Delitzsch"
+    ],
+    "geoCards": [
+      {
+        "title": "Lokale Nachfrage",
+        "text": "Wir zeigen, wonach Kunden in Ihrer Stadt wirklich suchen."
+      },
+      {
+        "title": "Vertrauenssignale",
+        "text": "Referenzen, Leistungen, Bewertungen und klare Kontaktwege werden sichtbar."
+      },
+      {
+        "title": "KI-Verständnis",
+        "text": "Strukturierte Inhalte helfen Suchmaschinen und KI-Systemen, Ihr Angebot korrekt einzuordnen."
+      }
+    ],
+    "processEyebrow": "Ablauf",
+    "processTitle": "So läuft die Anfrage ab",
+    "process": [
+      {
+        "title": "1. Kurze Nachricht",
+        "text": "Sie beschreiben kurz Ihr Unternehmen, Ihr Ziel und was aktuell nicht funktioniert."
+      },
+      {
+        "title": "2. Erste Einschätzung",
+        "text": "Wir prüfen Website, Sichtbarkeit, Wettbewerb und mögliche Hebel."
+      },
+      {
+        "title": "3. Klarer Vorschlag",
+        "text": "Sie erhalten eine verständliche Empfehlung mit Umfang, Zeitrahmen und Festpreis."
+      }
+    ],
+    "faqEyebrow": "FAQ",
+    "faqTitle": "Fragen vor dem Erstgespräch",
+    "faq": [
+      {
+        "q": "Ist das Erstgespräch wirklich kostenlos?",
+        "a": "Ja. Das Gespräch ist unverbindlich. Wir klären, ob und wie wir sinnvoll helfen können."
+      },
+      {
+        "q": "Muss ich schon genaue Inhalte vorbereitet haben?",
+        "a": "Nein. Eine kurze Beschreibung Ihres Unternehmens reicht. Inhalte, Struktur und Prioritäten entwickeln wir gemeinsam."
+      },
+      {
+        "q": "Arbeiten Sie nur für Unternehmen aus Halle?",
+        "a": "Nein. Der Standort ist Halle (Saale), aber wir arbeiten für Unternehmen in der gesamten Region und deutschlandweit."
+      },
+      {
+        "q": "Was bedeutet GEO auf der Kontaktseite?",
+        "a": "GEO steht hier für Generative Engine Optimization: Inhalte werden so strukturiert, dass KI-Suchsysteme Ihr Unternehmen besser verstehen und in Antworten einordnen können."
+      }
+    ]
   },
   "Footer": {
     "tagline": "Digitales Studio für moderne Websites, SEO und KI — aus Halle (Saale) für ganz Deutschland.",

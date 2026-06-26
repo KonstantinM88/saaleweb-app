@@ -15,6 +15,7 @@ import { Magnetic } from "@/shared/ui/Magnetic";
 import { JsonLd } from "@/shared/seo/JsonLd";
 import { serviceSchema, breadcrumbSchema, faqPageSchema } from "@/shared/seo/schema";
 import { buildMetadata } from "@/shared/seo/metadata";
+import { getContactHref } from "@/shared/lib/contactHref";
 import { LocaleSlugsProvider } from "@/features/language-switcher/LocaleSlugsContext";
 import { FaqAccordion } from "@/widgets/faq/FaqAccordion";
 import { serviceContent } from "@/widgets/service-detail/serviceContent";
@@ -96,7 +97,7 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
   const path = getPathname({ locale, href: { pathname: "/leistungen/[slug]", params: { slug } } });
   const servicesPath = getPathname({ locale, href: "/leistungen" });
   const homePath = locale === routing.defaultLocale ? "/" : `/${locale}`;
-  const contactHref = locale === routing.defaultLocale ? "/#contact" : `/${locale}#contact`;
+  const contactHref = getContactHref(locale);
   const pricingHref = getPathname({ locale, href: "/preise" });
 
   const ctaButton = (

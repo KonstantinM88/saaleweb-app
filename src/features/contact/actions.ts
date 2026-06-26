@@ -20,6 +20,7 @@ export async function submitContact(
     message: formData.get("message"),
     website: formData.get("website") ?? "",
     locale: formData.get("locale") ?? "de",
+    source: formData.get("source") ?? "homepage_contact",
   });
 
   if (!parsed.success) {
@@ -38,7 +39,7 @@ export async function submitContact(
         email: parsed.data.email,
         company: parsed.data.company || null,
         message: parsed.data.message,
-        source: "homepage_contact",
+        source: parsed.data.source,
         locale: parsed.data.locale,
       },
     });
@@ -48,7 +49,7 @@ export async function submitContact(
       company: parsed.data.company || null,
       message: parsed.data.message,
       locale: parsed.data.locale,
-      source: "homepage_contact",
+      source: parsed.data.source,
     });
     return { status: "success" };
   } catch {

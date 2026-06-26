@@ -11,6 +11,7 @@ export const siteConfig = {
     { key: "projects", href: "/projekte" },
     { key: "pricing", href: "/preise" },
     { key: "blog", href: "/blog" },
+    { key: "contact", href: "/kontakt" },
     { key: "faq", href: "/#faq" },
   ],
 } as const;

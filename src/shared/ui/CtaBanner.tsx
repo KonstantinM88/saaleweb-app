@@ -1,13 +1,11 @@
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 import { ArrowRight } from "lucide-react";
-import { routing } from "@/i18n/routing";
+import { Link } from "@/i18n/navigation";
 import { BrandText } from "./BrandText";
 import { Container } from "./Container";
 
 export function CtaBanner() {
   const t = useTranslations("Pages");
-  const locale = useLocale();
-  const contactHref = locale === routing.defaultLocale ? "/#contact" : `/${locale}#contact`;
 
   return (
     <section className="py-20">
@@ -28,13 +26,13 @@ export function CtaBanner() {
             <p className="mx-auto mt-3 max-w-lg text-[16px] text-gray-400">
               <BrandText text={t("ctaText")} />
             </p>
-            <a
-              href={contactHref}
+            <Link
+              href="/kontakt"
               className="mt-7 inline-flex items-center justify-center gap-2 rounded-xl bg-brand px-6 py-3.5 text-[15px] font-semibold text-white transition hover:-translate-y-0.5"
             >
               {t("ctaButton")}
               <ArrowRight className="h-4 w-4" aria-hidden />
-            </a>
+            </Link>
           </div>
         </div>
       </Container>

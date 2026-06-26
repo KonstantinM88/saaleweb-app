@@ -1,7 +1,8 @@
 import { getTranslations, getLocale } from "next-intl/server";
-import { routing, type AppLocale } from "@/i18n/routing";
+import type { AppLocale } from "@/i18n/routing";
 import { prisma } from "@/lib/prisma";
 import { Container } from "@/shared/ui/Container";
+import { getContactHref } from "@/shared/lib/contactHref";
 import { PricingPlans, type PricingPlanView } from "./PricingPlans";
 
 type StaticPackage = {
@@ -44,7 +45,7 @@ export async function Pricing() {
   }));
   const dbPlans = await getDbPlans(locale);
   const plans = dbPlans.length > 0 ? dbPlans : fallback;
-  const contactHref = locale === routing.defaultLocale ? "/#contact" : `/${locale}#contact`;
+  const contactHref = getContactHref(locale);
 
   return (
     <section id="pricing" className="py-16 md:py-24">

@@ -23,6 +23,7 @@ import { Magnetic } from "@/shared/ui/Magnetic";
 import { JsonLd } from "@/shared/seo/JsonLd";
 import { breadcrumbSchema, caseStudySchema } from "@/shared/seo/schema";
 import { buildMetadata } from "@/shared/seo/metadata";
+import { getContactHref } from "@/shared/lib/contactHref";
 import { LocaleSlugsProvider } from "@/features/language-switcher/LocaleSlugsContext";
 
 export const revalidate = 300;
@@ -166,7 +167,7 @@ export default async function ProjectPage({
   });
   const projectsPath = getPathname({ locale, href: "/projekte" });
   const homePath = locale === routing.defaultLocale ? "/" : `/${locale}`;
-  const contactHref = locale === routing.defaultLocale ? "/#contact" : `/${locale}#contact`;
+  const contactHref = getContactHref(locale);
   const hexCover = data.coverColor?.startsWith("#");
 
   const steps = [

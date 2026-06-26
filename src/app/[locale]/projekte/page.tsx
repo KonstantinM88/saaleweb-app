@@ -18,6 +18,7 @@ import { CtaBanner } from "@/shared/ui/CtaBanner";
 import { JsonLd } from "@/shared/seo/JsonLd";
 import { breadcrumbSchema } from "@/shared/seo/schema";
 import { buildMetadata } from "@/shared/seo/metadata";
+import { getContactHref } from "@/shared/lib/contactHref";
 
 export const revalidate = 300;
 
@@ -97,7 +98,7 @@ export default async function ProjectsIndexPage({
   const items = await getItems(locale);
   const homePath = locale === routing.defaultLocale ? "/" : `/${locale}`;
   const projectsPath = getPathname({ locale, href: "/projekte" });
-  const contactHref = locale === routing.defaultLocale ? "/#contact" : `/${locale}#contact`;
+  const contactHref = getContactHref(locale);
 
   const trust = [
     { value: t("trust1Value"), label: t("trust1Label") },

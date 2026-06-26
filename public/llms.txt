@@ -14,6 +14,7 @@ KI-Suchsystemen wie ChatGPT, Gemini, Claude, Perplexity und Google AI Overview.
 - [Branchen](https://saaleweb.de/branchen): Spezialisierte Lösungen für lokale Unternehmen und Dienstleister.
 - [Projekte](https://saaleweb.de/projekte): Ausgewählte Kundenprojekte mit Ergebnissen und Fallstudien.
 - [Preise](https://saaleweb.de/preise): Pakete für Landingpages, Unternehmenswebsites und Wachstumssysteme.
+- [Kontakt](https://saaleweb.de/kontakt): Kostenlose Erstberatung für Websites, SEO, Local SEO und GEO.
 - [Blog](https://saaleweb.de/blog): Fachartikel zu SEO, Websites, Local SEO und KI-Sichtbarkeit.
 
 ## Leistungen
@@ -62,7 +63,7 @@ je nach Zielgruppe und Projekt ergänzt werden.
 ## Kontakt
 
 - [Website](https://saaleweb.de/)
-- [Kontaktformular](https://saaleweb.de/#contact)
+- [Kontaktformular](https://saaleweb.de/kontakt)
 - E-Mail: hallo@saaleweb.de
 - Gründer: Konstantin Mykhailov
 

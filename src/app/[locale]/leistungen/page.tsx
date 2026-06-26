@@ -21,6 +21,7 @@ import { Breadcrumbs } from "@/shared/ui/Breadcrumbs";
 import { Reveal } from "@/shared/ui/Reveal";
 import { Magnetic } from "@/shared/ui/Magnetic";
 import { BrandText } from "@/shared/ui/BrandText";
+import { getContactHref } from "@/shared/lib/contactHref";
 import { JsonLd } from "@/shared/seo/JsonLd";
 import { breadcrumbSchema, faqPageSchema, serviceSchema } from "@/shared/seo/schema";
 import { buildMetadata } from "@/shared/seo/metadata";
@@ -110,7 +111,7 @@ export default async function ServicesIndexPage({ params }: { params: Promise<Pa
   const homePath = locale === routing.defaultLocale ? "/" : `/${locale}`;
   const servicesPath = getPathname({ locale, href: "/leistungen" });
   const pricingHref = getPathname({ locale, href: "/preise" });
-  const contactHref = locale === routing.defaultLocale ? "/#contact" : `/${locale}#contact`;
+  const contactHref = getContactHref(locale);
 
   const trust = [
     { value: t("trust1Value"), label: t("trust1Label") },
