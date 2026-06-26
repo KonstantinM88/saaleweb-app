@@ -125,7 +125,7 @@ export async function CaseStudies() {
                   <h3 className="mb-1.5 text-lg font-bold text-dark">{item.title}</h3>
                   <p className="text-sm text-muted">{item.desc}</p>
                   <div className="mt-auto flex items-center justify-between border-t border-line pt-3.5">
-                    <b className="text-[22px] text-success">{item.result}</b>
+                    <b className="text-[22px] text-emerald-700">{item.result}</b>
                     <span className="inline-flex items-center gap-1 text-[13px] font-semibold text-brand-purple">
                       {t("link")} <ArrowUpRight size={14} />
                     </span>

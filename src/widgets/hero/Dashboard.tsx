@@ -189,7 +189,7 @@ function Metric({
         {value}
         {suffix && <small className="text-[15px] font-semibold text-muted">{suffix}</small>}
       </div>
-      {trend && <div className="mt-1.5 text-xs font-semibold text-success">{trend}</div>}
+      {trend && <div className="mt-1.5 text-xs font-semibold text-emerald-700">{trend}</div>}
       {pill && (
         <div className="mt-3 inline-flex items-center rounded-md bg-brand-soft px-2.5 py-1 font-mono text-[11px] font-semibold text-brand-purple">
           {pill}

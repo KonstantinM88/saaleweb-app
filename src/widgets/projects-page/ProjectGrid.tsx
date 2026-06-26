@@ -129,7 +129,7 @@ export function ProjectGrid({
               </h2>
               <div className="mt-auto flex items-end justify-between gap-3 pt-4">
                 {item.result ? (
-                  <b className="text-[22px] leading-none text-success">{item.result}</b>
+                  <b className="text-[22px] leading-none text-emerald-700">{item.result}</b>
                 ) : (
                   <span />
                 )}

@@ -62,7 +62,7 @@ export function Footer() {
 function FooterCol({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div>
-      <h4 className="mb-4 font-mono text-[13px] uppercase tracking-[0.08em] text-dark">{title}</h4>
+      <h3 className="mb-4 font-mono text-[13px] uppercase tracking-[0.08em] text-dark">{title}</h3>
       <div className="grid gap-2.5 text-[14.5px] text-muted [&>a]:transition-colors [&>a:hover]:text-brand-pink">
         {children}
       </div>

@@ -43,9 +43,9 @@ export function ServiceCard({
           )}
         </div>
 
-        <h2 className="text-[19px] font-bold text-dark transition-colors group-hover:text-brand-purple">
+        <h3 className="text-[19px] font-bold text-dark transition-colors group-hover:text-brand-purple">
           {item.name}
-        </h2>
+        </h3>
         {item.excerpt && <p className="mt-2 text-[14.5px] leading-relaxed text-muted">{item.excerpt}</p>}
 
         <div className="mt-5 border-t border-line pt-4">

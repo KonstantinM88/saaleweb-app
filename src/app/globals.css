@@ -23,11 +23,11 @@ body {
     color: transparent;
   }
   .eyebrow {
-    @apply inline-flex items-center gap-2 font-mono text-xs font-medium uppercase tracking-[0.14em] text-brand-purple;
+    @apply inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-[0.14em] text-[#6D28D9];
   }
   .eyebrow::before {
     content: "";
-    @apply h-px w-4 bg-brand-purple/60;
+    @apply h-px w-4 bg-[#6D28D9]/70;
   }
 }
 
