@@ -40,17 +40,17 @@
     }
   },
   "Trust": {
-    "label": "Real projects · real results"
+    "label": "Businesses that trust SaaleWeb"
   },
   "Services": {
     "eyebrow": "Services",
-    "title": "Everything for your digital visibility",
-    "lead": "From first strategy to ongoing optimization — all from one source.",
+    "title": "Digital systems for more visibility and more inquiries",
+    "lead": "Strategy, web design, SEO, performance and support — connected into one system that helps your business grow.",
     "more": "Learn more",
     "items": [
       {
         "title": "Web Development",
-        "desc": "Fast, modern websites with Next.js — built for conversion and growth."
+        "desc": "A professional digital presence that builds trust and guides visitors toward sending an inquiry."
       },
       {
         "title": "SEO Optimization",
@@ -62,7 +62,7 @@
       },
       {
         "title": "AI Integration",
-        "desc": "Content and structure that ChatGPT, Gemini & co. cite and recommend."
+        "desc": "Structured content that makes your business easier to understand for ChatGPT, Gemini and other AI systems."
       },
       {
         "title": "Website Relaunch",
@@ -70,11 +70,11 @@
       },
       {
         "title": "Performance",
-        "desc": "Sub-second load times and perfect Core Web Vitals."
+        "desc": "Fast loading times, better user experience and a stronger technical base for growth."
       },
       {
         "title": "Hosting",
-        "desc": "Secure, lightning-fast hosting on Vercel — delivered worldwide."
+        "desc": "Stable, secure and fast delivery — matched to your requirements and project."
       },
       {
         "title": "Maintenance",
@@ -424,15 +424,15 @@
   },
   "CaseStudies": {
     "eyebrow": "Case studies",
-    "title": "Results you can measure",
-    "lead": "Every website is a system for more visibility, more inquiries and more revenue.",
+    "title": "Projects that create business impact",
+    "lead": "Every project is designed as a growth system: more visibility, more trust and more qualified inquiries.",
     "link": "View case",
     "items": [
       {
         "name": "Salon Elen",
-        "tag": "Beauty · Next.js",
+        "tag": "Beauty · Bookings",
         "title": "Online bookings tripled",
-        "desc": "New website with local SEO and a booking system for a beauty salon in Halle.",
+        "desc": "A clear digital presence that builds trust and increases direct appointment bookings.",
         "result": "+212%"
       },
       {
@@ -444,9 +444,9 @@
       },
       {
         "name": "SorgfaltBau",
-        "tag": "Construction · Local SEO",
+        "tag": "Construction · Inquiries",
         "title": "Qualified construction leads",
-        "desc": "Local-SEO strategy that makes a construction company visible across the region.",
+        "desc": "More regional visibility and better inquiries for profitable construction projects.",
         "result": "#1"
       }
     ]
@@ -540,127 +540,197 @@
     }
   },
   "TechStack": {
-    "eyebrow": "Technology",
-    "title": "Built on cutting-edge technology",
-    "lead": "We use the same stack as Vercel, Stripe and Linear — for maximum speed, security and scalability.",
+    "eyebrow": "Flexible technologies",
+    "title": "The right technology for your business",
+    "lead": "We do not recommend one fixed platform. We recommend the solution that creates the strongest measurable outcome for your business.",
+    "stack": [
+      "Next.js",
+      "WordPress",
+      "Headless CMS",
+      "Custom Solutions",
+      "Booking Systems",
+      "E-Commerce"
+    ],
+    "noteTitle": "The framework is not the goal.",
+    "noteText": "Whether a modern Next.js platform for maximum performance or a professionally managed WordPress solution for existing systems: the technology is only useful when it improves the business result.",
     "benefits": [
       {
         "title": "Performance",
-        "desc": "Server components and edge delivery for load times under 1 s."
+        "desc": "Fast systems improve user experience, rankings and conversion by reducing friction."
       },
       {
         "title": "SEO",
-        "desc": "Clean HTML, schema data and a perfect technical base for Google."
+        "desc": "Clear structure, strong content and technical foundations help the right customers find you."
       },
       {
         "title": "Security",
-        "desc": "Secure headers, CSP, rate-limiting and protection from bots & spam."
+        "desc": "Stable architecture, secure processes and suitable maintenance reduce unnecessary risk."
       },
       {
         "title": "Scalability",
-        "desc": "An architecture that grows with your business."
+        "desc": "Your solution can expand with new content, languages, bookings or automation."
       }
     ]
   },
   "AiReady": {
     "eyebrow": "AI ready websites",
-    "title": "Optimized for the search of the future",
-    "lead": "People no longer search only on Google. We build websites that AI systems also understand, cite and recommend.",
+    "title": "Ready for the next generation of search",
+    "lead": "More people are no longer searching only through Google. We make sure your business remains visible and understandable inside modern AI systems.",
     "features": [
       {
-        "title": "Structured content",
-        "desc": "Clear semantics machines can read"
+        "title": "Visibility in new search paths",
+        "desc": "Your content is prepared so AI answers can understand it"
       },
       {
-        "title": "Entity optimization",
-        "desc": "Your business as a clear entity on the web"
+        "title": "Clear business signals",
+        "desc": "Services, location, experience and value are described unambiguously"
       },
       {
-        "title": "Schema markup",
-        "desc": "JSON-LD for every relevant detail"
+        "title": "Trustworthy information",
+        "desc": "Search systems recognize faster what your business stands for"
       },
       {
-        "title": "Citation-ready",
-        "desc": "Architecture recommended as a source"
+        "title": "Future-proof content",
+        "desc": "Your website remains understandable as search behavior changes"
       }
     ],
     "window": {
       "label": "AI Search Ecosystem",
       "metric": "Machine-readable",
-      "caption": "Your content is prepared as clear signals for Google, ChatGPT, Gemini, Claude and Perplexity - so your business can be understood inside AI answers."
+      "caption": "Your content is prepared as clear signals for Google, ChatGPT, Gemini, Claude and Perplexity - so your business can stay visible in new search experiences."
     }
   },
   "WhySaaleWeb": {
-    "eyebrow": "More than web design",
-    "title": "Why businesses choose SaaleWeb",
-    "lead": "Modern websites that do more than look good — they become visible, build trust and bring new inquiries.",
-    "intro": "We combine modern design, SEO, performance and AI optimization into a digital system that works for your business.",
-    "benefits": [
+    "eyebrow": "Digital growth partner",
+    "title": "Why businesses trust SaaleWeb.",
+    "lead": "We create digital systems that make businesses visible, build trust and enable sustainable growth.",
+    "pillarsTitle": "Brand pillars",
+    "pillarsHeading": "Four foundations for digital impact",
+    "pillarsLead": "Every decision follows one clear goal: your business should look more professional, be found more often and receive more qualified inquiries.",
+    "pillars": [
       {
-        "key": "visibility",
-        "title": "More visibility",
-        "text": "SEO-optimized page structures, local keywords and clear content help your business get found more often on Google.",
-        "metric": "Google & Local SEO"
+        "key": "design",
+        "title": "Modern web design",
+        "text": "Digital experiences that create trust and present your brand professionally.",
+        "metric": "Trust"
       },
       {
-        "key": "inquiries",
-        "title": "More inquiries",
-        "text": "Clear calls to action, fast loading times and convincing content guide visitors directly toward contacting you.",
-        "metric": "Conversion focus"
+        "key": "seo",
+        "title": "SEO & visibility",
+        "text": "More visibility through structured content, modern technology and local search optimization.",
+        "metric": "Findability"
       },
       {
         "key": "ai",
         "title": "AI ready",
-        "text": "Your content is structured so ChatGPT, Gemini, Claude, Perplexity and Google AI can understand it.",
-        "metric": "AI Search"
+        "text": "Prepared for ChatGPT, Claude, Gemini, Perplexity and Google AI.",
+        "metric": "Future search"
       },
       {
-        "key": "speed",
-        "title": "Fast & modern",
-        "text": "Modern technology enables short loading times, a better user experience and strong Core Web Vitals.",
-        "metric": "Performance"
-      },
-      {
-        "key": "safe",
-        "title": "Secure & maintainable",
-        "text": "Less plugin dependency, clean architecture and long-term maintainability reduce technical risks.",
-        "metric": "Future-proof"
-      },
-      {
-        "key": "partner",
-        "title": "Direct contact",
-        "text": "You work directly with the developer and founder of SaaleWeb — without anonymous agency processes.",
-        "metric": "Personal"
+        "key": "results",
+        "title": "Measurable results",
+        "text": "Performance, Core Web Vitals and conversion are continuously optimized and measurably improved.",
+        "metric": "Growth"
       }
     ],
-    "comparisonTitle": "The difference is in the result",
-    "standardTitle": "Standard website",
-    "systemTitle": "SaaleWeb System",
-    "standard": [
-      "Looks good",
-      "Rarely gets updated",
-      "Little SEO structure",
-      "Limited focus on inquiries",
-      "Not prepared for AI Search"
-    ],
-    "system": [
-      "Modern design",
-      "SEO from the start",
-      "Performance optimized",
-      "Conversion focus",
-      "AI-ready content",
-      "Long-term support"
+    "advantagesTitle": "Practical advantages",
+    "advantagesHeading": "What your business actually gains",
+    "advantagesLead": "SaaleWeb combines strategy, implementation and support. The result is not an isolated website, but a system that works inside your business every day.",
+    "advantages": [
+      {
+        "key": "visibility",
+        "title": "More visibility",
+        "text": "Your services are clearly structured and visible where customers are actively searching."
+      },
+      {
+        "key": "inquiries",
+        "title": "More inquiries",
+        "text": "Visitors understand your offer faster and find an easier path to contact you."
+      },
+      {
+        "key": "performance",
+        "title": "Performance",
+        "text": "Fast loading times and strong Core Web Vitals improve user experience, SEO and conversion."
+      },
+      {
+        "key": "security",
+        "title": "Security",
+        "text": "Clean processes, modern standards and maintainability reduce technical risk."
+      },
+      {
+        "key": "support",
+        "title": "Long-term support",
+        "text": "Your digital system stays current, measurable and adaptable as your business grows."
+      },
+      {
+        "key": "contact",
+        "title": "Direct contact",
+        "text": "You speak directly with SaaleWeb — clearly, personally and without anonymous agency processes."
+      }
     ],
     "cta": {
-      "text": "Would you like to know what your current website could improve?",
+      "text": "You do not need another web project. You need a digital growth system.",
+      "note": "We show you without obligation which levers in visibility, trust and inquiries can create the biggest effect.",
       "button": "Request a free website analysis",
       "secondary": "View projects"
     },
     "links": {
       "projects": "Projects",
-      "contact": "Contact",
-      "seoHalle": "SEO in Halle",
-      "aiHalle": "AI agency Halle"
+      "contact": "Contact"
+    }
+  },
+  "PerformanceProof": {
+    "eyebrow": "Proven quality",
+    "title": "Digital systems that perform measurably better.",
+    "lead": "Modern technology is only valuable when it creates measurable results. That is why we build websites that load faster, rank better and generate more inquiries.",
+    "imageAlt": "SaaleWeb performance proof with Lighthouse scores and digital dashboard",
+    "metrics": [
+      {
+        "label": "Desktop Performance",
+        "value": "100",
+        "note": "PageSpeed"
+      },
+      {
+        "label": "Mobile Performance",
+        "value": "92",
+        "note": "Mobile"
+      },
+      {
+        "label": "SEO",
+        "value": "100",
+        "note": "Search-ready"
+      },
+      {
+        "label": "Accessibility",
+        "value": "100",
+        "note": "Accessible"
+      },
+      {
+        "label": "Best Practices",
+        "value": "100",
+        "note": "Clean"
+      },
+      {
+        "label": "Core Web Vitals",
+        "value": "Passed",
+        "note": "Live"
+      }
+    ],
+    "flow": {
+      "title": "Business flow",
+      "heading": "Technical quality becomes business impact.",
+      "items": [
+        "Faster websites",
+        "Better rankings",
+        "More visibility",
+        "More qualified visitors",
+        "More inquiries"
+      ]
+    },
+    "disclaimer": "Average values from selected SaaleWeb projects. Measured with Google PageSpeed Insights. Actual results can vary depending on project scope, hosting and implemented features.",
+    "cta": {
+      "primary": "Free website analysis",
+      "secondary": "Our projects"
     }
   },
   "Comparison": {

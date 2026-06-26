@@ -5,12 +5,12 @@ import { Reveal } from "@/shared/ui/Reveal";
 import { CodeWindow } from "./CodeWindow";
 
 type Benefit = { title: string; desc: string };
-const stack = ["Next.js", "React", "TypeScript", "Prisma", "PostgreSQL", "Vercel"];
 const icons = [Zap, TrendingUp, Lock, Layers];
 
 export function TechStack() {
   const t = useTranslations("TechStack");
   const benefits = t.raw("benefits") as Benefit[];
+  const stack = t.raw("stack") as string[];
 
   return (
     <section className="py-16 md:py-24">
@@ -33,6 +33,10 @@ export function TechStack() {
                 {s}
               </div>
             ))}
+          </div>
+          <div className="mt-6 rounded-2xl border border-brand-purple/15 bg-brand-soft/60 p-5">
+            <h3 className="text-base font-extrabold text-dark">{t("noteTitle")}</h3>
+            <p className="mt-2 text-[14.5px] leading-relaxed text-muted">{t("noteText")}</p>
           </div>
           <div className="mt-8">
             <CodeWindow />

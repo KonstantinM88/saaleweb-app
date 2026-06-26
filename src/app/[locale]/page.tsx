@@ -5,12 +5,14 @@ import { Hero } from "@/widgets/hero/Hero";
 import { Trust } from "@/widgets/trust/Trust";
 import { CaseStudies } from "@/widgets/case-studies/CaseStudies";
 import { Services } from "@/widgets/services/Services";
+import { Comparison } from "@/widgets/comparison/Comparison";
 import { Industries } from "@/widgets/industries/Industries";
 import { GrowthWindow } from "@/widgets/growth-window/GrowthWindow";
 import { LocalSeo } from "@/widgets/local-seo/LocalSeo";
 import { TechStack } from "@/widgets/tech-stack/TechStack";
 import { AiReady } from "@/widgets/ai-ready/AiReady";
 import { WhySaaleWebSection } from "@/widgets/why-saaleweb/WhySaaleWebSection";
+import { PerformanceProof } from "@/widgets/performance-proof/PerformanceProof";
 import { Process } from "@/widgets/process/Process";
 import { Founder } from "@/widgets/founder/Founder";
 import { Testimonials } from "@/widgets/testimonials/Testimonials";
@@ -40,13 +42,15 @@ export default async function HomePage({
         <Hero />
         <Trust />
         <CaseStudies />
+        <WhySaaleWebSection />
+        <PerformanceProof />
+        <AiReady />
         <Services />
+        <Comparison />
         <Industries />
         <GrowthWindow />
         <LocalSeo />
         <TechStack />
-        <AiReady />
-        <WhySaaleWebSection />
         <Process />
         <Founder />
         <Testimonials locale={appLocale} />

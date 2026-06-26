@@ -91,13 +91,17 @@ export async function CaseStudies() {
                   )}
                   style={!item.cover.image && hex ? { background: item.cover.color ?? undefined } : undefined}
                 >
+                  <span
+                    aria-hidden
+                    className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,79,163,0.10),transparent_34%),radial-gradient(circle_at_90%_18%,rgba(139,92,246,0.12),transparent_30%)] opacity-0 transition-opacity duration-500 group-hover/case:opacity-100"
+                  />
                   {item.cover.image && isLocalImage ? (
                     <Image
                       src={item.cover.image}
                       alt={item.title}
                       fill
                       sizes="(min-width: 1280px) 278px, (min-width: 640px) 50vw, 100vw"
-                      className="object-contain object-center"
+                      className="object-contain object-center transition-transform duration-700 ease-out group-hover/case:scale-[1.04]"
                     />
                   ) : item.cover.image ? (
                     <>
@@ -107,11 +111,11 @@ export async function CaseStudies() {
                         alt={item.title}
                         loading="lazy"
                         decoding="async"
-                        className="absolute inset-0 h-full w-full object-contain object-center"
+                        className="absolute inset-0 h-full w-full object-contain object-center transition-transform duration-700 ease-out group-hover/case:scale-[1.04]"
                       />
                     </>
                   ) : (
-                    <span className="absolute bottom-3.5 left-4 text-xl font-bold tracking-tight text-white">
+                    <span className="absolute bottom-3.5 left-4 text-xl font-bold tracking-tight text-white transition-transform duration-700 ease-out group-hover/case:translate-x-1">
                       {item.cover.label}
                     </span>
                   )}
@@ -125,7 +129,9 @@ export async function CaseStudies() {
                   <h3 className="mb-1.5 text-lg font-bold text-dark">{item.title}</h3>
                   <p className="text-sm text-muted">{item.desc}</p>
                   <div className="mt-auto flex items-center justify-between border-t border-line pt-3.5">
-                    <b className="text-[22px] text-emerald-700">{item.result}</b>
+                    <b className="rounded-xl bg-emerald-50 px-3 py-1.5 text-[22px] leading-none text-emerald-700">
+                      {item.result}
+                    </b>
                     <span className="inline-flex items-center gap-1 text-[13px] font-semibold text-brand-purple">
                       {t("link")} <ArrowUpRight size={14} />
                     </span>
@@ -134,7 +140,7 @@ export async function CaseStudies() {
               </>
             );
             const cardClass =
-              "flex h-full flex-col overflow-hidden rounded-[18px] border border-line bg-white transition-all hover:-translate-y-1.5 hover:border-transparent hover:shadow-lift";
+              "card-border-glow group/case relative flex h-full flex-col overflow-hidden rounded-[18px] border border-line bg-white transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-purple/20 hover:shadow-[0_30px_82px_-48px_rgba(139,92,246,0.6)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-4";
             return (
               <Reveal key={i} delay={i * 80}>
                 {item.slug ? (
