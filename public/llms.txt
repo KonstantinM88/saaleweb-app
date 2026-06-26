@@ -14,7 +14,7 @@ KI-Suchsystemen wie ChatGPT, Gemini, Claude, Perplexity und Google AI Overview.
 - [Branchen](https://saaleweb.de/branchen): Spezialisierte Lösungen für lokale Unternehmen und Dienstleister.
 - [Projekte](https://saaleweb.de/projekte): Ausgewählte Kundenprojekte mit Ergebnissen und Fallstudien.
 - [Preise](https://saaleweb.de/preise): Pakete für Landingpages, Unternehmenswebsites und Wachstumssysteme.
-- [Kontakt](https://saaleweb.de/kontakt): Kostenlose Erstberatung für Websites, SEO, Local SEO und GEO.
+- [Kontakt](https://saaleweb.de/kontakt): Conversion-orientierte Kontaktseite mit Ablauf, Erwartungen, FAQ, Local SEO und kostenloser Erstberatung für Websites, SEO, Local SEO und GEO.
 - [Blog](https://saaleweb.de/blog): Fachartikel zu SEO, Websites, Local SEO und KI-Sichtbarkeit.
 
 ## Leistungen
@@ -51,6 +51,7 @@ KI-Suchsystemen wie ChatGPT, Gemini, Claude, Perplexity und Google AI Overview.
 
 ## Projekte
 
+- [Neue Liebe Nebra](https://saaleweb.de/projekte/neue-liebe-nebra): Restaurant-Website mit Reservierungsfokus, Speisekarte, Local SEO und responsiver Darstellung.
 - [Online-Buchungen verdreifacht](https://saaleweb.de/projekte/online-buchungen-verdreifacht): Projektbeispiel für Terminbuchungen und lokale Sichtbarkeit.
 - [Direktbuchungen ohne Portale](https://saaleweb.de/projekte/direktbuchungen-ohne-portale): Projektbeispiel für Hotels und direkte Anfragen.
 - [Qualifizierte Bauanfragen](https://saaleweb.de/projekte/qualifizierte-bauanfragen): Projektbeispiel für regionale Bau- und Handwerksanfragen.
@@ -63,7 +64,7 @@ je nach Zielgruppe und Projekt ergänzt werden.
 ## Kontakt
 
 - [Website](https://saaleweb.de/)
-- [Kontaktformular](https://saaleweb.de/kontakt)
+- [Kontaktformular](https://saaleweb.de/kontakt): Projektanfrage mit Kontext zu Website, Budget, Projektart und nächstem Schritt.
 - E-Mail: hallo@saaleweb.de
 - Gründer: Konstantin Mykhailov
 

@@ -16,8 +16,13 @@ export async function submitContact(
   const parsed = contactSchema.safeParse({
     name: formData.get("name"),
     email: formData.get("email"),
+    phone: formData.get("phone") ?? "",
     company: formData.get("company") ?? "",
+    projectWebsite: formData.get("projectWebsite") ?? "",
+    projectType: formData.get("projectType") ?? "",
+    budget: formData.get("budget") ?? "",
     message: formData.get("message"),
+    privacy: formData.get("privacy") ?? "",
     website: formData.get("website") ?? "",
     locale: formData.get("locale") ?? "de",
     source: formData.get("source") ?? "homepage_contact",
@@ -33,12 +38,23 @@ export async function submitContact(
   }
 
   try {
+    const projectDetails = [
+      ["Projektart", parsed.data.projectType],
+      ["Budget", parsed.data.budget],
+      ["Website", parsed.data.projectWebsite],
+    ].filter(([, value]) => value);
+    const message =
+      projectDetails.length > 0
+        ? `${projectDetails.map(([label, value]) => `${label}: ${value}`).join("\n")}\n\nNachricht:\n${parsed.data.message}`
+        : parsed.data.message;
+
     await prisma.lead.create({
       data: {
         name: parsed.data.name,
         email: parsed.data.email,
+        phone: parsed.data.phone || null,
         company: parsed.data.company || null,
-        message: parsed.data.message,
+        message,
         source: parsed.data.source,
         locale: parsed.data.locale,
       },
@@ -46,8 +62,9 @@ export async function submitContact(
     await sendLeadNotification({
       name: parsed.data.name,
       email: parsed.data.email,
+      phone: parsed.data.phone || null,
       company: parsed.data.company || null,
-      message: parsed.data.message,
+      message,
       locale: parsed.data.locale,
       source: parsed.data.source,
     });

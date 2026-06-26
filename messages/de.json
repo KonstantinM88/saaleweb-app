@@ -175,114 +175,242 @@
   },
   "ContactPage": {
     "label": "Kontakt",
-    "metaTitle": "Kontakt zu SaaleWeb — Webdesign, SEO & GEO aus Halle",
-    "metaDescription": "Sprechen Sie mit SaaleWeb über moderne Websites, Local SEO und GEO für KI-Suchsysteme. Kostenlose Erstberatung für Unternehmen in Halle, Leipzig, Saalekreis und ganz Deutschland.",
+    "metaTitle": "Kontakt zu SaaleWeb — Webdesign, SEO & KI-Optimierung aus Halle",
+    "metaDescription": "Kostenloses Erstgespräch mit SaaleWeb: Webdesign Halle, SEO Halle, Webdesign Leipzig, KI-Optimierung und moderne Websites für Unternehmen, die planbar online wachsen möchten.",
     "heroEyebrow": "Kontakt & Erstgespräch",
-    "heroTitle": "Lassen Sie uns Ihre digitale Sichtbarkeit planbar machen",
-    "heroLead": "Ob neue Website, Local SEO, Relaunch oder GEO für KI-Suchsysteme: Wir prüfen ehrlich, wo Ihr größter Hebel liegt und wie daraus messbare Anfragen werden.",
-    "primaryCta": "Projekt anfragen",
-    "secondaryCta": "E-Mail schreiben",
-    "responseNote": "Antwort in 24 Stunden · kostenloses Erstgespräch · klare Empfehlung",
-    "visualStatus": "Anfrage priorisiert",
-    "visualTitle": "Von Ihrer Anfrage zum Wachstumsplan",
-    "visualLead": "Wir verbinden Zielgruppe, regionale Suche, Google-Signale und KI-Auffindbarkeit zu einem klaren Fahrplan.",
-    "visualLeadLabel": "Lead",
-    "visualSeoLabel": "SEO",
-    "visualGeoLabel": "GEO",
-    "visualAiLabel": "KI",
-    "visualSeoValue": "Google",
-    "visualGeoValue": "KI-Antworten",
-    "visualAiValue": "LLM-fähig",
-    "proof": [
+    "heroTitle": "Lassen Sie uns über Ihr Projekt sprechen.",
+    "heroLead": "Ob neue Website, SEO oder KI-Optimierung – wir zeigen Ihnen unverbindlich, wie Ihr Unternehmen online wachsen kann.",
+    "primaryCta": "Kostenloses Erstgespräch",
+    "secondaryCta": "Projekte ansehen",
+    "responseNote": "Antwort innerhalb von 24 Stunden · kostenlos · ohne Verkaufsdruck",
+    "visualAlt": "Moderne digitale Arbeitsfläche mit Laptop, Smartphone, SEO-Dashboard und KI-Signalen",
+    "visualWorkspace": "Digital Workspace",
+    "visualLaptopTitle": "Website",
+    "visualLaptopLead": "Klarer Aufbau für Vertrauen und Anfragen",
+    "visualPhoneTitle": "Responsive Ansicht",
+    "visualCardSeo": "SEO Ready",
+    "visualCardAi": "AI Ready",
+    "visualCardSpeed": "100 Lighthouse",
+    "visualTrafficLabel": "Sichtbarkeit",
+    "visualLeadsLabel": "Antwort",
+    "timelineEyebrow": "Prozess",
+    "timelineTitle": "So läuft unsere Zusammenarbeit ab",
+    "timelineLead": "Sie wissen von Anfang an, was passiert, welche Entscheidung als Nächstes ansteht und wie aus einer Anfrage ein klarer Projektplan wird.",
+    "timeline": [
+      {
+        "title": "Kontaktaufnahme",
+        "text": "Sie senden uns kurz Ihr Ziel, Ihre Website oder die aktuelle Herausforderung."
+      },
       {
         "title": "Kostenloses Erstgespräch",
-        "text": "Sie bekommen eine ehrliche Einschätzung, bevor ein Angebot entsteht."
+        "text": "Wir klären Erwartungen, Prioritäten und ob SaaleWeb der passende Partner ist."
       },
       {
-        "title": "Antwort in 24 Stunden",
-        "text": "Kurze Wege, klare Rückfragen und kein Agentur-Wartesaal."
+        "title": "Analyse Ihrer Ziele",
+        "text": "Wir prüfen Zielgruppe, Wettbewerb, Website, SEO-Potenzial und regionale Nachfrage."
       },
       {
-        "title": "Strategie statt Bauchgefühl",
-        "text": "Wir betrachten Website, SEO, Local SEO und GEO gemeinsam."
+        "title": "Individuelles Konzept",
+        "text": "Sie erhalten einen verständlichen Vorschlag mit Umfang, Ablauf und Festpreis."
+      },
+      {
+        "title": "Entwicklung",
+        "text": "Wir entwickeln eine schnelle, moderne und messbare Website ohne unnötige Komplexität."
+      },
+      {
+        "title": "Launch & Betreuung",
+        "text": "Nach dem Start bleiben Technik, SEO, Inhalte und Optimierung planbar betreut."
       }
     ],
-    "focusEyebrow": "Wobei wir helfen",
-    "focusTitle": "Ein Gespräch, das direkt Klarheit schafft",
-    "focusLead": "Wir sprechen nicht über Designtrends, sondern über Sichtbarkeit, Vertrauen und Anfragen. Danach wissen Sie, welche Schritte sinnvoll sind.",
-    "focus": [
+    "whyEyebrow": "Warum SaaleWeb",
+    "whyTitle": "Warum Kunden gerne mit SaaleWeb arbeiten",
+    "whyLead": "SaaleWeb verbindet persönliche Beratung, klare Preise und moderne Umsetzung. Sie sprechen direkt mit den Menschen, die Strategie, Design, Technik und Sichtbarkeit verantworten.",
+    "why": [
       {
-        "title": "Website, die verkauft",
-        "text": "Struktur, Texte und Technik werden so geplant, dass Besucher schneller verstehen, warum sie Sie wählen sollten."
+        "title": "Direkter Kontakt",
+        "text": "Kurze Wege, klare Antworten und ein Ansprechpartner, der Ihr Projekt wirklich kennt."
       },
       {
-        "title": "SEO für Google",
-        "text": "Technische Basis, lokale Suchbegriffe, Inhalte und interne Struktur werden auf nachhaltige Rankings ausgerichtet."
+        "title": "Keine anonyme Agentur",
+        "text": "Kein Weiterreichen zwischen Abteilungen. Entscheidungen bleiben transparent und nachvollziehbar."
       },
       {
-        "title": "GEO für KI-Suche",
-        "text": "Ihre Inhalte werden so aufgebaut, dass ChatGPT, Gemini, Perplexity und AI Overviews Ihr Unternehmen besser verstehen."
+        "title": "Transparente Festpreise",
+        "text": "Sie wissen vor dem Start, was umgesetzt wird, was es kostet und welche Betreuung möglich ist."
+      },
+      {
+        "title": "Langfristige Betreuung",
+        "text": "Nach dem Launch sind Performance, SEO, Inhalte und Weiterentwicklung nicht allein Ihr Problem."
       }
     ],
-    "geoEyebrow": "SEO + GEO",
-    "geoTitle": "Sichtbar in der Region — und in generativen Antworten",
-    "geoLead": "SaaleWeb arbeitet aus Halle (Saale) für Unternehmen in der Region und deutschlandweit. Wir verbinden regionale Nachfrage mit moderner Auffindbarkeit in Suchmaschinen und KI-Systemen.",
-    "regions": [
-      "Halle (Saale)",
-      "Leipzig",
-      "Merseburg",
-      "Saalekreis",
-      "Schkeuditz",
-      "Delitzsch"
+    "formSectionEyebrow": "Anfrage",
+    "formSectionTitle": "Erzählen Sie uns kurz, worum es geht",
+    "formSectionLead": "Je konkreter Ihre Anfrage ist, desto schneller können wir einschätzen, welcher Weg sinnvoll ist. Eine grobe Beschreibung reicht vollkommen aus.",
+    "directContactLabel": "Direkter Kontakt",
+    "callHint": "Rückruf oder Termin im Erstgespräch abstimmen",
+    "form": {
+      "eyebrow": "Projektanfrage",
+      "title": "Kostenloses Erstgespräch anfragen",
+      "lead": "Wir melden uns persönlich und bereiten die ersten sinnvollen Fragen bereits vor.",
+      "name": "Name",
+      "namePlaceholder": "Ihr Name",
+      "company": "Unternehmen",
+      "companyPlaceholder": "Firma oder Organisation",
+      "projectWebsite": "Website",
+      "projectWebsitePlaceholder": "https://...",
+      "email": "E-Mail",
+      "emailPlaceholder": "name@unternehmen.de",
+      "phone": "Telefon",
+      "phonePlaceholder": "+49 ...",
+      "projectType": "Projektart",
+      "projectTypePlaceholder": "Bitte auswählen",
+      "budget": "Budget",
+      "budgetPlaceholder": "Grobe Orientierung",
+      "message": "Nachricht",
+      "messagePlaceholder": "Was möchten Sie erreichen? Gibt es eine bestehende Website, SEO-Ziele oder einen Launch-Termin?",
+      "privacy": "Ich stimme der Datenschutzerklärung zu.",
+      "submit": "Anfrage senden",
+      "sending": "Wird gesendet …",
+      "successTitle": "Danke — Ihre Anfrage ist angekommen.",
+      "successText": "Wir prüfen Ihre Angaben und melden uns innerhalb von 24 Stunden persönlich bei Ihnen.",
+      "successMeta": "Nächster Schritt: kostenloses Erstgespräch",
+      "error": "Bitte prüfen Sie die Pflichtfelder und versuchen Sie es erneut.",
+      "projectTypeOptions": [
+        { "value": "new-website", "label": "Neue Website" },
+        { "value": "seo", "label": "SEO / Local SEO" },
+        { "value": "ai", "label": "KI-Optimierung / GEO" },
+        { "value": "relaunch", "label": "Relaunch" },
+        { "value": "performance", "label": "Performance / Technik" },
+        { "value": "consulting", "label": "Beratung" }
+      ],
+      "budgetOptions": [
+        { "value": "under-2500", "label": "unter 2.500 €" },
+        { "value": "2500-5000", "label": "2.500–5.000 €" },
+        { "value": "5000-10000", "label": "5.000–10.000 €" },
+        { "value": "10000-plus", "label": "10.000 €+" },
+        { "value": "not-sure", "label": "Noch offen" }
+      ]
+    },
+    "expectationsEyebrow": "Was danach passiert",
+    "expectationsTitle": "Was passiert nach Ihrer Anfrage?",
+    "expectationsLead": "Sie bekommen keinen Druckverkauf, sondern eine klare Einschätzung. Ziel ist, dass Sie eine gute Entscheidung treffen können — auch wenn wir nicht zusammenarbeiten.",
+    "expectations": [
+      "Antwort innerhalb von 24 Stunden",
+      "Kostenloses Erstgespräch",
+      "Persönliche Beratung",
+      "Transparente Festpreise",
+      "Kein Verkaufsdruck",
+      "Individuelles Konzept"
     ],
-    "geoCards": [
+    "trustEyebrow": "Vertrauen",
+    "trustTitle": "Erfahrung aus echten Projekten",
+    "trustLead": "SaaleWeb arbeitet mit realen Unternehmen aus Dienstleistung, Beauty, Hotellerie, Bau und regionalem Gewerbe. Entscheidend ist nicht ein schöner Entwurf, sondern ein System, das schneller lädt, Vertrauen schafft und Anfragen messbar macht.",
+    "metrics": [
       {
-        "title": "Lokale Nachfrage",
-        "text": "Wir zeigen, wonach Kunden in Ihrer Stadt wirklich suchen."
+        "value": "3+",
+        "label": "Projektbeispiele",
+        "text": "Ausgewählte Referenzen mit Website, SEO, Buchung oder Lead-Fokus."
       },
       {
-        "title": "Vertrauenssignale",
-        "text": "Referenzen, Leistungen, Bewertungen und klare Kontaktwege werden sichtbar."
+        "value": "100",
+        "label": "Lighthouse",
+        "text": "Performance bleibt Teil der Planung, nicht nur ein Test am Ende."
       },
       {
-        "title": "KI-Verständnis",
-        "text": "Strukturierte Inhalte helfen Suchmaschinen und KI-Systemen, Ihr Angebot korrekt einzuordnen."
+        "value": "SEO Ready",
+        "label": "Technische Basis",
+        "text": "Struktur, Geschwindigkeit, Metadaten und interne Links werden sauber aufgebaut."
+      },
+      {
+        "value": "AI Ready",
+        "label": "GEO-Struktur",
+        "text": "Inhalte werden für Google, ChatGPT, Gemini, Claude und Perplexity verständlich."
       }
     ],
-    "processEyebrow": "Ablauf",
-    "processTitle": "So läuft die Anfrage ab",
-    "process": [
-      {
-        "title": "1. Kurze Nachricht",
-        "text": "Sie beschreiben kurz Ihr Unternehmen, Ihr Ziel und was aktuell nicht funktioniert."
-      },
-      {
-        "title": "2. Erste Einschätzung",
-        "text": "Wir prüfen Website, Sichtbarkeit, Wettbewerb und mögliche Hebel."
-      },
-      {
-        "title": "3. Klarer Vorschlag",
-        "text": "Sie erhalten eine verständliche Empfehlung mit Umfang, Zeitrahmen und Festpreis."
-      }
+    "logosTitle": "Ausgewählte Projektbereiche",
+    "logos": ["Salon Elen", "Waldschlösschen", "SorgfaltBau"],
+    "projectsCta": "Projekte ansehen",
+    "localSeoEyebrow": "Local SEO",
+    "localSeoTitle": "Webdesign und SEO für Halle, Leipzig und die Region",
+    "localSeoParagraphs": [
+      "SaaleWeb ist eine Digitalagentur Halle für Unternehmen, die nicht nur eine schöne Website möchten, sondern planbar mehr Vertrauen und Anfragen gewinnen wollen. Wer nach Webdesign Halle, Webagentur Halle oder Website erstellen lassen Halle sucht, braucht meistens keine Standardseite, sondern einen klaren digitalen Vertriebsweg.",
+      "Wir verbinden Webdesign Halle mit SEO Halle: saubere Technik, schnelle Ladezeiten, verständliche Leistungsseiten, lokale Suchsignale und Inhalte, die Kundenfragen beantworten. So entsteht eine Website, die für Menschen, Google und KI-Systeme leichter einzuordnen ist.",
+      "Auch für Unternehmen in Leipzig ist SaaleWeb ein passender Partner. Webdesign Leipzig und SEO Leipzig bedeuten für uns: klare Positionierung, regionale Relevanz, gute Performance und Inhalte, die aus Besuchern qualifizierte Anfragen machen."
     ],
+    "servicesLink": "Leistungen",
+    "industriesLink": "Branchen",
+    "pricingLink": "Preise",
+    "aiEyebrow": "GEO & AI Search",
+    "aiTitle": "Damit KI-Systeme Ihr Unternehmen besser verstehen",
+    "aiParagraphs": [
+      "Immer mehr Kunden informieren sich über ChatGPT, Gemini, Claude, Perplexity und Google AI Overview. Deshalb strukturieren wir Inhalte so, dass Angebote, Standorte, Leistungen, Preise und Vertrauenssignale eindeutig erkennbar sind.",
+      "Diese GEO-Arbeit ersetzt kein SEO. Sie erweitert SEO um klare Entitäten, FAQ-Bereiche, interne Links, strukturierte Daten und verständliche Sprache. Das macht Ihre Website für Menschen und für KI-Suchsysteme nutzbarer."
+    ],
+    "aiPanelTitle": "Optimiert für Antworten",
+    "aiPanelLead": "Strukturierte Inhalte statt Keyword-Stapel",
+    "aiPlatforms": ["ChatGPT", "Gemini", "Claude", "Perplexity", "Google AI Overview", "Klassische Google Suche"],
     "faqEyebrow": "FAQ",
-    "faqTitle": "Fragen vor dem Erstgespräch",
+    "faqTitle": "Häufige Fragen vor dem Erstgespräch",
     "faq": [
       {
+        "q": "Was kostet eine Website bei SaaleWeb?",
+        "a": "Das hängt vom Umfang ab: Landingpage, Unternehmenswebsite, Relaunch, SEO oder laufende Betreuung. Nach dem Erstgespräch erhalten Sie einen transparenten Festpreis statt unklarer Stundenschätzungen."
+      },
+      {
         "q": "Ist das Erstgespräch wirklich kostenlos?",
-        "a": "Ja. Das Gespräch ist unverbindlich. Wir klären, ob und wie wir sinnvoll helfen können."
+        "a": "Ja. Das Gespräch ist kostenlos und unverbindlich. Wir klären, ob wir sinnvoll helfen können und welcher nächste Schritt für Ihr Unternehmen realistisch ist."
       },
       {
-        "q": "Muss ich schon genaue Inhalte vorbereitet haben?",
-        "a": "Nein. Eine kurze Beschreibung Ihres Unternehmens reicht. Inhalte, Struktur und Prioritäten entwickeln wir gemeinsam."
+        "q": "Wie lange dauert ein Website-Projekt?",
+        "a": "Kleine Landingpages können deutlich schneller umgesetzt werden als umfangreiche Unternehmensseiten. Typisch sind wenige Wochen, abhängig von Inhalt, Abstimmung und Funktionsumfang."
       },
       {
-        "q": "Arbeiten Sie nur für Unternehmen aus Halle?",
-        "a": "Nein. Der Standort ist Halle (Saale), aber wir arbeiten für Unternehmen in der gesamten Region und deutschlandweit."
+        "q": "Ist SEO bereits enthalten?",
+        "a": "Die technische SEO-Basis ist Teil einer modernen Website. Umfangreichere SEO-Arbeit wie Keyword-Strategie, Local SEO, Content und laufende Optimierung wird separat geplant."
       },
       {
-        "q": "Was bedeutet GEO auf der Kontaktseite?",
-        "a": "GEO steht hier für Generative Engine Optimization: Inhalte werden so strukturiert, dass KI-Suchsysteme Ihr Unternehmen besser verstehen und in Antworten einordnen können."
+        "q": "Übernimmt SaaleWeb Hosting und technische Betreuung?",
+        "a": "Ja. Wir können Hosting, Performance, Updates, Monitoring und technische Weiterentwicklung betreuen, damit die Website nicht nach dem Launch liegen bleibt."
+      },
+      {
+        "q": "Was bedeutet KI-Optimierung oder GEO?",
+        "a": "GEO steht für Generative Engine Optimization. Inhalte werden so strukturiert, dass KI-Systeme wie ChatGPT, Gemini, Claude, Perplexity und Google AI Overview Ihr Unternehmen besser verstehen."
+      },
+      {
+        "q": "Wie läuft die Zusammenarbeit ab?",
+        "a": "Nach Ihrer Anfrage folgt ein kostenloses Erstgespräch, danach Analyse, Konzept, Festpreisangebot, Umsetzung, Launch und bei Bedarf laufende Betreuung."
+      },
+      {
+        "q": "Gibt es Betreuung nach dem Launch?",
+        "a": "Ja. Viele Projekte werden nach dem Start weiter optimiert: Inhalte, SEO, Performance, neue Seiten, technische Pflege oder Conversion-Verbesserungen."
+      },
+      {
+        "q": "Arbeitet SaaleWeb mit Unternehmen aus Halle?",
+        "a": "Ja. SaaleWeb sitzt in Halle (Saale) und unterstützt lokale Unternehmen bei Webdesign Halle, SEO Halle, Local SEO und digitaler Kundengewinnung."
+      },
+      {
+        "q": "Arbeitet SaaleWeb auch für Leipzig?",
+        "a": "Ja. Wir betreuen auch Unternehmen, die Webdesign Leipzig, SEO Leipzig oder eine moderne Website für Kunden in Leipzig und Umgebung benötigen."
+      },
+      {
+        "q": "Muss ich fertige Texte und Bilder mitbringen?",
+        "a": "Nein. Vorhandenes Material hilft, ist aber keine Voraussetzung. Struktur, Inhalte und Prioritäten können gemeinsam entwickelt werden."
+      },
+      {
+        "q": "Kann eine bestehende Website modernisiert werden?",
+        "a": "Ja. Ein Relaunch ist sinnvoll, wenn Design, Technik, Ladezeit, SEO-Struktur oder Conversion nicht mehr zum Unternehmen passen."
+      },
+      {
+        "q": "Arbeitet SaaleWeb mit Festpreisen?",
+        "a": "Ja. Sobald der Umfang geklärt ist, erhalten Sie ein nachvollziehbares Angebot mit klaren Leistungen und transparentem Preis."
+      },
+      {
+        "q": "Was passiert direkt nach meiner Anfrage?",
+        "a": "Wir prüfen Ihre Angaben, stellen bei Bedarf Rückfragen und melden uns innerhalb von 24 Stunden mit einem Vorschlag für das kostenlose Erstgespräch."
+      },
+      {
+        "q": "Gehört mir die Website nach Fertigstellung?",
+        "a": "Ja. Die Website gehört Ihnen. Wir setzen auf transparente Übergabe, saubere Dokumentation und auf Wunsch laufende Betreuung."
       }
     ]
   },
@@ -347,6 +475,7 @@
     "gallery": "Galerie",
     "tech": "Eingesetzte Technologien",
     "result": "Ergebnis",
+    "liveSite": "Live-Website ansehen",
     "ctaTitle": "Wird Ihr Projekt das nächste sein?",
     "ctaText": "Lassen Sie uns über Ihre Website sprechen — kostenlos, ehrlich und ohne Fachchinesisch.",
     "backToProjects": "Alle Projekte",

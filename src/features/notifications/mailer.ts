@@ -3,6 +3,7 @@ import "server-only";
 export type LeadNotification = {
   name: string;
   email: string;
+  phone?: string | null;
   company?: string | null;
   message?: string | null;
   locale?: string | null;
@@ -26,6 +27,7 @@ export async function sendLeadNotification(lead: LeadNotification): Promise<void
   const rows: [string, string][] = [
     ["Name", lead.name],
     ["E-Mail", lead.email],
+    ["Telefon", lead.phone || "-"],
     ["Firma", lead.company || "-"],
     ["Sprache", lead.locale || "-"],
     ["Quelle", lead.source || "-"],

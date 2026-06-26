@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { Fragment } from "react";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { hasLocale } from "next-intl";
@@ -7,6 +8,7 @@ import {
   ArrowLeft,
   ArrowRight,
   Calendar,
+  ExternalLink,
   Sparkles,
   Tag,
   TrendingUp,
@@ -35,6 +37,28 @@ type GalleryItem = {
   width: number | null;
   height: number | null;
 };
+
+const externalUrlPattern = /(https?:\/\/[^\s]+)/g;
+
+function extractExternalUrl(parts: Array<string | null | undefined>) {
+  for (const part of parts) {
+    const match = part?.match(externalUrlPattern)?.[0];
+    if (match) return cleanUrl(match);
+  }
+  return null;
+}
+
+function cleanUrl(value: string) {
+  return value.replace(/[),.;!?]+$/, "");
+}
+
+function displayUrl(value: string) {
+  try {
+    return new URL(value).hostname.replace(/^www\./, "");
+  } catch {
+    return value;
+  }
+}
 
 export async function generateStaticParams() {
   try {
@@ -84,6 +108,11 @@ async function getProjectData(locale: AppLocale, slug: string) {
       challenge: translation.challenge,
       solution: translation.solution,
       results: translation.results,
+      externalUrl: extractExternalUrl([
+        translation.solution,
+        translation.results,
+        translation.challenge,
+      ]),
       tag: translation.project.category?.translations?.[0]?.name ?? "",
       result: translation.project.resultValue,
       year: translation.project.year,
@@ -255,7 +284,7 @@ export default async function ProjectPage({
                 color={data.coverColor}
                 hexColor={Boolean(hexCover)}
                 priority
-                className="aspect-[16/8] rounded-[20px]"
+                className="aspect-[3/2] rounded-[20px]"
               />
             </Reveal>
 
@@ -313,9 +342,7 @@ export default async function ProjectPage({
                           {step.label}
                         </h2>
                       </div>
-                      <div className="mt-4 whitespace-pre-line text-[16px] leading-relaxed text-ink">
-                        {step.body}
-                      </div>
+                      <ProjectRichText text={step.body} />
                     </section>
                   </Reveal>
                 ))}
@@ -351,6 +378,17 @@ export default async function ProjectPage({
                     <p className="mt-2 text-[14.5px] leading-relaxed text-muted">
                       {t("ctaText")}
                     </p>
+                    {data.externalUrl && (
+                      <a
+                        href={data.externalUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-line bg-white px-5 py-3 text-[15px] font-semibold text-dark transition-all hover:-translate-y-0.5 hover:border-brand-purple/50 hover:text-brand-purple hover:shadow-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2"
+                      >
+                        {t("liveSite")}
+                        <ExternalLink size={16} aria-hidden />
+                      </a>
+                    )}
                     <div className="mt-5">
                       <Magnetic className="block w-full">
                         <a
@@ -473,6 +511,38 @@ export default async function ProjectPage({
       </main>
       <Footer />
     </LocaleSlugsProvider>
+  );
+}
+
+function ProjectRichText({ text }: { text: string }) {
+  const parts = text.split(externalUrlPattern);
+
+  return (
+    <div className="mt-4 whitespace-pre-line text-[16px] leading-relaxed text-ink">
+      {parts.map((part, index) => {
+        if (!part.match(/^https?:\/\//)) {
+          return <Fragment key={`${part}-${index}`}>{part}</Fragment>;
+        }
+
+        const href = cleanUrl(part);
+        const suffix = part.slice(href.length);
+
+        return (
+          <Fragment key={`${href}-${index}`}>
+            <a
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 rounded-full border border-brand-purple/20 bg-brand-soft px-2.5 py-1 align-baseline text-[0.95em] font-semibold text-[#6D28D9] transition hover:-translate-y-0.5 hover:border-brand-purple/50 hover:bg-white hover:shadow-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2"
+            >
+              {displayUrl(href)}
+              <ExternalLink size={14} aria-hidden />
+            </a>
+            {suffix}
+          </Fragment>
+        );
+      })}
+    </div>
   );
 }
 

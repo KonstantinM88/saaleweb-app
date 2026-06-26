@@ -175,114 +175,242 @@
   },
   "ContactPage": {
     "label": "Contact",
-    "metaTitle": "Contact SaaleWeb — Web Design, SEO & GEO from Halle",
-    "metaDescription": "Talk to SaaleWeb about modern websites, Local SEO and GEO for AI search systems. Free first consultation for businesses in Halle, Leipzig, Saalekreis and across Germany.",
+    "metaTitle": "Contact SaaleWeb — Web Design, SEO & AI Optimization from Halle",
+    "metaDescription": "Book a free first consultation with SaaleWeb: web design, SEO, AI optimization, Local SEO for Halle and Leipzig, and modern websites for businesses that want predictable online growth.",
     "heroEyebrow": "Contact & first consultation",
-    "heroTitle": "Let's make your digital visibility predictable",
-    "heroLead": "Whether you need a new website, Local SEO, a relaunch or GEO for AI search systems: we identify the strongest growth lever and turn it into measurable enquiries.",
-    "primaryCta": "Request a project",
-    "secondaryCta": "Write an email",
-    "responseNote": "Reply within 24 hours · free first consultation · clear recommendation",
-    "visualStatus": "Request prioritised",
-    "visualTitle": "From your enquiry to a growth roadmap",
-    "visualLead": "We connect your audience, regional search, Google signals and AI visibility into one clear plan.",
-    "visualLeadLabel": "Lead",
-    "visualSeoLabel": "SEO",
-    "visualGeoLabel": "GEO",
-    "visualAiLabel": "AI",
-    "visualSeoValue": "Google",
-    "visualGeoValue": "AI answers",
-    "visualAiValue": "LLM-ready",
-    "proof": [
+    "heroTitle": "Let's talk about your project.",
+    "heroLead": "Whether you need a new website, SEO or AI optimization, we show you without obligation how your business can grow online.",
+    "primaryCta": "Free first consultation",
+    "secondaryCta": "View projects",
+    "responseNote": "Reply within 24 hours · free · no sales pressure",
+    "visualAlt": "Modern digital workspace with laptop, smartphone, SEO dashboard and AI signals",
+    "visualWorkspace": "Digital workspace",
+    "visualLaptopTitle": "Website",
+    "visualLaptopLead": "Clear structure for trust and enquiries",
+    "visualPhoneTitle": "Responsive view",
+    "visualCardSeo": "SEO Ready",
+    "visualCardAi": "AI Ready",
+    "visualCardSpeed": "100 Lighthouse",
+    "visualTrafficLabel": "Visibility",
+    "visualLeadsLabel": "Reply",
+    "timelineEyebrow": "Process",
+    "timelineTitle": "How our collaboration works",
+    "timelineLead": "From the first message, you know what will happen next, which decision is required and how an enquiry becomes a clear project plan.",
+    "timeline": [
+      {
+        "title": "Contact",
+        "text": "You briefly send us your goal, website or current challenge."
+      },
       {
         "title": "Free first consultation",
-        "text": "You get an honest assessment before any proposal is created."
+        "text": "We clarify expectations, priorities and whether SaaleWeb is the right partner."
       },
       {
-        "title": "Reply within 24 hours",
-        "text": "Short paths, clear questions and no agency waiting room."
+        "title": "Goal analysis",
+        "text": "We review target audience, competitors, website, SEO potential and local demand."
       },
       {
-        "title": "Strategy, not guesswork",
-        "text": "We look at website, SEO, Local SEO and GEO together."
+        "title": "Individual concept",
+        "text": "You receive a clear proposal with scope, process and fixed price."
+      },
+      {
+        "title": "Development",
+        "text": "We build a fast, modern and measurable website without unnecessary complexity."
+      },
+      {
+        "title": "Launch & support",
+        "text": "After launch, technology, SEO, content and optimization remain under control."
       }
     ],
-    "focusEyebrow": "How we help",
-    "focusTitle": "A conversation that creates clarity fast",
-    "focusLead": "We do not talk about design trends first. We talk about visibility, trust and enquiries. Afterwards you know which steps make sense.",
-    "focus": [
+    "whyEyebrow": "Why SaaleWeb",
+    "whyTitle": "Why clients enjoy working with SaaleWeb",
+    "whyLead": "SaaleWeb combines personal consulting, transparent pricing and modern implementation. You work directly with the people responsible for strategy, design, technology and visibility.",
+    "why": [
       {
-        "title": "A website that sells",
-        "text": "Structure, copy and technology are planned so visitors quickly understand why they should choose you."
+        "title": "Direct contact",
+        "text": "Short paths, clear answers and a contact person who actually knows your project."
       },
       {
-        "title": "SEO for Google",
-        "text": "Technical foundations, local search terms, content and internal structure are aligned for sustainable rankings."
+        "title": "No anonymous agency",
+        "text": "No hand-off between departments. Decisions stay transparent and understandable."
       },
       {
-        "title": "GEO for AI search",
-        "text": "Your content is structured so ChatGPT, Gemini, Perplexity and AI Overviews can understand your business better."
+        "title": "Transparent fixed prices",
+        "text": "Before we start, you know what will be delivered, what it costs and what support is possible."
+      },
+      {
+        "title": "Long-term support",
+        "text": "After launch, performance, SEO, content and further development are not left to chance."
       }
     ],
-    "geoEyebrow": "SEO + GEO",
-    "geoTitle": "Visible in the region — and in generative answers",
-    "geoLead": "SaaleWeb works from Halle (Saale) for businesses across the region and Germany. We connect regional demand with modern visibility in search engines and AI systems.",
-    "regions": [
-      "Halle (Saale)",
-      "Leipzig",
-      "Merseburg",
-      "Saalekreis",
-      "Schkeuditz",
-      "Delitzsch"
+    "formSectionEyebrow": "Enquiry",
+    "formSectionTitle": "Tell us briefly what this is about",
+    "formSectionLead": "The more specific your enquiry is, the faster we can assess the right path. A rough description is completely enough.",
+    "directContactLabel": "Direct contact",
+    "callHint": "Agree on callback or meeting during the first consultation",
+    "form": {
+      "eyebrow": "Project enquiry",
+      "title": "Request a free first consultation",
+      "lead": "We will reply personally and prepare the first useful questions in advance.",
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "company": "Company",
+      "companyPlaceholder": "Company or organization",
+      "projectWebsite": "Website",
+      "projectWebsitePlaceholder": "https://...",
+      "email": "Email",
+      "emailPlaceholder": "name@company.com",
+      "phone": "Phone",
+      "phonePlaceholder": "+49 ...",
+      "projectType": "Project type",
+      "projectTypePlaceholder": "Please select",
+      "budget": "Budget",
+      "budgetPlaceholder": "Rough orientation",
+      "message": "Message",
+      "messagePlaceholder": "What do you want to achieve? Is there an existing website, SEO goal or launch date?",
+      "privacy": "I agree to the privacy policy.",
+      "submit": "Send enquiry",
+      "sending": "Sending …",
+      "successTitle": "Thank you — your enquiry has arrived.",
+      "successText": "We will review your details and contact you personally within 24 hours.",
+      "successMeta": "Next step: free first consultation",
+      "error": "Please check the required fields and try again.",
+      "projectTypeOptions": [
+        { "value": "new-website", "label": "New website" },
+        { "value": "seo", "label": "SEO / Local SEO" },
+        { "value": "ai", "label": "AI optimization / GEO" },
+        { "value": "relaunch", "label": "Relaunch" },
+        { "value": "performance", "label": "Performance / technical work" },
+        { "value": "consulting", "label": "Consulting" }
+      ],
+      "budgetOptions": [
+        { "value": "under-2500", "label": "under €2,500" },
+        { "value": "2500-5000", "label": "€2,500–€5,000" },
+        { "value": "5000-10000", "label": "€5,000–€10,000" },
+        { "value": "10000-plus", "label": "€10,000+" },
+        { "value": "not-sure", "label": "Not sure yet" }
+      ]
+    },
+    "expectationsEyebrow": "What happens next",
+    "expectationsTitle": "What happens after your enquiry?",
+    "expectationsLead": "You do not get a pressure sales call. You get a clear assessment so you can make a good decision — even if we do not end up working together.",
+    "expectations": [
+      "Reply within 24 hours",
+      "Free first consultation",
+      "Personal consulting",
+      "Transparent fixed prices",
+      "No sales pressure",
+      "Individual concept"
     ],
-    "geoCards": [
+    "trustEyebrow": "Trust",
+    "trustTitle": "Experience from real projects",
+    "trustLead": "SaaleWeb works with real businesses in services, beauty, hospitality, construction and regional trades. The goal is not only a beautiful design, but a system that loads fast, builds trust and turns visibility into measurable enquiries.",
+    "metrics": [
       {
-        "title": "Local demand",
-        "text": "We show what customers in your city actually search for."
+        "value": "3+",
+        "label": "Project examples",
+        "text": "Selected references with website, SEO, booking or lead-generation focus."
       },
       {
-        "title": "Trust signals",
-        "text": "References, services, reviews and clear contact paths become visible."
+        "value": "100",
+        "label": "Lighthouse",
+        "text": "Performance is planned from the start, not tested only at the end."
       },
       {
-        "title": "AI understanding",
-        "text": "Structured content helps search engines and AI systems classify your offer correctly."
+        "value": "SEO Ready",
+        "label": "Technical foundation",
+        "text": "Structure, speed, metadata and internal links are built cleanly."
+      },
+      {
+        "value": "AI Ready",
+        "label": "GEO structure",
+        "text": "Content is made understandable for Google, ChatGPT, Gemini, Claude and Perplexity."
       }
     ],
-    "processEyebrow": "Process",
-    "processTitle": "How the enquiry works",
-    "process": [
-      {
-        "title": "1. Short message",
-        "text": "You briefly describe your business, your goal and what is not working today."
-      },
-      {
-        "title": "2. First assessment",
-        "text": "We check website, visibility, competition and possible growth levers."
-      },
-      {
-        "title": "3. Clear proposal",
-        "text": "You receive an understandable recommendation with scope, timeline and fixed price."
-      }
+    "logosTitle": "Selected project areas",
+    "logos": ["Salon Elen", "Waldschlösschen", "SorgfaltBau"],
+    "projectsCta": "View projects",
+    "localSeoEyebrow": "Local SEO",
+    "localSeoTitle": "Web design and SEO for Halle, Leipzig and the region",
+    "localSeoParagraphs": [
+      "SaaleWeb is a Digitalagentur Halle for businesses that want more than a good-looking website. If you search for Webdesign Halle, Webagentur Halle or Website erstellen lassen Halle, you usually need a clear digital sales path, not a generic page.",
+      "We combine Webdesign Halle with SEO Halle: clean technology, fast loading, clear service pages, local search signals and content that answers real customer questions. This makes the website easier to understand for people, Google and AI systems.",
+      "SaaleWeb also supports companies in Leipzig. For us, Webdesign Leipzig and SEO Leipzig mean clear positioning, regional relevance, strong performance and content that turns visitors into qualified enquiries."
     ],
+    "servicesLink": "Services",
+    "industriesLink": "Industries",
+    "pricingLink": "Pricing",
+    "aiEyebrow": "GEO & AI Search",
+    "aiTitle": "So AI systems understand your business better",
+    "aiParagraphs": [
+      "More customers research through ChatGPT, Gemini, Claude, Perplexity and Google AI Overview. We therefore structure content so offers, locations, services, prices and trust signals are easy to identify.",
+      "This GEO work does not replace SEO. It extends SEO with clear entities, FAQ blocks, internal links, structured data and natural language. That makes your website more useful for people and AI search systems."
+    ],
+    "aiPanelTitle": "Optimized for answers",
+    "aiPanelLead": "Structured content instead of keyword stuffing",
+    "aiPlatforms": ["ChatGPT", "Gemini", "Claude", "Perplexity", "Google AI Overview", "Classic Google Search"],
     "faqEyebrow": "FAQ",
-    "faqTitle": "Questions before the first call",
+    "faqTitle": "Common questions before the first consultation",
     "faq": [
       {
+        "q": "What does a website with SaaleWeb cost?",
+        "a": "That depends on the scope: landing page, business website, relaunch, SEO or ongoing support. After the first consultation you receive a transparent fixed price instead of vague hourly estimates."
+      },
+      {
         "q": "Is the first consultation really free?",
-        "a": "Yes. The call is non-binding. We clarify whether and how we can help in a useful way."
+        "a": "Yes. The call is free and non-binding. We clarify whether we can help and which next step is realistic for your business."
       },
       {
-        "q": "Do I need prepared content already?",
-        "a": "No. A short description of your business is enough. We develop content, structure and priorities together."
+        "q": "How long does a website project take?",
+        "a": "Small landing pages can be completed much faster than larger company websites. A few weeks is typical, depending on content, coordination and functionality."
       },
       {
-        "q": "Do you only work for businesses in Halle?",
-        "a": "No. We are based in Halle (Saale), but work for businesses across the region and Germany."
+        "q": "Is SEO included?",
+        "a": "The technical SEO foundation is part of a modern website. Broader SEO work such as keyword strategy, Local SEO, content and ongoing optimization is planned separately."
       },
       {
-        "q": "What does GEO mean on this contact page?",
-        "a": "Here GEO means Generative Engine Optimization: content is structured so AI search systems can understand and classify your business better."
+        "q": "Can SaaleWeb handle hosting and technical support?",
+        "a": "Yes. We can support hosting, performance, updates, monitoring and technical development so the website does not stagnate after launch."
+      },
+      {
+        "q": "What does AI optimization or GEO mean?",
+        "a": "GEO stands for Generative Engine Optimization. Content is structured so AI systems like ChatGPT, Gemini, Claude, Perplexity and Google AI Overview can understand your business better."
+      },
+      {
+        "q": "How does collaboration work?",
+        "a": "After your enquiry, we start with a free first consultation, then analysis, concept, fixed-price proposal, implementation, launch and optional ongoing support."
+      },
+      {
+        "q": "Do you offer support after launch?",
+        "a": "Yes. Many projects are optimized after launch: content, SEO, performance, new pages, technical care or conversion improvements."
+      },
+      {
+        "q": "Does SaaleWeb work with businesses in Halle?",
+        "a": "Yes. SaaleWeb is based in Halle (Saale) and supports local businesses with Webdesign Halle, SEO Halle, Local SEO and digital lead generation."
+      },
+      {
+        "q": "Does SaaleWeb also work for Leipzig?",
+        "a": "Yes. We also support businesses that need Webdesign Leipzig, SEO Leipzig or a modern website for customers in Leipzig and the surrounding area."
+      },
+      {
+        "q": "Do I need finished texts and images?",
+        "a": "No. Existing material helps, but it is not required. Structure, content and priorities can be developed together."
+      },
+      {
+        "q": "Can an existing website be modernized?",
+        "a": "Yes. A relaunch makes sense when design, technology, loading speed, SEO structure or conversion no longer fit the business."
+      },
+      {
+        "q": "Does SaaleWeb work with fixed prices?",
+        "a": "Yes. Once the scope is clear, you receive an understandable proposal with defined services and transparent pricing."
+      },
+      {
+        "q": "What happens directly after my enquiry?",
+        "a": "We review your details, ask follow-up questions if needed and reply within 24 hours with a proposal for the free first consultation."
+      },
+      {
+        "q": "Will I own the website after completion?",
+        "a": "Yes. The website belongs to you. We focus on transparent handover, clean documentation and optional ongoing support."
       }
     ]
   },
@@ -347,6 +475,7 @@
     "gallery": "Gallery",
     "tech": "Technologies used",
     "result": "Result",
+    "liveSite": "View live website",
     "ctaTitle": "Will your project be the next one?",
     "ctaText": "Let's talk about your website — free, honest and without jargon.",
     "backToProjects": "All projects",

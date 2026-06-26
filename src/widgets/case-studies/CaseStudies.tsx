@@ -30,7 +30,7 @@ async function getDbCases(locale: AppLocale): Promise<Card[]> {
     const rows = await prisma.project.findMany({
       where: { published: true },
       orderBy: [{ featured: "desc" }, { order: "asc" }],
-      take: 3,
+      take: 4,
       include: {
         translations: { where: { locale }, take: 1 },
         category: { include: { translations: { where: { locale }, take: 1 } } },
@@ -78,7 +78,7 @@ export async function CaseStudies() {
     <section id="cases" className="py-16 md:py-24">
       <Container>
         <SectionHeader eyebrow={t("eyebrow")} title={t("title")} lead={t("lead")} />
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4">
           {items.map((item, i) => {
             const hex = item.cover.color?.startsWith("#");
             const isLocalImage = item.cover.image?.startsWith("/");
@@ -96,7 +96,7 @@ export async function CaseStudies() {
                       src={item.cover.image}
                       alt={item.title}
                       fill
-                      sizes="(min-width: 1024px) 370px, (min-width: 768px) 33vw, 100vw"
+                      sizes="(min-width: 1280px) 278px, (min-width: 640px) 50vw, 100vw"
                       className="object-contain object-center"
                     />
                   ) : item.cover.image ? (
