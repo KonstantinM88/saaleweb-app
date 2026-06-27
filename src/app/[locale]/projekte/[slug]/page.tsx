@@ -18,6 +18,7 @@ import { routing, type AppLocale } from "@/i18n/routing";
 import { getPathname, Link } from "@/i18n/navigation";
 import { Navbar } from "@/widgets/navbar/Navbar";
 import { Footer } from "@/widgets/footer/Footer";
+import { CaseStudyDetailPage } from "@/widgets/project-detail/CaseStudyDetailPage";
 import { Container } from "@/shared/ui/Container";
 import { Breadcrumbs } from "@/shared/ui/Breadcrumbs";
 import { Reveal } from "@/shared/ui/Reveal";
@@ -36,6 +37,12 @@ type GalleryItem = {
   alt: string | null;
   width: number | null;
   height: number | null;
+};
+type CaseDetailCopy = {
+  industry: string;
+  goal: string;
+  result: string;
+  performance: string;
 };
 
 const externalUrlPattern = /(https?:\/\/[^\s]+)/g;
@@ -189,6 +196,13 @@ export default async function ProjectPage({
 
   const t = await getTranslations({ locale, namespace: "Projects" });
   const pages = await getTranslations({ locale, namespace: "Pages" });
+  const caseDetails = t.raw("caseDetails") as Record<string, CaseDetailCopy>;
+  const detailCopy = caseDetails[slug] ?? caseDetails[data.slugs.de] ?? {
+    industry: data.tag || t("label"),
+    goal: data.challenge || t("challengeText"),
+    result: data.results || t("resultsText"),
+    performance: t("performanceNotesText"),
+  };
   const nextProject = await getNextProject(locale, slug);
   const path = getPathname({
     locale,
@@ -197,7 +211,14 @@ export default async function ProjectPage({
   const projectsPath = getPathname({ locale, href: "/projekte" });
   const homePath = locale === routing.defaultLocale ? "/" : `/${locale}`;
   const contactHref = getContactHref(locale);
+  const auditHref = `${homePath}#website-audit`;
   const hexCover = data.coverColor?.startsWith("#");
+
+  const overviewItems = [
+    { label: t("industry"), value: detailCopy.industry },
+    { label: t("businessGoal"), value: detailCopy.goal },
+    { label: t("resultFocus"), value: detailCopy.result },
+  ];
 
   const steps = [
     { label: t("challenge"), body: data.challenge || t("challengeText") },
@@ -237,7 +258,7 @@ export default async function ProjectPage({
         ]}
       />
 
-      <main>
+      <CaseStudyDetailPage>
         <Breadcrumbs
           items={[
             { name: pages("home"), href: "/" },
@@ -259,17 +280,23 @@ export default async function ProjectPage({
 
           <Container>
             <div className="hero-stagger max-w-3xl">
-              {data.tag && (
-                <span className="inline-flex items-center gap-2 rounded-full border border-line bg-white/70 px-3.5 py-1.5 text-[13px] font-medium text-brand-purple backdrop-blur-sm">
-                  <Tag size={14} aria-hidden />
-                  {data.tag}
+              <div className="flex flex-wrap gap-2">
+                <span className="inline-flex items-center gap-2 rounded-full border border-brand-purple/20 bg-brand-soft px-3.5 py-1.5 text-[13px] font-bold uppercase tracking-[0.08em] text-[#6D28D9] backdrop-blur-sm">
+                  <Sparkles size={14} aria-hidden />
+                  {t("caseBadge")}
                 </span>
-              )}
+                {data.tag && (
+                  <span className="inline-flex items-center gap-2 rounded-full border border-line bg-white/70 px-3.5 py-1.5 text-[13px] font-medium text-brand-purple backdrop-blur-sm">
+                    <Tag size={14} aria-hidden />
+                    {data.tag}
+                  </span>
+                )}
+              </div>
               <h1 className="mt-4 text-[clamp(30px,5vw,54px)] font-bold leading-[1.08] tracking-tight text-dark">
                 {data.title}
               </h1>
               <p className="mt-5 max-w-2xl text-[clamp(17px,1.8vw,21px)] text-muted">
-                {data.challenge || t("challengeText")}
+                {t("caseIntro")}
               </p>
             </div>
           </Container>
@@ -324,6 +351,22 @@ export default async function ProjectPage({
                 </div>
               </Reveal>
             )}
+
+            <Reveal delay={110}>
+              <section className="mt-5 rounded-[22px] border border-line bg-white p-5 shadow-[0_24px_70px_-56px_rgba(15,23,42,0.5)] md:p-6">
+                <span className="eyebrow">{t("clientOverview")}</span>
+                <div className="mt-4 grid gap-3 md:grid-cols-3">
+                  {overviewItems.map((item) => (
+                    <article key={item.label} className="rounded-2xl border border-line bg-surface p-4">
+                      <h2 className="font-mono text-[11px] font-bold uppercase tracking-[0.1em] text-brand-purple">
+                        {item.label}
+                      </h2>
+                      <p className="mt-2 text-[14.5px] leading-relaxed text-ink">{item.value}</p>
+                    </article>
+                  ))}
+                </div>
+              </section>
+            </Reveal>
           </Container>
         </section>
 
@@ -347,12 +390,15 @@ export default async function ProjectPage({
                   </Reveal>
                 ))}
 
-                {data.technologies.length > 0 && (
-                  <Reveal>
-                    <section className="rounded-[20px] border border-line bg-surface p-6 md:p-8">
-                      <h2 className="text-[clamp(19px,2.2vw,24px)] font-bold text-dark">
-                        {t("tech")}
-                      </h2>
+                <Reveal>
+                  <section className="rounded-[20px] border border-line bg-surface p-6 md:p-8">
+                    <h2 className="text-[clamp(19px,2.2vw,24px)] font-bold text-dark">
+                      {t("techFoundation")}
+                    </h2>
+                    <p className="mt-3 text-[16px] leading-relaxed text-ink">
+                      {t("techFoundationText")}
+                    </p>
+                    {data.technologies.length > 0 && (
                       <div className="mt-4 flex flex-wrap gap-2">
                         {data.technologies.map((technology) => (
                           <span
@@ -363,9 +409,20 @@ export default async function ProjectPage({
                           </span>
                         ))}
                       </div>
-                    </section>
-                  </Reveal>
-                )}
+                    )}
+                  </section>
+                </Reveal>
+
+                <Reveal>
+                  <section className="rounded-[20px] border border-line bg-white p-6 md:p-8">
+                    <h2 className="text-[clamp(19px,2.2vw,24px)] font-bold text-dark">
+                      {t("performanceNotes")}
+                    </h2>
+                    <p className="mt-3 text-[16px] leading-relaxed text-ink">
+                      {detailCopy.performance || t("performanceNotesText")}
+                    </p>
+                  </section>
+                </Reveal>
               </div>
 
               <div>
@@ -404,6 +461,13 @@ export default async function ProjectPage({
                         </a>
                       </Magnetic>
                     </div>
+                    <a
+                      href={auditHref}
+                      className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-line bg-white px-5 py-3 text-[15px] font-semibold text-dark transition-all hover:-translate-y-0.5 hover:border-brand-purple/50 hover:text-brand-purple hover:shadow-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2"
+                    >
+                      {t("auditButton")}
+                      <ArrowRight size={16} aria-hidden />
+                    </a>
 
                     {nextProject && (
                       <Link
@@ -479,7 +543,7 @@ export default async function ProjectPage({
                   <p className="mx-auto mt-3 max-w-lg text-[16px] text-gray-400">
                     {t("ctaText")}
                   </p>
-                  <div className="mt-7 flex justify-center">
+                  <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
                     <Magnetic>
                       <a
                         href={contactHref}
@@ -493,7 +557,17 @@ export default async function ProjectPage({
                         />
                       </a>
                     </Magnetic>
+                    <a
+                      href={auditHref}
+                      className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/[0.15] bg-white/[0.08] px-7 py-3.5 text-[15px] font-semibold text-white transition-all hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/[0.12]"
+                    >
+                      {t("auditButton")}
+                      <ArrowRight size={17} aria-hidden />
+                    </a>
                   </div>
+                  <p className="mx-auto mt-5 max-w-lg text-[13.5px] font-semibold text-gray-300">
+                    {t("ctaTrust")}
+                  </p>
                   <div className="mt-6">
                     <Link
                       href="/projekte"
@@ -508,7 +582,7 @@ export default async function ProjectPage({
             </Reveal>
           </Container>
         </section>
-      </main>
+      </CaseStudyDetailPage>
       <Footer />
     </LocaleSlugsProvider>
   );
@@ -594,7 +668,7 @@ function ProjectMedia({
               : "grid h-full w-full place-items-center bg-brand"
           }
         >
-          <span className="px-6 text-center text-2xl font-bold text-white/85">{title}</span>
+          <span className="px-6 text-center text-2xl font-bold text-white/[0.85]">{title}</span>
         </div>
       )}
     </div>

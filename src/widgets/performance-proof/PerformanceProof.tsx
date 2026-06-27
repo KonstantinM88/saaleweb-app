@@ -44,6 +44,11 @@ export async function PerformanceProof() {
               {t("lead")}
             </p>
           </Reveal>
+          <Reveal delay={170}>
+            <p className="mx-auto mt-4 max-w-xl text-[14px] font-semibold text-ink">
+              {t("trustLine")}
+            </p>
+          </Reveal>
         </div>
 
         <Reveal delay={180} className="mt-10 md:mt-14">
@@ -94,7 +99,7 @@ export async function PerformanceProof() {
         </div>
 
         <Reveal delay={120} className="mt-8">
-          <div className="rounded-[28px] border border-line bg-white/88 p-6 shadow-[0_28px_80px_-56px_rgba(15,23,42,0.5)] backdrop-blur md:p-8">
+          <div className="rounded-[28px] border border-line bg-white/[0.88] p-6 shadow-[0_28px_80px_-56px_rgba(15,23,42,0.5)] backdrop-blur md:p-8">
             <div className="grid gap-7 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
               <div>
                 <p className="eyebrow">{t("flow.title")}</p>

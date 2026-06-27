@@ -42,6 +42,9 @@ export function CtaBanner() {
                 <ArrowRight className="h-4 w-4" aria-hidden />
               </Link>
             </div>
+            <p className="mx-auto mt-5 max-w-lg text-[13.5px] font-semibold text-gray-300">
+              {t("ctaTrust")}
+            </p>
           </div>
         </div>
       </Container>

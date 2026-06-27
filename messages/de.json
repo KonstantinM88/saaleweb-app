@@ -47,6 +47,7 @@
     "title": "Digitale Lösungen für nachhaltiges Wachstum.",
     "lead": "Jedes Unternehmen hat andere Ziele. Deshalb entwickeln wir keine Standardlösungen, sondern digitale Systeme, die zu Ihrem Unternehmen passen.",
     "more": "Mehr erfahren",
+    "trustLine": "Business First: Die Technologie folgt dem Ziel – nicht umgekehrt.",
     "techNote": {
       "title": "Flexible Technologien",
       "text": "Nicht jedes Unternehmen benötigt dieselbe Technologie. Deshalb empfehlen wir keine Plattform – sondern die Lösung, die am besten zu Ihren Zielen passt. Für neue Premium-Projekte setzen wir bevorzugt auf moderne Technologien wie Next.js und React. Bestehende WordPress-Websites modernisieren, erweitern oder betreuen wir selbstverständlich ebenfalls. Für individuelle Systeme und Integrationen kann auch Java sinnvoll sein. Entscheidend ist nicht das Framework. Entscheidend ist das Ergebnis.",
@@ -120,6 +121,7 @@
     "eyebrow": "Preise",
     "title": "Transparente Festpreise",
     "lead": "Keine versteckten Kosten. Sie wissen genau, was Sie bekommen.",
+    "trustLine": "Transparente Einstiegspakete. Individuelle Angebote nach Projektumfang.",
     "popular": "Beliebt",
     "button": "Anfragen",
     "packages": [
@@ -457,6 +459,61 @@
     "title": "Projekte, die geschäftlich Wirkung zeigen",
     "lead": "Jedes Projekt wird als Wachstumssystem gedacht: mehr Sichtbarkeit, mehr Vertrauen und mehr qualifizierte Anfragen.",
     "link": "Case ansehen",
+    "trustLine": "Ausgewählte Projekte aus Gastronomie, Beauty, Handwerk und Bau.",
+    "labels": {
+      "industry": "Branche",
+      "goal": "Ziel",
+      "solution": "Lösung",
+      "result": "Fokus",
+      "cta": "Projekt ansehen"
+    },
+    "projects": [
+      {
+        "slug": "online-buchungen-verdreifacht",
+        "name": "Salon Elen / Permanent Halle",
+        "industry": "Beauty Studio",
+        "goal": "Mehr Online-Termine und lokale Sichtbarkeit",
+        "solution": "Moderner Auftritt mit Buchungslogik, mehrsprachiger Struktur und Fokus auf lokale Suchanfragen in Halle.",
+        "badge": "Beauty · Booking · Local SEO",
+        "result": "+212% Online-Termine"
+      },
+      {
+        "slug": "neue-liebe-nebra",
+        "name": "Neue Liebe",
+        "industry": "Restaurant / Gastronomie",
+        "goal": "Mehr Sichtbarkeit und professioneller digitaler Auftritt",
+        "solution": "Moderner Restaurantauftritt mit klarer Struktur, aktuellen Inhalten und starker mobiler Präsentation.",
+        "badge": "Restaurant · SEO · Mobile First",
+        "result": "+176% Direktbuchungen"
+      },
+      {
+        "slug": "direktbuchungen-ohne-portale",
+        "name": "Waldschlösschen",
+        "industry": "Hotel & Restaurant",
+        "goal": "Mehr Direktbuchungen und bessere Präsentation von Hotel, Restaurant und Angeboten",
+        "solution": "Hochwertiger digitaler Auftritt für Gastronomie, Hotelbetrieb und regionale Sichtbarkeit.",
+        "badge": "Hotel · Restaurant · Buchungen",
+        "result": "+148% Direktbuchungen"
+      },
+      {
+        "slug": "qualifizierte-bauanfragen",
+        "name": "SorgfaltBau",
+        "industry": "Bauunternehmen",
+        "goal": "Mehr Vertrauen und qualifizierte Anfragen",
+        "solution": "Professioneller Unternehmensauftritt, der Leistungen klar präsentiert und Vertrauen bei potenziellen Kunden schafft.",
+        "badge": "Bau · Vertrauen · Anfragen",
+        "result": "Qualifizierte Anfragen"
+      },
+      {
+        "slug": "glaserei-schubert",
+        "name": "Glaserei Schubert",
+        "industry": "Handwerk / Glaserei",
+        "goal": "Hochwertige Präsentation von Leistungen und Referenzen",
+        "solution": "Moderner Auftritt für ein Handwerksunternehmen mit Fokus auf Vertrauen, klare Leistungen und lokale Auffindbarkeit.",
+        "badge": "Handwerk · Leistungen · Local SEO",
+        "result": "Vertrauen & lokale Sichtbarkeit"
+      }
+    ],
     "items": [
       {
         "name": "Salon Elen",
@@ -521,22 +578,66 @@
     "all_": "Alle",
     "overview": "Überblick",
     "year": "Jahr",
-    "challenge": "Herausforderung",
+    "caseBadge": "Case Study",
+    "caseIntro": "Ein Projekt von SaaleWeb mit Fokus auf Sichtbarkeit, Vertrauen und digitale Kundengewinnung.",
+    "clientOverview": "Client Overview",
+    "industry": "Branche",
+    "businessGoal": "Geschäftsziel",
+    "resultFocus": "Ergebnis / Fokus",
+    "challenge": "Ausgangssituation",
     "solution": "Lösung",
-    "results": "Ergebnisse",
+    "results": "Ergebnis",
     "gallery": "Galerie",
     "tech": "Eingesetzte Technologien",
     "result": "Ergebnis",
     "liveSite": "Live-Website ansehen",
-    "ctaTitle": "Wird Ihr Projekt das nächste sein?",
-    "ctaText": "Lassen Sie uns über Ihre Website sprechen — kostenlos, ehrlich und ohne Fachchinesisch.",
+    "techFoundation": "Technische Grundlage",
+    "techFoundationText": "Je nach Projektziel setzt SaaleWeb auf moderne Technologien wie Next.js, WordPress, Headless CMS, individuelle Buchungssysteme oder maßgeschneiderte Integrationen. Entscheidend ist nicht das Framework, sondern die passende Lösung für das Unternehmen.",
+    "performanceNotes": "Performance & SEO",
+    "performanceNotesText": "Die technische Grundlage wird so geplant, dass Ladezeiten, mobile Nutzererfahrung, Indexierbarkeit und klare Inhaltsstruktur zusammenspielen.",
+    "auditButton": "Website analysieren",
+    "ctaTrust": "Unverbindlich. Persönlich. Mit klarem Blick auf Ihr Geschäft.",
+    "ctaTitle": "Sie möchten ein ähnliches Ergebnis für Ihr Unternehmen?",
+    "ctaText": "Lassen Sie uns gemeinsam prüfen, welche digitale Lösung für Ihre Ziele sinnvoll ist.",
     "backToProjects": "Alle Projekte",
     "nextProject": "Nächstes Projekt",
     "challengeText": "Die Ausgangslage und das Ziel: Was sollte die neue Website für das Unternehmen leisten?",
     "solutionText": "Unser Ansatz: ein schnelles, modernes und für Google sowie KI optimiertes System — verständlich umgesetzt.",
     "resultsText": "Das messbare Ergebnis: mehr Sichtbarkeit, mehr Anfragen und ein Auftritt, der Vertrauen schafft.",
     "all": "Alle Projekte",
-    "empty": "Noch keine Projekte veröffentlicht."
+    "empty": "Noch keine Projekte veröffentlicht.",
+    "caseDetails": {
+      "online-buchungen-verdreifacht": {
+        "industry": "Beauty Studio",
+        "goal": "Mehr Online-Termine und lokale Sichtbarkeit",
+        "result": "Ein professioneller Beauty-Auftritt mit digitaler Terminlogik, klarer Leistungsstruktur und mehrsprachiger Nutzerführung.",
+        "performance": "Fokus auf schnelle mobile Nutzung, klare lokale Suchsignale und eine Buchungsführung, die Besucher ohne Umwege zur Terminentscheidung bringt."
+      },
+      "neue-liebe-nebra": {
+        "industry": "Restaurant / Gastronomie",
+        "goal": "Mehr Sichtbarkeit und professioneller digitaler Auftritt",
+        "result": "Ein moderner Restaurantauftritt, der Atmosphäre, aktuelle Inhalte und mobile Nutzerführung verbindet.",
+        "performance": "Fokus auf mobile Darstellung, schnelle Orientierung, lokale Suchanfragen und klare Reservierungswege."
+      },
+      "direktbuchungen-ohne-portale": {
+        "industry": "Hotel & Restaurant",
+        "goal": "Mehr Direktbuchungen und bessere Präsentation von Hotel, Restaurant und Angeboten",
+        "result": "Ein hochwertiger Hotel- und Restaurantauftritt mit Fokus auf Angebote, Buchungen und regionale Sichtbarkeit.",
+        "performance": "Fokus auf klare Angebotsstruktur, mobile Buchungswege, lokale Auffindbarkeit und schnelle Ladezeiten."
+      },
+      "qualifizierte-bauanfragen": {
+        "industry": "Bauunternehmen",
+        "goal": "Mehr Vertrauen und qualifizierte Anfragen",
+        "result": "Ein professioneller Bauunternehmer-Auftritt, der Leistungen verständlich präsentiert und Vertrauen aufbaut.",
+        "performance": "Fokus auf verständliche Leistungsseiten, regionale Relevanz, technische Sauberkeit und klare Kontaktwege."
+      },
+      "glaserei-schubert": {
+        "industry": "Handwerk / Glaserei",
+        "goal": "Hochwertige Präsentation von Leistungen und Referenzen",
+        "result": "Ein moderner Handwerksauftritt mit klarer Leistungsdarstellung und professioneller Außenwirkung.",
+        "performance": "Fokus auf lokale Auffindbarkeit, klare Leistungsstruktur, mobile Lesbarkeit und vertrauensbildende Referenzen."
+      }
+    }
   },
   "Industries": {
     "eyebrow": "Branchen",
@@ -738,6 +839,7 @@
     "eyebrow": "Nachweisbare Qualität",
     "title": "Websites, die messbar besser performen.",
     "lead": "Geschwindigkeit ist mehr als ein technischer Wert. Schnelle Websites verbessern die Nutzererfahrung, stärken das Vertrauen und schaffen bessere Voraussetzungen für Sichtbarkeit in Suchmaschinen.",
+    "trustLine": "Echte Projektwerte statt Marketingversprechen.",
     "imageAlt": "SaaleWeb Performance Proof mit Lighthouse-Werten und digitalem Dashboard",
     "metrics": [
       {
@@ -787,6 +889,17 @@
       "primary": "Kostenlose Website-Analyse",
       "secondary": "Unsere Projekte"
     }
+  },
+  "AuthorityStrip": {
+    "title": "Der SaaleWeb Qualitätsstandard",
+    "items": [
+      "Performance optimiert",
+      "SEO strukturiert",
+      "Mobile First",
+      "AI Ready",
+      "Wartbar",
+      "Business First"
+    ]
   },
   "Comparison": {
     "eyebrow": "Vergleich",
@@ -851,9 +964,24 @@
     ]
   },
   "Founder": {
-    "role": "Gründer & persönlicher Ansprechpartner",
-    "title": "Ihr langfristiger digitaler Partner.",
-    "bio": "Sie arbeiten direkt mit dem Entwickler, der Ihr Projekt von der ersten Idee bis zur langfristigen Weiterentwicklung begleitet. Keine anonymen Agenturprozesse. Keine wechselnden Ansprechpartner. Sondern eine langfristige Zusammenarbeit auf Augenhöhe.",
+    "role": "Direkter Ansprechpartner",
+    "title": "Direkter Ansprechpartner statt anonyme Agenturprozesse.",
+    "bio": "Bei SaaleWeb arbeiten Sie direkt mit Konstantin Michailow – vom ersten Konzept bis zur langfristigen Weiterentwicklung Ihrer Website. Das bedeutet kurze Wege, klare Kommunikation und ein Ansprechpartner, der Ihr Projekt wirklich kennt.",
+    "cta": "Erstgespräch vereinbaren",
+    "points": [
+      {
+        "title": "Persönliche Betreuung",
+        "text": "Sie sprechen direkt mit dem Menschen, der Ihr Projekt technisch und strategisch begleitet."
+      },
+      {
+        "title": "Langfristige Zusammenarbeit",
+        "text": "Nach dem Launch bleibt Ihre Website nicht stehen – sie wird weiterentwickelt."
+      },
+      {
+        "title": "Technologie mit Verantwortung",
+        "text": "Jede Entscheidung wird danach getroffen, was Ihrem Unternehmen langfristig hilft."
+      }
+    ],
     "stats": [
       {
         "value": "30+",
@@ -895,10 +1023,45 @@
     "servicesLabel": "Leistungen",
     "industriesLabel": "Branchen",
     "locationsLabel": "Standorte",
-    "ctaTitle": "Bereit für eine Website, die Ihr Unternehmen wachsen lässt?",
-    "ctaText": "Lassen Sie uns gemeinsam herausfinden, welche digitale Lösung den größten Mehrwert für Ihr Unternehmen schafft.",
+    "ctaTitle": "Bereit für eine digitale Lösung, die Ihr Unternehmen wirklich weiterbringt?",
+    "ctaText": "Ob neue Website, Relaunch, SEO, WordPress-Modernisierung oder individuelle Lösung – wir prüfen gemeinsam, was für Ihr Unternehmen sinnvoll ist.",
     "ctaButton": "Kostenloses Erstgespräch",
-    "ctaSecondary": "Website analysieren"
+    "ctaSecondary": "Website analysieren lassen",
+    "ctaTrust": "Unverbindlich. Persönlich. Mit klarem Blick auf Ihr Geschäft."
+  },
+  "WebsiteAudit": {
+    "eyebrow": "Kostenlose Analyse",
+    "title": "Was bremst Ihre aktuelle Website aus?",
+    "subtitle": "Viele Websites sehen auf den ersten Blick gut aus – verlieren aber Kunden durch langsame Ladezeiten, schwache SEO-Struktur oder unklare Nutzerführung.",
+    "text": "Wir prüfen Ihre Website auf Performance, SEO, mobile Nutzererfahrung und technische Grundlagen. Danach erhalten Sie konkrete Hinweise, was verbessert werden kann.",
+    "points": [
+      {
+        "title": "Performance",
+        "text": "Ladezeiten, Core Web Vitals und technische Geschwindigkeit."
+      },
+      {
+        "title": "SEO-Struktur",
+        "text": "Titel, Inhalte, lokale Suchbegriffe und Indexierbarkeit."
+      },
+      {
+        "title": "Nutzerführung",
+        "text": "Klarheit, Call-to-Actions und mobile Bedienbarkeit."
+      },
+      {
+        "title": "Zukunftsfähigkeit",
+        "text": "Technische Basis, Wartbarkeit und AI-Readiness."
+      }
+    ],
+    "name": "Name",
+    "email": "E-Mail",
+    "website": "Website URL",
+    "message": "Optionale Nachricht",
+    "button": "Kostenlose Website-Analyse anfragen",
+    "sending": "Wird gesendet...",
+    "trust": "Unverbindlich. Persönlich geprüft. Keine automatisierte Massenanalyse.",
+    "successTitle": "Anfrage erhalten",
+    "successText": "Wir prüfen Ihre Website persönlich und melden uns mit den nächsten sinnvollen Schritten.",
+    "error": "Bitte prüfen Sie Ihre Angaben."
   },
   "Cities": {
     "eyebrow": "Standort",

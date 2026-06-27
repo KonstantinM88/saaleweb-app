@@ -58,6 +58,9 @@ export async function Pricing() {
           <p className="mx-auto mt-4 max-w-[620px] text-[clamp(16px,1.6vw,19px)] text-muted">
             {t("lead")}
           </p>
+          <p className="mx-auto mt-3 max-w-[560px] text-[14px] font-semibold text-ink">
+            {t("trustLine")}
+          </p>
         </div>
         <PricingPlans
           plans={plans}

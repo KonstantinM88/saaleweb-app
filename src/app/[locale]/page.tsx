@@ -13,10 +13,12 @@ import { TechStack } from "@/widgets/tech-stack/TechStack";
 import { AiReady } from "@/widgets/ai-ready/AiReady";
 import { WhySaaleWebSection } from "@/widgets/why-saaleweb/WhySaaleWebSection";
 import { PerformanceProof } from "@/widgets/performance-proof/PerformanceProof";
+import { AuthorityStrip } from "@/widgets/authority-strip/AuthorityStrip";
 import { Process } from "@/widgets/process/Process";
 import { Founder } from "@/widgets/founder/Founder";
 import { Testimonials } from "@/widgets/testimonials/Testimonials";
 import { Pricing } from "@/widgets/pricing/Pricing";
+import { WebsiteAuditSection } from "@/widgets/website-audit/WebsiteAuditSection";
 import { Faq } from "@/widgets/faq/Faq";
 import { Contact } from "@/widgets/contact/Contact";
 import { Footer } from "@/widgets/footer/Footer";
@@ -44,6 +46,7 @@ export default async function HomePage({
         <CaseStudies />
         <WhySaaleWebSection />
         <PerformanceProof />
+        <AuthorityStrip />
         <AiReady />
         <Services />
         <Comparison />
@@ -54,6 +57,7 @@ export default async function HomePage({
         <Process />
         <Founder />
         <Testimonials locale={appLocale} />
+        <WebsiteAuditSection />
         <Pricing />
         <Faq />
         <Contact />

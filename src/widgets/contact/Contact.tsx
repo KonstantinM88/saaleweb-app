@@ -8,7 +8,11 @@ import { submitContact, type ContactState } from "@/features/contact/actions";
 
 const initialState: ContactState = { status: "idle" };
 
-export function Contact({ source = "homepage_contact" }: { source?: "homepage_contact" | "contact_page" }) {
+export function Contact({
+  source = "homepage_contact",
+}: {
+  source?: "homepage_contact" | "contact_page" | "website_audit";
+}) {
   const t = useTranslations("Contact");
   const locale = useLocale();
   const [state, formAction, pending] = useActionState(submitContact, initialState);

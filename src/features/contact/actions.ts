@@ -38,15 +38,20 @@ export async function submitContact(
   }
 
   try {
+    const baseMessage =
+      parsed.data.message?.trim() ||
+      (parsed.data.source === "website_audit"
+        ? "Bitte eine kostenlose Website-Analyse durchführen."
+        : "");
     const projectDetails = [
-      ["Projektart", parsed.data.projectType],
+      ["Projektart", parsed.data.projectType || (parsed.data.source === "website_audit" ? "Website-Audit" : "")],
       ["Budget", parsed.data.budget],
       ["Website", parsed.data.projectWebsite],
     ].filter(([, value]) => value);
     const message =
       projectDetails.length > 0
-        ? `${projectDetails.map(([label, value]) => `${label}: ${value}`).join("\n")}\n\nNachricht:\n${parsed.data.message}`
-        : parsed.data.message;
+        ? `${projectDetails.map(([label, value]) => `${label}: ${value}`).join("\n")}\n\nNachricht:\n${baseMessage}`
+        : baseMessage;
 
     await prisma.lead.create({
       data: {

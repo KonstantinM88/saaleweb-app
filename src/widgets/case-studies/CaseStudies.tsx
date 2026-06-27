@@ -1,21 +1,23 @@
 import { getTranslations, getLocale } from "next-intl/server";
-import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { prisma } from "@/lib/prisma";
 import type { AppLocale } from "@/i18n/routing";
 import { Container } from "@/shared/ui/Container";
-import { Reveal } from "@/shared/ui/Reveal";
 import { SectionHeader } from "@/shared/ui/SectionHeader";
-import { cn } from "@/shared/lib/cn";
+import { CaseStudyCard, type CaseStudyCardLabels, type CaseStudyCardView } from "./CaseStudyCard";
 
-type StaticItem = { tag: string; title: string; desc: string; result: string; name: string };
-type ImpactOverride = Partial<Pick<Card, "tag" | "title" | "desc">>;
+type StaticItem = {
+  slug: string;
+  name: string;
+  badge: string;
+  industry: string;
+  goal: string;
+  solution: string;
+  result: string;
+};
 type Card = {
   slug: string | null;
-  tag: string;
   title: string;
-  desc: string;
   result: string;
   cover: { image: string | null; color: string | null; label: string };
 };
@@ -31,7 +33,7 @@ async function getDbCases(locale: AppLocale): Promise<Card[]> {
     const rows = await prisma.project.findMany({
       where: { published: true },
       orderBy: [{ featured: "desc" }, { order: "asc" }],
-      take: 4,
+      take: 5,
       include: {
         translations: { where: { locale }, take: 1 },
         category: { include: { translations: { where: { locale }, take: 1 } } },
@@ -41,12 +43,9 @@ async function getDbCases(locale: AppLocale): Promise<Card[]> {
     return rows.flatMap((row, i) => {
       const tr = row.translations[0];
       if (!tr) return [];
-      const tag = row.category?.translations?.[0]?.name ?? "";
       return {
         slug: tr.slug,
-        tag,
         title: tr.title,
-        desc: tr.challenge ?? tr.results ?? "",
         result: row.resultValue ?? "",
         cover: {
           image: row.media?.[0]?.url ?? null,
@@ -64,101 +63,39 @@ export async function CaseStudies() {
   const locale = (await getLocale()) as AppLocale;
   const t = await getTranslations({ locale, namespace: "CaseStudies" });
   const tp = await getTranslations({ locale, namespace: "Projects" });
-  const impacts = t.raw("impacts") as Record<string, ImpactOverride>;
-  const fallback: Card[] = (t.raw("items") as StaticItem[]).map((item, i) => ({
-    slug: null,
-    tag: item.tag,
-    title: item.title,
-    desc: item.desc,
-    result: item.result,
+  const labels = t.raw("labels") as CaseStudyCardLabels;
+  const fallback = (t.raw("projects") as StaticItem[]).map((item, i) => ({
+    ...item,
+    title: item.name,
     cover: { image: null, color: covers[i % covers.length], label: item.name },
   }));
   const dbItems = await getDbCases(locale);
-  const sourceItems = dbItems.length >= fallback.length ? dbItems : fallback;
-  const items = sourceItems.map((item) => {
-    const override = item.slug ? impacts[item.slug] : undefined;
-    return override ? { ...item, ...override } : item;
+  const dbBySlug = new Map(dbItems.flatMap((item) => (item.slug ? [[item.slug, item]] : [])));
+  const items: CaseStudyCardView[] = fallback.map((item) => {
+    const db = dbBySlug.get(item.slug);
+    return {
+      slug: db?.slug ?? item.slug,
+      title: item.name,
+      badge: item.badge,
+      industry: item.industry,
+      goal: item.goal,
+      solution: item.solution,
+      result: item.result || db?.result || "",
+      cover: db?.cover ?? item.cover,
+    };
   });
 
   return (
     <section id="cases" className="py-16 md:py-24">
       <Container>
         <SectionHeader eyebrow={t("eyebrow")} title={t("title")} lead={t("lead")} />
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4">
-          {items.map((item, i) => {
-            const hex = item.cover.color?.startsWith("#");
-            const isLocalImage = item.cover.image?.startsWith("/");
-            const inner = (
-              <>
-                <div
-                  className={cn(
-                    "relative aspect-[3/2] overflow-hidden",
-                    item.cover.image ? "bg-[#fbf7fc]" : !hex ? item.cover.color ?? "bg-brand" : undefined,
-                  )}
-                  style={!item.cover.image && hex ? { background: item.cover.color ?? undefined } : undefined}
-                >
-                  <span
-                    aria-hidden
-                    className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,79,163,0.10),transparent_34%),radial-gradient(circle_at_90%_18%,rgba(139,92,246,0.12),transparent_30%)] opacity-0 transition-opacity duration-500 group-hover/case:opacity-100"
-                  />
-                  {item.cover.image && isLocalImage ? (
-                    <Image
-                      src={item.cover.image}
-                      alt={item.title}
-                      fill
-                      sizes="(min-width: 1280px) 278px, (min-width: 640px) 50vw, 100vw"
-                      className="object-contain object-center transition-transform duration-700 ease-out group-hover/case:scale-[1.04]"
-                    />
-                  ) : item.cover.image ? (
-                    <>
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={item.cover.image}
-                        alt={item.title}
-                        loading="lazy"
-                        decoding="async"
-                        className="absolute inset-0 h-full w-full object-contain object-center transition-transform duration-700 ease-out group-hover/case:scale-[1.04]"
-                      />
-                    </>
-                  ) : (
-                    <span className="absolute bottom-3.5 left-4 text-xl font-bold tracking-tight text-white transition-transform duration-700 ease-out group-hover/case:translate-x-1">
-                      {item.cover.label}
-                    </span>
-                  )}
-                </div>
-                <div className="flex flex-1 flex-col p-[18px]">
-                  {item.tag && (
-                    <span className="mb-2.5 w-fit rounded-md bg-brand-soft px-2 py-1 font-mono text-[11px] font-semibold text-brand-purple">
-                      {item.tag}
-                    </span>
-                  )}
-                  <h3 className="mb-1.5 text-lg font-bold text-dark">{item.title}</h3>
-                  <p className="text-sm text-muted">{item.desc}</p>
-                  <div className="mt-auto flex items-center justify-between border-t border-line pt-3.5">
-                    <b className="rounded-xl bg-emerald-50 px-3 py-1.5 text-[22px] leading-none text-emerald-700">
-                      {item.result}
-                    </b>
-                    <span className="inline-flex items-center gap-1 text-[13px] font-semibold text-brand-purple">
-                      {t("link")} <ArrowUpRight size={14} />
-                    </span>
-                  </div>
-                </div>
-              </>
-            );
-            const cardClass =
-              "card-border-glow group/case relative flex h-full flex-col overflow-hidden rounded-[18px] border border-line bg-white transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-purple/20 hover:shadow-[0_30px_82px_-48px_rgba(139,92,246,0.6)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-4";
-            return (
-              <Reveal key={i} delay={i * 80}>
-                {item.slug ? (
-                  <Link href={{ pathname: "/projekte/[slug]", params: { slug: item.slug } }} className={cardClass}>
-                    {inner}
-                  </Link>
-                ) : (
-                  <article className={cardClass}>{inner}</article>
-                )}
-              </Reveal>
-            );
-          })}
+        <p className="mx-auto -mt-3 mb-8 max-w-2xl text-center text-[14px] font-semibold text-muted">
+          {t("trustLine")}
+        </p>
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+          {items.map((item, i) => (
+            <CaseStudyCard key={item.slug ?? item.title} item={item} labels={labels} index={i} />
+          ))}
         </div>
         <div className="mt-10 text-center">
           <Link

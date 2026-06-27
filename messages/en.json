@@ -47,6 +47,7 @@
     "title": "Digital solutions for sustainable growth.",
     "lead": "Every business has different goals. That is why we do not build standard packages, but digital systems that fit your company.",
     "more": "Learn more",
+    "trustLine": "Business first: technology follows the goal, not the other way around.",
     "techNote": {
       "title": "Flexible technologies",
       "text": "Not every business needs the same technology. That is why we do not recommend a platform first, but the solution that best fits your goals. For new premium projects we usually prefer modern technologies such as Next.js and React. Existing WordPress websites can of course be modernized, extended or supported as well. For individual systems and integrations, Java can also be the right choice. The framework is not the deciding factor. The result is.",
@@ -120,6 +121,7 @@
     "eyebrow": "Pricing",
     "title": "Transparent fixed prices",
     "lead": "No hidden costs. You know exactly what you get.",
+    "trustLine": "Transparent entry packages. Individual offers based on project scope.",
     "popular": "Popular",
     "button": "Request",
     "packages": [
@@ -457,6 +459,61 @@
     "title": "Projects that create business impact",
     "lead": "Every project is designed as a growth system: more visibility, more trust and more qualified inquiries.",
     "link": "View case",
+    "trustLine": "Selected projects from gastronomy, beauty, trades and construction.",
+    "labels": {
+      "industry": "Industry",
+      "goal": "Goal",
+      "solution": "Solution",
+      "result": "Focus",
+      "cta": "View project"
+    },
+    "projects": [
+      {
+        "slug": "online-bookings-tripled",
+        "name": "Salon Elen / Permanent Halle",
+        "industry": "Beauty studio",
+        "goal": "More online appointments and local visibility",
+        "solution": "Modern presence with booking logic, multilingual structure and focus on local searches in Halle.",
+        "badge": "Beauty · Booking · Local SEO",
+        "result": "+212% online appointments"
+      },
+      {
+        "slug": "neue-liebe-nebra",
+        "name": "Neue Liebe",
+        "industry": "Restaurant / gastronomy",
+        "goal": "More visibility and a professional digital presence",
+        "solution": "Modern restaurant presence with clear structure, current content and strong mobile presentation.",
+        "badge": "Restaurant · SEO · Mobile First",
+        "result": "+176% direct bookings"
+      },
+      {
+        "slug": "direct-bookings-without-portals",
+        "name": "Waldschlösschen",
+        "industry": "Hotel & restaurant",
+        "goal": "More direct bookings and better presentation of hotel, restaurant and offers",
+        "solution": "Premium digital presence for gastronomy, hotel operations and regional visibility.",
+        "badge": "Hotel · Restaurant · Bookings",
+        "result": "+148% direct bookings"
+      },
+      {
+        "slug": "qualified-construction-leads",
+        "name": "SorgfaltBau",
+        "industry": "Construction company",
+        "goal": "More trust and qualified inquiries",
+        "solution": "Professional company presence that presents services clearly and builds trust with potential clients.",
+        "badge": "Construction · Trust · Inquiries",
+        "result": "Qualified inquiries"
+      },
+      {
+        "slug": "glaserei-schubert",
+        "name": "Glaserei Schubert",
+        "industry": "Trade / glazing",
+        "goal": "High-quality presentation of services and references",
+        "solution": "Modern presence for a trade business with focus on trust, clear services and local findability.",
+        "badge": "Trades · Services · Local SEO",
+        "result": "Trust & local visibility"
+      }
+    ],
     "items": [
       {
         "name": "Salon Elen",
@@ -521,22 +578,66 @@
     "all_": "All",
     "overview": "Overview",
     "year": "Year",
-    "challenge": "Challenge",
+    "caseBadge": "Case study",
+    "caseIntro": "A SaaleWeb project focused on visibility, trust and digital customer acquisition.",
+    "clientOverview": "Client overview",
+    "industry": "Industry",
+    "businessGoal": "Business goal",
+    "resultFocus": "Result / focus",
+    "challenge": "Starting point",
     "solution": "Solution",
-    "results": "Results",
+    "results": "Result",
     "gallery": "Gallery",
     "tech": "Technologies used",
     "result": "Result",
     "liveSite": "View live website",
-    "ctaTitle": "Will your project be the next one?",
-    "ctaText": "Let's talk about your website — free, honest and without jargon.",
+    "techFoundation": "Technical foundation",
+    "techFoundationText": "Depending on the project goal, SaaleWeb uses modern technologies such as Next.js, WordPress, headless CMS, individual booking systems or custom integrations. The framework is not the deciding factor — the right solution for the business is.",
+    "performanceNotes": "Performance & SEO",
+    "performanceNotesText": "The technical foundation is planned so loading speed, mobile user experience, indexability and clear content structure work together.",
+    "auditButton": "Analyze website",
+    "ctaTrust": "Non-binding. Personal. With a clear view of your business.",
+    "ctaTitle": "Would you like a similar result for your business?",
+    "ctaText": "Let us review together which digital solution makes sense for your goals.",
     "backToProjects": "All projects",
     "nextProject": "Next project",
     "challengeText": "The starting point and the goal: what should the new website achieve for the business?",
     "solutionText": "Our approach: a fast, modern system optimised for Google and AI — delivered clearly.",
     "resultsText": "The measurable result: more visibility, more enquiries and a presence that builds trust.",
     "all": "All projects",
-    "empty": "No projects published yet."
+    "empty": "No projects published yet.",
+    "caseDetails": {
+      "online-bookings-tripled": {
+        "industry": "Beauty studio",
+        "goal": "More online appointments and local visibility",
+        "result": "A professional beauty presence with digital appointment logic, clear service structure and multilingual user guidance.",
+        "performance": "Focus on fast mobile use, clear local search signals and a booking flow that guides visitors directly toward appointments."
+      },
+      "neue-liebe-nebra": {
+        "industry": "Restaurant / gastronomy",
+        "goal": "More visibility and a professional digital presence",
+        "result": "A modern restaurant presence that connects atmosphere, current content and mobile user guidance.",
+        "performance": "Focus on mobile presentation, fast orientation, local search queries and clear reservation paths."
+      },
+      "direct-bookings-without-portals": {
+        "industry": "Hotel & restaurant",
+        "goal": "More direct bookings and better presentation of hotel, restaurant and offers",
+        "result": "A premium hotel and restaurant presence focused on offers, bookings and regional visibility.",
+        "performance": "Focus on clear offer structure, mobile booking paths, local findability and fast loading times."
+      },
+      "qualified-construction-leads": {
+        "industry": "Construction company",
+        "goal": "More trust and qualified inquiries",
+        "result": "A professional construction company presence that explains services clearly and builds trust.",
+        "performance": "Focus on understandable service pages, regional relevance, clean technical setup and clear contact paths."
+      },
+      "glaserei-schubert": {
+        "industry": "Trade / glazing",
+        "goal": "High-quality presentation of services and references",
+        "result": "A modern trade-business presence with clear service presentation and professional external impact.",
+        "performance": "Focus on local findability, clear service structure, mobile readability and trust-building references."
+      }
+    }
   },
   "Industries": {
     "eyebrow": "Industries",
@@ -738,6 +839,7 @@
     "eyebrow": "Proven quality",
     "title": "Websites that perform measurably better.",
     "lead": "Speed is more than a technical value. Fast websites improve user experience, strengthen trust and create better conditions for visibility in search engines.",
+    "trustLine": "Real project values instead of marketing promises.",
     "imageAlt": "SaaleWeb performance proof with Lighthouse scores and digital dashboard",
     "metrics": [
       {
@@ -787,6 +889,17 @@
       "primary": "Free website analysis",
       "secondary": "Our projects"
     }
+  },
+  "AuthorityStrip": {
+    "title": "The SaaleWeb quality standard",
+    "items": [
+      "Performance optimized",
+      "SEO structured",
+      "Mobile first",
+      "AI ready",
+      "Maintainable",
+      "Business first"
+    ]
   },
   "Comparison": {
     "eyebrow": "Comparison",
@@ -851,9 +964,24 @@
     ]
   },
   "Founder": {
-    "role": "Founder & personal contact",
-    "title": "Your long-term digital partner.",
-    "bio": "You work directly with the developer who supports your project from the first idea to long-term development. No anonymous agency process. No changing contacts. Just a long-term collaboration at eye level.",
+    "role": "Direct contact",
+    "title": "Direct contact instead of anonymous agency processes.",
+    "bio": "At SaaleWeb you work directly with Konstantin Michailow — from the first concept to the long-term development of your website. That means short paths, clear communication and one contact person who truly knows your project.",
+    "cta": "Book first consultation",
+    "points": [
+      {
+        "title": "Personal support",
+        "text": "You speak directly with the person who supports your project technically and strategically."
+      },
+      {
+        "title": "Long-term collaboration",
+        "text": "After launch, your website does not stand still — it keeps developing."
+      },
+      {
+        "title": "Technology with responsibility",
+        "text": "Every decision is made according to what helps your business long term."
+      }
+    ],
     "stats": [
       {
         "value": "30+",
@@ -895,10 +1023,45 @@
     "servicesLabel": "Services",
     "industriesLabel": "Industries",
     "locationsLabel": "Locations",
-    "ctaTitle": "Ready for a website that helps your business grow?",
-    "ctaText": "Let us find out together which digital solution creates the highest value for your business.",
+    "ctaTitle": "Ready for a digital solution that truly moves your business forward?",
+    "ctaText": "Whether new website, relaunch, SEO, WordPress modernization or custom solution — we review together what makes sense for your business.",
     "ctaButton": "Free consultation",
-    "ctaSecondary": "Analyze website"
+    "ctaSecondary": "Request website analysis",
+    "ctaTrust": "Non-binding. Personal. With a clear view of your business."
+  },
+  "WebsiteAudit": {
+    "eyebrow": "Free analysis",
+    "title": "What is slowing your current website down?",
+    "subtitle": "Many websites look good at first glance — but lose customers through slow loading times, weak SEO structure or unclear user guidance.",
+    "text": "We review your website for performance, SEO, mobile user experience and technical fundamentals. Afterwards you receive concrete notes on what can be improved.",
+    "points": [
+      {
+        "title": "Performance",
+        "text": "Loading times, Core Web Vitals and technical speed."
+      },
+      {
+        "title": "SEO structure",
+        "text": "Titles, content, local search terms and indexability."
+      },
+      {
+        "title": "User guidance",
+        "text": "Clarity, calls to action and mobile usability."
+      },
+      {
+        "title": "Future readiness",
+        "text": "Technical foundation, maintainability and AI readiness."
+      }
+    ],
+    "name": "Name",
+    "email": "Email",
+    "website": "Website URL",
+    "message": "Optional message",
+    "button": "Request free website analysis",
+    "sending": "Sending...",
+    "trust": "Non-binding. Personally reviewed. No automated mass analysis.",
+    "successTitle": "Request received",
+    "successText": "We will review your website personally and get back to you with the next sensible steps.",
+    "error": "Please check your details."
   },
   "Cities": {
     "eyebrow": "Location",

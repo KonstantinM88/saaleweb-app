@@ -37,7 +37,8 @@ Instructions and project memory for coding agents working in this repository.
 - `src/widgets/` - page sections.
 - `src/widgets/testimonials/Testimonials.tsx` - homepage testimonial section; reads published testimonials from DB by locale and falls back to message JSON.
 - `src/widgets/services/Services.tsx` - homepage four-card business solution section sourced from `messages/*.json`, with localized links to service detail pages and a flexible-technology note.
-- `src/widgets/industries/Industries.tsx`, `src/widgets/case-studies/CaseStudies.tsx`, `src/widgets/faq/Faq.tsx` - homepage sections that read published DB content by locale with message fallbacks.
+- `src/widgets/industries/Industries.tsx`, `src/widgets/case-studies/CaseStudies.tsx`, `src/widgets/faq/Faq.tsx` - homepage sections that read published DB content by locale with message fallbacks. `CaseStudies` now renders five structured business-impact cards from message copy and enriches them with DB covers/details.
+- `src/widgets/case-studies/CaseStudyCard.tsx` - reusable homepage case-study card showing industry, business goal, solution/focus, result, and CTA.
 - `src/widgets/services-page/ServiceCard.tsx`, `src/widgets/services-page/serviceMeta.ts` - service index landing-page cards and canonical-slug benefit/icon mapping.
 - `src/widgets/projects-page/ProjectGrid.tsx` - client-side localized project index grid with accessible category filtering, stable fallback covers, optimized local images, result metrics, and full-card detail links.
 - `src/shared/ui/TrustMetrics.tsx` - shared interactive responsive performance/trust panel used by service, industry, and project index heroes; desktop uses pointer-aware tilt/glow, mobile uses a compact 2x2 layout, and all motion respects reduced-motion preferences.
@@ -52,6 +53,7 @@ Instructions and project memory for coding agents working in this repository.
 - `src/widgets/growth-window/GrowthWindow.tsx` - homepage premium scroll-window visual section using an optimized static WebP and CSS-only sticky positioning.
 - `src/widgets/why-saaleweb/WhySaaleWebSection.tsx` - conversion-focused homepage value section with four brand pillars and six practical business advantages.
 - `src/widgets/performance-proof/PerformanceProof.tsx` - homepage proof section after `WhySaaleWebSection`; uses `public/images/sections/saaleweb-performance-proof.webp`, Lighthouse-style metric cards, business-flow copy, and no heavy animation.
+- `src/widgets/authority-strip/AuthorityStrip.tsx` - small homepage authority strip after performance proof with the SaaleWeb quality standard pills.
 - `src/widgets/comparison/Comparison.tsx` and `src/widgets/comparison/BeforeAfter.tsx` - homepage before/after comparison rendered directly after `Services`; uses a client-side slider over old-fashioned vs premium modern WebP mockups plus the localized comparison table.
 - `public/images/comparison/` - static WebP assets for the legacy before/after comparison slider.
 - `public/images/cases/` - static WebP assets used as project/case study covers when media should live in the committed public asset tree.
@@ -79,8 +81,10 @@ Instructions and project memory for coding agents working in this repository.
 - `src/app/[locale]/leistungen/page.tsx` - localized service index page from DB content.
 - `src/app/[locale]/branchen/page.tsx` - localized industry index page from DB content.
 - `src/app/[locale]/projekte/` - localized project/case index and detail pages from DB content.
+- `src/widgets/project-detail/CaseStudyDetailPage.tsx` - reusable semantic wrapper for public project/case detail pages.
 - `src/app/[locale]/kontakt/page.tsx` - localized SEO/GEO contact conversion landing page with premium code-native workspace visual, six-step process, trust/expectation sections, Local SEO and AI-search copy, ContactPage/Organization/LocalBusiness/FAQ/Breadcrumb JSON-LD, and `ContactPageForm`.
 - `src/widgets/contact/ContactPageForm.tsx` - premium contact-page form with extra context fields (`projectWebsite`, project type, budget, phone, privacy consent) while keeping the legacy `website` honeypot name untouched.
+- `src/widgets/website-audit/WebsiteAuditSection.tsx` - homepage free website audit lead magnet; submits through the existing contact server action with source `website_audit`.
 - `src/app/[locale]/preise/page.tsx` - localized pricing page from DB-backed tariff plans.
 - `src/app/admin/` - non-localized protected admin/CMS area.
 - `src/features/auth/` - env-based admin authentication, JWT session cookie, login/logout actions.
@@ -178,7 +182,7 @@ Instructions and project memory for coding agents working in this repository.
 - For accessibility contrast, small decorative labels should not use the default light brand purple directly on white. The shared `.eyebrow` uses `#6D28D9`, and success text on light cards should use `text-emerald-700` instead of `text-success`.
 - German public URLs are unprefixed because `localePrefix` is `as-needed`; use `next-intl` `Link`/`getPathname` for public links instead of hardcoding `/de/...`.
 - Contact form validation lives in `src/features/contact/schema.ts`; server action lives in `src/features/contact/actions.ts`.
-- Contact form stores `Lead` rows with source `homepage_contact` or `contact_page` and has a honeypot field named `website`. The contact-page visible website field must use `projectWebsite`, not `website`, so the honeypot stays effective.
+- Contact form stores `Lead` rows with source `homepage_contact`, `contact_page`, or `website_audit` and has a honeypot field named `website`. The contact-page/audit visible website field must use `projectWebsite`, not `website`, so the honeypot stays effective. Website audit requests require `projectWebsite` but allow an optional message.
 - Contact form optionally sends a Resend email notification after storing a lead. `sendLeadNotification()` must never throw or block a successful form submission if email delivery fails.
 - Blog content is DB-backed through `BlogPost`, `BlogCategory`, `Author`, and translation tables. Article body content is Markdown stored in `BlogPostTranslation.content`.
 - Homepage testimonials are DB-backed through `Testimonial` / `TestimonialTranslation`; admin testimonial create/update/delete/toggle actions must revalidate `/`, `/de`, `/en`, and `/ru`.
@@ -310,3 +314,4 @@ Instructions and project memory for coding agents working in this repository.
 - 2026-06-26: Added React and Java to the visible flexible-technology chips in both the homepage `Services` technology note and `TechStack` section across DE/EN/RU. Updated `TechStack.noteText` to mention Next.js/React platforms, Java integrations, and WordPress solutions as business-fit options.
 - 2026-06-26: Aligned the homepage hero dashboard SEO score with the site's broader 100/100 quality messaging by changing the hardcoded `SEO Score` count-up and ring in `src/widgets/hero/Dashboard.tsx` from 98 to 100.
 - 2026-06-26: Applied SaaleWeb homepage Phase 2 brand copywriting. Updated DE/EN/RU hero, case-study impact labels, Why SaaleWeb pillars/advantages, performance proof, AI-ready, founder, and final CTA copy for a calmer business-growth message. Homepage `Services` now renders four message-defined business solution cards with localized detail links and keeps the flexible-technology note; `Services.items` remains available for footer/static uses. `CaseStudies` can overlay business-impact copy from `CaseStudies.impacts` onto DB projects by localized slug.
+- 2026-06-27: Applied SaaleWeb homepage Phase 3 trust/authority layer. Added `AuthorityStrip`, `WebsiteAuditSection`, reusable `CaseStudyCard`, and `TrustPointCard`; upgraded homepage case cards to show industry, goal, solution, focus/result, and CTA for five projects; updated project detail pages with case-study badge, client overview, technical foundation, performance/SEO notes, and audit CTA; added `website_audit` lead source. Added repeatable `npm run db:sync-phase3-projects` to upsert the five case-study projects, including Glaserei Schubert without invented metrics.
