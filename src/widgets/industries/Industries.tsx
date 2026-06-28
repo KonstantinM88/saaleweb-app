@@ -6,6 +6,8 @@ import { Link } from "@/i18n/navigation";
 import { Container } from "@/shared/ui/Container";
 import { Reveal } from "@/shared/ui/Reveal";
 import { SectionHeader } from "@/shared/ui/SectionHeader";
+import { Phase4LinkCluster, type Phase4HubCopy } from "@/widgets/seo-landing/Phase4LinkCluster";
+import { getPhase4IndustryLinks } from "@/widgets/seo-landing/phase4Content";
 
 type StaticItem = { name: string; desc: string };
 type Item = {
@@ -66,6 +68,8 @@ async function getDbIndustries(locale: AppLocale): Promise<Item[]> {
 export async function Industries() {
   const locale = (await getLocale()) as AppLocale;
   const t = await getTranslations({ locale, namespace: "Industries" });
+  const seoHub = t.raw("seoHub") as Phase4HubCopy;
+  const seoLinks = getPhase4IndustryLinks(locale);
   const fallback = (t.raw("items") as StaticItem[]).map((item, i) => ({
     ...item,
     slug: fallbackSlugs[locale][i],
@@ -108,6 +112,8 @@ export async function Industries() {
             </Reveal>
           ))}
         </div>
+
+        <Phase4LinkCluster copy={seoHub} links={seoLinks} compact />
       </Container>
     </section>
   );

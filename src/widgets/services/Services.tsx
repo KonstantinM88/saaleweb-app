@@ -4,6 +4,8 @@ import { Link } from "@/i18n/navigation";
 import { Container } from "@/shared/ui/Container";
 import { Reveal } from "@/shared/ui/Reveal";
 import { SectionHeader } from "@/shared/ui/SectionHeader";
+import { Phase4LinkCluster, type Phase4HubCopy } from "@/widgets/seo-landing/Phase4LinkCluster";
+import { getPhase4LocationLinks, getPhase4ServiceLinks } from "@/widgets/seo-landing/phase4Content";
 
 type Solution = { title: string; desc: string };
 type TechNote = { title: string; text: string; chips: string[] };
@@ -34,6 +36,8 @@ export async function Services() {
   const locale = (await getLocale()) as AppLocale;
   const t = await getTranslations({ locale, namespace: "Services" });
   const techNote = t.raw("techNote") as TechNote;
+  const seoHub = t.raw("seoHub") as Phase4HubCopy;
+  const seoLinks = [...getPhase4ServiceLinks(locale).slice(0, 6), ...getPhase4LocationLinks(locale).slice(0, 2)];
   const items = (t.raw("solutions") as Solution[]).map((item, i) => ({
     ...item,
     slug: solutionSlugs[locale][i],
@@ -96,6 +100,8 @@ export async function Services() {
             </div>
           </div>
         </Reveal>
+
+        <Phase4LinkCluster copy={seoHub} links={seoLinks} compact />
       </Container>
     </section>
   );

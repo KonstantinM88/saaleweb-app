@@ -13,6 +13,9 @@ import { CtaBanner } from "@/shared/ui/CtaBanner";
 import { BrandText } from "@/shared/ui/BrandText";
 import { JsonLd } from "@/shared/seo/JsonLd";
 import { localBusinessSchema, breadcrumbSchema } from "@/shared/seo/schema";
+import { buildMetadata } from "@/shared/seo/metadata";
+import { Phase4LandingPage } from "@/widgets/seo-landing/Phase4LandingPage";
+import { getLocationIndustries, getLocationPage } from "@/widgets/seo-landing/phase4Content";
 
 type Params = { locale: string; slug: string };
 
@@ -30,6 +33,28 @@ export async function generateMetadata({
   const { locale, slug } = await params;
   const city = getCity(slug);
   if (!city || !hasLocale(routing.locales, locale)) return {};
+  const locationPage = getLocationPage(slug, locale);
+  if (locationPage) {
+    const path = getPathname({
+      locale,
+      href: { pathname: "/standorte/[slug]", params: { slug } },
+    });
+    const languages = Object.fromEntries(
+      routing.locales.map((l) => [
+        l,
+        getPathname({ locale: l, href: { pathname: "/standorte/[slug]", params: { slug } } }),
+      ]),
+    );
+    return buildMetadata({
+      path: `/standorte/${slug}`,
+      canonical: path,
+      locale,
+      title: locationPage.metaTitle,
+      description: locationPage.metaDescription,
+      eyebrow: locationPage.cityName,
+      languages,
+    });
+  }
   const t = await getTranslations({ locale, namespace: "Cities" });
   const languages = Object.fromEntries(
     routing.locales.map((l) => [
@@ -58,6 +83,30 @@ export default async function CityPage({ params }: { params: Promise<Params> }) 
     href: { pathname: "/standorte/[slug]", params: { slug } },
   });
   const homePath = locale === routing.defaultLocale ? "/" : `/${locale}`;
+  const locationPage = getLocationPage(slug, locale);
+
+  if (locationPage) {
+    const extraCardsTitle =
+      locale === "en"
+        ? "Industries in this region"
+        : locale === "ru"
+          ? "Отрасли в этом регионе"
+          : "Branchen in dieser Region";
+    return (
+      <Phase4LandingPage
+        page={{
+          ...locationPage,
+          relatedLinks: [...locationPage.relatedLinks, ...locationPage.nearby],
+        }}
+        locale={locale}
+        path={path}
+        parent={{ name: tp("locationsLabel") }}
+        schemaKind="location"
+        areaServed={city.name}
+        extraCards={{ title: extraCardsTitle, cards: getLocationIndustries(locale) }}
+      />
+    );
+  }
 
   return (
     <>

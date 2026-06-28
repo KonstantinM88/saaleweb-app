@@ -20,18 +20,32 @@ import { LocaleSlugsProvider } from "@/features/language-switcher/LocaleSlugsCon
 import { FaqAccordion } from "@/widgets/faq/FaqAccordion";
 import { industryContent } from "@/widgets/industry-detail/industryContent";
 import { IndustryGlyph } from "@/widgets/industries-page/IndustryGlyph";
+import { Phase4LandingPage } from "@/widgets/seo-landing/Phase4LandingPage";
+import {
+  getSeoIndustryPage,
+  getSeoIndustrySlugMapByLocalizedSlug,
+  getSeoIndustryStaticParams,
+} from "@/widgets/seo-landing/phase4Content";
 
 type Params = { locale: string; slug: string };
 
 export async function generateStaticParams() {
+  const staticParams = getSeoIndustryStaticParams();
   try {
     const rows = (await prisma.industryTranslation.findMany({
       where: { industry: { published: true } },
       select: { locale: true, slug: true },
     })) as { locale: string; slug: string }[];
-    return rows.map((r) => ({ locale: r.locale, slug: r.slug }));
+    const params = [...rows.map((r) => ({ locale: r.locale, slug: r.slug })), ...staticParams];
+    const seen = new Set<string>();
+    return params.filter((p) => {
+      const key = `${p.locale}:${p.slug}`;
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
   } catch {
-    return [];
+    return staticParams;
   }
 }
 
@@ -67,6 +81,29 @@ async function getIndustryData(locale: AppLocale, slug: string) {
 export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
   const { locale, slug } = await params;
   if (!hasLocale(routing.locales, locale)) return {};
+  const seoPage = getSeoIndustryPage(slug, locale);
+  const seoSlugMap = getSeoIndustrySlugMapByLocalizedSlug(locale, slug);
+  if (seoPage && seoSlugMap) {
+    const path = getPathname({ locale, href: { pathname: "/branchen/[slug]", params: { slug } } });
+    const languages = Object.fromEntries(
+      routing.locales.map((l) => [
+        l,
+        getPathname({
+          locale: l,
+          href: { pathname: "/branchen/[slug]", params: { slug: seoSlugMap[l] } },
+        }),
+      ]),
+    );
+    return buildMetadata({
+      path: `/branchen/${seoSlugMap.de}`,
+      canonical: path,
+      locale,
+      title: seoPage.metaTitle,
+      description: seoPage.metaDescription,
+      eyebrow: seoPage.eyebrow,
+      languages,
+    });
+  }
   const data = await getIndustryData(locale, slug);
   if (!data) return {};
   const tp = await getTranslations({ locale, namespace: "Pages" });
@@ -86,6 +123,25 @@ export default async function IndustryPage({ params }: { params: Promise<Params>
   const { locale, slug } = await params;
   if (!hasLocale(routing.locales, locale)) notFound();
   setRequestLocale(locale);
+
+  const seoPage = getSeoIndustryPage(slug, locale);
+  const seoSlugMap = getSeoIndustrySlugMapByLocalizedSlug(locale, slug);
+  if (seoPage && seoSlugMap) {
+    const tp = await getTranslations({ locale, namespace: "Pages" });
+    const path = getPathname({ locale, href: { pathname: "/branchen/[slug]", params: { slug } } });
+    const industriesPath = getPathname({ locale, href: "/branchen" });
+
+    return (
+      <Phase4LandingPage
+        page={seoPage}
+        locale={locale}
+        path={path}
+        parent={{ name: tp("industriesLabel"), href: "/branchen", path: industriesPath }}
+        schemaKind="industry"
+        localeSlugs={seoSlugMap}
+      />
+    );
+  }
 
   const data = await getIndustryData(locale, slug);
   if (!data) notFound();

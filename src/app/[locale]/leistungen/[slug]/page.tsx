@@ -19,18 +19,32 @@ import { getContactHref } from "@/shared/lib/contactHref";
 import { LocaleSlugsProvider } from "@/features/language-switcher/LocaleSlugsContext";
 import { FaqAccordion } from "@/widgets/faq/FaqAccordion";
 import { serviceContent } from "@/widgets/service-detail/serviceContent";
+import { Phase4LandingPage } from "@/widgets/seo-landing/Phase4LandingPage";
+import {
+  getSeoServicePage,
+  getSeoServiceSlugMapByLocalizedSlug,
+  getSeoServiceStaticParams,
+} from "@/widgets/seo-landing/phase4Content";
 
 type Params = { locale: string; slug: string };
 
 export async function generateStaticParams() {
+  const staticParams = getSeoServiceStaticParams();
   try {
     const rows = (await prisma.serviceTranslation.findMany({
       where: { service: { published: true } },
       select: { locale: true, slug: true },
     })) as { locale: string; slug: string }[];
-    return rows.map((r) => ({ locale: r.locale, slug: r.slug }));
+    const params = [...rows.map((r) => ({ locale: r.locale, slug: r.slug })), ...staticParams];
+    const seen = new Set<string>();
+    return params.filter((p) => {
+      const key = `${p.locale}:${p.slug}`;
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
   } catch {
-    return [];
+    return staticParams;
   }
 }
 
@@ -66,6 +80,29 @@ async function getServiceData(locale: AppLocale, slug: string) {
 export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
   const { locale, slug } = await params;
   if (!hasLocale(routing.locales, locale)) return {};
+  const seoPage = getSeoServicePage(slug, locale);
+  const seoSlugMap = getSeoServiceSlugMapByLocalizedSlug(locale, slug);
+  if (seoPage && seoSlugMap) {
+    const path = getPathname({ locale, href: { pathname: "/leistungen/[slug]", params: { slug } } });
+    const languages = Object.fromEntries(
+      routing.locales.map((l) => [
+        l,
+        getPathname({
+          locale: l,
+          href: { pathname: "/leistungen/[slug]", params: { slug: seoSlugMap[l] } },
+        }),
+      ]),
+    );
+    return buildMetadata({
+      path: `/leistungen/${seoSlugMap.de}`,
+      canonical: path,
+      locale,
+      title: seoPage.metaTitle,
+      description: seoPage.metaDescription,
+      eyebrow: seoPage.eyebrow,
+      languages,
+    });
+  }
   const data = await getServiceData(locale, slug);
   if (!data) return {};
   const tp = await getTranslations({ locale, namespace: "Pages" });
@@ -85,6 +122,25 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
   const { locale, slug } = await params;
   if (!hasLocale(routing.locales, locale)) notFound();
   setRequestLocale(locale);
+
+  const seoPage = getSeoServicePage(slug, locale);
+  const seoSlugMap = getSeoServiceSlugMapByLocalizedSlug(locale, slug);
+  if (seoPage && seoSlugMap) {
+    const tp = await getTranslations({ locale, namespace: "Pages" });
+    const path = getPathname({ locale, href: { pathname: "/leistungen/[slug]", params: { slug } } });
+    const servicesPath = getPathname({ locale, href: "/leistungen" });
+
+    return (
+      <Phase4LandingPage
+        page={seoPage}
+        locale={locale}
+        path={path}
+        parent={{ name: tp("servicesLabel"), href: "/leistungen", path: servicesPath }}
+        schemaKind="service"
+        localeSlugs={seoSlugMap}
+      />
+    );
+  }
 
   const data = await getServiceData(locale, slug);
   if (!data) notFound();

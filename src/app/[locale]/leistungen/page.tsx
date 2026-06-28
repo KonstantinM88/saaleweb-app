@@ -28,6 +28,8 @@ import { buildMetadata } from "@/shared/seo/metadata";
 import { TrustMetrics } from "@/shared/ui/TrustMetrics";
 import { ServiceCard, type ServiceCardData } from "@/widgets/services-page/ServiceCard";
 import { FaqAccordion, type QA } from "@/widgets/faq/FaqAccordion";
+import { Phase4LinkCluster, type Phase4HubCopy } from "@/widgets/seo-landing/Phase4LinkCluster";
+import { getPhase4LocationLinks, getPhase4ServiceLinks } from "@/widgets/seo-landing/phase4Content";
 
 export const revalidate = 300;
 
@@ -107,6 +109,8 @@ export default async function ServicesIndexPage({ params }: { params: Promise<Pa
   const steps = t.raw("process") as Step[];
   const results = t.raw("results") as Result[];
   const faq = t.raw("faq") as QA[];
+  const seoHub = t.raw("seoHub") as Phase4HubCopy;
+  const seoLinks = [...getPhase4ServiceLinks(locale), ...getPhase4LocationLinks(locale).slice(0, 3)];
 
   const homePath = locale === routing.defaultLocale ? "/" : `/${locale}`;
   const servicesPath = getPathname({ locale, href: "/leistungen" });
@@ -235,6 +239,8 @@ export default async function ServicesIndexPage({ params }: { params: Promise<Pa
                 ))}
               </div>
             )}
+
+            <Phase4LinkCluster copy={seoHub} links={seoLinks} />
           </Container>
         </section>
 

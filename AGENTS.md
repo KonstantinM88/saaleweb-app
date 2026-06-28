@@ -58,7 +58,7 @@ Instructions and project memory for coding agents working in this repository.
 - `public/images/comparison/` - static WebP assets for the legacy before/after comparison slider.
 - `public/images/cases/` - static WebP assets used as project/case study covers when media should live in the committed public asset tree.
 - `public/images/sections/` - static optimized WebP/WebM assets for non-record-specific homepage/landing sections.
-- `public/llms.txt` - Markdown-formatted LLM discovery file with one H1, Markdown links, and concise service/industry/project/contact sections; `next.config.ts` serves it as `text/markdown; charset=utf-8`.
+- `public/llms.txt` - Markdown-formatted LLM discovery file with one H1, Markdown links, commercial service pages, industry pages, locations, projects, technology positioning, and contact; `next.config.ts` serves it as `text/markdown; charset=utf-8`.
 - `src/widgets/tech-stack/CodeWindow.tsx` - code-native animated editor/build scene used inside the tech-stack homepage section.
 - `src/widgets/blog/` - blog UI pieces such as post cards, table of contents, and share buttons.
 - `src/features/` - interactive feature units such as contact and language switching.
@@ -82,6 +82,9 @@ Instructions and project memory for coding agents working in this repository.
 - `src/app/[locale]/branchen/page.tsx` - localized industry index page from DB content.
 - `src/app/[locale]/projekte/` - localized project/case index and detail pages from DB content.
 - `src/widgets/project-detail/CaseStudyDetailPage.tsx` - reusable semantic wrapper for public project/case detail pages.
+- `src/widgets/seo-landing/phase4Content.ts` - code-backed DE/EN/RU Phase 4 SEO/GEO/AIO landing-page content for commercial service slugs, industry slugs, enhanced location pages, slug maps, sitemap groups, and visible link hubs.
+- `src/widgets/seo-landing/Phase4LandingPage.tsx` - reusable premium server-rendered landing-page shell with localized hero, problem/solution, technology, process, related cases, internal links, audit CTA, FAQ, JSON-LD, and language-switcher slug support.
+- `src/widgets/seo-landing/Phase4LinkCluster.tsx` - reusable visible link hub used on homepage services/industries and the `/leistungen` / `/branchen` index pages to expose Phase 4 SEO pages directly.
 - `src/app/[locale]/kontakt/page.tsx` - localized SEO/GEO contact conversion landing page with premium code-native workspace visual, six-step process, trust/expectation sections, Local SEO and AI-search copy, ContactPage/Organization/LocalBusiness/FAQ/Breadcrumb JSON-LD, and `ContactPageForm`.
 - `src/widgets/contact/ContactPageForm.tsx` - premium contact-page form with extra context fields (`projectWebsite`, project type, budget, phone, privacy consent) while keeping the legacy `website` honeypot name untouched.
 - `src/widgets/website-audit/WebsiteAuditSection.tsx` - homepage free website audit lead magnet; submits through the existing contact server action with source `website_audit`.
@@ -225,6 +228,16 @@ Instructions and project memory for coding agents working in this repository.
 - Run `npm run build` when routing, i18n, metadata, Prisma generation, or Next.js config changes.
 - If Prisma schema changes, run `npm run db:generate` and the appropriate database command when `.env` is available.
 - After runtime HTTP verification, stop every temporary dev/production server started for the check and confirm its test port is no longer listening. Do not leave verification ports occupied.
+- Fast verification recipe for this Windows workspace:
+  - Start shell checks with Node on PATH and use `npm.cmd`: `$env:Path = 'C:\Program Files\nodejs;C:\Windows\System32;C:\Windows;' + $env:Path`.
+  - For `messages/*.json` edits, first run a small Node `JSON.parse` check over `messages/de.json`, `messages/en.json`, and `messages/ru.json`; then run the normal TypeScript/lint checks.
+  - For static `public/` text files only, `git diff --check` plus file/content review is usually enough unless headers, routes, sitemap, or served behavior changed.
+  - For TypeScript/UI edits, run `npm.cmd run typecheck` and `npm.cmd run lint`.
+  - For routing, localized URLs, metadata, sitemap, JSON-LD, Next config, or generated/static params, run `npm.cmd run build` after typecheck/lint.
+  - For localized route work, verify real public URLs with HTTP, not only the Next build route list. next-intl route output may show internal segments such as `/en/leistungen`, while the public URL should be `/en/services`.
+  - For runtime smoke tests, use a high temporary port such as `3146`, confirm it is free with `Get-NetTCPConnection -LocalPort <port> -State Listen`, start `next start` through `Start-Process -WindowStyle Hidden`, save the returned PID, and verify representative DE/EN/RU URLs with `fetch` or `Invoke-WebRequest`.
+  - After runtime checks, stop the saved PID and then also stop any remaining `OwningProcess` still listening on the test port. Finish by confirming `Get-NetTCPConnection -LocalPort <port> -State Listen` returns nothing.
+  - When verifying Cyrillic content from PowerShell/Node one-liners, console output can show mojibake or `???`; use UTF-8 file reads, Unicode escape needles, or browser/runtime HTML checks before assuming the source file is corrupted.
 
 ## Local Workspace Notes
 
@@ -315,3 +328,5 @@ Instructions and project memory for coding agents working in this repository.
 - 2026-06-26: Aligned the homepage hero dashboard SEO score with the site's broader 100/100 quality messaging by changing the hardcoded `SEO Score` count-up and ring in `src/widgets/hero/Dashboard.tsx` from 98 to 100.
 - 2026-06-26: Applied SaaleWeb homepage Phase 2 brand copywriting. Updated DE/EN/RU hero, case-study impact labels, Why SaaleWeb pillars/advantages, performance proof, AI-ready, founder, and final CTA copy for a calmer business-growth message. Homepage `Services` now renders four message-defined business solution cards with localized detail links and keeps the flexible-technology note; `Services.items` remains available for footer/static uses. `CaseStudies` can overlay business-impact copy from `CaseStudies.impacts` onto DB projects by localized slug.
 - 2026-06-27: Applied SaaleWeb homepage Phase 3 trust/authority layer. Added `AuthorityStrip`, `WebsiteAuditSection`, reusable `CaseStudyCard`, and `TrustPointCard`; upgraded homepage case cards to show industry, goal, solution, focus/result, and CTA for five projects; updated project detail pages with case-study badge, client overview, technical foundation, performance/SEO notes, and audit CTA; added `website_audit` lead source. Added repeatable `npm run db:sync-phase3-projects` to upsert the five case-study projects, including Glaserei Schubert without invented metrics.
+- 2026-06-28: Applied SaaleWeb Phase 4 SEO/GEO/AIO landing architecture without redesigning the homepage. Added DE/EN/RU commercial service slugs under `/leistungen/[slug]` / `/en/services/[slug]` / `/ru/uslugi/[slug]`, DE/EN/RU industry slugs under `/branchen/[slug]` / `/en/industries/[slug]` / `/ru/otrasli/[slug]`, and enhanced localized location pages for Halle, Leipzig, Merseburg, Schkeuditz, Delitzsch, and Saalekreis. Static Phase 4 pages use `Phase4LandingPage`, `phase4Content`, localized slug maps for `LanguageSwitcher`, JSON-LD Service/LocalBusiness/Breadcrumb/FAQ schemas, canonical metadata, hreflang sitemap groups, internal links, and Website Audit CTAs; existing DB-backed service/industry pages remain as fallback for non-Phase-4 slugs. Visible `Phase4LinkCluster` hubs on homepage services/industries plus `/leistungen` and `/branchen` expose the Phase 4 pages as direct user-facing links.
+- 2026-06-28: Added a fast verification recipe to `AGENTS.md` after repeated time loss around Windows Node PATH, localized route smoke tests, PowerShell/Cyrillic console encoding, and temporary `next start` ports left listening. Future checks should follow the documented order: JSON parse when messages change, typecheck/lint for TS/UI, build for routing/i18n/metadata/sitemap, HTTP smoke tests for public localized URLs, and explicit port cleanup by saved PID plus remaining `OwningProcess`.

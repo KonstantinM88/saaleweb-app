@@ -48,6 +48,11 @@
     "lead": "Jedes Unternehmen hat andere Ziele. Deshalb entwickeln wir keine Standardlösungen, sondern digitale Systeme, die zu Ihrem Unternehmen passen.",
     "more": "Mehr erfahren",
     "trustLine": "Business First: Die Technologie folgt dem Ziel – nicht umgekehrt.",
+    "seoHub": {
+      "eyebrow": "Gefragte Suchseiten",
+      "title": "Direkte Wege zu den wichtigsten Leistungen",
+      "lead": "Diese Seiten bündeln konkrete Anfragen wie Webdesign Halle, SEO Halle, Website-Relaunch, WordPress-Modernisierung und Buchungssysteme."
+    },
     "techNote": {
       "title": "Flexible Technologien",
       "text": "Nicht jedes Unternehmen benötigt dieselbe Technologie. Deshalb empfehlen wir keine Plattform – sondern die Lösung, die am besten zu Ihren Zielen passt. Für neue Premium-Projekte setzen wir bevorzugt auf moderne Technologien wie Next.js und React. Bestehende WordPress-Websites modernisieren, erweitern oder betreuen wir selbstverständlich ebenfalls. Für individuelle Systeme und Integrationen kann auch Java sinnvoll sein. Entscheidend ist nicht das Framework. Entscheidend ist das Ergebnis.",
@@ -643,6 +648,11 @@
     "eyebrow": "Branchen",
     "title": "Spezialisiert auf Ihre Branche",
     "lead": "Maßgeschneiderte Lösungen mit Branchenwissen und passenden Inhalten.",
+    "seoHub": {
+      "eyebrow": "Branchenseiten",
+      "title": "Spezialisierte Seiten für typische Branchen",
+      "lead": "Für Restaurants, Hotels, Beauty Studios, Bauunternehmen, Handwerk und Glasereien gibt es eigene Einstiege mit passender Struktur und relevanten Beispielen."
+    },
     "items": [
       {
         "name": "Hotels",
@@ -1112,6 +1122,11 @@
     "servicesEyebrow": "Was wir für Sie tun",
     "servicesTitle": "Alles für Ihre digitale Sichtbarkeit — aus einer Hand",
     "servicesLead": "Sie müssen nicht mehrere Dienstleister koordinieren. Von der Idee bis zur laufenden Betreuung kümmern wir uns um alles.",
+    "seoHub": {
+      "eyebrow": "SEO-Landingpages",
+      "title": "Direkte Links zu gefragten Leistungen",
+      "lead": "Wenn Sie schon wissen, wonach Sie suchen, führen diese Seiten direkt zu passenden Angeboten für Website, SEO, Relaunch, Wartung, Performance und KI-Suche."
+    },
     "outcomesLabel": "Das bringt Ihnen das:",
     "learnMore": "Mehr erfahren",
     "processEyebrow": "So arbeiten wir",

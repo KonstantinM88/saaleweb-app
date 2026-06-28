@@ -48,6 +48,11 @@
     "lead": "Every business has different goals. That is why we do not build standard packages, but digital systems that fit your company.",
     "more": "Learn more",
     "trustLine": "Business first: technology follows the goal, not the other way around.",
+    "seoHub": {
+      "eyebrow": "High-intent search pages",
+      "title": "Direct paths to the most important services",
+      "lead": "These pages cover concrete searches such as web design Halle, SEO Halle, website relaunch, WordPress modernization and booking systems."
+    },
     "techNote": {
       "title": "Flexible technologies",
       "text": "Not every business needs the same technology. That is why we do not recommend a platform first, but the solution that best fits your goals. For new premium projects we usually prefer modern technologies such as Next.js and React. Existing WordPress websites can of course be modernized, extended or supported as well. For individual systems and integrations, Java can also be the right choice. The framework is not the deciding factor. The result is.",
@@ -643,6 +648,11 @@
     "eyebrow": "Industries",
     "title": "Specialized in your industry",
     "lead": "Tailored solutions with industry know-how and the right content.",
+    "seoHub": {
+      "eyebrow": "Industry pages",
+      "title": "Specialized pages for typical industries",
+      "lead": "Restaurants, hotels, beauty studios, construction companies, trades and glazing businesses get their own entry points with relevant structure and examples."
+    },
     "items": [
       {
         "name": "Hotels",
@@ -1112,6 +1122,11 @@
     "servicesEyebrow": "What we do for you",
     "servicesTitle": "Everything for your online visibility — from one partner",
     "servicesLead": "No need to juggle several agencies. From the first idea to ongoing care, we handle it all.",
+    "seoHub": {
+      "eyebrow": "SEO landing pages",
+      "title": "Direct links to high-intent services",
+      "lead": "If you already know what you need, these pages lead directly to offers for websites, SEO, relaunch, maintenance, performance and AI search."
+    },
     "outcomesLabel": "What this means for you:",
     "learnMore": "Learn more",
     "processEyebrow": "How we work",

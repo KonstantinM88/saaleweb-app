@@ -19,6 +19,8 @@ import { breadcrumbSchema } from "@/shared/seo/schema";
 import { buildMetadata } from "@/shared/seo/metadata";
 import { getContactHref } from "@/shared/lib/contactHref";
 import { IndustryCard, type IndustryCardData } from "@/widgets/industries-page/IndustryCard";
+import { Phase4LinkCluster, type Phase4HubCopy } from "@/widgets/seo-landing/Phase4LinkCluster";
+import { getPhase4IndustryLinks, getPhase4LocationLinks } from "@/widgets/seo-landing/phase4Content";
 
 export const revalidate = 300;
 
@@ -91,6 +93,8 @@ export default async function IndustriesIndexPage({ params }: { params: Promise<
   const ti = await getTranslations({ locale, namespace: "IndustriesPage" });
   const tp = await getTranslations({ locale, namespace: "Pages" });
   const items = await getItems(locale);
+  const seoHub = t.raw("seoHub") as Phase4HubCopy;
+  const seoLinks = [...getPhase4IndustryLinks(locale), ...getPhase4LocationLinks(locale).slice(0, 3)];
   const homePath = locale === routing.defaultLocale ? "/" : `/${locale}`;
   const contactHref = getContactHref(locale);
 
@@ -176,6 +180,8 @@ export default async function IndustriesIndexPage({ params }: { params: Promise<
                 ))}
               </div>
             )}
+
+            <Phase4LinkCluster copy={seoHub} links={seoLinks} />
           </Container>
         </section>
 

@@ -5,6 +5,7 @@ import { siteConfig } from "@/shared/config/site";
 import { cities } from "@/shared/config/cities";
 import { getBlogSlugGroups, getCategorySlugGroups } from "@/entities/blog/api";
 import { prisma } from "@/lib/prisma";
+import { getSeoIndustrySlugGroups, getSeoServiceSlugGroups } from "@/widgets/seo-landing/phase4Content";
 
 const BASE = siteConfig.url;
 const abs = (p: string) => `${BASE}${p}`;
@@ -55,6 +56,35 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         "monthly",
       ),
     );
+  }
+
+  // Phase 4 commercial SEO/GEO landing pages grouped by localized slugs.
+  for (const slugs of getSeoServiceSlugGroups()) {
+    const languages = Object.fromEntries(
+      routing.locales.map((l) => [
+        l,
+        abs(getPathname({ locale: l, href: { pathname: "/leistungen/[slug]", params: { slug: slugs[l] } } })),
+      ]),
+    );
+    const path = getPathname({
+      locale: routing.defaultLocale,
+      href: { pathname: "/leistungen/[slug]", params: { slug: slugs.de } },
+    });
+    entries.push(entry(routing.defaultLocale, path, languages, 0.85, "monthly"));
+  }
+
+  for (const slugs of getSeoIndustrySlugGroups()) {
+    const languages = Object.fromEntries(
+      routing.locales.map((l) => [
+        l,
+        abs(getPathname({ locale: l, href: { pathname: "/branchen/[slug]", params: { slug: slugs[l] } } })),
+      ]),
+    );
+    const path = getPathname({
+      locale: routing.defaultLocale,
+      href: { pathname: "/branchen/[slug]", params: { slug: slugs.de } },
+    });
+    entries.push(entry(routing.defaultLocale, path, languages, 0.78, "monthly"));
   }
 
   // Blog posts (MDX) — grouped by post for hreflang
@@ -116,7 +146,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // No DB during build — file-based routes are emitted regardless.
   }
 
-  return entries;
+  return dedupeEntries(entries);
 }
 
 function groupDbEntries<T extends { locale: string; slug: string }>(
@@ -143,5 +173,15 @@ function groupDbEntries<T extends { locale: string; slug: string }>(
       0.8,
       "monthly",
     );
+  });
+}
+
+function dedupeEntries(entries: MetadataRoute.Sitemap): MetadataRoute.Sitemap {
+  const seen = new Set<string>();
+  return entries.filter((item) => {
+    const key = item.url;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
   });
 }

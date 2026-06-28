@@ -31,6 +31,7 @@ export async function buildMetadata(opts: {
   description?: string;
   eyebrow?: string;
   languages?: Record<string, string>;
+  canonical?: string;
   image?: string | null;
   ogType?: "website" | "article";
 }): Promise<Metadata> {
@@ -42,7 +43,7 @@ export async function buildMetadata(opts: {
   return {
     title,
     description,
-    alternates: opts.languages ? { languages: opts.languages } : undefined,
+    alternates: opts.languages || opts.canonical ? { canonical: opts.canonical, languages: opts.languages } : undefined,
     openGraph: {
       title,
       description,
