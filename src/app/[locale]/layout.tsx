@@ -29,6 +29,8 @@ export async function generateMetadata({
   const languages = Object.fromEntries(
     routing.locales.map((l) => [l, l === routing.defaultLocale ? "/" : `/${l}`]),
   );
+  languages["x-default"] = "/";
+  const canonical = locale === routing.defaultLocale ? "/" : `/${locale}`;
 
   const override = await getSeoOverride("/", locale);
   const title = override?.title || t("title");
@@ -39,7 +41,7 @@ export async function generateMetadata({
     metadataBase: new URL(siteConfig.url),
     title: { default: title, template: `%s · ${siteConfig.name}` },
     description,
-    alternates: { canonical: "/", languages },
+    alternates: { canonical, languages },
     icons: {
       icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
       shortcut: [{ url: "/favicon.svg", type: "image/svg+xml" }],
@@ -49,7 +51,7 @@ export async function generateMetadata({
     openGraph: {
       title,
       description,
-      url: siteConfig.url,
+      url: canonical === "/" ? siteConfig.url : `${siteConfig.url}${canonical}`,
       siteName: siteConfig.name,
       locale,
       type: "website",

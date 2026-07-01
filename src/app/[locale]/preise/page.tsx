@@ -14,6 +14,7 @@ import { JsonLd } from "@/shared/seo/JsonLd";
 import { breadcrumbSchema } from "@/shared/seo/schema";
 import { buildMetadata } from "@/shared/seo/metadata";
 import { getContactHref } from "@/shared/lib/contactHref";
+import { getHomeHref } from "@/shared/lib/localizedPath";
 import { PricingPlans, type PricingPlanView } from "@/widgets/pricing/PricingPlans";
 
 export const revalidate = 300;
@@ -74,7 +75,7 @@ export default async function PricingPage({ params }: { params: Promise<Params> 
   }));
   const db = await getPlans(locale);
   const plans = db.length > 0 ? db : fallback;
-  const homePath = locale === routing.defaultLocale ? "/" : `/${locale}`;
+  const homePath = getHomeHref(locale);
   const contactHref = getContactHref(locale);
 
   return (

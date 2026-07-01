@@ -3,12 +3,13 @@ import { Check } from "lucide-react";
 import { Container } from "@/shared/ui/Container";
 import { Button } from "@/shared/ui/Button";
 import { getContactHref } from "@/shared/lib/contactHref";
+import { getLocalizedHref } from "@/shared/lib/localizedPath";
 import { Dashboard } from "./Dashboard";
 
 export function Hero() {
   const t = useTranslations("Hero");
   const locale = useLocale();
-  const projectsHref = locale === "en" ? "/en/projects" : locale === "ru" ? "/ru/proekty" : "/projekte";
+  const projectsHref = getLocalizedHref(locale, "projects");
 
   return (
     <section id="top" className="relative overflow-hidden py-12 md:py-24">

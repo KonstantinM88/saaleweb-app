@@ -1,11 +1,22 @@
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Container } from "@/shared/ui/Container";
 import { BrandText, BrandWord } from "@/shared/ui/BrandText";
 import { BrandLogo } from "@/shared/ui/BrandLogo";
 import { siteConfig } from "@/shared/config/site";
 import { Link } from "@/i18n/navigation";
+import { getHomeHref } from "@/shared/lib/localizedPath";
+
+const locationLinks = [
+  { label: "Halle (Saale)", slug: "halle" },
+  { label: "Leipzig", slug: "leipzig" },
+  { label: "Merseburg", slug: "merseburg" },
+  { label: "Schkeuditz", slug: "schkeuditz" },
+  { label: "Delitzsch", slug: "delitzsch" },
+  { label: "Saalekreis", slug: "saalekreis" },
+];
 
 export function Footer() {
+  const locale = useLocale();
   const t = useTranslations("Footer");
   const tn = useTranslations("Nav");
   const ts = useTranslations("Services");
@@ -26,24 +37,24 @@ export function Footer() {
 
           <FooterCol title={t("services")}>
             {services.map((s, i) => (
-              <a key={i} href="#services">
+              <Link key={i} href="/leistungen">
                 {s.title}
-              </a>
+              </Link>
             ))}
           </FooterCol>
 
           <FooterCol title={t("locations")}>
-            {siteConfig.locations.map((l) => (
-              <a key={l} href="#">
-                {l}
-              </a>
+            {locationLinks.map((location) => (
+              <Link key={location.slug} href={{ pathname: "/standorte/[slug]", params: { slug: location.slug } }}>
+                {location.label}
+              </Link>
             ))}
           </FooterCol>
 
           <FooterCol title={t("company")}>
             <Link href="/projekte">{tn("projects")}</Link>
             <Link href="/preise">{tn("pricing")}</Link>
-            <a href="#faq">{tn("faq")}</a>
+            <a href={`${getHomeHref(locale)}#faq`}>{tn("faq")}</a>
             <Link href="/kontakt">{t("contact")}</Link>
           </FooterCol>
         </div>

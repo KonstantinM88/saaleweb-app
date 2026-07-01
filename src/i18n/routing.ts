@@ -29,8 +29,8 @@ export const routing = defineRouting({
       en: "/industries/[slug]",
       ru: "/otrasli/[slug]",
     },
-    "/kontakt": { de: "/kontakt", en: "/contact", ru: "/kontakty" },
-    "/preise": { de: "/preise", en: "/pricing", ru: "/tseny" },
+    "/kontakt": { de: "/kontakt", en: "/contact", ru: "/kontakt" },
+    "/preise": { de: "/preise", en: "/pricing", ru: "/ceny" },
     "/projekte": { de: "/projekte", en: "/projects", ru: "/proekty" },
     "/projekte/[slug]": {
       de: "/projekte/[slug]",
@@ -40,7 +40,7 @@ export const routing = defineRouting({
     "/standorte/[slug]": {
       de: "/standorte/[slug]",
       en: "/locations/[slug]",
-      ru: "/lokacii/[slug]",
+      ru: "/goroda/[slug]",
     },
   },
 });

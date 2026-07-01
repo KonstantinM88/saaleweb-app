@@ -18,6 +18,14 @@ export function LanguageSwitcher() {
 
   type ReplaceHref = Parameters<typeof router.replace>[0];
 
+  function fallbackHrefForCurrentPage(): ReplaceHref {
+    if (pathname.startsWith("/leistungen")) return "/leistungen" as ReplaceHref;
+    if (pathname.startsWith("/branchen")) return "/branchen" as ReplaceHref;
+    if (pathname.startsWith("/projekte")) return "/projekte" as ReplaceHref;
+    if (pathname.startsWith("/blog")) return "/blog" as ReplaceHref;
+    return "/" as ReplaceHref;
+  }
+
   function change(next: string) {
     if (next === locale) return;
     startTransition(() => {
@@ -31,8 +39,7 @@ export function LanguageSwitcher() {
           );
         } else {
           // No translation in the target language — fall back gracefully.
-          const fallback = pathname.startsWith("/blog") ? "/blog" : "/";
-          router.replace(fallback as ReplaceHref, { locale: next });
+          router.replace(fallbackHrefForCurrentPage(), { locale: next });
         }
         return;
       }

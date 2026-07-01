@@ -827,7 +827,7 @@ const EN_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
     related: [
       { label: "Web design Halle", href: "/en/services/web-design-halle", description: "Regional web design for businesses in Halle." },
       { label: "SEO Halle", href: "/en/services/seo-halle", description: "Search visibility for local and commercial queries." },
-      { label: "Modernize WordPress website", href: "/en/services/modernize-wordpress-website", description: "Improve existing WordPress sites without replacing them blindly." },
+      { label: "Modernize WordPress website", href: "/en/services/wordpress-website-modernization", description: "Improve existing WordPress sites without replacing them blindly." },
       { label: "Projects", href: "/en/projects", description: "Selected SaaleWeb case studies." },
     ],
   },
@@ -863,7 +863,7 @@ const EN_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
     ],
     related: [
       { label: "SEO Halle", href: "/en/services/seo-halle", description: "Improve visibility in local search." },
-      { label: "Get a website", href: "/en/services/get-a-website", description: "Plan a new website with strategy and SEO." },
+      { label: "Get a website", href: "/en/services/website-development", description: "Plan a new website with strategy and SEO." },
       { label: "Leipzig", href: "/en/locations/leipzig", description: "Visibility in the wider regional market." },
       { label: "Projects", href: "/en/projects", description: "Selected practical examples." },
     ],
@@ -902,7 +902,7 @@ const EN_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
       { label: "Web design Halle", href: "/en/services/web-design-halle", description: "Think website and SEO together." },
       { label: "Local SEO", href: "/en/services/local-seo", description: "Regional visibility for local providers." },
       { label: "Performance optimization", href: "/en/services/performance-optimization", description: "Fast loading times as a technical SEO base." },
-      { label: "Website analysis", href: "/en/#website-audit", description: "Request a free review of your current website." },
+      { label: "Website analysis", href: "/en#website-audit", description: "Request a free review of your current website." },
     ],
   },
   "ki-optimierung": {
@@ -937,7 +937,7 @@ const EN_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
     ],
     related: [
       { label: "SEO Halle", href: "/en/services/seo-halle", description: "Classic SEO as the foundation for visibility." },
-      { label: "Get a website", href: "/en/services/get-a-website", description: "A new site with a clear content architecture." },
+      { label: "Get a website", href: "/en/services/website-development", description: "A new site with a clear content architecture." },
       { label: "Local SEO", href: "/en/services/local-seo", description: "Regional entities and local search signals." },
       { label: "Contact", href: "/en/contact", description: "Discuss AI search readiness." },
     ],
@@ -1010,8 +1010,8 @@ const EN_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
       { title: "Aftercare", text: "Technical and content signals are monitored after launch." },
     ],
     related: [
-      { label: "Get a website", href: "/en/services/get-a-website", description: "When a complete rebuild makes sense." },
-      { label: "Modernize WordPress", href: "/en/services/modernize-wordpress-website", description: "When existing WordPress structures should remain." },
+      { label: "Get a website", href: "/en/services/website-development", description: "When a complete rebuild makes sense." },
+      { label: "Modernize WordPress", href: "/en/services/wordpress-website-modernization", description: "When existing WordPress structures should remain." },
       { label: "Performance optimization", href: "/en/services/performance-optimization", description: "Improve technical quality." },
       { label: "Projects", href: "/en/projects", description: "See examples from practice." },
     ],
@@ -1047,9 +1047,9 @@ const EN_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
       { title: "SEO foundation", text: "Performance is connected with indexability and clean structure." },
     ],
     related: [
-      { label: "Website audit", href: "/en/#website-audit", description: "Request a free analysis of your current website." },
+      { label: "Website audit", href: "/en#website-audit", description: "Request a free analysis of your current website." },
       { label: "SEO Halle", href: "/en/services/seo-halle", description: "Performance as part of technical SEO." },
-      { label: "Modernize WordPress", href: "/en/services/modernize-wordpress-website", description: "Solve WordPress performance problems." },
+      { label: "Modernize WordPress", href: "/en/services/wordpress-website-modernization", description: "Solve WordPress performance problems." },
       { label: "Contact", href: "/en/contact", description: "Discuss performance issues." },
     ],
   },
@@ -1084,7 +1084,7 @@ const EN_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
       { title: "Direct contact", text: "You know who is responsible and do not deal with an anonymous ticket agency." },
     ],
     related: [
-      { label: "Modernize WordPress", href: "/en/services/modernize-wordpress-website", description: "Keep older WordPress systems clean and useful." },
+      { label: "Modernize WordPress", href: "/en/services/wordpress-website-modernization", description: "Keep older WordPress systems clean and useful." },
       { label: "Performance optimization", href: "/en/services/performance-optimization", description: "Improve speed and technical stability." },
       { label: "Website relaunch", href: "/en/services/website-relaunch", description: "When maintenance alone is no longer enough." },
       { label: "Contact", href: "/en/contact", description: "Discuss support needs." },
@@ -1123,7 +1123,7 @@ const EN_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
     related: [
       { label: "Restaurant website", href: "/en/industries/restaurant-website", description: "More reservations and better menu presentation." },
       { label: "Hotel website", href: "/en/industries/hotel-website", description: "Direct bookings and less dependency on portals." },
-      { label: "Get a website", href: "/en/services/get-a-website", description: "Integrate booking directly into a new website." },
+      { label: "Get a website", href: "/en/services/website-development", description: "Integrate booking directly into a new website." },
       { label: "Contact", href: "/en/contact", description: "Discuss the booking process." },
     ],
   },
@@ -1161,9 +1161,9 @@ const RU_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
       { title: "Понятно для ИИ", text: "Контент структурирован так, чтобы системы поиска лучше понимали связи." },
     ],
     related: [
-      { label: "Веб-дизайн Halle", href: "/ru/uslugi/veb-dizajn-halle", description: "Региональные сайты для компаний в Halle." },
+      { label: "Веб-дизайн Halle", href: "/ru/uslugi/webdesign-halle", description: "Региональные сайты для компаний в Halle." },
       { label: "SEO Halle", href: "/ru/uslugi/seo-halle", description: "Видимость по локальным и коммерческим запросам." },
-      { label: "Модернизация WordPress", href: "/ru/uslugi/modernizaciya-wordpress-sajta", description: "Улучшить текущий WordPress без слепой замены." },
+      { label: "Модернизация WordPress", href: "/ru/uslugi/modernizaciya-wordpress-sayta", description: "Улучшить текущий WordPress без слепой замены." },
       { label: "Проекты", href: "/ru/proekty", description: "Избранные кейсы SaaleWeb." },
     ],
   },
@@ -1199,8 +1199,8 @@ const RU_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
     ],
     related: [
       { label: "SEO Halle", href: "/ru/uslugi/seo-halle", description: "Улучшить видимость в локальном поиске." },
-      { label: "Заказать сайт", href: "/ru/uslugi/zakazat-sajt", description: "Новый сайт со стратегией и SEO." },
-      { label: "Leipzig", href: "/ru/lokacii/leipzig", description: "Видимость в более широком региональном рынке." },
+      { label: "Заказать сайт", href: "/ru/uslugi/razrabotka-saytov", description: "Новый сайт со стратегией и SEO." },
+      { label: "Leipzig", href: "/ru/goroda/leipzig", description: "Видимость в более широком региональном рынке." },
       { label: "Проекты", href: "/ru/proekty", description: "Практические примеры." },
     ],
   },
@@ -1235,10 +1235,10 @@ const RU_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
       { title: "Измеримый прогресс", text: "Мы работаем с реалистичными этапами вместо пустых обещаний." },
     ],
     related: [
-      { label: "Веб-дизайн Halle", href: "/ru/uslugi/veb-dizajn-halle", description: "Думать сайт и SEO вместе." },
+      { label: "Веб-дизайн Halle", href: "/ru/uslugi/webdesign-halle", description: "Думать сайт и SEO вместе." },
       { label: "Local SEO", href: "/ru/uslugi/local-seo", description: "Региональная видимость для локальных компаний." },
       { label: "Производительность", href: "/ru/uslugi/optimizaciya-proizvoditelnosti", description: "Скорость как основа технического SEO." },
-      { label: "Анализ сайта", href: "/ru/#website-audit", description: "Бесплатная проверка текущего сайта." },
+      { label: "Анализ сайта", href: "/ru#website-audit", description: "Бесплатная проверка текущего сайта." },
     ],
   },
   "ki-optimierung": {
@@ -1273,9 +1273,9 @@ const RU_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
     ],
     related: [
       { label: "SEO Halle", href: "/ru/uslugi/seo-halle", description: "Классическая SEO-база для видимости." },
-      { label: "Заказать сайт", href: "/ru/uslugi/zakazat-sajt", description: "Новый сайт с понятной архитектурой контента." },
+      { label: "Заказать сайт", href: "/ru/uslugi/razrabotka-saytov", description: "Новый сайт с понятной архитектурой контента." },
       { label: "Local SEO", href: "/ru/uslugi/local-seo", description: "Региональные сущности и локальные сигналы." },
-      { label: "Контакты", href: "/ru/kontakty", description: "Обсудить готовность к ИИ-поиску." },
+      { label: "Контакты", href: "/ru/kontakt", description: "Обсудить готовность к ИИ-поиску." },
     ],
   },
   "wordpress-website-modernisieren": {
@@ -1311,8 +1311,8 @@ const RU_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
     related: [
       { label: "Релонч сайта", href: "/ru/uslugi/relonch-sajta", description: "Когда одной оптимизации уже мало." },
       { label: "Производительность", href: "/ru/uslugi/optimizaciya-proizvoditelnosti", description: "Улучшить скорость и техническое качество." },
-      { label: "Поддержка сайта", href: "/ru/uslugi/podderzhka-sajta", description: "Регулярный уход и техническая поддержка." },
-      { label: "Контакты", href: "/ru/kontakty", description: "Проверить ваш WordPress-сайт." },
+      { label: "Поддержка сайта", href: "/ru/uslugi/podderzhka-saytov", description: "Регулярный уход и техническая поддержка." },
+      { label: "Контакты", href: "/ru/kontakt", description: "Проверить ваш WordPress-сайт." },
     ],
   },
   "website-relaunch": {
@@ -1346,8 +1346,8 @@ const RU_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
       { title: "После запуска", text: "Технические и контентные сигналы контролируются после релонча." },
     ],
     related: [
-      { label: "Заказать сайт", href: "/ru/uslugi/zakazat-sajt", description: "Когда нужен полный новый сайт." },
-      { label: "Модернизация WordPress", href: "/ru/uslugi/modernizaciya-wordpress-sajta", description: "Если WordPress-структуру стоит сохранить." },
+      { label: "Заказать сайт", href: "/ru/uslugi/razrabotka-saytov", description: "Когда нужен полный новый сайт." },
+      { label: "Модернизация WordPress", href: "/ru/uslugi/modernizaciya-wordpress-sayta", description: "Если WordPress-структуру стоит сохранить." },
       { label: "Производительность", href: "/ru/uslugi/optimizaciya-proizvoditelnosti", description: "Улучшить техническое качество." },
       { label: "Проекты", href: "/ru/proekty", description: "Посмотреть практические примеры." },
     ],
@@ -1383,10 +1383,10 @@ const RU_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
       { title: "SEO-база", text: "Скорость связывается с индексацией и чистой структурой." },
     ],
     related: [
-      { label: "Анализ сайта", href: "/ru/#website-audit", description: "Бесплатная проверка текущего сайта." },
+      { label: "Анализ сайта", href: "/ru#website-audit", description: "Бесплатная проверка текущего сайта." },
       { label: "SEO Halle", href: "/ru/uslugi/seo-halle", description: "Скорость как часть технического SEO." },
-      { label: "Модернизация WordPress", href: "/ru/uslugi/modernizaciya-wordpress-sajta", description: "Решить проблемы скорости в WordPress." },
-      { label: "Контакты", href: "/ru/kontakty", description: "Обсудить проблемы скорости." },
+      { label: "Модернизация WordPress", href: "/ru/uslugi/modernizaciya-wordpress-sayta", description: "Решить проблемы скорости в WordPress." },
+      { label: "Контакты", href: "/ru/kontakt", description: "Обсудить проблемы скорости." },
     ],
   },
   "website-wartung": {
@@ -1420,10 +1420,10 @@ const RU_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
       { title: "Прямой контакт", text: "Вы знаете, кто отвечает за сайт, без анонимной ticket-агенции." },
     ],
     related: [
-      { label: "Модернизация WordPress", href: "/ru/uslugi/modernizaciya-wordpress-sajta", description: "Чисто вести старые WordPress-системы." },
+      { label: "Модернизация WordPress", href: "/ru/uslugi/modernizaciya-wordpress-sayta", description: "Чисто вести старые WordPress-системы." },
       { label: "Производительность", href: "/ru/uslugi/optimizaciya-proizvoditelnosti", description: "Улучшить скорость и стабильность." },
       { label: "Релонч сайта", href: "/ru/uslugi/relonch-sajta", description: "Когда поддержки уже недостаточно." },
-      { label: "Контакты", href: "/ru/kontakty", description: "Обсудить сопровождение." },
+      { label: "Контакты", href: "/ru/kontakt", description: "Обсудить сопровождение." },
     ],
   },
   buchungssysteme: {
@@ -1459,8 +1459,8 @@ const RU_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
     related: [
       { label: "Сайт ресторана", href: "/ru/otrasli/sajt-restorana", description: "Больше резерваций и понятная подача меню." },
       { label: "Сайт отеля", href: "/ru/otrasli/sajt-otelya", description: "Прямые брони и меньше зависимости от порталов." },
-      { label: "Заказать сайт", href: "/ru/uslugi/zakazat-sajt", description: "Встроить бронирование сразу в новый сайт." },
-      { label: "Контакты", href: "/ru/kontakty", description: "Обсудить процесс бронирования." },
+      { label: "Заказать сайт", href: "/ru/uslugi/razrabotka-saytov", description: "Встроить бронирование сразу в новый сайт." },
+      { label: "Контакты", href: "/ru/kontakt", description: "Обсудить процесс бронирования." },
     ],
   },
 };
@@ -2114,7 +2114,7 @@ const PHASE5_SERVICE_CONTENT: Record<Phase4Locale, Record<string, Phase5ServiceI
         { label: "Импорт товаров", href: "/ru/uslugi/import-tovarov", description: "Чисто перенести и обновлять товарные данные." },
         { label: "API-интеграции", href: "/ru/uslugi/api-integracii", description: "Связать магазин с инструментами или складом." },
         { label: "Безопасность сайта", href: "/ru/uslugi/bezopasnost-sayta", description: "Укрепить доверие и техническую основу." },
-        { label: "Контакты", href: "/ru/kontakty", description: "Обсудить проект магазина." },
+        { label: "Контакты", href: "/ru/kontakt", description: "Обсудить проект магазина." },
       ],
       cases: SERVICE_CASES_BY_LOCALE.ru,
     },
@@ -2149,7 +2149,7 @@ const PHASE5_SERVICE_CONTENT: Record<Phase4Locale, Record<string, Phase5ServiceI
         { label: "Автоматизация", href: "/ru/uslugi/avtomatizaciya", description: "Связать ИИ с практическими процессами." },
         { label: "API-интеграции", href: "/ru/uslugi/api-integracii", description: "Подключить ИИ к существующим инструментам." },
         { label: "Аналитика данных", href: "/ru/uslugi/analitika-dannyh", description: "Сделать данные структурированными и полезными." },
-        { label: "Контакты", href: "/ru/kontakty", description: "Проверить реалистичный сценарий ИИ." },
+        { label: "Контакты", href: "/ru/kontakt", description: "Проверить реалистичный сценарий ИИ." },
       ],
       cases: SERVICE_CASES_BY_LOCALE.ru,
     },
@@ -2184,7 +2184,7 @@ const PHASE5_SERVICE_CONTENT: Record<Phase4Locale, Record<string, Phase5ServiceI
         { label: "ИИ-ассистент", href: "/ru/uslugi/ai-assistent", description: "Соединить автоматизацию с полезным ИИ." },
         { label: "API-интеграции", href: "/ru/uslugi/api-integracii", description: "Связать инструменты и источники данных." },
         { label: "Аналитика данных", href: "/ru/uslugi/analitika-dannyh", description: "Сделать процессы измеримыми." },
-        { label: "Контакты", href: "/ru/kontakty", description: "Проверить потенциал автоматизации." },
+        { label: "Контакты", href: "/ru/kontakt", description: "Проверить потенциал автоматизации." },
       ],
       cases: SERVICE_CASES_BY_LOCALE.ru,
     },
@@ -2219,7 +2219,7 @@ const PHASE5_SERVICE_CONTENT: Record<Phase4Locale, Record<string, Phase5ServiceI
         { label: "Автоматизация", href: "/ru/uslugi/avtomatizaciya", description: "Превратить интеграции в рабочие процессы." },
         { label: "Интернет-магазин", href: "/ru/uslugi/sozdanie-internet-magazina", description: "Связать магазин и внутренние системы." },
         { label: "Импорт товаров", href: "/ru/uslugi/import-tovarov", description: "Загружать товарные данные из файлов или API." },
-        { label: "Контакты", href: "/ru/kontakty", description: "Обсудить интерфейс." },
+        { label: "Контакты", href: "/ru/kontakt", description: "Обсудить интерфейс." },
       ],
       cases: SERVICE_CASES_BY_LOCALE.ru,
     },
@@ -2254,7 +2254,7 @@ const PHASE5_SERVICE_CONTENT: Record<Phase4Locale, Record<string, Phase5ServiceI
         { label: "Поддержка сайтов", href: "/ru/uslugi/podderzhka-saytov", description: "Регулярный уход вместо разовой правки." },
         { label: "Модернизация WordPress", href: "/ru/uslugi/modernizaciya-wordpress-sayta", description: "Улучшать и сопровождать существующий WordPress." },
         { label: "API-интеграции", href: "/ru/uslugi/api-integracii", description: "Подключать интерфейсы контролируемо." },
-        { label: "Контакты", href: "/ru/kontakty", description: "Проверить безопасность сайта." },
+        { label: "Контакты", href: "/ru/kontakt", description: "Проверить безопасность сайта." },
       ],
       cases: SERVICE_CASES_BY_LOCALE.ru,
     },
@@ -2289,7 +2289,7 @@ const PHASE5_SERVICE_CONTENT: Record<Phase4Locale, Record<string, Phase5ServiceI
         { label: "SEO Halle", href: "/ru/uslugi/seo-halle", description: "Улучшать видимость по реальным сигналам." },
         { label: "Автоматизация", href: "/ru/uslugi/avtomatizaciya", description: "Переводить данные в процессы." },
         { label: "Анализ сайта", href: "/ru#website-audit", description: "Запустить бесплатную проверку сайта." },
-        { label: "Контакты", href: "/ru/kontakty", description: "Обсудить аналитику." },
+        { label: "Контакты", href: "/ru/kontakt", description: "Обсудить аналитику." },
       ],
       cases: SERVICE_CASES_BY_LOCALE.ru,
     },
@@ -2324,7 +2324,7 @@ const PHASE5_SERVICE_CONTENT: Record<Phase4Locale, Record<string, Phase5ServiceI
         { label: "Интернет-магазин", href: "/ru/uslugi/sozdanie-internet-magazina", description: "Создать магазин с чистой структурой товаров." },
         { label: "API-интеграции", href: "/ru/uslugi/api-integracii", description: "Подключить товарные данные через интерфейсы." },
         { label: "Аналитика данных", href: "/ru/uslugi/analitika-dannyh", description: "Оценивать качество данных и результат." },
-        { label: "Контакты", href: "/ru/kontakty", description: "Проверить объём импорта." },
+        { label: "Контакты", href: "/ru/kontakt", description: "Проверить объём импорта." },
       ],
       cases: SERVICE_CASES_BY_LOCALE.ru,
     },
@@ -3165,7 +3165,7 @@ const EN_INDUSTRY_SEEDS: Record<string, LocalizedIndustrySeed> = {
     related: [
       { label: "Booking systems", href: "/en/services/booking-systems", description: "Make online appointments easier." },
       { label: "Local SEO", href: "/en/services/local-seo", description: "Get found in your service area." },
-      { label: "Get a website", href: "/en/services/get-a-website", description: "Plan a new site for a studio or salon." },
+      { label: "Get a website", href: "/en/services/website-development", description: "Plan a new site for a studio or salon." },
       { label: "Contact", href: "/en/contact", description: "Discuss your beauty website." },
     ],
   },
@@ -3200,7 +3200,7 @@ const EN_INDUSTRY_SEEDS: Record<string, LocalizedIndustrySeed> = {
       { title: "Performance", text: "Images and media are optimized so the site stays fast." },
     ],
     related: [
-      { label: "Get a website", href: "/en/services/get-a-website", description: "A new website for complex services." },
+      { label: "Get a website", href: "/en/services/website-development", description: "A new website for complex services." },
       { label: "SEO Halle", href: "/en/services/seo-halle", description: "Regional visibility for construction services." },
       { label: "Tradesman website", href: "/en/industries/tradesman-website", description: "Related needs in skilled trades." },
       { label: "Contact", href: "/en/contact", description: "Discuss a construction website." },
@@ -3276,7 +3276,7 @@ const EN_INDUSTRY_SEEDS: Record<string, LocalizedIndustrySeed> = {
     related: [
       { label: "Tradesman website", href: "/en/industries/tradesman-website", description: "Digital basics for regional trades businesses." },
       { label: "SEO Halle", href: "/en/services/seo-halle", description: "Visibility for local specialist services." },
-      { label: "Get a website", href: "/en/services/get-a-website", description: "Plan a new website with clear structure." },
+      { label: "Get a website", href: "/en/services/website-development", description: "Plan a new website with clear structure." },
       { label: "Contact", href: "/en/contact", description: "Discuss a glazing company website." },
     ],
   },
@@ -3321,7 +3321,7 @@ const RU_INDUSTRY_SEEDS: Record<string, LocalizedIndustrySeed> = {
       { label: "Neue Liebe Nebra", href: "/ru/proekty/neue-liebe-nebra", description: "Ресторанный проект с фокусом на бронирование." },
       { label: "Системы бронирования", href: "/ru/uslugi/sistemy-bronirovaniya", description: "Сделать брони и заявки проще онлайн." },
       { label: "Local SEO", href: "/ru/uslugi/local-seo", description: "Стать заметнее в регионе." },
-      { label: "Контакты", href: "/ru/kontakty", description: "Обсудить сайт ресторана." },
+      { label: "Контакты", href: "/ru/kontakt", description: "Обсудить сайт ресторана." },
     ],
   }),
   "hotel-website": ruIndustryFromEn(EN_INDUSTRY_SEEDS["hotel-website"], {
@@ -3358,7 +3358,7 @@ const RU_INDUSTRY_SEEDS: Record<string, LocalizedIndustrySeed> = {
       { label: "Системы бронирования", href: "/ru/uslugi/sistemy-bronirovaniya", description: "Чисто интегрировать цифровой путь бронирования." },
       { label: "Local SEO", href: "/ru/uslugi/local-seo", description: "Стать заметнее в регионе и туристическом поиске." },
       { label: "Релонч сайта", href: "/ru/uslugi/relonch-sajta", description: "Модернизировать существующий сайт отеля." },
-      { label: "Контакты", href: "/ru/kontakty", description: "Обсудить сайт отеля." },
+      { label: "Контакты", href: "/ru/kontakt", description: "Обсудить сайт отеля." },
     ],
   }),
   "beauty-studio-website": ruIndustryFromEn(EN_INDUSTRY_SEEDS["beauty-studio-website"], {
@@ -3394,8 +3394,8 @@ const RU_INDUSTRY_SEEDS: Record<string, LocalizedIndustrySeed> = {
     related: [
       { label: "Системы бронирования", href: "/ru/uslugi/sistemy-bronirovaniya", description: "Упростить онлайн-запись." },
       { label: "Local SEO", href: "/ru/uslugi/local-seo", description: "Быть заметнее в своём регионе." },
-      { label: "Заказать сайт", href: "/ru/uslugi/zakazat-sajt", description: "Спланировать новый сайт для студии." },
-      { label: "Контакты", href: "/ru/kontakty", description: "Обсудить сайт beauty-студии." },
+      { label: "Заказать сайт", href: "/ru/uslugi/razrabotka-saytov", description: "Спланировать новый сайт для студии." },
+      { label: "Контакты", href: "/ru/kontakt", description: "Обсудить сайт beauty-студии." },
     ],
   }),
   "bauunternehmen-website": ruIndustryFromEn(EN_INDUSTRY_SEEDS["bauunternehmen-website"], {
@@ -3429,10 +3429,10 @@ const RU_INDUSTRY_SEEDS: Record<string, LocalizedIndustrySeed> = {
       { title: "Производительность", text: "Фото и медиа оптимизированы, чтобы сайт оставался быстрым." },
     ],
     related: [
-      { label: "Заказать сайт", href: "/ru/uslugi/zakazat-sajt", description: "Новый сайт для сложных услуг." },
+      { label: "Заказать сайт", href: "/ru/uslugi/razrabotka-saytov", description: "Новый сайт для сложных услуг." },
       { label: "SEO Halle", href: "/ru/uslugi/seo-halle", description: "Региональная видимость строительных услуг." },
       { label: "Сайт ремесленника", href: "/ru/otrasli/sajt-remeslennika", description: "Похожие задачи в ремесленных сферах." },
-      { label: "Контакты", href: "/ru/kontakty", description: "Обсудить сайт строительной компании." },
+      { label: "Контакты", href: "/ru/kontakt", description: "Обсудить сайт строительной компании." },
     ],
   }),
   "handwerker-website": ruIndustryFromEn(EN_INDUSTRY_SEEDS["handwerker-website"], {
@@ -3468,8 +3468,8 @@ const RU_INDUSTRY_SEEDS: Record<string, LocalizedIndustrySeed> = {
     related: [
       { label: "Сайт Glaserei", href: "/ru/otrasli/sajt-glaserei", description: "Специализированные задачи для стекольных компаний." },
       { label: "Local SEO", href: "/ru/uslugi/local-seo", description: "Быть заметнее в зоне работы." },
-      { label: "Поддержка сайта", href: "/ru/uslugi/podderzhka-sajta", description: "Держать сайт актуальным долгосрочно." },
-      { label: "Контакты", href: "/ru/kontakty", description: "Обсудить сайт ремесленной компании." },
+      { label: "Поддержка сайта", href: "/ru/uslugi/podderzhka-saytov", description: "Держать сайт актуальным долгосрочно." },
+      { label: "Контакты", href: "/ru/kontakt", description: "Обсудить сайт ремесленной компании." },
     ],
   }),
   "glaserei-website": ruIndustryFromEn(EN_INDUSTRY_SEEDS["glaserei-website"], {
@@ -3505,8 +3505,8 @@ const RU_INDUSTRY_SEEDS: Record<string, LocalizedIndustrySeed> = {
     related: [
       { label: "Сайт ремесленника", href: "/ru/otrasli/sajt-remeslennika", description: "Цифровая база для локальных ремесленных компаний." },
       { label: "SEO Halle", href: "/ru/uslugi/seo-halle", description: "Видимость для локальных специальных услуг." },
-      { label: "Заказать сайт", href: "/ru/uslugi/zakazat-sajt", description: "Спланировать сайт с понятной структурой." },
-      { label: "Контакты", href: "/ru/kontakty", description: "Обсудить сайт Glaserei." },
+      { label: "Заказать сайт", href: "/ru/uslugi/razrabotka-saytov", description: "Спланировать сайт с понятной структурой." },
+      { label: "Контакты", href: "/ru/kontakt", description: "Обсудить сайт Glaserei." },
     ],
   }),
 };
@@ -4016,7 +4016,7 @@ function localizedLocationPage(slug: string, locale: Phase4Locale) {
   const en = locale === "en";
   const city = base.cityName;
   const locationPath = (targetSlug: string) =>
-    locale === "en" ? `/en/locations/${targetSlug}` : `/ru/lokacii/${targetSlug}`;
+    locale === "en" ? `/en/locations/${targetSlug}` : `/ru/goroda/${targetSlug}`;
 
   return {
     ...base,
@@ -4120,12 +4120,12 @@ function localizedLocationPage(slug: string, locale: Phase4Locale) {
       ? [
           { label: "Web design Halle", href: "/en/services/web-design-halle", description: "Regional web design and clear user guidance." },
           { label: "SEO Halle", href: "/en/services/seo-halle", description: "Technical and local SEO for better visibility." },
-          { label: "Get a website", href: "/en/services/get-a-website", description: "Plan a new website with strategy and SEO foundation." },
+          { label: "Get a website", href: "/en/services/website-development", description: "Plan a new website with strategy and SEO foundation." },
         ]
       : [
-          { label: "Веб-дизайн Halle", href: "/ru/uslugi/veb-dizajn-halle", description: "Региональный веб-дизайн и понятный пользовательский путь." },
+          { label: "Веб-дизайн Halle", href: "/ru/uslugi/webdesign-halle", description: "Региональный веб-дизайн и понятный пользовательский путь." },
           { label: "SEO Halle", href: "/ru/uslugi/seo-halle", description: "Техническое и локальное SEO для лучшей видимости." },
-          { label: "Заказать сайт", href: "/ru/uslugi/zakazat-sajt", description: "Спланировать новый сайт со стратегией и SEO-базой." },
+          { label: "Заказать сайт", href: "/ru/uslugi/razrabotka-saytov", description: "Спланировать новый сайт со стратегией и SEO-базой." },
         ],
     faq: en
       ? [
@@ -4249,7 +4249,7 @@ export function industryHref(locale: Phase4Locale, slug: string) {
 
 export function locationHref(locale: Phase4Locale, slug: string) {
   if (locale === "en") return `/en/locations/${slug}`;
-  if (locale === "ru") return `/ru/lokacii/${slug}`;
+  if (locale === "ru") return `/ru/goroda/${slug}`;
   return `/standorte/${slug}`;
 }
 

@@ -27,6 +27,7 @@ import { Reveal } from "@/shared/ui/Reveal";
 import { Magnetic } from "@/shared/ui/Magnetic";
 import { BrandText } from "@/shared/ui/BrandText";
 import { getContactHref } from "@/shared/lib/contactHref";
+import { getAuditHref, getHomeHref } from "@/shared/lib/localizedPath";
 import { JsonLd } from "@/shared/seo/JsonLd";
 import { breadcrumbSchema, faqPageSchema, serviceSchema } from "@/shared/seo/schema";
 import { buildMetadata } from "@/shared/seo/metadata";
@@ -134,8 +135,8 @@ export default async function ServicesIndexPage({ params }: { params: Promise<Pa
   const seoHub = t.raw("seoHub") as Phase4HubCopy;
   const seoLinks = [...getPhase4ServiceLinks(locale), ...getPhase4LocationLinks(locale).slice(0, 3)];
 
-  const homePath = locale === routing.defaultLocale ? "/" : `/${locale}`;
-  const auditHref = `${homePath}#website-audit`;
+  const homePath = getHomeHref(locale);
+  const auditHref = getAuditHref(locale);
   const servicesPath = getPathname({ locale, href: "/leistungen" });
   const pricingHref = getPathname({ locale, href: "/preise" });
   const contactHref = getContactHref(locale);

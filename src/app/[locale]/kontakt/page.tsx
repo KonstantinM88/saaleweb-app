@@ -50,6 +50,7 @@ import {
 } from "@/shared/seo/schema";
 import { buildMetadata } from "@/shared/seo/metadata";
 import { siteConfig } from "@/shared/config/site";
+import { getHomeHref } from "@/shared/lib/localizedPath";
 
 export const revalidate = 300;
 
@@ -105,7 +106,7 @@ export default async function ContactPage({ params }: { params: Promise<Params> 
   const pages = await getTranslations({ locale, namespace: "Pages" });
 
   const contactPath = getPathname({ locale, href: "/kontakt" });
-  const homePath = locale === routing.defaultLocale ? "/" : `/${locale}`;
+  const homePath = getHomeHref(locale);
   const timeline = t.raw("timeline") as TextCard[];
   const why = t.raw("why") as TextCard[];
   const expectations = t.raw("expectations") as string[];

@@ -12,6 +12,13 @@ type ProjectConfig = {
   resultValue: string;
   year: number;
   order: number;
+  media?: Array<{
+    url: string;
+    alt: string;
+    width: number;
+    height: number;
+    order: number;
+  }>;
   translations: Record<
     Locale,
     {
@@ -217,6 +224,15 @@ const projects: ProjectConfig[] = [
     resultValue: "Local SEO",
     year: 2026,
     order: 4,
+    media: [
+      {
+        url: "/images/cases/glaserei-schubert.webp",
+        alt: "Glaserei Schubert website project preview by SaaleWeb",
+        width: 1448,
+        height: 1086,
+        order: 0,
+      },
+    ],
     translations: {
       de: {
         title: "Glaserei Schubert – digitale Lösung für Handwerk / Glaserei",
@@ -306,6 +322,36 @@ async function upsertProject(config: ProjectConfig) {
       update: config.translations[locale],
       create: { projectId: project.id, locale, ...config.translations[locale] },
     });
+  }
+
+  if (config.media?.length) {
+    const mediaUrls = config.media.map((media) => media.url);
+
+    await prisma.media.updateMany({
+      where: {
+        projectId: project.id,
+        url: { notIn: mediaUrls },
+      },
+      data: { order: 20 },
+    });
+
+    for (const media of config.media) {
+      const existingMedia = await prisma.media.findFirst({
+        where: { projectId: project.id, url: media.url },
+        select: { id: true },
+      });
+
+      if (existingMedia) {
+        await prisma.media.update({
+          where: { id: existingMedia.id },
+          data: media,
+        });
+      } else {
+        await prisma.media.create({
+          data: { projectId: project.id, ...media },
+        });
+      }
+    }
   }
 
   return project.id;

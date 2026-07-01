@@ -22,7 +22,7 @@ KI-Suchsystemen wie ChatGPT, Gemini, Claude, Perplexity und Google AI Overview.
 
 - DE: [Webdesign Halle](https://saaleweb.de/leistungen/webdesign-halle), [Restaurant Website](https://saaleweb.de/branchen/restaurant-website), [Standort Halle](https://saaleweb.de/standorte/halle)
 - EN: [Web design Halle](https://saaleweb.de/en/services/web-design-halle), [Restaurant website](https://saaleweb.de/en/industries/restaurant-website), [Location Halle](https://saaleweb.de/en/locations/halle)
-- RU: [Веб-дизайн Halle](https://saaleweb.de/ru/uslugi/webdesign-halle), [Сайт ресторана](https://saaleweb.de/ru/otrasli/sajt-restorana), [Локация Halle](https://saaleweb.de/ru/lokacii/halle)
+- RU: [Веб-дизайн Halle](https://saaleweb.de/ru/uslugi/webdesign-halle), [Сайт ресторана](https://saaleweb.de/ru/otrasli/sajt-restorana), [Локация Halle](https://saaleweb.de/ru/goroda/halle)
 
 ## Kommerzielle Leistungen
 

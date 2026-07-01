@@ -7,7 +7,7 @@ export const LOCALES = routing.locales;
 
 /** Revalidates the localized homepages so CMS edits surface on "/". */
 export function revalidateHome() {
-  for (const path of ["/", "/de", "/en", "/ru"]) {
+  for (const path of ["/", "/en", "/ru"]) {
     revalidatePath(path);
   }
 }

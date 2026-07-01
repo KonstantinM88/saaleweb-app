@@ -39,11 +39,16 @@ export async function buildMetadata(opts: {
   const title = override?.title || opts.title;
   const description = override?.description || opts.description;
   const ogImage = override?.ogImage || opts.image || ogImageUrl({ title, eyebrow: opts.eyebrow });
+  const languages =
+    opts.languages && !opts.languages["x-default"]
+      ? { ...opts.languages, "x-default": opts.languages.de ?? opts.canonical ?? "/" }
+      : opts.languages;
+  const canonical = opts.canonical ?? languages?.[opts.locale] ?? opts.path;
 
   return {
     title,
     description,
-    alternates: opts.languages || opts.canonical ? { canonical: opts.canonical, languages: opts.languages } : undefined,
+    alternates: languages || canonical ? { canonical, languages } : undefined,
     openGraph: {
       title,
       description,

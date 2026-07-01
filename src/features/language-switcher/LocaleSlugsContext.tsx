@@ -4,7 +4,7 @@ import { createContext, useContext, type ReactNode } from "react";
 
 /**
  * Per-locale slug map for the current detail page, e.g.
- * { de: "website-entwicklung", en: "web-development", ru: "razrabotka-sajtov" }.
+ * { de: "website-erstellen-lassen", en: "website-development", ru: "razrabotka-saytov" }.
  *
  * Detail pages (services, industries, blog posts, blog categories) wrap their
  * content in <LocaleSlugsProvider>. The LanguageSwitcher reads the map and

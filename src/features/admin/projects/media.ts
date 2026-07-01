@@ -6,7 +6,7 @@ import { str, num, type CrudState } from "@/features/admin/crud";
 function revalidate(projectId: string) {
   revalidatePath(`/admin/projects/${projectId}`);
   revalidatePath("/admin/projects");
-  for (const p of ["/", "/de", "/en", "/ru"]) revalidatePath(p);
+  for (const p of ["/", "/en", "/ru"]) revalidatePath(p);
 }
 
 export async function addProjectMedia(projectId: string, fd: FormData): Promise<CrudState> {

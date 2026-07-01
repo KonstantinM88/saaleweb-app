@@ -1,6 +1,5 @@
 import { ArrowRight, Check, Compass, Gauge, Layers3, Link as LinkIcon, MapPin, Search, Sparkles } from "lucide-react";
 import type { AppLocale } from "@/i18n/routing";
-import { routing } from "@/i18n/routing";
 import { Navbar } from "@/widgets/navbar/Navbar";
 import { Footer } from "@/widgets/footer/Footer";
 import { Container } from "@/shared/ui/Container";
@@ -11,6 +10,7 @@ import { BrandText } from "@/shared/ui/BrandText";
 import { JsonLd } from "@/shared/seo/JsonLd";
 import { breadcrumbSchema, faqPageSchema, localBusinessSchema, serviceSchema } from "@/shared/seo/schema";
 import { getContactHref } from "@/shared/lib/contactHref";
+import { getAuditHref, getHomeHref } from "@/shared/lib/localizedPath";
 import { LocaleSlugsProvider } from "@/features/language-switcher/LocaleSlugsContext";
 import type { Phase4Landing, Phase4Link, Phase4SlugMap } from "./phase4Content";
 
@@ -126,9 +126,9 @@ const ui = {
 
 export function Phase4LandingPage({ page, locale, path, parent, schemaKind, areaServed, extraCards, localeSlugs }: Props) {
   const labels = ui[locale];
-  const homePath = locale === routing.defaultLocale ? "/" : `/${locale}`;
+  const homePath = getHomeHref(locale);
   const contactHref = getContactHref(locale);
-  const auditHref = `${homePath}#website-audit`;
+  const auditHref = getAuditHref(locale);
   const schema =
     schemaKind === "location"
       ? localBusinessSchema({ areaServed: areaServed ?? page.title })

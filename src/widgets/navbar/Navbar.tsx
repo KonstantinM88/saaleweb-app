@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { Menu, X } from "lucide-react";
 import { Link } from "@/i18n/navigation";
-import { routing } from "@/i18n/routing";
 import { Container } from "@/shared/ui/Container";
 import { ScrollProgress } from "@/shared/ui/ScrollProgress";
 import { Magnetic } from "@/shared/ui/Magnetic";
@@ -12,6 +11,7 @@ import { BrandLogo } from "@/shared/ui/BrandLogo";
 import { siteConfig } from "@/shared/config/site";
 import { cn } from "@/shared/lib/cn";
 import { getContactHref } from "@/shared/lib/contactHref";
+import { getHomeHref } from "@/shared/lib/localizedPath";
 import { LanguageSwitcher } from "@/features/language-switcher/LanguageSwitcher";
 
 export function Navbar() {
@@ -28,8 +28,7 @@ export function Navbar() {
   }, []);
 
   // Locale-aware link to a homepage section (hash), works from any page.
-  const sectionHref = (hash: string) =>
-    locale === routing.defaultLocale ? `/#${hash}` : `/${locale}#${hash}`;
+  const sectionHref = (hash: string) => `${getHomeHref(locale)}#${hash}`;
 
   const renderItem = (item: { key: string; href: string }, onClick?: () => void) => {
     // Section anchors (e.g. "/#cases") render as plain locale-prefixed links.

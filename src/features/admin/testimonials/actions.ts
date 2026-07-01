@@ -8,7 +8,7 @@ import { TESTI_TR_FIELDS } from "./config";
 
 function revalidateTestimonialPages() {
   revalidatePath("/admin/testimonials");
-  for (const path of ["/", "/de", "/en", "/ru"]) {
+  for (const path of ["/", "/en", "/ru"]) {
     revalidatePath(path);
   }
 }

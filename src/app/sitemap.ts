@@ -19,12 +19,16 @@ function entry(
   priority: number,
   changeFrequency: Entry["changeFrequency"],
 ): Entry {
+  const alternates = {
+    ...languages,
+    "x-default": abs(defPath),
+  };
   return {
     url: abs(defPath),
     lastModified: new Date(),
     changeFrequency,
     priority,
-    alternates: { languages },
+    alternates: { languages: alternates },
   };
 }
 

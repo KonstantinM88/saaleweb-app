@@ -27,6 +27,7 @@ import { JsonLd } from "@/shared/seo/JsonLd";
 import { breadcrumbSchema, caseStudySchema } from "@/shared/seo/schema";
 import { buildMetadata } from "@/shared/seo/metadata";
 import { getContactHref } from "@/shared/lib/contactHref";
+import { getAuditHref, getHomeHref } from "@/shared/lib/localizedPath";
 import { LocaleSlugsProvider } from "@/features/language-switcher/LocaleSlugsContext";
 
 export const revalidate = 300;
@@ -209,9 +210,9 @@ export default async function ProjectPage({
     href: { pathname: "/projekte/[slug]", params: { slug } },
   });
   const projectsPath = getPathname({ locale, href: "/projekte" });
-  const homePath = locale === routing.defaultLocale ? "/" : `/${locale}`;
+  const homePath = getHomeHref(locale);
   const contactHref = getContactHref(locale);
-  const auditHref = `${homePath}#website-audit`;
+  const auditHref = getAuditHref(locale);
   const hexCover = data.coverColor?.startsWith("#");
 
   const overviewItems = [
