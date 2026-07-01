@@ -1101,10 +1101,11 @@ export function PricingLandingPage({
             </p>
           </Reveal>
 
-          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+          <div className="relative left-1/2 grid w-[min(1500px,calc(100vw-2rem))] -translate-x-1/2 items-stretch gap-5 sm:w-[min(1500px,calc(100vw-3rem))] md:grid-cols-2 xl:grid-cols-4">
             {packageOrder.map((key, index) => (
               <PricingPackageCard
                 key={key}
+                packageKey={key}
                 pkg={c.packageCopies[key]}
                 price={prices[key]}
                 featured={key === "starter"}
@@ -1297,18 +1298,26 @@ export function PricingLandingPage({
 }
 
 function PricingPackageCard({
+  packageKey,
   pkg,
   price,
   featured,
   contactHref,
   delay,
 }: {
+  packageKey: PackageKey;
   pkg: PricingPackageCopy;
   price: string;
   featured: boolean;
   contactHref: string;
   delay: number;
 }) {
+  const isBusiness = packageKey === "business";
+  const isQuotePrice = !/\d/.test(price);
+  const priceSizeClass = isQuotePrice
+    ? "text-[clamp(22px,7vw,34px)] leading-[1.08] break-words [overflow-wrap:anywhere] [hyphens:auto]"
+    : "text-[clamp(34px,4vw,46px)] leading-none";
+
   return (
     <Reveal delay={delay} className="h-full">
       <article
@@ -1316,30 +1325,58 @@ function PricingPackageCard({
           "relative flex h-full flex-col overflow-hidden rounded-[24px] p-6 shadow-sm transition-all duration-300 hover:-translate-y-1",
           featured
             ? "bg-dark text-white shadow-[0_30px_90px_-62px_rgba(15,23,42,0.95)]"
-            : "card-border-glow border border-line bg-white hover:shadow-[0_26px_80px_-58px_rgba(139,92,246,0.78)]",
+            : isBusiness
+              ? "border border-brand-purple/25 bg-[linear-gradient(180deg,#fff_0%,rgba(250,247,255,0.98)_48%,rgba(255,255,255,0.94)_100%)] shadow-[0_30px_100px_-72px_rgba(139,92,246,0.95)] ring-1 ring-brand-purple/10 hover:border-brand-purple/40 hover:shadow-[0_34px_110px_-70px_rgba(139,92,246,0.95)]"
+              : "card-border-glow border border-line bg-white hover:shadow-[0_26px_80px_-58px_rgba(139,92,246,0.78)]",
         )}
       >
         {featured && (
           <div aria-hidden className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_95%_0%,rgba(255,79,163,0.26),transparent_34%),radial-gradient(circle_at_0%_100%,rgba(139,92,246,0.24),transparent_35%)]" />
         )}
-        <div className="relative flex h-full flex-col">
+        {isBusiness && !featured && (
+          <div aria-hidden className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_92%_0%,rgba(139,92,246,0.16),transparent_35%),radial-gradient(circle_at_0%_88%,rgba(255,79,163,0.10),transparent_32%)]" />
+        )}
+        <div className="relative flex h-full min-w-0 flex-col">
           <span
             className={cn(
-              "inline-flex w-fit rounded-full px-3 py-1.5 text-[12px] font-extrabold uppercase tracking-[0.14em]",
-              featured ? "bg-white/[0.10] text-brand-pink ring-1 ring-white/[0.14]" : "bg-brand-soft text-brand-purple",
+              "inline-flex max-w-full rounded-full px-3 py-1.5 text-left text-[12px] font-extrabold uppercase leading-tight tracking-[0.14em] [overflow-wrap:anywhere]",
+              featured
+                ? "bg-white/[0.10] text-brand-pink ring-1 ring-white/[0.14]"
+                : isBusiness
+                  ? "bg-white text-brand-purple shadow-sm ring-1 ring-brand-purple/20"
+                  : "bg-brand-soft text-brand-purple",
             )}
           >
             {pkg.badge}
           </span>
-          <h3 className="mt-5 text-[22px] font-extrabold tracking-tight">{pkg.name}</h3>
-          <p className={cn("mt-2 text-[14.5px] leading-relaxed", featured ? "text-gray-300" : "text-muted")}>
+          <h3 className={cn("mt-5 text-[22px] font-extrabold tracking-tight lg:min-h-[58px]", isBusiness && "text-[23px]")}>
+            {pkg.name}
+          </h3>
+          <p className={cn("mt-2 text-[14.5px] leading-relaxed lg:min-h-[86px]", featured ? "text-gray-300" : "text-muted")}>
             <BrandText text={pkg.subtitle} />
           </p>
-          <div className="mt-5 text-[clamp(32px,4vw,44px)] font-extrabold tracking-tight">{price}</div>
-          <p className={cn("mt-2 text-[13px] font-bold", featured ? "text-brand-pink" : "text-brand-purple")}>
+          <div
+            className={cn(
+              "mt-5 flex min-h-[64px] w-full max-w-full items-end font-extrabold tracking-tight",
+              priceSizeClass,
+              isBusiness && !featured && "bg-brand bg-clip-text text-transparent",
+            )}
+          >
+            {price}
+          </div>
+          <p className={cn("mt-3 min-h-[18px] text-[13px] font-bold", featured ? "text-brand-pink" : "text-brand-purple")}>
             {pkg.technology}
           </p>
-          <div className={cn("mt-5 rounded-2xl p-4 text-[14px] leading-relaxed", featured ? "bg-white/[0.08] text-gray-200" : "bg-surface text-ink")}>
+          <div
+            className={cn(
+              "mt-5 rounded-2xl p-4 text-[14px] leading-relaxed",
+              featured
+                ? "bg-white/[0.08] text-gray-200"
+                : isBusiness
+                  ? "bg-white/[0.84] text-ink shadow-sm ring-1 ring-brand-purple/10"
+                  : "bg-surface text-ink",
+            )}
+          >
             <BrandText text={pkg.bestFor} />
           </div>
           <p className={cn("mt-4 text-[14.5px] leading-relaxed", featured ? "text-gray-300" : "text-muted")}>
@@ -1401,10 +1438,12 @@ function PricingPackageCard({
             </p>
           )}
 
-          <Button href={contactHref} variant={featured ? "primary" : "ghost"} className="mt-6 w-full">
-            {pkg.cta}
-            <ArrowRight size={16} aria-hidden />
-          </Button>
+          <div className="mt-auto pt-6">
+            <Button href={contactHref} variant={featured ? "primary" : isBusiness ? "dark" : "ghost"} className="w-full">
+              {pkg.cta}
+              <ArrowRight size={16} aria-hidden />
+            </Button>
+          </div>
         </div>
       </article>
     </Reveal>
