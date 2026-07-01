@@ -7,6 +7,11 @@ import {
   Sparkles,
   MousePointerClick,
   Zap,
+  Globe2,
+  Bot,
+  Database,
+  ShieldCheck,
+  MailCheck,
   ArrowRight,
   Check,
   type LucideIcon,
@@ -26,7 +31,7 @@ import { JsonLd } from "@/shared/seo/JsonLd";
 import { breadcrumbSchema, faqPageSchema, serviceSchema } from "@/shared/seo/schema";
 import { buildMetadata } from "@/shared/seo/metadata";
 import { TrustMetrics } from "@/shared/ui/TrustMetrics";
-import { ServiceCard, type ServiceCardData } from "@/widgets/services-page/ServiceCard";
+import type { ServiceCardData } from "@/widgets/services-page/ServiceCard";
 import { FaqAccordion, type QA } from "@/widgets/faq/FaqAccordion";
 import { Phase4LinkCluster, type Phase4HubCopy } from "@/widgets/seo-landing/Phase4LinkCluster";
 import { getPhase4LocationLinks, getPhase4ServiceLinks } from "@/widgets/seo-landing/phase4Content";
@@ -36,8 +41,23 @@ export const revalidate = 300;
 type Params = { locale: string };
 type Step = { title: string; desc: string };
 type Result = { title: string; desc: string };
+type ServiceCluster = {
+  title: string;
+  desc: string;
+  chips: string[];
+  services: string[];
+  bullets: string[];
+  cta: string;
+};
+type AuditCta = { eyebrow: string; title: string; lead: string; cta: string };
 
 const resultIcons: LucideIcon[] = [Search, Sparkles, MousePointerClick, Zap];
+const clusterIcons: LucideIcon[] = [Globe2, Search, Bot, Database, ShieldCheck, MailCheck];
+const clusterSlugs: Record<AppLocale, (string | null)[]> = {
+  de: ["website-erstellen-lassen", "seo-halle", "automatisierung", "api-integrationen", "website-sicherheit", null],
+  en: ["website-development", "seo-halle", "automation", "api-integrations", "website-security", null],
+  ru: ["razrabotka-saytov", "seo-halle", "avtomatizaciya", "api-integracii", "bezopasnost-sayta", null],
+};
 
 async function getItems(locale: AppLocale): Promise<ServiceCardData[]> {
   try {
@@ -109,10 +129,13 @@ export default async function ServicesIndexPage({ params }: { params: Promise<Pa
   const steps = t.raw("process") as Step[];
   const results = t.raw("results") as Result[];
   const faq = t.raw("faq") as QA[];
+  const clusters = t.raw("clusters") as ServiceCluster[];
+  const audit = t.raw("audit") as AuditCta;
   const seoHub = t.raw("seoHub") as Phase4HubCopy;
   const seoLinks = [...getPhase4ServiceLinks(locale), ...getPhase4LocationLinks(locale).slice(0, 3)];
 
   const homePath = locale === routing.defaultLocale ? "/" : `/${locale}`;
+  const auditHref = `${homePath}#website-audit`;
   const servicesPath = getPathname({ locale, href: "/leistungen" });
   const pricingHref = getPathname({ locale, href: "/preise" });
   const contactHref = getContactHref(locale);
@@ -221,26 +244,136 @@ export default async function ServicesIndexPage({ params }: { params: Promise<Pa
               </p>
             </Reveal>
 
-            {items.length === 0 ? (
-              <p className="mx-auto max-w-md rounded-2xl border border-dashed border-line bg-surface p-10 text-center text-muted">
-                {tp("servicesLabel")} —
-              </p>
-            ) : (
-              <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-                {items.map((item, i) => (
-                  <ServiceCard
-                    key={item.slug}
-                    item={item}
-                    index={i}
-                    locale={locale}
-                    outcomesLabel={t("outcomesLabel")}
-                    moreLabel={t("learnMore")}
-                  />
-                ))}
-              </div>
-            )}
+            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {clusters.map((cluster, i) => {
+                const Icon = clusterIcons[i % clusterIcons.length];
+                const slug = clusterSlugs[locale][i];
+                const card = (
+                  <article className="card-border-glow flex h-full flex-col rounded-[22px] border border-line bg-white p-6 transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-card">
+                    <div className="mb-5 grid h-12 w-12 place-items-center rounded-2xl bg-brand-soft text-brand-purple">
+                      <Icon size={23} aria-hidden />
+                    </div>
+                    <h3 className="text-[19px] font-extrabold tracking-tight text-dark">{cluster.title}</h3>
+                    <p className="mt-2 text-[14.5px] leading-relaxed text-muted">{cluster.desc}</p>
+                    <div className="mt-5 flex flex-wrap gap-2">
+                      {cluster.chips.slice(0, 5).map((chip) => (
+                        <span key={chip} className="rounded-full border border-line bg-surface px-2.5 py-1 text-[12px] font-bold text-ink">
+                          {chip}
+                        </span>
+                      ))}
+                    </div>
+                    <span className="mt-6 inline-flex items-center gap-1.5 text-[13px] font-semibold text-brand-purple">
+                      {cluster.cta}
+                      <ArrowRight size={14} aria-hidden className="transition-transform group-hover:translate-x-1" />
+                    </span>
+                  </article>
+                );
+
+                return (
+                  <Reveal key={cluster.title} delay={(i % 3) * 80} className="h-full">
+                    {slug ? (
+                      <a
+                        href={getPathname({ locale, href: { pathname: "/leistungen/[slug]", params: { slug } } })}
+                        className="group block h-full rounded-[22px] outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-4"
+                      >
+                        {card}
+                      </a>
+                    ) : (
+                      <a
+                        href={contactHref}
+                        className="group block h-full rounded-[22px] outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-4"
+                      >
+                        {card}
+                      </a>
+                    )}
+                  </Reveal>
+                );
+              })}
+            </div>
 
             <Phase4LinkCluster copy={seoHub} links={seoLinks} />
+          </Container>
+        </section>
+
+        {/* ---------------- SERVICE CLUSTER DETAILS ---------------- */}
+        <section className="bg-surface py-16 md:py-24">
+          <Container>
+            <div className="grid gap-5 lg:grid-cols-2">
+              {clusters.map((cluster, i) => {
+                const Icon = clusterIcons[i % clusterIcons.length];
+                return (
+                  <Reveal key={cluster.title} delay={(i % 2) * 80} className="h-full">
+                    <article className="h-full rounded-[24px] border border-line bg-white p-6 shadow-sm md:p-8">
+                      <div className="flex items-start gap-4">
+                        <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-brand text-white">
+                          <Icon size={22} aria-hidden />
+                        </span>
+                        <div>
+                          <h2 className="text-[clamp(22px,2.8vw,30px)] font-extrabold tracking-tight text-dark">
+                            {cluster.title}
+                          </h2>
+                          <p className="mt-2 text-[15.5px] leading-relaxed text-muted">{cluster.desc}</p>
+                        </div>
+                      </div>
+                      <div className="mt-6 grid gap-5 md:grid-cols-2">
+                        <div>
+                          <h3 className="text-sm font-extrabold uppercase tracking-[0.14em] text-brand-purple">
+                            {t("includedLabel")}
+                          </h3>
+                          <ul className="mt-3 grid gap-2.5">
+                            {cluster.services.map((service) => (
+                              <li key={service} className="flex gap-2 text-[14px] text-ink">
+                                <Check size={15} className="mt-0.5 shrink-0 text-emerald-700" aria-hidden />
+                                {service}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                        <div>
+                          <h3 className="text-sm font-extrabold uppercase tracking-[0.14em] text-brand-purple">
+                            {t("valueLabel")}
+                          </h3>
+                          <ul className="mt-3 grid gap-2.5">
+                            {cluster.bullets.map((bullet) => (
+                              <li key={bullet} className="rounded-xl bg-surface px-3.5 py-2 text-[14px] font-medium text-ink">
+                                {bullet}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    </article>
+                  </Reveal>
+                );
+              })}
+            </div>
+          </Container>
+        </section>
+
+        {/* ---------------- FLEXIBLE TECHNOLOGY + AUDIT ---------------- */}
+        <section className="py-16 md:py-24">
+          <Container>
+            <Reveal>
+              <div className="grid gap-6 rounded-[28px] border border-line bg-white p-6 shadow-[0_34px_100px_-68px_rgba(139,92,246,0.7)] md:p-9 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+                <div>
+                  <span className="eyebrow">{audit.eyebrow}</span>
+                  <h2 className="mt-4 text-[clamp(26px,3.6vw,42px)] font-extrabold tracking-tight text-dark">
+                    {audit.title}
+                  </h2>
+                  <p className="mt-4 text-[16px] leading-relaxed text-muted">{audit.lead}</p>
+                </div>
+                <div className="rounded-[22px] bg-surface p-5 md:p-6">
+                  <p className="text-[15.5px] leading-relaxed text-ink">{t("technologyPrinciple")}</p>
+                  <a
+                    href={auditHref}
+                    className="btn-shine mt-6 inline-flex items-center justify-center gap-2 rounded-xl bg-brand px-6 py-3.5 text-[15px] font-semibold text-white transition-all hover:-translate-y-0.5"
+                  >
+                    {audit.cta}
+                    <ArrowRight size={17} aria-hidden />
+                  </a>
+                </div>
+              </div>
+            </Reveal>
           </Container>
         </section>
 

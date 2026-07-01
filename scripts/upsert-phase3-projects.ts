@@ -44,7 +44,7 @@ const projects: ProjectConfig[] = [
         challenge:
           "Viele Unternehmen haben bereits eine Website, aber sie unterstützt den Geschäftsalltag nicht aktiv genug. Bei Salon Elen / Permanent Halle ging es darum, Leistungen besser zu erklären, Vertrauen aufzubauen und mehr Online-Termine sowie lokale Sichtbarkeit in Halle zu ermöglichen.",
         solution:
-          "Für dieses Projekt wurde eine moderne Website-Struktur entwickelt, die Inhalte klar präsentiert, mobil sehr gut funktioniert und auf Suchmaschinen sowie Nutzererfahrung ausgerichtet ist. Die Nutzerführung legt den Fokus auf Leistungen, Terminlogik und verständliche Kontaktwege.",
+          "Für https://permanent-halle.de/ wurde eine moderne Website-Struktur entwickelt, die Inhalte klar präsentiert, mobil sehr gut funktioniert und auf Suchmaschinen sowie Nutzererfahrung ausgerichtet ist. Die Nutzerführung legt den Fokus auf Leistungen, Terminlogik und verständliche Kontaktwege.",
         results:
           "Ein professioneller Beauty-Auftritt mit digitaler Terminlogik, klarer Leistungsstruktur und mehrsprachiger Nutzerführung.",
       },
@@ -54,7 +54,7 @@ const projects: ProjectConfig[] = [
         challenge:
           "Many businesses already have a website, but it does not actively support daily operations enough. For Salon Elen / Permanent Halle, the goal was to explain services more clearly, build trust and enable more online appointments and local visibility in Halle.",
         solution:
-          "A modern website structure was developed to present content clearly, work very well on mobile and support both search visibility and user experience. The user journey focuses on services, appointment logic and clear contact paths.",
+          "For https://permanent-halle.de/, a modern website structure was developed to present content clearly, work very well on mobile and support both search visibility and user experience. The user journey focuses on services, appointment logic and clear contact paths.",
         results:
           "A professional beauty presence with digital appointment logic, clear service structure and multilingual user guidance.",
       },
@@ -64,7 +64,7 @@ const projects: ProjectConfig[] = [
         challenge:
           "У многих компаний уже есть сайт, но он недостаточно активно помогает в повседневной работе. Для Salon Elen / Permanent Halle целью было понятнее показать услуги, усилить доверие и получить больше онлайн-записей и локальной видимости в Галле.",
         solution:
-          "Для проекта была разработана современная структура сайта, которая ясно представляет контент, хорошо работает на мобильных устройствах и учитывает поисковую видимость и пользовательский опыт. Пользовательский путь сфокусирован на услугах, логике записи и понятных контактных действиях.",
+          "Для https://permanent-halle.de/ была разработана современная структура сайта, которая ясно представляет контент, хорошо работает на мобильных устройствах и учитывает поисковую видимость и пользовательский опыт. Пользовательский путь сфокусирован на услугах, логике записи и понятных контактных действиях.",
         results:
           "Профессиональное beauty-присутствие с цифровой логикой записи, понятной структурой услуг и многоязычным пользовательским путём.",
       },
@@ -179,7 +179,7 @@ const projects: ProjectConfig[] = [
         challenge:
           "Viele Unternehmen haben bereits eine Website, aber sie unterstützt den Geschäftsalltag nicht aktiv genug. Bei SorgfaltBau ging es darum, Leistungen verständlich zu präsentieren, Vertrauen aufzubauen und qualifizierte Anfragen zu erleichtern.",
         solution:
-          "Für dieses Projekt wurde eine moderne Website-Struktur entwickelt, die Inhalte klar präsentiert, mobil sehr gut funktioniert und auf Suchmaschinen sowie Nutzererfahrung ausgerichtet ist.",
+          "Für https://www.sorgfaltbau.de/de wurde eine moderne Website-Struktur entwickelt, die Inhalte klar präsentiert, mobil sehr gut funktioniert und auf Suchmaschinen sowie Nutzererfahrung ausgerichtet ist.",
         results:
           "Ein professioneller Bauunternehmer-Auftritt, der Leistungen verständlich präsentiert und Vertrauen aufbaut.",
       },
@@ -189,7 +189,7 @@ const projects: ProjectConfig[] = [
         challenge:
           "Many businesses already have a website, but it does not actively support daily operations enough. For SorgfaltBau, the goal was to present services clearly, build trust and make qualified inquiries easier.",
         solution:
-          "A modern website structure was developed to present content clearly, work very well on mobile and support both search visibility and user experience.",
+          "For https://www.sorgfaltbau.de/de, a modern website structure was developed to present content clearly, work very well on mobile and support both search visibility and user experience.",
         results:
           "A professional construction company presence that explains services clearly and builds trust.",
       },
@@ -199,7 +199,7 @@ const projects: ProjectConfig[] = [
         challenge:
           "У многих компаний уже есть сайт, но он недостаточно активно помогает в повседневной работе. Для SorgfaltBau целью было понятно представить услуги, сформировать доверие и облегчить получение качественных заявок.",
         solution:
-          "Для проекта была разработана современная структура сайта, которая ясно представляет контент, хорошо работает на мобильных устройствах и учитывает поисковую видимость и пользовательский опыт.",
+          "Для https://www.sorgfaltbau.de/de была разработана современная структура сайта, которая ясно представляет контент, хорошо работает на мобильных устройствах и учитывает поисковую видимость и пользовательский опыт.",
         results:
           "Профессиональное присутствие строительной компании, которое понятно представляет услуги и формирует доверие.",
       },

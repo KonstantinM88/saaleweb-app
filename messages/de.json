@@ -55,32 +55,52 @@
     },
     "techNote": {
       "title": "Flexible Technologien",
-      "text": "Nicht jedes Unternehmen benötigt dieselbe Technologie. Deshalb empfehlen wir keine Plattform – sondern die Lösung, die am besten zu Ihren Zielen passt. Für neue Premium-Projekte setzen wir bevorzugt auf moderne Technologien wie Next.js und React. Bestehende WordPress-Websites modernisieren, erweitern oder betreuen wir selbstverständlich ebenfalls. Für individuelle Systeme und Integrationen kann auch Java sinnvoll sein. Entscheidend ist nicht das Framework. Entscheidend ist das Ergebnis.",
+      "text": "Nicht jedes Unternehmen benötigt dieselbe Technologie. Wir prüfen, welche Lösung für Ihr Unternehmen sinnvoll ist – moderne Website, WordPress, Online-Shop, individuelle Anwendung, Schnittstelle oder Automatisierung. Die Technologie folgt dem Ziel – nicht umgekehrt.",
       "chips": [
-        "Next.js",
-        "React",
+        "Websites",
+        "Online-Shops",
         "WordPress",
-        "Java",
-        "Headless CMS",
-        "Buchungssysteme"
+        "Automatisierung",
+        "Schnittstellen",
+        "Support"
       ]
     },
     "solutions": [
       {
-        "title": "Mehr Kunden gewinnen",
-        "desc": "Professionelle Unternehmenswebsites, die Vertrauen schaffen und Besucher in Kunden verwandeln."
+        "title": "Websites, Portale & Online-Shops",
+        "desc": "Professionelle digitale Auftritte und Systeme, die Vertrauen schaffen, Produkte präsentieren und Anfragen oder Verkäufe ermöglichen.",
+        "chips": ["Websites", "Portale", "Online-Shops", "WordPress", "UI/UX"],
+        "cta": "Mehr über Websites erfahren"
       },
       {
-        "title": "Mehr Sichtbarkeit erreichen",
-        "desc": "Lokale SEO, strukturierte Inhalte und technische Optimierung für bessere Auffindbarkeit."
+        "title": "SEO, Content & Sichtbarkeit",
+        "desc": "Strukturierte Inhalte, technische Optimierung und redaktionell geprüfte Texte helfen, Ihr Unternehmen besser auffindbar und verständlich zu machen.",
+        "chips": ["SEO", "Local SEO", "Copywriting", "Landingpages", "KI-Suche"],
+        "cta": "SEO-Potenzial prüfen"
       },
       {
-        "title": "Prozesse vereinfachen",
-        "desc": "Buchungssysteme, Automatisierungen und individuelle Funktionen sparen Zeit und reduzieren manuellen Aufwand."
+        "title": "Automatisierung, KI & Prozesse",
+        "desc": "Digitale Prozesse sparen Zeit, reduzieren manuelle Arbeit und unterstützen Ihr Team im Alltag.",
+        "chips": ["Workflows", "KI-Assistenten", "Interne Tools", "Datenverarbeitung", "Kundenservice"],
+        "cta": "Automatisierung besprechen"
       },
       {
-        "title": "Langfristig wachsen",
-        "desc": "Kontinuierliche Betreuung, Weiterentwicklung und Optimierung Ihrer digitalen Präsenz."
+        "title": "Daten, API & Integrationen",
+        "desc": "Wir verbinden Systeme, strukturieren Daten und schaffen Schnittstellen, damit digitale Prozesse zuverlässig zusammenarbeiten.",
+        "chips": ["API", "Datenimport", "Datenbanken", "Migration", "Auswertungen"],
+        "cta": "Integration prüfen"
+      },
+      {
+        "title": "Sicherheit, Wartung & Support",
+        "desc": "Websites und Webanwendungen benötigen Pflege, Updates, Backups und technische Kontrolle.",
+        "chips": ["Wartung", "Backups", "Updates", "Performance", "Sicherheitscheck"],
+        "cta": "Website-Sicherheit prüfen"
+      },
+      {
+        "title": "Marketing, CRM & Kundenprozesse",
+        "desc": "Digitale Kundengewinnung endet nicht bei der Website. Wir unterstützen strukturierte Anfragewege und DSGVO-bewusste Kommunikation.",
+        "chips": ["CRM-Struktur", "Lead-Management", "Newsletter", "Audit-Funnels", "Kontaktwege"],
+        "cta": "Kundenprozesse verbessern"
       }
     ],
     "items": [
@@ -707,17 +727,17 @@
     "title": "Die richtige Technologie für Ihr Unternehmen",
     "lead": "Wir empfehlen nicht eine bestimmte Plattform. Wir empfehlen die Lösung, die für Ihr Unternehmen messbar am meisten bringt.",
     "stack": [
-      "Next.js",
-      "React",
-      "WordPress",
-      "Java",
-      "Headless CMS",
-      "Custom Solutions",
-      "Booking Systems",
-      "E-Commerce"
+      "Websites",
+      "Online-Shops",
+      "WordPress-Lösungen",
+      "Automatisierung",
+      "Schnittstellen",
+      "Datenbanklösungen",
+      "Buchungssysteme",
+      "Support"
     ],
     "noteTitle": "Das Framework ist nicht das Ziel.",
-    "noteText": "Ob moderne Next.js- und React-Plattform für maximale Performance, Java-Anbindung für bestehende Systeme oder professionell betreute WordPress-Lösung: Entscheidend ist nicht die Technologie, sondern das Geschäftsergebnis.",
+    "noteText": "Ob moderne Next.js-Plattform, professionell betreute WordPress-Website, individuelle Webanwendung, API-Integration oder Automatisierung: Entscheidend ist nicht das Framework, sondern der Nutzen für Ihr Unternehmen.",
     "benefits": [
       {
         "title": "Performance",
@@ -913,38 +933,40 @@
   },
   "Comparison": {
     "eyebrow": "Vergleich",
-    "title": "Moderne Website im Vergleich zu klassischem WordPress",
-    "them": "WordPress",
+    "title": "Standard-Website oder digitales Wachstumssystem?",
+    "lead": "Viele Websites sehen gut aus, arbeiten aber nicht aktiv für Sichtbarkeit, Vertrauen und Anfragen. SaaleWeb denkt Websites als digitale Systeme, die messbar zum Geschäft beitragen.",
+    "us": "SaaleWeb-System",
+    "them": "Standard-Website",
     "rows": [
       {
-        "feature": "Performance",
-        "us": "Exzellent",
-        "them": "Mittel"
+        "feature": "Ziel",
+        "us": "Entwickelt für Vertrauen und Anfragen",
+        "them": "Sieht gut aus"
       },
       {
         "feature": "SEO",
-        "us": "Nativ",
-        "them": "Über Plugins"
+        "us": "Von Anfang an mitgedacht",
+        "them": "Wird später ergänzt"
       },
       {
-        "feature": "Sicherheit",
-        "us": "Hoch",
-        "them": "Angriffsfläche"
+        "feature": "Performance",
+        "us": "Core Web Vitals werden optimiert",
+        "them": "Wird nicht dauerhaft geprüft"
       },
       {
-        "feature": "Skalierbarkeit",
-        "us": "Unbegrenzt",
-        "them": "Begrenzt"
+        "feature": "Nutzerführung",
+        "us": "Klare CTA-Struktur",
+        "them": "Kontaktwege oft unklar"
       },
       {
-        "feature": "Wartung",
-        "us": "Minimal",
-        "them": "Laufend"
+        "feature": "KI-Suche",
+        "us": "Inhalte für Google und KI vorbereitet",
+        "them": "Nicht strukturiert"
       },
       {
-        "feature": "User Experience",
-        "us": "Premium",
-        "them": "Template"
+        "feature": "Weiterentwicklung",
+        "us": "Langfristig betreut und erweiterbar",
+        "them": "Wird selten weiterentwickelt"
       }
     ],
     "before": "Vorher",
@@ -1104,11 +1126,11 @@
     "floatB": "~50 km Radius"
   },
   "ServicesPage": {
-    "metaTitle": "Webdesign, SEO & KI-Optimierung für Halle, Leipzig & Saalekreis",
-    "metaDescription": "Wir bauen Websites, die gefunden werden und Kunden bringen — schnell, modern und für Google und KI optimiert. Webdesign, SEO und Wartung aus einer Hand.",
+    "metaTitle": "Leistungen für digitale Sichtbarkeit, Automatisierung und Wachstum",
+    "metaDescription": "SaaleWeb entwickelt digitale Systeme für Websites, SEO, Online-Shops, WordPress, Automatisierung, API-Integrationen, Website-Sicherheit und Wachstum.",
     "heroEyebrow": "Unsere Leistungen",
-    "heroTitle": "Websites, die Kunden bringen — nicht nur gut aussehen",
-    "heroLead": "Sie bekommen mehr als eine schöne Seite: ein digitales System, das rund um die Uhr neue Anfragen für Ihr Unternehmen gewinnt. Verständlich erklärt, fair im Preis, gebaut für Wachstum.",
+    "heroTitle": "Digitale Lösungen für Unternehmen, die mehr erreichen wollen.",
+    "heroLead": "Ob Website, SEO, Online-Shop, Automatisierung, WordPress, API-Integration oder KI-Assistent — SaaleWeb entwickelt Lösungen, die zu Ihren Zielen passen.",
     "heroCta": "Kostenloses Erstgespräch",
     "heroCta2": "Preise ansehen",
     "trust1Value": "100/100",
@@ -1122,6 +1144,65 @@
     "servicesEyebrow": "Was wir für Sie tun",
     "servicesTitle": "Alles für Ihre digitale Sichtbarkeit — aus einer Hand",
     "servicesLead": "Sie müssen nicht mehrere Dienstleister koordinieren. Von der Idee bis zur laufenden Betreuung kümmern wir uns um alles.",
+    "includedLabel": "Enthaltene Leistungen",
+    "valueLabel": "Nutzen für Ihr Unternehmen",
+    "technologyPrinciple": "Die Technologie folgt dem Ziel – nicht umgekehrt. Ob moderne Next.js-Plattform, professionell betreute WordPress-Website, individuelle Webanwendung, API-Integration oder Automatisierung: Entscheidend ist der Nutzen für Ihr Unternehmen.",
+    "audit": {
+      "eyebrow": "Kostenlose Analyse",
+      "title": "Nicht sicher, welche digitale Lösung Ihr Unternehmen braucht?",
+      "lead": "Wir prüfen Website, SEO, Technik, Inhalte und Prozesse – und zeigen, wo der größte Hebel liegt.",
+      "cta": "Kostenlose Website-Analyse anfragen"
+    },
+    "clusters": [
+      {
+        "title": "Websites, Portale & Online-Shops",
+        "desc": "Professionelle digitale Auftritte und Systeme, die Vertrauen schaffen, Produkte präsentieren und Anfragen oder Verkäufe ermöglichen.",
+        "chips": ["Websites", "Portale", "Online-Shops", "WordPress", "UI/UX"],
+        "services": ["Entwicklung von Websites", "Unternehmenswebsites", "Corporate Portale", "Online-Shops", "WordPress-Websites", "Website Relaunch", "Mehrsprachige Websites"],
+        "bullets": ["Professioneller erster Eindruck", "Klare Nutzerführung", "Mobile First", "Bessere Auffindbarkeit", "Einfache Erweiterbarkeit"],
+        "cta": "Mehr über Websites erfahren"
+      },
+      {
+        "title": "SEO, Content & Sichtbarkeit",
+        "desc": "Strukturierte Inhalte, technische Optimierung und hochwertige Texte sorgen dafür, dass Ihr Unternehmen besser gefunden und verstanden wird.",
+        "chips": ["SEO", "Local SEO", "Copywriting", "Landingpages", "KI-Suche"],
+        "services": ["SEO-Optimierung", "Local SEO", "Technisches SEO", "Copywriting", "KI-gestützte Content-Produktion mit redaktioneller Prüfung", "Blog- und Landingpage-Strategie"],
+        "bullets": ["Mehr Sichtbarkeit", "Mehr relevante Besucher", "Bessere lokale Auffindbarkeit", "Klare Inhalte", "Zukunftsfähig für Google und KI-Suche"],
+        "cta": "SEO-Potenzial prüfen"
+      },
+      {
+        "title": "Automatisierung, KI & Geschäftsprozesse",
+        "desc": "Digitale Prozesse sparen Zeit, reduzieren manuelle Arbeit und helfen Ihrem Unternehmen, effizienter zu arbeiten.",
+        "chips": ["Workflows", "KI-Assistenten", "Interne Tools", "Datenverarbeitung", "Kundenservice"],
+        "services": ["Automatisierung von Geschäftsprozessen", "KI-Assistenten für Kundenservice", "Individuelle Software und Skripte", "Interne Tools", "Datenverarbeitung", "Automatisierte Workflows"],
+        "bullets": ["Weniger manuelle Arbeit", "Schnellere Abläufe", "Besserer Kundenservice", "Skalierbare Prozesse", "Mehr Effizienz"],
+        "cta": "Automatisierung besprechen"
+      },
+      {
+        "title": "Daten, API & Integrationen",
+        "desc": "Wir verbinden Systeme, strukturieren Daten und schaffen technische Schnittstellen, damit digitale Prozesse zuverlässig zusammenarbeiten.",
+        "chips": ["API", "Datenimport", "Datenbanken", "Migration", "Auswertungen"],
+        "services": ["API-Entwicklung", "API-Integrationen", "Datenbanklösungen", "Datenimport und Datenexport", "Datenmigration", "Rechtskonforme Datenextraktion und Datenaufbereitung"],
+        "bullets": ["Systeme verbinden", "Daten nutzbar machen", "Fehler reduzieren", "Zeit sparen", "Bessere Entscheidungen durch Daten"],
+        "cta": "Integration prüfen"
+      },
+      {
+        "title": "Sicherheit, Wartung & technischer Support",
+        "desc": "Websites benötigen Pflege, Sicherheit und technische Kontrolle. SaaleWeb unterstützt bei Wartung, Fehlerbehebung und Sicherheitsoptimierung.",
+        "chips": ["Wartung", "Backups", "Updates", "Performance", "Sicherheitscheck"],
+        "services": ["Website-Wartung", "WordPress-Wartung", "Sicherheitsoptimierung für Websites und Webanwendungen", "Malware-Entfernung", "Updates", "Backups", "Monitoring"],
+        "bullets": ["Weniger Ausfälle", "Mehr Sicherheit", "Regelmäßige Updates", "Schutz vor technischen Risiken", "Langfristige Betreuung"],
+        "cta": "Website-Sicherheit prüfen"
+      },
+      {
+        "title": "Marketing, CRM & Kundenprozesse",
+        "desc": "Digitale Kundengewinnung endet nicht bei der Website. Auf Wunsch unterstützt SaaleWeb auch bei strukturierten Kundenprozessen und DSGVO-konformer Kommunikation.",
+        "chips": ["CRM-Struktur", "Lead-Management", "Newsletter", "Audit-Funnels", "Kontaktwege"],
+        "services": ["Aufbau von Kunden- oder Interessentenstrukturen", "CRM-Struktur", "Lead-Management", "Kontaktformulare", "Website-Audit-Funnels", "DSGVO-konforme E-Mail-Kommunikation mit rechtlich zulässigen Kontakten"],
+        "bullets": ["Bessere Kundenprozesse", "Strukturierte Anfragen", "Mehr Nachfassmöglichkeiten", "Bessere Kundenbindung", "Saubere Kommunikation"],
+        "cta": "Kundenprozesse verbessern"
+      }
+    ],
     "seoHub": {
       "eyebrow": "SEO-Landingpages",
       "title": "Direkte Links zu gefragten Leistungen",
@@ -1193,6 +1274,38 @@
       {
         "q": "Kümmern Sie sich auch nach dem Launch?",
         "a": "Gerne. Auf Wunsch übernehmen wir Updates, Sicherheit, Backups und laufende Optimierung, damit Ihre Seite dauerhaft Anfragen bringt."
+      },
+      {
+        "q": "Arbeitet SaaleWeb auch mit WordPress?",
+        "a": "Ja. Wir erstellen, modernisieren, pflegen und erweitern WordPress-Websites, wenn WordPress für Ihr Ziel die passende Lösung ist."
+      },
+      {
+        "q": "Ist SaaleWeb nur eine Next.js Agentur?",
+        "a": "Nein. Die Technologie folgt dem Ziel – nicht umgekehrt. Je nach Aufgabe arbeiten wir mit Next.js, WordPress, individuellen Webanwendungen, Schnittstellen oder Automatisierung."
+      },
+      {
+        "q": "Kann SaaleWeb auch SEO übernehmen?",
+        "a": "Ja. Wir bauen technische und strukturelle SEO-Grundlagen sauber auf und können Local SEO, Content-Struktur und laufende Optimierung ergänzen."
+      },
+      {
+        "q": "Bieten Sie auch Online-Shops an?",
+        "a": "Ja. Wir entwickeln Online-Shops mit klarer Produktstruktur, mobiler Nutzerführung, SEO-Basis und auf Wunsch Produktimporten oder Schnittstellen."
+      },
+      {
+        "q": "Können bestehende Systeme angebunden werden?",
+        "a": "In vielen Fällen ja. Wir prüfen API, Datenstruktur und Datenschutzanforderungen und integrieren CRM, Buchung, Shop, Kalender oder andere Tools pragmatisch."
+      },
+      {
+        "q": "Setzen Sie KI im Projekt ein?",
+        "a": "Ja, wenn sie echten Nutzen bringt. Möglich sind KI-Assistenten, bessere Wissensstruktur, Anfragevorbereitung oder interne Unterstützung – immer mit klarer Kontrolle."
+      },
+      {
+        "q": "Kümmern Sie sich um Hosting und Sicherheit?",
+        "a": "Wir beraten zur passenden Infrastruktur und übernehmen auf Wunsch Wartung, Updates, Backups, Formularschutz und praktische Website-Sicherheit."
+      },
+      {
+        "q": "Gibt es garantierte Google-Rankings?",
+        "a": "Nein. Seriöse SEO-Arbeit garantiert keine festen Platzierungen. Wir verbessern Technik, Struktur, Inhalte und Messbarkeit transparent."
       }
     ],
     "detail": {

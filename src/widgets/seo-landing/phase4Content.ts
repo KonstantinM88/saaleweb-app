@@ -121,9 +121,9 @@ const serviceCases = {
   ],
   local: [
     {
-      label: "Glaserei Schubert",
-      href: "/projekte/glaserei-schubert",
-      description: "Lokale Sichtbarkeit und vertrauensbildende Projektstruktur für einen regionalen Fachbetrieb.",
+      label: "Salon Elen / Permanent Halle",
+      href: "/projekte/online-buchungen-verdreifacht",
+      description: "Beauty-Projekt mit Online-Terminlogik, klaren Leistungen, Local SEO und mobiler Nutzerführung.",
     },
     {
       label: "Qualifizierte Bauanfragen",
@@ -145,7 +145,7 @@ const serviceCases = {
   ],
 };
 
-export const seoServicePages: Record<string, Phase4Landing> = {
+const coreSeoServicePages: Record<string, Phase4Landing> = {
   "website-erstellen-lassen": {
     slug: "website-erstellen-lassen",
     eyebrow: "Leistung",
@@ -685,13 +685,13 @@ export const seoServicePages: Record<string, Phase4Landing> = {
 const SERVICE_SLUGS: Record<string, Phase4SlugMap> = {
   "website-erstellen-lassen": {
     de: "website-erstellen-lassen",
-    en: "get-a-website",
-    ru: "zakazat-sajt",
+    en: "website-development",
+    ru: "razrabotka-saytov",
   },
   "webdesign-halle": {
     de: "webdesign-halle",
     en: "web-design-halle",
-    ru: "veb-dizajn-halle",
+    ru: "webdesign-halle",
   },
   "seo-halle": {
     de: "seo-halle",
@@ -705,8 +705,8 @@ const SERVICE_SLUGS: Record<string, Phase4SlugMap> = {
   },
   "wordpress-website-modernisieren": {
     de: "wordpress-website-modernisieren",
-    en: "modernize-wordpress-website",
-    ru: "modernizaciya-wordpress-sajta",
+    en: "wordpress-website-modernization",
+    ru: "modernizaciya-wordpress-sayta",
   },
   "website-relaunch": {
     de: "website-relaunch",
@@ -721,12 +721,61 @@ const SERVICE_SLUGS: Record<string, Phase4SlugMap> = {
   "website-wartung": {
     de: "website-wartung",
     en: "website-maintenance",
-    ru: "podderzhka-sajta",
+    ru: "podderzhka-saytov",
   },
   buchungssysteme: {
     de: "buchungssysteme",
     en: "booking-systems",
     ru: "sistemy-bronirovaniya",
+  },
+  "online-shop-erstellen": {
+    de: "online-shop-erstellen",
+    en: "online-shop-development",
+    ru: "sozdanie-internet-magazina",
+  },
+  "ki-assistent": {
+    de: "ki-assistent",
+    en: "ai-assistant",
+    ru: "ai-assistent",
+  },
+  automatisierung: {
+    de: "automatisierung",
+    en: "automation",
+    ru: "avtomatizaciya",
+  },
+  "api-integrationen": {
+    de: "api-integrationen",
+    en: "api-integrations",
+    ru: "api-integracii",
+  },
+  "website-sicherheit": {
+    de: "website-sicherheit",
+    en: "website-security",
+    ru: "bezopasnost-sayta",
+  },
+  datenanalyse: {
+    de: "datenanalyse",
+    en: "data-analytics",
+    ru: "analitika-dannyh",
+  },
+  "shop-produktimport": {
+    de: "shop-produktimport",
+    en: "shop-product-import",
+    ru: "import-tovarov",
+  },
+};
+
+const SERVICE_SLUG_ALIASES: Record<Phase4Locale, Record<string, string>> = {
+  de: {},
+  en: {
+    "get-a-website": "website-erstellen-lassen",
+    "modernize-wordpress-website": "wordpress-website-modernisieren",
+  },
+  ru: {
+    "zakazat-sajt": "website-erstellen-lassen",
+    "veb-dizajn-halle": "webdesign-halle",
+    "modernizaciya-wordpress-sajta": "wordpress-website-modernisieren",
+    "podderzhka-sajta": "website-wartung",
   },
 };
 
@@ -1425,9 +1474,9 @@ const SERVICE_CASES_BY_LOCALE: Record<Phase4Locale, Phase4Link[]> = {
       description: "Restaurant website with reservation focus, menu, Local SEO and responsive presentation.",
     },
     {
-      label: "Glaserei Schubert",
-      href: "/en/projects/glaserei-schubert",
-      description: "Local specialist business with clear structure and digital trust building.",
+      label: "Salon Elen / Permanent Halle",
+      href: "/en/projects/online-bookings-tripled",
+      description: "Beauty studio with online appointment logic, clear services, Local SEO and mobile user guidance.",
     },
   ],
   ru: [
@@ -1437,11 +1486,967 @@ const SERVICE_CASES_BY_LOCALE: Record<Phase4Locale, Phase4Link[]> = {
       description: "Сайт ресторана с фокусом на бронирование, меню, Local SEO и адаптивную подачу.",
     },
     {
-      label: "Glaserei Schubert",
-      href: "/ru/proekty/glaserei-schubert",
-      description: "Локальная ремесленная компания с понятной структурой и цифровым доверием.",
+      label: "Salon Elen / Permanent Halle",
+      href: "/ru/proekty/onlajn-zapisi-vyrosli-vtroe",
+      description: "Beauty Studio с онлайн-записью, понятными услугами, Local SEO и удобным мобильным путём.",
     },
   ],
+};
+
+type Phase5ServiceInput = {
+  topic: string;
+  navLabel: string;
+  title: string;
+  metaTitle: string;
+  metaDescription: string;
+  lead: string[];
+  problems: string[];
+  solution: string[];
+  features: Phase4Card[];
+  related: Phase4Link[];
+  cases?: Phase4Link[];
+  extraFaq?: Phase4Faq[];
+};
+
+const phase5Labels: Record<
+  Phase4Locale,
+  {
+    eyebrow: string;
+    problemTitle: string;
+    solutionTitle: string;
+    featuresTitle: string;
+    technologyTitle: string;
+    technologyText: string;
+    processTitle: string;
+    process: Phase4Card[];
+    casesTitle: string;
+    relatedTitle: string;
+    finalTitle: string;
+    finalText: string;
+  }
+> = {
+  de: {
+    eyebrow: "Leistung",
+    problemTitle: "Typische Probleme",
+    solutionTitle: "Wie SaaleWeb hilft",
+    featuresTitle: "Was wir für Sie umsetzen",
+    technologyTitle: "Die Technologie folgt dem Ziel",
+    technologyText:
+      "Die Technologie folgt dem Ziel – nicht umgekehrt. Ob moderne Next.js-Plattform, professionell betreute WordPress-Website, individuelle Webanwendung, API-Integration oder Automatisierung: Entscheidend ist nicht das Framework, sondern der Nutzen für Ihr Unternehmen.",
+    processTitle: "So entsteht eine sinnvolle Lösung",
+    process: serviceProcess,
+    casesTitle: "Passende Projektbeispiele",
+    relatedTitle: "Sinnvolle nächste Seiten",
+    finalTitle: "Lassen Sie uns prüfen, was für Ihr Unternehmen sinnvoll ist.",
+    finalText:
+      "Im kostenlosen Erstgespräch klären wir Ziel, Aufwand und die realistisch beste nächste Maßnahme.",
+  },
+  en: {
+    eyebrow: "Service",
+    problemTitle: "Typical problems",
+    solutionTitle: "How SaaleWeb helps",
+    featuresTitle: "What we can implement for you",
+    technologyTitle: "Technology follows the goal",
+    technologyText:
+      "Technology follows the business goal, not the other way around. We can build modern Next.js platforms, professionally maintained WordPress websites, custom web applications, API integrations or automation workflows. The deciding factor is the business value, not the framework.",
+    processTitle: "A clear path from idea to useful system",
+    process: [
+      { title: "Analysis", text: "We review goals, current setup, customer paths, data and technical constraints." },
+      { title: "Concept", text: "You receive a clear plan for structure, functions, content and realistic implementation." },
+      { title: "Implementation", text: "Design, development, integrations and content are connected into one stable solution." },
+      { title: "Launch", text: "Before launch we check performance, mobile UX, forms, tracking and indexability." },
+      { title: "Support", text: "After launch we improve the system based on real signals and business priorities." },
+    ],
+    casesTitle: "Relevant project examples",
+    relatedTitle: "Useful next pages",
+    finalTitle: "Let’s check what makes sense for your business.",
+    finalText:
+      "In the free first consultation we clarify your goal, realistic effort and the best next step.",
+  },
+  ru: {
+    eyebrow: "Услуга",
+    problemTitle: "Типичные проблемы",
+    solutionTitle: "Как помогает SaaleWeb",
+    featuresTitle: "Что мы можем реализовать",
+    technologyTitle: "Технология следует цели",
+    technologyText:
+      "Технология следует бизнес-цели, а не наоборот. Мы можем разработать современную платформу на Next.js, профессионально поддерживать WordPress-сайт, создать индивидуальное веб-приложение, API-интеграцию или автоматизацию. Важнее всего польза для бизнеса, а не название фреймворка.",
+    processTitle: "Понятный путь от идеи до рабочей системы",
+    process: [
+      { title: "Анализ", text: "Проверяем цели, текущую систему, путь клиента, данные и технические ограничения." },
+      { title: "Концепция", text: "Формируем понятный план структуры, функций, контента и реалистичной реализации." },
+      { title: "Реализация", text: "Объединяем дизайн, разработку, интеграции и контент в стабильное решение." },
+      { title: "Запуск", text: "Перед запуском проверяем скорость, мобильность, формы, аналитику и индексацию." },
+      { title: "Поддержка", text: "После запуска улучшаем систему по реальным сигналам и бизнес-приоритетам." },
+    ],
+    casesTitle: "Подходящие примеры проектов",
+    relatedTitle: "Полезные следующие страницы",
+    finalTitle: "Давайте проверим, что имеет смысл для вашего бизнеса.",
+    finalText:
+      "На бесплатной консультации уточним цель, реалистичный объём работ и лучший следующий шаг.",
+  },
+};
+
+const PHASE5_SERVICE_CONTENT: Record<Phase4Locale, Record<string, Phase5ServiceInput>> = {
+  de: {
+    "online-shop-erstellen": {
+      topic: "Online-Shops",
+      navLabel: "Online-Shop erstellen",
+      title: "Online-Shop erstellen lassen – klar strukturiert, schnell und auf Verkäufe vorbereitet",
+      metaTitle: "Online-Shop erstellen lassen | SaaleWeb",
+      metaDescription:
+        "Online-Shop erstellen lassen mit SaaleWeb: Produktstruktur, mobile UX, SEO-Grundlage, Importprozesse, Checkout-Vertrauen und langfristige Wartbarkeit.",
+      lead: [
+        "Ein Online-Shop muss mehr leisten als Produkte anzeigen. Kunden brauchen Orientierung, Vertrauen, schnelle Ladezeiten und einen einfachen Weg zum Kauf.",
+        "SaaleWeb entwickelt Shops, die zu Sortiment, Team und Wachstum passen – von klarer Produktstruktur bis zu Importen, Schnittstellen und SEO-Basis.",
+      ],
+      problems: [
+        "Kategorien, Filter oder Produktdaten sind unklar aufgebaut.",
+        "Mobile Nutzer verlieren Vertrauen oder brechen im Checkout ab.",
+        "Produktpflege kostet zu viel Zeit, weil Importe fehlen.",
+        "SEO für Kategorien und Produkte wird erst nachträglich bedacht.",
+      ],
+      solution: [
+        "Wir planen Shop-Struktur, Produktlogik, Inhalte und technische Basis gemeinsam, damit der Shop verständlich, schnell und wartbar bleibt.",
+        "Je nach Ziel integrieren wir Zahlungswege, Produktimporte, CRM- oder Warenwirtschafts-Schnittstellen und klare Analysepunkte.",
+      ],
+      features: [
+        { title: "Shop-Struktur", text: "Kategorien, Produktseiten, Filter und Navigation werden auf Kaufentscheidungen ausgerichtet." },
+        { title: "Produktdaten", text: "CSV-, XML- oder API-Importe können vorbereitet, bereinigt und wiederholbar gemacht werden." },
+        { title: "Checkout-Vertrauen", text: "Kontakt, Versand, Zahlungswege und Sicherheit werden klar kommuniziert." },
+        { title: "SEO-Basis", text: "Kategorie- und Produktseiten erhalten saubere Titel, Inhalte und interne Links." },
+      ],
+      related: [
+        { label: "Shop-Produktimport", href: "/leistungen/shop-produktimport", description: "Produktdaten sauber übernehmen und aktualisieren." },
+        { label: "API-Integrationen", href: "/leistungen/api-integrationen", description: "Shop mit Tools, Warenwirtschaft oder CRM verbinden." },
+        { label: "Website-Sicherheit", href: "/leistungen/website-sicherheit", description: "Technische Grundlagen und vertrauenswürdige Abläufe stärken." },
+        { label: "Kontakt", href: "/kontakt", description: "Shop-Projekt unverbindlich besprechen." },
+      ],
+      cases: serviceCases.restaurant,
+    },
+    "ki-assistent": {
+      topic: "KI-Assistenten",
+      navLabel: "KI-Assistent",
+      title: "KI-Assistent für Website und Prozesse – hilfreich, kontrollierbar und verständlich integriert",
+      metaTitle: "KI-Assistent für Unternehmen | SaaleWeb",
+      metaDescription:
+        "KI-Assistenten für Websites und Geschäftsprozesse: FAQ, Anfragevorbereitung, interne Abläufe, Wissensstruktur und kontrollierte Integration.",
+      lead: [
+        "KI ist nur dann sinnvoll, wenn sie echte Fragen schneller klärt oder interne Arbeit reduziert.",
+        "SaaleWeb hilft, KI-Assistenten so einzusetzen, dass sie zu Inhalten, Prozessen und Verantwortung im Unternehmen passen.",
+      ],
+      problems: [
+        "Kunden stellen wiederholt ähnliche Fragen, bevor sie anfragen.",
+        "Interne Informationen liegen verstreut in Dokumenten, E-Mails oder Tabellen.",
+        "KI-Tools wirken losgelöst von Website und Geschäftsprozess.",
+        "Es fehlt ein klarer Rahmen, welche Antworten automatisiert werden dürfen.",
+      ],
+      solution: [
+        "Wir strukturieren Wissen, definieren sinnvolle Einsatzbereiche und integrieren KI dort, wo sie Nutzern oder Team wirklich hilft.",
+        "Dabei bleiben Transparenz, redaktionelle Kontrolle und sichere Übergabe an Menschen wichtiger als Showeffekte.",
+      ],
+      features: [
+        { title: "FAQ-Assistent", text: "Häufige Fragen können verständlich vorbereitet und auf Anfragewege abgestimmt werden." },
+        { title: "Lead-Vorbereitung", text: "Anfragen können vorqualifiziert werden, ohne den persönlichen Kontakt zu ersetzen." },
+        { title: "Wissensstruktur", text: "Leistungen, Dokumente und Abläufe werden so geordnet, dass KI sie besser nutzen kann." },
+        { title: "Kontrollierte Übergabe", text: "Bei sensiblen Themen wird klar an das Team weitergeleitet." },
+      ],
+      related: [
+        { label: "Automatisierung", href: "/leistungen/automatisierung", description: "KI sinnvoll mit Abläufen verbinden." },
+        { label: "API-Integrationen", href: "/leistungen/api-integrationen", description: "KI mit bestehenden Tools verbinden." },
+        { label: "Datenanalyse", href: "/leistungen/datenanalyse", description: "Daten strukturiert auswerten und nutzbar machen." },
+        { label: "Kontakt", href: "/kontakt", description: "KI-Einsatz realistisch prüfen." },
+      ],
+      cases: serviceCases.local,
+    },
+    automatisierung: {
+      topic: "Automatisierung",
+      navLabel: "Automatisierung",
+      title: "Automatisierung für Websites und Geschäftsprozesse – weniger manuelle Arbeit, klarere Abläufe",
+      metaTitle: "Automatisierung für Unternehmen | SaaleWeb",
+      metaDescription:
+        "Automatisierung für Website, Leads, CRM, E-Mail, Daten und Geschäftsprozesse. SaaleWeb verbindet digitale Abläufe sauber und nachvollziehbar.",
+      lead: [
+        "Viele Unternehmen verlieren Zeit durch wiederholte manuelle Aufgaben: kopieren, nachfragen, sortieren, weiterleiten.",
+        "SaaleWeb automatisiert ausgewählte Abläufe so, dass Team, Website und Tools besser zusammenarbeiten.",
+      ],
+      problems: [
+        "Anfragen landen in verschiedenen Postfächern oder Tools.",
+        "Follow-ups werden vergessen oder zu spät verschickt.",
+        "Daten werden mehrfach manuell übertragen.",
+        "Es fehlt Überblick, welche Anfrage welchen Status hat.",
+      ],
+      solution: [
+        "Wir analysieren den bestehenden Ablauf und automatisieren nur die Schritte, die messbar Zeit sparen oder Fehler reduzieren.",
+        "Dabei achten wir auf einfache Wartung, klare Zuständigkeiten und nachvollziehbare Übergaben.",
+      ],
+      features: [
+        { title: "Lead-Flows", text: "Formulare, E-Mails, CRM und Benachrichtigungen können sauber verbunden werden." },
+        { title: "Follow-up", text: "Bestätigungen, interne Aufgaben und Erinnerungen werden verlässlicher ausgelöst." },
+        { title: "Datenübergabe", text: "Daten aus Website, Shop oder Tools werden kontrolliert weitergegeben." },
+        { title: "Prozessklarheit", text: "Automatisierung bleibt verständlich und dokumentiert." },
+      ],
+      related: [
+        { label: "KI-Assistent", href: "/leistungen/ki-assistent", description: "Automatisierung mit hilfreicher KI kombinieren." },
+        { label: "API-Integrationen", href: "/leistungen/api-integrationen", description: "Tools und Datenquellen verbinden." },
+        { label: "Datenanalyse", href: "/leistungen/datenanalyse", description: "Abläufe sichtbar und auswertbar machen." },
+        { label: "Kontakt", href: "/kontakt", description: "Automatisierungspotenzial prüfen." },
+      ],
+      cases: serviceCases.booking,
+    },
+    "api-integrationen": {
+      topic: "API-Integrationen",
+      navLabel: "API-Integrationen",
+      title: "API-Integrationen – Website, Shop, CRM und Datenquellen sauber verbinden",
+      metaTitle: "API-Integrationen | SaaleWeb",
+      metaDescription:
+        "API-Integrationen für Websites, Shops, CRM, Buchungssysteme und Datenquellen. SaaleWeb verbindet Systeme pragmatisch und wartbar.",
+      lead: [
+        "Eine Website wird stärker, wenn sie nicht isoliert arbeitet, sondern sinnvoll mit bestehenden Tools verbunden ist.",
+        "SaaleWeb plant und entwickelt API-Integrationen, die Datenflüsse vereinfachen und manuelle Arbeit reduzieren.",
+      ],
+      problems: [
+        "Website, CRM, Shop oder Buchungssystem arbeiten getrennt voneinander.",
+        "Daten müssen manuell übertragen oder korrigiert werden.",
+        "Bestehende Schnittstellen sind unklar dokumentiert.",
+        "Fehler fallen erst auf, wenn Kunden oder Team betroffen sind.",
+      ],
+      solution: [
+        "Wir prüfen vorhandene APIs, definieren sichere Datenflüsse und bauen Integrationen so, dass sie im Alltag nachvollziehbar bleiben.",
+        "Wichtige Fehlerfälle, Benachrichtigungen und Datenschutzanforderungen werden bereits im Konzept berücksichtigt.",
+      ],
+      features: [
+        { title: "Tool-Verbindung", text: "CRM, Kalender, Shop, Newsletter, Buchung oder interne Systeme können angebunden werden." },
+        { title: "Datenlogik", text: "Felder, Formate und Übergaben werden sauber gemappt." },
+        { title: "Fehlerbehandlung", text: "Wichtige Ausfälle oder unvollständige Daten werden sichtbar." },
+        { title: "Dokumentation", text: "Die Integration bleibt verständlich und später erweiterbar." },
+      ],
+      related: [
+        { label: "Automatisierung", href: "/leistungen/automatisierung", description: "Integrationen in echte Abläufe einbetten." },
+        { label: "Online-Shop erstellen", href: "/leistungen/online-shop-erstellen", description: "Shop und Backend sinnvoll verbinden." },
+        { label: "Shop-Produktimport", href: "/leistungen/shop-produktimport", description: "Produktdaten über Dateien oder APIs übernehmen." },
+        { label: "Kontakt", href: "/kontakt", description: "Schnittstelle besprechen." },
+      ],
+      cases: serviceCases.booking,
+    },
+    "website-sicherheit": {
+      topic: "Website-Sicherheit",
+      navLabel: "Website-Sicherheit",
+      title: "Website-Sicherheit – technische Grundlagen, Updates und Vertrauen sauber absichern",
+      metaTitle: "Website-Sicherheit | SaaleWeb",
+      metaDescription:
+        "Website-Sicherheit für Unternehmensseiten und WordPress: Updates, technische Härtung, Backups, Formularschutz, Monitoring und vertrauenswürdige Basis.",
+      lead: [
+        "Sicherheit bedeutet für viele Unternehmen vor allem: Die Website soll zuverlässig funktionieren, Vertrauen schaffen und keine unnötigen Risiken öffnen.",
+        "SaaleWeb kümmert sich um die praktischen Grundlagen für professionelle Websites, Shops und WordPress-Systeme.",
+      ],
+      problems: [
+        "Updates, Plugins oder Abhängigkeiten bleiben zu lange ungeprüft.",
+        "Formulare sind anfällig für Spam oder unklare Datenflüsse.",
+        "Backups, SSL, Weiterleitungen oder Servereinstellungen sind nicht sauber dokumentiert.",
+        "Kunden verlieren Vertrauen, wenn Warnungen, Fehler oder Ausfälle sichtbar werden.",
+      ],
+      solution: [
+        "Wir prüfen die technische Basis, schließen typische Schwachstellen im Website-Betrieb und richten nachvollziehbare Pflegeprozesse ein.",
+        "Der Fokus liegt auf professioneller Website-Absicherung, Wartbarkeit und klarer Verantwortung – nicht auf überzogenen Enterprise-Cybersecurity-Versprechen.",
+      ],
+      features: [
+        { title: "Updates & Pflege", text: "WordPress, Plugins, Themes oder App-Abhängigkeiten werden kontrolliert betreut." },
+        { title: "Backups & Wiederherstellung", text: "Sinnvolle Sicherungen reduzieren Risiko bei Fehlern oder Ausfällen." },
+        { title: "Formularschutz", text: "Kontakt- und Lead-Formulare werden gegen einfache Spam- und Missbrauchsmuster geschützt." },
+        { title: "Technische Basis", text: "SSL, Weiterleitungen, Header und Zugänge werden pragmatisch geprüft." },
+      ],
+      related: [
+        { label: "Website-Wartung", href: "/leistungen/website-wartung", description: "Regelmäßige Pflege statt einmaliger Aktion." },
+        { label: "WordPress modernisieren", href: "/leistungen/wordpress-website-modernisieren", description: "Bestehende WordPress-Systeme sauber betreuen." },
+        { label: "API-Integrationen", href: "/leistungen/api-integrationen", description: "Schnittstellen kontrolliert anbinden." },
+        { label: "Kontakt", href: "/kontakt", description: "Website-Sicherheit prüfen lassen." },
+      ],
+      cases: serviceCases.local,
+    },
+    datenanalyse: {
+      topic: "Datenanalyse",
+      navLabel: "Datenanalyse",
+      title: "Datenanalyse für Website, SEO und Prozesse – bessere Entscheidungen aus echten Signalen",
+      metaTitle: "Datenanalyse für Website und SEO | SaaleWeb",
+      metaDescription:
+        "Datenanalyse für Websites, SEO, Leads und Prozesse: Dashboards, Auswertung, Tracking-Konzept und verständliche Handlungsempfehlungen.",
+      lead: [
+        "Daten helfen nur, wenn sie verständlich sind und zu konkreten Entscheidungen führen.",
+        "SaaleWeb richtet Analysen so aus, dass Unternehmer sehen, welche Inhalte, Kanäle und Prozesse wirklich relevant sind.",
+      ],
+      problems: [
+        "Zahlen liegen in verschiedenen Tools, aber niemand erkennt die nächste Maßnahme.",
+        "SEO-, Lead- und Website-Daten werden getrennt betrachtet.",
+        "Tracking ist unvollständig oder nicht datenschutzbewusst geplant.",
+        "Berichte sind technisch, aber nicht handlungsorientiert.",
+      ],
+      solution: [
+        "Wir definieren sinnvolle Kennzahlen, bringen Datenquellen zusammen und übersetzen Ergebnisse in klare nächste Schritte.",
+        "Der Fokus liegt auf Orientierung, nicht auf Datenmenge.",
+      ],
+      features: [
+        { title: "Tracking-Konzept", text: "Wichtige Ziele wie Anfragen, Buchungen oder Downloads werden nachvollziehbar geplant." },
+        { title: "SEO-Auswertung", text: "Suchanfragen, Seitenstruktur und Content-Chancen werden verständlich bewertet." },
+        { title: "Lead-Analyse", text: "Kontaktwege und Anfragequalität werden sichtbarer." },
+        { title: "Dashboards", text: "Auswertungen bleiben kompakt, lesbar und entscheidungsorientiert." },
+      ],
+      related: [
+        { label: "SEO Halle", href: "/leistungen/seo-halle", description: "Sichtbarkeit aus Daten gezielt verbessern." },
+        { label: "Automatisierung", href: "/leistungen/automatisierung", description: "Daten in Prozesse überführen." },
+        { label: "Website analysieren", href: "/#website-audit", description: "Kostenlosen Website-Audit starten." },
+        { label: "Kontakt", href: "/kontakt", description: "Auswertung besprechen." },
+      ],
+      cases: serviceCases.local,
+    },
+    "shop-produktimport": {
+      topic: "Shop-Produktimporte",
+      navLabel: "Shop-Produktimport",
+      title: "Shop-Produktimport – Produktdaten sauber übernehmen, strukturieren und aktualisieren",
+      metaTitle: "Shop-Produktimport | SaaleWeb",
+      metaDescription:
+        "Shop-Produktimport für CSV, XML, Excel und API-Daten: Produktdaten bereinigen, strukturieren, importieren und wartbar aktualisieren.",
+      lead: [
+        "Produktdaten entscheiden darüber, ob ein Shop verständlich, auffindbar und pflegbar bleibt.",
+        "SaaleWeb hilft, Produktdaten aus Dateien oder Schnittstellen sauber in Shop-Strukturen zu bringen.",
+      ],
+      problems: [
+        "Lieferantendaten sind uneinheitlich, unvollständig oder schwer importierbar.",
+        "Bilder, Varianten, Preise oder Kategorien passen nicht zum Shop.",
+        "Manuelle Produktpflege kostet zu viel Zeit.",
+        "SEO-relevante Produktinformationen fehlen oder sind zu dünn.",
+      ],
+      solution: [
+        "Wir analysieren Datenquellen, bereinigen Felder, planen Kategorien und richten wiederholbare Importlogik ein.",
+        "Bei Bedarf werden Produktdaten mit SEO-Grundlagen, Bildern, Varianten und internen Links verbunden.",
+      ],
+      features: [
+        { title: "CSV, XML, Excel", text: "Typische Lieferantenformate können geprüft und für den Import vorbereitet werden." },
+        { title: "API-Importe", text: "Wenn Schnittstellen vorhanden sind, können Produktdaten automatisierter übernommen werden." },
+        { title: "Datenbereinigung", text: "Felder, Kategorien, Varianten und Bilder werden konsistenter strukturiert." },
+        { title: "Shop-SEO", text: "Produkt- und Kategoriedaten werden suchmaschinenfreundlicher vorbereitet." },
+      ],
+      related: [
+        { label: "Online-Shop erstellen", href: "/leistungen/online-shop-erstellen", description: "Shop mit sauberer Produktstruktur aufbauen." },
+        { label: "API-Integrationen", href: "/leistungen/api-integrationen", description: "Produktdaten per Schnittstelle anbinden." },
+        { label: "Datenanalyse", href: "/leistungen/datenanalyse", description: "Datenqualität und Performance auswerten." },
+        { label: "Kontakt", href: "/kontakt", description: "Importumfang prüfen." },
+      ],
+      cases: serviceCases.restaurant,
+    },
+  },
+  en: {
+    "online-shop-erstellen": {
+      topic: "online shops",
+      navLabel: "Online shop development",
+      title: "Online shop development – clear structure, fast UX and a trustworthy buying path",
+      metaTitle: "Online shop development | SaaleWeb",
+      metaDescription:
+        "Online shop development with product structure, mobile UX, SEO foundation, import workflows, checkout trust and maintainable technology.",
+      lead: [
+        "An online shop has to do more than show products. Customers need orientation, trust, speed and a simple path to purchase.",
+        "SaaleWeb builds shops that fit the product range, team and growth plan — including imports, integrations and SEO foundations.",
+      ],
+      problems: [
+        "Categories, filters or product data are unclear.",
+        "Mobile users lose trust or drop out during checkout.",
+        "Product maintenance takes too much manual work.",
+        "SEO for categories and products is added too late.",
+      ],
+      solution: [
+        "We plan shop structure, product logic, content and technical foundation together so the system remains fast, understandable and maintainable.",
+        "Depending on the goal, we connect payments, product imports, CRM, inventory systems or analytics points.",
+      ],
+      features: [
+        { title: "Shop structure", text: "Categories, product pages, filters and navigation are planned around buying decisions." },
+        { title: "Product data", text: "CSV, XML or API imports can be prepared, cleaned and made repeatable." },
+        { title: "Checkout trust", text: "Contact, shipping, payment and safety information are communicated clearly." },
+        { title: "SEO foundation", text: "Category and product pages get clean titles, content and internal links." },
+      ],
+      related: [
+        { label: "Shop product import", href: "/en/services/shop-product-import", description: "Import and update product data cleanly." },
+        { label: "API integrations", href: "/en/services/api-integrations", description: "Connect the shop to tools or inventory systems." },
+        { label: "Website security", href: "/en/services/website-security", description: "Strengthen trust and technical basics." },
+        { label: "Contact", href: "/en/contact", description: "Discuss the shop project." },
+      ],
+      cases: SERVICE_CASES_BY_LOCALE.en,
+    },
+    "ki-assistent": {
+      topic: "AI assistants",
+      navLabel: "AI assistant",
+      title: "AI assistant for websites and processes – useful, controlled and integrated with purpose",
+      metaTitle: "AI assistant for businesses | SaaleWeb",
+      metaDescription:
+        "AI assistants for websites and business processes: FAQ support, inquiry preparation, internal workflows, knowledge structure and controlled handover.",
+      lead: [
+        "AI is useful only when it answers real questions faster or reduces internal work.",
+        "SaaleWeb helps integrate AI assistants in a way that fits your content, processes and responsibility model.",
+      ],
+      problems: [
+        "Customers ask the same questions before they can make an inquiry.",
+        "Internal knowledge is spread across documents, emails or tables.",
+        "AI tools feel detached from the website and real business process.",
+        "There is no clear boundary for what should be automated.",
+      ],
+      solution: [
+        "We structure knowledge, define useful use cases and integrate AI where it helps users or the team.",
+        "Transparency, editorial control and human handover matter more than show effects.",
+      ],
+      features: [
+        { title: "FAQ assistant", text: "Common questions can be prepared and aligned with inquiry paths." },
+        { title: "Lead preparation", text: "Requests can be prequalified without replacing personal contact." },
+        { title: "Knowledge structure", text: "Services, documents and processes are organized for reliable use." },
+        { title: "Controlled handover", text: "Sensitive topics can be routed clearly to the team." },
+      ],
+      related: [
+        { label: "Automation", href: "/en/services/automation", description: "Connect AI with practical workflows." },
+        { label: "API integrations", href: "/en/services/api-integrations", description: "Connect AI to existing tools." },
+        { label: "Data analytics", href: "/en/services/data-analytics", description: "Make data structured and useful." },
+        { label: "Contact", href: "/en/contact", description: "Check a realistic AI use case." },
+      ],
+      cases: SERVICE_CASES_BY_LOCALE.en,
+    },
+    automatisierung: {
+      topic: "automation",
+      navLabel: "Automation",
+      title: "Automation for websites and business processes – less manual work, clearer workflows",
+      metaTitle: "Automation for businesses | SaaleWeb",
+      metaDescription:
+        "Automation for website leads, CRM, email, data and business processes. SaaleWeb connects digital workflows cleanly and pragmatically.",
+      lead: [
+        "Many businesses lose time through repeated manual work: copying, asking, sorting and forwarding.",
+        "SaaleWeb automates selected workflows so the website, team and tools work better together.",
+      ],
+      problems: [
+        "Inquiries land in different inboxes or tools.",
+        "Follow-ups are forgotten or sent too late.",
+        "Data is copied manually several times.",
+        "There is no clear overview of inquiry status.",
+      ],
+      solution: [
+        "We analyze the current process and automate only the steps that save time or reduce errors.",
+        "The result stays understandable, maintainable and clearly assigned.",
+      ],
+      features: [
+        { title: "Lead flows", text: "Forms, email, CRM and notifications can be connected cleanly." },
+        { title: "Follow-up", text: "Confirmations, tasks and reminders are triggered more reliably." },
+        { title: "Data handover", text: "Data from websites, shops or tools is passed on in a controlled way." },
+        { title: "Process clarity", text: "Automation remains documented and easy to understand." },
+      ],
+      related: [
+        { label: "AI assistant", href: "/en/services/ai-assistant", description: "Combine automation with useful AI." },
+        { label: "API integrations", href: "/en/services/api-integrations", description: "Connect tools and data sources." },
+        { label: "Data analytics", href: "/en/services/data-analytics", description: "Make workflows measurable." },
+        { label: "Contact", href: "/en/contact", description: "Review automation potential." },
+      ],
+      cases: SERVICE_CASES_BY_LOCALE.en,
+    },
+    "api-integrationen": {
+      topic: "API integrations",
+      navLabel: "API integrations",
+      title: "API integrations – connect website, shop, CRM and data sources cleanly",
+      metaTitle: "API integrations | SaaleWeb",
+      metaDescription:
+        "API integrations for websites, shops, CRM, booking systems and data sources. SaaleWeb connects systems pragmatically and maintainably.",
+      lead: [
+        "A website becomes stronger when it is connected with the tools your business already uses.",
+        "SaaleWeb plans and builds API integrations that simplify data flows and reduce manual work.",
+      ],
+      problems: [
+        "Website, CRM, shop or booking system are disconnected.",
+        "Data has to be copied or corrected manually.",
+        "Existing interfaces are poorly documented.",
+        "Errors become visible only when customers or the team are affected.",
+      ],
+      solution: [
+        "We review available APIs, define reliable data flows and build integrations that remain understandable in daily work.",
+        "Important error handling, notifications and privacy requirements are included in the concept.",
+      ],
+      features: [
+        { title: "Tool connection", text: "CRM, calendar, shop, newsletter, booking or internal systems can be connected." },
+        { title: "Data logic", text: "Fields, formats and handovers are mapped cleanly." },
+        { title: "Error handling", text: "Important failures or incomplete data become visible." },
+        { title: "Documentation", text: "The integration remains understandable and extendable." },
+      ],
+      related: [
+        { label: "Automation", href: "/en/services/automation", description: "Turn integrations into real workflows." },
+        { label: "Online shop development", href: "/en/services/online-shop-development", description: "Connect shop and backend." },
+        { label: "Shop product import", href: "/en/services/shop-product-import", description: "Import product data from files or APIs." },
+        { label: "Contact", href: "/en/contact", description: "Discuss the interface." },
+      ],
+      cases: SERVICE_CASES_BY_LOCALE.en,
+    },
+    "website-sicherheit": {
+      topic: "website security",
+      navLabel: "Website security",
+      title: "Website security – practical technical basics, updates and trust",
+      metaTitle: "Website security | SaaleWeb",
+      metaDescription:
+        "Website security for business websites and WordPress: updates, practical hardening, backups, form protection, monitoring and a trustworthy technical base.",
+      lead: [
+        "For most businesses, website security means reliability, trust and avoiding unnecessary risk.",
+        "SaaleWeb takes care of practical foundations for professional websites, shops and WordPress systems.",
+      ],
+      problems: [
+        "Updates, plugins or dependencies remain unchecked too long.",
+        "Forms are exposed to spam or unclear data flows.",
+        "Backups, SSL, redirects or server settings are not documented.",
+        "Visible warnings, errors or downtime damage trust.",
+      ],
+      solution: [
+        "We review the technical base, close typical website-operation gaps and set up understandable maintenance routines.",
+        "The focus is practical website protection and responsibility, not exaggerated enterprise cybersecurity claims.",
+      ],
+      features: [
+        { title: "Updates and care", text: "WordPress, plugins, themes or app dependencies are maintained in a controlled way." },
+        { title: "Backups", text: "Useful backups reduce risk when errors or outages occur." },
+        { title: "Form protection", text: "Contact and lead forms are protected against simple spam patterns." },
+        { title: "Technical basics", text: "SSL, redirects, headers and access are reviewed pragmatically." },
+      ],
+      related: [
+        { label: "Website maintenance", href: "/en/services/website-maintenance", description: "Regular care instead of a one-off fix." },
+        { label: "WordPress modernization", href: "/en/services/wordpress-website-modernization", description: "Improve and maintain existing WordPress systems." },
+        { label: "API integrations", href: "/en/services/api-integrations", description: "Connect interfaces in a controlled way." },
+        { label: "Contact", href: "/en/contact", description: "Review website security." },
+      ],
+      cases: SERVICE_CASES_BY_LOCALE.en,
+    },
+    datenanalyse: {
+      topic: "data analytics",
+      navLabel: "Data analytics",
+      title: "Data analytics for websites, SEO and processes – better decisions from real signals",
+      metaTitle: "Data analytics for website and SEO | SaaleWeb",
+      metaDescription:
+        "Data analytics for websites, SEO, leads and processes: dashboards, reporting, tracking concepts and clear recommendations.",
+      lead: [
+        "Data helps only when it is understandable and leads to concrete decisions.",
+        "SaaleWeb sets up analytics so business owners can see which content, channels and processes matter.",
+      ],
+      problems: [
+        "Numbers are spread across tools, but the next action is unclear.",
+        "SEO, lead and website data are viewed separately.",
+        "Tracking is incomplete or not planned with privacy in mind.",
+        "Reports are technical but not action-oriented.",
+      ],
+      solution: [
+        "We define useful metrics, connect data sources and translate findings into clear next steps.",
+        "The focus is orientation, not data overload.",
+      ],
+      features: [
+        { title: "Tracking concept", text: "Important goals like inquiries, bookings or downloads are planned clearly." },
+        { title: "SEO analysis", text: "Queries, page structure and content opportunities are evaluated understandably." },
+        { title: "Lead analysis", text: "Contact paths and inquiry quality become more visible." },
+        { title: "Dashboards", text: "Reports stay compact, readable and decision-oriented." },
+      ],
+      related: [
+        { label: "SEO Halle", href: "/en/services/seo-halle", description: "Improve visibility based on signals." },
+        { label: "Automation", href: "/en/services/automation", description: "Turn data into workflows." },
+        { label: "Website audit", href: "/en#website-audit", description: "Start a free website audit." },
+        { label: "Contact", href: "/en/contact", description: "Discuss analytics." },
+      ],
+      cases: SERVICE_CASES_BY_LOCALE.en,
+    },
+    "shop-produktimport": {
+      topic: "shop product imports",
+      navLabel: "Shop product import",
+      title: "Shop product import – clean, structured and repeatable product data",
+      metaTitle: "Shop product import | SaaleWeb",
+      metaDescription:
+        "Shop product import for CSV, XML, Excel and API data: clean, structure, import and update product information in a maintainable way.",
+      lead: [
+        "Product data determines whether a shop stays understandable, searchable and maintainable.",
+        "SaaleWeb helps bring product data from files or interfaces into clean shop structures.",
+      ],
+      problems: [
+        "Supplier data is inconsistent, incomplete or hard to import.",
+        "Images, variants, prices or categories do not fit the shop.",
+        "Manual product maintenance takes too much time.",
+        "SEO-relevant product information is missing or too thin.",
+      ],
+      solution: [
+        "We analyze data sources, clean fields, plan categories and set up repeatable import logic.",
+        "If needed, product data is connected with SEO basics, images, variants and internal links.",
+      ],
+      features: [
+        { title: "CSV, XML, Excel", text: "Typical supplier formats can be reviewed and prepared for import." },
+        { title: "API imports", text: "When interfaces are available, product data can be imported more automatically." },
+        { title: "Data cleanup", text: "Fields, categories, variants and images are structured more consistently." },
+        { title: "Shop SEO", text: "Product and category data is prepared with search visibility in mind." },
+      ],
+      related: [
+        { label: "Online shop development", href: "/en/services/online-shop-development", description: "Build a shop with a clean product structure." },
+        { label: "API integrations", href: "/en/services/api-integrations", description: "Connect product data through interfaces." },
+        { label: "Data analytics", href: "/en/services/data-analytics", description: "Evaluate data quality and performance." },
+        { label: "Contact", href: "/en/contact", description: "Review import scope." },
+      ],
+      cases: SERVICE_CASES_BY_LOCALE.en,
+    },
+  },
+  ru: {
+    "online-shop-erstellen": {
+      topic: "интернет-магазина",
+      navLabel: "Интернет-магазин",
+      title: "Создание интернет-магазина — понятная структура, быстрая работа и доверительный путь к покупке",
+      metaTitle: "Создание интернет-магазина | SaaleWeb",
+      metaDescription:
+        "Создание интернет-магазина: структура товаров, мобильный UX, SEO-база, импорт данных, доверие в checkout и поддерживаемая технология.",
+      lead: [
+        "Интернет-магазин должен не просто показывать товары. Клиенту нужны понятная навигация, доверие, скорость и простой путь к покупке.",
+        "SaaleWeb создаёт магазины под ассортимент, команду и рост: от структуры каталога до импортов, интеграций и SEO-базы.",
+      ],
+      problems: [
+        "Категории, фильтры или товарные данные построены непонятно.",
+        "Мобильные пользователи теряют доверие или уходят на этапе покупки.",
+        "Обновление товаров занимает слишком много ручной работы.",
+        "SEO для категорий и товаров вспоминают слишком поздно.",
+      ],
+      solution: [
+        "Мы планируем структуру магазина, логику товаров, контент и техническую основу вместе, чтобы система была быстрой и поддерживаемой.",
+        "При необходимости подключаем оплату, импорт товаров, CRM, складские системы или понятные точки аналитики.",
+      ],
+      features: [
+        { title: "Структура магазина", text: "Категории, страницы товаров, фильтры и навигация строятся вокруг решения о покупке." },
+        { title: "Товарные данные", text: "CSV, XML или API-импорты можно подготовить, очистить и сделать повторяемыми." },
+        { title: "Доверие в checkout", text: "Контакты, доставка, оплата и безопасность объясняются ясно." },
+        { title: "SEO-база", text: "Категории и товары получают чистые заголовки, контент и внутренние ссылки." },
+      ],
+      related: [
+        { label: "Импорт товаров", href: "/ru/uslugi/import-tovarov", description: "Чисто перенести и обновлять товарные данные." },
+        { label: "API-интеграции", href: "/ru/uslugi/api-integracii", description: "Связать магазин с инструментами или складом." },
+        { label: "Безопасность сайта", href: "/ru/uslugi/bezopasnost-sayta", description: "Укрепить доверие и техническую основу." },
+        { label: "Контакты", href: "/ru/kontakty", description: "Обсудить проект магазина." },
+      ],
+      cases: SERVICE_CASES_BY_LOCALE.ru,
+    },
+    "ki-assistent": {
+      topic: "ИИ-ассистента",
+      navLabel: "ИИ-ассистент",
+      title: "ИИ-ассистент для сайта и процессов — полезно, контролируемо и без лишнего шума",
+      metaTitle: "ИИ-ассистент для бизнеса | SaaleWeb",
+      metaDescription:
+        "ИИ-ассистенты для сайтов и бизнес-процессов: FAQ, подготовка заявок, внутренние процессы, структура знаний и контролируемая передача человеку.",
+      lead: [
+        "ИИ имеет смысл только тогда, когда быстрее отвечает на реальные вопросы или снижает внутреннюю нагрузку.",
+        "SaaleWeb помогает внедрять ИИ-ассистентов так, чтобы они соответствовали контенту, процессам и ответственности компании.",
+      ],
+      problems: [
+        "Клиенты задают одни и те же вопросы до отправки заявки.",
+        "Внутренние знания разбросаны по документам, письмам и таблицам.",
+        "ИИ-инструменты не связаны с сайтом и реальным процессом.",
+        "Нет чётких границ, что можно автоматизировать.",
+      ],
+      solution: [
+        "Мы структурируем знания, определяем полезные сценарии и интегрируем ИИ там, где он помогает клиентам или команде.",
+        "Прозрачность, редакционный контроль и передача человеку важнее показательных эффектов.",
+      ],
+      features: [
+        { title: "FAQ-ассистент", text: "Частые вопросы можно подготовить и связать с путями заявки." },
+        { title: "Подготовка заявок", text: "Запросы можно предварительно квалифицировать, не заменяя личный контакт." },
+        { title: "Структура знаний", text: "Услуги, документы и процессы организуются для надёжного использования." },
+        { title: "Контролируемая передача", text: "Чувствительные темы направляются к команде." },
+      ],
+      related: [
+        { label: "Автоматизация", href: "/ru/uslugi/avtomatizaciya", description: "Связать ИИ с практическими процессами." },
+        { label: "API-интеграции", href: "/ru/uslugi/api-integracii", description: "Подключить ИИ к существующим инструментам." },
+        { label: "Аналитика данных", href: "/ru/uslugi/analitika-dannyh", description: "Сделать данные структурированными и полезными." },
+        { label: "Контакты", href: "/ru/kontakty", description: "Проверить реалистичный сценарий ИИ." },
+      ],
+      cases: SERVICE_CASES_BY_LOCALE.ru,
+    },
+    automatisierung: {
+      topic: "автоматизации",
+      navLabel: "Автоматизация",
+      title: "Автоматизация для сайта и бизнес-процессов — меньше ручной работы, понятнее поток",
+      metaTitle: "Автоматизация для бизнеса | SaaleWeb",
+      metaDescription:
+        "Автоматизация для заявок, CRM, email, данных и бизнес-процессов. SaaleWeb соединяет цифровые процессы понятно и прагматично.",
+      lead: [
+        "Многие компании теряют время на повторяющихся задачах: копировать, уточнять, сортировать, пересылать.",
+        "SaaleWeb автоматизирует выбранные шаги так, чтобы сайт, команда и инструменты работали согласованно.",
+      ],
+      problems: [
+        "Заявки попадают в разные почтовые ящики и инструменты.",
+        "Follow-up забывают или отправляют слишком поздно.",
+        "Данные несколько раз переносятся вручную.",
+        "Нет понятного обзора статуса заявок.",
+      ],
+      solution: [
+        "Мы анализируем текущий процесс и автоматизируем только шаги, которые экономят время или уменьшают ошибки.",
+        "Результат остаётся понятным, поддерживаемым и с ясной ответственностью.",
+      ],
+      features: [
+        { title: "Lead-процессы", text: "Формы, email, CRM и уведомления можно связать аккуратно." },
+        { title: "Follow-up", text: "Подтверждения, задачи и напоминания запускаются надёжнее." },
+        { title: "Передача данных", text: "Данные из сайта, магазина или инструментов передаются контролируемо." },
+        { title: "Прозрачность", text: "Автоматизация остаётся документированной и понятной." },
+      ],
+      related: [
+        { label: "ИИ-ассистент", href: "/ru/uslugi/ai-assistent", description: "Соединить автоматизацию с полезным ИИ." },
+        { label: "API-интеграции", href: "/ru/uslugi/api-integracii", description: "Связать инструменты и источники данных." },
+        { label: "Аналитика данных", href: "/ru/uslugi/analitika-dannyh", description: "Сделать процессы измеримыми." },
+        { label: "Контакты", href: "/ru/kontakty", description: "Проверить потенциал автоматизации." },
+      ],
+      cases: SERVICE_CASES_BY_LOCALE.ru,
+    },
+    "api-integrationen": {
+      topic: "API-интеграций",
+      navLabel: "API-интеграции",
+      title: "API-интеграции — связать сайт, магазин, CRM и источники данных",
+      metaTitle: "API-интеграции | SaaleWeb",
+      metaDescription:
+        "API-интеграции для сайтов, магазинов, CRM, систем бронирования и источников данных. SaaleWeb соединяет системы прагматично и поддерживаемо.",
+      lead: [
+        "Сайт становится сильнее, когда он не работает отдельно, а связан с инструментами компании.",
+        "SaaleWeb планирует и разрабатывает API-интеграции, которые упрощают поток данных и уменьшают ручную работу.",
+      ],
+      problems: [
+        "Сайт, CRM, магазин или система бронирования не связаны.",
+        "Данные приходится копировать или исправлять вручную.",
+        "Существующие интерфейсы плохо документированы.",
+        "Ошибки становятся заметны только для клиентов или команды.",
+      ],
+      solution: [
+        "Мы проверяем доступные API, определяем надёжные потоки данных и создаём интеграции, понятные в ежедневной работе.",
+        "Ошибки, уведомления и требования к данным учитываются уже в концепции.",
+      ],
+      features: [
+        { title: "Связь инструментов", text: "CRM, календарь, магазин, рассылки, бронирование или внутренние системы можно подключить." },
+        { title: "Логика данных", text: "Поля, форматы и передача данных аккуратно сопоставляются." },
+        { title: "Обработка ошибок", text: "Важные сбои или неполные данные становятся видимыми." },
+        { title: "Документация", text: "Интеграция остаётся понятной и расширяемой." },
+      ],
+      related: [
+        { label: "Автоматизация", href: "/ru/uslugi/avtomatizaciya", description: "Превратить интеграции в рабочие процессы." },
+        { label: "Интернет-магазин", href: "/ru/uslugi/sozdanie-internet-magazina", description: "Связать магазин и внутренние системы." },
+        { label: "Импорт товаров", href: "/ru/uslugi/import-tovarov", description: "Загружать товарные данные из файлов или API." },
+        { label: "Контакты", href: "/ru/kontakty", description: "Обсудить интерфейс." },
+      ],
+      cases: SERVICE_CASES_BY_LOCALE.ru,
+    },
+    "website-sicherheit": {
+      topic: "безопасности сайта",
+      navLabel: "Безопасность сайта",
+      title: "Безопасность сайта — практическая техническая основа, обновления и доверие",
+      metaTitle: "Безопасность сайта | SaaleWeb",
+      metaDescription:
+        "Безопасность сайта для корпоративных сайтов и WordPress: обновления, базовая защита, резервные копии, защита форм, мониторинг и доверительная основа.",
+      lead: [
+        "Для большинства компаний безопасность сайта означает надёжность, доверие и отсутствие лишних рисков.",
+        "SaaleWeb занимается практической основой для профессиональных сайтов, магазинов и WordPress-систем.",
+      ],
+      problems: [
+        "Обновления, плагины или зависимости слишком долго не проверяются.",
+        "Формы открыты для спама или неясных потоков данных.",
+        "Backups, SSL, редиректы или серверные настройки не задокументированы.",
+        "Предупреждения, ошибки или простои снижают доверие.",
+      ],
+      solution: [
+        "Мы проверяем техническую основу, закрываем типичные проблемы эксплуатации сайта и настраиваем понятный уход.",
+        "Фокус — практическая защита сайта и ответственность, а не завышенные обещания enterprise-cybersecurity.",
+      ],
+      features: [
+        { title: "Обновления и уход", text: "WordPress, плагины, темы или зависимости приложения сопровождаются контролируемо." },
+        { title: "Резервные копии", text: "Продуманные backups снижают риск при ошибках или сбоях." },
+        { title: "Защита форм", text: "Контактные и lead-формы защищаются от простых спам-паттернов." },
+        { title: "Техническая база", text: "SSL, редиректы, headers и доступы проверяются прагматично." },
+      ],
+      related: [
+        { label: "Поддержка сайтов", href: "/ru/uslugi/podderzhka-saytov", description: "Регулярный уход вместо разовой правки." },
+        { label: "Модернизация WordPress", href: "/ru/uslugi/modernizaciya-wordpress-sayta", description: "Улучшать и сопровождать существующий WordPress." },
+        { label: "API-интеграции", href: "/ru/uslugi/api-integracii", description: "Подключать интерфейсы контролируемо." },
+        { label: "Контакты", href: "/ru/kontakty", description: "Проверить безопасность сайта." },
+      ],
+      cases: SERVICE_CASES_BY_LOCALE.ru,
+    },
+    datenanalyse: {
+      topic: "аналитики данных",
+      navLabel: "Аналитика данных",
+      title: "Аналитика данных для сайта, SEO и процессов — решения на основе реальных сигналов",
+      metaTitle: "Аналитика данных для сайта и SEO | SaaleWeb",
+      metaDescription:
+        "Аналитика данных для сайтов, SEO, заявок и процессов: dashboards, отчёты, tracking-концепция и понятные рекомендации.",
+      lead: [
+        "Данные помогают только тогда, когда они понятны и ведут к конкретным решениям.",
+        "SaaleWeb настраивает аналитику так, чтобы предприниматель видел, какие страницы, каналы и процессы действительно важны.",
+      ],
+      problems: [
+        "Цифры разбросаны по разным инструментам, но следующий шаг неясен.",
+        "SEO, заявки и данные сайта анализируются отдельно.",
+        "Tracking неполный или не учитывает приватность.",
+        "Отчёты технические, но не помогают действовать.",
+      ],
+      solution: [
+        "Мы определяем полезные метрики, соединяем источники данных и переводим выводы в понятные следующие шаги.",
+        "Фокус — ориентация, а не перегрузка цифрами.",
+      ],
+      features: [
+        { title: "Tracking-концепция", text: "Важные цели вроде заявок, бронирований или скачиваний планируются понятно." },
+        { title: "SEO-анализ", text: "Запросы, структура страниц и контентные возможности оцениваются простым языком." },
+        { title: "Lead-анализ", text: "Пути контакта и качество заявок становятся видимее." },
+        { title: "Dashboards", text: "Отчёты остаются компактными, читаемыми и ориентированными на решения." },
+      ],
+      related: [
+        { label: "SEO Halle", href: "/ru/uslugi/seo-halle", description: "Улучшать видимость по реальным сигналам." },
+        { label: "Автоматизация", href: "/ru/uslugi/avtomatizaciya", description: "Переводить данные в процессы." },
+        { label: "Анализ сайта", href: "/ru#website-audit", description: "Запустить бесплатную проверку сайта." },
+        { label: "Контакты", href: "/ru/kontakty", description: "Обсудить аналитику." },
+      ],
+      cases: SERVICE_CASES_BY_LOCALE.ru,
+    },
+    "shop-produktimport": {
+      topic: "импорта товаров",
+      navLabel: "Импорт товаров",
+      title: "Импорт товаров в интернет-магазин — чистые, структурированные и повторяемые данные",
+      metaTitle: "Импорт товаров в интернет-магазин | SaaleWeb",
+      metaDescription:
+        "Импорт товаров для CSV, XML, Excel и API: очистка, структура, загрузка и поддерживаемое обновление товарных данных.",
+      lead: [
+        "Товарные данные определяют, будет ли магазин понятным, найденным и удобным в сопровождении.",
+        "SaaleWeb помогает перенести данные из файлов или интерфейсов в чистую структуру магазина.",
+      ],
+      problems: [
+        "Данные поставщиков непоследовательные, неполные или плохо импортируются.",
+        "Изображения, варианты, цены или категории не подходят к магазину.",
+        "Ручное обновление товаров занимает слишком много времени.",
+        "SEO-важная информация по товарам отсутствует или слишком слабая.",
+      ],
+      solution: [
+        "Мы анализируем источники, очищаем поля, планируем категории и настраиваем повторяемую логику импорта.",
+        "При необходимости товарные данные связываются с SEO-базой, изображениями, вариантами и внутренними ссылками.",
+      ],
+      features: [
+        { title: "CSV, XML, Excel", text: "Типовые форматы поставщиков можно проверить и подготовить к импорту." },
+        { title: "API-импорт", text: "Если интерфейсы доступны, товары можно загружать более автоматизированно." },
+        { title: "Очистка данных", text: "Поля, категории, варианты и изображения структурируются последовательнее." },
+        { title: "Shop SEO", text: "Данные товаров и категорий готовятся с учётом поисковой видимости." },
+      ],
+      related: [
+        { label: "Интернет-магазин", href: "/ru/uslugi/sozdanie-internet-magazina", description: "Создать магазин с чистой структурой товаров." },
+        { label: "API-интеграции", href: "/ru/uslugi/api-integracii", description: "Подключить товарные данные через интерфейсы." },
+        { label: "Аналитика данных", href: "/ru/uslugi/analitika-dannyh", description: "Оценивать качество данных и результат." },
+        { label: "Контакты", href: "/ru/kontakty", description: "Проверить объём импорта." },
+      ],
+      cases: SERVICE_CASES_BY_LOCALE.ru,
+    },
+  },
+};
+
+function phase5Faq(locale: Phase4Locale, topic: string, extra: Phase4Faq[] = []): Phase4Faq[] {
+  const common: Record<Phase4Locale, Phase4Faq[]> = {
+    de: [
+      {
+        q: `Für wen eignet sich ${topic}?`,
+        a: `${topic} eignet sich für Unternehmen, die digitale Abläufe professioneller, sichtbarer und besser wartbar machen möchten.`,
+      },
+      {
+        q: "Ist die erste Beratung kostenlos?",
+        a: "Ja. Das Erstgespräch ist kostenlos und unverbindlich. Wir prüfen Ziel, Ausgangslage und sinnvolle nächste Schritte.",
+      },
+      {
+        q: "Arbeitet SaaleWeb nur mit einer bestimmten Technologie?",
+        a: "Nein. Die Technologie folgt dem Ziel. Wir empfehlen Next.js, WordPress, individuelle Entwicklung, API oder Automatisierung nur, wenn es zum Nutzen passt.",
+      },
+      {
+        q: "Kann eine bestehende Website erweitert werden?",
+        a: "Ja. Häufig ist eine Modernisierung, Integration oder gezielte Erweiterung sinnvoller als ein kompletter Neubau.",
+      },
+      {
+        q: "Gibt es garantierte Rankings oder Umsätze?",
+        a: "Nein. Seriöse digitale Arbeit verspricht keine garantierten Rankings oder Umsätze. Wir verbessern Struktur, Technik, Inhalte und Messbarkeit transparent.",
+      },
+    ],
+    en: [
+      {
+        q: `Who is ${topic} suitable for?`,
+        a: `${topic} is suitable for businesses that want a more professional, visible and maintainable digital setup.`,
+      },
+      {
+        q: "Is the first consultation free?",
+        a: "Yes. The first consultation is free and non-binding. We review goals, current situation and useful next steps.",
+      },
+      {
+        q: "Does SaaleWeb work with one fixed technology?",
+        a: "No. Technology follows the goal. We recommend Next.js, WordPress, custom development, APIs or automation only when it serves the business case.",
+      },
+      {
+        q: "Can an existing website be extended?",
+        a: "Yes. Modernization, integration or a focused extension is often more sensible than rebuilding everything.",
+      },
+      {
+        q: "Do you guarantee rankings or revenue?",
+        a: "No. Serious digital work does not guarantee fixed rankings or revenue. We improve structure, technology, content and measurability transparently.",
+      },
+    ],
+    ru: [
+      {
+        q: `Кому подходит услуга ${topic}?`,
+        a: `Она подходит компаниям, которые хотят сделать цифровую систему профессиональнее, заметнее и проще в сопровождении.`,
+      },
+      {
+        q: "Первая консультация бесплатная?",
+        a: "Да. Первый разговор бесплатный и ни к чему не обязывает. Мы проверяем цель, текущую ситуацию и разумные следующие шаги.",
+      },
+      {
+        q: "SaaleWeb работает только с одной технологией?",
+        a: "Нет. Технология следует цели. Мы рекомендуем Next.js, WordPress, индивидуальную разработку, API или автоматизацию только тогда, когда это полезно бизнесу.",
+      },
+      {
+        q: "Можно расширить существующий сайт?",
+        a: "Да. Часто модернизация, интеграция или точечное расширение разумнее, чем полная переделка.",
+      },
+      {
+        q: "Вы гарантируете позиции или выручку?",
+        a: "Нет. Серьёзная цифровая работа не гарантирует фиксированные позиции или выручку. Мы прозрачно улучшаем структуру, технологию, контент и измеримость.",
+      },
+    ],
+  };
+  return [...extra, ...common[locale]].slice(0, 6);
+}
+
+function buildPhase5ServicePage(canonicalSlug: string, locale: Phase4Locale): Phase4Landing | null {
+  const data = PHASE5_SERVICE_CONTENT[locale]?.[canonicalSlug];
+  const slug = SERVICE_SLUGS[canonicalSlug]?.[locale];
+  if (!data || !slug) return null;
+  const labels = phase5Labels[locale];
+
+  return {
+    slug,
+    navLabel: data.navLabel,
+    eyebrow: labels.eyebrow,
+    title: data.title,
+    metaTitle: data.metaTitle,
+    metaDescription: data.metaDescription,
+    lead: data.lead,
+    problemTitle: labels.problemTitle,
+    problems: data.problems,
+    solutionTitle: labels.solutionTitle,
+    solution: data.solution,
+    featuresTitle: labels.featuresTitle,
+    features: data.features,
+    technologyTitle: labels.technologyTitle,
+    technologyText: labels.technologyText,
+    processTitle: labels.processTitle,
+    process: labels.process,
+    casesTitle: labels.casesTitle,
+    cases: data.cases ?? SERVICE_CASES_BY_LOCALE[locale],
+    relatedTitle: labels.relatedTitle,
+    relatedLinks: data.related,
+    faq: phase5Faq(locale, data.topic, data.extraFaq),
+    finalTitle: labels.finalTitle,
+    finalText: labels.finalText,
+  };
+}
+
+const phase5GermanServicePages = Object.fromEntries(
+  Object.keys(PHASE5_SERVICE_CONTENT.de).flatMap((canonical) => {
+    const page = buildPhase5ServicePage(canonical, "de");
+    return page ? [[canonical, page]] : [];
+  }),
+) as Record<string, Phase4Landing>;
+
+export const seoServicePages: Record<string, Phase4Landing> = {
+  ...coreSeoServicePages,
+  ...phase5GermanServicePages,
 };
 
 function localizedServicePage(canonicalSlug: string, locale: Phase4Locale): Phase4Landing | null {
@@ -1449,6 +2454,9 @@ function localizedServicePage(canonicalSlug: string, locale: Phase4Locale): Phas
     const page = seoServicePages[canonicalSlug];
     return page ? { ...page, navLabel: page.navLabel ?? page.title.split(" – ")[0] } : null;
   }
+
+  const phase5Page = buildPhase5ServicePage(canonicalSlug, locale);
+  if (phase5Page) return phase5Page;
 
   const seed = (locale === "en" ? EN_SERVICE_SEEDS : RU_SERVICE_SEEDS)[canonicalSlug];
   const slug = SERVICE_SLUGS[canonicalSlug]?.[locale];
@@ -1559,6 +2567,8 @@ function localizedServicePage(canonicalSlug: string, locale: Phase4Locale): Phas
 }
 
 function serviceCanonicalFromSlug(locale: Phase4Locale, slug: string): string | null {
+  const alias = SERVICE_SLUG_ALIASES[locale]?.[slug];
+  if (alias) return alias;
   return (
     Object.entries(SERVICE_SLUGS).find(([, slugs]) => slugs[locale] === slug)?.[0] ?? null
   );
@@ -1567,9 +2577,13 @@ function serviceCanonicalFromSlug(locale: Phase4Locale, slug: string): string | 
 export const seoServiceSlugs = Object.keys(seoServicePages);
 
 export function getSeoServiceStaticParams() {
-  return Object.values(SERVICE_SLUGS).flatMap((slugs) =>
+  const canonicalParams = Object.values(SERVICE_SLUGS).flatMap((slugs) =>
     (Object.entries(slugs) as [Phase4Locale, string][]).map(([locale, slug]) => ({ locale, slug })),
   );
+  const aliasParams = (Object.entries(SERVICE_SLUG_ALIASES) as [Phase4Locale, Record<string, string>][]).flatMap(
+    ([locale, aliases]) => Object.keys(aliases).map((slug) => ({ locale, slug })),
+  );
+  return [...canonicalParams, ...aliasParams];
 }
 
 export function getSeoServiceSlugMap(canonicalSlug: string): Phase4SlugMap | null {
@@ -1971,9 +2985,9 @@ export const seoIndustryPages: Record<string, Phase4Landing> = {
     casesTitle: "Passendes Projektbeispiel",
     cases: [
       {
-        label: "Glaserei Schubert",
-        href: "/projekte/glaserei-schubert",
-        description: "Fallstudie für lokale Fachkompetenz, klare Projektstruktur und digitale Vertrauensbildung.",
+        label: "Salon Elen / Permanent Halle",
+        href: "/projekte/online-buchungen-verdreifacht",
+        description: "Fallstudie für klare Leistungen, lokale Sichtbarkeit, Online-Terminlogik und digitale Vertrauensbildung.",
       },
     ],
     relatedTitle: "Sinnvolle interne Links",

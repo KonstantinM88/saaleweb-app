@@ -1,35 +1,22 @@
 import { getTranslations, getLocale } from "next-intl/server";
+import { Bot, Database, Globe2, MailCheck, Search, ShieldCheck, type LucideIcon } from "lucide-react";
 import type { AppLocale } from "@/i18n/routing";
 import { Link } from "@/i18n/navigation";
 import { Container } from "@/shared/ui/Container";
 import { Reveal } from "@/shared/ui/Reveal";
 import { SectionHeader } from "@/shared/ui/SectionHeader";
+import { getContactHref } from "@/shared/lib/contactHref";
 import { Phase4LinkCluster, type Phase4HubCopy } from "@/widgets/seo-landing/Phase4LinkCluster";
 import { getPhase4LocationLinks, getPhase4ServiceLinks } from "@/widgets/seo-landing/phase4Content";
 
-type Solution = { title: string; desc: string };
+type Solution = { title: string; desc: string; chips: string[]; cta: string };
 type TechNote = { title: string; text: string; chips: string[] };
 
-const icons = ["↗", "⌖", "⚙", "∞"];
-const solutionSlugs: Record<AppLocale, string[]> = {
-  de: [
-    "website-entwicklung",
-    "seo-optimierung",
-    "ki-integration",
-    "wartung",
-  ],
-  en: [
-    "web-development",
-    "seo-optimization",
-    "ai-integration",
-    "maintenance",
-  ],
-  ru: [
-    "razrabotka-sajtov",
-    "seo-optimizaciya",
-    "integraciya-ii",
-    "podderzhka",
-  ],
+const icons: LucideIcon[] = [Globe2, Search, Bot, Database, ShieldCheck, MailCheck];
+const solutionSlugs: Record<AppLocale, (string | null)[]> = {
+  de: ["website-erstellen-lassen", "seo-halle", "automatisierung", "api-integrationen", "website-sicherheit", null],
+  en: ["website-development", "seo-halle", "automation", "api-integrations", "website-security", null],
+  ru: ["razrabotka-saytov", "seo-halle", "avtomatizaciya", "api-integracii", "bezopasnost-sayta", null],
 };
 
 export async function Services() {
@@ -38,6 +25,7 @@ export async function Services() {
   const techNote = t.raw("techNote") as TechNote;
   const seoHub = t.raw("seoHub") as Phase4HubCopy;
   const seoLinks = [...getPhase4ServiceLinks(locale).slice(0, 6), ...getPhase4LocationLinks(locale).slice(0, 2)];
+  const contactHref = getContactHref(locale);
   const items = (t.raw("solutions") as Solution[]).map((item, i) => ({
     ...item,
     slug: solutionSlugs[locale][i],
@@ -52,30 +40,10 @@ export async function Services() {
           {t("trustLine")}
         </p>
 
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
           {items.map((item, i) => (
-            <Reveal key={item.slug} delay={(i % 3) * 90} className="h-full">
-              <Link
-                href={{ pathname: "/leistungen/[slug]", params: { slug: item.slug } }}
-                aria-label={`${t("more")}: ${item.title}`}
-                className="group block h-full rounded-[18px] outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-4"
-              >
-                <article className="card-border-glow h-full rounded-[18px] border border-line bg-white p-7 transition-all duration-300 group-hover:-translate-y-1.5 group-hover:shadow-card">
-                  <div className="mb-[18px] grid h-[46px] w-[46px] place-items-center overflow-hidden rounded-[13px] bg-brand-soft text-brand-purple transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-110">
-                    {item.icon}
-                  </div>
-                  <h3 className="mb-2 text-lg font-bold text-dark transition-colors group-hover:text-brand-purple">
-                    {item.title}
-                  </h3>
-                  <p className="text-[14.5px] text-muted">{item.desc}</p>
-                  <span className="mt-4 inline-flex items-center gap-1.5 text-[13px] font-semibold text-brand-purple">
-                    {t("more")}{" "}
-                    <span aria-hidden className="inline-block transition-transform duration-300 group-hover:translate-x-1">
-                      →
-                    </span>
-                  </span>
-                </article>
-              </Link>
+            <Reveal key={item.title} delay={(i % 3) * 90} className="h-full">
+              <ServiceClusterCard item={item} fallbackHref={contactHref} fallbackCta={t("more")} />
             </Reveal>
           ))}
         </div>
@@ -104,5 +72,63 @@ export async function Services() {
         <Phase4LinkCluster copy={seoHub} links={seoLinks} compact />
       </Container>
     </section>
+  );
+}
+
+function ServiceClusterCard({
+  item,
+  fallbackHref,
+  fallbackCta,
+}: {
+  item: Solution & { slug: string | null; icon: LucideIcon };
+  fallbackHref: string;
+  fallbackCta: string;
+}) {
+  const Icon = item.icon;
+  const content = (
+    <article className="card-border-glow flex h-full flex-col rounded-[20px] border border-line bg-white p-6 transition-all duration-300 group-hover:-translate-y-1.5 group-hover:shadow-card md:p-7">
+      <div className="mb-5 grid h-[48px] w-[48px] place-items-center rounded-[15px] bg-brand-soft text-brand-purple transition-transform duration-300 group-hover:-rotate-3 group-hover:scale-105">
+        <Icon size={23} aria-hidden />
+      </div>
+      <h3 className="text-[19px] font-extrabold tracking-tight text-dark transition-colors group-hover:text-brand-purple">
+        {item.title}
+      </h3>
+      <p className="mt-2 text-[14.5px] leading-relaxed text-muted">{item.desc}</p>
+      <div className="mt-5 flex flex-wrap gap-2">
+        {item.chips.slice(0, 6).map((chip) => (
+          <span key={chip} className="rounded-full border border-line bg-surface px-2.5 py-1 text-[12px] font-bold text-ink">
+            {chip}
+          </span>
+        ))}
+      </div>
+      <span className="mt-6 inline-flex items-center gap-1.5 text-[13px] font-semibold text-brand-purple">
+        {item.cta || fallbackCta}
+        <span aria-hidden className="inline-block transition-transform duration-300 group-hover:translate-x-1">
+          →
+        </span>
+      </span>
+    </article>
+  );
+
+  if (!item.slug) {
+    return (
+      <a
+        href={fallbackHref}
+        aria-label={item.cta || fallbackCta}
+        className="group block h-full rounded-[20px] outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-4"
+      >
+        {content}
+      </a>
+    );
+  }
+
+  return (
+    <Link
+      href={{ pathname: "/leistungen/[slug]", params: { slug: item.slug } }}
+      aria-label={item.cta || fallbackCta}
+      className="group block h-full rounded-[20px] outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-4"
+    >
+      {content}
+    </Link>
   );
 }

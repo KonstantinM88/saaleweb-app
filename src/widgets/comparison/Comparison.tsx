@@ -13,7 +13,7 @@ export function Comparison() {
   return (
     <section className="bg-surface py-16 md:py-24">
       <Container>
-        <SectionHeader eyebrow={t("eyebrow")} title={t("title")} />
+        <SectionHeader eyebrow={t("eyebrow")} title={t("title")} lead={t("lead")} />
         <Reveal className="mx-auto mb-10 max-w-[860px] md:mb-14">
           <BeforeAfter beforeLabel={t("before")} afterLabel={t("after")} />
         </Reveal>
@@ -22,7 +22,7 @@ export function Comparison() {
             <div className="min-w-[600px]">
             <div className="grid grid-cols-[1.4fr_1fr_1fr]">
               <div className="bg-surface px-5 py-4 text-sm font-bold text-dark" />
-              <div className="bg-brand px-5 py-4 text-sm font-bold text-white">SaaleWeb</div>
+              <div className="bg-brand px-5 py-4 text-sm font-bold text-white">{t("us")}</div>
               <div className="bg-surface px-5 py-4 text-sm font-bold text-dark">{t("them")}</div>
             </div>
             {rows.map((row, i) => (
