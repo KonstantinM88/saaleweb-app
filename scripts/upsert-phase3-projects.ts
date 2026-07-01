@@ -240,7 +240,7 @@ const projects: ProjectConfig[] = [
         challenge:
           "Viele Unternehmen haben bereits eine Website, aber sie unterstützt den Geschäftsalltag nicht aktiv genug. Bei Glaserei Schubert stand eine hochwertige Präsentation von Leistungen und Referenzen im Mittelpunkt.",
         solution:
-          "Für dieses Projekt wurde eine moderne Website-Struktur entwickelt, die Inhalte klar präsentiert, mobil sehr gut funktioniert und auf Suchmaschinen sowie Nutzererfahrung ausgerichtet ist.",
+          "Für Glaserei Schubert wurde unter https://glaserei-schubert-01.vercel.app/de eine interaktive Projektvorschau erstellt: eine moderne Website-Struktur, die Leistungen, Referenzen und Kontaktwege klar präsentiert, mobil sehr gut funktioniert und auf lokale Sichtbarkeit ausgerichtet ist.",
         results:
           "Ein moderner Handwerksauftritt mit klarer Leistungsdarstellung und professioneller Außenwirkung.",
       },
@@ -250,7 +250,7 @@ const projects: ProjectConfig[] = [
         challenge:
           "Many businesses already have a website, but it does not actively support daily operations enough. For Glaserei Schubert, the focus was a high-quality presentation of services and references.",
         solution:
-          "A modern website structure was developed to present content clearly, work very well on mobile and support both search visibility and user experience.",
+          "For Glaserei Schubert, an interactive project preview was created at https://glaserei-schubert-01.vercel.app/de: a modern website structure that presents services, references and contact paths clearly, works very well on mobile and supports local visibility.",
         results:
           "A modern trade-business presence with clear service presentation and professional external impact.",
       },
@@ -260,7 +260,7 @@ const projects: ProjectConfig[] = [
         challenge:
           "У многих компаний уже есть сайт, но он недостаточно активно помогает в повседневной работе. Для Glaserei Schubert в центре была качественная презентация услуг и референсов.",
         solution:
-          "Для проекта была разработана современная структура сайта, которая ясно представляет контент, хорошо работает на мобильных устройствах и учитывает поисковую видимость и пользовательский опыт.",
+          "Для Glaserei Schubert подготовлена интерактивная проектная превью-страница https://glaserei-schubert-01.vercel.app/de: современная структура сайта, которая ясно показывает услуги, референсы и контактные пути, хорошо работает на мобильных устройствах и поддерживает локальную видимость.",
         results:
           "Современное присутствие ремесленной компании с понятной структурой услуг и профессиональным внешним образом.",
       },

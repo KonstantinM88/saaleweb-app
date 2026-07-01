@@ -68,6 +68,14 @@ function displayUrl(value: string) {
   }
 }
 
+function isPreviewUrl(value: string) {
+  try {
+    return new URL(value).hostname.endsWith(".vercel.app");
+  } catch {
+    return false;
+  }
+}
+
 export async function generateStaticParams() {
   try {
     const rows = (await prisma.projectTranslation.findMany({
@@ -214,6 +222,10 @@ export default async function ProjectPage({
   const contactHref = getContactHref(locale);
   const auditHref = getAuditHref(locale);
   const hexCover = data.coverColor?.startsWith("#");
+  const externalLinkLabel = data.externalUrl && isPreviewUrl(data.externalUrl)
+    ? t("projectPreview")
+    : t("liveSite");
+  const previewInlineLabel = t("projectPreviewInline");
 
   const overviewItems = [
     { label: t("industry"), value: detailCopy.industry },
@@ -386,7 +398,7 @@ export default async function ProjectPage({
                           {step.label}
                         </h2>
                       </div>
-                      <ProjectRichText text={step.body} />
+                      <ProjectRichText text={step.body} previewLinkLabel={previewInlineLabel} />
                     </section>
                   </Reveal>
                 ))}
@@ -443,7 +455,7 @@ export default async function ProjectPage({
                         rel="noopener noreferrer"
                         className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-line bg-white px-5 py-3 text-[15px] font-semibold text-dark transition-all hover:-translate-y-0.5 hover:border-brand-purple/50 hover:text-brand-purple hover:shadow-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2"
                       >
-                        {t("liveSite")}
+                        {externalLinkLabel}
                         <ExternalLink size={16} aria-hidden />
                       </a>
                     )}
@@ -589,7 +601,13 @@ export default async function ProjectPage({
   );
 }
 
-function ProjectRichText({ text }: { text: string }) {
+function ProjectRichText({
+  text,
+  previewLinkLabel,
+}: {
+  text: string;
+  previewLinkLabel: string;
+}) {
   const parts = text.split(externalUrlPattern);
 
   return (
@@ -601,6 +619,7 @@ function ProjectRichText({ text }: { text: string }) {
 
         const href = cleanUrl(part);
         const suffix = part.slice(href.length);
+        const label = isPreviewUrl(href) ? previewLinkLabel : displayUrl(href);
 
         return (
           <Fragment key={`${href}-${index}`}>
@@ -610,7 +629,7 @@ function ProjectRichText({ text }: { text: string }) {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1 rounded-full border border-brand-purple/20 bg-brand-soft px-2.5 py-1 align-baseline text-[0.95em] font-semibold text-[#6D28D9] transition hover:-translate-y-0.5 hover:border-brand-purple/50 hover:bg-white hover:shadow-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2"
             >
-              {displayUrl(href)}
+              {label}
               <ExternalLink size={14} aria-hidden />
             </a>
             {suffix}

@@ -487,56 +487,82 @@
     "trustLine": "Selected projects from gastronomy, beauty, trades and construction.",
     "labels": {
       "industry": "Industry",
-      "goal": "Goal",
-      "solution": "Solution",
-      "result": "Focus",
-      "cta": "View project"
-    },
+    "goal": "Goal",
+    "solution": "Solution",
+    "benefits": "Benefits",
+    "result": "Focus",
+    "cta": "View project"
+  },
     "projects": [
       {
         "slug": "online-bookings-tripled",
         "name": "Salon Elen / Permanent Halle",
         "industry": "Beauty studio",
-        "goal": "More online appointments and local visibility",
-        "solution": "Modern presence with booking logic, multilingual structure and focus on local searches in Halle.",
-        "badge": "Beauty · Booking · Local SEO",
-        "result": "+212% online appointments"
-      },
+      "goal": "More online appointments and local visibility",
+      "solution": "Modern presence with booking logic, multilingual structure and focus on local searches in Halle.",
+      "benefits": [
+        "Simple online appointment booking",
+        "Multilingual user guidance",
+        "Better local discoverability"
+      ],
+      "badge": "Beauty · Booking · Local SEO",
+      "result": "Online appointments & Local SEO"
+    },
       {
         "slug": "neue-liebe-nebra",
         "name": "Neue Liebe",
         "industry": "Restaurant / gastronomy",
-        "goal": "More visibility and a professional digital presence",
-        "solution": "Modern restaurant presence with clear structure, current content and strong mobile presentation.",
-        "badge": "Restaurant · SEO · Mobile First",
-        "result": "+176% direct bookings"
-      },
+      "goal": "More visibility and a professional digital presence",
+      "solution": "Modern restaurant presence with clear structure, current content and strong mobile presentation.",
+      "benefits": [
+        "Mobile-first user experience",
+        "Current content clearly visible",
+        "More trust with guests"
+      ],
+      "badge": "Restaurant · SEO · Mobile First",
+      "result": "Restaurant visibility"
+    },
       {
         "slug": "direct-bookings-without-portals",
         "name": "Waldschlösschen",
         "industry": "Hotel & restaurant",
-        "goal": "More direct bookings and better presentation of hotel, restaurant and offers",
-        "solution": "Premium digital presence for gastronomy, hotel operations and regional visibility.",
-        "badge": "Hotel · Restaurant · Bookings",
-        "result": "+148% direct bookings"
-      },
+      "goal": "More direct bookings and better presentation of hotel, restaurant and offers",
+      "solution": "Premium digital presence for gastronomy, hotel operations and regional visibility.",
+      "benefits": [
+        "Offers clearly presented",
+        "More direct booking potential",
+        "Professional hotel impression"
+      ],
+      "badge": "Hotel · Restaurant · Bookings",
+      "result": "Hotel & restaurant"
+    },
       {
         "slug": "qualified-construction-leads",
         "name": "SorgfaltBau",
         "industry": "Construction company",
-        "goal": "More trust and qualified inquiries",
-        "solution": "Professional company presence that presents services clearly and builds trust with potential clients.",
-        "badge": "Construction · Trust · Inquiries",
-        "result": "Qualified inquiries"
+      "goal": "More trust and qualified inquiries",
+      "solution": "Professional company presence that presents services clearly and builds trust with potential clients.",
+      "benefits": [
+        "More trust with new customers",
+        "Clear service structure",
+        "More qualified inquiries"
+      ],
+      "badge": "Construction · Trust · Inquiries",
+      "result": "Qualified inquiries"
       },
       {
         "slug": "glaserei-schubert",
         "name": "Glaserei Schubert",
         "industry": "Trade / glazing",
-        "goal": "High-quality presentation of services and references",
-        "solution": "Modern presence for a trade business with focus on trust, clear services and local findability.",
-        "badge": "Trades · Services · Local SEO",
-        "result": "Trust & local visibility"
+      "goal": "High-quality presentation of services and references",
+      "solution": "Modern presence for a trade business with focus on trust, clear services and local findability.",
+      "benefits": [
+        "Professional brand impression",
+        "Services clearly explained",
+        "Better local visibility"
+      ],
+      "badge": "Trades · Services · Local SEO",
+      "result": "Trust & local visibility"
       }
     ],
     "items": [
@@ -616,6 +642,8 @@
     "tech": "Technologies used",
     "result": "Result",
     "liveSite": "View live website",
+    "projectPreview": "View project preview",
+    "projectPreviewInline": "interactive project preview",
     "techFoundation": "Technical foundation",
     "techFoundationText": "Depending on the project goal, SaaleWeb uses modern technologies such as Next.js, WordPress, headless CMS, individual booking systems or custom integrations. The framework is not the deciding factor — the right solution for the business is.",
     "performanceNotes": "Performance & SEO",

@@ -13,6 +13,7 @@ type StaticItem = {
   industry: string;
   goal: string;
   solution: string;
+  benefits: string[];
   result: string;
 };
 type Card = {
@@ -80,6 +81,7 @@ export async function CaseStudies() {
       industry: item.industry,
       goal: item.goal,
       solution: item.solution,
+      benefits: item.benefits,
       result: item.result || db?.result || "",
       cover: db?.cover ?? item.cover,
     };

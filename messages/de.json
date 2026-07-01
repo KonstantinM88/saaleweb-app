@@ -487,56 +487,82 @@
     "trustLine": "Ausgewählte Projekte aus Gastronomie, Beauty, Handwerk und Bau.",
     "labels": {
       "industry": "Branche",
-      "goal": "Ziel",
-      "solution": "Lösung",
-      "result": "Fokus",
-      "cta": "Projekt ansehen"
-    },
+    "goal": "Ziel",
+    "solution": "Lösung",
+    "benefits": "Vorteile",
+    "result": "Fokus",
+    "cta": "Projekt ansehen"
+  },
     "projects": [
       {
         "slug": "online-buchungen-verdreifacht",
         "name": "Salon Elen / Permanent Halle",
         "industry": "Beauty Studio",
-        "goal": "Mehr Online-Termine und lokale Sichtbarkeit",
-        "solution": "Moderner Auftritt mit Buchungslogik, mehrsprachiger Struktur und Fokus auf lokale Suchanfragen in Halle.",
-        "badge": "Beauty · Booking · Local SEO",
-        "result": "+212% Online-Termine"
-      },
+      "goal": "Mehr Online-Termine und lokale Sichtbarkeit",
+      "solution": "Moderner Auftritt mit Buchungslogik, mehrsprachiger Struktur und Fokus auf lokale Suchanfragen in Halle.",
+      "benefits": [
+        "Einfache Online-Terminbuchung",
+        "Mehrsprachige Nutzerführung",
+        "Bessere lokale Auffindbarkeit"
+      ],
+      "badge": "Beauty · Booking · Local SEO",
+      "result": "Online-Termine & Local SEO"
+    },
       {
         "slug": "neue-liebe-nebra",
         "name": "Neue Liebe",
         "industry": "Restaurant / Gastronomie",
-        "goal": "Mehr Sichtbarkeit und professioneller digitaler Auftritt",
-        "solution": "Moderner Restaurantauftritt mit klarer Struktur, aktuellen Inhalten und starker mobiler Präsentation.",
-        "badge": "Restaurant · SEO · Mobile First",
-        "result": "+176% Direktbuchungen"
-      },
+      "goal": "Mehr Sichtbarkeit und professioneller digitaler Auftritt",
+      "solution": "Moderner Restaurantauftritt mit klarer Struktur, aktuellen Inhalten und starker mobiler Präsentation.",
+      "benefits": [
+        "Mobile Nutzerführung",
+        "Aktuelle Inhalte sichtbar",
+        "Mehr Vertrauen bei Gästen"
+      ],
+      "badge": "Restaurant · SEO · Mobile First",
+      "result": "Restaurant-Sichtbarkeit"
+    },
       {
         "slug": "direktbuchungen-ohne-portale",
         "name": "Waldschlösschen",
         "industry": "Hotel & Restaurant",
-        "goal": "Mehr Direktbuchungen und bessere Präsentation von Hotel, Restaurant und Angeboten",
-        "solution": "Hochwertiger digitaler Auftritt für Gastronomie, Hotelbetrieb und regionale Sichtbarkeit.",
-        "badge": "Hotel · Restaurant · Buchungen",
-        "result": "+148% Direktbuchungen"
-      },
+      "goal": "Mehr Direktbuchungen und bessere Präsentation von Hotel, Restaurant und Angeboten",
+      "solution": "Hochwertiger digitaler Auftritt für Gastronomie, Hotelbetrieb und regionale Sichtbarkeit.",
+      "benefits": [
+        "Angebote klar präsentiert",
+        "Mehr Direktbuchungen möglich",
+        "Professionelle Hotelwirkung"
+      ],
+      "badge": "Hotel · Restaurant · Buchungen",
+      "result": "Hotel & Restaurant"
+    },
       {
         "slug": "qualifizierte-bauanfragen",
         "name": "SorgfaltBau",
         "industry": "Bauunternehmen",
-        "goal": "Mehr Vertrauen und qualifizierte Anfragen",
-        "solution": "Professioneller Unternehmensauftritt, der Leistungen klar präsentiert und Vertrauen bei potenziellen Kunden schafft.",
-        "badge": "Bau · Vertrauen · Anfragen",
-        "result": "Qualifizierte Anfragen"
+      "goal": "Mehr Vertrauen und qualifizierte Anfragen",
+      "solution": "Professioneller Unternehmensauftritt, der Leistungen klar präsentiert und Vertrauen bei potenziellen Kunden schafft.",
+      "benefits": [
+        "Mehr Vertrauen bei Neukunden",
+        "Klare Leistungsstruktur",
+        "Mehr qualifizierte Anfragen"
+      ],
+      "badge": "Bau · Vertrauen · Anfragen",
+      "result": "Qualifizierte Anfragen"
       },
       {
         "slug": "glaserei-schubert",
         "name": "Glaserei Schubert",
         "industry": "Handwerk / Glaserei",
-        "goal": "Hochwertige Präsentation von Leistungen und Referenzen",
-        "solution": "Moderner Auftritt für ein Handwerksunternehmen mit Fokus auf Vertrauen, klare Leistungen und lokale Auffindbarkeit.",
-        "badge": "Handwerk · Leistungen · Local SEO",
-        "result": "Vertrauen & lokale Sichtbarkeit"
+      "goal": "Hochwertige Präsentation von Leistungen und Referenzen",
+      "solution": "Moderner Auftritt für ein Handwerksunternehmen mit Fokus auf Vertrauen, klare Leistungen und lokale Auffindbarkeit.",
+      "benefits": [
+        "Professionelle Außenwirkung",
+        "Leistungen klar verständlich",
+        "Bessere lokale Sichtbarkeit"
+      ],
+      "badge": "Handwerk · Leistungen · Local SEO",
+      "result": "Vertrauen & lokale Sichtbarkeit"
       }
     ],
     "items": [
@@ -616,6 +642,8 @@
     "tech": "Eingesetzte Technologien",
     "result": "Ergebnis",
     "liveSite": "Live-Website ansehen",
+    "projectPreview": "Projektvorschau ansehen",
+    "projectPreviewInline": "interaktive Projektvorschau",
     "techFoundation": "Technische Grundlage",
     "techFoundationText": "Je nach Projektziel setzt SaaleWeb auf moderne Technologien wie Next.js, WordPress, Headless CMS, individuelle Buchungssysteme oder maßgeschneiderte Integrationen. Entscheidend ist nicht das Framework, sondern die passende Lösung für das Unternehmen.",
     "performanceNotes": "Performance & SEO",

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Check } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { Reveal } from "@/shared/ui/Reveal";
 import { cn } from "@/shared/lib/cn";
@@ -11,6 +11,7 @@ export type CaseStudyCardView = {
   industry: string;
   goal: string;
   solution: string;
+  benefits: string[];
   result: string;
   cover: { image: string | null; color: string | null; label: string };
 };
@@ -19,6 +20,7 @@ export type CaseStudyCardLabels = {
   industry: string;
   goal: string;
   solution: string;
+  benefits: string;
   result: string;
   cta: string;
 };
@@ -101,14 +103,35 @@ export function CaseStudyCard({
           </div>
         </dl>
 
-        <div className="mt-auto flex items-center justify-between gap-3 border-t border-line pt-4">
-          <div>
+        {item.benefits.length > 0 ? (
+          <div className="mt-4 rounded-[14px] border border-emerald-100 bg-emerald-50 p-3">
+            <span className="font-mono text-[10px] font-bold uppercase tracking-[0.12em] text-emerald-700">
+              {labels.benefits}
+            </span>
+            <ul className="mt-2 grid gap-1.5 text-[12.5px] font-medium leading-snug text-ink">
+              {item.benefits.slice(0, 3).map((benefit) => (
+                <li key={benefit} className="flex gap-2">
+                  <Check
+                    size={13}
+                    strokeWidth={2.5}
+                    aria-hidden
+                    className="mt-[2px] shrink-0 text-emerald-700"
+                  />
+                  <span>{benefit}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
+
+        <div className="mt-auto border-t border-line pt-4">
+          <div className="min-w-0">
             <span className="block font-mono text-[10px] font-bold uppercase tracking-[0.1em] text-muted">
               {labels.result}
             </span>
             <b className="mt-1 block text-[15px] leading-tight text-emerald-700">{item.result}</b>
           </div>
-          <span className="inline-flex shrink-0 items-center gap-1 text-[13px] font-semibold text-brand-purple">
+          <span className="mt-3 inline-flex w-full items-center justify-center gap-1.5 rounded-xl bg-brand-soft px-3 py-2.5 text-[13px] font-semibold text-brand-purple transition-all duration-300 group-hover/case:bg-brand group-hover/case:text-white">
             {labels.cta} <ArrowUpRight size={14} aria-hidden />
           </span>
         </div>
