@@ -22,6 +22,7 @@ Instructions and project memory for coding agents working in this repository.
 - Public project/case pages exist at `/projekte`, `/projects`, `/proekty` and detail pages at localized `/projekte/[slug]`, `/projects/[slug]`, `/proekty/[slug]`.
 - Public contact page exists at `/kontakt`, `/en/contact`, and `/ru/kontakt`; it complements the homepage contact block and records leads with source `contact_page`.
 - Public pricing page exists at `/preise`, `/en/pricing`, and `/ru/ceny`; homepage pricing section remains available at `#pricing`.
+- Pricing page Phase 8 content is a code-backed conversion landing page with DB-backed package prices/plans and SEO overrides. Sync current pricing DB data with `npm run db:sync-phase8-pricing`; it preserves the existing Starter and Business price strings and adds the 600 EUR WordPress entry plus individual-system package.
 - Most homepage sections now prefer published DB rows and fall back to `messages/*.json` when DB data is unavailable, empty, or incomplete. DB-backed homepage sections include industries, case studies/projects, FAQ, and testimonials. The homepage services block is message-driven and presents four business solution cards; service index/detail pages remain DB-backed.
 - Database is required for contact form persistence and future CMS/content features.
 - First-party analytics stores page views in `PageView` via `/api/track` without cookies or raw IP storage; bot user agents and admin routes are not tracked, and unique visitors are counted through a daily salted `visitorHash`.
@@ -128,6 +129,7 @@ Instructions and project memory for coding agents working in this repository.
 - Seed database: `npm run db:seed`
 - Sync original homepage message content into editable DB rows: `npm run db:sync-home`
 - Sync original pricing message content into editable DB rows: `npm run db:sync-pricing`
+- Sync Phase 8 pricing packages and `/preise` SEO overrides into the database while preserving current Starter/Business prices: `npm run db:sync-phase8-pricing`
 - Open Prisma Studio: `npm run db:studio`
 - Generate admin password hash: `node scripts/hash-password.mjs "your-password"`
 
@@ -212,6 +214,7 @@ Instructions and project memory for coding agents working in this repository.
 - Detail pages with translated slugs should wrap content in `LocaleSlugsProvider`; `LanguageSwitcher` uses that map to switch to the target locale's real slug instead of reusing the current slug.
 - Pricing plans are DB-backed through `PricingPlan` / `PricingPlanTranslation`; features are stored as `String[]` and edited one item per line in `/admin/pricing`.
 - `npm run db:sync-pricing` copies the original `messages/*.json` pricing packages into editable DB records. It updates plans by German name or order, so do not run it after manual admin edits unless you intentionally want to reset the public pricing content back to message values.
+- `npm run db:sync-phase8-pricing` writes the current four-package pricing model (`Leichter Start`, `Starter Landingpage`, `Business Website`, `Individuelles System`) and SEOPage path `/preise` translations to the database. Use this for the public Phase 8 pricing page; use the older `db:sync-pricing` only when intentionally restoring message-package defaults.
 - Admin pages are outside localized routing at `/admin`, are `noindex`, and are protected by both `src/proxy.ts` and the admin protected layout. Current admin sections cover leads, services, industries, pricing, projects/cases, blog posts, blog categories, authors, testimonials, SEO, and FAQ.
 - Leads can be exported from `/admin/leads/export`; keep this route protected with both middleware and a server-side session check.
 - Project categories are managed separately at `/admin/project-categories` and can be selected in project/case forms.

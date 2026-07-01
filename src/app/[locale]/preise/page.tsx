@@ -7,20 +7,29 @@ import { getPathname } from "@/i18n/navigation";
 import { prisma } from "@/lib/prisma";
 import { Navbar } from "@/widgets/navbar/Navbar";
 import { Footer } from "@/widgets/footer/Footer";
-import { Container } from "@/shared/ui/Container";
 import { Breadcrumbs } from "@/shared/ui/Breadcrumbs";
-import { CtaBanner } from "@/shared/ui/CtaBanner";
 import { JsonLd } from "@/shared/seo/JsonLd";
-import { breadcrumbSchema } from "@/shared/seo/schema";
+import { breadcrumbSchema, faqPageSchema, offerCatalogSchema, webPageSchema } from "@/shared/seo/schema";
 import { buildMetadata } from "@/shared/seo/metadata";
-import { getContactHref } from "@/shared/lib/contactHref";
 import { getHomeHref } from "@/shared/lib/localizedPath";
-import { PricingPlans, type PricingPlanView } from "@/widgets/pricing/PricingPlans";
+import {
+  getPricingLandingCopy,
+  getPricingOfferItems,
+  PricingLandingPage,
+  priceToMinPrice,
+} from "@/widgets/pricing/PricingLandingPage";
+import type { PricingPlanView } from "@/widgets/pricing/PricingPlans";
 
 export const revalidate = 300;
 
 type Params = { locale: string };
 type StaticPkg = { name: string; sub: string; price: string; features: string[] };
+
+const fallbackPrices: Record<AppLocale, { starter: string; business: string }> = {
+  de: { starter: "ab 990 €", business: "ab 1.990 €" },
+  en: { starter: "from €990", business: "from €1,990" },
+  ru: { starter: "от 990 €", business: "от 1 990 €" },
+};
 
 async function getPlans(locale: AppLocale): Promise<PricingPlanView[]> {
   try {
@@ -45,19 +54,46 @@ async function getPlans(locale: AppLocale): Promise<PricingPlanView[]> {
   }
 }
 
+function getPackagePrice(
+  plans: PricingPlanView[],
+  match: string[],
+  fallbackIndex: number,
+  fallback: string,
+) {
+  const byName = plans.find((plan) => {
+    const name = plan.name.toLowerCase();
+    return match.some((term) => name.includes(term));
+  });
+  return byName?.price ?? plans[fallbackIndex]?.price ?? fallback;
+}
+
+function getDynamicPrices(locale: AppLocale, plans: PricingPlanView[], fallback: PricingPlanView[]) {
+  const candidates = plans.length > 0 ? plans : fallback;
+  const starterFallback =
+    getPackagePrice(fallback, ["starter"], 0, fallbackPrices[locale].starter) || fallbackPrices[locale].starter;
+  const businessFallback =
+    getPackagePrice(fallback, ["business"], 1, fallbackPrices[locale].business) || fallbackPrices[locale].business;
+
+  return {
+    starterPrice: getPackagePrice(candidates, ["starter"], 1, starterFallback),
+    businessPrice: getPackagePrice(candidates, ["business"], 2, businessFallback),
+  };
+}
+
 export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) return {};
-  const t = await getTranslations({ locale, namespace: "Pricing" });
+  const appLocale = locale as AppLocale;
+  const copy = getPricingLandingCopy(appLocale);
   const languages = Object.fromEntries(
     routing.locales.map((l) => [l, getPathname({ locale: l, href: "/preise" })]),
   );
   return buildMetadata({
     path: "/preise",
     locale,
-    title: t("title"),
-    description: t("lead"),
-    eyebrow: t("eyebrow"),
+    title: copy.metaTitle,
+    description: copy.metaDescription,
+    eyebrow: copy.eyebrow,
     languages,
   });
 }
@@ -65,6 +101,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
 export default async function PricingPage({ params }: { params: Promise<Params> }) {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) notFound();
+  const appLocale = locale as AppLocale;
   setRequestLocale(locale);
 
   const t = await getTranslations({ locale, namespace: "Pricing" });
@@ -73,40 +110,46 @@ export default async function PricingPage({ params }: { params: Promise<Params> 
     ...p,
     featured: i === 1,
   }));
-  const db = await getPlans(locale);
-  const plans = db.length > 0 ? db : fallback;
-  const homePath = getHomeHref(locale);
-  const contactHref = getContactHref(locale);
+  const db = await getPlans(appLocale);
+  const { starterPrice, businessPrice } = getDynamicPrices(appLocale, db, fallback);
+  const copy = getPricingLandingCopy(appLocale);
+  const path = getPathname({ locale: appLocale, href: "/preise" });
+  const homePath = getHomeHref(appLocale);
+  const offers = getPricingOfferItems(appLocale, starterPrice, businessPrice).map((offer) => ({
+    ...offer,
+    url: path,
+    minPrice: priceToMinPrice(offer.price),
+  }));
 
   return (
     <>
       <Navbar />
       <JsonLd
-        data={breadcrumbSchema([
-          { name: th("home"), path: homePath },
-          { name: t("eyebrow"), path: getPathname({ locale, href: "/preise" }) },
-        ])}
+        data={[
+          webPageSchema({
+            name: copy.metaTitle,
+            description: copy.metaDescription,
+            path,
+            locale,
+            about: "Website pricing, SEO, GEO, AIO, WordPress, React and Next.js services",
+          }),
+          breadcrumbSchema([
+            { name: th("home"), path: homePath },
+            { name: copy.eyebrow, path },
+          ]),
+          faqPageSchema(copy.faq),
+          offerCatalogSchema({
+            name: copy.packagesTitle,
+            description: copy.packagesLead,
+            path,
+            locale,
+            offers,
+          }),
+        ]}
       />
       <main>
-        <Breadcrumbs items={[{ name: th("home"), href: "/" }, { name: t("eyebrow") }]} />
-        <section className="py-12">
-          <Container>
-            <div className="mx-auto mb-12 max-w-[680px] text-center">
-              <span className="eyebrow">{t("eyebrow")}</span>
-              <h1 className="mt-4 text-[clamp(32px,5vw,56px)] font-bold tracking-tight text-dark">
-                {t("title")}
-              </h1>
-              <p className="mx-auto mt-4 max-w-[620px] text-lg text-muted">{t("lead")}</p>
-            </div>
-            <PricingPlans
-              plans={plans}
-              popularLabel={t("popular")}
-              buttonLabel={t("button")}
-              contactHref={contactHref}
-            />
-          </Container>
-        </section>
-        <CtaBanner />
+        <Breadcrumbs items={[{ name: th("home"), href: "/" }, { name: copy.eyebrow }]} />
+        <PricingLandingPage locale={appLocale} starterPrice={starterPrice} businessPrice={businessPrice} />
       </main>
       <Footer />
     </>

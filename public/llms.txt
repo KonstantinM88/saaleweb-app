@@ -14,7 +14,7 @@ KI-Suchsystemen wie ChatGPT, Gemini, Claude, Perplexity und Google AI Overview.
 - [Leistungen](https://saaleweb.de/leistungen): Digitale Leistungen von Website-Entwicklung bis KI-Optimierung.
 - [Branchen](https://saaleweb.de/branchen): Spezialisierte Lösungen für lokale Unternehmen und Dienstleister.
 - [Projekte](https://saaleweb.de/projekte): Ausgewählte Kundenprojekte mit Ergebnissen und Fallstudien.
-- [Preise](https://saaleweb.de/preise): Pakete für Landingpages, Unternehmenswebsites und Wachstumssysteme.
+- [Preise](https://saaleweb.de/preise): Transparente Einstiegspreise für WordPress-Onepager ab 600 €, React/Next.js Landingpages, Business Websites, SEO/GEO/AIO und individuelle Systeme.
 - [Kontakt](https://saaleweb.de/kontakt): Erstgespräch, Ablauf, Erwartungen, FAQ und Projektanfrage.
 - [Blog](https://saaleweb.de/blog): Fachartikel zu SEO, Websites, Local SEO und KI-Sichtbarkeit.
 

@@ -16,6 +16,7 @@
     "db:seed": "prisma db seed",
     "db:sync-home": "tsx scripts/sync-homepage-content.ts",
     "db:sync-pricing": "tsx scripts/sync-pricing-content.ts",
+    "db:sync-phase8-pricing": "tsx scripts/sync-phase8-pricing.ts",
     "db:sync-phase3-projects": "tsx scripts/upsert-phase3-projects.ts",
     "db:studio": "prisma studio"
   },

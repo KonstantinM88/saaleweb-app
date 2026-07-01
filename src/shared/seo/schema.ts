@@ -160,6 +160,42 @@ export function itemListSchema(items: { name: string; path: string; description?
   };
 }
 
+export function offerCatalogSchema(input: {
+  name: string;
+  description?: string;
+  path: string;
+  locale: string;
+  offers: { name: string; description?: string; price?: string; minPrice?: number; url?: string }[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "OfferCatalog",
+    name: input.name,
+    description: input.description,
+    url: `${URL}${input.path}`,
+    inLanguage: input.locale,
+    provider: { "@id": ORG_ID },
+    itemListElement: input.offers.map((offer, i) => ({
+      "@type": "Offer",
+      position: i + 1,
+      name: offer.name,
+      description: offer.description,
+      url: offer.url ? `${URL}${offer.url}` : `${URL}${input.path}`,
+      priceCurrency: "EUR",
+      price: offer.minPrice,
+      priceSpecification: offer.minPrice
+        ? {
+            "@type": "UnitPriceSpecification",
+            priceCurrency: "EUR",
+            minPrice: offer.minPrice,
+            description: offer.price,
+          }
+        : undefined,
+      seller: { "@id": ORG_ID },
+    })),
+  };
+}
+
 export function faqPageSchema(items: { q: string; a: string }[]) {
   return {
     "@context": "https://schema.org",
