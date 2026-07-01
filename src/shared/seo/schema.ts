@@ -105,6 +105,61 @@ export function serviceSchema(input: {
   };
 }
 
+export function webPageSchema(input: {
+  name: string;
+  description?: string;
+  path: string;
+  locale: string;
+  about?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: input.name,
+    description: input.description,
+    url: `${URL}${input.path}`,
+    inLanguage: input.locale,
+    about: input.about,
+    provider: { "@id": ORG_ID },
+    publisher: { "@id": ORG_ID },
+  };
+}
+
+export function collectionPageSchema(input: {
+  name: string;
+  description?: string;
+  path: string;
+  locale: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: input.name,
+    description: input.description,
+    url: `${URL}${input.path}`,
+    inLanguage: input.locale,
+    about: { "@id": ORG_ID },
+    provider: { "@id": ORG_ID },
+  };
+}
+
+export function itemListSchema(items: { name: string; path: string; description?: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: items.map((it, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      item: {
+        "@type": "WebPage",
+        name: it.name,
+        description: it.description,
+        url: `${URL}${it.path}`,
+      },
+    })),
+  };
+}
+
 export function faqPageSchema(items: { q: string; a: string }[]) {
   return {
     "@context": "https://schema.org",

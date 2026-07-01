@@ -8,7 +8,7 @@ import { Reveal } from "@/shared/ui/Reveal";
 import { Magnetic } from "@/shared/ui/Magnetic";
 import { BrandText } from "@/shared/ui/BrandText";
 import { JsonLd } from "@/shared/seo/JsonLd";
-import { breadcrumbSchema, faqPageSchema, localBusinessSchema, serviceSchema } from "@/shared/seo/schema";
+import { breadcrumbSchema, faqPageSchema, localBusinessSchema, serviceSchema, webPageSchema } from "@/shared/seo/schema";
 import { getContactHref } from "@/shared/lib/contactHref";
 import { getAuditHref, getHomeHref } from "@/shared/lib/localizedPath";
 import { LocaleSlugsProvider } from "@/features/language-switcher/LocaleSlugsContext";
@@ -44,9 +44,9 @@ const ui = {
     process: "Ablauf",
     industries: "Branchen",
     practice: "Praxis",
-    aiTitle: "Für KI-Suche optimiert",
+    aiTitle: "Sichtbar bei Google und verständlich für KI-Systeme",
     aiText:
-      "Unsere Inhalte werden so strukturiert, dass Suchmaschinen und moderne KI-Systeme Zusammenhänge besser erkennen können. Dazu gehören klare Abschnitte, FAQ, interne Links, eindeutige Begriffe und strukturierte Daten.",
+      "SaaleWeb strukturiert Inhalte so, dass Suchmaschinen und moderne KI-Systeme Zusammenhänge besser erkennen können. Dazu gehören klare Leistungsbeschreibungen, lokale Signale, FAQ-Bereiche, strukturierte Daten und verständliche Antworten auf typische Kundenfragen.",
     auditEyebrow: "Kostenlose Analyse",
     auditTitle: "Nicht sicher, wo Ihre aktuelle Website steht?",
     auditText:
@@ -73,9 +73,9 @@ const ui = {
     process: "Process",
     industries: "Industries",
     practice: "Practice",
-    aiTitle: "Optimized for AI search",
+    aiTitle: "Visible in Google and understandable for AI systems",
     aiText:
-      "The content is structured so search engines and modern AI systems can understand the business, region, services and proof points more clearly. This includes clear sections, FAQ, internal links, precise entities and structured data.",
+      "SaaleWeb structures content so search engines and modern AI systems can understand relationships more clearly. This includes precise service descriptions, local signals, FAQ blocks, structured data and useful answers to typical customer questions.",
     auditEyebrow: "Free analysis",
     auditTitle: "Not sure where your current website stands?",
     auditText:
@@ -102,9 +102,9 @@ const ui = {
     process: "Процесс",
     industries: "Отрасли",
     practice: "Практика",
-    aiTitle: "Оптимизировано для ИИ-поиска",
+    aiTitle: "Понятно для Google и AI-поиска",
     aiText:
-      "Контент структурируется так, чтобы поисковые системы и современные ИИ-сервисы лучше понимали бизнес, регион, услуги и доказательства доверия. Для этого используются понятные разделы, FAQ, внутренние ссылки, точные сущности и структурированные данные.",
+      "SaaleWeb структурирует контент так, чтобы поисковые системы и современные AI-сервисы лучше понимали услуги, регион, контекст и сигналы доверия. Для этого используются понятные описания услуг, локальные сигналы, FAQ, структурированные данные и ответы на типичные вопросы клиентов.",
     auditEyebrow: "Бесплатный анализ",
     auditTitle: "Не уверены, насколько силён текущий сайт?",
     auditText:
@@ -144,6 +144,13 @@ export function Phase4LandingPage({ page, locale, path, parent, schemaKind, area
     ...(parent?.path ? [{ name: parent.name, path: parent.path }] : []),
     { name: page.title, path },
   ];
+  const pageSchema = webPageSchema({
+    name: page.title,
+    description: page.metaDescription,
+    path,
+    locale,
+    about: schemaKind === "industry" ? page.eyebrow : undefined,
+  });
 
   const uiCrumbs: Crumb[] = [
     { name: labels.home, href: "/" },
@@ -154,7 +161,7 @@ export function Phase4LandingPage({ page, locale, path, parent, schemaKind, area
   const content = (
     <>
       <Navbar />
-      <JsonLd data={[schema, breadcrumbSchema(breadcrumbItems), faqPageSchema(page.faq)]} />
+      <JsonLd data={[schema, pageSchema, breadcrumbSchema(breadcrumbItems), faqPageSchema(page.faq)]} />
       <main>
         <Breadcrumbs items={uiCrumbs} />
 

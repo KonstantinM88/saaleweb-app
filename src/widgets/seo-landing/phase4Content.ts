@@ -70,6 +70,29 @@ const serviceProcess: Phase4Card[] = [
   },
 ];
 
+const industryProcess: Phase4Card[] = [
+  {
+    title: "Analyse",
+    text: "Wir prüfen Branche, Zielgruppe, Wettbewerb, Inhalte, aktuelle Website und typische Kundenfragen.",
+  },
+  {
+    title: "Strategie",
+    text: "Daraus entsteht ein Plan für Struktur, Inhalte, lokale Sichtbarkeit, Vertrauen und klare Anfragewege.",
+  },
+  {
+    title: "Umsetzung",
+    text: "Design, Entwicklung, SEO-Struktur und Texte werden zu einer nutzbaren Website zusammengeführt.",
+  },
+  {
+    title: "Launch",
+    text: "Vor dem Start prüfen wir Performance, mobile Darstellung, Formulare, Indexierung und zentrale Inhalte.",
+  },
+  {
+    title: "Weiterentwicklung",
+    text: "Nach dem Launch können Inhalte, Landingpages, FAQ, Referenzen und Conversion-Punkte erweitert werden.",
+  },
+];
+
 const defaultFinal = {
   finalTitle: "Lassen Sie uns prüfen, was für Ihr Unternehmen sinnvoll ist.",
   finalText:
@@ -1457,8 +1480,8 @@ const RU_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
       { title: "Измеримость", text: "Брони и заявки можно отслеживать как важные бизнес-действия." },
     ],
     related: [
-      { label: "Сайт ресторана", href: "/ru/otrasli/sajt-restorana", description: "Больше резерваций и понятная подача меню." },
-      { label: "Сайт отеля", href: "/ru/otrasli/sajt-otelya", description: "Прямые брони и меньше зависимости от порталов." },
+      { label: "Сайт ресторана", href: "/ru/otrasli/sayt-dlya-restorana", description: "Больше резерваций и понятная подача меню." },
+      { label: "Сайт отеля", href: "/ru/otrasli/sayt-dlya-otelya", description: "Прямые брони и меньше зависимости от порталов." },
       { label: "Заказать сайт", href: "/ru/uslugi/razrabotka-saytov", description: "Встроить бронирование сразу в новый сайт." },
       { label: "Контакты", href: "/ru/kontakt", description: "Обсудить процесс бронирования." },
     ],
@@ -2639,7 +2662,7 @@ function industryFaq(industry: string, extra: Phase4Faq[] = []): Phase4Faq[] {
 export const seoIndustryPages: Record<string, Phase4Landing> = {
   "restaurant-website": {
     slug: "restaurant-website",
-    eyebrow: "Branche",
+    eyebrow: "Branchenlösung",
     title: "Website für Restaurants – mehr Reservierungen, mehr Sichtbarkeit, mehr Vertrauen",
     metaTitle: "Website für Restaurants | SaaleWeb",
     metaDescription:
@@ -2674,7 +2697,7 @@ export const seoIndustryPages: Record<string, Phase4Landing> = {
     technologyTitle: "Die passende Technologie für Ihr Ziel",
     technologyText,
     processTitle: "Vom Restaurantprofil zur Reservierungsseite",
-    process: serviceProcess,
+    process: industryProcess,
     casesTitle: "Passende Restaurant-Projekte",
     cases: serviceCases.restaurant,
     relatedTitle: "Sinnvolle interne Links",
@@ -2698,7 +2721,7 @@ export const seoIndustryPages: Record<string, Phase4Landing> = {
   },
   "hotel-website": {
     slug: "hotel-website",
-    eyebrow: "Branche",
+    eyebrow: "Branchenlösung",
     title: "Hotel Website – mehr Direktbuchungen und weniger Abhängigkeit von Portalen",
     metaTitle: "Hotel Website erstellen lassen | SaaleWeb",
     metaDescription:
@@ -2733,7 +2756,7 @@ export const seoIndustryPages: Record<string, Phase4Landing> = {
     technologyTitle: "Die passende Technologie für Ihr Ziel",
     technologyText,
     processTitle: "Vom Gastinteresse zur Direktbuchung",
-    process: serviceProcess,
+    process: industryProcess,
     casesTitle: "Passende Projektbeispiele",
     cases: [
       {
@@ -2763,7 +2786,7 @@ export const seoIndustryPages: Record<string, Phase4Landing> = {
   },
   "beauty-studio-website": {
     slug: "beauty-studio-website",
-    eyebrow: "Branche",
+    eyebrow: "Branchenlösung",
     title: "Website für Beauty Studios – Termine, Vertrauen und lokale Sichtbarkeit",
     metaTitle: "Website für Beauty Studio | SaaleWeb",
     metaDescription:
@@ -2798,7 +2821,7 @@ export const seoIndustryPages: Record<string, Phase4Landing> = {
     technologyTitle: "Die passende Technologie für Ihr Ziel",
     technologyText,
     processTitle: "Vom Studio-Angebot zur Terminseite",
-    process: serviceProcess,
+    process: industryProcess,
     casesTitle: "Passende Projektbeispiele",
     cases: serviceCases.booking,
     relatedTitle: "Sinnvolle interne Links",
@@ -2822,7 +2845,7 @@ export const seoIndustryPages: Record<string, Phase4Landing> = {
   },
   "bauunternehmen-website": {
     slug: "bauunternehmen-website",
-    eyebrow: "Branche",
+    eyebrow: "Branchenlösung",
     title: "Website für Bauunternehmen – Vertrauen, Referenzen und qualifizierte Anfragen",
     metaTitle: "Website für Bauunternehmen | SaaleWeb",
     metaDescription:
@@ -2857,7 +2880,7 @@ export const seoIndustryPages: Record<string, Phase4Landing> = {
     technologyTitle: "Die passende Technologie für Ihr Ziel",
     technologyText,
     processTitle: "Vom Leistungsprofil zur Anfrage-Website",
-    process: serviceProcess,
+    process: industryProcess,
     casesTitle: "Passende Projektbeispiele",
     cases: [
       {
@@ -2887,7 +2910,7 @@ export const seoIndustryPages: Record<string, Phase4Landing> = {
   },
   "handwerker-website": {
     slug: "handwerker-website",
-    eyebrow: "Branche",
+    eyebrow: "Branchenlösung",
     title: "Website für Handwerker – lokal sichtbar und vertrauenswürdig auftreten",
     metaTitle: "Website für Handwerker | SaaleWeb",
     metaDescription:
@@ -2922,7 +2945,7 @@ export const seoIndustryPages: Record<string, Phase4Landing> = {
     technologyTitle: "Die passende Technologie für Ihr Ziel",
     technologyText,
     processTitle: "Vom Betrieb zur sichtbaren Website",
-    process: serviceProcess,
+    process: industryProcess,
     casesTitle: "Passende Projektbeispiele",
     cases: serviceCases.local,
     relatedTitle: "Sinnvolle interne Links",
@@ -2946,7 +2969,7 @@ export const seoIndustryPages: Record<string, Phase4Landing> = {
   },
   "glaserei-website": {
     slug: "glaserei-website",
-    eyebrow: "Branche",
+    eyebrow: "Branchenlösung",
     title: "Website für Glasereien – Qualität, Referenzen und Spezialleistungen klar zeigen",
     metaTitle: "Website für Glaserei | SaaleWeb",
     metaDescription:
@@ -2981,13 +3004,13 @@ export const seoIndustryPages: Record<string, Phase4Landing> = {
     technologyTitle: "Die passende Technologie für Ihr Ziel",
     technologyText,
     processTitle: "Von Fachleistung zu klarer Anfrage",
-    process: serviceProcess,
+    process: industryProcess,
     casesTitle: "Passendes Projektbeispiel",
     cases: [
       {
-        label: "Salon Elen / Permanent Halle",
-        href: "/projekte/online-buchungen-verdreifacht",
-        description: "Fallstudie für klare Leistungen, lokale Sichtbarkeit, Online-Terminlogik und digitale Vertrauensbildung.",
+        label: "Glaserei Schubert",
+        href: "/projekte/glaserei-schubert",
+        description: "Projektbeispiel für lokale Fachkompetenz, klare Leistungsstruktur und digitale Vertrauensbildung.",
       },
     ],
     relatedTitle: "Sinnvolle interne Links",
@@ -3009,38 +3032,130 @@ export const seoIndustryPages: Record<string, Phase4Landing> = {
     ]),
     ...defaultFinal,
   },
+  "dienstleister-website": {
+    slug: "dienstleister-website",
+    eyebrow: "Branchenlösung",
+    title: "Website für Dienstleister – besser gefunden werden und mehr qualifizierte Anfragen erhalten",
+    metaTitle: "Website für Dienstleister | Sichtbarkeit, Vertrauen & neue Anfragen",
+    metaDescription:
+      "SaaleWeb entwickelt Websites für lokale Dienstleister mit klarer Positionierung, SEO-Struktur, Anfragefokus und professioneller mobiler Nutzerführung.",
+    lead: [
+      "Lokale Dienstleister müssen online schnell Vertrauen schaffen. Kunden möchten verstehen, welche Leistungen angeboten werden, warum sie diesem Anbieter vertrauen können und wie sie unkompliziert Kontakt aufnehmen.",
+      "Eine professionelle Website macht genau diesen Entscheidungsprozess einfacher: Sie erklärt Leistungen klar, beantwortet typische Fragen und führt Besucher zu einer passenden Anfrage.",
+    ],
+    problemTitle: "Warum viele Websites lokaler Dienstleister nicht genug leisten",
+    problems: [
+      "Die Positionierung ist unklar und klingt austauschbar.",
+      "Leistungen werden zu allgemein oder zu technisch beschrieben.",
+      "Es fehlen lokale SEO-Signale für Stadt, Region und Einzugsgebiet.",
+      "Kontaktwege sind nicht klar genug oder wirken unverbindlich.",
+      "Die mobile Nutzerführung ist zu langsam oder unübersichtlich.",
+      "Referenzen, Vertrauen und konkrete Nutzenargumente sind zu schwach sichtbar.",
+    ],
+    solutionTitle: "Wie SaaleWeb Dienstleister digital stärkt",
+    solution: [
+      "SaaleWeb entwickelt Websites für Dienstleister, die Leistungen verständlich erklären, Vertrauen aufbauen und Anfragen erleichtern.",
+      "Die Inhalte werden so strukturiert, dass Kunden, Suchmaschinen und moderne KI-Systeme das Angebot, den regionalen Bezug und den nächsten Schritt besser verstehen.",
+    ],
+    featuresTitle: "Wichtige Funktionen für Dienstleister-Websites",
+    features: [
+      { title: "Klare Leistungsseiten", text: "Jede wichtige Leistung bekommt eine verständliche Struktur mit Nutzen, Ablauf und nächstem Schritt." },
+      { title: "Anfragefokus", text: "Kontaktformulare und CTA-Wege werden so geplant, dass qualifizierte Anfragen leichter entstehen." },
+      { title: "Local SEO", text: "Stadt, Region, Servicegebiet und relevante Suchbegriffe werden natürlich in die Struktur eingebunden." },
+      { title: "Trust-Elemente", text: "Referenzen, Erfahrung, Ablauf, Beratung und häufige Fragen schaffen Sicherheit vor dem ersten Kontakt." },
+      { title: "Mobile Nutzerführung", text: "Besucher finden Leistungen, Kontakt, FAQ und Entscheidungshilfen schnell auf dem Smartphone." },
+      { title: "AI-ready Content", text: "Klare Begriffe, semantische Überschriften und FAQ helfen Suchsystemen, das Angebot einzuordnen." },
+    ],
+    technologyTitle: "Die Technologie folgt dem Ziel – nicht umgekehrt",
+    technologyText,
+    processTitle: "Vom Dienstleistungsangebot zur Anfrage-Website",
+    process: industryProcess,
+    casesTitle: "Passende Projektbeispiele",
+    cases: [
+      {
+        label: "Salon Elen / Permanent Halle",
+        href: "/projekte/online-buchungen-verdreifacht",
+        description: "Projektbeispiel für klare Leistungen, Online-Terminlogik und lokale Sichtbarkeit.",
+      },
+      {
+        label: "Qualifizierte Bauanfragen",
+        href: "/projekte/qualifizierte-bauanfragen",
+        description: "Projektbeispiel für Vertrauen, Leistungsstruktur und qualifizierte regionale Anfragen.",
+      },
+    ],
+    relatedTitle: "Sinnvolle interne Links",
+    relatedLinks: [
+      { label: "Website erstellen lassen", href: "/leistungen/website-erstellen-lassen", description: "Neue Website mit klarer Struktur und Anfragefokus planen." },
+      { label: "SEO Halle", href: "/leistungen/seo-halle", description: "Regionale SEO-Basis für lokale Dienstleister." },
+      { label: "Local SEO", href: "/leistungen/local-seo", description: "Im Einzugsgebiet besser gefunden werden." },
+      { label: "Website Audit", href: "/#website-audit", description: "Bestehende Website kostenlos prüfen lassen." },
+      { label: "Kontakt", href: "/kontakt", description: "Dienstleister-Website unverbindlich besprechen." },
+    ],
+    faq: industryFaq("einen lokalen Dienstleister", [
+      {
+        q: "Was braucht eine gute Website für Dienstleister?",
+        a: "Sie braucht eine klare Positionierung, verständliche Leistungsseiten, lokale SEO-Signale, Vertrauen, FAQ und einen einfachen Weg zur Anfrage.",
+      },
+      {
+        q: "Kann eine Dienstleister-Website auch ohne Online-Shop mehr Anfragen bringen?",
+        a: "Ja. Für viele lokale Dienstleister ist nicht ein Shop entscheidend, sondern eine klare Erklärung der Leistungen, Vertrauen und ein einfacher Kontaktweg.",
+      },
+    ]),
+    ...defaultFinal,
+  },
 };
 
 const INDUSTRY_SLUGS: Record<string, Phase4SlugMap> = {
   "restaurant-website": {
     de: "restaurant-website",
     en: "restaurant-website",
-    ru: "sajt-restorana",
+    ru: "sayt-dlya-restorana",
   },
   "hotel-website": {
     de: "hotel-website",
     en: "hotel-website",
-    ru: "sajt-otelya",
+    ru: "sayt-dlya-otelya",
   },
   "beauty-studio-website": {
     de: "beauty-studio-website",
     en: "beauty-studio-website",
-    ru: "sajt-beauty-studii",
+    ru: "sayt-dlya-salona-krasoty",
   },
   "bauunternehmen-website": {
     de: "bauunternehmen-website",
     en: "construction-company-website",
-    ru: "sajt-stroitelnoj-kompanii",
+    ru: "sayt-dlya-stroitelnoy-kompanii",
   },
   "handwerker-website": {
     de: "handwerker-website",
-    en: "tradesman-website",
-    ru: "sajt-remeslennika",
+    en: "craftsmen-website",
+    ru: "sayt-dlya-masterov",
   },
   "glaserei-website": {
     de: "glaserei-website",
-    en: "glazing-company-website",
-    ru: "sajt-glaserei",
+    en: "glazier-website",
+    ru: "sayt-dlya-stekolnoy-masterskoy",
+  },
+  "dienstleister-website": {
+    de: "dienstleister-website",
+    en: "service-provider-website",
+    ru: "sayt-dlya-sfery-uslug",
+  },
+};
+
+const INDUSTRY_SLUG_ALIASES: Record<Phase4Locale, Record<string, string>> = {
+  de: {},
+  en: {
+    "tradesman-website": "handwerker-website",
+    "glazing-company-website": "glaserei-website",
+  },
+  ru: {
+    "sajt-restorana": "restaurant-website",
+    "sajt-otelya": "hotel-website",
+    "sajt-beauty-studii": "beauty-studio-website",
+    "sajt-stroitelnoj-kompanii": "bauunternehmen-website",
+    "sajt-remeslennika": "handwerker-website",
+    "sajt-glaserei": "glaserei-website",
   },
 };
 
@@ -3202,14 +3317,14 @@ const EN_INDUSTRY_SEEDS: Record<string, LocalizedIndustrySeed> = {
     related: [
       { label: "Get a website", href: "/en/services/website-development", description: "A new website for complex services." },
       { label: "SEO Halle", href: "/en/services/seo-halle", description: "Regional visibility for construction services." },
-      { label: "Tradesman website", href: "/en/industries/tradesman-website", description: "Related needs in skilled trades." },
+      { label: "Craftsmen website", href: "/en/industries/craftsmen-website", description: "Related needs in skilled trades." },
       { label: "Contact", href: "/en/contact", description: "Discuss a construction website." },
     ],
   },
   "handwerker-website": {
-    navLabel: "Tradesman website",
-    title: "Website for tradesmen – locally visible and trustworthy",
-    metaTitle: "Tradesman website | SaaleWeb",
+    navLabel: "Craftsmen website",
+    title: "Website for craftsmen – locally visible and trustworthy",
+    metaTitle: "Craftsmen website | SaaleWeb",
     metaDescription:
       "Tradesman website with Local SEO, service structure, references, clear inquiry guidance and modern mobile presentation.",
     lead: [
@@ -3237,16 +3352,16 @@ const EN_INDUSTRY_SEEDS: Record<string, LocalizedIndustrySeed> = {
       { title: "Maintainability", text: "New projects and services can be added later." },
     ],
     related: [
-      { label: "Glazing company website", href: "/en/industries/glazing-company-website", description: "Specialized requirements for glazing companies." },
+      { label: "Glazier website", href: "/en/industries/glazier-website", description: "Specialized requirements for glazing companies." },
       { label: "Local SEO", href: "/en/services/local-seo", description: "Get found in your service area." },
       { label: "Website maintenance", href: "/en/services/website-maintenance", description: "Keep the website current long term." },
       { label: "Contact", href: "/en/contact", description: "Discuss a trades website." },
     ],
   },
   "glaserei-website": {
-    navLabel: "Glazing company website",
-    title: "Website for glazing companies – show quality, references and specialist services clearly",
-    metaTitle: "Glazing company website | SaaleWeb",
+    navLabel: "Glazier website",
+    title: "Website for glaziers – show quality, references and specialist services clearly",
+    metaTitle: "Glazier website | SaaleWeb",
     metaDescription:
       "Website for glazing companies with references, service pages, Local SEO, trust, mobile presentation and clear inquiry guidance.",
     lead: [
@@ -3274,10 +3389,67 @@ const EN_INDUSTRY_SEEDS: Record<string, LocalizedIndustrySeed> = {
       { title: "Mobile speed", text: "The site remains fast even when many images are used." },
     ],
     related: [
-      { label: "Tradesman website", href: "/en/industries/tradesman-website", description: "Digital basics for regional trades businesses." },
+      { label: "Craftsmen website", href: "/en/industries/craftsmen-website", description: "Digital basics for regional trades businesses." },
       { label: "SEO Halle", href: "/en/services/seo-halle", description: "Visibility for local specialist services." },
       { label: "Get a website", href: "/en/services/website-development", description: "Plan a new website with clear structure." },
       { label: "Contact", href: "/en/contact", description: "Discuss a glazing company website." },
+    ],
+    cases: [
+      {
+        label: "Glaserei Schubert",
+        href: "/en/projects/glaserei-schubert",
+        description: "Project example for local specialist expertise, clear service structure and digital trust.",
+      },
+    ],
+  },
+  "dienstleister-website": {
+    navLabel: "Service provider website",
+    title: "Website for service providers – become easier to find and receive better inquiries",
+    metaTitle: "Service provider website | Visibility, trust and new inquiries",
+    metaDescription:
+      "SaaleWeb builds websites for local service providers with clear positioning, SEO structure, inquiry focus and professional mobile user guidance.",
+    lead: [
+      "Local service providers need to build trust quickly online. Visitors want to understand what is offered, why the provider is credible and how they can make contact without friction.",
+      "A professional website makes that decision easier by explaining services clearly, answering common questions and guiding visitors toward a qualified inquiry.",
+    ],
+    problems: [
+      "The positioning feels unclear or interchangeable.",
+      "Services are described too generally or too technically.",
+      "Local SEO signals for city, region and service area are missing.",
+      "Contact paths are not clear enough or feel non-committal.",
+      "Mobile users do not find the right next step fast enough.",
+      "References, proof and practical benefits are not visible enough.",
+    ],
+    solution: [
+      "SaaleWeb builds websites for service providers that explain services clearly, create trust and make inquiries easier.",
+      "The content is structured so customers, search engines and modern AI systems can better understand the offer, local relevance and next step.",
+    ],
+    features: [
+      { title: "Clear service pages", text: "Each core service receives a useful structure with benefits, process and next step." },
+      { title: "Inquiry focus", text: "Forms and calls to action are planned so qualified inquiries become easier." },
+      { title: "Local SEO", text: "City, region, service area and relevant search intent are integrated naturally." },
+      { title: "Trust signals", text: "References, process, experience and FAQ create confidence before first contact." },
+      { title: "Mobile guidance", text: "Visitors find services, contact, FAQ and decision help quickly on smartphones." },
+      { title: "AI-ready content", text: "Clear terms, semantic headings and FAQ help search systems classify the offer." },
+    ],
+    related: [
+      { label: "Website development", href: "/en/services/website-development", description: "Plan a new website with clear inquiry paths." },
+      { label: "SEO Halle", href: "/en/services/seo-halle", description: "Regional SEO foundation for local providers." },
+      { label: "Local SEO", href: "/en/services/local-seo", description: "Become more visible in your service area." },
+      { label: "Website audit", href: "/en#website-audit", description: "Review the current website free of charge." },
+      { label: "Contact", href: "/en/contact", description: "Discuss a service provider website." },
+    ],
+    cases: [
+      {
+        label: "Salon Elen / Permanent Halle",
+        href: "/en/projects/online-bookings-tripled",
+        description: "Project example for services, booking logic and local visibility.",
+      },
+      {
+        label: "Qualified construction leads",
+        href: "/en/projects/qualified-construction-leads",
+        description: "Project example for trust, service structure and qualified regional inquiries.",
+      },
     ],
   },
 };
@@ -3431,7 +3603,7 @@ const RU_INDUSTRY_SEEDS: Record<string, LocalizedIndustrySeed> = {
     related: [
       { label: "Заказать сайт", href: "/ru/uslugi/razrabotka-saytov", description: "Новый сайт для сложных услуг." },
       { label: "SEO Halle", href: "/ru/uslugi/seo-halle", description: "Региональная видимость строительных услуг." },
-      { label: "Сайт ремесленника", href: "/ru/otrasli/sajt-remeslennika", description: "Похожие задачи в ремесленных сферах." },
+      { label: "Сайт для мастеров", href: "/ru/otrasli/sayt-dlya-masterov", description: "Похожие задачи в ремесленных сферах." },
       { label: "Контакты", href: "/ru/kontakt", description: "Обсудить сайт строительной компании." },
     ],
   }),
@@ -3466,7 +3638,7 @@ const RU_INDUSTRY_SEEDS: Record<string, LocalizedIndustrySeed> = {
       { title: "Поддерживаемость", text: "Новые проекты и услуги можно добавлять позже." },
     ],
     related: [
-      { label: "Сайт Glaserei", href: "/ru/otrasli/sajt-glaserei", description: "Специализированные задачи для стекольных компаний." },
+      { label: "Сайт стекольной мастерской", href: "/ru/otrasli/sayt-dlya-stekolnoy-masterskoy", description: "Специализированные задачи для стекольных компаний." },
       { label: "Local SEO", href: "/ru/uslugi/local-seo", description: "Быть заметнее в зоне работы." },
       { label: "Поддержка сайта", href: "/ru/uslugi/podderzhka-saytov", description: "Держать сайт актуальным долгосрочно." },
       { label: "Контакты", href: "/ru/kontakt", description: "Обсудить сайт ремесленной компании." },
@@ -3503,10 +3675,67 @@ const RU_INDUSTRY_SEEDS: Record<string, LocalizedIndustrySeed> = {
       { title: "Мобильная скорость", text: "Сайт остаётся быстрым даже при большом количестве изображений." },
     ],
     related: [
-      { label: "Сайт ремесленника", href: "/ru/otrasli/sajt-remeslennika", description: "Цифровая база для локальных ремесленных компаний." },
+      { label: "Сайт для мастеров", href: "/ru/otrasli/sayt-dlya-masterov", description: "Цифровая база для локальных ремесленных компаний." },
       { label: "SEO Halle", href: "/ru/uslugi/seo-halle", description: "Видимость для локальных специальных услуг." },
       { label: "Заказать сайт", href: "/ru/uslugi/razrabotka-saytov", description: "Спланировать сайт с понятной структурой." },
       { label: "Контакты", href: "/ru/kontakt", description: "Обсудить сайт Glaserei." },
+    ],
+    cases: [
+      {
+        label: "Glaserei Schubert",
+        href: "/ru/proekty/glaserei-schubert",
+        description: "Пример проекта для локальной экспертности, понятной структуры услуг и цифрового доверия.",
+      },
+    ],
+  }),
+  "dienstleister-website": ruIndustryFromEn(EN_INDUSTRY_SEEDS["dienstleister-website"], {
+    navLabel: "Сайт для сферы услуг",
+    title: "Сайт для сферы услуг — лучше находиться в поиске и получать более качественные заявки",
+    metaTitle: "Сайт для сферы услуг | Видимость, доверие и новые заявки",
+    metaDescription:
+      "SaaleWeb разрабатывает сайты для локальных сервисных компаний с понятным позиционированием, SEO-структурой, фокусом на заявки и удобной мобильной подачей.",
+    lead: [
+      "Локальным сервисным компаниям важно быстро вызывать доверие онлайн. Клиенты хотят понять, какие услуги вы предлагаете, почему вам можно доверять и как удобно связаться.",
+      "Профессиональный сайт упрощает это решение: понятно объясняет услуги, отвечает на частые вопросы и ведёт посетителя к осмысленной заявке.",
+    ],
+    problems: [
+      "Позиционирование звучит размыто и не отличает компанию от конкурентов.",
+      "Услуги описаны слишком общо или слишком технически.",
+      "Не хватает локальных SEO-сигналов для города, региона и зоны работы.",
+      "Контактные пути неочевидны или не вызывают желания оставить заявку.",
+      "На смартфоне посетитель не находит быстро следующий шаг.",
+      "Референсы, доверие и практическая польза показаны слишком слабо.",
+    ],
+    solution: [
+      "SaaleWeb создаёт сайты для сервисных компаний, которые понятно объясняют услуги, формируют доверие и упрощают получение заявок.",
+      "Контент структурируется так, чтобы клиенты, поисковые системы и современные AI-сервисы лучше понимали предложение, региональный контекст и следующий шаг.",
+    ],
+    features: [
+      { title: "Понятные страницы услуг", text: "Каждая ключевая услуга получает структуру с пользой, процессом и следующим шагом." },
+      { title: "Фокус на заявки", text: "Формы и CTA планируются так, чтобы клиенту было проще оставить осмысленную заявку." },
+      { title: "Local SEO", text: "Город, регион, зона работы и поисковые запросы встроены в структуру естественно." },
+      { title: "Сигналы доверия", text: "Референсы, процесс, опыт и FAQ снижают неопределённость до первого контакта." },
+      { title: "Мобильная логика", text: "Посетитель быстро находит услуги, контакт, FAQ и аргументы для решения на смартфоне." },
+      { title: "AI-ready контент", text: "Чёткие термины, семантические заголовки и FAQ помогают поисковым системам понять предложение." },
+    ],
+    related: [
+      { label: "Разработка сайтов", href: "/ru/uslugi/razrabotka-saytov", description: "Спланировать новый сайт с понятным путём к заявке." },
+      { label: "SEO Halle", href: "/ru/uslugi/seo-halle", description: "Региональная SEO-база для локальных компаний." },
+      { label: "Local SEO", href: "/ru/uslugi/local-seo", description: "Быть заметнее в зоне работы." },
+      { label: "Анализ сайта", href: "/ru#website-audit", description: "Бесплатно проверить текущий сайт." },
+      { label: "Контакты", href: "/ru/kontakt", description: "Обсудить сайт для сферы услуг." },
+    ],
+    cases: [
+      {
+        label: "Salon Elen / Permanent Halle",
+        href: "/ru/proekty/onlajn-zapisi-vyrosli-vtroe",
+        description: "Пример проекта для услуг, онлайн-записи и локальной видимости.",
+      },
+      {
+        label: "Квалифицированные заявки",
+        href: "/ru/proekty/kvalificirovannye-zayavki",
+        description: "Пример проекта для доверия, структуры услуг и региональных заявок.",
+      },
     ],
   }),
 };
@@ -3525,36 +3754,36 @@ function localizedIndustryPage(canonicalSlug: string, locale: Phase4Locale): Pha
   return {
     slug,
     navLabel: seed.navLabel,
-    eyebrow: en ? "Industry" : "Отрасль",
+    eyebrow: en ? "Industry solution" : "Отраслевое решение",
     title: seed.title,
     metaTitle: seed.metaTitle,
     metaDescription: seed.metaDescription,
     lead: seed.lead,
-    problemTitle: en ? "Typical industry challenges" : "Типичные задачи отрасли",
+    problemTitle: en ? "Why many websites in this industry do not perform well enough" : "Почему многие сайты в этой отрасли работают недостаточно эффективно",
     problems: seed.problems,
-    solutionTitle: en ? "How SaaleWeb supports this industry" : "Как SaaleWeb помогает этой отрасли",
+    solutionTitle: en ? "How SaaleWeb strengthens this industry digitally" : "Как SaaleWeb усиливает эту отрасль в digital",
     solution: seed.solution,
-    featuresTitle: en ? "Relevant website features" : "Важные функции сайта",
+    featuresTitle: en ? "Important features for this industry" : "Важные функции для этой отрасли",
     features: seed.features,
-    technologyTitle: en ? "The right technology for the business goal" : "Правильная технология под бизнес-цель",
+    technologyTitle: en ? "Technology follows the goal – not the other way around" : "Технология следует цели, а не наоборот",
     technologyText: en
       ? "We do not position SaaleWeb as only a Next.js or only a WordPress agency. The technology follows the goal: modern Next.js and React platforms, professionally supported WordPress websites or custom integrations are selected based on business value."
       : "SaaleWeb — не только Next.js- и не только WordPress-агентство. Технология следует цели: современные платформы Next.js и React, профессионально сопровождаемые WordPress-сайты или индивидуальные интеграции выбираются по пользе для бизнеса.",
     processTitle: en ? "From industry context to inquiry-ready website" : "От отраслевого контекста к сайту, готовому к заявкам",
     process: en
       ? [
-          { title: "Understand", text: "We review the industry, customer questions and existing digital presence." },
-          { title: "Structure", text: "Services, trust signals, region and inquiry paths are organized clearly." },
-          { title: "Build", text: "Design, content, SEO and technical implementation are connected." },
+          { title: "Analysis", text: "We review the industry, customer questions, competitors, existing content and current website." },
+          { title: "Strategy", text: "Services, trust signals, region, SEO structure and inquiry paths are organized clearly." },
+          { title: "Implementation", text: "Design, content, development and technical SEO are connected into one usable system." },
           { title: "Launch", text: "The page is checked for performance, mobile use, forms and indexability." },
-          { title: "Improve", text: "Content, links and conversion points can be improved after launch." },
+          { title: "Development", text: "After launch, content, landing pages, FAQ, references and conversion points can be expanded." },
         ]
       : [
-          { title: "Понять", text: "Изучаем отрасль, вопросы клиентов и текущее цифровое присутствие." },
-          { title: "Структурировать", text: "Услуги, доверие, регион и путь заявки выстраиваются понятно." },
-          { title: "Создать", text: "Соединяем дизайн, контент, SEO и техническую реализацию." },
+          { title: "Анализ", text: "Изучаем отрасль, вопросы клиентов, конкурентов, текущий контент и сайт." },
+          { title: "Стратегия", text: "Выстраиваем услуги, доверие, регион, SEO-структуру и путь к заявке." },
+          { title: "Реализация", text: "Соединяем дизайн, контент, разработку и техническую SEO-базу в одну систему." },
           { title: "Запустить", text: "Проверяем скорость, мобильность, формы и индексацию." },
-          { title: "Улучшать", text: "После запуска можно усиливать контент, ссылки и конверсию." },
+          { title: "Развитие", text: "После запуска можно расширять контент, лендинги, FAQ, референсы и точки конверсии." },
         ],
     casesTitle: en ? "Relevant project examples" : "Подходящие примеры проектов",
     cases: seed.cases ?? SERVICE_CASES_BY_LOCALE[locale],
@@ -3623,7 +3852,11 @@ function localizedIndustryPage(canonicalSlug: string, locale: Phase4Locale): Pha
 }
 
 function industryCanonicalFromSlug(locale: Phase4Locale, slug: string): string | null {
-  return Object.entries(INDUSTRY_SLUGS).find(([, slugs]) => slugs[locale] === slug)?.[0] ?? null;
+  return (
+    Object.entries(INDUSTRY_SLUGS).find(([, slugs]) => slugs[locale] === slug)?.[0] ??
+    INDUSTRY_SLUG_ALIASES[locale][slug] ??
+    null
+  );
 }
 
 export const seoIndustrySlugs = Object.keys(seoIndustryPages);

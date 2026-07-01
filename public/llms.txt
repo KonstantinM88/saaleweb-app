@@ -22,7 +22,7 @@ KI-Suchsystemen wie ChatGPT, Gemini, Claude, Perplexity und Google AI Overview.
 
 - DE: [Webdesign Halle](https://saaleweb.de/leistungen/webdesign-halle), [Restaurant Website](https://saaleweb.de/branchen/restaurant-website), [Standort Halle](https://saaleweb.de/standorte/halle)
 - EN: [Web design Halle](https://saaleweb.de/en/services/web-design-halle), [Restaurant website](https://saaleweb.de/en/industries/restaurant-website), [Location Halle](https://saaleweb.de/en/locations/halle)
-- RU: [Веб-дизайн Halle](https://saaleweb.de/ru/uslugi/webdesign-halle), [Сайт ресторана](https://saaleweb.de/ru/otrasli/sajt-restorana), [Локация Halle](https://saaleweb.de/ru/goroda/halle)
+- RU: [Веб-дизайн Halle](https://saaleweb.de/ru/uslugi/webdesign-halle), [Сайт ресторана](https://saaleweb.de/ru/otrasli/sayt-dlya-restorana), [Локация Halle](https://saaleweb.de/ru/goroda/halle)
 
 ## Kommerzielle Leistungen
 
@@ -51,6 +51,17 @@ KI-Suchsystemen wie ChatGPT, Gemini, Claude, Perplexity und Google AI Overview.
 - [Website für Bauunternehmen](https://saaleweb.de/branchen/bauunternehmen-website): Referenzen, Leistungsseiten und qualifizierte Bauanfragen.
 - [Website für Handwerker](https://saaleweb.de/branchen/handwerker-website): Lokale Sichtbarkeit, Einzugsgebiet und klare Anfrageführung.
 - [Website für Glasereien](https://saaleweb.de/branchen/glaserei-website): Fachleistungen, Referenzen, Local SEO und strukturierte Anfragen.
+- [Website für Dienstleister](https://saaleweb.de/branchen/dienstleister-website): Klare Positionierung, Local SEO, Vertrauen und qualifizierte Anfragen.
+
+### Mehrsprachige Branchen-URLs
+
+- Restaurants: [DE](https://saaleweb.de/branchen/restaurant-website), [EN](https://saaleweb.de/en/industries/restaurant-website), [RU](https://saaleweb.de/ru/otrasli/sayt-dlya-restorana)
+- Hotels: [DE](https://saaleweb.de/branchen/hotel-website), [EN](https://saaleweb.de/en/industries/hotel-website), [RU](https://saaleweb.de/ru/otrasli/sayt-dlya-otelya)
+- Beauty Studios: [DE](https://saaleweb.de/branchen/beauty-studio-website), [EN](https://saaleweb.de/en/industries/beauty-studio-website), [RU](https://saaleweb.de/ru/otrasli/sayt-dlya-salona-krasoty)
+- Bauunternehmen: [DE](https://saaleweb.de/branchen/bauunternehmen-website), [EN](https://saaleweb.de/en/industries/construction-company-website), [RU](https://saaleweb.de/ru/otrasli/sayt-dlya-stroitelnoy-kompanii)
+- Handwerker: [DE](https://saaleweb.de/branchen/handwerker-website), [EN](https://saaleweb.de/en/industries/craftsmen-website), [RU](https://saaleweb.de/ru/otrasli/sayt-dlya-masterov)
+- Glasereien: [DE](https://saaleweb.de/branchen/glaserei-website), [EN](https://saaleweb.de/en/industries/glazier-website), [RU](https://saaleweb.de/ru/otrasli/sayt-dlya-stekolnoy-masterskoy)
+- Lokale Dienstleister: [DE](https://saaleweb.de/branchen/dienstleister-website), [EN](https://saaleweb.de/en/industries/service-provider-website), [RU](https://saaleweb.de/ru/otrasli/sayt-dlya-sfery-uslug)
 
 ## Standorte
 
