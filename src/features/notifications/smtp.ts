@@ -26,6 +26,22 @@ function fallbackFrom(): string | undefined {
   return process.env.SMTP_FROM || process.env.SMTP_USER;
 }
 
+function smtpErrorDetails(error: unknown) {
+  if (!(error instanceof Error)) return { message: "Unknown SMTP error" };
+  const details = error as Error & {
+    code?: string;
+    command?: string;
+    responseCode?: number;
+  };
+
+  return {
+    code: details.code,
+    command: details.command,
+    responseCode: details.responseCode,
+    message: details.message,
+  };
+}
+
 /**
  * Sends mail through the configured SMTP mailbox.
  * Missing SMTP env values or delivery errors return false and must not break
@@ -37,7 +53,16 @@ export async function sendSmtpMail(mail: SmtpMail): Promise<boolean> {
   const pass = process.env.SMTP_PASSWORD;
   const port = smtpPort();
 
-  if (!host || !user || !pass) return false;
+  if (!host || !user || !pass) {
+    console.warn("[smtp] Mail delivery skipped because SMTP config is incomplete.", {
+      missing: [
+        !host ? "SMTP_HOST" : null,
+        !user ? "SMTP_USER" : null,
+        !pass ? "SMTP_PASSWORD" : null,
+      ].filter(Boolean),
+    });
+    return false;
+  }
 
   const transporter = nodemailer.createTransport({
     host,
@@ -56,7 +81,8 @@ export async function sendSmtpMail(mail: SmtpMail): Promise<boolean> {
       html: mail.html,
     });
     return true;
-  } catch {
+  } catch (error) {
+    console.warn("[smtp] Mail delivery failed.", smtpErrorDetails(error));
     return false;
   }
 }
