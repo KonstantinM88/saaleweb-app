@@ -1,7 +1,7 @@
 import "server-only";
 
 import { emailBrandHeader } from "./emailBrand";
-import { sendSmtpMail } from "./smtp";
+import { sendTransactionalMail } from "./transport";
 
 export type LeadNotification = {
   name: string;
@@ -81,7 +81,7 @@ const autoReplyCopy: Record<
  * If env vars are missing or delivery fails, form submission still succeeds.
  */
 export async function sendLeadNotification(lead: LeadNotification): Promise<boolean> {
-  const from = process.env.LEAD_NOTIFY_FROM || process.env.SMTP_FROM || process.env.SMTP_USER;
+  const from = process.env.RESEND_FROM || process.env.LEAD_NOTIFY_FROM || process.env.SMTP_FROM || process.env.SMTP_USER;
   const to = process.env.LEAD_NOTIFY_TO || process.env.ADMIN_EMAIL;
   if (!to) {
     console.warn("[mail] Lead admin notification skipped because no recipient is configured.", {
@@ -112,7 +112,7 @@ export async function sendLeadNotification(lead: LeadNotification): Promise<bool
     `</table>` +
     `<p style="font:14px sans-serif;margin-top:16px"><strong>Nachricht:</strong><br>${esc(message).replace(/\n/g, "<br>")}</p>`;
 
-  return sendSmtpMail({
+  return sendTransactionalMail({
     from,
     to,
     subject: `Neue Anfrage von ${lead.name}`,
@@ -127,7 +127,7 @@ export async function sendLeadNotification(lead: LeadNotification): Promise<bool
  * submission. Delivery failure must never block the stored lead.
  */
 export async function sendLeadAutoReply(lead: LeadNotification): Promise<boolean> {
-  const from = process.env.LEAD_NOTIFY_FROM || process.env.SMTP_FROM || process.env.SMTP_USER;
+  const from = process.env.RESEND_FROM || process.env.LEAD_NOTIFY_FROM || process.env.SMTP_FROM || process.env.SMTP_USER;
   const replyTo = process.env.LEAD_NOTIFY_TO || process.env.SMTP_USER;
   if (!lead.email) {
     console.warn("[mail] Lead auto-reply skipped because lead email is missing.");
@@ -151,7 +151,7 @@ export async function sendLeadAutoReply(lead: LeadNotification): Promise<boolean
     `<p style="margin:0;white-space:pre-line">${esc(copy.signature)}</p>` +
     `</div>`;
 
-  return sendSmtpMail({
+  return sendTransactionalMail({
     from,
     to: lead.email,
     replyTo,

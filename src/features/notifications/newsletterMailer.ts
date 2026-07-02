@@ -1,7 +1,7 @@
 import "server-only";
 
 import { emailBrandHeader } from "./emailBrand";
-import { sendSmtpMail } from "./smtp";
+import { sendTransactionalMail } from "./transport";
 
 type Locale = "de" | "en" | "ru";
 
@@ -53,7 +53,7 @@ function esc(value: string): string {
 }
 
 /**
- * Sends the double-opt-in confirmation email via the configured SMTP mailbox.
+ * Sends the double-opt-in confirmation email via the configured mail transport.
  * Returns false when env vars are missing or delivery fails so the caller
  * can inform the user instead of silently losing the confirmation step.
  */
@@ -62,7 +62,7 @@ export async function sendNewsletterConfirmation(opts: {
   locale: Locale;
   confirmUrl: string;
 }): Promise<boolean> {
-  const from = process.env.NEWSLETTER_FROM || process.env.LEAD_NOTIFY_FROM || process.env.SMTP_USER;
+  const from = process.env.NEWSLETTER_FROM || process.env.RESEND_FROM || process.env.LEAD_NOTIFY_FROM || process.env.SMTP_USER;
   if (!from) return false;
 
   const t = texts[opts.locale] ?? texts.de;
@@ -81,5 +81,5 @@ export async function sendNewsletterConfirmation(opts: {
     `<p style="margin:16px 0 0;color:#9ca3af;font-size:12px">SaaleWeb · saaleweb.de</p>` +
     `</div>`;
 
-  return sendSmtpMail({ from, to: opts.email, subject: t.subject, text, html });
+  return sendTransactionalMail({ from, to: opts.email, subject: t.subject, text, html });
 }
