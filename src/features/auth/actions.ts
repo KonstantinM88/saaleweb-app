@@ -7,12 +7,23 @@ import { setSessionCookie, clearSessionCookie } from "./session";
 
 export type LoginState = { error?: string };
 
+function normalizeAdminPasswordHash(value: string): string {
+  const trimmed = value.trim();
+  const unquoted =
+    (trimmed.startsWith('"') && trimmed.endsWith('"')) ||
+    (trimmed.startsWith("'") && trimmed.endsWith("'"))
+      ? trimmed.slice(1, -1)
+      : trimmed;
+
+  return unquoted.replaceAll("\\$", "$");
+}
+
 export async function login(_prev: LoginState, formData: FormData): Promise<LoginState> {
   const email = String(formData.get("email") ?? "").trim().toLowerCase();
   const password = String(formData.get("password") ?? "");
 
   const adminEmail = (process.env.ADMIN_EMAIL ?? "").trim().toLowerCase();
-  const adminHash = process.env.ADMIN_PASSWORD_HASH ?? "";
+  const adminHash = normalizeAdminPasswordHash(process.env.ADMIN_PASSWORD_HASH ?? "");
 
   if (!adminEmail || !adminHash) {
     return { error: "Admin-Zugang ist nicht konfiguriert (ADMIN_EMAIL / ADMIN_PASSWORD_HASH)." };
