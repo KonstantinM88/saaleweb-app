@@ -19,6 +19,12 @@
     "blog": "Blog",
     "contact": "Contact"
   },
+  "FloatingWhatsApp": {
+    "aria": "Contact SaaleWeb on WhatsApp",
+    "eyebrow": "Quick question?",
+    "title": "Write directly on WhatsApp",
+    "prefill": "Hello SaaleWeb, I am interested in a website, SEO or AI visibility and would like to talk briefly."
+  },
   "Hero": {
     "badge": "Digital studio · Halle (Saale) → Germany",
     "titleA": "Websites that ",
@@ -304,6 +310,12 @@
     "formSectionTitle": "Tell us briefly what this is about",
     "formSectionLead": "The more specific your enquiry is, the faster we can assess the right path. A rough description is completely enough.",
     "directContactLabel": "Direct contact",
+    "directContactLead": "Choose the channel that is easiest for you: email, phone or messenger.",
+    "directEmailLabel": "Email",
+    "directPhoneLabel": "Call",
+    "directWhatsAppLabel": "WhatsApp",
+    "directTelegramLabel": "Telegram",
+    "directMessengerHint": "Write a message",
     "callHint": "Agree on callback or meeting during the first consultation",
     "form": {
       "eyebrow": "Project enquiry",
@@ -311,6 +323,18 @@
       "lead": "We will reply personally and prepare the first useful questions in advance.",
       "name": "Name",
       "namePlaceholder": "Your name",
+      "hints": {
+        "name": "Please enter at least 2 characters.",
+        "email": "We only use this address to reply to your enquiry.",
+        "message": "Please write at least 10 characters so we can understand your request."
+      },
+      "validation": {
+        "name": "Please enter your name.",
+        "email": "Please enter a valid email address.",
+        "message": "Please write at least 10 characters about your request.",
+        "privacy": "Please agree to the privacy policy.",
+        "summary": "Please check the marked fields. Your entries stay in the form."
+      },
       "company": "Company",
       "companyPlaceholder": "Company or organization",
       "projectWebsite": "Website",

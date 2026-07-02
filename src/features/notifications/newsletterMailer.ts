@@ -1,5 +1,6 @@
 import "server-only";
 
+import { emailBrandHeader } from "./emailBrand";
 import { sendSmtpMail } from "./smtp";
 
 type Locale = "de" | "en" | "ru";
@@ -68,6 +69,7 @@ export async function sendNewsletterConfirmation(opts: {
   const text = `${t.greeting}\n\n${t.intro}\n\n${opts.confirmUrl}\n\n${t.ignore}\n\nSaaleWeb · saaleweb.de`;
   const html =
     `<div style="font:15px/1.6 sans-serif;color:#111827;max-width:520px">` +
+    emailBrandHeader() +
     `<p style="margin:0 0 12px">${esc(t.greeting)}</p>` +
     `<p style="margin:0 0 20px">${esc(t.intro)}</p>` +
     `<p style="margin:0 0 24px"><a href="${esc(opts.confirmUrl)}" ` +

@@ -1,4 +1,5 @@
 import type { AppLocale } from "@/i18n/routing";
+import { siteConfig } from "@/shared/config/site";
 
 // ---------------------------------------------------------------------------
 // Phase 10: legal pages (Impressum / Datenschutzerklärung).
@@ -18,7 +19,7 @@ export const LEGAL_PROVIDER = {
   country: "Deutschland",
   countryEn: "Germany",
   countryRu: "Германия",
-  phone: "+49 176 71764743",
+  phone: siteConfig.phone.display,
   email: "mykhailov@saaleweb.de",
   vatId: "DE462863969",
   activity: {

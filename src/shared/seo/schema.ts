@@ -12,6 +12,7 @@ export function organizationSchema() {
     name: siteConfig.name,
     url: URL,
     email: siteConfig.email,
+    telephone: siteConfig.phone.e164,
     founder: { "@type": "Person", name: siteConfig.founder },
     areaServed: siteConfig.locations,
     slogan: "Websites, SEO & KI für Unternehmen",
@@ -40,6 +41,7 @@ export function localBusinessSchema(opts?: { areaServed?: string }) {
     name: siteConfig.name,
     url: URL,
     email: siteConfig.email,
+    telephone: siteConfig.phone.e164,
     priceRange: "€€",
     areaServed: opts?.areaServed ?? siteConfig.locations,
     founder: { "@type": "Person", name: siteConfig.founder },
@@ -68,6 +70,7 @@ export function contactPageSchema(input: {
     mainEntity: {
       "@type": "ContactPoint",
       email: siteConfig.email,
+      telephone: siteConfig.phone.e164,
       contactType: "sales",
       areaServed: "DE",
       availableLanguage: ["German", "English", "Russian"],

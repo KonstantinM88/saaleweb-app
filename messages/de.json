@@ -19,6 +19,12 @@
     "blog": "Blog",
     "contact": "Kontakt"
   },
+  "FloatingWhatsApp": {
+    "aria": "SaaleWeb bei WhatsApp kontaktieren",
+    "eyebrow": "Kurze Frage?",
+    "title": "Direkt per WhatsApp schreiben",
+    "prefill": "Hallo SaaleWeb, ich interessiere mich für eine Website, SEO oder KI-Sichtbarkeit und möchte kurz sprechen."
+  },
   "Hero": {
     "badge": "Digitales Studio · Halle (Saale) → Deutschland",
     "titleA": "Websites, die ",
@@ -304,6 +310,12 @@
     "formSectionTitle": "Erzählen Sie uns kurz, worum es geht",
     "formSectionLead": "Je konkreter Ihre Anfrage ist, desto schneller können wir einschätzen, welcher Weg sinnvoll ist. Eine grobe Beschreibung reicht vollkommen aus.",
     "directContactLabel": "Direkter Kontakt",
+    "directContactLead": "Wählen Sie den Weg, der für Sie am bequemsten ist: E-Mail, Telefon oder Messenger.",
+    "directEmailLabel": "E-Mail",
+    "directPhoneLabel": "Anrufen",
+    "directWhatsAppLabel": "WhatsApp",
+    "directTelegramLabel": "Telegram",
+    "directMessengerHint": "Nachricht schreiben",
     "callHint": "Rückruf oder Termin im Erstgespräch abstimmen",
     "form": {
       "eyebrow": "Projektanfrage",
@@ -311,6 +323,18 @@
       "lead": "Wir melden uns persönlich und bereiten die ersten sinnvollen Fragen bereits vor.",
       "name": "Name",
       "namePlaceholder": "Ihr Name",
+      "hints": {
+        "name": "Bitte mindestens 2 Zeichen eingeben.",
+        "email": "Wir nutzen diese Adresse nur für die Antwort auf Ihre Anfrage.",
+        "message": "Bitte schreiben Sie mindestens 10 Zeichen, damit wir Ihr Anliegen einordnen können."
+      },
+      "validation": {
+        "name": "Bitte geben Sie Ihren Namen ein.",
+        "email": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+        "message": "Bitte schreiben Sie mindestens 10 Zeichen zur Anfrage.",
+        "privacy": "Bitte stimmen Sie der Datenschutzerklärung zu.",
+        "summary": "Bitte prüfen Sie die markierten Felder. Ihre Eingaben bleiben erhalten."
+      },
       "company": "Unternehmen",
       "companyPlaceholder": "Firma oder Organisation",
       "projectWebsite": "Website",

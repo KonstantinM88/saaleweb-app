@@ -1,5 +1,6 @@
 import "server-only";
 
+import { emailBrandHeader } from "./emailBrand";
 import { sendSmtpMail } from "./smtp";
 
 export type LeadNotification = {
@@ -132,6 +133,7 @@ export async function sendLeadAutoReply(lead: LeadNotification): Promise<void> {
   const text = [greeting, "", body, copy.next, "", copy.replyHint, "", copy.signature].join("\n");
   const html =
     `<div style="font:15px/1.6 system-ui,-apple-system,Segoe UI,sans-serif;color:#111827;max-width:560px">` +
+    emailBrandHeader() +
     `<p style="margin:0 0 14px">${esc(greeting)}</p>` +
     `<p style="margin:0 0 14px">${esc(body)}</p>` +
     `<p style="margin:0 0 18px">${esc(copy.next)}</p>` +

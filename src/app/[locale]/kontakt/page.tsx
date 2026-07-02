@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { hasLocale } from "next-intl";
@@ -317,15 +318,39 @@ export default async function ContactPage({ params }: { params: Promise<Params> 
                 </div>
                 <div className="mt-7 rounded-[24px] border border-line bg-dark p-5 text-white shadow-[0_28px_64px_-44px_rgba(17,24,39,0.85)]">
                   <p className="text-sm font-semibold text-white/70">{t("directContactLabel")}</p>
-                  <div className="mt-3 grid gap-2 text-sm">
-                    <a className="inline-flex items-center gap-2 text-white transition hover:text-brand-pink" href={`mailto:${siteConfig.email}`}>
-                      <Mail size={16} aria-hidden />
-                      {siteConfig.email}
-                    </a>
-                    <a className="inline-flex items-center gap-2 text-white/80 transition hover:text-white" href="#contact">
-                      <Phone size={16} aria-hidden />
-                      {t("callHint")}
-                    </a>
+                  <p className="mt-2 max-w-xl text-sm leading-relaxed text-white/65">{t("directContactLead")}</p>
+                  <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                    <DirectContactLink
+                      icon={<Mail size={18} aria-hidden />}
+                      href={`mailto:${siteConfig.email}`}
+                      label={t("directEmailLabel")}
+                      value={siteConfig.email}
+                      tone="email"
+                    />
+                    <DirectContactLink
+                      icon={<Phone size={18} aria-hidden />}
+                      href={siteConfig.phone.href}
+                      label={t("directPhoneLabel")}
+                      value={siteConfig.phone.display}
+                      hint={t("callHint")}
+                      tone="phone"
+                    />
+                    <DirectContactLink
+                      icon={<WhatsAppIcon />}
+                      href={siteConfig.phone.whatsappUrl}
+                      label={t("directWhatsAppLabel")}
+                      value={t("directMessengerHint")}
+                      tone="whatsapp"
+                      external
+                    />
+                    <DirectContactLink
+                      icon={<TelegramIcon />}
+                      href={siteConfig.phone.telegramUrl}
+                      label={t("directTelegramLabel")}
+                      value={t("directMessengerHint")}
+                      tone="telegram"
+                      external
+                    />
                   </div>
                 </div>
               </Reveal>
@@ -530,6 +555,102 @@ export default async function ContactPage({ params }: { params: Promise<Params> 
       </main>
       <Footer />
     </>
+  );
+}
+
+const directContactTones = {
+  email: {
+    card: "hover:border-[#FF4FA3]/55",
+    icon: "bg-[#FF4FA3]/12 text-[#FF4FA3] group-hover:bg-[#FF4FA3] group-hover:text-white group-hover:shadow-[0_0_24px_rgba(255,79,163,0.28)]",
+  },
+  phone: {
+    card: "hover:border-[#8B5CF6]/55",
+    icon: "bg-[#8B5CF6]/12 text-[#8B5CF6] group-hover:bg-[#8B5CF6] group-hover:text-white group-hover:shadow-[0_0_24px_rgba(139,92,246,0.28)]",
+  },
+  whatsapp: {
+    card: "hover:border-[#25D366]/55",
+    icon: "bg-[#25D366]/12 text-[#25D366] group-hover:bg-[#25D366] group-hover:text-white group-hover:shadow-[0_0_24px_rgba(37,211,102,0.28)]",
+  },
+  telegram: {
+    card: "hover:border-[#229ED9]/55",
+    icon: "bg-[#229ED9]/12 text-[#229ED9] group-hover:bg-[#229ED9] group-hover:text-white group-hover:shadow-[0_0_24px_rgba(34,158,217,0.28)]",
+  },
+} as const;
+
+type DirectContactTone = keyof typeof directContactTones;
+
+function DirectContactLink({
+  icon: Icon,
+  href,
+  label,
+  value,
+  hint,
+  tone,
+  external,
+}: {
+  icon: ReactNode;
+  href: string;
+  label: string;
+  value: string;
+  hint?: string;
+  tone: DirectContactTone;
+  external?: boolean;
+}) {
+  const toneClasses = directContactTones[tone];
+
+  return (
+    <a
+      className={`group flex min-w-0 items-start gap-3 rounded-2xl border border-white/10 bg-white/[0.06] p-3 text-white transition hover:-translate-y-0.5 hover:bg-white/[0.1] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-pink ${toneClasses.card}`}
+      href={href}
+      target={external ? "_blank" : undefined}
+      rel={external ? "noreferrer" : undefined}
+    >
+      <span className={`grid h-10 w-10 shrink-0 place-items-center rounded-2xl transition ${toneClasses.icon}`}>
+        {Icon}
+      </span>
+      <span className="min-w-0">
+        <span className="block text-xs font-semibold uppercase tracking-[0.14em] text-white/55">{label}</span>
+        <span className="mt-1 block break-words text-sm font-semibold leading-snug text-white">{value}</span>
+        {hint ? <span className="mt-1 block text-xs leading-snug text-white/55">{hint}</span> : null}
+      </span>
+    </a>
+  );
+}
+
+function WhatsAppIcon() {
+  return (
+    <svg className="h-[19px] w-[19px]" viewBox="0 0 20 20" fill="none" aria-hidden focusable="false">
+      <path
+        d="M10.04 2.25a7.63 7.63 0 0 0-6.48 11.66l-.78 3.03 3.1-.74a7.62 7.62 0 1 0 4.16-13.95Z"
+        stroke="currentColor"
+        strokeWidth="1.65"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M7.55 6.35c-.18-.4-.35-.42-.52-.43h-.44c-.15 0-.4.06-.61.29-.21.23-.8.78-.8 1.9 0 1.11.82 2.19.93 2.34.11.15 1.58 2.52 3.9 3.43 1.93.76 2.33.61 2.75.57.42-.04 1.36-.55 1.55-1.08.19-.53.19-.99.13-1.08-.06-.1-.21-.16-.44-.28-.23-.11-1.36-.67-1.57-.74-.21-.08-.36-.11-.52.11-.15.23-.59.74-.72.9-.13.15-.27.17-.5.06-.23-.11-.96-.35-1.83-1.13-.68-.6-1.14-1.35-1.27-1.58-.13-.23-.01-.35.1-.46.1-.1.23-.27.34-.4.11-.13.15-.23.23-.38.08-.15.04-.29-.02-.4-.06-.11-.5-1.23-.69-1.64Z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+}
+
+function TelegramIcon() {
+  return (
+    <svg className="h-[19px] w-[19px]" viewBox="0 0 20 20" fill="none" aria-hidden focusable="false">
+      <path
+        d="M17.56 3.1c.32-.13.66.14.57.48l-3.2 12.18c-.08.31-.45.43-.7.23l-4.35-3.42-2.29 2.13c-.28.26-.73.1-.78-.28l-.36-2.72-3.82-1.25c-.37-.12-.39-.64-.03-.79L17.56 3.1Z"
+        fill="currentColor"
+      />
+      <path
+        d="m7.02 11.54 7.56-5.58c.15-.11.31.09.18.22l-5.7 5.63-.24 2.6"
+        stroke="white"
+        strokeOpacity=".72"
+        strokeWidth="1.05"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
   );
 }
 

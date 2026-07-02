@@ -1,12 +1,16 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useRef, useState, type FormEvent } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { ArrowRight, CheckCircle2, Sparkles } from "lucide-react";
 import { submitContact, type ContactState } from "@/features/contact/actions";
 import { BrandText } from "@/shared/ui/BrandText";
 
 const initialState: ContactState = { status: "idle" };
+const MESSAGE_MIN_LENGTH = 10;
+
+type FieldName = "name" | "email" | "message" | "privacy";
+type FieldErrors = Partial<Record<FieldName, string>>;
 
 type SelectOption = {
   value: string;
@@ -17,12 +21,72 @@ export function ContactPageForm() {
   const t = useTranslations("ContactPage.form");
   const locale = useLocale();
   const [state, formAction, pending] = useActionState(submitContact, initialState);
+  const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
+  const formRef = useRef<HTMLFormElement>(null);
   const projectTypeOptions = t.raw("projectTypeOptions") as SelectOption[];
   const budgetOptions = t.raw("budgetOptions") as SelectOption[];
 
-  const fieldClass =
+  const baseFieldClass =
     "w-full rounded-2xl border border-line bg-white px-4 py-3.5 text-[15px] text-ink outline-none transition placeholder:text-muted/70 focus:border-brand-purple focus:ring-4 focus:ring-brand-purple/15";
   const labelClass = "mb-2 block text-sm font-semibold text-dark";
+  const fieldClass = (field: FieldName | "default" = "default") =>
+    `${baseFieldClass} ${
+      field !== "default" && fieldErrors[field]
+        ? "border-brand-pink bg-brand-pink/5 focus:border-brand-pink focus:ring-brand-pink/15"
+        : ""
+    }`;
+  const hintClass = "mt-2 text-[12.5px] leading-relaxed text-muted";
+  const errorClass = "mt-2 text-[12.5px] font-semibold leading-relaxed text-[#BE185D]";
+
+  const clearFieldError = (field: FieldName) => {
+    if (!fieldErrors[field]) return;
+    setFieldErrors((current) => {
+      const next = { ...current };
+      delete next[field];
+      return next;
+    });
+  };
+
+  const focusFirstError = (field: FieldName) => {
+    window.requestAnimationFrame(() => {
+      const element = formRef.current?.elements.namedItem(field);
+      if (element instanceof HTMLElement) {
+        element.focus({ preventScroll: true });
+        element.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    });
+  };
+
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    const form = event.currentTarget;
+    const name = String(new FormData(form).get("name") ?? "").trim();
+    const emailInput = form.elements.namedItem("email");
+    const email = String(new FormData(form).get("email") ?? "").trim();
+    const message = String(new FormData(form).get("message") ?? "").trim();
+    const privacyInput = form.elements.namedItem("privacy");
+    const nextErrors: FieldErrors = {};
+
+    if (name.length < 2) nextErrors.name = t("validation.name");
+    if (!email || !(emailInput instanceof HTMLInputElement) || !emailInput.validity.valid) {
+      nextErrors.email = t("validation.email");
+    }
+    if (message.length < MESSAGE_MIN_LENGTH) nextErrors.message = t("validation.message");
+    if (!(privacyInput instanceof HTMLInputElement) || !privacyInput.checked) {
+      nextErrors.privacy = t("validation.privacy");
+    }
+
+    const firstError = (["name", "email", "message", "privacy"] as FieldName[]).find(
+      (field) => nextErrors[field],
+    );
+
+    if (firstError) {
+      event.preventDefault();
+      setFieldErrors(nextErrors);
+      focusFirstError(firstError);
+    } else {
+      setFieldErrors({});
+    }
+  };
 
   if (state.status === "success") {
     return (
@@ -46,7 +110,10 @@ export function ContactPageForm() {
 
   return (
     <form
+      ref={formRef}
       action={formAction}
+      onSubmit={handleSubmit}
+      noValidate
       className="rounded-[30px] border border-line bg-white p-5 shadow-[0_34px_90px_-56px_rgba(17,24,39,0.55)] sm:p-7 lg:p-8"
     >
       <input type="hidden" name="locale" value={locale} />
@@ -64,12 +131,30 @@ export function ContactPageForm() {
       <div className="grid gap-4 sm:grid-cols-2">
         <label>
           <span className={labelClass}>{t("name")}</span>
-          <input name="name" required autoComplete="name" placeholder={t("namePlaceholder")} className={fieldClass} />
+          <input
+            name="name"
+            required
+            autoComplete="name"
+            placeholder={t("namePlaceholder")}
+            className={fieldClass("name")}
+            aria-invalid={Boolean(fieldErrors.name)}
+            aria-describedby={fieldErrors.name ? "contact-name-error" : "contact-name-hint"}
+            onChange={() => clearFieldError("name")}
+          />
+          {fieldErrors.name ? (
+            <p id="contact-name-error" className={errorClass}>
+              {fieldErrors.name}
+            </p>
+          ) : (
+            <p id="contact-name-hint" className={hintClass}>
+              {t("hints.name")}
+            </p>
+          )}
         </label>
 
         <label>
           <span className={labelClass}>{t("company")}</span>
-          <input name="company" autoComplete="organization" placeholder={t("companyPlaceholder")} className={fieldClass} />
+          <input name="company" autoComplete="organization" placeholder={t("companyPlaceholder")} className={fieldClass()} />
         </label>
 
         <label>
@@ -79,23 +164,42 @@ export function ContactPageForm() {
             inputMode="url"
             autoComplete="url"
             placeholder={t("projectWebsitePlaceholder")}
-            className={fieldClass}
+            className={fieldClass()}
           />
         </label>
 
         <label>
           <span className={labelClass}>{t("email")}</span>
-          <input name="email" type="email" required autoComplete="email" placeholder={t("emailPlaceholder")} className={fieldClass} />
+          <input
+            name="email"
+            type="email"
+            required
+            autoComplete="email"
+            placeholder={t("emailPlaceholder")}
+            className={fieldClass("email")}
+            aria-invalid={Boolean(fieldErrors.email)}
+            aria-describedby={fieldErrors.email ? "contact-email-error" : "contact-email-hint"}
+            onChange={() => clearFieldError("email")}
+          />
+          {fieldErrors.email ? (
+            <p id="contact-email-error" className={errorClass}>
+              {fieldErrors.email}
+            </p>
+          ) : (
+            <p id="contact-email-hint" className={hintClass}>
+              {t("hints.email")}
+            </p>
+          )}
         </label>
 
         <label>
           <span className={labelClass}>{t("phone")}</span>
-          <input name="phone" type="tel" autoComplete="tel" placeholder={t("phonePlaceholder")} className={fieldClass} />
+          <input name="phone" type="tel" autoComplete="tel" placeholder={t("phonePlaceholder")} className={fieldClass()} />
         </label>
 
         <label>
           <span className={labelClass}>{t("projectType")}</span>
-          <select name="projectType" defaultValue="" className={fieldClass}>
+          <select name="projectType" defaultValue="" className={fieldClass()}>
             <option value="">{t("projectTypePlaceholder")}</option>
             {projectTypeOptions.map((option) => (
               <option key={option.value} value={option.value}>
@@ -107,7 +211,7 @@ export function ContactPageForm() {
 
         <label className="sm:col-span-2">
           <span className={labelClass}>{t("budget")}</span>
-          <select name="budget" defaultValue="" className={fieldClass}>
+          <select name="budget" defaultValue="" className={fieldClass()}>
             <option value="">{t("budgetPlaceholder")}</option>
             {budgetOptions.map((option) => (
               <option key={option.value} value={option.value}>
@@ -122,27 +226,54 @@ export function ContactPageForm() {
           <textarea
             name="message"
             required
+            minLength={MESSAGE_MIN_LENGTH}
             rows={5}
             placeholder={t("messagePlaceholder")}
-            className={`${fieldClass} resize-y`}
+            className={`${fieldClass("message")} resize-y`}
+            aria-invalid={Boolean(fieldErrors.message)}
+            aria-describedby={fieldErrors.message ? "contact-message-error" : "contact-message-hint"}
+            onChange={() => clearFieldError("message")}
           />
+          {fieldErrors.message ? (
+            <p id="contact-message-error" className={errorClass}>
+              {fieldErrors.message}
+            </p>
+          ) : (
+            <p id="contact-message-hint" className={hintClass}>
+              {t("hints.message")}
+            </p>
+          )}
         </label>
       </div>
 
-      <label className="mt-5 flex items-start gap-3 rounded-2xl border border-line bg-surface px-4 py-3 text-[14px] leading-relaxed text-muted">
+      <label
+        className={`mt-5 flex items-start gap-3 rounded-2xl border px-4 py-3 text-[14px] leading-relaxed transition ${
+          fieldErrors.privacy
+            ? "border-brand-pink bg-brand-pink/10 text-[#BE185D]"
+            : "border-line bg-surface text-muted"
+        }`}
+      >
         <input
           required
           type="checkbox"
           name="privacy"
           value="accepted"
           className="mt-1 h-4 w-4 rounded border-line text-brand-purple focus:ring-brand-purple"
+          aria-invalid={Boolean(fieldErrors.privacy)}
+          aria-describedby={fieldErrors.privacy ? "contact-privacy-error" : undefined}
+          onChange={() => clearFieldError("privacy")}
         />
         <span>{t("privacy")}</span>
       </label>
+      {fieldErrors.privacy ? (
+        <p id="contact-privacy-error" className={errorClass}>
+          {fieldErrors.privacy}
+        </p>
+      ) : null}
 
-      {state.status === "error" && (
+      {(state.status === "error" || Object.keys(fieldErrors).length > 0) && (
         <p className="mt-4 rounded-2xl border border-brand-pink/25 bg-brand-pink/10 px-4 py-3 text-sm font-semibold text-[#BE185D]" role="alert">
-          {t("error")}
+          {Object.keys(fieldErrors).length > 0 ? t("validation.summary") : t("error")}
         </p>
       )}
 
