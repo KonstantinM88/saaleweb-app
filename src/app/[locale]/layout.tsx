@@ -79,6 +79,13 @@ export default async function LocaleLayout({
     notFound();
   }
   setRequestLocale(locale);
+  const floatingWhatsApp = await getTranslations({ locale, namespace: "FloatingWhatsApp" });
+  const floatingWhatsAppLabels = {
+    aria: floatingWhatsApp("aria"),
+    eyebrow: floatingWhatsApp("eyebrow"),
+    title: floatingWhatsApp("title"),
+    prefill: floatingWhatsApp("prefill"),
+  };
 
   return (
     <html lang={locale} className={`${GeistSans.variable} ${GeistMono.variable}`}>
@@ -89,7 +96,7 @@ export default async function LocaleLayout({
         {/* next-intl 4: provider auto-inherits messages from i18n/request.ts */}
         <NextIntlClientProvider>
           {children}
-          <WhatsAppFloatingCta />
+          <WhatsAppFloatingCta labels={floatingWhatsAppLabels} />
         </NextIntlClientProvider>
       </body>
     </html>

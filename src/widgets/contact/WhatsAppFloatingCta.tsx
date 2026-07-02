@@ -1,10 +1,16 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useTranslations } from "next-intl";
 import { siteConfig } from "@/shared/config/site";
 
 const APPEAR_DELAY_MS = 10_000;
+
+export type WhatsAppFloatingCtaLabels = {
+  aria: string;
+  eyebrow: string;
+  title: string;
+  prefill: string;
+};
 
 function withPrefilledMessage(url: string, message: string): string {
   if (/[?&]text=/.test(url)) return url;
@@ -28,8 +34,7 @@ function WhatsAppIcon() {
   );
 }
 
-export function WhatsAppFloatingCta() {
-  const t = useTranslations("FloatingWhatsApp");
+export function WhatsAppFloatingCta({ labels }: { labels: WhatsAppFloatingCtaLabels }) {
   const [mounted, setMounted] = useState(false);
   const [visible, setVisible] = useState(false);
 
@@ -44,18 +49,18 @@ export function WhatsAppFloatingCta() {
 
   if (!mounted) return null;
 
-  const href = withPrefilledMessage(siteConfig.phone.whatsappUrl, t("prefill"));
+  const href = withPrefilledMessage(siteConfig.phone.whatsappUrl, labels.prefill);
 
   return (
     <a
-      aria-label={t("aria")}
+      aria-label={labels.aria}
       className={`group fixed bottom-[calc(1rem+env(safe-area-inset-bottom))] right-4 z-[70] flex items-center gap-3 rounded-full border border-white/35 bg-white/90 p-2 pr-2 text-dark shadow-[0_22px_60px_-26px_rgba(17,24,39,0.55)] backdrop-blur-xl transition duration-500 ease-out hover:-translate-y-1 hover:border-[#25D366]/60 hover:shadow-[0_24px_64px_-24px_rgba(37,211,102,0.45)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#25D366] motion-reduce:transition-none sm:right-6 sm:p-2.5 sm:pr-4 md:bottom-[calc(1.5rem+env(safe-area-inset-bottom))] md:right-7 ${
         visible ? "translate-y-0 scale-100 opacity-100" : "translate-y-4 scale-95 opacity-0"
       }`}
       href={href}
       rel="noreferrer"
       target="_blank"
-      title={t("aria")}
+      title={labels.aria}
     >
       <span className="relative grid h-14 w-14 shrink-0 place-items-center rounded-full bg-[#25D366] text-white shadow-[0_16px_34px_-16px_rgba(37,211,102,0.95)] transition group-hover:scale-105">
         <span aria-hidden className="absolute inset-0 rounded-full bg-[#25D366] opacity-35 blur-xl" />
@@ -64,8 +69,12 @@ export function WhatsAppFloatingCta() {
         </span>
       </span>
       <span className="hidden min-w-0 pr-1 sm:block">
-        <span className="block text-[11px] font-bold uppercase tracking-[0.16em] text-[#128C7E]">{t("eyebrow")}</span>
-        <span className="mt-0.5 block max-w-[210px] text-sm font-extrabold leading-snug text-dark">{t("title")}</span>
+        <span className="block text-[11px] font-bold uppercase tracking-[0.16em] text-[#128C7E]">
+          {labels.eyebrow}
+        </span>
+        <span className="mt-0.5 block max-w-[210px] text-sm font-extrabold leading-snug text-dark">
+          {labels.title}
+        </span>
       </span>
     </a>
   );
