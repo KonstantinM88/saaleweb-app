@@ -5,6 +5,7 @@ import { BrandLogo } from "@/shared/ui/BrandLogo";
 import { siteConfig } from "@/shared/config/site";
 import { Link } from "@/i18n/navigation";
 import { getHomeHref } from "@/shared/lib/localizedPath";
+import { NewsletterForm } from "@/widgets/newsletter/NewsletterForm";
 
 const locationLinks = [
   { label: "Halle (Saale)", slug: "halle" },
@@ -20,11 +21,22 @@ export function Footer() {
   const t = useTranslations("Footer");
   const tn = useTranslations("Nav");
   const ts = useTranslations("Services");
+  const tnl = useTranslations("Newsletter");
   const services = (ts.raw("items") as { title: string }[]).slice(0, 4);
 
   return (
     <footer className="border-t border-line bg-surface pb-8 pt-14">
       <Container>
+        <div className="mb-11 grid items-center gap-6 rounded-2xl border border-line bg-white px-6 py-7 md:grid-cols-[1.1fr_1fr] md:px-8">
+          <div>
+            <h2 className="text-lg font-semibold tracking-tight text-dark md:text-xl">
+              {tnl("title")}
+            </h2>
+            <p className="mt-2 max-w-md text-[14px] text-muted">{tnl("text")}</p>
+          </div>
+          <NewsletterForm variant="footer" />
+        </div>
+
         <div className="mb-11 grid gap-10 md:grid-cols-[1.5fr_1fr_1fr_1fr]">
           <div>
             <div className="text-dark">

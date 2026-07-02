@@ -481,6 +481,27 @@
     "privacy": "Privacy Policy",
     "madeIn": "Made in Halle"
   },
+  "Newsletter": {
+    "eyebrow": "Newsletter",
+    "title": "Practical tips for your visibility",
+    "text": "About once a month: actionable tips on websites, local SEO and AI visibility for businesses in Halle & Leipzig. No spam, unsubscribe anytime.",
+    "placeholder": "Your email address",
+    "button": "Subscribe",
+    "submitting": "Sending …",
+    "success": "Almost there! Please confirm your subscription via the link we just sent you by email.",
+    "already": "This email address is already subscribed – you are receiving the newsletter.",
+    "error": "That did not work. Please check the email address and try again.",
+    "privacyHint": "By subscribing you agree to receive the newsletter (double opt-in). Details in the",
+    "privacyLink": "privacy policy",
+    "pageTitle": "Newsletter | SaaleWeb",
+    "confirmedTitle": "Subscription confirmed",
+    "confirmedText": "Thank you! Your newsletter subscription is confirmed. The next issue will land straight in your inbox.",
+    "unsubscribedTitle": "Unsubscribed successfully",
+    "unsubscribedText": "You have been removed from the list and your email address has been deleted. You are welcome back anytime.",
+    "invalidTitle": "Link invalid or expired",
+    "invalidText": "This confirmation link is no longer valid. Simply subscribe again – we will send you a fresh link.",
+    "backHome": "Back to homepage"
+  },
   "CaseStudies": {
     "eyebrow": "Case studies",
     "title": "Projects that create business impact",

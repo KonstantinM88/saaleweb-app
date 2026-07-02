@@ -44,6 +44,7 @@ export const routing = defineRouting({
     },
     "/impressum": { de: "/impressum", en: "/imprint", ru: "/impressum" },
     "/datenschutz": { de: "/datenschutz", en: "/privacy-policy", ru: "/datenschutz" },
+    "/newsletter": "/newsletter",
   },
 });
 

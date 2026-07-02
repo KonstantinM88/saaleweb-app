@@ -6,6 +6,7 @@ import { routing, type AppLocale } from "@/i18n/routing";
 import { getCategories, getPosts } from "@/entities/blog/api";
 import { Navbar } from "@/widgets/navbar/Navbar";
 import { Footer } from "@/widgets/footer/Footer";
+import { NewsletterBanner } from "@/widgets/newsletter/NewsletterBanner";
 import { Container } from "@/shared/ui/Container";
 import { Link, getPathname } from "@/i18n/navigation";
 import { PostCard } from "@/widgets/blog/PostCard";
@@ -91,6 +92,8 @@ export default async function BlogIndexPage({ params }: { params: Promise<Params
                 ))}
               </div>
             )}
+
+            <NewsletterBanner />
           </Container>
         </section>
       </main>

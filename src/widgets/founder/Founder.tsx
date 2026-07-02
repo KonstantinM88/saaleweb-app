@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
 import { ArrowRight, Handshake, RefreshCw, ShieldCheck } from "lucide-react";
 import { Container } from "@/shared/ui/Container";
@@ -24,14 +25,21 @@ export function Founder() {
         <Reveal>
           <div className="grid items-center gap-8 rounded-3xl border border-line bg-white p-6 shadow-card sm:p-8 md:grid-cols-[280px_1fr] md:gap-11 md:p-11">
             <div className="glow-card mx-auto w-full max-w-[260px] shadow-card">
-              <div className="auto-shine relative grid aspect-square w-full place-items-center overflow-hidden rounded-[22px] bg-brand">
-                <span className="text-6xl font-extrabold text-white/[0.9]">KM</span>
+              <div className="auto-shine relative aspect-square w-full overflow-hidden rounded-[22px] bg-brand">
+                <Image
+                  src="/images/sections/founder-avatar.webp"
+                  alt="Konstantin Mykhailov"
+                  width={768}
+                  height={768}
+                  sizes="(min-width: 768px) 260px, min(70vw, 260px)"
+                  className="h-full w-full object-cover"
+                />
                 <div
                   aria-hidden
                   className="absolute inset-0"
                   style={{
                     background:
-                      "radial-gradient(circle at 70% 20%, rgba(255,255,255,0.3), transparent 55%)",
+                      "linear-gradient(180deg, rgba(17,24,39,0.00) 52%, rgba(17,24,39,0.22) 100%), radial-gradient(circle at 70% 20%, rgba(255,255,255,0.22), transparent 55%)",
                   }}
                 />
                 <div className="absolute right-3 top-3 flex animate-bob items-center gap-1 rounded-lg bg-white/[0.95] px-2 py-1 text-[11px] font-bold text-dark shadow-card">

@@ -481,6 +481,27 @@
     "privacy": "Datenschutz",
     "madeIn": "Made in Halle"
   },
+  "Newsletter": {
+    "eyebrow": "Newsletter",
+    "title": "Praxistipps für Ihre Sichtbarkeit",
+    "text": "Etwa einmal im Monat: umsetzbare Tipps zu Websites, lokalem SEO und KI-Sichtbarkeit für Unternehmen in Halle & Leipzig. Kein Spam, jederzeit abbestellbar.",
+    "placeholder": "Ihre E-Mail-Adresse",
+    "button": "Anmelden",
+    "submitting": "Wird gesendet …",
+    "success": "Fast geschafft! Bitte bestätigen Sie Ihre Anmeldung über den Link, den wir Ihnen gerade per E-Mail geschickt haben.",
+    "already": "Diese E-Mail-Adresse ist bereits angemeldet – Sie erhalten den Newsletter schon.",
+    "error": "Das hat leider nicht geklappt. Bitte prüfen Sie die E-Mail-Adresse und versuchen Sie es erneut.",
+    "privacyHint": "Mit der Anmeldung stimmen Sie dem Erhalt des Newsletters zu (Double-Opt-In). Details in der",
+    "privacyLink": "Datenschutzerklärung",
+    "pageTitle": "Newsletter | SaaleWeb",
+    "confirmedTitle": "Anmeldung bestätigt",
+    "confirmedText": "Vielen Dank! Ihre Newsletter-Anmeldung ist bestätigt. Die nächste Ausgabe landet direkt in Ihrem Postfach.",
+    "unsubscribedTitle": "Abmeldung erfolgreich",
+    "unsubscribedText": "Sie wurden aus dem Verteiler entfernt und Ihre E-Mail-Adresse wurde gelöscht. Schade – Sie sind jederzeit wieder willkommen.",
+    "invalidTitle": "Link ungültig oder abgelaufen",
+    "invalidText": "Dieser Bestätigungslink ist nicht mehr gültig. Melden Sie sich einfach erneut an – wir senden Ihnen einen frischen Link.",
+    "backHome": "Zur Startseite"
+  },
   "CaseStudies": {
     "eyebrow": "Case Studies",
     "title": "Projekte, die geschäftlich Wirkung zeigen",

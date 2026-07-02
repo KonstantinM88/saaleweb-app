@@ -1,7 +1,7 @@
 "use server";
 
 import { prisma } from "@/lib/prisma";
-import { sendLeadNotification } from "@/features/notifications/mailer";
+import { sendLeadAutoReply, sendLeadNotification } from "@/features/notifications/mailer";
 import { contactSchema } from "./schema";
 
 export type ContactState = {
@@ -70,6 +70,12 @@ export async function submitContact(
       phone: parsed.data.phone || null,
       company: parsed.data.company || null,
       message,
+      locale: parsed.data.locale,
+      source: parsed.data.source,
+    });
+    await sendLeadAutoReply({
+      name: parsed.data.name,
+      email: parsed.data.email,
       locale: parsed.data.locale,
       source: parsed.data.source,
     });

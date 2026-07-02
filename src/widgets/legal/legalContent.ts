@@ -306,14 +306,22 @@ const datenschutzDe: LegalPageContent = {
       ],
     },
     {
-      title: "6. E-Mail-Benachrichtigungen (Resend)",
+      title: "6. E-Mail-Benachrichtigungen und SMTP-Versand",
       paragraphs: [
-        "Für den Versand interner Benachrichtigungs-E-Mails über neue Anfragen nutzen wir den Dienst Resend (Resend, Inc., 2261 Market Street #5039, San Francisco, CA 94114, USA). Dabei können die in Ihrer Anfrage enthaltenen Daten (Name, E-Mail-Adresse, Nachricht) an Resend übermittelt werden.",
-        "Da Resend seinen Sitz in den USA hat, erfolgt die Übermittlung in ein Drittland. Sie wird durch EU-Standardvertragsklauseln gemäß Art. 46 Abs. 2 lit. c DSGVO abgesichert. Rechtsgrundlage der Verarbeitung ist Art. 6 Abs. 1 lit. b und lit. f DSGVO (zügige Bearbeitung eingehender Anfragen).",
+        "Für den Versand interner Benachrichtigungs-E-Mails über neue Anfragen sowie von Newsletter-Bestätigungs-E-Mails nutzen wir das geschäftliche E-Mail-Postfach mykhailov@saaleweb.de und den SMTP-Server von Hostinger. Dabei können die für die jeweilige E-Mail erforderlichen Daten (z. B. E-Mail-Adresse, Name, Nachricht, Sprache und technische Versanddaten) durch Hostinger verarbeitet werden.",
+        "Hostinger verarbeitet diese Daten als technischer E-Mail- und Hosting-Dienstleister nach seinen Datenschutz- und Auftragsverarbeitungsbedingungen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO für die Bearbeitung von Anfragen, Art. 6 Abs. 1 lit. f DSGVO für eine zuverlässige technische Zustellung und bei Newsletter-Bestätigungen Ihre Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO.",
       ],
     },
     {
-      title: "7. Reichweitenmessung ohne Cookies (First-Party-Statistik)",
+      title: "7. Newsletter (Double-Opt-In)",
+      paragraphs: [
+        "Sie können unseren Newsletter mit Praxistipps zu Websites, lokalem SEO und KI-Sichtbarkeit abonnieren. Dafür verarbeiten wir Ihre E-Mail-Adresse sowie die gewählte Sprachversion.",
+        "Die Anmeldung erfolgt im Double-Opt-In-Verfahren: Nach der Eintragung erhalten Sie eine E-Mail mit einem Bestätigungslink. Erst mit dieser Bestätigung ist die Anmeldung wirksam; unbestätigte Eintragungen werden nicht beliefert. Der Versand der Bestätigungs- und Newsletter-E-Mails erfolgt über das in Abschnitt 6 beschriebene geschäftliche SMTP-Postfach.",
+        "Rechtsgrundlage der Verarbeitung ist Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Sie können die Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen – über den Abmeldelink in jeder Newsletter-E-Mail oder formlos per E-Mail an uns. Bei der Abmeldung wird Ihre E-Mail-Adresse aus dem Verteiler gelöscht.",
+      ],
+    },
+    {
+      title: "8. Reichweitenmessung ohne Cookies (First-Party-Statistik)",
       paragraphs: [
         "Wir erheben anonyme Nutzungsstatistiken mit einer eigenen, datenschutzfreundlichen Lösung – ohne Drittanbieter, ohne Cookies und ohne Speicherung oder Auslesen von Informationen auf Ihrem Endgerät. Ein Zugriff im Sinne des § 25 TDDDG findet nicht statt; eine Einwilligung ist daher nicht erforderlich.",
         "Erfasst werden: aufgerufene Seite, Sprachversion, Referrer (verweisende Seite) sowie ein technischer Besucherwert. Dieser Wert wird serverseitig als Einweg-Hash (SHA-256) aus dem aktuellen Datum, der IP-Adresse, dem Browser-User-Agent und einem geheimen Zufallswert (Salt) gebildet. Die IP-Adresse selbst wird nicht gespeichert; der Hash ändert sich täglich und lässt keine Rückverfolgung auf eine Person und kein seitenübergreifendes Tracking zu. Zugriffe bekannter Bots werden verworfen.",
@@ -321,20 +329,20 @@ const datenschutzDe: LegalPageContent = {
       ],
     },
     {
-      title: "8. Cookies",
+      title: "9. Cookies",
       paragraphs: [
         "Diese Website verwendet keine Cookies zu Analyse-, Tracking- oder Werbezwecken.",
         "Technisch notwendige Cookies können in zwei Fällen gesetzt werden: zur Speicherung Ihrer Sprachauswahl (wenn Sie die Sprache der Website wechseln) sowie für die Anmeldung autorisierter Administratoren im internen Verwaltungsbereich. Diese Cookies sind für die gewünschte Funktion unbedingt erforderlich (§ 25 Abs. 2 Nr. 2 TDDDG); Rechtsgrundlage der damit verbundenen Datenverarbeitung ist Art. 6 Abs. 1 lit. f DSGVO.",
       ],
     },
     {
-      title: "9. SSL-/TLS-Verschlüsselung",
+      title: "10. SSL-/TLS-Verschlüsselung",
       paragraphs: [
         "Diese Website nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte, wie z. B. Anfragen über das Kontaktformular, eine SSL-/TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie an dem Präfix „https://“ und dem Schloss-Symbol in der Adresszeile Ihres Browsers.",
       ],
     },
     {
-      title: "10. Ihre Rechte",
+      title: "11. Ihre Rechte",
       paragraphs: ["Ihnen stehen bezüglich Ihrer personenbezogenen Daten folgende Rechte zu:"],
       list: [
         "Recht auf Auskunft über die verarbeiteten Daten (Art. 15 DSGVO)",
@@ -351,14 +359,14 @@ const datenschutzDe: LegalPageContent = {
       ],
     },
     {
-      title: "11. Speicherdauer, Bereitstellungspflicht und automatisierte Entscheidungen",
+      title: "12. Speicherdauer, Bereitstellungspflicht und automatisierte Entscheidungen",
       paragraphs: [
         "Soweit in dieser Erklärung keine speziellere Speicherdauer genannt ist, verbleiben personenbezogene Daten bei uns, bis der Zweck der Verarbeitung entfällt oder Sie ein Lösch- bzw. Widerspruchsrecht ausüben – vorbehaltlich gesetzlicher Aufbewahrungsfristen (insbesondere aus Handels- und Steuerrecht).",
         "Die Bereitstellung personenbezogener Daten ist weder gesetzlich noch vertraglich vorgeschrieben; ohne Angabe von Kontaktdaten können wir Anfragen jedoch nicht beantworten. Eine automatisierte Entscheidungsfindung einschließlich Profiling im Sinne von Art. 22 DSGVO findet nicht statt.",
       ],
     },
     {
-      title: "12. Aktualität und Änderung dieser Datenschutzerklärung",
+      title: "13. Aktualität und Änderung dieser Datenschutzerklärung",
       paragraphs: [
         "Wir behalten uns vor, diese Datenschutzerklärung anzupassen, wenn sich die Rechtslage, die Website oder die eingesetzten Dienste ändern. Es gilt die jeweils auf dieser Seite veröffentlichte Fassung.",
       ],
@@ -414,14 +422,22 @@ const datenschutzEn: LegalPageContent = {
       ],
     },
     {
-      title: "6. Email notifications (Resend)",
+      title: "6. Email notifications and SMTP delivery",
       paragraphs: [
-        "We use the Resend service (Resend, Inc., 2261 Market Street #5039, San Francisco, CA 94114, USA) to send internal notification emails about new inquiries. The data contained in your inquiry (name, email address, message) may be transmitted to Resend for this purpose.",
-        "As Resend is based in the USA, this constitutes a transfer to a third country. It is safeguarded by EU standard contractual clauses pursuant to Art. 46(2)(c) GDPR. The legal basis for the processing is Art. 6(1)(b) and (f) GDPR (prompt handling of incoming inquiries).",
+        "We use the business email mailbox mykhailov@saaleweb.de and Hostinger's SMTP server to send internal notification emails about new inquiries and newsletter confirmation emails. The data required for the respective email (for example email address, name, message, language and technical delivery data) may be processed by Hostinger.",
+        "Hostinger processes this data as a technical email and hosting provider under its privacy and data processing terms. The legal basis is Art. 6(1)(b) GDPR for handling inquiries, Art. 6(1)(f) GDPR for reliable technical delivery and, for newsletter confirmations, your consent pursuant to Art. 6(1)(a) GDPR.",
       ],
     },
     {
-      title: "7. Cookie-free reach measurement (first-party statistics)",
+      title: "7. Newsletter (double opt-in)",
+      paragraphs: [
+        "You can subscribe to our newsletter with practical tips on websites, local SEO and AI visibility. For this purpose we process your email address and the selected language version.",
+        "Subscription uses the double opt-in procedure: after signing up, you receive an email with a confirmation link. The subscription only becomes effective with this confirmation; unconfirmed sign-ups do not receive the newsletter. Confirmation and newsletter emails are sent via the business SMTP mailbox described in section 6.",
+        "The legal basis for the processing is your consent (Art. 6(1)(a) GDPR). You can withdraw your consent at any time with effect for the future – via the unsubscribe link in every newsletter email or informally by emailing us. Upon unsubscribing, your email address is deleted from the list.",
+      ],
+    },
+    {
+      title: "8. Cookie-free reach measurement (first-party statistics)",
       paragraphs: [
         "We collect anonymous usage statistics with our own privacy-friendly solution – without third parties, without cookies and without storing or reading information on your device. No access within the meaning of Section 25 TDDDG takes place; consent is therefore not required.",
         "The following is recorded: page accessed, language version, referrer (referring page) and a technical visitor value. This value is generated server-side as a one-way hash (SHA-256) from the current date, the IP address, the browser user agent and a secret random value (salt). The IP address itself is not stored; the hash changes daily and does not allow identification of a person or cross-site tracking. Requests from known bots are discarded.",
@@ -429,20 +445,20 @@ const datenschutzEn: LegalPageContent = {
       ],
     },
     {
-      title: "8. Cookies",
+      title: "9. Cookies",
       paragraphs: [
         "This website does not use cookies for analytics, tracking or advertising purposes.",
         "Technically necessary cookies may be set in two cases: to store your language selection (when you switch the website language) and for the login of authorised administrators in the internal administration area. These cookies are strictly necessary for the requested function (Section 25(2) no. 2 TDDDG); the legal basis for the associated data processing is Art. 6(1)(f) GDPR.",
       ],
     },
     {
-      title: "9. SSL/TLS encryption",
+      title: "10. SSL/TLS encryption",
       paragraphs: [
         "For security reasons and to protect the transmission of confidential content, such as inquiries via the contact form, this website uses SSL/TLS encryption. You can recognise an encrypted connection by the prefix \u201chttps://\u201d and the lock symbol in your browser's address bar.",
       ],
     },
     {
-      title: "10. Your rights",
+      title: "11. Your rights",
       paragraphs: ["You have the following rights regarding your personal data:"],
       list: [
         "Right of access to the processed data (Art. 15 GDPR)",
@@ -459,14 +475,14 @@ const datenschutzEn: LegalPageContent = {
       ],
     },
     {
-      title: "11. Storage period, obligation to provide data, automated decisions",
+      title: "12. Storage period, obligation to provide data, automated decisions",
       paragraphs: [
         "Unless a more specific storage period is stated in this policy, personal data remains with us until the purpose of processing ceases to apply or you exercise a right to erasure or objection – subject to statutory retention periods (in particular under commercial and tax law).",
         "The provision of personal data is neither legally nor contractually required; however, we cannot answer inquiries without contact details. Automated decision-making, including profiling within the meaning of Art. 22 GDPR, does not take place.",
       ],
     },
     {
-      title: "12. Validity and changes to this privacy policy",
+      title: "13. Validity and changes to this privacy policy",
       paragraphs: [
         "We reserve the right to adapt this privacy policy if the legal situation, the website or the services used change. The version published on this page at the respective time applies.",
       ],
@@ -522,14 +538,22 @@ const datenschutzRu: LegalPageContent = {
       ],
     },
     {
-      title: "6. E-mail-уведомления (Resend)",
+      title: "6. E-mail-уведомления и SMTP-отправка",
       paragraphs: [
-        "Для отправки внутренних уведомлений о новых обращениях мы используем сервис Resend (Resend, Inc., 2261 Market Street #5039, Сан-Франциско, CA 94114, США). При этом данные из вашего обращения (имя, e-mail, сообщение) могут передаваться в Resend.",
-        "Поскольку Resend находится в США, происходит передача данных в третью страну. Она защищена стандартными договорными положениями ЕС согласно ст. 46 (2)(c) GDPR. Правовое основание обработки — ст. 6 (1)(b) и (f) GDPR (оперативная обработка входящих обращений).",
+        "Для отправки внутренних уведомлений о новых обращениях и писем подтверждения подписки мы используем рабочий почтовый ящик mykhailov@saaleweb.de и SMTP-сервер Hostinger. При этом Hostinger может обрабатывать данные, необходимые для соответствующего письма, например e-mail, имя, сообщение, язык и технические данные доставки.",
+        "Hostinger обрабатывает эти данные как технический поставщик e-mail и hosting-услуг согласно своим условиям конфиденциальности и обработки данных. Правовое основание — ст. 6 (1)(b) GDPR для обработки обращений, ст. 6 (1)(f) GDPR для надёжной технической доставки, а для подтверждения подписки — ваше согласие согласно ст. 6 (1)(a) GDPR.",
       ],
     },
     {
-      title: "7. Статистика посещений без cookies (first-party)",
+      title: "7. Рассылка (double opt-in)",
+      paragraphs: [
+        "Вы можете подписаться на нашу рассылку с практическими советами о сайтах, локальном SEO и видимости в ИИ. Для этого мы обрабатываем ваш адрес электронной почты и выбранную языковую версию.",
+        "Подписка оформляется по процедуре double opt-in: после регистрации вы получаете письмо со ссылкой подтверждения. Подписка вступает в силу только после этого подтверждения; неподтверждённые адреса рассылку не получают. Письма подтверждения и выпуски рассылки отправляются через рабочий SMTP-ящик, описанный в разделе 6.",
+        "Правовое основание обработки — ваше согласие (ст. 6 (1)(a) GDPR). Вы можете отозвать согласие в любой момент с действием на будущее — по ссылке отписки в каждом письме рассылки или сообщением нам в свободной форме. При отписке ваш адрес электронной почты удаляется из списка.",
+      ],
+    },
+    {
+      title: "8. Статистика посещений без cookies (first-party)",
       paragraphs: [
         "Мы собираем анонимную статистику использования с помощью собственного, дружелюбного к приватности решения — без третьих сторон, без cookies и без сохранения или чтения информации на вашем устройстве. Доступ в смысле § 25 TDDDG не осуществляется, поэтому согласие не требуется.",
         "Фиксируются: открытая страница, языковая версия, referrer (ссылающаяся страница) и технический идентификатор посетителя. Этот идентификатор формируется на сервере как односторонний хеш (SHA-256) из текущей даты, IP-адреса, user-agent браузера и секретного случайного значения (salt). Сам IP-адрес не сохраняется; хеш меняется ежедневно и не позволяет ни идентифицировать человека, ни отслеживать его на других сайтах. Запросы известных ботов отбрасываются.",
@@ -537,20 +561,20 @@ const datenschutzRu: LegalPageContent = {
       ],
     },
     {
-      title: "8. Cookies",
+      title: "9. Cookies",
       paragraphs: [
         "Этот сайт не использует cookies для аналитики, трекинга или рекламы.",
         "Технически необходимые cookies могут устанавливаться в двух случаях: для сохранения выбранного языка (при переключении языка сайта) и для входа авторизованных администраторов во внутреннюю панель управления. Эти cookies строго необходимы для запрошенной функции (§ 25 (2) № 2 TDDDG); правовое основание связанной с ними обработки — ст. 6 (1)(f) GDPR.",
       ],
     },
     {
-      title: "9. SSL/TLS-шифрование",
+      title: "10. SSL/TLS-шифрование",
       paragraphs: [
         "В целях безопасности и для защиты передачи конфиденциального содержимого, например обращений через контактную форму, сайт использует SSL/TLS-шифрование. Зашифрованное соединение можно узнать по префиксу «https://» и значку замка в адресной строке браузера.",
       ],
     },
     {
-      title: "10. Ваши права",
+      title: "11. Ваши права",
       paragraphs: ["В отношении ваших персональных данных вам принадлежат следующие права:"],
       list: [
         "Право на доступ к обрабатываемым данным (ст. 15 GDPR)",
@@ -567,14 +591,14 @@ const datenschutzRu: LegalPageContent = {
       ],
     },
     {
-      title: "11. Срок хранения, обязанность предоставления данных, автоматизированные решения",
+      title: "12. Срок хранения, обязанность предоставления данных, автоматизированные решения",
       paragraphs: [
         "Если в этой политике не указан более конкретный срок хранения, персональные данные остаются у нас до тех пор, пока не отпадёт цель обработки или вы не воспользуетесь правом на удаление или возражение — с учётом законных сроков хранения (в частности, по торговому и налоговому праву).",
         "Предоставление персональных данных не является ни законодательной, ни договорной обязанностью; однако без контактных данных мы не сможем ответить на обращение. Автоматизированное принятие решений, включая профилирование в смысле ст. 22 GDPR, не осуществляется.",
       ],
     },
     {
-      title: "12. Актуальность и изменение этой политики",
+      title: "13. Актуальность и изменение этой политики",
       paragraphs: [
         "Мы оставляем за собой право адаптировать эту политику при изменении правовой ситуации, сайта или используемых сервисов. Действует версия, опубликованная на этой странице в соответствующий момент.",
       ],

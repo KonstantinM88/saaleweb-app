@@ -2,7 +2,23 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LayoutDashboard, Inbox, Wrench, Building2, Newspaper, FolderKanban, Layers, BadgeEuro, HelpCircle, Star, Users, Tags, Search, LogOut } from "lucide-react";
+import {
+  LayoutDashboard,
+  Inbox,
+  Wrench,
+  Building2,
+  Newspaper,
+  FolderKanban,
+  Layers,
+  BadgeEuro,
+  HelpCircle,
+  Star,
+  Users,
+  Tags,
+  Search,
+  LogOut,
+  MailCheck,
+} from "lucide-react";
 import { logout } from "@/features/auth/actions";
 import { BrandLogo } from "@/shared/ui/BrandLogo";
 import { cn } from "@/shared/lib/cn";
@@ -10,6 +26,7 @@ import { cn } from "@/shared/lib/cn";
 const items = [
   { href: "/admin", label: "Übersicht", icon: LayoutDashboard },
   { href: "/admin/leads", label: "Anfragen", icon: Inbox },
+  { href: "/admin/newsletter", label: "Newsletter", icon: MailCheck },
   { href: "/admin/services", label: "Leistungen", icon: Wrench },
   { href: "/admin/industries", label: "Branchen", icon: Building2 },
   { href: "/admin/projects", label: "Projekte", icon: FolderKanban },
