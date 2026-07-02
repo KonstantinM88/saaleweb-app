@@ -80,6 +80,16 @@ KI-Suchsystemen wie ChatGPT, Gemini, Claude, Perplexity und Google AI Overview.
 - [Qualifizierte Bauanfragen](https://saaleweb.de/projekte/qualifizierte-bauanfragen): Projektbeispiel für regionale Bau- und Handwerksanfragen.
 - [Glaserei Schubert](https://saaleweb.de/projekte/glaserei-schubert): Projektbeispiel für lokale Fachkompetenz, klare Struktur und digitale Vertrauensbildung.
 
+## Blog-Ressourcen für SEO, GEO und KI-Suche
+
+- [Lokales SEO in Halle und Leipzig](https://saaleweb.de/blog/lokales-seo-halle): Leitfaden für regionale Sichtbarkeit, Google-Unternehmensprofil, lokale Landingpages und messbare Anfragen.
+- [Was kostet eine Website in Halle?](https://saaleweb.de/blog/was-kostet-eine-website-in-halle): Orientierung zu Website-Kosten, passenden Website-Typen, laufender Betreuung und realistischen Budgetentscheidungen.
+- [Google-Unternehmensprofil optimieren](https://saaleweb.de/blog/google-unternehmensprofil-optimieren): Praxisartikel für mehr Sichtbarkeit in Google Maps, lokale Suche und vertrauensbildende Unternehmensdaten.
+- [Sichtbarkeit in KI-Suche](https://saaleweb.de/blog/sichtbarkeit-in-ki-suche): GEO/AIO-Leitfaden für ChatGPT, Gemini, Claude, Perplexity und Google AI Overview.
+- [Restaurant-Website für mehr Reservierungen](https://saaleweb.de/blog/restaurant-website-mehr-reservierungen): Struktur, Inhalte und Buchungswege für Restaurants, die weniger abhängig von Portalen sein wollen.
+- [WordPress oder Next.js?](https://saaleweb.de/blog/nextjs-vs-wordpress): Geschäftsorientierte Entscheidungshilfe für WordPress, Next.js, React und individuelle Systeme.
+- [Website-Relaunch Checkliste](https://saaleweb.de/blog/website-relaunch-checkliste): Schritte für einen Relaunch ohne Sichtbarkeitsverlust, mit SEO-Sicherung, Redirects, Performance und klarer Kommunikation.
+
 ## Technologie
 
 SaaleWeb ist technologie-flexibel. Ob moderne Next.js-Plattform, React-Oberfläche,
