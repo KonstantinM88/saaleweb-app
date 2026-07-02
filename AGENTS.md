@@ -26,7 +26,7 @@ Instructions and project memory for coding agents working in this repository.
 - Most homepage sections now prefer published DB rows and fall back to `messages/*.json` when DB data is unavailable, empty, or incomplete. DB-backed homepage sections include industries, case studies/projects, FAQ, and testimonials. The homepage services block is message-driven and presents four business solution cards; service index/detail pages remain DB-backed.
 - Database is required for contact form persistence and future CMS/content features.
 - First-party analytics stores page views in `PageView` via `/api/track` without cookies or raw IP storage; bot user agents and admin routes are not tracked, and unique visitors are counted through a daily salted `visitorHash`.
-- Admin image uploads convert images to WebP with `sharp`; production storage uses Vercel Blob when `BLOB_READ_WRITE_TOKEN` is set, otherwise local dev writes to `public/uploads`.
+- Admin image uploads convert images to WebP with `sharp`; production storage uses Vercel Blob when `BLOB_READ_WRITE_TOKEN` is set, otherwise local/admin uploads write deployable public media to `public/uploads`.
 
 ## Important Paths
 
@@ -114,7 +114,8 @@ Instructions and project memory for coding agents working in this repository.
 - `public/images/` - static image assets.
 - `public/brand/` - static SVG brand assets: main logo, icon-only mark, horizontal logo, favicon, app icon, social avatar, dark version, and monochrome version.
 - `public/video/` - static video assets.
-- `public/uploads/` - local/runtime upload staging; contents are ignored by git except the folder `.gitignore`.
+- `public/uploads/` - deployable public media created through admin/local upload flows. This folder is no longer ignored; uploaded WebP assets here can be committed when they must ship with the deployment.
+- `temp/` - ignored temporary workspace for incoming packages, unpacked archives, conversion sources, and other processing scratch files.
 
 ## Commands
 
@@ -224,8 +225,8 @@ Instructions and project memory for coding agents working in this repository.
 - `prisma/seed.ts` should remain repeatable; demo service/testimonial/FAQ/blog records must not fail on existing unique slugs.
 - Keep seed content as real UTF-8 text. If RU/DE content renders as mojibake, check `prisma/seed.ts` first before blaming PostgreSQL encoding.
 - Public static assets should be placed in the structured `public/flags`, `public/images`, and `public/video` folders.
-- Do not commit generated or user-uploaded files from `public/uploads`. For production uploads on Vercel, use object storage because the deployment filesystem is not persistent.
-- After applying package files from `public/uploads`, delete the consumed source package files from `public/uploads` and keep only files still awaiting processing plus the folder `.gitignore`. Do not delete runtime image files generated there by the local admin upload fallback unless explicitly cleaning local media.
+- Do not use `public/uploads` as a temporary package/staging area anymore. It can contain deployable admin-uploaded media and those files may be committed when they are needed in production.
+- Use `temp/` for incoming archives, instruction files, unpacked packages, conversion sources, and other scratch work. Delete consumed temporary files from `temp/` after processing. Do not delete media from `public/uploads` unless the user explicitly asks to remove uploaded assets.
 
 ## Verification Expectations
 
@@ -346,3 +347,4 @@ Instructions and project memory for coding agents working in this repository.
 - 2026-07-01: Added the Glaserei Schubert project preview URL `https://glaserei-schubert-01.vercel.app/de` to `scripts/upsert-phase3-projects.ts` and synced the current DB. Because the URL is a Vercel preview, project detail pages now detect `*.vercel.app` external URLs and render them as a polished `Projektvorschau ansehen` / `View project preview` / `Открыть проектную превью-страницу` CTA plus localized inline labels instead of showing it as a generic live website or unfinished demo. Verified the external URL returns `200`, JSON keys, DB content, `npm run typecheck`, `npm run lint`, `npm run build`, runtime DE/EN/RU Glaserei pages, and port 3150 was released.
 - 2026-07-01: Applied SaaleWeb Phase 7 industry pages. `/branchen`, `/en/industries`, and `/ru/otrasli` are now code-backed SEO/GEO/AIO overview pages with seven industry cards: restaurant, hotel, beauty studio, construction company, craftsmen, glazier, and local service providers. Detail slugs are now Phase 7 public URLs (`/ru/otrasli/sayt-dlya-*`, `/en/industries/craftsmen-website`, `/en/industries/glazier-website`, `/en/industries/service-provider-website`) with old EN/RU slugs kept as compatibility aliases. Industry detail pages use business-first content, relevant services/projects, FAQ, Website Audit CTAs, Service/WebPage/Breadcrumb/FAQ JSON-LD, and sitemap/llms coverage; German remains root-only with no `/de` public links.
 - 2026-07-02: Added the Phase 9 blog content layer from Delta 21. `scripts/sync-blog-content.ts` (`npm run db:sync-blog-content`) upserts seven full DE/EN/RU SEO/GEO/AIO articles for the Halle/Leipzig market with four categories (`seo`, `webdesign`, `ki-suche`, `praxis`) and branded WebP covers in `public/images/blog/`. It upgrades the seed demo posts `lokales-seo-halle` and `nextjs-vs-wordpress` in place on their existing per-locale slugs; the WordPress article follows the balanced business-first positioning (`Die Technologie folgt dem Ziel`) instead of anti-WordPress framing. New articles cover website costs in Halle, Google Business Profile optimization, AI search visibility, restaurant websites without portal commissions, and website relaunch checklists. All internal markdown links should remain aligned with localized routing, Phase 4/5 service slugs, Phase 7 industry slugs, and blog cross-links.
+- 2026-07-02: Changed local file-handling policy: `public/uploads` is no longer ignored because admin-uploaded WebP media may need to be committed for deployment. Temporary packages, unpacked archives, and conversion scratch files should now go into ignored `temp/` instead. Deleted `public/uploads/.gitignore` and added `temp/.gitignore`.
