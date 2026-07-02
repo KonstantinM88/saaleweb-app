@@ -62,14 +62,7 @@
     "techNote": {
       "title": "Flexible technologies",
       "text": "Not every business needs the same technology. We check which solution makes sense for your company — a modern website, WordPress, an online shop, a custom application, an integration or automation. Technology follows the business goal, not the other way around.",
-      "chips": [
-        "Websites",
-        "Online shops",
-        "WordPress",
-        "Automation",
-        "Integrations",
-        "Support"
-      ]
+      "chips": ["Websites", "Online shops", "WordPress", "Automation", "Integrations", "Support"]
     },
     "solutions": [
       {
@@ -160,36 +153,19 @@
         "name": "Starter",
         "sub": "Landing page",
         "price": "from €990",
-        "features": [
-          "One-page website",
-          "Mobile-optimized",
-          "SEO basics",
-          "Contact form"
-        ]
+        "features": ["One-page website", "Mobile-optimized", "SEO basics", "Contact form"]
       },
       {
         "name": "Business",
         "sub": "Company website",
         "price": "from €1,990",
-        "features": [
-          "Multi-page website",
-          "Full SEO",
-          "Blog system",
-          "Self-managed CMS",
-          "Analytics & tracking"
-        ]
+        "features": ["Multi-page website", "Full SEO", "Blog system", "Self-managed CMS", "Analytics & tracking"]
       },
       {
         "name": "Premium",
         "sub": "SEO + automation + AI",
         "price": "from €3,490",
-        "features": [
-          "Everything in Business",
-          "AI optimization (GEO)",
-          "Automation & leads",
-          "DE/EN/RU included · more languages on request",
-          "Ongoing support"
-        ]
+        "features": ["Everything in Business", "AI optimization (GEO)", "Automation & leads", "DE/EN/RU included · more languages on request", "Ongoing support"]
       }
     ]
   },
@@ -375,20 +351,13 @@
     "expectationsEyebrow": "What happens next",
     "expectationsTitle": "What happens after your enquiry?",
     "expectationsLead": "You do not get a pressure sales call. You get a clear assessment so you can make a good decision — even if we do not end up working together.",
-    "expectations": [
-      "Reply within 24 hours",
-      "Free first consultation",
-      "Personal consulting",
-      "Transparent fixed prices",
-      "No sales pressure",
-      "Individual concept"
-    ],
+    "expectations": ["Reply within 24 hours", "Free first consultation", "Personal consulting", "Transparent fixed prices", "No sales pressure", "Individual concept"],
     "trustEyebrow": "Trust",
     "trustTitle": "Experience from real projects",
     "trustLead": "SaaleWeb works with real businesses in services, beauty, hospitality, construction and regional trades. The goal is not only a beautiful design, but a system that loads fast, builds trust and turns visibility into measurable enquiries.",
     "metrics": [
       {
-        "value": "3+",
+        "value": "5+",
         "label": "Project examples",
         "text": "Selected references with website, SEO, booking or lead-generation focus."
       },
@@ -413,20 +382,13 @@
     "projectsCta": "View projects",
     "localSeoEyebrow": "Local SEO",
     "localSeoTitle": "Web design and SEO for Halle, Leipzig and the region",
-    "localSeoParagraphs": [
-      "SaaleWeb is a Digitalagentur Halle for businesses that want more than a good-looking website. If you search for Webdesign Halle, Webagentur Halle or Website erstellen lassen Halle, you usually need a clear digital sales path, not a generic page.",
-      "We combine Webdesign Halle with SEO Halle: clean technology, fast loading, clear service pages, local search signals and content that answers real customer questions. This makes the website easier to understand for people, Google and AI systems.",
-      "SaaleWeb also supports companies in Leipzig. For us, Webdesign Leipzig and SEO Leipzig mean clear positioning, regional relevance, strong performance and content that turns visitors into qualified enquiries."
-    ],
+    "localSeoParagraphs": ["SaaleWeb is a Digitalagentur Halle for businesses that want more than a good-looking website. If you search for Webdesign Halle, Webagentur Halle or Website erstellen lassen Halle, you usually need a clear digital sales path, not a generic page.", "We combine Webdesign Halle with SEO Halle: clean technology, fast loading, clear service pages, local search signals and content that answers real customer questions. This makes the website easier to understand for people, Google and AI systems.", "SaaleWeb also supports companies in Leipzig. For us, Webdesign Leipzig and SEO Leipzig mean clear positioning, regional relevance, strong performance and content that turns visitors into qualified enquiries."],
     "servicesLink": "Services",
     "industriesLink": "Industries",
     "pricingLink": "Pricing",
     "aiEyebrow": "GEO & AI Search",
     "aiTitle": "So AI systems understand your business better",
-    "aiParagraphs": [
-      "More customers research through ChatGPT, Gemini, Claude, Perplexity and Google AI Overview. We therefore structure content so offers, locations, services, prices and trust signals are easy to identify.",
-      "This GEO work does not replace SEO. It extends SEO with clear entities, FAQ blocks, internal links, structured data and natural language. That makes your website more useful for people and AI search systems."
-    ],
+    "aiParagraphs": ["More customers research through ChatGPT, Gemini, Claude, Perplexity and Google AI Overview. We therefore structure content so offers, locations, services, prices and trust signals are easy to identify.", "This GEO work does not replace SEO. It extends SEO with clear entities, FAQ blocks, internal links, structured data and natural language. That makes your website more useful for people and AI search systems."],
     "aiPanelTitle": "Optimized for answers",
     "aiPanelLead": "Structured content instead of keyword stuffing",
     "aiPlatforms": ["ChatGPT", "Gemini", "Claude", "Perplexity", "Google AI Overview", "Classic Google Search"],
@@ -534,82 +496,62 @@
     "trustLine": "Selected projects from gastronomy, beauty, trades and construction.",
     "labels": {
       "industry": "Industry",
-    "goal": "Goal",
-    "solution": "Solution",
-    "benefits": "Benefits",
-    "result": "Focus",
-    "cta": "View project"
-  },
+      "goal": "Goal",
+      "solution": "Solution",
+      "benefits": "Benefits",
+      "result": "Focus",
+      "cta": "View project"
+    },
     "projects": [
       {
         "slug": "online-bookings-tripled",
         "name": "Salon Elen / Permanent Halle",
         "industry": "Beauty studio",
-      "goal": "More online appointments and local visibility",
-      "solution": "Modern presence with booking logic, multilingual structure and focus on local searches in Halle.",
-      "benefits": [
-        "Simple online appointment booking",
-        "Multilingual user guidance",
-        "Better local discoverability"
-      ],
-      "badge": "Beauty · Booking · Local SEO",
-      "result": "Online appointments & Local SEO"
-    },
+        "goal": "More online appointments and local visibility",
+        "solution": "Modern presence with booking logic, multilingual structure and focus on local searches in Halle.",
+        "benefits": ["Simple online appointment booking", "Multilingual user guidance", "Better local discoverability"],
+        "badge": "Beauty · Booking · Local SEO",
+        "result": "Online appointments & Local SEO"
+      },
       {
         "slug": "neue-liebe-nebra",
         "name": "Neue Liebe",
         "industry": "Restaurant / gastronomy",
-      "goal": "More visibility and a professional digital presence",
-      "solution": "Modern restaurant presence with clear structure, current content and strong mobile presentation.",
-      "benefits": [
-        "Mobile-first user experience",
-        "Current content clearly visible",
-        "More trust with guests"
-      ],
-      "badge": "Restaurant · SEO · Mobile First",
-      "result": "Restaurant visibility"
-    },
+        "goal": "More visibility and a professional digital presence",
+        "solution": "Modern restaurant presence with clear structure, current content and strong mobile presentation.",
+        "benefits": ["Mobile-first user experience", "Current content clearly visible", "More trust with guests"],
+        "badge": "Restaurant · SEO · Mobile First",
+        "result": "Restaurant visibility"
+      },
       {
         "slug": "direct-bookings-without-portals",
         "name": "Waldschlösschen",
         "industry": "Hotel & restaurant",
-      "goal": "More direct bookings and better presentation of hotel, restaurant and offers",
-      "solution": "Premium digital presence for gastronomy, hotel operations and regional visibility.",
-      "benefits": [
-        "Offers clearly presented",
-        "More direct booking potential",
-        "Professional hotel impression"
-      ],
-      "badge": "Hotel · Restaurant · Bookings",
-      "result": "Hotel & restaurant"
-    },
+        "goal": "More direct bookings and better presentation of hotel, restaurant and offers",
+        "solution": "Premium digital presence for gastronomy, hotel operations and regional visibility.",
+        "benefits": ["Offers clearly presented", "More direct booking potential", "Professional hotel impression"],
+        "badge": "Hotel · Restaurant · Bookings",
+        "result": "Hotel & restaurant"
+      },
       {
         "slug": "qualified-construction-leads",
         "name": "SorgfaltBau",
         "industry": "Construction company",
-      "goal": "More trust and qualified inquiries",
-      "solution": "Professional company presence that presents services clearly and builds trust with potential clients.",
-      "benefits": [
-        "More trust with new customers",
-        "Clear service structure",
-        "More qualified inquiries"
-      ],
-      "badge": "Construction · Trust · Inquiries",
-      "result": "Qualified inquiries"
+        "goal": "More trust and qualified inquiries",
+        "solution": "Professional company presence that presents services clearly and builds trust with potential clients.",
+        "benefits": ["More trust with new customers", "Clear service structure", "More qualified inquiries"],
+        "badge": "Construction · Trust · Inquiries",
+        "result": "Qualified inquiries"
       },
       {
         "slug": "glaserei-schubert",
         "name": "Glaserei Schubert",
         "industry": "Trade / glazing",
-      "goal": "High-quality presentation of services and references",
-      "solution": "Modern presence for a trade business with focus on trust, clear services and local findability.",
-      "benefits": [
-        "Professional brand impression",
-        "Services clearly explained",
-        "Better local visibility"
-      ],
-      "badge": "Trades · Services · Local SEO",
-      "result": "Trust & local visibility"
+        "goal": "High-quality presentation of services and references",
+        "solution": "Modern presence for a trade business with focus on trust, clear services and local findability.",
+        "benefits": ["Professional brand impression", "Services clearly explained", "Better local visibility"],
+        "badge": "Trades · Services · Local SEO",
+        "result": "Trust & local visibility"
       }
     ],
     "items": [
@@ -801,16 +743,7 @@
     "eyebrow": "Flexible technologies",
     "title": "The right technology for your business",
     "lead": "We do not recommend one fixed platform. We recommend the solution that creates the strongest measurable outcome for your business.",
-    "stack": [
-      "Websites",
-      "Online shops",
-      "WordPress solutions",
-      "Automation",
-      "Integrations",
-      "Database solutions",
-      "Booking systems",
-      "Support"
-    ],
+    "stack": ["Websites", "Online shops", "WordPress solutions", "Automation", "Integrations", "Database solutions", "Booking systems", "Support"],
     "noteTitle": "The framework is not the goal.",
     "noteText": "Whether it is a modern Next.js platform, a professionally managed WordPress website, a custom web application, an API integration or automation: the framework is not the point. The value for your business is.",
     "benefits": [
@@ -981,13 +914,7 @@
     "flow": {
       "title": "Business flow",
       "heading": "Speed turns into business impact.",
-      "items": [
-        "Faster websites",
-        "More trust",
-        "Better rankings",
-        "More visibility",
-        "More qualified inquiries"
-      ]
+      "items": ["Faster websites", "More trust", "Better rankings", "More visibility", "More qualified inquiries"]
     },
     "disclaimer": "Average values from selected SaaleWeb projects. Measured with Google PageSpeed Insights. Actual results can vary depending on project scope, hosting and implemented features.",
     "cta": {
@@ -997,14 +924,7 @@
   },
   "AuthorityStrip": {
     "title": "The SaaleWeb quality standard",
-    "items": [
-      "Performance optimized",
-      "SEO structured",
-      "Mobile first",
-      "AI ready",
-      "Maintainable",
-      "Business first"
-    ]
+    "items": ["Performance optimized", "SEO structured", "Mobile first", "AI ready", "Maintainable", "Business first"]
   },
   "Comparison": {
     "eyebrow": "Comparison",
