@@ -109,6 +109,7 @@ Instructions and project memory for coding agents working in this repository.
 - `src/features/admin/projects/media.ts` - server actions for project media create/update/delete and homepage/admin revalidation.
 - `src/features/admin/upload/storage.ts` - admin image storage abstraction for Vercel Blob and local `public/uploads` fallback.
 - `src/app/admin/api/upload/route.ts` - protected image upload route; converts uploads to WebP.
+- `src/app/admin/api/mail-test/route.ts` - protected production mail diagnostic route. `GET /admin/api/mail-test` returns sanitized provider/env readiness, and `POST /admin/api/mail-test` sends one test email through the selected transactional transport without exposing secrets.
 - `src/app/admin/(protected)/leads/export/route.ts` - protected CSV export for leads; returns UTF-8 BOM CSV with `;` delimiter for Excel-friendly opening.
 - `src/app/api/og/route.tsx` - dynamic Open Graph image endpoint using `next/og`.
 - `src/app/api/track/route.ts` - page-view ingestion endpoint for `PageView` analytics.
@@ -168,6 +169,7 @@ Instructions and project memory for coding agents working in this repository.
 - Optional temporary email notifications can use Resend through `RESEND_API_KEY` and `RESEND_FROM`. If `RESEND_API_KEY` is set, Resend is used before SMTP. Current temporary production sender can be `Salon Elen <booking@news.permanent-halle.de>` while SaaleWeb SMTP is unstable on Hostinger.
 - Optional email notifications can fall back to Hostinger SMTP through `SMTP_HOST`, `SMTP_PORT`, `SMTP_SECURE`, `SMTP_USER`, and `SMTP_PASSWORD`. `SMTP_PASSWORD` must be the mailbox password or an app password and must not be committed.
 - Lead notification sender/recipient use `RESEND_FROM` / `LEAD_NOTIFY_FROM` and `LEAD_NOTIFY_TO`; if `LEAD_NOTIFY_TO` is empty, `ADMIN_EMAIL` is used. Missing provider values return `false` and log sanitized transport warnings without breaking the form.
+- For production mail debugging, log in as admin and use `/admin/api/mail-test`: `GET` checks whether the runtime sees the needed env values, and `POST` sends a test email. Mail transport failures are logged with `console.error` so Hostinger log views that hide `console.warn` still surface the reason.
 - Optional newsletter email sender: `NEWSLETTER_FROM`. If empty, newsletter confirmation emails fall back to `RESEND_FROM`, `LEAD_NOTIFY_FROM`, or `SMTP_USER`.
 - Transactional emails embed the public PNG logo at `public/brand/saaleweb-email-logo.png`. Use `EMAIL_ASSET_BASE_URL` for the public HTTPS asset origin; local inbox tests must not rely on `localhost` because Gmail/other clients cannot fetch local images.
 - Optional analytics salt: `ANALYTICS_SALT` for stable daily unique-visitor hashes. If it is empty, `AUTH_SECRET` is used as fallback.

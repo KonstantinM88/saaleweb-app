@@ -54,7 +54,7 @@ export async function sendSmtpMail(mail: SmtpMail): Promise<boolean> {
   const port = smtpPort();
 
   if (!host || !user || !pass) {
-    console.warn("[smtp] Mail delivery skipped because SMTP config is incomplete.", {
+    console.error("[smtp] Mail delivery skipped because SMTP config is incomplete.", {
       missing: [
         !host ? "SMTP_HOST" : null,
         !user ? "SMTP_USER" : null,
@@ -82,7 +82,7 @@ export async function sendSmtpMail(mail: SmtpMail): Promise<boolean> {
     });
     return true;
   } catch (error) {
-    console.warn("[smtp] Mail delivery failed.", smtpErrorDetails(error));
+    console.error("[smtp] Mail delivery failed.", smtpErrorDetails(error));
     return false;
   }
 }

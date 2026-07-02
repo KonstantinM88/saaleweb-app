@@ -38,7 +38,7 @@ export async function sendResendMail(mail: SmtpMail): Promise<boolean> {
   const from = mail.from || fallbackFrom();
 
   if (!apiKey || !from) {
-    console.warn("[resend] Mail delivery skipped because Resend config is incomplete.", {
+    console.error("[resend] Mail delivery skipped because Resend config is incomplete.", {
       missing: [
         !apiKey ? "RESEND_API_KEY" : null,
         !from ? "RESEND_FROM or message.from" : null,
@@ -66,13 +66,13 @@ export async function sendResendMail(mail: SmtpMail): Promise<boolean> {
 
     if (!response.ok) {
       const body = (await response.json().catch(() => null)) as unknown;
-      console.warn("[resend] Mail delivery failed.", resendErrorDetails(response.status, body));
+      console.error("[resend] Mail delivery failed.", resendErrorDetails(response.status, body));
       return false;
     }
 
     return true;
   } catch (error) {
-    console.warn("[resend] Mail delivery failed.", requestErrorDetails(error));
+    console.error("[resend] Mail delivery failed.", requestErrorDetails(error));
     return false;
   }
 }
