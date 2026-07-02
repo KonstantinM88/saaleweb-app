@@ -80,10 +80,15 @@ const autoReplyCopy: Record<
  * Sends a new-lead email via the configured SMTP mailbox.
  * If env vars are missing or delivery fails, form submission still succeeds.
  */
-export async function sendLeadNotification(lead: LeadNotification): Promise<void> {
-  const from = process.env.LEAD_NOTIFY_FROM || process.env.SMTP_USER;
+export async function sendLeadNotification(lead: LeadNotification): Promise<boolean> {
+  const from = process.env.LEAD_NOTIFY_FROM || process.env.SMTP_FROM || process.env.SMTP_USER;
   const to = process.env.LEAD_NOTIFY_TO || process.env.ADMIN_EMAIL;
-  if (!from || !to) return;
+  if (!to) {
+    console.warn("[mail] Lead admin notification skipped because no recipient is configured.", {
+      missing: "LEAD_NOTIFY_TO or ADMIN_EMAIL",
+    });
+    return false;
+  }
 
   const rows: [string, string][] = [
     ["Name", lead.name],
@@ -107,7 +112,7 @@ export async function sendLeadNotification(lead: LeadNotification): Promise<void
     `</table>` +
     `<p style="font:14px sans-serif;margin-top:16px"><strong>Nachricht:</strong><br>${esc(message).replace(/\n/g, "<br>")}</p>`;
 
-  await sendSmtpMail({
+  return sendSmtpMail({
     from,
     to,
     subject: `Neue Anfrage von ${lead.name}`,
@@ -121,10 +126,13 @@ export async function sendLeadNotification(lead: LeadNotification): Promise<void
  * Sends a localized automatic confirmation to the client after a contact form
  * submission. Delivery failure must never block the stored lead.
  */
-export async function sendLeadAutoReply(lead: LeadNotification): Promise<void> {
-  const from = process.env.LEAD_NOTIFY_FROM || process.env.SMTP_USER;
+export async function sendLeadAutoReply(lead: LeadNotification): Promise<boolean> {
+  const from = process.env.LEAD_NOTIFY_FROM || process.env.SMTP_FROM || process.env.SMTP_USER;
   const replyTo = process.env.LEAD_NOTIFY_TO || process.env.SMTP_USER;
-  if (!from || !lead.email) return;
+  if (!lead.email) {
+    console.warn("[mail] Lead auto-reply skipped because lead email is missing.");
+    return false;
+  }
 
   const locale = leadLocale(lead.locale);
   const copy = autoReplyCopy[locale];
@@ -143,7 +151,7 @@ export async function sendLeadAutoReply(lead: LeadNotification): Promise<void> {
     `<p style="margin:0;white-space:pre-line">${esc(copy.signature)}</p>` +
     `</div>`;
 
-  await sendSmtpMail({
+  return sendSmtpMail({
     from,
     to: lead.email,
     replyTo,

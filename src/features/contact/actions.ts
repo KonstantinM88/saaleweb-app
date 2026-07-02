@@ -64,7 +64,7 @@ export async function submitContact(
         locale: parsed.data.locale,
       },
     });
-    await sendLeadNotification({
+    const adminNotificationSent = await sendLeadNotification({
       name: parsed.data.name,
       email: parsed.data.email,
       phone: parsed.data.phone || null,
@@ -73,11 +73,17 @@ export async function submitContact(
       locale: parsed.data.locale,
       source: parsed.data.source,
     });
-    await sendLeadAutoReply({
+    const autoReplySent = await sendLeadAutoReply({
       name: parsed.data.name,
       email: parsed.data.email,
       locale: parsed.data.locale,
       source: parsed.data.source,
+    });
+    console.info("[contact] Lead processed.", {
+      source: parsed.data.source,
+      locale: parsed.data.locale,
+      adminNotificationSent,
+      autoReplySent,
     });
     return { status: "success" };
   } catch {
