@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+import Image from "next/image";
 import { BrandLogo } from "@/shared/ui/BrandLogo";
 
 const imageSrc = "/images/sections/ai-search-ecosystem.webp";
@@ -7,155 +9,177 @@ type AiNode = {
   desktopPosition: string;
   mobilePosition: string;
   className: string;
-  Icon: () => React.ReactNode;
+  Icon: () => ReactNode;
 };
 
 const nodeBaseClass =
-  "absolute grid h-14 w-14 place-items-center rounded-[20px] border bg-white/[0.78] text-dark shadow-[0_24px_70px_-28px_rgba(17,24,39,0.55)] backdrop-blur-xl transition-all duration-700 hover:-translate-y-1.5 hover:scale-110 md:h-16 md:w-16 md:rounded-[24px]";
+  "absolute grid h-[62px] w-[62px] place-items-center rounded-[22px] border border-white/[0.55] bg-white/[0.72] text-dark shadow-[0_28px_90px_-32px_rgba(17,24,39,0.62)] backdrop-blur-2xl transition-all duration-700 hover:-translate-y-2 hover:scale-110 hover:bg-white/[0.86] md:h-[72px] md:w-[72px] md:rounded-[26px]";
 
 const nodes: AiNode[] = [
   {
     label: "ChatGPT",
     desktopPosition: "md:left-[15%] md:top-[28%]",
     mobilePosition: "left-[9%] top-[27%]",
-    className: "border-[#10A37F]/50 shadow-[0_22px_70px_-30px_rgba(16,163,127,0.95)] hover:border-[#10A37F]/80",
+    className: "shadow-[0_24px_80px_-30px_rgba(0,0,0,0.95)] hover:border-black/30",
     Icon: ChatGptIcon,
   },
   {
     label: "Gemini",
     desktopPosition: "md:left-[50%] md:top-[13%]",
     mobilePosition: "left-[47%] top-[16%]",
-    className: "border-[#8E75FF]/50 shadow-[0_22px_70px_-30px_rgba(142,117,255,0.98)] hover:border-[#8E75FF]/80",
+    className: "shadow-[0_24px_80px_-30px_rgba(142,117,255,1)] hover:border-[#8E75FF]/70",
     Icon: GeminiIcon,
   },
   {
     label: "Claude",
     desktopPosition: "md:right-[15%] md:top-[32%]",
     mobilePosition: "right-[8%] top-[30%]",
-    className: "border-[#D97745]/50 shadow-[0_22px_70px_-30px_rgba(217,119,69,0.95)] hover:border-[#D97745]/80",
+    className: "shadow-[0_24px_80px_-30px_rgba(217,119,69,1)] hover:border-[#D97745]/70",
     Icon: ClaudeIcon,
   },
   {
     label: "Perplexity",
     desktopPosition: "md:left-[28%] md:bottom-[17%]",
     mobilePosition: "left-[13%] bottom-[21%]",
-    className: "border-[#20C7B2]/50 shadow-[0_22px_70px_-30px_rgba(32,199,178,0.95)] hover:border-[#20C7B2]/80",
+    className: "shadow-[0_24px_80px_-30px_rgba(32,199,178,1)] hover:border-[#20C7B2]/70",
     Icon: PerplexityIcon,
   },
   {
     label: "Google AI",
     desktopPosition: "md:right-[28%] md:bottom-[16%]",
     mobilePosition: "right-[13%] bottom-[20%]",
-    className: "border-[#4285F4]/50 shadow-[0_22px_70px_-30px_rgba(66,133,244,0.9)] hover:border-[#4285F4]/80",
+    className: "shadow-[0_24px_80px_-30px_rgba(66,133,244,0.95)] hover:border-[#4285F4]/70",
     Icon: GoogleAiIcon,
   },
   {
     label: "Copilot",
     desktopPosition: "md:left-[50%] md:bottom-[9%]",
     mobilePosition: "left-[47%] bottom-[8%]",
-    className: "border-[#27C3F3]/50 shadow-[0_22px_70px_-30px_rgba(39,195,243,0.95)] hover:border-[#27C3F3]/80",
+    className: "shadow-[0_24px_80px_-30px_rgba(39,195,243,1)] hover:border-[#27C3F3]/70",
     Icon: CopilotIcon,
   },
 ];
 
+function PremiumIconShell({
+  children,
+  className,
+}: {
+  children: ReactNode;
+  className: string;
+}) {
+  return (
+    <span
+      className={`relative grid h-11 w-11 place-items-center overflow-hidden rounded-2xl shadow-[inset_0_1px_0_rgba(255,255,255,0.32),0_18px_42px_-24px_rgba(15,23,42,0.95)] ring-1 ring-white/[0.55] md:h-12 md:w-12 ${className}`}
+    >
+      <span className="absolute inset-0 bg-[radial-gradient(circle_at_28%_18%,rgba(255,255,255,0.78),transparent_32%),linear-gradient(180deg,rgba(255,255,255,0.16),transparent_56%)]" />
+      <span className="absolute inset-x-2 top-1 h-px bg-white/[0.55]" />
+      <span className="relative">{children}</span>
+    </span>
+  );
+}
+
 function ChatGptIcon() {
   return (
-    <svg viewBox="0 0 48 48" className="h-9 w-9 md:h-10 md:w-10" fill="none" aria-hidden>
-      <circle cx="24" cy="24" r="22" fill="#10A37F" />
-      <path
-        d="M24.3 10.2c3.8-3.3 9.8-.8 10 4.3 5 1.2 6.5 7.6 2.3 10.7 1.8 4.9-3.3 9.2-7.9 7.4-3.7 3.5-9.8.8-10-4.3-5-1.2-6.5-7.6-2.3-10.7-1.8-4.9 3.3-9.2 7.9-7.4Z"
-        stroke="white"
-        strokeWidth="2.6"
-        strokeLinejoin="round"
+    <PremiumIconShell className="bg-gradient-to-br from-white via-[#F8FAFC] to-[#EEF2F7] ring-black/10">
+      <Image
+        src="/images/sections/chatgpt-icon.webp"
+        alt=""
+        width={40}
+        height={40}
+        sizes="40px"
+        unoptimized
+        className="h-9 w-9 rounded-full object-cover shadow-[0_12px_28px_-18px_rgba(0,0,0,0.95)] md:h-10 md:w-10"
       />
-      <path d="m18.4 18.7 5.9-3.5 5.9 3.5v6.9l-5.9 3.5-5.9-3.5v-6.9Z" stroke="white" strokeWidth="2.2" />
-      <path d="M24.3 15.2V29m-5.9-10.3 11.8 6.9m0-6.9-11.8 6.9" stroke="white" strokeWidth="1.9" strokeLinecap="round" />
-    </svg>
+    </PremiumIconShell>
   );
 }
 
 function GeminiIcon() {
   return (
-    <svg viewBox="0 0 48 48" className="h-9 w-9 md:h-10 md:w-10" fill="none" aria-hidden>
-      <defs>
-        <linearGradient id="geminiGradient" x1="9" x2="39" y1="8" y2="40" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#5EA1FF" />
-          <stop offset="0.46" stopColor="#A855F7" />
-          <stop offset="1" stopColor="#FF4FA3" />
-        </linearGradient>
-      </defs>
-      <circle cx="24" cy="24" r="22" fill="url(#geminiGradient)" opacity="0.16" />
-      <path
-        d="M23.4 7.2c1.4 9.2 6.2 14 15.4 15.4-9.2 1.4-14 6.2-15.4 15.4-1.4-9.2-6.2-14-15.4-15.4 9.2-1.4 14-6.2 15.4-15.4Z"
-        fill="url(#geminiGradient)"
-      />
-      <path
-        d="M35.7 9.5c.5 3 2.1 4.7 5.1 5.1-3 .5-4.7 2.1-5.1 5.1-.5-3-2.1-4.7-5.1-5.1 3-.4 4.7-2.1 5.1-5.1Z"
-        fill="url(#geminiGradient)"
-        opacity="0.78"
-      />
-    </svg>
+    <PremiumIconShell className="bg-gradient-to-br from-[#E9E4FF] via-white to-[#F5D5FF]">
+      <svg viewBox="0 0 48 48" className="h-9 w-9 md:h-10 md:w-10" fill="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="geminiPremiumGradient" x1="8" x2="40" y1="7" y2="41" gradientUnits="userSpaceOnUse">
+            <stop stopColor="#5EA1FF" />
+            <stop offset="0.42" stopColor="#8B5CF6" />
+            <stop offset="1" stopColor="#FF4FA3" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M23.7 6.4c1.5 9.8 6.6 14.9 16.4 16.4-9.8 1.5-14.9 6.6-16.4 16.4-1.5-9.8-6.6-14.9-16.4-16.4 9.8-1.5 14.9-6.6 16.4-16.4Z"
+          fill="url(#geminiPremiumGradient)"
+        />
+        <path
+          d="M36.8 8.8c.5 3.1 2.2 4.8 5.3 5.3-3.1.5-4.8 2.2-5.3 5.3-.5-3.1-2.2-4.8-5.3-5.3 3.1-.5 4.8-2.2 5.3-5.3Z"
+          fill="url(#geminiPremiumGradient)"
+          opacity="0.8"
+        />
+      </svg>
+    </PremiumIconShell>
   );
 }
 
 function ClaudeIcon() {
   return (
-    <svg viewBox="0 0 48 48" className="h-9 w-9 md:h-10 md:w-10" fill="none" aria-hidden>
-      <circle cx="24" cy="24" r="22" fill="#FAF2E8" />
-      <circle cx="24" cy="24" r="4.4" fill="#D97745" />
-      <path
-        d="M24 7.8v8.3M24 31.9v8.3M7.8 24h8.3M31.9 24h8.3M12.5 12.5l5.9 5.9m11.2 11.2 5.9 5.9m0-23-5.9 5.9m-11.2 11.2-5.9 5.9"
-        stroke="#D97745"
-        strokeWidth="3.2"
-        strokeLinecap="round"
+    <PremiumIconShell className="bg-gradient-to-br from-white via-[#FFF7ED] to-[#F6E5D2]">
+      <Image
+        src="/images/sections/claude-icon.webp"
+        alt=""
+        width={42}
+        height={42}
+        sizes="42px"
+        unoptimized
+        className="h-10 w-10 object-contain drop-shadow-[0_10px_18px_rgba(217,119,69,0.18)] md:h-11 md:w-11"
       />
-    </svg>
+    </PremiumIconShell>
   );
 }
 
 function PerplexityIcon() {
   return (
-    <svg viewBox="0 0 48 48" className="h-9 w-9 md:h-10 md:w-10" fill="none" aria-hidden>
-      <rect x="7" y="7" width="34" height="34" rx="10" fill="#102A2A" />
-      <path d="M14 10.8h20v26.4H14z" stroke="#20C7B2" strokeWidth="2.6" strokeLinejoin="round" />
-      <path d="M14 18.9h20M24 10.8v26.4" stroke="#20C7B2" strokeWidth="2.4" strokeLinecap="round" />
-      <path
-        d="m17.8 18.9 6.2 6 6.2-6M17.8 37.2l6.2-6 6.2 6"
-        stroke="#E7FFFB"
-        strokeWidth="2.25"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+    <PremiumIconShell className="bg-gradient-to-br from-white via-[#F8FAFC] to-[#E5F8F5]">
+      <Image
+        src="/images/sections/perplexity-icon.webp"
+        alt=""
+        width={42}
+        height={42}
+        sizes="42px"
+        unoptimized
+        className="h-10 w-10 object-contain drop-shadow-[0_10px_18px_rgba(15,23,42,0.24)] md:h-11 md:w-11"
       />
-    </svg>
+    </PremiumIconShell>
   );
 }
 
 function GoogleAiIcon() {
   return (
-    <svg viewBox="0 0 48 48" className="h-9 w-9 md:h-10 md:w-10" fill="none" aria-hidden>
-      <circle cx="24" cy="24" r="21" fill="white" />
-      <path d="M24 10.7a13.3 13.3 0 0 1 9.4 3.8" stroke="#4285F4" strokeWidth="4.5" strokeLinecap="round" />
-      <path d="M35.3 21.5H24" stroke="#4285F4" strokeWidth="4.5" strokeLinecap="round" />
-      <path d="M35.3 21.5a11.9 11.9 0 0 1-3.2 11.4" stroke="#34A853" strokeWidth="4.5" strokeLinecap="round" />
-      <path d="M32.1 32.9A13.3 13.3 0 0 1 12.5 29" stroke="#FBBC05" strokeWidth="4.5" strokeLinecap="round" />
-      <path d="M12.5 29A13.3 13.3 0 0 1 14.5 14.5" stroke="#EA4335" strokeWidth="4.5" strokeLinecap="round" />
-    </svg>
+    <PremiumIconShell className="bg-gradient-to-br from-white via-[#F8FAFC] to-[#EAF2FF]">
+      <Image
+        src="/images/sections/google-ai-icon.webp"
+        alt=""
+        width={42}
+        height={42}
+        sizes="42px"
+        unoptimized
+        className="h-10 w-10 object-contain drop-shadow-[0_10px_18px_rgba(66,133,244,0.22)] md:h-11 md:w-11"
+      />
+    </PremiumIconShell>
   );
 }
 
 function CopilotIcon() {
   return (
-    <svg viewBox="0 0 48 48" className="h-9 w-9 md:h-10 md:w-10" fill="none" aria-hidden>
-      <path d="M14.8 10.2c4.2-4.7 11.6-3 13.6 3l1.6 4.8H19.2c-6 0-8.6-3.4-4.4-7.8Z" fill="#27C3F3" />
-      <path d="M33.2 10.2c-4.2-4.7-11.6-3-13.6 3L18 18h10.8c6 0 8.6-3.4 4.4-7.8Z" fill="#7C3AED" opacity="0.94" />
-      <path d="M12.6 36.1c3.4 5 10.8 4.4 13.4-1l2.2-4.6H17.6c-6 0-8.2 3.8-5 5.6Z" fill="#22C55E" />
-      <path d="M35.4 36.1c-3.4 5-10.8 4.4-13.4-1l-2.2-4.6h10.6c6 0 8.2 3.8 5 5.6Z" fill="#FF4FA3" />
-      <path
-        d="M16.8 18h14.4c3.6 0 6.4 2.8 6.4 6.2 0 3.5-2.8 6.3-6.4 6.3H16.8c-3.6 0-6.4-2.8-6.4-6.3 0-3.4 2.8-6.2 6.4-6.2Z"
-        fill="#111827"
-        opacity="0.2"
+    <PremiumIconShell className="bg-gradient-to-br from-white via-[#ECFEFF] to-[#F3E8FF]">
+      <Image
+        src="/images/sections/copilot-icon.webp"
+        alt=""
+        width={42}
+        height={42}
+        sizes="42px"
+        unoptimized
+        className="h-10 w-10 object-contain drop-shadow-[0_10px_18px_rgba(39,195,243,0.2)] md:h-11 md:w-11"
       />
-    </svg>
+    </PremiumIconShell>
   );
 }
 
