@@ -36,7 +36,7 @@ Instructions and project memory for coding agents working in this repository.
 - `src/app/[locale]/layout.tsx` - locale validation, metadata, fonts, `NextIntlClientProvider`.
 - `src/app/global-error.tsx` - minimal context-free global error page; keep it independent from `next-intl`, `next/link`, router hooks, and other providers so production builds can prerender `_global-error` safely.
 - `src/proxy.ts` - Next.js 16 middleware/proxy entry for next-intl.
-- `src/i18n/` - locale routing, navigation, request config.
+- `src/i18n/` - locale routing, navigation, request config. Use `isAppLocale()` before passing route params into DB queries or metadata helpers.
 - `messages/de.json`, `messages/en.json`, `messages/ru.json` - localized UI copy.
 - `src/widgets/` - page sections.
 - `src/widgets/testimonials/Testimonials.tsx` - homepage testimonial section; reads published testimonials from DB by locale and falls back to message JSON.
@@ -122,6 +122,8 @@ Instructions and project memory for coding agents working in this repository.
 - `prisma.config.ts` - Prisma 7 runtime config.
 - `src/generated/prisma/` - generated Prisma client; git-ignored and created by `postinstall` / `npm run db:generate`.
 - `public/flags/` - static flag assets.
+- `public/favicon.ico`, `public/favicon.svg`, `public/apple-icon.svg` - root favicon assets. Keep `/favicon.ico` present because browsers request it directly; otherwise the localized `[locale]` route can receive `favicon.ico` as a fake locale.
+- `public/google*.html` - Google Search Console verification files. Keep active verification filenames as real static files so they are not routed through `[locale]`.
 - `public/images/` - static image assets.
 - `public/brand/` - static SVG brand assets: main logo, icon-only mark, horizontal logo, favicon, app icon, social avatar, dark version, and monochrome version.
 - `public/video/` - static video assets.
@@ -383,3 +385,4 @@ Instructions and project memory for coding agents working in this repository.
 - 2026-07-02: Added public direct-contact channels to the contact page. `siteConfig.phone` now normalizes `NEXT_PUBLIC_CONTACT_PHONE` into display, `tel:`, WhatsApp, and Telegram links; the contact page renders Email, Phone, WhatsApp, and Telegram cards in the direct-contact block, and Organization/LocalBusiness/ContactPoint JSON-LD now includes `telephone`.
 - 2026-07-02: Added a delayed public floating WhatsApp CTA as a temporary lightweight lead path while no AI assistant is available. `WhatsAppFloatingCta` is mounted only in `src/app/[locale]/layout.tsx`, appears after 10 seconds, includes localized DE/EN/RU copy and a prefilled WhatsApp message, and uses CSS transitions plus inline SVG only.
 - 2026-07-02: Fixed Hostinger production build failure on `_global-error` prerender. Added `src/app/global-error.tsx` as a minimal context-free fallback and changed `WhatsAppFloatingCta` to receive server-resolved labels instead of calling `useTranslations()` in the always-mounted client component. Verified `npm run typecheck`, `npm run lint`, and `npm run build`. Production hosts must not set non-standard `NODE_ENV`; use the framework default or exactly `production`.
+- 2026-07-02: Fixed production Prisma runtime noise where `/favicon.ico` and `/google3a5395a578ae081d.html` were treated as `[locale]` values (`favicon.ico` / `google...html`) and then sent to enum-filtered DB queries. Added `public/favicon.ico`, added the missing Google verification file, introduced `isAppLocale()` in `src/i18n/routing.ts`, guarded `getSeoOverride()`, `generateMetadata()` in the locale layout, and the homepage before DB/translation usage. Verified `npm run typecheck`, `npm run lint`, `npm run build`, and runtime smoke for `/favicon.ico` 200, `/google3a5395a578ae081d.html` 200, invalid locale 404; port 3152 was released.

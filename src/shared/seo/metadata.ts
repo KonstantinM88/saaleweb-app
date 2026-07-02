@@ -1,16 +1,18 @@
 import type { Metadata } from "next";
 import { prisma } from "@/lib/prisma";
-import type { AppLocale } from "@/i18n/routing";
+import { isAppLocale } from "@/i18n/routing";
 import { ogImageUrl } from "./og";
 
 type SeoOverride = { title: string | null; description: string | null; ogImage: string | null };
 
 /** Reads an admin-managed SEOPage override for a path + locale. */
 export async function getSeoOverride(path: string, locale: string): Promise<SeoOverride | null> {
+  if (!isAppLocale(locale)) return null;
+
   try {
     const page = (await prisma.sEOPage.findUnique({
       where: { path },
-      include: { translations: { where: { locale: locale as AppLocale }, take: 1 } },
+      include: { translations: { where: { locale }, take: 1 } },
     })) as { translations: { title: string; description: string; ogImage: string | null }[] } | null;
     const tr = page?.translations?.[0];
     if (!tr) return null;

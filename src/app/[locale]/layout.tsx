@@ -4,7 +4,7 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
-import { routing } from "@/i18n/routing";
+import { isAppLocale, routing } from "@/i18n/routing";
 import { siteConfig } from "@/shared/config/site";
 import { JsonLd } from "@/shared/seo/JsonLd";
 import { organizationSchema, websiteSchema } from "@/shared/seo/schema";
@@ -25,6 +25,8 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  if (!isAppLocale(locale)) return {};
+
   const t = await getTranslations({ locale, namespace: "Meta" });
 
   const languages = Object.fromEntries(

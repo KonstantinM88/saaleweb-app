@@ -1,5 +1,6 @@
 // src/app/[locale]/page.tsx
 import { setRequestLocale } from "next-intl/server";
+import { notFound } from "next/navigation";
 import { Navbar } from "@/widgets/navbar/Navbar";
 import { Hero } from "@/widgets/hero/Hero";
 import { Trust } from "@/widgets/trust/Trust";
@@ -22,7 +23,7 @@ import { WebsiteAuditSection } from "@/widgets/website-audit/WebsiteAuditSection
 import { Faq } from "@/widgets/faq/Faq";
 import { Contact } from "@/widgets/contact/Contact";
 import { Footer } from "@/widgets/footer/Footer";
-import type { AppLocale } from "@/i18n/routing";
+import { isAppLocale } from "@/i18n/routing";
 import { HomeJsonLd } from "@/shared/seo/HomeJsonLd";
 
 export const revalidate = 300;
@@ -33,8 +34,9 @@ export default async function HomePage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+  if (!isAppLocale(locale)) notFound();
+
   setRequestLocale(locale);
-  const appLocale = locale as AppLocale;
 
   return (
     <>
@@ -56,7 +58,7 @@ export default async function HomePage({
         <TechStack />
         <Process />
         <Founder />
-        <Testimonials locale={appLocale} />
+        <Testimonials locale={locale} />
         <WebsiteAuditSection />
         <Pricing />
         <Faq />
