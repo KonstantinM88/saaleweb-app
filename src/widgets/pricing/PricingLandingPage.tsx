@@ -1313,16 +1313,16 @@ function PricingPackageCard({
   delay: number;
 }) {
   const isBusiness = packageKey === "business";
-  const isQuotePrice = !/\d/.test(price);
+  const isQuotePrice = packageKey === "individual" || !/\d/.test(price);
   const priceSizeClass = isQuotePrice
-    ? "text-[clamp(22px,7vw,34px)] leading-[1.08] break-words [overflow-wrap:anywhere] [hyphens:auto]"
+    ? "text-[clamp(16px,3.7vw,19px)] leading-snug break-words [overflow-wrap:anywhere] [text-wrap:balance] hyphens-auto"
     : "text-[clamp(34px,4vw,46px)] leading-none";
 
   return (
     <Reveal delay={delay} className="h-full">
       <article
         className={cn(
-          "relative flex h-full flex-col overflow-hidden rounded-[24px] p-6 shadow-sm transition-all duration-300 hover:-translate-y-1",
+          "relative flex h-full min-w-0 flex-col overflow-hidden rounded-[24px] p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 sm:p-6",
           featured
             ? "bg-dark text-white shadow-[0_30px_90px_-62px_rgba(15,23,42,0.95)]"
             : isBusiness
@@ -1349,7 +1349,7 @@ function PricingPackageCard({
           >
             {pkg.badge}
           </span>
-          <h3 className={cn("mt-5 text-[22px] font-extrabold tracking-tight lg:min-h-[58px]", isBusiness && "text-[23px]")}>
+          <h3 className={cn("mt-5 min-w-0 break-words text-[clamp(21px,5.7vw,24px)] font-extrabold leading-tight tracking-tight lg:min-h-[58px]", isBusiness && "text-[clamp(22px,5.7vw,25px)]")}>
             {pkg.name}
           </h3>
           <p className={cn("mt-2 text-[14.5px] leading-relaxed lg:min-h-[86px]", featured ? "text-gray-300" : "text-muted")}>
@@ -1357,12 +1357,15 @@ function PricingPackageCard({
           </p>
           <div
             className={cn(
-              "mt-5 flex min-h-[64px] w-full max-w-full items-end font-extrabold tracking-tight",
+              "mt-5 flex w-full max-w-full min-w-0 font-extrabold tracking-tight",
+              isQuotePrice
+                ? "min-h-0 items-center rounded-2xl border border-brand-purple/[0.14] bg-brand-soft px-4 py-3 text-dark shadow-sm"
+                : "min-h-[64px] items-end",
               priceSizeClass,
               isBusiness && !featured && "bg-brand bg-clip-text text-transparent",
             )}
           >
-            {price}
+            <span className="block min-w-0 max-w-full">{price}</span>
           </div>
           <p className={cn("mt-3 min-h-[18px] text-[13px] font-bold", featured ? "text-brand-pink" : "text-brand-purple")}>
             {pkg.technology}

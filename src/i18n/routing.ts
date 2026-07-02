@@ -42,6 +42,8 @@ export const routing = defineRouting({
       en: "/locations/[slug]",
       ru: "/goroda/[slug]",
     },
+    "/impressum": { de: "/impressum", en: "/imprint", ru: "/impressum" },
+    "/datenschutz": { de: "/datenschutz", en: "/privacy-policy", ru: "/datenschutz" },
   },
 });
 

@@ -1,0 +1,589 @@
+import type { AppLocale } from "@/i18n/routing";
+
+// ---------------------------------------------------------------------------
+// Phase 10: legal pages (Impressum / Datenschutzerklärung).
+//
+// The German version is the legally binding one; EN/RU are courtesy
+// translations and say so explicitly. Provider data comes from the trade
+// registration (Gewerbeanmeldung Stadt Halle, 11.06.2026) and the VAT ID
+// notice of the Bundeszentralamt für Steuern (10.06.2026).
+// ---------------------------------------------------------------------------
+
+export const LEGAL_PROVIDER = {
+  brand: "SaaleWeb",
+  /** Official name as registered (Gewerbeanmeldung). */
+  owner: "Kostiantyn Mykhailov",
+  street: "Hettstedter Str. 64",
+  city: "06124 Halle (Saale)",
+  country: "Deutschland",
+  countryEn: "Germany",
+  countryRu: "Германия",
+  phone: "+49 176 71764743",
+  email: "mykhailov@saaleweb.de",
+  vatId: "DE462863969",
+  activity: {
+    de: "Webentwicklung, Webdesign",
+    en: "Web development, web design",
+    ru: "Веб-разработка, веб-дизайн",
+  },
+} as const;
+
+export type LegalSection = {
+  title: string;
+  paragraphs?: string[];
+  list?: string[];
+  /** Paragraphs rendered after the list. */
+  paragraphsAfter?: string[];
+};
+
+export type LegalPageContent = {
+  metaTitle: string;
+  metaDescription: string;
+  eyebrow: string;
+  title: string;
+  updated: string;
+  /** Note shown for non-German locales: the German version prevails. */
+  bindingNote?: string;
+  sections: LegalSection[];
+};
+
+// ---------------------------------------------------------------------------
+// Impressum
+// ---------------------------------------------------------------------------
+
+const impressumDe: LegalPageContent = {
+  metaTitle: "Impressum | SaaleWeb – Webentwicklung & Webdesign in Halle (Saale)",
+  metaDescription:
+    "Impressum von SaaleWeb: Anbieterkennzeichnung gemäß § 5 DDG, Kontaktdaten, Umsatzsteuer-Identifikationsnummer und rechtliche Hinweise.",
+  eyebrow: "Rechtliches",
+  title: "Impressum",
+  updated: "Stand: Juli 2026",
+  sections: [
+    {
+      title: "Angaben gemäß § 5 DDG",
+      paragraphs: [
+        `${LEGAL_PROVIDER.brand} – ${LEGAL_PROVIDER.activity.de}`,
+        `Inhaber: ${LEGAL_PROVIDER.owner} (Einzelunternehmen)`,
+        `${LEGAL_PROVIDER.street}, ${LEGAL_PROVIDER.city}, ${LEGAL_PROVIDER.country}`,
+      ],
+    },
+    {
+      title: "Kontakt",
+      paragraphs: [
+        `Telefon: ${LEGAL_PROVIDER.phone}`,
+        `E-Mail: ${LEGAL_PROVIDER.email}`,
+      ],
+    },
+    {
+      title: "Umsatzsteuer-Identifikationsnummer",
+      paragraphs: [
+        `Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz: ${LEGAL_PROVIDER.vatId}`,
+      ],
+    },
+    {
+      title: "Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV",
+      paragraphs: [
+        `${LEGAL_PROVIDER.owner}, ${LEGAL_PROVIDER.street}, ${LEGAL_PROVIDER.city}`,
+      ],
+    },
+    {
+      title: "Verbraucherstreitbeilegung / Universalschlichtungsstelle",
+      paragraphs: [
+        "Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen (§ 36 VSBG).",
+      ],
+    },
+    {
+      title: "Haftung für Inhalte",
+      paragraphs: [
+        "Als Diensteanbieter sind wir für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Wir sind jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.",
+        "Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden entsprechender Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.",
+      ],
+    },
+    {
+      title: "Haftung für Links",
+      paragraphs: [
+        "Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.",
+        "Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft; rechtswidrige Inhalte waren zu diesem Zeitpunkt nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.",
+      ],
+    },
+    {
+      title: "Urheberrecht",
+      paragraphs: [
+        "Die durch den Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.",
+        "Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet und Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.",
+      ],
+    },
+  ],
+};
+
+const impressumEn: LegalPageContent = {
+  metaTitle: "Imprint | SaaleWeb – Web Development & Web Design in Halle (Saale)",
+  metaDescription:
+    "Legal notice (Impressum) of SaaleWeb: provider identification pursuant to Section 5 DDG, contact details, VAT ID and legal information.",
+  eyebrow: "Legal",
+  title: "Imprint (Impressum)",
+  updated: "Last updated: July 2026",
+  bindingNote:
+    "This is a courtesy translation. The German version of this legal notice is the legally binding one.",
+  sections: [
+    {
+      title: "Information pursuant to Section 5 DDG",
+      paragraphs: [
+        `${LEGAL_PROVIDER.brand} – ${LEGAL_PROVIDER.activity.en}`,
+        `Owner: ${LEGAL_PROVIDER.owner} (sole proprietorship)`,
+        `${LEGAL_PROVIDER.street}, ${LEGAL_PROVIDER.city}, ${LEGAL_PROVIDER.countryEn}`,
+      ],
+    },
+    {
+      title: "Contact",
+      paragraphs: [
+        `Phone: ${LEGAL_PROVIDER.phone}`,
+        `Email: ${LEGAL_PROVIDER.email}`,
+      ],
+    },
+    {
+      title: "VAT identification number",
+      paragraphs: [
+        `VAT identification number pursuant to Section 27a of the German VAT Act (UStG): ${LEGAL_PROVIDER.vatId}`,
+      ],
+    },
+    {
+      title: "Responsible for content pursuant to Section 18 (2) MStV",
+      paragraphs: [
+        `${LEGAL_PROVIDER.owner}, ${LEGAL_PROVIDER.street}, ${LEGAL_PROVIDER.city}`,
+      ],
+    },
+    {
+      title: "Consumer dispute resolution",
+      paragraphs: [
+        "We are neither willing nor obliged to participate in dispute resolution proceedings before a consumer arbitration board (Section 36 VSBG).",
+      ],
+    },
+    {
+      title: "Liability for content",
+      paragraphs: [
+        "As a service provider, we are responsible for our own content on these pages in accordance with general legislation. However, we are not obliged to monitor transmitted or stored third-party information or to investigate circumstances indicating unlawful activity.",
+        "Obligations to remove or block the use of information under general legislation remain unaffected. Liability in this respect is only possible from the moment we become aware of a specific legal violation. Upon becoming aware of such violations, we will remove the content in question immediately.",
+      ],
+    },
+    {
+      title: "Liability for links",
+      paragraphs: [
+        "Our website contains links to external third-party websites over whose content we have no influence. We therefore cannot accept any liability for this external content. The respective provider or operator of the linked pages is always responsible for their content.",
+        "The linked pages were checked for possible legal violations at the time of linking; unlawful content was not identifiable at that time. Permanent monitoring of the content of linked pages is not reasonable without concrete indications of a legal violation. Upon becoming aware of legal violations, we will remove such links immediately.",
+      ],
+    },
+    {
+      title: "Copyright",
+      paragraphs: [
+        "The content and works created by the site operator on these pages are subject to German copyright law. Reproduction, editing, distribution and any kind of exploitation outside the limits of copyright law require the written consent of the respective author or creator.",
+        "Insofar as the content on this site was not created by the operator, the copyrights of third parties are respected and third-party content is marked as such. Should you nevertheless become aware of a copyright infringement, please notify us accordingly. Upon becoming aware of legal violations, we will remove such content immediately.",
+      ],
+    },
+  ],
+};
+
+const impressumRu: LegalPageContent = {
+  metaTitle: "Impressum | SaaleWeb — веб-разработка и веб-дизайн в Halle (Saale)",
+  metaDescription:
+    "Impressum (выходные данные) SaaleWeb: идентификация поставщика услуг согласно § 5 DDG, контактные данные, идентификационный номер плательщика НДС и правовая информация.",
+  eyebrow: "Правовая информация",
+  title: "Impressum (выходные данные)",
+  updated: "Актуально на: июль 2026",
+  bindingNote:
+    "Это перевод для удобства. Юридически обязательной является немецкая версия этой страницы.",
+  sections: [
+    {
+      title: "Сведения согласно § 5 DDG",
+      paragraphs: [
+        `${LEGAL_PROVIDER.brand} — ${LEGAL_PROVIDER.activity.ru}`,
+        `Владелец: ${LEGAL_PROVIDER.owner} (индивидуальный предприниматель)`,
+        `${LEGAL_PROVIDER.street}, ${LEGAL_PROVIDER.city}, ${LEGAL_PROVIDER.countryRu}`,
+      ],
+    },
+    {
+      title: "Контакт",
+      paragraphs: [
+        `Телефон: ${LEGAL_PROVIDER.phone}`,
+        `E-mail: ${LEGAL_PROVIDER.email}`,
+      ],
+    },
+    {
+      title: "Идентификационный номер плательщика НДС",
+      paragraphs: [
+        `Идентификационный номер плательщика НДС согласно § 27a Закона о налоге с оборота (UStG): ${LEGAL_PROVIDER.vatId}`,
+      ],
+    },
+    {
+      title: "Ответственный за содержание согласно § 18 абз. 2 MStV",
+      paragraphs: [
+        `${LEGAL_PROVIDER.owner}, ${LEGAL_PROVIDER.street}, ${LEGAL_PROVIDER.city}`,
+      ],
+    },
+    {
+      title: "Разрешение потребительских споров",
+      paragraphs: [
+        "Мы не готовы и не обязаны участвовать в процедурах разрешения споров в потребительском арбитраже (§ 36 VSBG).",
+      ],
+    },
+    {
+      title: "Ответственность за содержание",
+      paragraphs: [
+        "Как поставщик услуг мы несём ответственность за собственный контент на этих страницах в соответствии с общим законодательством. При этом мы не обязаны отслеживать переданную или сохранённую стороннюю информацию или расследовать обстоятельства, указывающие на противоправную деятельность.",
+        "Обязательства по удалению или блокировке использования информации согласно общему законодательству остаются в силе. Ответственность в этом отношении возможна только с момента, когда нам стало известно о конкретном правонарушении. При обнаружении соответствующих нарушений мы незамедлительно удалим такой контент.",
+      ],
+    },
+    {
+      title: "Ответственность за ссылки",
+      paragraphs: [
+        "Наш сайт содержит ссылки на внешние сайты третьих лиц, на содержание которых мы не можем влиять. Поэтому мы не можем принять на себя ответственность за этот сторонний контент. За содержание страниц, на которые ведут ссылки, всегда отвечает их соответствующий поставщик или оператор.",
+        "На момент размещения ссылок связанные страницы были проверены на возможные правонарушения; противоправный контент на тот момент не был обнаружен. Постоянный контроль содержания связанных страниц без конкретных признаков правонарушения не является разумно осуществимым. При обнаружении правонарушений мы незамедлительно удалим такие ссылки.",
+      ],
+    },
+    {
+      title: "Авторское право",
+      paragraphs: [
+        "Контент и произведения, созданные оператором сайта, подпадают под действие немецкого авторского права. Воспроизведение, обработка, распространение и любое использование за пределами авторского права требуют письменного согласия соответствующего автора или создателя.",
+        "Если контент на этом сайте создан не оператором, авторские права третьих лиц соблюдаются, а сторонний контент помечается как таковой. Если вы всё же обнаружите нарушение авторских прав, просим сообщить нам об этом. При обнаружении нарушений мы незамедлительно удалим такой контент.",
+      ],
+    },
+  ],
+};
+
+export const IMPRESSUM_CONTENT: Record<AppLocale, LegalPageContent> = {
+  de: impressumDe,
+  en: impressumEn,
+  ru: impressumRu,
+};
+
+// ---------------------------------------------------------------------------
+// Datenschutzerklärung
+// ---------------------------------------------------------------------------
+
+const datenschutzDe: LegalPageContent = {
+  metaTitle: "Datenschutzerklärung | SaaleWeb – Webentwicklung & Webdesign in Halle (Saale)",
+  metaDescription:
+    "Datenschutzerklärung von SaaleWeb: Welche Daten wir verarbeiten, zu welchen Zwecken und welche Rechte Sie haben – transparent, ohne Tracking-Cookies, ohne Werbung.",
+  eyebrow: "Rechtliches",
+  title: "Datenschutzerklärung",
+  updated: "Stand: Juli 2026",
+  sections: [
+    {
+      title: "1. Überblick und Grundsätze",
+      paragraphs: [
+        "Der Schutz Ihrer persönlichen Daten ist uns wichtig. Diese Website ist bewusst datensparsam aufgebaut: Wir verwenden keine Tracking-Cookies, keine Werbenetzwerke und keine Analysedienste von Drittanbietern. Personenbezogene Daten verarbeiten wir nur, soweit dies für die Bereitstellung der Website und die Bearbeitung Ihrer Anfragen erforderlich ist.",
+        "Diese Erklärung informiert Sie gemäß der Datenschutz-Grundverordnung (DSGVO) darüber, welche Daten wir verarbeiten, zu welchen Zwecken, auf welcher Rechtsgrundlage und welche Rechte Ihnen zustehen.",
+      ],
+    },
+    {
+      title: "2. Verantwortlicher",
+      paragraphs: [
+        `Verantwortlicher im Sinne der DSGVO ist: ${LEGAL_PROVIDER.owner}, ${LEGAL_PROVIDER.brand}, ${LEGAL_PROVIDER.street}, ${LEGAL_PROVIDER.city}, ${LEGAL_PROVIDER.country}.`,
+        `Telefon: ${LEGAL_PROVIDER.phone} · E-Mail: ${LEGAL_PROVIDER.email}`,
+        "Ein Datenschutzbeauftragter ist nicht bestellt, da die gesetzlichen Voraussetzungen für eine Bestellungspflicht nicht vorliegen.",
+      ],
+    },
+    {
+      title: "3. Hosting und Server-Logdateien",
+      paragraphs: [
+        "Diese Website wird bei Hostinger (Hostinger operations, UAB, Švitrigailos g. 34, 03230 Vilnius, Litauen) innerhalb der Europäischen Union gehostet. Mit dem Anbieter besteht ein Vertrag über Auftragsverarbeitung gemäß Art. 28 DSGVO.",
+        "Beim Aufruf der Website verarbeitet der Server automatisch technische Zugriffsdaten (Server-Logdateien): IP-Adresse, Datum und Uhrzeit der Anfrage, aufgerufene Seite, übertragene Datenmenge, Browsertyp und -version, Betriebssystem sowie die zuvor besuchte Seite (Referrer-URL).",
+        "Diese Daten dienen der technischen Bereitstellung, der Stabilität und der Sicherheit der Website (z. B. Abwehr von Angriffen) und werden nach kurzer Zeit automatisch gelöscht. Rechtsgrundlage ist unser berechtigtes Interesse an einem sicheren und stabilen Betrieb (Art. 6 Abs. 1 lit. f DSGVO).",
+      ],
+    },
+    {
+      title: "4. Datenbank",
+      paragraphs: [
+        "Inhalte der Website sowie über das Kontaktformular übermittelte Anfragen werden in einer Datenbank des Anbieters Neon (Neon, Inc.) gespeichert. Die Datenbank wird in der Region Frankfurt am Main (Deutschland, EU) betrieben; die Daten verbleiben damit in der Europäischen Union. Mit dem Anbieter besteht ein Vertrag über Auftragsverarbeitung gemäß Art. 28 DSGVO einschließlich EU-Standardvertragsklauseln.",
+      ],
+    },
+    {
+      title: "5. Kontaktformular und Anfragen",
+      paragraphs: [
+        "Wenn Sie uns über das Kontaktformular oder per E-Mail eine Anfrage senden, verarbeiten wir die von Ihnen angegebenen Daten: Name, E-Mail-Adresse, optional Telefonnummer und Unternehmen sowie Ihre Nachricht.",
+        "Die Verarbeitung erfolgt zur Bearbeitung Ihrer Anfrage und für mögliche Anschlussfragen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Durchführung vorvertraglicher Maßnahmen bzw. Vertragserfüllung) sowie im Übrigen unser berechtigtes Interesse an der Beantwortung von Anfragen (Art. 6 Abs. 1 lit. f DSGVO).",
+        "Ihre Angaben werden gelöscht, sobald sie für die Bearbeitung nicht mehr erforderlich sind und keine gesetzlichen Aufbewahrungspflichten (z. B. aus Handels- oder Steuerrecht) entgegenstehen.",
+      ],
+    },
+    {
+      title: "6. E-Mail-Benachrichtigungen (Resend)",
+      paragraphs: [
+        "Für den Versand interner Benachrichtigungs-E-Mails über neue Anfragen nutzen wir den Dienst Resend (Resend, Inc., 2261 Market Street #5039, San Francisco, CA 94114, USA). Dabei können die in Ihrer Anfrage enthaltenen Daten (Name, E-Mail-Adresse, Nachricht) an Resend übermittelt werden.",
+        "Da Resend seinen Sitz in den USA hat, erfolgt die Übermittlung in ein Drittland. Sie wird durch EU-Standardvertragsklauseln gemäß Art. 46 Abs. 2 lit. c DSGVO abgesichert. Rechtsgrundlage der Verarbeitung ist Art. 6 Abs. 1 lit. b und lit. f DSGVO (zügige Bearbeitung eingehender Anfragen).",
+      ],
+    },
+    {
+      title: "7. Reichweitenmessung ohne Cookies (First-Party-Statistik)",
+      paragraphs: [
+        "Wir erheben anonyme Nutzungsstatistiken mit einer eigenen, datenschutzfreundlichen Lösung – ohne Drittanbieter, ohne Cookies und ohne Speicherung oder Auslesen von Informationen auf Ihrem Endgerät. Ein Zugriff im Sinne des § 25 TDDDG findet nicht statt; eine Einwilligung ist daher nicht erforderlich.",
+        "Erfasst werden: aufgerufene Seite, Sprachversion, Referrer (verweisende Seite) sowie ein technischer Besucherwert. Dieser Wert wird serverseitig als Einweg-Hash (SHA-256) aus dem aktuellen Datum, der IP-Adresse, dem Browser-User-Agent und einem geheimen Zufallswert (Salt) gebildet. Die IP-Adresse selbst wird nicht gespeichert; der Hash ändert sich täglich und lässt keine Rückverfolgung auf eine Person und kein seitenübergreifendes Tracking zu. Zugriffe bekannter Bots werden verworfen.",
+        "Zweck ist die statistische Auswertung der Nutzung unserer Website (z. B. welche Seiten wie häufig aufgerufen werden). Rechtsgrundlage ist unser berechtigtes Interesse an der Analyse und Verbesserung unseres Angebots (Art. 6 Abs. 1 lit. f DSGVO).",
+      ],
+    },
+    {
+      title: "8. Cookies",
+      paragraphs: [
+        "Diese Website verwendet keine Cookies zu Analyse-, Tracking- oder Werbezwecken.",
+        "Technisch notwendige Cookies können in zwei Fällen gesetzt werden: zur Speicherung Ihrer Sprachauswahl (wenn Sie die Sprache der Website wechseln) sowie für die Anmeldung autorisierter Administratoren im internen Verwaltungsbereich. Diese Cookies sind für die gewünschte Funktion unbedingt erforderlich (§ 25 Abs. 2 Nr. 2 TDDDG); Rechtsgrundlage der damit verbundenen Datenverarbeitung ist Art. 6 Abs. 1 lit. f DSGVO.",
+      ],
+    },
+    {
+      title: "9. SSL-/TLS-Verschlüsselung",
+      paragraphs: [
+        "Diese Website nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte, wie z. B. Anfragen über das Kontaktformular, eine SSL-/TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie an dem Präfix „https://“ und dem Schloss-Symbol in der Adresszeile Ihres Browsers.",
+      ],
+    },
+    {
+      title: "10. Ihre Rechte",
+      paragraphs: ["Ihnen stehen bezüglich Ihrer personenbezogenen Daten folgende Rechte zu:"],
+      list: [
+        "Recht auf Auskunft über die verarbeiteten Daten (Art. 15 DSGVO)",
+        "Recht auf Berichtigung unrichtiger Daten (Art. 16 DSGVO)",
+        "Recht auf Löschung (Art. 17 DSGVO)",
+        "Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)",
+        "Recht auf Datenübertragbarkeit (Art. 20 DSGVO)",
+        "Widerspruchsrecht gegen Verarbeitungen auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (Art. 21 DSGVO)",
+        "Recht auf Widerruf erteilter Einwilligungen mit Wirkung für die Zukunft (Art. 7 Abs. 3 DSGVO)",
+      ],
+      paragraphsAfter: [
+        `Zur Ausübung Ihrer Rechte genügt eine formlose Mitteilung an: ${LEGAL_PROVIDER.email}`,
+        "Darüber hinaus haben Sie das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren (Art. 77 DSGVO). Zuständig für uns ist der Landesbeauftragte für den Datenschutz Sachsen-Anhalt, Otto-von-Guericke-Str. 34a, 39104 Magdeburg.",
+      ],
+    },
+    {
+      title: "11. Speicherdauer, Bereitstellungspflicht und automatisierte Entscheidungen",
+      paragraphs: [
+        "Soweit in dieser Erklärung keine speziellere Speicherdauer genannt ist, verbleiben personenbezogene Daten bei uns, bis der Zweck der Verarbeitung entfällt oder Sie ein Lösch- bzw. Widerspruchsrecht ausüben – vorbehaltlich gesetzlicher Aufbewahrungsfristen (insbesondere aus Handels- und Steuerrecht).",
+        "Die Bereitstellung personenbezogener Daten ist weder gesetzlich noch vertraglich vorgeschrieben; ohne Angabe von Kontaktdaten können wir Anfragen jedoch nicht beantworten. Eine automatisierte Entscheidungsfindung einschließlich Profiling im Sinne von Art. 22 DSGVO findet nicht statt.",
+      ],
+    },
+    {
+      title: "12. Aktualität und Änderung dieser Datenschutzerklärung",
+      paragraphs: [
+        "Wir behalten uns vor, diese Datenschutzerklärung anzupassen, wenn sich die Rechtslage, die Website oder die eingesetzten Dienste ändern. Es gilt die jeweils auf dieser Seite veröffentlichte Fassung.",
+      ],
+    },
+  ],
+};
+
+const datenschutzEn: LegalPageContent = {
+  metaTitle: "Privacy Policy | SaaleWeb – Web Development & Web Design in Halle (Saale)",
+  metaDescription:
+    "Privacy policy of SaaleWeb: which data we process, for which purposes and which rights you have – transparent, without tracking cookies, without advertising.",
+  eyebrow: "Legal",
+  title: "Privacy Policy",
+  updated: "Last updated: July 2026",
+  bindingNote:
+    "This is a courtesy translation. The German version of this privacy policy is the legally binding one.",
+  sections: [
+    {
+      title: "1. Overview and principles",
+      paragraphs: [
+        "Protecting your personal data matters to us. This website is deliberately built to be data-minimal: we use no tracking cookies, no advertising networks and no third-party analytics services. We process personal data only insofar as this is necessary to provide the website and to handle your inquiries.",
+        "In accordance with the General Data Protection Regulation (GDPR), this policy informs you about which data we process, for which purposes, on which legal basis, and which rights you have.",
+      ],
+    },
+    {
+      title: "2. Controller",
+      paragraphs: [
+        `The controller within the meaning of the GDPR is: ${LEGAL_PROVIDER.owner}, ${LEGAL_PROVIDER.brand}, ${LEGAL_PROVIDER.street}, ${LEGAL_PROVIDER.city}, ${LEGAL_PROVIDER.countryEn}.`,
+        `Phone: ${LEGAL_PROVIDER.phone} · Email: ${LEGAL_PROVIDER.email}`,
+        "No data protection officer has been appointed, as the legal requirements for a mandatory appointment are not met.",
+      ],
+    },
+    {
+      title: "3. Hosting and server log files",
+      paragraphs: [
+        "This website is hosted by Hostinger (Hostinger operations, UAB, Švitrigailos g. 34, 03230 Vilnius, Lithuania) within the European Union. A data processing agreement pursuant to Art. 28 GDPR is in place with the provider.",
+        "When you access the website, the server automatically processes technical access data (server log files): IP address, date and time of the request, page accessed, amount of data transferred, browser type and version, operating system and the previously visited page (referrer URL).",
+        "This data serves the technical provision, stability and security of the website (e.g. defence against attacks) and is automatically deleted after a short period. The legal basis is our legitimate interest in secure and stable operation (Art. 6(1)(f) GDPR).",
+      ],
+    },
+    {
+      title: "4. Database",
+      paragraphs: [
+        "Website content and inquiries submitted via the contact form are stored in a database operated by Neon (Neon, Inc.). The database runs in the Frankfurt am Main region (Germany, EU); the data therefore remains within the European Union. A data processing agreement pursuant to Art. 28 GDPR, including EU standard contractual clauses, is in place with the provider.",
+      ],
+    },
+    {
+      title: "5. Contact form and inquiries",
+      paragraphs: [
+        "If you send us an inquiry via the contact form or by email, we process the data you provide: name, email address, optionally phone number and company, and your message.",
+        "Processing takes place to handle your inquiry and for possible follow-up questions. The legal basis is Art. 6(1)(b) GDPR (pre-contractual measures or contract performance) and, in addition, our legitimate interest in answering inquiries (Art. 6(1)(f) GDPR).",
+        "Your details are deleted as soon as they are no longer required for processing and no statutory retention obligations (e.g. under commercial or tax law) prevent deletion.",
+      ],
+    },
+    {
+      title: "6. Email notifications (Resend)",
+      paragraphs: [
+        "We use the Resend service (Resend, Inc., 2261 Market Street #5039, San Francisco, CA 94114, USA) to send internal notification emails about new inquiries. The data contained in your inquiry (name, email address, message) may be transmitted to Resend for this purpose.",
+        "As Resend is based in the USA, this constitutes a transfer to a third country. It is safeguarded by EU standard contractual clauses pursuant to Art. 46(2)(c) GDPR. The legal basis for the processing is Art. 6(1)(b) and (f) GDPR (prompt handling of incoming inquiries).",
+      ],
+    },
+    {
+      title: "7. Cookie-free reach measurement (first-party statistics)",
+      paragraphs: [
+        "We collect anonymous usage statistics with our own privacy-friendly solution – without third parties, without cookies and without storing or reading information on your device. No access within the meaning of Section 25 TDDDG takes place; consent is therefore not required.",
+        "The following is recorded: page accessed, language version, referrer (referring page) and a technical visitor value. This value is generated server-side as a one-way hash (SHA-256) from the current date, the IP address, the browser user agent and a secret random value (salt). The IP address itself is not stored; the hash changes daily and does not allow identification of a person or cross-site tracking. Requests from known bots are discarded.",
+        "The purpose is the statistical evaluation of the use of our website (e.g. which pages are accessed how often). The legal basis is our legitimate interest in analysing and improving our services (Art. 6(1)(f) GDPR).",
+      ],
+    },
+    {
+      title: "8. Cookies",
+      paragraphs: [
+        "This website does not use cookies for analytics, tracking or advertising purposes.",
+        "Technically necessary cookies may be set in two cases: to store your language selection (when you switch the website language) and for the login of authorised administrators in the internal administration area. These cookies are strictly necessary for the requested function (Section 25(2) no. 2 TDDDG); the legal basis for the associated data processing is Art. 6(1)(f) GDPR.",
+      ],
+    },
+    {
+      title: "9. SSL/TLS encryption",
+      paragraphs: [
+        "For security reasons and to protect the transmission of confidential content, such as inquiries via the contact form, this website uses SSL/TLS encryption. You can recognise an encrypted connection by the prefix \u201chttps://\u201d and the lock symbol in your browser's address bar.",
+      ],
+    },
+    {
+      title: "10. Your rights",
+      paragraphs: ["You have the following rights regarding your personal data:"],
+      list: [
+        "Right of access to the processed data (Art. 15 GDPR)",
+        "Right to rectification of inaccurate data (Art. 16 GDPR)",
+        "Right to erasure (Art. 17 GDPR)",
+        "Right to restriction of processing (Art. 18 GDPR)",
+        "Right to data portability (Art. 20 GDPR)",
+        "Right to object to processing based on Art. 6(1)(f) GDPR (Art. 21 GDPR)",
+        "Right to withdraw consent with effect for the future (Art. 7(3) GDPR)",
+      ],
+      paragraphsAfter: [
+        `To exercise your rights, an informal message to ${LEGAL_PROVIDER.email} is sufficient.`,
+        "You also have the right to lodge a complaint with a data protection supervisory authority (Art. 77 GDPR). The authority responsible for us is the State Commissioner for Data Protection of Saxony-Anhalt (Landesbeauftragter für den Datenschutz Sachsen-Anhalt), Otto-von-Guericke-Str. 34a, 39104 Magdeburg, Germany.",
+      ],
+    },
+    {
+      title: "11. Storage period, obligation to provide data, automated decisions",
+      paragraphs: [
+        "Unless a more specific storage period is stated in this policy, personal data remains with us until the purpose of processing ceases to apply or you exercise a right to erasure or objection – subject to statutory retention periods (in particular under commercial and tax law).",
+        "The provision of personal data is neither legally nor contractually required; however, we cannot answer inquiries without contact details. Automated decision-making, including profiling within the meaning of Art. 22 GDPR, does not take place.",
+      ],
+    },
+    {
+      title: "12. Validity and changes to this privacy policy",
+      paragraphs: [
+        "We reserve the right to adapt this privacy policy if the legal situation, the website or the services used change. The version published on this page at the respective time applies.",
+      ],
+    },
+  ],
+};
+
+const datenschutzRu: LegalPageContent = {
+  metaTitle: "Политика конфиденциальности | SaaleWeb — веб-разработка и веб-дизайн в Halle (Saale)",
+  metaDescription:
+    "Политика конфиденциальности SaaleWeb: какие данные мы обрабатываем, для каких целей и какие права у вас есть — прозрачно, без трекинговых cookies и рекламы.",
+  eyebrow: "Правовая информация",
+  title: "Политика конфиденциальности (Datenschutzerklärung)",
+  updated: "Актуально на: июль 2026",
+  bindingNote:
+    "Это перевод для удобства. Юридически обязательной является немецкая версия этой политики.",
+  sections: [
+    {
+      title: "1. Обзор и принципы",
+      paragraphs: [
+        "Защита ваших персональных данных важна для нас. Этот сайт осознанно построен по принципу минимизации данных: мы не используем трекинговые cookies, рекламные сети и сторонние аналитические сервисы. Персональные данные мы обрабатываем только в той мере, в какой это необходимо для работы сайта и обработки ваших обращений.",
+        "В соответствии с Общим регламентом по защите данных (GDPR/DSGVO) эта политика информирует вас о том, какие данные мы обрабатываем, для каких целей, на каком правовом основании и какие права вам принадлежат.",
+      ],
+    },
+    {
+      title: "2. Ответственный за обработку данных",
+      paragraphs: [
+        `Ответственным в смысле GDPR является: ${LEGAL_PROVIDER.owner}, ${LEGAL_PROVIDER.brand}, ${LEGAL_PROVIDER.street}, ${LEGAL_PROVIDER.city}, ${LEGAL_PROVIDER.countryRu}.`,
+        `Телефон: ${LEGAL_PROVIDER.phone} · E-mail: ${LEGAL_PROVIDER.email}`,
+        "Инспектор по защите данных не назначен, поскольку установленные законом условия для обязательного назначения не выполняются.",
+      ],
+    },
+    {
+      title: "3. Хостинг и серверные лог-файлы",
+      paragraphs: [
+        "Сайт размещён у провайдера Hostinger (Hostinger operations, UAB, Švitrigailos g. 34, 03230 Вильнюс, Литва) на территории Европейского союза. С провайдером заключён договор на обработку данных по поручению согласно ст. 28 GDPR.",
+        "При открытии сайта сервер автоматически обрабатывает технические данные доступа (серверные лог-файлы): IP-адрес, дату и время запроса, открытую страницу, объём переданных данных, тип и версию браузера, операционную систему и предыдущую посещённую страницу (referrer).",
+        "Эти данные служат технической работе, стабильности и безопасности сайта (например, защите от атак) и автоматически удаляются через короткое время. Правовое основание — наш законный интерес в безопасной и стабильной работе (ст. 6 (1)(f) GDPR).",
+      ],
+    },
+    {
+      title: "4. База данных",
+      paragraphs: [
+        "Контент сайта и обращения, отправленные через контактную форму, хранятся в базе данных провайдера Neon (Neon, Inc.). База данных работает в регионе Франкфурт-на-Майне (Германия, ЕС); данные таким образом остаются на территории Европейского союза. С провайдером заключён договор на обработку данных по поручению согласно ст. 28 GDPR, включая стандартные договорные положения ЕС.",
+      ],
+    },
+    {
+      title: "5. Контактная форма и обращения",
+      paragraphs: [
+        "Если вы отправляете нам запрос через контактную форму или по электронной почте, мы обрабатываем указанные вами данные: имя, адрес электронной почты, при желании телефон и название компании, а также ваше сообщение.",
+        "Обработка выполняется для ответа на ваше обращение и возможных уточняющих вопросов. Правовое основание — ст. 6 (1)(b) GDPR (преддоговорные меры или исполнение договора), а также наш законный интерес в ответе на обращения (ст. 6 (1)(f) GDPR).",
+        "Ваши данные удаляются, как только они перестают быть необходимыми для обработки и этому не препятствуют законные сроки хранения (например, по торговому или налоговому праву).",
+      ],
+    },
+    {
+      title: "6. E-mail-уведомления (Resend)",
+      paragraphs: [
+        "Для отправки внутренних уведомлений о новых обращениях мы используем сервис Resend (Resend, Inc., 2261 Market Street #5039, Сан-Франциско, CA 94114, США). При этом данные из вашего обращения (имя, e-mail, сообщение) могут передаваться в Resend.",
+        "Поскольку Resend находится в США, происходит передача данных в третью страну. Она защищена стандартными договорными положениями ЕС согласно ст. 46 (2)(c) GDPR. Правовое основание обработки — ст. 6 (1)(b) и (f) GDPR (оперативная обработка входящих обращений).",
+      ],
+    },
+    {
+      title: "7. Статистика посещений без cookies (first-party)",
+      paragraphs: [
+        "Мы собираем анонимную статистику использования с помощью собственного, дружелюбного к приватности решения — без третьих сторон, без cookies и без сохранения или чтения информации на вашем устройстве. Доступ в смысле § 25 TDDDG не осуществляется, поэтому согласие не требуется.",
+        "Фиксируются: открытая страница, языковая версия, referrer (ссылающаяся страница) и технический идентификатор посетителя. Этот идентификатор формируется на сервере как односторонний хеш (SHA-256) из текущей даты, IP-адреса, user-agent браузера и секретного случайного значения (salt). Сам IP-адрес не сохраняется; хеш меняется ежедневно и не позволяет ни идентифицировать человека, ни отслеживать его на других сайтах. Запросы известных ботов отбрасываются.",
+        "Цель — статистическая оценка использования сайта (например, какие страницы открываются и как часто). Правовое основание — наш законный интерес в анализе и улучшении нашего предложения (ст. 6 (1)(f) GDPR).",
+      ],
+    },
+    {
+      title: "8. Cookies",
+      paragraphs: [
+        "Этот сайт не использует cookies для аналитики, трекинга или рекламы.",
+        "Технически необходимые cookies могут устанавливаться в двух случаях: для сохранения выбранного языка (при переключении языка сайта) и для входа авторизованных администраторов во внутреннюю панель управления. Эти cookies строго необходимы для запрошенной функции (§ 25 (2) № 2 TDDDG); правовое основание связанной с ними обработки — ст. 6 (1)(f) GDPR.",
+      ],
+    },
+    {
+      title: "9. SSL/TLS-шифрование",
+      paragraphs: [
+        "В целях безопасности и для защиты передачи конфиденциального содержимого, например обращений через контактную форму, сайт использует SSL/TLS-шифрование. Зашифрованное соединение можно узнать по префиксу «https://» и значку замка в адресной строке браузера.",
+      ],
+    },
+    {
+      title: "10. Ваши права",
+      paragraphs: ["В отношении ваших персональных данных вам принадлежат следующие права:"],
+      list: [
+        "Право на доступ к обрабатываемым данным (ст. 15 GDPR)",
+        "Право на исправление неверных данных (ст. 16 GDPR)",
+        "Право на удаление (ст. 17 GDPR)",
+        "Право на ограничение обработки (ст. 18 GDPR)",
+        "Право на переносимость данных (ст. 20 GDPR)",
+        "Право на возражение против обработки на основании ст. 6 (1)(f) GDPR (ст. 21 GDPR)",
+        "Право на отзыв данного согласия с действием на будущее (ст. 7 (3) GDPR)",
+      ],
+      paragraphsAfter: [
+        `Для реализации своих прав достаточно сообщения в свободной форме на адрес: ${LEGAL_PROVIDER.email}`,
+        "Кроме того, вы имеете право подать жалобу в надзорный орган по защите данных (ст. 77 GDPR). Компетентный для нас орган — Уполномоченный по защите данных земли Саксония-Анхальт (Landesbeauftragter für den Datenschutz Sachsen-Anhalt), Otto-von-Guericke-Str. 34a, 39104 Магдебург, Германия.",
+      ],
+    },
+    {
+      title: "11. Срок хранения, обязанность предоставления данных, автоматизированные решения",
+      paragraphs: [
+        "Если в этой политике не указан более конкретный срок хранения, персональные данные остаются у нас до тех пор, пока не отпадёт цель обработки или вы не воспользуетесь правом на удаление или возражение — с учётом законных сроков хранения (в частности, по торговому и налоговому праву).",
+        "Предоставление персональных данных не является ни законодательной, ни договорной обязанностью; однако без контактных данных мы не сможем ответить на обращение. Автоматизированное принятие решений, включая профилирование в смысле ст. 22 GDPR, не осуществляется.",
+      ],
+    },
+    {
+      title: "12. Актуальность и изменение этой политики",
+      paragraphs: [
+        "Мы оставляем за собой право адаптировать эту политику при изменении правовой ситуации, сайта или используемых сервисов. Действует версия, опубликованная на этой странице в соответствующий момент.",
+      ],
+    },
+  ],
+};
+
+export const DATENSCHUTZ_CONTENT: Record<AppLocale, LegalPageContent> = {
+  de: datenschutzDe,
+  en: datenschutzEn,
+  ru: datenschutzRu,
+};

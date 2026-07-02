@@ -43,6 +43,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     entries.push(entry(routing.defaultLocale, getPathname({ locale: routing.defaultLocale, href }), languages, href === "/" ? 1 : 0.7, "weekly"));
   }
 
+  // Legal pages
+  for (const href of ["/impressum", "/datenschutz"] as const) {
+    const languages = Object.fromEntries(
+      routing.locales.map((l) => [l, abs(getPathname({ locale: l, href }))]),
+    );
+    entries.push(entry(routing.defaultLocale, getPathname({ locale: routing.defaultLocale, href }), languages, 0.2, "yearly"));
+  }
+
   // Local landing pages
   for (const city of cities) {
     const languages = Object.fromEntries(

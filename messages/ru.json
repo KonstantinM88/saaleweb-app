@@ -477,7 +477,9 @@
     "locations": "Локации",
     "company": "Компания",
     "contact": "Контакты",
-    "legal": "Импрессум · Конфиденциальность · Сделано в Галле"
+    "imprint": "Impressum",
+    "privacy": "Конфиденциальность",
+    "madeIn": "Сделано в Галле"
   },
   "CaseStudies": {
     "eyebrow": "Кейсы",

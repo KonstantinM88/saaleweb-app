@@ -9,6 +9,8 @@ export type PricingPlanView = {
   price: string;
   features: string[];
   featured: boolean;
+  examplesTitle?: string;
+  examples?: string[];
 };
 
 export function PricingPlans({
@@ -31,10 +33,11 @@ export function PricingPlans({
     >
       {plans.map((pkg, i) => {
         const featured = pkg.featured;
+        const isQuotePrice = !/\d/.test(pkg.price);
         const card = (
           <div
             className={cn(
-              "relative flex h-full flex-col rounded-[22px] p-8 transition-all duration-300",
+              "relative flex h-full min-w-0 flex-col rounded-[22px] p-6 transition-all duration-300 sm:p-8",
               featured
                 ? "bg-dark text-white"
                 : "card-border-glow border border-line bg-white hover:-translate-y-1.5 hover:shadow-lift",
@@ -58,7 +61,17 @@ export function PricingPlans({
                 {pkg.sub}
               </div>
             )}
-            <div className="mt-5 text-[40px] font-extrabold tracking-tight">{pkg.price}</div>
+            <div
+              className={cn(
+                "mt-5 max-w-full font-extrabold tracking-tight",
+                isQuotePrice
+                  ? "rounded-2xl border border-brand-purple/[0.14] bg-brand-soft px-4 py-3 text-[clamp(16px,4vw,20px)] leading-snug text-dark shadow-sm [overflow-wrap:anywhere] [text-wrap:balance] hyphens-auto"
+                  : "text-[clamp(34px,8vw,40px)] leading-none",
+                featured && isQuotePrice && "border-white/[0.14] bg-white/[0.08] text-white",
+              )}
+            >
+              <span className="block min-w-0 max-w-full">{pkg.price}</span>
+            </div>
 
             <ul className="my-5 flex-1 space-y-3">
               {pkg.features.map((f, fi) => (
@@ -68,6 +81,43 @@ export function PricingPlans({
                 </li>
               ))}
             </ul>
+
+            {pkg.examples?.length ? (
+              <div
+                className={cn(
+                  "mb-5 rounded-2xl border p-3.5",
+                  featured
+                    ? "border-white/[0.14] bg-white/[0.08]"
+                    : "border-brand-purple/[0.14] bg-brand-soft",
+                )}
+              >
+                {pkg.examplesTitle && (
+                  <p
+                    className={cn(
+                      "text-[12px] font-extrabold uppercase tracking-[0.14em]",
+                      featured ? "text-brand-pink" : "text-brand-purple",
+                    )}
+                  >
+                    {pkg.examplesTitle}
+                  </p>
+                )}
+                <div className="mt-2 flex flex-wrap gap-2">
+                  {pkg.examples.map((item) => (
+                    <span
+                      key={item}
+                      className={cn(
+                        "rounded-full border px-2.5 py-1 text-[12px] font-bold leading-tight",
+                        featured
+                          ? "border-white/[0.14] bg-white/[0.08] text-gray-100"
+                          : "border-white bg-white/[0.85] text-dark shadow-sm",
+                      )}
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ) : null}
 
             <Button
               href={contactHref}

@@ -99,37 +99,45 @@ export async function PerformanceProof() {
         </div>
 
         <Reveal delay={120} className="mt-8">
-          <div className="rounded-[28px] border border-line bg-white/[0.88] p-6 shadow-[0_28px_80px_-56px_rgba(15,23,42,0.5)] backdrop-blur md:p-8">
-            <div className="grid gap-7 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-              <div>
+          <div className="rounded-[28px] border border-line bg-white/[0.9] p-6 shadow-[0_28px_80px_-56px_rgba(15,23,42,0.5)] backdrop-blur md:p-8 xl:p-9">
+            <div className="grid gap-8 lg:grid-cols-[0.66fr_1.34fr] lg:items-center xl:grid-cols-[0.6fr_1.4fr] xl:gap-10">
+              <div className="lg:max-w-[390px]">
                 <p className="eyebrow">{t("flow.title")}</p>
-                <h3 className="mt-3 text-2xl font-extrabold tracking-tight text-dark md:text-3xl">
+                <h3 className="mt-3 text-2xl font-extrabold leading-tight tracking-tight text-dark md:text-3xl xl:text-[34px]">
                   {t("flow.heading")}
                 </h3>
-                <p className="mt-3 text-[15.5px] leading-relaxed text-muted">{t("disclaimer")}</p>
+                <p className="mt-4 text-[15.5px] leading-relaxed text-muted lg:text-base">
+                  {t("disclaimer")}
+                </p>
               </div>
 
-              <ol className="grid gap-3 sm:grid-cols-5">
-                {flow.map((item, index) => (
-                  <li
-                    key={item}
-                    className="relative rounded-2xl border border-line bg-surface px-4 py-3 text-sm font-bold text-dark"
-                  >
-                    <span className="mb-2 block font-mono text-[11px] text-brand-purple">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                    {item}
-                    {index < flow.length - 1 && (
-                      <span
-                        aria-hidden
-                        className="absolute -right-3 top-1/2 hidden -translate-y-1/2 text-brand-purple sm:block"
-                      >
-                        →
+              <div className="relative">
+                <div
+                  aria-hidden
+                  className="absolute left-[8%] right-[8%] top-1/2 hidden h-px -translate-y-1/2 bg-gradient-to-r from-brand-pink/[0.35] via-brand-purple/[0.45] to-brand-pink/20 lg:block"
+                />
+                <ol className="relative grid gap-3 sm:grid-cols-2 lg:grid-cols-5 xl:gap-4">
+                  {flow.map((item, index) => (
+                    <li
+                      key={item}
+                      className="group relative z-10 flex min-h-[112px] flex-col justify-between hyphens-auto rounded-[22px] border border-line bg-white/[0.96] px-4 py-4 text-sm font-extrabold leading-snug text-dark shadow-[0_18px_48px_-36px_rgba(15,23,42,0.55)] transition-all duration-300 hover:-translate-y-1 hover:border-brand-purple/30 hover:shadow-[0_24px_64px_-38px_rgba(139,92,246,0.45)] lg:min-h-[124px] xl:min-h-[132px]"
+                    >
+                      <span className="mb-4 inline-flex h-7 w-7 items-center justify-center rounded-full bg-brand-soft font-mono text-[11px] font-black text-brand-purple ring-1 ring-brand-purple/10 transition-colors group-hover:bg-brand group-hover:text-white">
+                        {String(index + 1).padStart(2, "0")}
                       </span>
-                    )}
-                  </li>
-                ))}
-              </ol>
+                      <span className="block">{item}</span>
+                      {index < flow.length - 1 && (
+                        <span
+                          aria-hidden
+                          className="absolute -right-[18px] top-1/2 z-20 hidden h-8 w-8 -translate-y-1/2 place-items-center rounded-full border border-brand-purple/[0.15] bg-white text-brand-purple shadow-[0_12px_30px_-18px_rgba(139,92,246,0.65)] lg:grid"
+                        >
+                          <ArrowRight className="h-3.5 w-3.5" />
+                        </span>
+                      )}
+                    </li>
+                  ))}
+                </ol>
+              </div>
             </div>
 
             <div className="mt-7 flex flex-col gap-3 border-t border-line pt-6 sm:flex-row sm:items-center sm:justify-center">

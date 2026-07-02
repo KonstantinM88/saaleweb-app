@@ -63,7 +63,13 @@ export function Footer() {
           <div>
             &copy; {new Date().getFullYear()} <BrandWord /> &middot; {siteConfig.founder}
           </div>
-          <div>{t("legal")}</div>
+          <div className="flex flex-wrap items-center gap-x-2 gap-y-1 [&>a]:transition-colors [&>a:hover]:text-brand-pink">
+            <Link href="/impressum">{t("imprint")}</Link>
+            <span aria-hidden>&middot;</span>
+            <Link href="/datenschutz">{t("privacy")}</Link>
+            <span aria-hidden>&middot;</span>
+            <span>{t("madeIn")}</span>
+          </div>
         </div>
       </Container>
     </footer>

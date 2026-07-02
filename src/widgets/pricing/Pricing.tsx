@@ -3,6 +3,7 @@ import type { AppLocale } from "@/i18n/routing";
 import { prisma } from "@/lib/prisma";
 import { Container } from "@/shared/ui/Container";
 import { getContactHref } from "@/shared/lib/contactHref";
+import { getPricingLandingCopy } from "./PricingLandingPage";
 import { PricingPlans, type PricingPlanView } from "./PricingPlans";
 
 type StaticPackage = {
@@ -44,7 +45,17 @@ export async function Pricing() {
     featured: index === 1,
   }));
   const dbPlans = await getDbPlans(locale);
-  const plans = dbPlans.length > 0 ? dbPlans : fallback;
+  const landingCopy = getPricingLandingCopy(locale);
+  const individualExamples = landingCopy.packageCopies.individual.examples ?? [];
+  const plans = (dbPlans.length > 0 ? dbPlans : fallback).map((plan, index, allPlans) =>
+    index === allPlans.length - 1
+      ? {
+          ...plan,
+          examplesTitle: landingCopy.packageCopies.individual.examplesTitle,
+          examples: individualExamples,
+        }
+      : plan,
+  );
   const contactHref = getContactHref(locale);
 
   return (

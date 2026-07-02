@@ -477,7 +477,9 @@
     "locations": "Locations",
     "company": "Company",
     "contact": "Contact",
-    "legal": "Imprint · Privacy · Made in Halle"
+    "imprint": "Imprint",
+    "privacy": "Privacy Policy",
+    "madeIn": "Made in Halle"
   },
   "CaseStudies": {
     "eyebrow": "Case studies",
