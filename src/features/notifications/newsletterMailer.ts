@@ -1,7 +1,7 @@
 import "server-only";
 
 import { emailBrandHeader } from "./emailBrand";
-import { sendTransactionalMail } from "./transport";
+import { defaultFromAddress, sendTransactionalMail } from "./transport";
 
 type Locale = "de" | "en" | "ru";
 
@@ -62,7 +62,7 @@ export async function sendNewsletterConfirmation(opts: {
   locale: Locale;
   confirmUrl: string;
 }): Promise<boolean> {
-  const from = process.env.NEWSLETTER_FROM || process.env.RESEND_FROM || process.env.LEAD_NOTIFY_FROM || process.env.SMTP_USER;
+  const from = process.env.NEWSLETTER_FROM || defaultFromAddress();
   if (!from) return false;
 
   const t = texts[opts.locale] ?? texts.de;

@@ -1,20 +1,32 @@
 import { NextResponse } from "next/server";
 import { getSession } from "@/features/auth/session";
-import { sendTransactionalMail } from "@/features/notifications/transport";
+import {
+  configuredMailProvider,
+  defaultFromAddress,
+  normalizeMailProvider,
+  resolveMailProvider,
+  sendTransactionalMail,
+  type MailProvider,
+} from "@/features/notifications/transport";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 type MailDiagnostics = {
+  configuredProvider: MailProvider;
+  requestedProvider?: MailProvider;
   provider: "resend" | "smtp";
   hasResendApiKey: boolean;
   hasResendFrom: boolean;
   hasLeadNotifyFrom: boolean;
+  hasSmtpFrom: boolean;
   hasLeadNotifyTo: boolean;
   hasAdminEmail: boolean;
   hasSmtpHost: boolean;
   hasSmtpUser: boolean;
   hasSmtpPassword: boolean;
+  smtpPort: string;
+  smtpSecure: string;
   hasRecipient: boolean;
   hasFrom: boolean;
 };
@@ -27,25 +39,44 @@ function recipient() {
   return process.env.LEAD_NOTIFY_TO || process.env.ADMIN_EMAIL || process.env.SMTP_USER;
 }
 
-function fromAddress() {
-  return process.env.RESEND_FROM || process.env.LEAD_NOTIFY_FROM || process.env.SMTP_FROM || process.env.SMTP_USER;
+function providerFromUrl(req: Request): MailProvider | undefined {
+  const url = new URL(req.url);
+  return normalizeMailProvider(url.searchParams.get("provider"));
 }
 
-function diagnostics(): MailDiagnostics {
-  const provider = hasEnv("RESEND_API_KEY") ? "resend" : "smtp";
+async function providerFromRequest(req: Request): Promise<MailProvider | undefined> {
+  const urlProvider = providerFromUrl(req);
+  if (urlProvider) return urlProvider;
+
+  const contentType = req.headers.get("content-type") ?? "";
+  if (!contentType.includes("application/json")) return undefined;
+
+  const body = (await req.json().catch(() => null)) as { provider?: unknown } | null;
+  return normalizeMailProvider(body?.provider);
+}
+
+function diagnostics(requestedProvider?: MailProvider): MailDiagnostics {
+  const configuredProvider = configuredMailProvider();
+  const providerInput = requestedProvider ?? configuredProvider;
+  const provider = resolveMailProvider(providerInput);
 
   return {
+    configuredProvider,
+    requestedProvider,
     provider,
     hasResendApiKey: hasEnv("RESEND_API_KEY"),
     hasResendFrom: hasEnv("RESEND_FROM"),
     hasLeadNotifyFrom: hasEnv("LEAD_NOTIFY_FROM"),
+    hasSmtpFrom: hasEnv("SMTP_FROM"),
     hasLeadNotifyTo: hasEnv("LEAD_NOTIFY_TO"),
     hasAdminEmail: hasEnv("ADMIN_EMAIL"),
     hasSmtpHost: hasEnv("SMTP_HOST"),
     hasSmtpUser: hasEnv("SMTP_USER"),
     hasSmtpPassword: hasEnv("SMTP_PASSWORD"),
+    smtpPort: process.env.SMTP_PORT || "465",
+    smtpSecure: process.env.SMTP_SECURE || "",
     hasRecipient: Boolean(recipient()),
-    hasFrom: Boolean(fromAddress()),
+    hasFrom: Boolean(defaultFromAddress(providerInput)),
   };
 }
 
@@ -54,7 +85,7 @@ async function requireAdmin() {
   return Boolean(session);
 }
 
-export async function GET() {
+export async function GET(req: Request) {
   if (!(await requireAdmin())) {
     return NextResponse.json({ ok: false, error: "unauthorized" }, { status: 401 });
   }
@@ -62,18 +93,20 @@ export async function GET() {
   return NextResponse.json(
     {
       ok: true,
-      diagnostics: diagnostics(),
+      diagnostics: diagnostics(providerFromUrl(req)),
     },
     { headers: { "Cache-Control": "no-store" } },
   );
 }
 
-export async function POST() {
+export async function POST(req: Request) {
   if (!(await requireAdmin())) {
     return NextResponse.json({ ok: false, error: "unauthorized" }, { status: 401 });
   }
 
-  const currentDiagnostics = diagnostics();
+  const requestedProvider = await providerFromRequest(req);
+  const providerInput = requestedProvider ?? configuredMailProvider();
+  const currentDiagnostics = diagnostics(requestedProvider);
   const to = recipient();
 
   if (!to) {
@@ -91,7 +124,7 @@ export async function POST() {
 
   const timestamp = new Date().toISOString();
   const sent = await sendTransactionalMail({
-    from: fromAddress(),
+    from: defaultFromAddress(providerInput),
     to,
     subject: `SaaleWeb mail transport test (${currentDiagnostics.provider})`,
     text: [
@@ -108,7 +141,7 @@ export async function POST() {
         <p>If you received this email, the production mail transport can send messages.</p>
       </div>
     `,
-  });
+  }, providerInput);
 
   console.error("[mail-test] Transactional mail test result.", {
     ...currentDiagnostics,
