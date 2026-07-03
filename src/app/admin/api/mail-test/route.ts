@@ -8,6 +8,7 @@ import {
   sendTransactionalMail,
   type MailProvider,
 } from "@/features/notifications/transport";
+import { sendSmtpMailDetailed, type SmtpSendResult } from "@/features/notifications/smtp";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -123,7 +124,7 @@ export async function POST(req: Request) {
   }
 
   const timestamp = new Date().toISOString();
-  const sent = await sendTransactionalMail({
+  const mail = {
     from: defaultFromAddress(providerInput),
     to,
     subject: `SaaleWeb mail transport test (${currentDiagnostics.provider})`,
@@ -141,11 +142,22 @@ export async function POST(req: Request) {
         <p>If you received this email, the production mail transport can send messages.</p>
       </div>
     `,
-  }, providerInput);
+  };
+  let smtpResult: SmtpSendResult | undefined;
+  let sent: boolean;
+
+  if (currentDiagnostics.provider === "smtp") {
+    smtpResult = await sendSmtpMailDetailed(mail);
+    sent = smtpResult.sent;
+  } else {
+    sent = await sendTransactionalMail(mail, providerInput);
+  }
 
   console.error("[mail-test] Transactional mail test result.", {
     ...currentDiagnostics,
     sent,
+    smtpError: smtpResult?.error,
+    smtpMissing: smtpResult?.missing,
   });
 
   return NextResponse.json(
@@ -153,6 +165,7 @@ export async function POST(req: Request) {
       ok: sent,
       sent,
       diagnostics: currentDiagnostics,
+      smtp: smtpResult,
     },
     { status: sent ? 200 : 502, headers: { "Cache-Control": "no-store" } },
   );

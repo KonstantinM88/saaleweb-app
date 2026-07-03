@@ -11,6 +11,19 @@ export type SmtpMail = {
   html?: string;
 };
 
+type SmtpErrorDetails = {
+  code?: string;
+  command?: string;
+  responseCode?: number;
+  message: string;
+};
+
+export type SmtpSendResult = {
+  sent: boolean;
+  missing?: string[];
+  error?: SmtpErrorDetails;
+};
+
 function smtpPort(): number {
   const value = Number(process.env.SMTP_PORT || 465);
   return Number.isFinite(value) && value > 0 ? value : 465;
@@ -26,7 +39,15 @@ function fallbackFrom(): string | undefined {
   return process.env.SMTP_FROM || process.env.SMTP_USER;
 }
 
-function smtpErrorDetails(error: unknown) {
+function redactSensitive(value: string): string {
+  let redacted = value;
+  for (const secret of [process.env.SMTP_PASSWORD, process.env.SMTP_USER]) {
+    if (secret) redacted = redacted.replaceAll(secret, "[redacted]");
+  }
+  return redacted;
+}
+
+function smtpErrorDetails(error: unknown): SmtpErrorDetails {
   if (!(error instanceof Error)) return { message: "Unknown SMTP error" };
   const details = error as Error & {
     code?: string;
@@ -38,30 +59,32 @@ function smtpErrorDetails(error: unknown) {
     code: details.code,
     command: details.command,
     responseCode: details.responseCode,
-    message: details.message,
+    message: redactSensitive(details.message).slice(0, 800),
   };
 }
 
 /**
  * Sends mail through the configured SMTP mailbox.
- * Missing SMTP env values or delivery errors return false and must not break
- * contact/newsletter form submissions.
+ * Missing SMTP env values or delivery errors return a sanitized result and
+ * must not break contact/newsletter form submissions.
  */
-export async function sendSmtpMail(mail: SmtpMail): Promise<boolean> {
+export async function sendSmtpMailDetailed(mail: SmtpMail): Promise<SmtpSendResult> {
   const host = process.env.SMTP_HOST;
   const user = process.env.SMTP_USER;
   const pass = process.env.SMTP_PASSWORD;
   const port = smtpPort();
 
   if (!host || !user || !pass) {
+    const missing = [
+      !host ? "SMTP_HOST" : null,
+      !user ? "SMTP_USER" : null,
+      !pass ? "SMTP_PASSWORD" : null,
+    ].filter(Boolean) as string[];
+
     console.error("[smtp] Mail delivery skipped because SMTP config is incomplete.", {
-      missing: [
-        !host ? "SMTP_HOST" : null,
-        !user ? "SMTP_USER" : null,
-        !pass ? "SMTP_PASSWORD" : null,
-      ].filter(Boolean),
+      missing,
     });
-    return false;
+    return { sent: false, missing };
   }
 
   const transporter = nodemailer.createTransport({
@@ -80,9 +103,15 @@ export async function sendSmtpMail(mail: SmtpMail): Promise<boolean> {
       text: mail.text,
       html: mail.html,
     });
-    return true;
+    return { sent: true };
   } catch (error) {
-    console.error("[smtp] Mail delivery failed.", smtpErrorDetails(error));
-    return false;
+    const details = smtpErrorDetails(error);
+    console.error("[smtp] Mail delivery failed.", details);
+    return { sent: false, error: details };
   }
+}
+
+export async function sendSmtpMail(mail: SmtpMail): Promise<boolean> {
+  const result = await sendSmtpMailDetailed(mail);
+  return result.sent;
 }
