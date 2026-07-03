@@ -161,6 +161,7 @@ Instructions and project memory for coding agents working in this repository.
 - `AUTH_SECRET` signs admin JWT cookies. It must be a random 32+ character secret, not the admin password and not a bcrypt hash.
 - Next.js expands `$` references while loading `.env`; bcrypt hashes in `ADMIN_PASSWORD_HASH` must escape every dollar sign as `\$`, or login will fail because the hash is corrupted at runtime.
 - In production dashboards such as Vercel, prefer pasting only the raw bcrypt value for `ADMIN_PASSWORD_HASH` without quotes and without escaping dollar signs. `login()` normalizes quoted or `\$`-escaped values as a guard, but the raw `$2b$...` value is the clean production format.
+- Production admin login emits sanitized `[auth]` error logs for env/hash/session diagnostics without printing secrets. If Hostinger admin login fails, check whether logs show `emailOk`, `passwordOk`, `hashLooksBcrypt`, and `hasAuthSecret`.
 - Required: `DATABASE_URL`, for example `postgresql://postgres:postgres@localhost:5432/saaleweb?schema=public`.
 - Public site URL: `NEXT_PUBLIC_SITE_URL`, defaulting in code to `https://saaleweb.de`.
 - Self-hosted production on Hostinger should set a stable `NEXT_SERVER_ACTIONS_ENCRYPTION_KEY` at build time. Generate it once with `node -e "console.log(require('crypto').randomBytes(32).toString('base64'))"` and keep the same value across deploys/restarts; otherwise contact/newsletter Server Actions can fail after deployment with `Failed to find Server Action ... This request might be from an older or newer deployment.`
