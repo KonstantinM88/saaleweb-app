@@ -26,6 +26,8 @@ type MailDiagnostics = {
   hasSmtpHost: boolean;
   hasSmtpUser: boolean;
   hasSmtpPassword: boolean;
+  smtpUserHasEdgeWhitespace: boolean;
+  smtpPasswordHasEdgeWhitespace: boolean;
   smtpPort: string;
   smtpSecure: string;
   hasRecipient: boolean;
@@ -74,6 +76,8 @@ function diagnostics(requestedProvider?: MailProvider): MailDiagnostics {
     hasSmtpHost: hasEnv("SMTP_HOST"),
     hasSmtpUser: hasEnv("SMTP_USER"),
     hasSmtpPassword: hasEnv("SMTP_PASSWORD"),
+    smtpUserHasEdgeWhitespace: process.env.SMTP_USER !== process.env.SMTP_USER?.trim(),
+    smtpPasswordHasEdgeWhitespace: process.env.SMTP_PASSWORD !== process.env.SMTP_PASSWORD?.trim(),
     smtpPort: process.env.SMTP_PORT || "465",
     smtpSecure: process.env.SMTP_SECURE || "",
     hasRecipient: Boolean(recipient()),
