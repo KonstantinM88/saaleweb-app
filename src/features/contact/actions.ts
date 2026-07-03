@@ -2,6 +2,7 @@
 
 import { prisma } from "@/lib/prisma";
 import { sendLeadAutoReply, sendLeadNotification } from "@/features/notifications/mailer";
+import { sendLeadTelegramNotification } from "@/features/notifications/telegramReports";
 import { contactSchema } from "./schema";
 
 export type ContactState = {
@@ -64,26 +65,29 @@ export async function submitContact(
         locale: parsed.data.locale,
       },
     });
-    const adminNotificationSent = await sendLeadNotification({
+    const leadNotification = {
       name: parsed.data.name,
       email: parsed.data.email,
       phone: parsed.data.phone || null,
       company: parsed.data.company || null,
+      projectWebsite: parsed.data.projectWebsite || null,
+      projectType: parsed.data.projectType || null,
+      budget: parsed.data.budget || null,
       message,
       locale: parsed.data.locale,
       source: parsed.data.source,
-    });
-    const autoReplySent = await sendLeadAutoReply({
-      name: parsed.data.name,
-      email: parsed.data.email,
-      locale: parsed.data.locale,
-      source: parsed.data.source,
-    });
+    };
+    const [adminNotificationSent, autoReplySent, telegramNotificationSent] = await Promise.all([
+      sendLeadNotification(leadNotification),
+      sendLeadAutoReply(leadNotification),
+      sendLeadTelegramNotification(leadNotification),
+    ]);
     console.info("[contact] Lead processed.", {
       source: parsed.data.source,
       locale: parsed.data.locale,
       adminNotificationSent,
       autoReplySent,
+      telegramNotificationSent,
     });
     return { status: "success" };
   } catch {

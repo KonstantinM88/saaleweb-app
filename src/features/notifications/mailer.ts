@@ -8,6 +8,9 @@ export type LeadNotification = {
   email: string;
   phone?: string | null;
   company?: string | null;
+  projectWebsite?: string | null;
+  projectType?: string | null;
+  budget?: string | null;
   message?: string | null;
   locale?: string | null;
   source?: string | null;
