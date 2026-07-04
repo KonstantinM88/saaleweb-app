@@ -4,6 +4,7 @@ export type TelegramDiagnostics = {
   hasBotToken: boolean;
   hasAdminChatId: boolean;
   adminChatCount: number;
+  hasWebhookSecret: boolean;
 };
 
 type TelegramSendResponse =
@@ -37,12 +38,17 @@ export function telegramDiagnostics(): TelegramDiagnostics {
     hasBotToken: Boolean(configuredBotToken()),
     hasAdminChatId: chatIds.length > 0,
     adminChatCount: chatIds.length,
+    hasWebhookSecret: Boolean(process.env.TELEGRAM_WEBHOOK_SECRET?.trim()),
   };
 }
 
 function truncateTelegramText(text: string): string {
   if (text.length <= TELEGRAM_TEXT_LIMIT) return text;
-  return `${text.slice(0, TELEGRAM_TEXT_LIMIT - 24)}\n\n…gekürzt`;
+  return `${text.slice(0, TELEGRAM_TEXT_LIMIT - 24)}\n\n…сообщение сокращено`;
+}
+
+export function isTelegramAdminChatId(chatId: string | number): boolean {
+  return telegramAdminChatIds().includes(String(chatId));
 }
 
 async function sendTelegramMessage(chatId: string, text: string, token: string): Promise<boolean> {
@@ -74,6 +80,16 @@ async function sendTelegramMessage(chatId: string, text: string, token: string):
     });
     return false;
   }
+}
+
+export async function sendTelegramChatMessage(chatId: string | number, text: string): Promise<boolean> {
+  const token = configuredBotToken();
+  if (!token) {
+    console.warn("[telegram] Chat message skipped because bot token is missing.", telegramDiagnostics());
+    return false;
+  }
+
+  return sendTelegramMessage(String(chatId), text, token);
 }
 
 export async function sendTelegramAdminMessage(text: string): Promise<boolean> {
