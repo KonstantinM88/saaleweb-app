@@ -6,9 +6,10 @@ import {
   defaultFromAddress,
   resolveMailProvider,
 } from "./transport";
-import { telegramDiagnostics } from "./telegram";
+import { sendTelegramAdminMessage, telegramDiagnostics } from "./telegram";
 
 type HealthStatus = "ok" | "warn" | "fail";
+type HealthAlertThreshold = "warn" | "fail";
 
 type HealthCheck = {
   label: string;
@@ -22,6 +23,26 @@ type PublicRouteCheck = {
   httpStatus?: number;
   ms?: number;
 };
+
+type HealthSnapshot = {
+  checkedAt: string;
+  serviceChecks: HealthCheck[];
+  routeChecks: PublicRouteCheck[];
+  failedCount: number;
+  warnCount: number;
+  overall: HealthStatus;
+};
+
+export type HealthAlertResult = {
+  sent: boolean;
+  alertNeeded: boolean;
+  overall: HealthStatus;
+  failedCount: number;
+  warnCount: number;
+  skippedReason?: "healthy" | "cooldown" | "send_failed";
+};
+
+let lastHealthAlert: { key: string; sentAt: number } | undefined;
 
 function siteUrl(): string {
   return (process.env.NEXT_PUBLIC_SITE_URL || "https://saaleweb.de").replace(/\/+$/, "");
@@ -37,6 +58,12 @@ function statusLabel(status: HealthStatus): string {
   if (status === "ok") return "OK";
   if (status === "warn") return "Внимание";
   return "Проблема";
+}
+
+function statusRank(status: HealthStatus): number {
+  if (status === "fail") return 2;
+  if (status === "warn") return 1;
+  return 0;
 }
 
 function hasEnv(name: string): boolean {
@@ -159,12 +186,16 @@ async function loadCounters(): Promise<HealthCheck[]> {
   }
 }
 
-export async function buildHealthReport(): Promise<string> {
-  const checkedAt = new Intl.DateTimeFormat("ru-RU", {
+function formatCheckedAt(date = new Date()): string {
+  return new Intl.DateTimeFormat("ru-RU", {
     timeZone: process.env.TELEGRAM_REPORT_TIMEZONE || "Europe/Berlin",
     dateStyle: "short",
     timeStyle: "medium",
-  }).format(new Date());
+  }).format(date);
+}
+
+async function buildHealthSnapshot(): Promise<HealthSnapshot> {
+  const checkedAt = formatCheckedAt();
   const routeChecks = await Promise.all([
     checkPublicRoute("/"),
     checkPublicRoute("/kontakt"),
@@ -185,17 +216,28 @@ export async function buildHealthReport(): Promise<string> {
     routeChecks.filter((check) => check.status === "warn").length;
   const overall: HealthStatus = failedCount > 0 ? "fail" : warnCount > 0 ? "warn" : "ok";
 
+  return {
+    checkedAt,
+    serviceChecks,
+    routeChecks,
+    failedCount,
+    warnCount,
+    overall,
+  };
+}
+
+function formatFullHealthReport(snapshot: HealthSnapshot): string {
   return [
-    `${icon(overall)} SaaleWeb — Health Check`,
+    `${icon(snapshot.overall)} SaaleWeb — Health Check`,
     "",
-    `🕘 Проверка: ${checkedAt}`,
-    `📌 Статус: ${statusLabel(overall)}`,
+    `🕘 Проверка: ${snapshot.checkedAt}`,
+    `📌 Статус: ${statusLabel(snapshot.overall)}`,
     "",
     "🧩 Сервисы",
-    ...serviceChecks.map((check) => `${icon(check.status)} ${check.label}: ${check.detail}`),
+    ...snapshot.serviceChecks.map((check) => `${icon(check.status)} ${check.label}: ${check.detail}`),
     "",
     "🌍 Публичные URL",
-    ...routeChecks.map((check) => {
+    ...snapshot.routeChecks.map((check) => {
       const status = check.httpStatus ? `${check.httpStatus}` : "нет ответа";
       const timing = typeof check.ms === "number" ? `, ${check.ms} мс` : "";
       return `${icon(check.status)} ${check.path}: ${status}${timing}`;
@@ -203,4 +245,122 @@ export async function buildHealthReport(): Promise<string> {
     "",
     `⚙️ Админка: ${siteUrl()}/admin`,
   ].join("\n");
+}
+
+function alertCooldownMs(overrideMinutes?: number): number {
+  const minutes = overrideMinutes ?? Number(process.env.TELEGRAM_HEALTH_ALERT_COOLDOWN_MINUTES || 60);
+  if (!Number.isFinite(minutes) || minutes < 0) return 60 * 60 * 1000;
+  return minutes * 60 * 1000;
+}
+
+function healthAlertKey(snapshot: HealthSnapshot, threshold: HealthAlertThreshold): string {
+  const minimumRank = statusRank(threshold);
+  const serviceIssues = snapshot.serviceChecks
+    .filter((check) => statusRank(check.status) >= minimumRank)
+    .map((check) => `${check.status}:${check.label}:${check.detail}`);
+  const routeIssues = snapshot.routeChecks
+    .filter((check) => statusRank(check.status) >= minimumRank)
+    .map((check) => `${check.status}:${check.path}:${check.httpStatus || "no-response"}`);
+
+  return [...serviceIssues, ...routeIssues].join("|") || snapshot.overall;
+}
+
+function formatHealthAlert(snapshot: HealthSnapshot, threshold: HealthAlertThreshold): string {
+  const minimumRank = statusRank(threshold);
+  const serviceIssues = snapshot.serviceChecks.filter((check) => statusRank(check.status) >= minimumRank);
+  const routeIssues = snapshot.routeChecks.filter((check) => statusRank(check.status) >= minimumRank);
+  const title =
+    snapshot.overall === "fail"
+      ? "🚨 SaaleWeb — проблема мониторинга"
+      : snapshot.overall === "warn"
+        ? "⚠️ SaaleWeb — предупреждение мониторинга"
+        : "✅ SaaleWeb — сайт работает";
+
+  const serviceLines =
+    serviceIssues.length > 0
+      ? serviceIssues.map((check) => `${icon(check.status)} ${check.label}: ${check.detail}`)
+      : ["✅ Критических проблем в сервисах нет."];
+  const routeLines =
+    routeIssues.length > 0
+      ? routeIssues.map((check) => {
+          const status = check.httpStatus ? `${check.httpStatus}` : "нет ответа";
+          const timing = typeof check.ms === "number" ? `, ${check.ms} мс` : "";
+          return `${icon(check.status)} ${check.path}: ${status}${timing}`;
+        })
+      : ["✅ Критических проблем в публичных URL нет."];
+
+  return [
+    title,
+    "",
+    `🕘 Проверка: ${snapshot.checkedAt}`,
+    `📌 Общий статус: ${statusLabel(snapshot.overall)}`,
+    `🚨 Ошибки: ${snapshot.failedCount}`,
+    `⚠️ Предупреждения: ${snapshot.warnCount}`,
+    "",
+    "🧩 Сервисы",
+    ...serviceLines,
+    "",
+    "🌍 Публичные URL",
+    ...routeLines,
+    "",
+    "📌 Что делать",
+    "• Если упал публичный URL — проверить последний деплой и логи Hostinger.",
+    "• Если проблема в БД — проверить DATABASE_URL и доступность PostgreSQL.",
+    "• Если проблема в почте — проверить Resend/SMTP переменные и тест в админке.",
+    "",
+    `⚙️ Health: ${siteUrl()}/admin`,
+  ].join("\n");
+}
+
+export async function buildHealthReport(): Promise<string> {
+  return formatFullHealthReport(await buildHealthSnapshot());
+}
+
+export async function sendHealthAlertReport(options: {
+  threshold?: HealthAlertThreshold;
+  force?: boolean;
+  cooldownMinutes?: number;
+} = {}): Promise<HealthAlertResult> {
+  const threshold = options.threshold || "fail";
+  const snapshot = await buildHealthSnapshot();
+  const alertNeeded = options.force || statusRank(snapshot.overall) >= statusRank(threshold);
+
+  if (!alertNeeded) {
+    return {
+      sent: false,
+      alertNeeded: false,
+      overall: snapshot.overall,
+      failedCount: snapshot.failedCount,
+      warnCount: snapshot.warnCount,
+      skippedReason: "healthy",
+    };
+  }
+
+  const key = healthAlertKey(snapshot, threshold);
+  const cooldownMs = alertCooldownMs(options.cooldownMinutes);
+  const now = Date.now();
+  if (!options.force && cooldownMs > 0 && lastHealthAlert?.key === key && now - lastHealthAlert.sentAt < cooldownMs) {
+    return {
+      sent: false,
+      alertNeeded: true,
+      overall: snapshot.overall,
+      failedCount: snapshot.failedCount,
+      warnCount: snapshot.warnCount,
+      skippedReason: "cooldown",
+    };
+  }
+
+  const sent = await sendTelegramAdminMessage(formatHealthAlert(snapshot, threshold));
+  if (sent) {
+    lastHealthAlert = { key, sentAt: now };
+  }
+
+  return {
+    sent,
+    alertNeeded: true,
+    overall: snapshot.overall,
+    failedCount: snapshot.failedCount,
+    warnCount: snapshot.warnCount,
+    skippedReason: sent ? undefined : "send_failed",
+  };
 }
