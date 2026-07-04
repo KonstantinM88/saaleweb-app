@@ -95,6 +95,7 @@ export function AiAssistantWidget({
     () => withPrefilledMessage(siteConfig.phone.whatsappUrl, labels.whatsappPrefill),
     [labels.whatsappPrefill],
   );
+  const showQuickPrompts = messages.length === 1 && !loading;
 
   useEffect(() => {
     const timer = window.setTimeout(() => setMounted(true), APPEAR_DELAY_MS);
@@ -160,35 +161,35 @@ export function AiAssistantWidget({
 
   return (
     <div
-      className={`pointer-events-none fixed bottom-[calc(0.5rem+env(safe-area-inset-bottom))] left-2 right-2 flex max-w-none flex-col items-stretch sm:bottom-[calc(0.75rem+env(safe-area-inset-bottom))] sm:left-auto sm:right-5 sm:max-w-[calc(100vw-2rem)] sm:items-end md:bottom-[calc(1.25rem+env(safe-area-inset-bottom))] md:right-7 ${
+      className={`pointer-events-none fixed bottom-[calc(0.25rem+env(safe-area-inset-bottom))] left-1 right-1 flex max-w-none flex-col items-stretch sm:bottom-[calc(0.75rem+env(safe-area-inset-bottom))] sm:left-auto sm:right-5 sm:max-w-[calc(100vw-2rem)] sm:items-end md:bottom-[calc(1.25rem+env(safe-area-inset-bottom))] md:right-7 ${
         open ? "z-[80]" : "z-40"
       }`}
       aria-live="polite"
     >
       <div
-        className={`pointer-events-auto mb-0 flex h-[calc(100dvh-5rem)] max-h-[760px] min-h-[520px] w-full flex-col overflow-hidden rounded-[26px] border border-white/75 bg-white/[0.96] shadow-[0_34px_100px_-42px_rgba(17,24,39,0.72)] backdrop-blur-2xl transition duration-300 motion-reduce:transition-none max-[380px]:h-[calc(100dvh-4.25rem)] max-[380px]:min-h-[480px] sm:h-[min(680px,calc(100dvh-1.5rem))] sm:w-[min(500px,calc(100vw-2rem))] sm:rounded-[30px] lg:h-[min(720px,calc(100dvh-2rem))] xl:w-[min(560px,calc(100vw-2rem))] ${
+        className={`pointer-events-auto mb-0 flex h-[calc(100dvh-1.5rem)] max-h-[760px] min-h-0 w-full flex-col overflow-hidden rounded-[22px] border border-white/75 bg-white/[0.96] shadow-[0_34px_100px_-42px_rgba(17,24,39,0.72)] backdrop-blur-2xl transition duration-300 motion-reduce:transition-none max-[380px]:h-[calc(100dvh-1rem)] sm:h-[min(680px,calc(100dvh-1.5rem))] sm:w-[min(500px,calc(100vw-2rem))] sm:rounded-[30px] sm:min-h-[520px] lg:h-[min(720px,calc(100dvh-2rem))] xl:w-[min(560px,calc(100vw-2rem))] ${
           open
             ? "visible translate-y-0 scale-100 opacity-100"
             : "invisible pointer-events-none translate-y-3 scale-95 opacity-0"
         }`}
         aria-hidden={!open}
       >
-        <div className="relative shrink-0 overflow-hidden bg-dark px-5 py-4 text-white sm:px-5">
-          <div className="absolute -right-8 -top-10 h-28 w-28 rounded-full bg-brand-pink/40 blur-2xl" />
-          <div className="absolute -bottom-12 left-12 h-28 w-28 rounded-full bg-brand-purple/40 blur-2xl" />
-          <div className="relative flex items-start justify-between gap-4">
-            <div>
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-white/80 [&>svg]:h-3.5 [&>svg]:w-3.5">
+        <div className="relative shrink-0 overflow-hidden bg-dark px-4 py-2 text-white sm:px-5 sm:py-3">
+          <div className="absolute -right-8 -top-12 h-24 w-24 rounded-full bg-brand-pink/40 blur-2xl" />
+          <div className="absolute -bottom-14 left-12 h-24 w-24 rounded-full bg-brand-purple/40 blur-2xl" />
+          <div className="relative flex items-start justify-between gap-3">
+            <div className="min-w-0 pr-1">
+              <span className="inline-flex items-center gap-1 rounded-full bg-white/10 px-2 py-0.5 text-[8.5px] font-bold uppercase tracking-[0.13em] text-white/80 [&>svg]:h-3 [&>svg]:w-3 sm:gap-1.5 sm:px-3 sm:py-1 sm:text-[10px] sm:[&>svg]:h-3.5 sm:[&>svg]:w-3.5">
                 <SparkIcon />
                 {labels.badge}
               </span>
-              <h2 className="mt-3 text-[clamp(22px,6vw,28px)] font-black leading-tight sm:text-lg">{labels.title}</h2>
-              <p className="mt-2 max-w-[34rem] text-[14px] leading-6 text-white/[0.76] sm:text-xs sm:leading-5">{labels.subtitle}</p>
+              <h2 className="mt-1 text-[17px] font-black leading-tight sm:mt-2 sm:text-lg">{labels.title}</h2>
+              <p className="mt-1 hidden max-w-[34rem] text-xs leading-5 text-white/[0.74] sm:block">{labels.subtitle}</p>
             </div>
             <button
               type="button"
               onClick={() => setOpen(false)}
-              className="rounded-full border border-white/15 bg-white/10 px-3 py-1.5 text-xs font-bold text-white/80 transition hover:bg-white/15 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              className="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-white/15 bg-white/10 text-xs font-bold text-white/80 transition hover:bg-white/15 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:h-auto sm:w-auto sm:px-3 sm:py-1.5"
               aria-label={labels.close}
             >
               <span aria-hidden>{"\u00d7"}</span>
@@ -198,7 +199,7 @@ export function AiAssistantWidget({
 
         <div
           ref={scrollRef}
-          className="min-h-0 flex-1 space-y-3 overflow-y-auto bg-gradient-to-b from-white via-white to-surface/70 px-3.5 py-4 sm:px-5"
+          className="min-h-0 flex-1 space-y-2.5 overflow-y-auto bg-gradient-to-b from-white via-white to-surface/70 px-3 py-2.5 sm:space-y-3 sm:px-5 sm:py-4"
         >
           {messages.map((message, index) => (
             <div
@@ -206,7 +207,7 @@ export function AiAssistantWidget({
               className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}
             >
               <div
-                className={`whitespace-pre-line rounded-2xl px-4 py-3.5 text-[16px] leading-8 shadow-sm sm:text-[15px] sm:leading-7 ${
+                className={`whitespace-pre-line rounded-2xl px-3.5 py-3 text-[15px] leading-7 shadow-sm sm:px-4 sm:py-3.5 sm:text-[15px] sm:leading-7 ${
                   message.role === "user"
                     ? "max-w-[90%] bg-gradient-to-r from-brand-pink to-brand-purple text-white shadow-[0_14px_28px_-18px_rgba(139,92,246,0.8)] sm:max-w-[82%]"
                     : "w-full border border-line bg-white text-slate-700 sm:max-w-[94%]"
@@ -224,20 +225,22 @@ export function AiAssistantWidget({
           ) : null}
         </div>
 
-        <div className="shrink-0 border-t border-line bg-white px-3.5 py-3.5 sm:px-5 sm:py-3">
-          <div className="mb-3 grid gap-1.5 sm:grid-cols-3">
-            {labels.quickPrompts.slice(0, 3).map((prompt) => (
-              <button
-                key={prompt}
-                type="button"
-                onClick={() => sendMessage(prompt)}
-                disabled={loading}
-                className="rounded-xl border border-line bg-surface px-3 py-2 text-left text-[12px] font-bold leading-snug text-slate-600 transition hover:border-brand-purple/40 hover:bg-white hover:text-brand-purple disabled:cursor-not-allowed disabled:opacity-50 sm:px-2.5 sm:py-1.5 sm:text-[11px]"
-              >
-                {prompt}
-              </button>
-            ))}
-          </div>
+        <div className="shrink-0 border-t border-line bg-white px-3 py-2 sm:px-5 sm:py-3">
+          {showQuickPrompts ? (
+            <div className="mb-1.5 flex gap-1.5 overflow-x-auto pb-1 sm:mb-3 sm:grid sm:grid-cols-3 sm:overflow-visible sm:pb-0">
+              {labels.quickPrompts.slice(0, 3).map((prompt) => (
+                <button
+                  key={prompt}
+                  type="button"
+                  onClick={() => sendMessage(prompt)}
+                  disabled={loading}
+                  className="max-w-[82vw] shrink-0 rounded-xl border border-line bg-surface px-2.5 py-1 text-left text-[10.5px] font-bold leading-snug text-slate-600 transition hover:border-brand-purple/40 hover:bg-white hover:text-brand-purple disabled:cursor-not-allowed disabled:opacity-50 sm:max-w-none sm:px-2.5 sm:py-1.5 sm:text-[11px]"
+                >
+                  {prompt}
+                </button>
+              ))}
+            </div>
+          ) : null}
 
           <form
             onSubmit={(event) => {
@@ -254,14 +257,14 @@ export function AiAssistantWidget({
               value={input}
               onChange={(event) => setInput(event.target.value)}
               placeholder={labels.placeholder}
-              rows={2}
+              rows={1}
               maxLength={1200}
-              className="min-h-[60px] flex-1 resize-none rounded-2xl border border-line bg-white px-4 py-3 text-[16px] leading-6 text-dark outline-none transition placeholder:text-muted/70 focus:border-brand-purple/60 focus:ring-4 focus:ring-brand-purple/10 sm:min-h-[52px] sm:text-sm"
+              className="min-h-[48px] flex-1 resize-none rounded-2xl border border-line bg-white px-4 py-3 text-[16px] leading-6 text-dark outline-none transition placeholder:text-muted/70 focus:border-brand-purple/60 focus:ring-4 focus:ring-brand-purple/10 sm:min-h-[52px] sm:text-sm"
             />
             <button
               type="submit"
               disabled={loading || input.trim().length === 0}
-              className="grid h-[60px] w-[60px] shrink-0 place-items-center rounded-2xl bg-gradient-to-r from-brand-pink to-brand-purple text-lg font-black text-white shadow-[0_18px_38px_-20px_rgba(139,92,246,0.9)] transition hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-50 sm:h-[52px] sm:w-[52px]"
+              className="grid h-[48px] w-[48px] shrink-0 place-items-center rounded-2xl bg-gradient-to-r from-brand-pink to-brand-purple text-lg font-black text-white shadow-[0_18px_38px_-20px_rgba(139,92,246,0.9)] transition hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-50 sm:h-[52px] sm:w-[52px]"
               aria-label={labels.send}
             >
               <span aria-hidden>{"\u2192"}</span>
@@ -270,10 +273,10 @@ export function AiAssistantWidget({
 
           {error ? <p className="mt-2 text-xs font-semibold text-rose-600">{error}</p> : null}
 
-          <div className="mt-3 flex flex-wrap gap-2">
+          <div className="mt-1.5 flex flex-wrap gap-1.5 sm:mt-2 sm:gap-2">
             <a
               href={contactHref}
-              className="rounded-full bg-dark px-3.5 py-2 text-xs font-extrabold text-white transition hover:-translate-y-0.5"
+              className="rounded-full bg-dark px-3 py-1.5 text-[11px] font-extrabold text-white transition hover:-translate-y-0.5 sm:px-3.5 sm:py-2 sm:text-xs"
             >
               {labels.contact}
             </a>
@@ -281,13 +284,13 @@ export function AiAssistantWidget({
               href={whatsappHref}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-1.5 rounded-full border border-[#25D366]/25 bg-[#25D366]/10 px-3.5 py-2 text-xs font-extrabold text-[#128C7E] transition hover:-translate-y-0.5"
+              className="inline-flex items-center gap-1.5 rounded-full border border-[#25D366]/25 bg-[#25D366]/10 px-3 py-1.5 text-[11px] font-extrabold text-[#128C7E] transition hover:-translate-y-0.5 sm:px-3.5 sm:py-2 sm:text-xs"
             >
               <WhatsAppIcon />
               {labels.whatsapp}
             </a>
           </div>
-          <p className="mt-3 text-[11px] leading-relaxed text-slate-500">{labels.privacy}</p>
+          <p className="mt-1.5 max-h-[1.3em] overflow-hidden text-[10px] leading-snug text-slate-500 sm:mt-3 sm:max-h-none sm:text-[11px] sm:leading-relaxed">{labels.privacy}</p>
         </div>
       </div>
 
