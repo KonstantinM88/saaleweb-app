@@ -371,6 +371,19 @@ model PageView {
   @@index([visitorHash])
 }
 
+model AiBotVisit {
+  id        String   @id @default(cuid())
+  bot       String
+  path      String
+  referrer  String?
+  userAgent String?
+  createdAt DateTime @default(now())
+
+  @@index([createdAt])
+  @@index([bot])
+  @@index([path])
+}
+
 model Media {
   id        String   @id @default(cuid())
   url       String
