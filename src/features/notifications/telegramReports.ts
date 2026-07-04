@@ -357,6 +357,108 @@ export async function buildWeeklySiteReport(now = new Date()): Promise<string> {
   ].join("\n");
 }
 
+async function loadAiRecentVisits(from: Date, to: Date) {
+  try {
+    return await prisma.aiBotVisit.findMany({
+      where: { createdAt: { gte: from, lt: to } },
+      orderBy: { createdAt: "desc" },
+      take: 6,
+      select: {
+        bot: true,
+        path: true,
+        createdAt: true,
+      },
+    });
+  } catch (error) {
+    console.warn("[telegram-report] AI recent visits query skipped.", {
+      message: error instanceof Error ? error.message : "Unknown AI recent visits error",
+    });
+    return [];
+  }
+}
+
+function aiInterpretation(ai24h: AiTrafficSummary, ai7d: AiTrafficSummary): string[] {
+  const lines: string[] = [];
+
+  if (ai24h.botTrackingUnavailable || ai7d.botTrackingUnavailable) {
+    return ["• Мониторинг AI-ботов пока недоступен: проверь таблицу AiBotVisit в БД."];
+  }
+
+  if (ai7d.botTotal === 0 && ai7d.referralTotal === 0) {
+    lines.push("• За 7 дней AI-краулеры и переходы из AI-ассистентов не зафиксированы.");
+    lines.push("• Это нормально для молодого AI-мониторинга: данные появятся после реальных обходов сайта.");
+    return lines;
+  }
+
+  if (ai7d.botTotal > 0) {
+    lines.push("• AI-системы уже видят сайт: важно держать llms.txt, sitemap, FAQ и структурированные страницы в порядке.");
+  }
+
+  if (ai7d.referralTotal > 0) {
+    lines.push("• Есть переходы из AI-ассистентов: стоит усилить страницы, которые они уже приводят.");
+  } else {
+    lines.push("• Переходов из AI-ассистентов пока нет: сейчас видимость больше на уровне краулинга, не кликов.");
+  }
+
+  return lines;
+}
+
+export async function buildAiSearchReport(now = new Date()): Promise<string> {
+  const to = now;
+  const from24h = new Date(to.getTime() - MS_IN_DAY);
+  const previous24hFrom = new Date(from24h.getTime() - MS_IN_DAY);
+  const from7d = new Date(to.getTime() - MS_IN_WEEK);
+  const previous7dFrom = new Date(from7d.getTime() - MS_IN_WEEK);
+
+  const [ai24h, ai7d, recentVisits] = await Promise.all([
+    loadAiTraffic(from24h, to, previous24hFrom, from24h),
+    loadAiTraffic(from7d, to, previous7dFrom, from7d),
+    loadAiRecentVisits(from7d, to),
+  ]);
+
+  const recentLines =
+    recentVisits.length > 0
+      ? recentVisits.map(
+          (visit, index) =>
+            `${index + 1}. ${visit.bot} — ${visit.path || "/"} (${formatDateTime(visit.createdAt)})`,
+        )
+      : ["• За 7 дней последних AI-визитов нет."];
+  const ai24hDelta = formatDelta(ai24h.botTotal - ai24h.previousBotTotal);
+  const ai7dDelta = formatDelta(ai7d.botTotal - ai7d.previousBotTotal);
+
+  return [
+    "🤖 SaaleWeb — AI-отчёт",
+    "",
+    `🕘 24 часа: ${formatDateTime(from24h)} — ${formatDateTime(to)}`,
+    `🗓 7 дней: ${formatDateTime(from7d)} — ${formatDateTime(to)}`,
+    "",
+    "📡 AI-краулеры",
+    `• За 24 часа: ${ai24h.botTotal} (${ai24hDelta})`,
+    ...topCountLines(ai24h.botCounts, "AI-боты за 24 часа не замечены."),
+    "",
+    `• За 7 дней: ${ai7d.botTotal} (${ai7dDelta})`,
+    ...topCountLines(ai7d.botCounts, "AI-боты за 7 дней не замечены."),
+    "",
+    "🧭 Страницы, которые смотрели AI-боты",
+    ...topCountLines(ai7d.botPaths, "Пока нет данных по страницам."),
+    "",
+    "🔗 Переходы из AI-ассистентов",
+    `• За 24 часа: ${ai24h.referralTotal}`,
+    ...topCountLines(ai24h.referralCounts, "Переходов из AI-ассистентов за 24 часа не было."),
+    "",
+    `• За 7 дней: ${ai7d.referralTotal}`,
+    ...topCountLines(ai7d.referralCounts, "Переходов из AI-ассистентов за 7 дней не было."),
+    "",
+    "🧾 Последние AI-визиты",
+    ...recentLines,
+    "",
+    "📌 Вывод",
+    ...aiInterpretation(ai24h, ai7d),
+    "",
+    `⚙️ Админка: ${siteUrl()}/admin`,
+  ].join("\n");
+}
+
 export async function sendDailySiteReport(): Promise<boolean> {
   const report = await buildDailySiteReport();
   return sendTelegramAdminMessage(report);
