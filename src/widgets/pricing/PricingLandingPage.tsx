@@ -1069,17 +1069,36 @@ export function PricingLandingPage({
                       </div>
                     </div>
                     <div className="mt-5 grid gap-3">
-                      {packageOrder.map((key) => (
-                        <div key={key} className="flex items-center justify-between gap-4 rounded-2xl bg-surface px-4 py-3">
-                          <div>
-                            <p className="text-[13px] font-extrabold text-dark">{c.packageCopies[key].name}</p>
-                            <p className="text-[12px] font-semibold text-muted">{c.packageCopies[key].technology}</p>
+                      {packageOrder.map((key) => {
+                        const isQuotePrice = key === "individual" || !/\d/.test(prices[key]);
+
+                        return (
+                          <div
+                            key={key}
+                            className={cn(
+                              "grid min-w-0 gap-2 rounded-2xl bg-surface px-4 py-3",
+                              isQuotePrice
+                                ? "grid-cols-1 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center"
+                                : "grid-cols-[minmax(0,1fr)_auto] items-center gap-4",
+                            )}
+                          >
+                            <div className="min-w-0">
+                              <p className="text-[13px] font-extrabold text-dark">{c.packageCopies[key].name}</p>
+                              <p className="text-[12px] font-semibold text-muted">{c.packageCopies[key].technology}</p>
+                            </div>
+                            <p
+                              className={cn(
+                                "min-w-0 font-extrabold text-brand-purple",
+                                isQuotePrice
+                                  ? "w-fit max-w-full rounded-full bg-white px-3 py-1.5 text-left text-[12px] leading-tight shadow-sm ring-1 ring-brand-purple/10 [overflow-wrap:anywhere] [text-wrap:balance] sm:max-w-[160px] sm:text-right"
+                                  : "shrink-0 text-right text-[14px]",
+                              )}
+                            >
+                              {prices[key]}
+                            </p>
                           </div>
-                          <p className="shrink-0 text-right text-[14px] font-extrabold text-brand-purple">
-                            {prices[key]}
-                          </p>
-                        </div>
-                      ))}
+                        );
+                      })}
                     </div>
                   </div>
                 </div>

@@ -19,7 +19,8 @@
     "db:sync-phase8-pricing": "tsx scripts/sync-phase8-pricing.ts",
     "db:sync-phase3-projects": "tsx scripts/upsert-phase3-projects.ts",
     "db:sync-blog-content": "tsx scripts/sync-blog-content.ts",
-    "db:studio": "prisma studio"
+    "db:studio": "prisma studio",
+    "assistant:test": "node scripts/test-assistant.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.1.0",

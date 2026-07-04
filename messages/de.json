@@ -25,6 +25,28 @@
     "title": "Direkt per WhatsApp schreiben",
     "prefill": "Hallo SaaleWeb, ich interessiere mich für eine Website, SEO oder KI-Sichtbarkeit und möchte kurz sprechen."
   },
+  "AssistantWidget": {
+    "aria": "SaaleWeb KI-Assistent öffnen",
+    "badge": "KI-Assistent",
+    "title": "Projekt kurz einschätzen lassen",
+    "subtitle": "Fragen zu Website, SEO, KI-Sichtbarkeit oder Kosten? Der Assistent hilft bei der ersten Orientierung.",
+    "intro": "Hallo, ich bin der SaaleWeb Assistent. Beschreiben Sie kurz Ihr Ziel — neue Website, SEO, Relaunch, Buchungssystem oder KI-Sichtbarkeit — und ich gebe Ihnen eine klare erste Einschätzung.",
+    "placeholder": "Was möchten Sie erreichen?",
+    "send": "Nachricht senden",
+    "close": "Assistent schließen",
+    "open": "Projektfrage stellen",
+    "loading": "Ich prüfe das gerade…",
+    "error": "Der Assistent ist gerade nicht erreichbar. Schreiben Sie uns gern direkt über Kontakt oder WhatsApp.",
+    "privacy": "Bitte senden Sie keine Passwörter oder vertraulichen Zugangsdaten. Für konkrete Angebote wechseln wir in den persönlichen Kontakt.",
+    "contact": "Kontaktformular",
+    "whatsapp": "WhatsApp",
+    "whatsappPrefill": "Hallo SaaleWeb, ich habe eine Frage zu meinem Website-, SEO- oder KI-Projekt.",
+    "quickPrompts": [
+      "Was kostet eine Business Website?",
+      "Wie kann ich lokal in Halle besser gefunden werden?",
+      "Ist WordPress oder Next.js besser für mich?"
+    ]
+  },
   "Hero": {
     "badge": "Digitales Studio · Halle (Saale) → Deutschland",
     "titleA": "Websites, die ",

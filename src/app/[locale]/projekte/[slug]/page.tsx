@@ -324,7 +324,9 @@ export default async function ProjectPage({
                 color={data.coverColor}
                 hexColor={Boolean(hexCover)}
                 priority
-                className="aspect-[3/2] rounded-[20px]"
+                fit="cover"
+                imagePosition="object-top"
+                className="aspect-[16/10] rounded-[20px] sm:aspect-[16/9]"
               />
             </Reveal>
 
@@ -646,6 +648,8 @@ function ProjectMedia({
   color,
   hexColor,
   priority = false,
+  fit = "contain",
+  imagePosition = "object-center",
   className,
 }: {
   item: GalleryItem | null;
@@ -653,9 +657,12 @@ function ProjectMedia({
   color: string | null;
   hexColor: boolean;
   priority?: boolean;
+  fit?: "contain" | "cover";
+  imagePosition?: string;
   className: string;
 }) {
   const isLocalImage = item?.url.startsWith("/");
+  const imageClassName = `${fit === "cover" ? "object-cover" : "object-contain"} ${imagePosition}`;
 
   return (
     <div
@@ -669,7 +676,7 @@ function ProjectMedia({
           fill
           priority={priority}
           sizes="(min-width: 1180px) 1148px, 100vw"
-          className="object-contain object-center"
+          className={imageClassName}
         />
       ) : item ? (
         // eslint-disable-next-line @next/next/no-img-element
@@ -678,7 +685,7 @@ function ProjectMedia({
           alt={title}
           loading={priority ? "eager" : "lazy"}
           decoding="async"
-          className="absolute inset-0 h-full w-full object-contain object-center"
+          className={`absolute inset-0 h-full w-full ${imageClassName}`}
         />
       ) : (
         <div

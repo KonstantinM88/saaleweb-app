@@ -45,7 +45,7 @@ function ProjectCover({ item }: { item: ProjectCard }) {
           alt={item.title}
           fill
           sizes="(min-width: 1024px) 370px, (min-width: 640px) 50vw, 100vw"
-          className="object-contain object-center transition-transform duration-500 group-hover:scale-[1.04]"
+          className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.04]"
         />
       ) : item.cover.image ? (
         // eslint-disable-next-line @next/next/no-img-element
@@ -54,7 +54,7 @@ function ProjectCover({ item }: { item: ProjectCard }) {
           alt={item.title}
           loading="lazy"
           decoding="async"
-          className="absolute inset-0 h-full w-full object-contain object-center transition-transform duration-500 group-hover:scale-[1.04]"
+          className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.04]"
         />
       ) : (
         <span className="absolute bottom-4 left-4 right-4 text-xl font-bold leading-tight tracking-tight text-white">

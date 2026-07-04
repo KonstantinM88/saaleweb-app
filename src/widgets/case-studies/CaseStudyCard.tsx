@@ -58,7 +58,7 @@ export function CaseStudyCard({
             alt={item.title}
             fill
             sizes="(min-width: 1280px) 220px, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-            className="object-contain object-center transition-transform duration-700 ease-out group-hover/case:scale-[1.04]"
+            className="object-cover object-center transition-transform duration-700 ease-out group-hover/case:scale-[1.04]"
           />
         ) : item.cover.image ? (
           // eslint-disable-next-line @next/next/no-img-element
@@ -67,7 +67,7 @@ export function CaseStudyCard({
             alt={item.title}
             loading="lazy"
             decoding="async"
-            className="absolute inset-0 h-full w-full object-contain object-center transition-transform duration-700 ease-out group-hover/case:scale-[1.04]"
+            className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-700 ease-out group-hover/case:scale-[1.04]"
           />
         ) : (
           <span className="absolute bottom-3.5 left-4 right-4 text-xl font-bold tracking-tight text-white transition-transform duration-700 ease-out group-hover/case:translate-x-1">

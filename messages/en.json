@@ -25,6 +25,28 @@
     "title": "Write directly on WhatsApp",
     "prefill": "Hello SaaleWeb, I am interested in a website, SEO or AI visibility and would like to talk briefly."
   },
+  "AssistantWidget": {
+    "aria": "Open the SaaleWeb AI assistant",
+    "badge": "AI assistant",
+    "title": "Get a quick project assessment",
+    "subtitle": "Questions about websites, SEO, AI visibility or pricing? The assistant helps with the first orientation.",
+    "intro": "Hi, I am the SaaleWeb assistant. Briefly describe your goal — new website, SEO, relaunch, booking system or AI visibility — and I will give you a clear first assessment.",
+    "placeholder": "What would you like to achieve?",
+    "send": "Send message",
+    "close": "Close assistant",
+    "open": "Ask a project question",
+    "loading": "Checking this for you…",
+    "error": "The assistant is currently unavailable. You can still contact us directly via the contact form or WhatsApp.",
+    "privacy": "Please do not send passwords or confidential access data. For concrete offers we switch to personal contact.",
+    "contact": "Contact form",
+    "whatsapp": "WhatsApp",
+    "whatsappPrefill": "Hello SaaleWeb, I have a question about my website, SEO or AI project.",
+    "quickPrompts": [
+      "How much does a business website cost?",
+      "How can I improve local visibility in Halle?",
+      "Is WordPress or Next.js better for me?"
+    ]
+  },
   "Hero": {
     "badge": "Digital studio · Halle (Saale) → Germany",
     "titleA": "Websites that ",

@@ -11,8 +11,9 @@ import { organizationSchema, websiteSchema } from "@/shared/seo/schema";
 import { getSeoOverride } from "@/shared/seo/metadata";
 import { ogImageUrl } from "@/shared/seo/og";
 import { PageViewTracker } from "@/features/analytics/PageViewTracker";
-import { WhatsAppFloatingCta } from "@/widgets/contact/WhatsAppFloatingCta";
+import { AiAssistantWidget } from "@/widgets/assistant/AiAssistantWidget";
 import { CustomCursor } from "@/shared/ui/CustomCursor";
+import { getPathname } from "@/i18n/navigation";
 import "../globals.css";
 
 export function generateStaticParams() {
@@ -81,13 +82,26 @@ export default async function LocaleLayout({
     notFound();
   }
   setRequestLocale(locale);
-  const floatingWhatsApp = await getTranslations({ locale, namespace: "FloatingWhatsApp" });
-  const floatingWhatsAppLabels = {
-    aria: floatingWhatsApp("aria"),
-    eyebrow: floatingWhatsApp("eyebrow"),
-    title: floatingWhatsApp("title"),
-    prefill: floatingWhatsApp("prefill"),
+  const assistant = await getTranslations({ locale, namespace: "AssistantWidget" });
+  const assistantLabels = {
+    aria: assistant("aria"),
+    badge: assistant("badge"),
+    title: assistant("title"),
+    subtitle: assistant("subtitle"),
+    intro: assistant("intro"),
+    placeholder: assistant("placeholder"),
+    send: assistant("send"),
+    close: assistant("close"),
+    open: assistant("open"),
+    loading: assistant("loading"),
+    error: assistant("error"),
+    privacy: assistant("privacy"),
+    contact: assistant("contact"),
+    whatsapp: assistant("whatsapp"),
+    whatsappPrefill: assistant("whatsappPrefill"),
+    quickPrompts: assistant.raw("quickPrompts") as string[],
   };
+  const contactHref = getPathname({ locale, href: "/kontakt" });
 
   return (
     <html lang={locale} className={`${GeistSans.variable} ${GeistMono.variable}`}>
@@ -98,7 +112,7 @@ export default async function LocaleLayout({
         {/* next-intl 4: provider auto-inherits messages from i18n/request.ts */}
         <NextIntlClientProvider>
           {children}
-          <WhatsAppFloatingCta labels={floatingWhatsAppLabels} />
+          <AiAssistantWidget locale={locale} labels={assistantLabels} contactHref={contactHref} />
         </NextIntlClientProvider>
       </body>
     </html>
