@@ -20,6 +20,10 @@ type TelegramSendResponse =
 
 const TELEGRAM_TEXT_LIMIT = 4096;
 
+export type TelegramSendOptions = {
+  replyMarkup?: Record<string, unknown>;
+};
+
 function configuredBotToken(): string | undefined {
   return process.env.TELEGRAM_BOT_TOKEN?.trim() || undefined;
 }
@@ -51,7 +55,12 @@ export function isTelegramAdminChatId(chatId: string | number): boolean {
   return telegramAdminChatIds().includes(String(chatId));
 }
 
-async function sendTelegramMessage(chatId: string, text: string, token: string): Promise<boolean> {
+async function sendTelegramMessage(
+  chatId: string,
+  text: string,
+  token: string,
+  options: TelegramSendOptions = {},
+): Promise<boolean> {
   try {
     const response = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
       method: "POST",
@@ -60,6 +69,7 @@ async function sendTelegramMessage(chatId: string, text: string, token: string):
         chat_id: chatId,
         text: truncateTelegramText(text),
         disable_web_page_preview: true,
+        ...(options.replyMarkup ? { reply_markup: options.replyMarkup } : {}),
       }),
     });
 
@@ -82,14 +92,18 @@ async function sendTelegramMessage(chatId: string, text: string, token: string):
   }
 }
 
-export async function sendTelegramChatMessage(chatId: string | number, text: string): Promise<boolean> {
+export async function sendTelegramChatMessage(
+  chatId: string | number,
+  text: string,
+  options: TelegramSendOptions = {},
+): Promise<boolean> {
   const token = configuredBotToken();
   if (!token) {
     console.warn("[telegram] Chat message skipped because bot token is missing.", telegramDiagnostics());
     return false;
   }
 
-  return sendTelegramMessage(String(chatId), text, token);
+  return sendTelegramMessage(String(chatId), text, token, options);
 }
 
 export async function sendTelegramAdminMessage(text: string): Promise<boolean> {

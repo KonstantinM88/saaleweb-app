@@ -20,6 +20,7 @@ type AiTrafficSummary = {
 };
 
 const MS_IN_DAY = 24 * 60 * 60 * 1000;
+const MS_IN_WEEK = 7 * MS_IN_DAY;
 
 function countValue(rows: CountRow[]): number {
   return Number(rows[0]?.count ?? 0);
@@ -265,6 +266,91 @@ export async function buildDailySiteReport(now = new Date()): Promise<string> {
     ...topPathLines,
     "",
     "🔗 Источники",
+    ...referrerLines,
+    "",
+    `⚙️ Админка: ${siteUrl()}/admin`,
+  ].join("\n");
+}
+
+export async function buildWeeklySiteReport(now = new Date()): Promise<string> {
+  const to = now;
+  const from = new Date(to.getTime() - MS_IN_WEEK);
+  const previousFrom = new Date(from.getTime() - MS_IN_WEEK);
+  const previousTo = from;
+  const whereWindow = { createdAt: { gte: from, lt: to } };
+  const previousWhereWindow = { createdAt: { gte: previousFrom, lt: previousTo } };
+
+  const [
+    viewsTotal,
+    previousViewsTotal,
+    uniqueRows,
+    previousUniqueRows,
+    leadsTotal,
+    previousLeadsTotal,
+    leadsNew,
+    topPaths,
+    topReferrers,
+    localeRows,
+    aiTraffic,
+  ] = await Promise.all([
+    prisma.pageView.count({ where: whereWindow }),
+    prisma.pageView.count({ where: previousWhereWindow }),
+    prisma.$queryRaw<CountRow[]>`SELECT count(DISTINCT "visitorHash")::int AS count FROM "PageView" WHERE "createdAt" >= ${from} AND "createdAt" < ${to} AND "visitorHash" IS NOT NULL`,
+    prisma.$queryRaw<CountRow[]>`SELECT count(DISTINCT "visitorHash")::int AS count FROM "PageView" WHERE "createdAt" >= ${previousFrom} AND "createdAt" < ${previousTo} AND "visitorHash" IS NOT NULL`,
+    prisma.lead.count({ where: whereWindow }),
+    prisma.lead.count({ where: previousWhereWindow }),
+    prisma.lead.count({ where: { status: "NEW" } }),
+    prisma.$queryRaw<PathCountRow[]>`SELECT path, count(*)::int AS count FROM "PageView" WHERE "createdAt" >= ${from} AND "createdAt" < ${to} GROUP BY path ORDER BY count DESC LIMIT 8`,
+    prisma.$queryRaw<PathCountRow[]>`SELECT COALESCE(NULLIF(referrer, ''), 'Прямой заход') AS path, count(*)::int AS count FROM "PageView" WHERE "createdAt" >= ${from} AND "createdAt" < ${to} GROUP BY 1 ORDER BY count DESC LIMIT 6`,
+    prisma.$queryRaw<LocaleCountRow[]>`SELECT locale, count(*)::int AS count FROM "PageView" WHERE "createdAt" >= ${from} AND "createdAt" < ${to} GROUP BY locale ORDER BY count DESC`,
+    loadAiTraffic(from, to, previousFrom, previousTo),
+  ]);
+
+  const uniqueTotal = countValue(uniqueRows);
+  const previousUniqueTotal = countValue(previousUniqueRows);
+  const topPathLines =
+    topPaths.length > 0
+      ? topPaths.map((item, index) => `${index + 1}. ${item.path || "/"} — ${Number(item.count ?? 0)}`)
+      : ["• За неделю не было просмотров страниц."];
+  const referrerLines =
+    topReferrers.length > 0
+      ? topReferrers.map((item, index) => `${index + 1}. ${item.path || "Прямой заход"} — ${Number(item.count ?? 0)}`)
+      : ["• Источники не определены."];
+  const localeLines =
+    localeRows.length > 0
+      ? localeRows.map((item) => `${item.locale || "-"} — ${Number(item.count ?? 0)}`).join(", ")
+      : "-";
+  const aiBotDelta = formatDelta(aiTraffic.botTotal - aiTraffic.previousBotTotal);
+  const aiBotLines = aiTraffic.botTrackingUnavailable
+    ? ["• Мониторинг AI-ботов ожидает применения таблицы в БД."]
+    : [
+        `• AI-боты / краулеры: ${aiTraffic.botTotal} (${aiBotDelta})`,
+        ...topCountLines(aiTraffic.botCounts, "AI-боты за неделю не замечены."),
+      ];
+
+  return [
+    "📅 SaaleWeb — недельный отчёт",
+    "",
+    `🕘 Период: ${formatDateTime(from)} — ${formatDateTime(to)}`,
+    "",
+    "📈 Трафик",
+    `• Просмотры: ${viewsTotal} (${formatDelta(viewsTotal - previousViewsTotal)})`,
+    `• Посетители: ${uniqueTotal} (${formatDelta(uniqueTotal - previousUniqueTotal)})`,
+    `• Языки: ${localeLines}`,
+    "",
+    "🎯 Заявки",
+    `• Новые заявки: ${leadsTotal} (${formatDelta(leadsTotal - previousLeadsTotal)})`,
+    `• Открытые заявки всего: ${leadsNew}`,
+    "",
+    "🤖 AI-поиск и ассистенты",
+    ...aiBotLines,
+    `• Переходы из AI-ассистентов: ${aiTraffic.referralTotal}`,
+    ...topCountLines(aiTraffic.referralCounts, "Переходов из AI-ассистентов не было."),
+    "",
+    "🏆 Топ-страницы недели",
+    ...topPathLines,
+    "",
+    "🔗 Источники недели",
     ...referrerLines,
     "",
     `⚙️ Админка: ${siteUrl()}/admin`,
