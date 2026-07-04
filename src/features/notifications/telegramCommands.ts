@@ -1,6 +1,11 @@
 import "server-only";
 
-import { buildAiSearchReport, buildDailySiteReport, buildWeeklySiteReport } from "./telegramReports";
+import {
+  buildAiSearchReport,
+  buildDailySiteReport,
+  buildTopPagesReport,
+  buildWeeklySiteReport,
+} from "./telegramReports";
 import { buildHealthReport } from "./telegramHealth";
 import { sendTelegramChatMessage } from "./telegram";
 
@@ -8,6 +13,7 @@ const BUTTON_HEALTH = "🩺 Проверить сайт";
 const BUTTON_DAILY = "📊 Отчёт 24 часа";
 const BUTTON_WEEK = "📅 Недельный отчёт";
 const BUTTON_AI = "🤖 AI-отчёт";
+const BUTTON_TOP = "🏆 Топ-страницы";
 const BUTTON_HELP = "❔ Помощь";
 
 function commandKeyboard() {
@@ -15,7 +21,7 @@ function commandKeyboard() {
     keyboard: [
       [{ text: BUTTON_HEALTH }, { text: BUTTON_DAILY }],
       [{ text: BUTTON_WEEK }, { text: BUTTON_AI }],
-      [{ text: BUTTON_HELP }],
+      [{ text: BUTTON_TOP }, { text: BUTTON_HELP }],
     ],
     resize_keyboard: true,
     is_persistent: true,
@@ -32,12 +38,13 @@ function helpText(): string {
     `${BUTTON_DAILY} — отчёт за последние 24 часа`,
     `${BUTTON_WEEK} — недельный отчёт по трафику, заявкам и AI-поиску`,
     `${BUTTON_AI} — отдельный отчёт по AI-ботам и AI-переходам`,
+    `${BUTTON_TOP} — топ страниц, источники и SEO/GEO/AIO возможности`,
     `${BUTTON_HELP} — показать это меню`,
     "",
     "Также работают текстовые команды:",
-    "/health, /report, /week, /ai, /help",
+    "/health, /report, /week, /ai, /top, /help",
     "",
-    "Следующие функции добавим по порядку: /top и /leads.",
+    "Следующая функция по списку: /leads.",
   ].join("\n");
 }
 
@@ -48,6 +55,7 @@ function normalizeCommand(text: string): string {
     [BUTTON_DAILY]: "/report",
     [BUTTON_WEEK]: "/week",
     [BUTTON_AI]: "/ai",
+    [BUTTON_TOP]: "/top",
     [BUTTON_HELP]: "/help",
   };
 
@@ -75,6 +83,10 @@ export async function handleTelegramCommand(chatId: string | number, text: strin
 
   if (command === "/ai") {
     return sendWithMenu(chatId, await buildAiSearchReport());
+  }
+
+  if (command === "/top") {
+    return sendWithMenu(chatId, await buildTopPagesReport());
   }
 
   if (command === "/start" || command === "/help" || command === "меню") {

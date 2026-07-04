@@ -403,6 +403,26 @@ function aiInterpretation(ai24h: AiTrafficSummary, ai7d: AiTrafficSummary): stri
   return lines;
 }
 
+function isSeoOpportunityPath(path?: string | null): boolean {
+  if (!path) return false;
+  if (path === "/" || path === "/en" || path === "/ru") return false;
+  if (path.includes("/kontakt") || path.includes("/contact")) return false;
+  if (path.includes("/admin") || path.includes("/newsletter")) return false;
+  if (path.endsWith(".xml") || path.endsWith(".txt")) return false;
+  return true;
+}
+
+function pathTopic(path?: string | null): string {
+  if (!path) return "общая страница";
+  if (path.includes("blog")) return "контент / blog";
+  if (path.includes("leistungen") || path.includes("services") || path.includes("uslugi")) return "услуги";
+  if (path.includes("branchen") || path.includes("industries") || path.includes("otrasli")) return "отрасли";
+  if (path.includes("standorte") || path.includes("locations") || path.includes("goroda")) return "локальное SEO";
+  if (path.includes("projekte") || path.includes("projects") || path.includes("proekty")) return "проекты / кейсы";
+  if (path.includes("preise") || path.includes("pricing") || path.includes("ceny")) return "цены";
+  return "общая страница";
+}
+
 export async function buildAiSearchReport(now = new Date()): Promise<string> {
   const to = now;
   const from24h = new Date(to.getTime() - MS_IN_DAY);
@@ -454,6 +474,79 @@ export async function buildAiSearchReport(now = new Date()): Promise<string> {
     "",
     "📌 Вывод",
     ...aiInterpretation(ai24h, ai7d),
+    "",
+    `⚙️ Админка: ${siteUrl()}/admin`,
+  ].join("\n");
+}
+
+export async function buildTopPagesReport(now = new Date()): Promise<string> {
+  const to = now;
+  const from24h = new Date(to.getTime() - MS_IN_DAY);
+  const from7d = new Date(to.getTime() - MS_IN_WEEK);
+
+  const [top24h, top7d, referrers7d, locales7d, aiPaths7d] = await Promise.all([
+    prisma.$queryRaw<PathCountRow[]>`SELECT path, count(*)::int AS count FROM "PageView" WHERE "createdAt" >= ${from24h} AND "createdAt" < ${to} GROUP BY path ORDER BY count DESC LIMIT 8`,
+    prisma.$queryRaw<PathCountRow[]>`SELECT path, count(*)::int AS count FROM "PageView" WHERE "createdAt" >= ${from7d} AND "createdAt" < ${to} GROUP BY path ORDER BY count DESC LIMIT 12`,
+    prisma.$queryRaw<PathCountRow[]>`SELECT COALESCE(NULLIF(referrer, ''), 'Прямой заход') AS path, count(*)::int AS count FROM "PageView" WHERE "createdAt" >= ${from7d} AND "createdAt" < ${to} GROUP BY 1 ORDER BY count DESC LIMIT 8`,
+    prisma.$queryRaw<LocaleCountRow[]>`SELECT locale, count(*)::int AS count FROM "PageView" WHERE "createdAt" >= ${from7d} AND "createdAt" < ${to} GROUP BY locale ORDER BY count DESC`,
+    prisma.$queryRaw<PathCountRow[]>`SELECT path, count(*)::int AS count FROM "AiBotVisit" WHERE "createdAt" >= ${from7d} AND "createdAt" < ${to} GROUP BY path ORDER BY count DESC LIMIT 8`.catch(() => []),
+  ]);
+
+  const top24hLines = topCountLines(
+    top24h.map((row) => ({ label: row.path || "/", count: Number(row.count ?? 0) })),
+    "За 24 часа нет просмотров страниц.",
+  );
+  const top7dLines = topCountLines(
+    top7d.map((row) => ({ label: row.path || "/", count: Number(row.count ?? 0) })),
+    "За 7 дней нет просмотров страниц.",
+  );
+  const referrerLines = topCountLines(
+    referrers7d.map((row) => ({ label: row.path || "Прямой заход", count: Number(row.count ?? 0) })),
+    "Источники не определены.",
+  );
+  const localeLines =
+    locales7d.length > 0
+      ? locales7d.map((row) => `${row.locale || "-"} — ${Number(row.count ?? 0)}`).join(", ")
+      : "-";
+  const aiPathLines = topCountLines(
+    aiPaths7d.map((row) => ({ label: row.path || "/", count: Number(row.count ?? 0) })),
+    "AI-боты пока не выделили конкретные страницы.",
+  );
+  const opportunityLines = top7d
+    .filter((row) => isSeoOpportunityPath(row.path))
+    .slice(0, 5)
+    .map((row, index) => `${index + 1}. ${row.path} — ${pathTopic(row.path)}, ${Number(row.count ?? 0)} просмотров`);
+
+  return [
+    "🏆 SaaleWeb — топ-страницы и возможности",
+    "",
+    `🕘 24 часа: ${formatDateTime(from24h)} — ${formatDateTime(to)}`,
+    `🗓 7 дней: ${formatDateTime(from7d)} — ${formatDateTime(to)}`,
+    "",
+    "🔥 Топ страниц за 24 часа",
+    ...top24hLines,
+    "",
+    "📈 Топ страниц за 7 дней",
+    ...top7dLines,
+    "",
+    "🔗 Источники за 7 дней",
+    ...referrerLines,
+    "",
+    "🌐 Языки за 7 дней",
+    `• ${localeLines}`,
+    "",
+    "🤖 AI-интерес за 7 дней",
+    ...aiPathLines,
+    "",
+    "🚀 Страницы для усиления SEO/GEO/AIO",
+    ...(opportunityLines.length > 0
+      ? opportunityLines
+      : ["• Пока нет отдельной страницы с достаточным трафиком для явного SEO-усиления."]),
+    "",
+    "📌 Как читать отчёт",
+    "• Топ-страницы показывают фактический спрос.",
+    "• Страницы с трафиком стоит усиливать FAQ, кейсами, внутренними ссылками и понятными CTA.",
+    "• AI-интерес показывает, какие страницы уже полезны для AI-поиска и краулеров.",
     "",
     `⚙️ Админка: ${siteUrl()}/admin`,
   ].join("\n");
