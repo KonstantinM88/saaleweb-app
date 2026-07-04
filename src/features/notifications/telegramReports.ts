@@ -8,6 +8,7 @@ import { sendTelegramAdminMessage } from "./telegram";
 type CountRow = { count: number | bigint | null };
 type PathCountRow = { path: string | null; count: number | bigint | null };
 type LocaleCountRow = { locale: string | null; count: number | bigint | null };
+type StatusCountRow = { status: string | null; count: number | bigint | null };
 type LabelCount = { label: string; count: number };
 type AiTrafficSummary = {
   botTotal: number;
@@ -66,6 +67,24 @@ function localeLabel(locale?: string | null): string {
   if (locale === "en") return "английский";
   if (locale === "ru") return "русский";
   return locale || "-";
+}
+
+function leadStatusLabel(status?: string | null): string {
+  const labels: Record<string, string> = {
+    NEW: "новая",
+    CONTACTED: "контакт установлен",
+    QUALIFIED: "квалифицирована",
+    WON: "выиграна",
+    LOST: "закрыта / отказ",
+  };
+  return status ? labels[status] ?? status : "-";
+}
+
+function trimText(value?: string | null, maxLength = 120): string {
+  const clean = value?.replace(/\s+/g, " ").trim();
+  if (!clean) return "-";
+  if (clean.length <= maxLength) return clean;
+  return `${clean.slice(0, maxLength - 1)}…`;
 }
 
 function line(label: string, value?: string | null): string | undefined {
@@ -549,6 +568,98 @@ export async function buildTopPagesReport(now = new Date()): Promise<string> {
     "• AI-интерес показывает, какие страницы уже полезны для AI-поиска и краулеров.",
     "",
     `⚙️ Админка: ${siteUrl()}/admin`,
+  ].join("\n");
+}
+
+export async function buildLeadsReport(now = new Date()): Promise<string> {
+  const to = now;
+  const from24h = new Date(to.getTime() - MS_IN_DAY);
+  const previous24hFrom = new Date(from24h.getTime() - MS_IN_DAY);
+  const from7d = new Date(to.getTime() - MS_IN_WEEK);
+
+  const [
+    leads24h,
+    previousLeads24h,
+    leads7d,
+    openLeads,
+    statusRows,
+    sourceRows7d,
+    localeRows7d,
+    recentLeads,
+  ] = await Promise.all([
+    prisma.lead.count({ where: { createdAt: { gte: from24h, lt: to } } }),
+    prisma.lead.count({ where: { createdAt: { gte: previous24hFrom, lt: from24h } } }),
+    prisma.lead.count({ where: { createdAt: { gte: from7d, lt: to } } }),
+    prisma.lead.count({ where: { status: "NEW" } }),
+    prisma.$queryRaw<StatusCountRow[]>`SELECT status, count(*)::int AS count FROM "Lead" GROUP BY status ORDER BY count DESC`,
+    prisma.$queryRaw<PathCountRow[]>`SELECT COALESCE(NULLIF(source, ''), 'unknown') AS path, count(*)::int AS count FROM "Lead" WHERE "createdAt" >= ${from7d} AND "createdAt" < ${to} GROUP BY 1 ORDER BY count DESC LIMIT 8`,
+    prisma.$queryRaw<LocaleCountRow[]>`SELECT locale, count(*)::int AS count FROM "Lead" WHERE "createdAt" >= ${from7d} AND "createdAt" < ${to} GROUP BY locale ORDER BY count DESC`,
+    prisma.lead.findMany({
+      orderBy: { createdAt: "desc" },
+      take: 8,
+      select: {
+        createdAt: true,
+        name: true,
+        email: true,
+        phone: true,
+        company: true,
+        message: true,
+        source: true,
+        status: true,
+        locale: true,
+      },
+    }),
+  ]);
+
+  const statusLines = topCountLines(
+    statusRows.map((row) => ({ label: leadStatusLabel(row.status), count: Number(row.count ?? 0) })),
+    "Заявок пока нет.",
+  );
+  const sourceLines = topCountLines(
+    sourceRows7d.map((row) => ({ label: sourceLabel(row.path), count: Number(row.count ?? 0) })),
+    "За 7 дней источники заявок не найдены.",
+  );
+  const localeLines =
+    localeRows7d.length > 0
+      ? localeRows7d.map((row) => `${row.locale || "-"} — ${Number(row.count ?? 0)}`).join(", ")
+      : "-";
+  const recentLeadLines =
+    recentLeads.length > 0
+      ? recentLeads.flatMap((lead, index) => [
+          `${index + 1}. ${formatDateTime(lead.createdAt)} — ${lead.name}${lead.company ? ` / ${lead.company}` : ""}`,
+          `   • статус: ${leadStatusLabel(lead.status)}, источник: ${sourceLabel(lead.source)}, язык: ${localeLabel(lead.locale)}`,
+          `   • email: ${lead.email}${lead.phone ? `, телефон: ${lead.phone}` : ""}`,
+          `   • сообщение: ${trimText(lead.message)}`,
+        ])
+      : ["• Последних заявок пока нет."];
+
+  return [
+    "🎯 SaaleWeb — отчёт по заявкам",
+    "",
+    `🕘 24 часа: ${formatDateTime(from24h)} — ${formatDateTime(to)}`,
+    `🗓 7 дней: ${formatDateTime(from7d)} — ${formatDateTime(to)}`,
+    "",
+    "📌 Сводка",
+    `• Новые заявки за 24 часа: ${leads24h} (${formatDelta(leads24h - previousLeads24h)})`,
+    `• Заявки за 7 дней: ${leads7d}`,
+    `• Открытые новые заявки всего: ${openLeads}`,
+    `• Языки за 7 дней: ${localeLines}`,
+    "",
+    "🧭 Статусы",
+    ...statusLines,
+    "",
+    "📥 Источники заявок за 7 дней",
+    ...sourceLines,
+    "",
+    "🧾 Последние заявки",
+    ...recentLeadLines,
+    "",
+    "📌 Что делать",
+    "• Если есть открытые заявки — ответить в течение 24 часов.",
+    "• Если один источник стабильно даёт заявки — усилить эту страницу CTA, FAQ и кейсами.",
+    "• Если заявок нет, смотреть /top и усиливать страницы с фактическим спросом.",
+    "",
+    `⚙️ Админка: ${siteUrl()}/admin/leads`,
   ].join("\n");
 }
 

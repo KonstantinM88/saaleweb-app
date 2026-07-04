@@ -3,6 +3,7 @@ import "server-only";
 import {
   buildAiSearchReport,
   buildDailySiteReport,
+  buildLeadsReport,
   buildTopPagesReport,
   buildWeeklySiteReport,
 } from "./telegramReports";
@@ -14,6 +15,7 @@ const BUTTON_DAILY = "📊 Отчёт 24 часа";
 const BUTTON_WEEK = "📅 Недельный отчёт";
 const BUTTON_AI = "🤖 AI-отчёт";
 const BUTTON_TOP = "🏆 Топ-страницы";
+const BUTTON_LEADS = "🎯 Заявки";
 const BUTTON_HELP = "❔ Помощь";
 
 function commandKeyboard() {
@@ -21,7 +23,8 @@ function commandKeyboard() {
     keyboard: [
       [{ text: BUTTON_HEALTH }, { text: BUTTON_DAILY }],
       [{ text: BUTTON_WEEK }, { text: BUTTON_AI }],
-      [{ text: BUTTON_TOP }, { text: BUTTON_HELP }],
+      [{ text: BUTTON_TOP }, { text: BUTTON_LEADS }],
+      [{ text: BUTTON_HELP }],
     ],
     resize_keyboard: true,
     is_persistent: true,
@@ -39,12 +42,13 @@ function helpText(): string {
     `${BUTTON_WEEK} — недельный отчёт по трафику, заявкам и AI-поиску`,
     `${BUTTON_AI} — отдельный отчёт по AI-ботам и AI-переходам`,
     `${BUTTON_TOP} — топ страниц, источники и SEO/GEO/AIO возможности`,
+    `${BUTTON_LEADS} — последние заявки, статусы и источники`,
     `${BUTTON_HELP} — показать это меню`,
     "",
     "Также работают текстовые команды:",
-    "/health, /report, /week, /ai, /top, /help",
+    "/health, /report, /week, /ai, /top, /leads, /help",
     "",
-    "Следующая функция по списку: /leads.",
+    "Следующая функция по списку: короткие уведомления по проблемам и падениям.",
   ].join("\n");
 }
 
@@ -56,6 +60,7 @@ function normalizeCommand(text: string): string {
     [BUTTON_WEEK]: "/week",
     [BUTTON_AI]: "/ai",
     [BUTTON_TOP]: "/top",
+    [BUTTON_LEADS]: "/leads",
     [BUTTON_HELP]: "/help",
   };
 
@@ -87,6 +92,10 @@ export async function handleTelegramCommand(chatId: string | number, text: strin
 
   if (command === "/top") {
     return sendWithMenu(chatId, await buildTopPagesReport());
+  }
+
+  if (command === "/leads") {
+    return sendWithMenu(chatId, await buildLeadsReport());
   }
 
   if (command === "/start" || command === "/help" || command === "меню") {
