@@ -5,6 +5,7 @@ import { siteConfig } from "@/shared/config/site";
 import { cities } from "@/shared/config/cities";
 import { getBlogSlugGroups, getCategorySlugGroups } from "@/entities/blog/api";
 import { prisma } from "@/lib/prisma";
+import { isSitemapIndexablePath } from "@/shared/seo/crawl";
 import { getSeoIndustrySlugGroups, getSeoServiceSlugGroups } from "@/widgets/seo-landing/phase4Content";
 
 const BASE = siteConfig.url;
@@ -12,24 +13,31 @@ const abs = (p: string) => `${BASE}${p}`;
 
 type Entry = MetadataRoute.Sitemap[number];
 
-function entry(
-  defLocale: AppLocale,
-  defPath: string,
+function entriesForLocalizedUrls(
   languages: Record<string, string>,
   priority: number,
   changeFrequency: Entry["changeFrequency"],
-): Entry {
+): MetadataRoute.Sitemap {
   const alternates = {
     ...languages,
-    "x-default": abs(defPath),
+    "x-default": languages[routing.defaultLocale] ?? Object.values(languages)[0],
   };
-  return {
-    url: abs(defPath),
-    lastModified: new Date(),
-    changeFrequency,
-    priority,
-    alternates: { languages: alternates },
-  };
+
+  return Object.values(languages)
+    .filter((url) => {
+      try {
+        return isSitemapIndexablePath(new URL(url).pathname);
+      } catch {
+        return false;
+      }
+    })
+    .map((url) => ({
+      url,
+      lastModified: new Date(),
+      changeFrequency,
+      priority,
+      alternates: { languages: alternates },
+    }));
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -40,7 +48,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const languages = Object.fromEntries(
       routing.locales.map((l) => [l, abs(getPathname({ locale: l, href }))]),
     );
-    entries.push(entry(routing.defaultLocale, getPathname({ locale: routing.defaultLocale, href }), languages, href === "/" ? 1 : 0.7, "weekly"));
+    entries.push(...entriesForLocalizedUrls(languages, href === "/" ? 1 : 0.7, "weekly"));
   }
 
   // Legal pages
@@ -48,7 +56,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const languages = Object.fromEntries(
       routing.locales.map((l) => [l, abs(getPathname({ locale: l, href }))]),
     );
-    entries.push(entry(routing.defaultLocale, getPathname({ locale: routing.defaultLocale, href }), languages, 0.2, "yearly"));
+    entries.push(...entriesForLocalizedUrls(languages, 0.2, "yearly"));
   }
 
   // Local landing pages
@@ -60,13 +68,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       ]),
     );
     entries.push(
-      entry(
-        routing.defaultLocale,
-        getPathname({ locale: routing.defaultLocale, href: { pathname: "/standorte/[slug]", params: { slug: city.slug } } }),
-        languages,
-        0.6,
-        "monthly",
-      ),
+      ...entriesForLocalizedUrls(languages, 0.6, "monthly"),
     );
   }
 
@@ -78,11 +80,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         abs(getPathname({ locale: l, href: { pathname: "/leistungen/[slug]", params: { slug: slugs[l] } } })),
       ]),
     );
-    const path = getPathname({
-      locale: routing.defaultLocale,
-      href: { pathname: "/leistungen/[slug]", params: { slug: slugs.de } },
-    });
-    entries.push(entry(routing.defaultLocale, path, languages, 0.85, "monthly"));
+    entries.push(...entriesForLocalizedUrls(languages, 0.85, "monthly"));
   }
 
   for (const slugs of getSeoIndustrySlugGroups()) {
@@ -92,11 +90,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         abs(getPathname({ locale: l, href: { pathname: "/branchen/[slug]", params: { slug: slugs[l] } } })),
       ]),
     );
-    const path = getPathname({
-      locale: routing.defaultLocale,
-      href: { pathname: "/branchen/[slug]", params: { slug: slugs.de } },
-    });
-    entries.push(entry(routing.defaultLocale, path, languages, 0.78, "monthly"));
+    entries.push(...entriesForLocalizedUrls(languages, 0.78, "monthly"));
   }
 
   // Blog posts (MDX) — grouped by post for hreflang
@@ -105,15 +99,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     for (const [l, slug] of Object.entries(group)) {
       languages[l] = abs(getPathname({ locale: l as AppLocale, href: { pathname: "/blog/[slug]", params: { slug } } }));
     }
-    const defSlug = group[routing.defaultLocale] ?? Object.values(group)[0];
     entries.push(
-      entry(
-        routing.defaultLocale,
-        getPathname({ locale: routing.defaultLocale, href: { pathname: "/blog/[slug]", params: { slug: defSlug } } }),
-        languages,
-        0.7,
-        "monthly",
-      ),
+      ...entriesForLocalizedUrls(languages, 0.7, "monthly"),
     );
   }
 
@@ -123,15 +110,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     for (const [l, slug] of Object.entries(group)) {
       languages[l] = abs(getPathname({ locale: l as AppLocale, href: { pathname: "/blog/kategorie/[slug]", params: { slug } } }));
     }
-    const defSlug = group[routing.defaultLocale] ?? Object.values(group)[0];
     entries.push(
-      entry(
-        routing.defaultLocale,
-        getPathname({ locale: routing.defaultLocale, href: { pathname: "/blog/kategorie/[slug]", params: { slug: defSlug } } }),
-        languages,
-        0.5,
-        "monthly",
-      ),
+      ...entriesForLocalizedUrls(languages, 0.5, "monthly"),
     );
   }
 
@@ -172,19 +152,12 @@ function groupDbEntries<T extends { locale: string; slug: string }>(
     list.push(r);
     groups.set(idOf(r), list);
   }
-  return [...groups.values()].map((list) => {
+  return [...groups.values()].flatMap((list) => {
     const languages: Record<string, string> = {};
     for (const r of list) {
       languages[r.locale] = abs(getPathname({ locale: r.locale as AppLocale, href: { pathname, params: { slug: r.slug } } }));
     }
-    const def = list.find((r) => r.locale === routing.defaultLocale) ?? list[0];
-    return entry(
-      routing.defaultLocale,
-      getPathname({ locale: def.locale as AppLocale, href: { pathname, params: { slug: def.slug } } }),
-      languages,
-      0.8,
-      "monthly",
-    );
+    return entriesForLocalizedUrls(languages, 0.8, "monthly");
   });
 }
 
