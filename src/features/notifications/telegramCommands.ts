@@ -9,11 +9,12 @@ import {
 } from "./telegramReports";
 import {
   blockAssistantTarget,
-  buildAssistantConversationReport,
+  buildAssistantConversationReply,
+  handleAssistantCallback,
   unblockAssistantTarget,
 } from "./telegramAssistant";
 import { buildHealthReport } from "./telegramHealth";
-import { sendTelegramChatMessage } from "./telegram";
+import { answerTelegramCallbackQuery, sendTelegramChatMessage } from "./telegram";
 
 const BUTTON_HEALTH = "🩺 Проверить сайт";
 const BUTTON_DAILY = "📊 Отчёт 24 часа";
@@ -111,7 +112,8 @@ export async function handleTelegramCommand(chatId: string | number, text: strin
   }
 
   if (command === "/assistant") {
-    return sendWithMenu(chatId, await buildAssistantConversationReport(args[0]));
+    const reply = await buildAssistantConversationReply(args[0]);
+    return sendTelegramChatMessage(chatId, reply.text, { replyMarkup: reply.replyMarkup });
   }
 
   if (command === "/assistant_block") {
@@ -127,4 +129,19 @@ export async function handleTelegramCommand(chatId: string | number, text: strin
   }
 
   return sendWithMenu(chatId, `Неизвестная команда: ${command || text}\n\n${helpText()}`);
+}
+
+export async function handleTelegramCallback(
+  chatId: string | number,
+  callbackQueryId: string,
+  data: string,
+): Promise<boolean> {
+  await answerTelegramCallbackQuery(callbackQueryId);
+
+  if (!data.startsWith("assistant:")) {
+    return sendWithMenu(chatId, `Неизвестное действие: ${data}`);
+  }
+
+  const reply = await handleAssistantCallback(data);
+  return sendTelegramChatMessage(chatId, reply.text, { replyMarkup: reply.replyMarkup });
 }

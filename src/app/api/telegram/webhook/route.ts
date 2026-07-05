@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { handleTelegramCommand } from "@/features/notifications/telegramCommands";
+import { handleTelegramCallback, handleTelegramCommand } from "@/features/notifications/telegramCommands";
 import { isTelegramAdminChatId } from "@/features/notifications/telegram";
 
 export const runtime = "nodejs";
@@ -10,6 +10,15 @@ type TelegramUpdate = {
     text?: string;
     chat?: {
       id?: string | number;
+    };
+  };
+  callback_query?: {
+    id?: string;
+    data?: string;
+    message?: {
+      chat?: {
+        id?: string | number;
+      };
     };
   };
 };
@@ -30,15 +39,27 @@ export async function POST(req: Request) {
   }
 
   const update = (await req.json().catch(() => null)) as TelegramUpdate | null;
-  const chatId = update?.message?.chat?.id;
+  const callbackChatId = update?.callback_query?.message?.chat?.id;
+  const callbackId = update?.callback_query?.id;
+  const callbackData = update?.callback_query?.data;
+  const chatId = callbackChatId ?? update?.message?.chat?.id;
   const text = update?.message?.text;
 
-  if (!chatId || !text) {
+  if (!chatId || (!text && !callbackData)) {
     return NextResponse.json({ ok: true, handled: false }, { headers: { "Cache-Control": "no-store" } });
   }
 
   if (!isTelegramAdminChatId(chatId)) {
     console.warn("[telegram-webhook] Ignored command from non-admin chat.", { chatId: String(chatId) });
+    return NextResponse.json({ ok: true, handled: false }, { headers: { "Cache-Control": "no-store" } });
+  }
+
+  if (callbackId && callbackData) {
+    const sent = await handleTelegramCallback(chatId, callbackId, callbackData);
+    return NextResponse.json({ ok: sent, handled: true }, { headers: { "Cache-Control": "no-store" } });
+  }
+
+  if (!text) {
     return NextResponse.json({ ok: true, handled: false }, { headers: { "Cache-Control": "no-store" } });
   }
 

@@ -14,8 +14,17 @@ export type AssistantDigestResult = {
   failed: number;
 };
 
+export type TelegramAssistantReply = {
+  text: string;
+  replyMarkup?: Record<string, unknown>;
+};
+
 function siteUrl(): string {
   return (process.env.NEXT_PUBLIC_SITE_URL || "https://saaleweb.de").replace(/\/+$/, "");
+}
+
+function assistantAdminUrl(id?: string): string {
+  return id ? `${siteUrl()}/admin/assistant/${id}` : `${siteUrl()}/admin/assistant`;
 }
 
 function formatDateTime(date: Date): string {
@@ -75,7 +84,60 @@ async function findConversation(handle: string) {
   });
 }
 
-export async function buildAssistantConversationsReport(): Promise<string> {
+function assistantListKeyboard(
+  conversations: Array<{
+    id: string;
+    ipAddress: string | null;
+  }>,
+): Record<string, unknown> {
+  const conversationRows = conversations.map((conversation) => {
+    const id = shortId(conversation.id);
+    return [
+      { text: `📖 Читать #${id}`, callback_data: `assistant:view:${id}` },
+      ...(conversation.ipAddress ? [{ text: "🚫 IP", callback_data: `assistant:block:${id}` }] : []),
+    ];
+  });
+
+  return {
+    inline_keyboard: [
+      ...conversationRows,
+      [{ text: "🔄 Обновить список", callback_data: "assistant:list" }],
+      [{ text: "📂 Открыть админку", url: assistantAdminUrl() }],
+    ],
+  };
+}
+
+function assistantConversationKeyboard(conversation: { id: string; ipAddress: string | null }): Record<string, unknown> {
+  const id = shortId(conversation.id);
+  return {
+    inline_keyboard: [
+      [
+        { text: "↩️ К списку", callback_data: "assistant:list" },
+        { text: "🔄 Обновить", callback_data: `assistant:view:${id}` },
+      ],
+      ...(conversation.ipAddress
+        ? [
+            [
+              { text: "🚫 Заблокировать IP", callback_data: `assistant:block:${id}` },
+              { text: "✅ Разблокировать IP", callback_data: `assistant:unblock:${conversation.ipAddress}` },
+            ],
+          ]
+        : []),
+      [{ text: "📂 Открыть в админке", url: assistantAdminUrl(conversation.id) }],
+    ],
+  };
+}
+
+function assistantActionKeyboard(): Record<string, unknown> {
+  return {
+    inline_keyboard: [
+      [{ text: "↩️ Вернуться к AI-диалогам", callback_data: "assistant:list" }],
+      [{ text: "📂 Открыть админку", url: assistantAdminUrl() }],
+    ],
+  };
+}
+
+export async function buildAssistantConversationsReply(): Promise<TelegramAssistantReply> {
   try {
     const conversations = await prisma.assistantConversation.findMany({
       orderBy: { lastMessageAt: "desc" },
@@ -89,13 +151,16 @@ export async function buildAssistantConversationsReport(): Promise<string> {
     });
 
     if (conversations.length === 0) {
-      return [
-        "💬 AI-диалоги SaaleWeb",
-        "",
-        "Пока нет сохранённых переписок с ассистентом.",
-        "",
-        `Админка: ${siteUrl()}/admin/assistant`,
-      ].join("\n");
+      return {
+        text: [
+          "💬 AI-диалоги SaaleWeb",
+          "",
+          "Пока нет сохранённых переписок с ассистентом.",
+          "",
+          `Админка: ${assistantAdminUrl()}`,
+        ].join("\n"),
+        replyMarkup: assistantListKeyboard([]),
+      };
     }
 
     const lines = conversations.map((conversation, index) => {
@@ -106,33 +171,43 @@ export async function buildAssistantConversationsReport(): Promise<string> {
         `   🕒 ${formatDateTime(conversation.lastMessageAt)} · ${conversation.messageCount} сообщ.`,
         `   🌍 ${locationLabel(conversation)} · ${conversation.locale}/${conversation.responseLocale}`,
         `   💬 ${trimText(lastMessage?.content, 120)}`,
-        `   Читать: /assistant ${shortId(conversation.id)}`,
       ].join("\n");
     });
 
-    return [
-      "💬 AI-диалоги SaaleWeb",
-      "",
-      ...lines,
-      "",
-      "Команды:",
-      "/assistant <id> — открыть переписку",
-      "/assistant_block <id или IP> — заблокировать IP",
-      "/assistant_unblock <IP> — разблокировать IP",
-      "",
-      `Админка: ${siteUrl()}/admin/assistant`,
-    ].join("\n\n");
+    return {
+      text: [
+        "💬 AI-диалоги SaaleWeb",
+        "Выберите переписку или действие кнопками ниже.",
+        "",
+        ...lines,
+        "",
+        `Админка: ${assistantAdminUrl()}`,
+      ].join("\n\n"),
+      replyMarkup: assistantListKeyboard(conversations),
+    };
   } catch (error) {
-    return `💬 AI-диалоги недоступны: ${error instanceof Error ? error.message : "ошибка БД"}`;
+    return {
+      text: `💬 AI-диалоги недоступны: ${error instanceof Error ? error.message : "ошибка БД"}`,
+      replyMarkup: assistantActionKeyboard(),
+    };
   }
 }
 
-export async function buildAssistantConversationReport(handle?: string): Promise<string> {
-  if (!handle?.trim()) return buildAssistantConversationsReport();
+export async function buildAssistantConversationsReport(): Promise<string> {
+  return (await buildAssistantConversationsReply()).text;
+}
+
+export async function buildAssistantConversationReply(handle?: string): Promise<TelegramAssistantReply> {
+  if (!handle?.trim()) return buildAssistantConversationsReply();
 
   try {
     const conversation = await findConversation(handle);
-    if (!conversation) return `AI-диалог ${handle} не найден.`;
+    if (!conversation) {
+      return {
+        text: `AI-диалог ${handle} не найден.`,
+        replyMarkup: assistantActionKeyboard(),
+      };
+    }
 
     const messages = conversation.messages.slice(-MESSAGE_LIMIT);
     const messageLines = messages.map((message) => {
@@ -147,26 +222,36 @@ export async function buildAssistantConversationReport(handle?: string): Promise
       return `${role} (${meta})\n${trimText(message.content, 700)}`;
     });
 
-    return [
-      `💬 AI-диалог #${shortId(conversation.id)}`,
-      "",
-      `🕒 Последняя активность: ${formatDateTime(conversation.lastMessageAt)}`,
-      `🌐 IP: ${conversation.ipAddress || "-"}`,
-      `🌍 Место: ${locationLabel(conversation)}`,
-      `🧭 Страница: ${conversation.pagePath || "-"}`,
-      `🗣 Язык: ${conversation.locale} / ответ: ${conversation.responseLocale}`,
-      `🔢 Сообщений: ${conversation.messageCount}`,
-      "",
-      ...messageLines,
-      "",
-      conversation.ipAddress
-        ? `Блокировка: /assistant_block ${shortId(conversation.id)}`
-        : "Блокировка недоступна: IP не определён.",
-      `Админка: ${siteUrl()}/admin/assistant/${conversation.id}`,
-    ].join("\n\n");
+    return {
+      text: [
+        `💬 AI-диалог #${shortId(conversation.id)}`,
+        "",
+        `🕒 Последняя активность: ${formatDateTime(conversation.lastMessageAt)}`,
+        `🌐 IP: ${conversation.ipAddress || "-"}`,
+        `🌍 Место: ${locationLabel(conversation)}`,
+        `🧭 Страница: ${conversation.pagePath || "-"}`,
+        `🗣 Язык: ${conversation.locale} / ответ: ${conversation.responseLocale}`,
+        `🔢 Сообщений: ${conversation.messageCount}`,
+        "",
+        ...messageLines,
+        "",
+        conversation.ipAddress
+          ? "Управление диалогом доступно кнопками ниже."
+          : "Блокировка недоступна: IP не определён.",
+        `Админка: ${assistantAdminUrl(conversation.id)}`,
+      ].join("\n\n"),
+      replyMarkup: assistantConversationKeyboard(conversation),
+    };
   } catch (error) {
-    return `AI-диалог недоступен: ${error instanceof Error ? error.message : "ошибка БД"}`;
+    return {
+      text: `AI-диалог недоступен: ${error instanceof Error ? error.message : "ошибка БД"}`,
+      replyMarkup: assistantActionKeyboard(),
+    };
   }
+}
+
+export async function buildAssistantConversationReport(handle?: string): Promise<string> {
+  return (await buildAssistantConversationReply(handle)).text;
 }
 
 export async function blockAssistantTarget(target?: string, reason?: string): Promise<string> {
@@ -204,6 +289,45 @@ export async function unblockAssistantTarget(target?: string): Promise<string> {
   } catch (error) {
     return `Не удалось разблокировать IP: ${error instanceof Error ? error.message : "ошибка БД"}`;
   }
+}
+
+export async function handleAssistantCallback(data: string): Promise<TelegramAssistantReply> {
+  const [namespace, action, ...targetParts] = data.split(":");
+  if (namespace !== "assistant") {
+    return {
+      text: "Неизвестное действие AI-диалогов.",
+      replyMarkup: assistantActionKeyboard(),
+    };
+  }
+
+  const target = targetParts.join(":");
+
+  if (action === "list") {
+    return buildAssistantConversationsReply();
+  }
+
+  if (action === "view") {
+    return buildAssistantConversationReply(target);
+  }
+
+  if (action === "block") {
+    return {
+      text: await blockAssistantTarget(target, "Blocked from Telegram button"),
+      replyMarkup: assistantActionKeyboard(),
+    };
+  }
+
+  if (action === "unblock") {
+    return {
+      text: await unblockAssistantTarget(target),
+      replyMarkup: assistantActionKeyboard(),
+    };
+  }
+
+  return {
+    text: "Неизвестное действие AI-диалогов.",
+    replyMarkup: assistantActionKeyboard(),
+  };
 }
 
 function assistantDigestMessage(conversation: {
@@ -251,9 +375,9 @@ function assistantDigestMessage(conversation: {
     ...messageLines,
     "",
     conversation.ipAddress
-      ? `🚫 Заблокировать IP: /assistant_block ${shortId(conversation.id)}`
+      ? "🚫 IP можно заблокировать кнопкой ниже."
       : "🚫 Блокировка недоступна: IP не определён.",
-    `📂 Открыть в админке: ${siteUrl()}/admin/assistant/${conversation.id}`,
+    `📂 Открыть в админке: ${assistantAdminUrl(conversation.id)}`,
   ].join("\n\n");
 }
 
@@ -294,7 +418,9 @@ export async function sendAssistantConversationDigests({
   let failed = 0;
 
   for (const conversation of conversations) {
-    const delivered = await sendTelegramAdminMessage(assistantDigestMessage(conversation));
+    const delivered = await sendTelegramAdminMessage(assistantDigestMessage(conversation), {
+      replyMarkup: assistantConversationKeyboard(conversation),
+    });
     if (delivered) {
       sent += 1;
       await prisma.assistantConversation.updateMany({

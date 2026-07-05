@@ -106,7 +106,36 @@ export async function sendTelegramChatMessage(
   return sendTelegramMessage(String(chatId), text, token, options);
 }
 
-export async function sendTelegramAdminMessage(text: string): Promise<boolean> {
+export async function answerTelegramCallbackQuery(callbackQueryId: string, text?: string): Promise<boolean> {
+  const token = configuredBotToken();
+  if (!token) {
+    console.warn("[telegram] Callback answer skipped because bot token is missing.", telegramDiagnostics());
+    return false;
+  }
+
+  try {
+    const response = await fetch(`https://api.telegram.org/bot${token}/answerCallbackQuery`, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({
+        callback_query_id: callbackQueryId,
+        ...(text ? { text } : {}),
+      }),
+    });
+    const payload = (await response.json().catch(() => null)) as TelegramSendResponse | null;
+    return response.ok && Boolean(payload?.ok);
+  } catch (error) {
+    console.error("[telegram] Callback answer request failed.", {
+      message: error instanceof Error ? error.message : "Unknown Telegram request error",
+    });
+    return false;
+  }
+}
+
+export async function sendTelegramAdminMessage(
+  text: string,
+  options: TelegramSendOptions = {},
+): Promise<boolean> {
   const token = configuredBotToken();
   const chatIds = telegramAdminChatIds();
 
@@ -115,6 +144,6 @@ export async function sendTelegramAdminMessage(text: string): Promise<boolean> {
     return false;
   }
 
-  const results = await Promise.all(chatIds.map((chatId) => sendTelegramMessage(chatId, text, token)));
+  const results = await Promise.all(chatIds.map((chatId) => sendTelegramMessage(chatId, text, token, options)));
   return results.some(Boolean);
 }
