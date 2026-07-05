@@ -62,6 +62,7 @@ const RELEVANT_PATTERNS = [
 ];
 
 const OFF_TOPIC_PATTERNS = [
+  /(?:^|\s)\d+\s*[+\-*/x\u00d7\u00f7]\s*\d+(?=\s|[?.!,;:]|$)/i,
   /(?:^|\s)\d+\s*[+\-*/x×÷]\s*\d+(?:\s|$)/i,
   /сколько\s+будет/i,
   /what\s+is\s+\d+/i,
@@ -75,6 +76,34 @@ const OFF_TOPIC_PATTERNS = [
 
 function latestUserMessage(messages: AssistantChatMessage[]): string {
   return [...messages].reverse().find((message) => message.role === "user")?.content || "";
+}
+
+function countPatternMatches(text: string, pattern: RegExp): number {
+  return Array.from(text.matchAll(pattern)).length;
+}
+
+function detectResponseLocale(text: string, fallback: AppLocale): AppLocale {
+  const clean = text.trim();
+  if (!clean) return fallback;
+
+  const cyrillicCount = countPatternMatches(clean, /\p{Script=Cyrillic}/gu);
+  if (cyrillicCount >= 2) return "ru";
+
+  const germanScore =
+    countPatternMatches(
+      clean,
+      /\b(aber|angebot|bitte|brauche|danke|deutsch|eine|einen|erstgespraech|erstgespr[aä]ch|fuer|für|guten|hallo|ich|ihre|ihren|kann|koennen|können|kosten|meine|meinen|mit|moechte|möchte|oder|preis|projekt|seite|sie|und|was|webseite|wie|wir)\b/gi,
+    ) + countPatternMatches(clean, /[\u00c4\u00d6\u00dc\u00e4\u00f6\u00fc\u00df]/g);
+
+  const englishScore = countPatternMatches(
+    clean,
+    /\b(about|better|business|can|contact|cost|english|for|hello|help|hi|how|make|much|my|need|price|project|site|thanks|the|website|what|which|with|you|your)\b/gi,
+  );
+
+  if (englishScore > germanScore && englishScore > 0) return "en";
+  if (germanScore > englishScore && germanScore > 0) return "de";
+
+  return fallback;
 }
 
 function isGreeting(text: string): boolean {
@@ -153,16 +182,18 @@ function sanitizeAssistantAnswer(answer: string): string {
 
 async function createAssistantResponse({
   locale,
+  responseLocale,
   messages,
   pagePath,
 }: {
   locale: AppLocale;
+  responseLocale: AppLocale;
   messages: AssistantChatMessage[];
   pagePath?: string;
 }): Promise<string> {
   const apiKey = process.env.OPENAI_API_KEY?.trim();
   if (!apiKey) {
-    return sanitizeAssistantAnswer(assistantFallbackAnswer(locale));
+    return sanitizeAssistantAnswer(assistantFallbackAnswer(responseLocale));
   }
 
   const response = await fetch("https://api.openai.com/v1/responses", {
@@ -173,7 +204,7 @@ async function createAssistantResponse({
     },
     body: JSON.stringify({
       model: modelName(),
-      input: buildAssistantInput({ locale, messages, pagePath }),
+      input: buildAssistantInput({ locale, responseLocale, messages, pagePath }),
       max_output_tokens: 650,
     }),
   });
@@ -188,10 +219,10 @@ async function createAssistantResponse({
           ? (payload as { error?: { message?: string } }).error?.message
           : "Unknown OpenAI error",
     });
-    return sanitizeAssistantAnswer(assistantFallbackAnswer(locale));
+    return sanitizeAssistantAnswer(assistantFallbackAnswer(responseLocale));
   }
 
-  return sanitizeAssistantAnswer(outputText(payload) || assistantFallbackAnswer(locale));
+  return sanitizeAssistantAnswer(outputText(payload) || assistantFallbackAnswer(responseLocale));
 }
 
 export async function POST(req: Request) {
@@ -230,13 +261,17 @@ export async function POST(req: Request) {
   }
 
   const locale = isAppLocale(parsed.data.locale) ? parsed.data.locale : "de";
-  if (isOffTopicQuestion(latestUserMessage(parsed.data.messages))) {
+  const latestMessage = latestUserMessage(parsed.data.messages);
+  const responseLocale = detectResponseLocale(latestMessage, locale);
+
+  if (isOffTopicQuestion(latestMessage)) {
     return NextResponse.json(
       {
         ok: true,
-        answer: sanitizeAssistantAnswer(assistantOffTopicAnswer(locale)),
+        answer: sanitizeAssistantAnswer(assistantOffTopicAnswer(responseLocale)),
         configured: Boolean(process.env.OPENAI_API_KEY?.trim()),
         scoped: false,
+        responseLocale,
       },
       { headers: { "Cache-Control": "no-store" } },
     );
@@ -244,6 +279,7 @@ export async function POST(req: Request) {
 
   const answer = await createAssistantResponse({
     locale,
+    responseLocale,
     messages: parsed.data.messages,
     pagePath: parsed.data.pagePath,
   });
@@ -254,6 +290,7 @@ export async function POST(req: Request) {
       answer,
       configured: Boolean(process.env.OPENAI_API_KEY?.trim()),
       model: process.env.OPENAI_API_KEY?.trim() ? modelName() : undefined,
+      responseLocale,
     },
     { headers: { "Cache-Control": "no-store" } },
   );

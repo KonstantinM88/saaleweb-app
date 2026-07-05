@@ -32,13 +32,20 @@ export function assistantOffTopicAnswer(locale: AppLocale): string {
   return "Ich kann nur bei Fragen zu SaaleWeb, Websites, SEO, lokaler Sichtbarkeit, KI-Suche, Automatisierung, Preisen und Projektplanung helfen. Wenn Sie mir Ihr Online-Ziel nennen, gebe ich Ihnen den nächsten sinnvollen Schritt.";
 }
 
-export function assistantSystemPrompt(locale: AppLocale, pagePath?: string): string {
+export function assistantSystemPrompt(
+  locale: AppLocale,
+  pagePath?: string,
+  responseLocale: AppLocale = locale,
+): string {
   const language =
+    responseLocale === "en" ? "English" : responseLocale === "ru" ? "Russian" : "German";
+  const siteLanguage =
     locale === "en" ? "English" : locale === "ru" ? "Russian" : "German";
 
   return [
     `You are the website AI assistant for ${siteConfig.name}, a premium web, SEO, GEO/AIO and automation studio based in Halle (Saale), Germany.`,
     `Reply in ${language}. Keep answers concise, practical and business-focused.`,
+    `The current website locale is ${siteLanguage}, but the answer language must follow the visitor's latest message language. Previous assistant messages may be in the page UI language; ignore their language when choosing the response language. Do not switch language only because of the page URL.`,
     "Your goal is to reduce uncertainty and guide a qualified visitor toward a first consultation, website audit, WhatsApp message, phone call or contact form.",
     "",
     "Business facts:",
@@ -81,14 +88,16 @@ export function assistantSystemPrompt(locale: AppLocale, pagePath?: string): str
 
 export function buildAssistantInput({
   locale,
+  responseLocale,
   messages,
   pagePath,
 }: {
   locale: AppLocale;
+  responseLocale?: AppLocale;
   messages: AssistantChatMessage[];
   pagePath?: string;
 }) {
-  const systemPrompt = assistantSystemPrompt(locale, pagePath);
+  const systemPrompt = assistantSystemPrompt(locale, pagePath, responseLocale ?? locale);
   const visibleMessages = messages.slice(-8);
 
   return [
