@@ -1,9 +1,18 @@
 import "server-only";
 
 import { prisma } from "@/lib/prisma";
+import { sendTelegramAdminMessage } from "./telegram";
 
 const LIST_LIMIT = 10;
 const MESSAGE_LIMIT = 14;
+const DIGEST_LIMIT = 5;
+const DEFAULT_QUIET_SECONDS = 60;
+
+export type AssistantDigestResult = {
+  scanned: number;
+  sent: number;
+  failed: number;
+};
 
 function siteUrl(): string {
   return (process.env.NEXT_PUBLIC_SITE_URL || "https://saaleweb.de").replace(/\/+$/, "");
@@ -195,4 +204,114 @@ export async function unblockAssistantTarget(target?: string): Promise<string> {
   } catch (error) {
     return `Не удалось разблокировать IP: ${error instanceof Error ? error.message : "ошибка БД"}`;
   }
+}
+
+function assistantDigestMessage(conversation: {
+  id: string;
+  ipAddress: string | null;
+  city: string | null;
+  region: string | null;
+  country: string | null;
+  pagePath: string | null;
+  locale: string;
+  responseLocale: string;
+  messageCount: number;
+  lastMessageAt: Date;
+  messages: Array<{
+    role: string;
+    content: string;
+    createdAt: Date;
+    responseLocale: string | null;
+    scoped: boolean | null;
+  }>;
+}): string {
+  const messages = [...conversation.messages].reverse();
+  const messageLines = messages.map((message) => {
+    const role = message.role === "user" ? "👤 Клиент" : "🤖 Ассистент";
+    const meta = [
+      formatDateTime(message.createdAt),
+      message.responseLocale,
+      message.scoped === false ? "off-topic" : undefined,
+    ]
+      .filter(Boolean)
+      .join(" · ");
+    return `${role} (${meta})\n${trimText(message.content, 520)}`;
+  });
+
+  return [
+    `💬 Новый AI-диалог SaaleWeb #${shortId(conversation.id)}`,
+    "",
+    `🕒 Завершён/пауза: ${formatDateTime(conversation.lastMessageAt)}`,
+    `🌐 IP: ${conversation.ipAddress || "-"}`,
+    `🌍 Место: ${locationLabel(conversation)}`,
+    `🧭 Страница: ${conversation.pagePath || "-"}`,
+    `🗣 Язык: ${conversation.locale} / ответ: ${conversation.responseLocale}`,
+    `🔢 Сообщений: ${conversation.messageCount}`,
+    "",
+    ...messageLines,
+    "",
+    conversation.ipAddress
+      ? `🚫 Заблокировать IP: /assistant_block ${shortId(conversation.id)}`
+      : "🚫 Блокировка недоступна: IP не определён.",
+    `📂 Открыть в админке: ${siteUrl()}/admin/assistant/${conversation.id}`,
+  ].join("\n\n");
+}
+
+export async function sendAssistantConversationDigests({
+  quietSeconds = DEFAULT_QUIET_SECONDS,
+  limit = DIGEST_LIMIT,
+  force = false,
+}: {
+  quietSeconds?: number;
+  limit?: number;
+  force?: boolean;
+} = {}): Promise<AssistantDigestResult> {
+  const safeQuietSeconds = Math.max(10, Math.min(3600, Math.floor(quietSeconds)));
+  const safeLimit = Math.max(1, Math.min(20, Math.floor(limit)));
+  const cutoff = new Date(Date.now() - safeQuietSeconds * 1000);
+
+  const conversations = await prisma.assistantConversation.findMany({
+    where: {
+      messageCount: { gt: 0 },
+      ...(force
+        ? {}
+        : {
+            lastMessageAt: { lte: cutoff },
+            telegramNotifiedAt: null,
+          }),
+    },
+    orderBy: { lastMessageAt: "desc" },
+    take: safeLimit,
+    include: {
+      messages: {
+        orderBy: { createdAt: "desc" },
+        take: MESSAGE_LIMIT,
+      },
+    },
+  });
+
+  let sent = 0;
+  let failed = 0;
+
+  for (const conversation of conversations) {
+    const delivered = await sendTelegramAdminMessage(assistantDigestMessage(conversation));
+    if (delivered) {
+      sent += 1;
+      await prisma.assistantConversation.updateMany({
+        where: {
+          id: conversation.id,
+          lastMessageAt: conversation.lastMessageAt,
+        },
+        data: { telegramNotifiedAt: new Date() },
+      });
+    } else {
+      failed += 1;
+    }
+  }
+
+  return {
+    scanned: conversations.length,
+    sent,
+    failed,
+  };
 }

@@ -340,10 +340,10 @@ model TestimonialTranslation {
 // ---------------------------------------------------------------------------
 
 model SEOPage {
-  id           String              @id @default(cuid())
-  path         String              @unique
+  id           String               @id @default(cuid())
+  path         String               @unique
   translations SEOPageTranslation[]
-  updatedAt    DateTime            @updatedAt
+  updatedAt    DateTime             @updatedAt
 }
 
 model SEOPageTranslation {
@@ -385,29 +385,31 @@ model AiBotVisit {
 }
 
 model AssistantConversation {
-  id             String             @id @default(cuid())
-  visitorKey     String
-  ipAddress      String?
-  ipHash         String?
-  userAgent      String?
-  country        String?
-  city           String?
-  region         String?
-  timezone       String?
-  locale         Locale             @default(de)
-  responseLocale Locale             @default(de)
-  pagePath       String?
-  messageCount   Int                @default(0)
-  lastMessageAt  DateTime           @default(now())
-  createdAt      DateTime           @default(now())
-  updatedAt      DateTime           @updatedAt
-  messages       AssistantMessage[]
+  id                 String             @id @default(cuid())
+  visitorKey         String
+  ipAddress          String?
+  ipHash             String?
+  userAgent          String?
+  country            String?
+  city               String?
+  region             String?
+  timezone           String?
+  locale             Locale             @default(de)
+  responseLocale     Locale             @default(de)
+  pagePath           String?
+  messageCount       Int                @default(0)
+  lastMessageAt      DateTime           @default(now())
+  telegramNotifiedAt DateTime?
+  createdAt          DateTime           @default(now())
+  updatedAt          DateTime           @updatedAt
+  messages           AssistantMessage[]
 
   @@index([visitorKey])
   @@index([ipAddress])
   @@index([ipHash])
   @@index([createdAt])
   @@index([lastMessageAt])
+  @@index([telegramNotifiedAt])
 }
 
 model AssistantMessage {
