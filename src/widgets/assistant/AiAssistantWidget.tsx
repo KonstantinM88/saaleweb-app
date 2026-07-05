@@ -6,6 +6,7 @@ import { siteConfig } from "@/shared/config/site";
 
 const APPEAR_DELAY_MS = 8_000;
 const MAX_CONTEXT_MESSAGES = 10;
+const VISITOR_STORAGE_KEY = "saaleweb_assistant_visitor";
 
 type ChatRole = "user" | "assistant";
 
@@ -89,6 +90,7 @@ export function AiAssistantWidget({
   const [messages, setMessages] = useState<ChatMessage[]>([{ role: "assistant", content: labels.intro }]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const visitorIdRef = useRef<string | undefined>(undefined);
   const scrollRef = useRef<HTMLDivElement | null>(null);
 
   const whatsappHref = useMemo(
@@ -100,6 +102,25 @@ export function AiAssistantWidget({
   useEffect(() => {
     const timer = window.setTimeout(() => setMounted(true), APPEAR_DELAY_MS);
     return () => window.clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    try {
+      const existing = window.localStorage.getItem(VISITOR_STORAGE_KEY);
+      if (existing) {
+        visitorIdRef.current = existing;
+        return;
+      }
+
+      const next =
+        typeof window.crypto?.randomUUID === "function"
+          ? window.crypto.randomUUID()
+          : `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 12)}`;
+      window.localStorage.setItem(VISITOR_STORAGE_KEY, next);
+      visitorIdRef.current = next;
+    } catch {
+      visitorIdRef.current = undefined;
+    }
   }, []);
 
   useEffect(() => {
@@ -135,9 +156,10 @@ export function AiAssistantWidget({
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({
-          locale,
-          pagePath: window.location.pathname,
-          messages: nextMessages
+            locale,
+            pagePath: window.location.pathname,
+            visitorId: visitorIdRef.current,
+            messages: nextMessages
             .filter((message) => message.role === "user" || message.role === "assistant")
             .slice(-MAX_CONTEXT_MESSAGES),
         }),

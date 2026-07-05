@@ -18,6 +18,7 @@ import {
   Search,
   LogOut,
   MailCheck,
+  Bot,
 } from "lucide-react";
 import { logout } from "@/features/auth/actions";
 import { BrandLogo } from "@/shared/ui/BrandLogo";
@@ -27,6 +28,7 @@ const items = [
   { href: "/admin", label: "Übersicht", icon: LayoutDashboard },
   { href: "/admin/leads", label: "Anfragen", icon: Inbox },
   { href: "/admin/newsletter", label: "Newsletter", icon: MailCheck },
+  { href: "/admin/assistant", label: "AI-Dialoge", icon: Bot },
   { href: "/admin/services", label: "Leistungen", icon: Wrench },
   { href: "/admin/industries", label: "Branchen", icon: Building2 },
   { href: "/admin/projects", label: "Projekte", icon: FolderKanban },

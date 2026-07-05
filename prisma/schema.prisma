@@ -384,6 +384,56 @@ model AiBotVisit {
   @@index([path])
 }
 
+model AssistantConversation {
+  id             String             @id @default(cuid())
+  visitorKey     String
+  ipAddress      String?
+  ipHash         String?
+  userAgent      String?
+  country        String?
+  city           String?
+  region         String?
+  timezone       String?
+  locale         Locale             @default(de)
+  responseLocale Locale             @default(de)
+  pagePath       String?
+  messageCount   Int                @default(0)
+  lastMessageAt  DateTime           @default(now())
+  createdAt      DateTime           @default(now())
+  updatedAt      DateTime           @updatedAt
+  messages       AssistantMessage[]
+
+  @@index([visitorKey])
+  @@index([ipAddress])
+  @@index([ipHash])
+  @@index([createdAt])
+  @@index([lastMessageAt])
+}
+
+model AssistantMessage {
+  id             String                @id @default(cuid())
+  conversation   AssistantConversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  conversationId String
+  role           String
+  content        String
+  model          String?
+  scoped         Boolean?
+  responseLocale Locale?
+  createdAt      DateTime              @default(now())
+
+  @@index([conversationId])
+  @@index([createdAt])
+}
+
+model BlockedIp {
+  id        String   @id @default(cuid())
+  ipAddress String   @unique
+  reason    String?
+  createdAt DateTime @default(now())
+
+  @@index([createdAt])
+}
+
 model Media {
   id        String   @id @default(cuid())
   url       String

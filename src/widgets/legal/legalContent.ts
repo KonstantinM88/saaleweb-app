@@ -303,6 +303,7 @@ const datenschutzDe: LegalPageContent = {
       paragraphs: [
         "Wenn Sie uns über das Kontaktformular oder per E-Mail eine Anfrage senden, verarbeiten wir die von Ihnen angegebenen Daten: Name, E-Mail-Adresse, optional Telefonnummer und Unternehmen sowie Ihre Nachricht.",
         "Die Verarbeitung erfolgt zur Bearbeitung Ihrer Anfrage und für mögliche Anschlussfragen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Durchführung vorvertraglicher Maßnahmen bzw. Vertragserfüllung) sowie im Übrigen unser berechtigtes Interesse an der Beantwortung von Anfragen (Art. 6 Abs. 1 lit. f DSGVO).",
+        "Wenn Sie den KI-Assistenten nutzen, speichern wir den Gesprächsverlauf zusammen mit technischen Kontextdaten (IP-Adresse, technische Besucherkennung, User-Agent, Sprachversion, aufgerufene Seite und – sofern vom Hosting- oder Proxy-Anbieter übermittelt – Land, Region oder Stadt). Dies dient der Beantwortung Ihrer Anfrage, Qualitätskontrolle, Missbrauchserkennung und Sperrung von Spam-IP-Adressen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO; soweit daraus eine konkrete Anfrage entsteht, zusätzlich Art. 6 Abs. 1 lit. b DSGVO.",
         "Ihre Angaben werden gelöscht, sobald sie für die Bearbeitung nicht mehr erforderlich sind und keine gesetzlichen Aufbewahrungspflichten (z. B. aus Handels- oder Steuerrecht) entgegenstehen.",
       ],
     },
@@ -334,6 +335,7 @@ const datenschutzDe: LegalPageContent = {
       paragraphs: [
         "Diese Website verwendet keine Cookies zu Analyse-, Tracking- oder Werbezwecken.",
         "Technisch notwendige Cookies können in zwei Fällen gesetzt werden: zur Speicherung Ihrer Sprachauswahl (wenn Sie die Sprache der Website wechseln) sowie für die Anmeldung autorisierter Administratoren im internen Verwaltungsbereich. Diese Cookies sind für die gewünschte Funktion unbedingt erforderlich (§ 25 Abs. 2 Nr. 2 TDDDG); Rechtsgrundlage der damit verbundenen Datenverarbeitung ist Art. 6 Abs. 1 lit. f DSGVO.",
+        "Der KI-Assistent kann zusätzlich eine zufällig erzeugte technische Besucherkennung im Local Storage Ihres Browsers speichern, damit Folgefragen demselben Gespräch zugeordnet werden können. Die Kennung enthält keine Nachrichtentexte und keine Kontaktdaten.",
       ],
     },
     {
@@ -419,6 +421,7 @@ const datenschutzEn: LegalPageContent = {
       paragraphs: [
         "If you send us an inquiry via the contact form or by email, we process the data you provide: name, email address, optionally phone number and company, and your message.",
         "Processing takes place to handle your inquiry and for possible follow-up questions. The legal basis is Art. 6(1)(b) GDPR (pre-contractual measures or contract performance) and, in addition, our legitimate interest in answering inquiries (Art. 6(1)(f) GDPR).",
+        "If you use the AI assistant, we store the conversation history together with technical context data (IP address, technical visitor identifier, user agent, language version, page accessed and – where transmitted by the hosting or proxy provider – country, region or city). This is used to answer your request, review quality, detect misuse and block spam IP addresses. The legal basis is Art. 6(1)(f) GDPR; where this results in a concrete inquiry, Art. 6(1)(b) GDPR also applies.",
         "Your details are deleted as soon as they are no longer required for processing and no statutory retention obligations (e.g. under commercial or tax law) prevent deletion.",
       ],
     },
@@ -450,6 +453,7 @@ const datenschutzEn: LegalPageContent = {
       paragraphs: [
         "This website does not use cookies for analytics, tracking or advertising purposes.",
         "Technically necessary cookies may be set in two cases: to store your language selection (when you switch the website language) and for the login of authorised administrators in the internal administration area. These cookies are strictly necessary for the requested function (Section 25(2) no. 2 TDDDG); the legal basis for the associated data processing is Art. 6(1)(f) GDPR.",
+        "The AI assistant may additionally store a randomly generated technical visitor identifier in your browser's local storage so that follow-up questions can be assigned to the same conversation. The identifier does not contain message texts or contact details.",
       ],
     },
     {
@@ -535,6 +539,7 @@ const datenschutzRu: LegalPageContent = {
       paragraphs: [
         "Если вы отправляете нам запрос через контактную форму или по электронной почте, мы обрабатываем указанные вами данные: имя, адрес электронной почты, при желании телефон и название компании, а также ваше сообщение.",
         "Обработка выполняется для ответа на ваше обращение и возможных уточняющих вопросов. Правовое основание — ст. 6 (1)(b) GDPR (преддоговорные меры или исполнение договора), а также наш законный интерес в ответе на обращения (ст. 6 (1)(f) GDPR).",
+        "Если вы используете AI-ассистента, мы сохраняем историю диалога вместе с техническими контекстными данными: IP-адресом, техническим идентификатором посетителя, user-agent, языковой версией, открытой страницей и — если эти данные передаются hosting- или proxy-провайдером — страной, регионом или городом. Это нужно для ответа на запрос, контроля качества, выявления злоупотреблений и блокировки спам-IP. Правовое основание — ст. 6 (1)(f) GDPR; если из диалога возникает конкретное обращение, дополнительно применяется ст. 6 (1)(b) GDPR.",
         "Ваши данные удаляются, как только они перестают быть необходимыми для обработки и этому не препятствуют законные сроки хранения (например, по торговому или налоговому праву).",
       ],
     },
@@ -566,6 +571,7 @@ const datenschutzRu: LegalPageContent = {
       paragraphs: [
         "Этот сайт не использует cookies для аналитики, трекинга или рекламы.",
         "Технически необходимые cookies могут устанавливаться в двух случаях: для сохранения выбранного языка (при переключении языка сайта) и для входа авторизованных администраторов во внутреннюю панель управления. Эти cookies строго необходимы для запрошенной функции (§ 25 (2) № 2 TDDDG); правовое основание связанной с ними обработки — ст. 6 (1)(f) GDPR.",
+        "AI-ассистент также может сохранять в localStorage браузера случайно созданный технический идентификатор посетителя, чтобы последующие вопросы можно было связать с тем же диалогом. Этот идентификатор не содержит тексты сообщений или контактные данные.",
       ],
     },
     {

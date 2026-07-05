@@ -7,6 +7,11 @@ import {
   buildTopPagesReport,
   buildWeeklySiteReport,
 } from "./telegramReports";
+import {
+  blockAssistantTarget,
+  buildAssistantConversationReport,
+  unblockAssistantTarget,
+} from "./telegramAssistant";
 import { buildHealthReport } from "./telegramHealth";
 import { sendTelegramChatMessage } from "./telegram";
 
@@ -16,6 +21,7 @@ const BUTTON_WEEK = "📅 Недельный отчёт";
 const BUTTON_AI = "🤖 AI-отчёт";
 const BUTTON_TOP = "🏆 Топ-страницы";
 const BUTTON_LEADS = "🎯 Заявки";
+const BUTTON_ASSISTANT = "💬 AI-диалоги";
 const BUTTON_HELP = "❔ Помощь";
 
 function commandKeyboard() {
@@ -24,7 +30,7 @@ function commandKeyboard() {
       [{ text: BUTTON_HEALTH }, { text: BUTTON_DAILY }],
       [{ text: BUTTON_WEEK }, { text: BUTTON_AI }],
       [{ text: BUTTON_TOP }, { text: BUTTON_LEADS }],
-      [{ text: BUTTON_HELP }],
+      [{ text: BUTTON_ASSISTANT }, { text: BUTTON_HELP }],
     ],
     resize_keyboard: true,
     is_persistent: true,
@@ -43,12 +49,16 @@ function helpText(): string {
     `${BUTTON_AI} — отдельный отчёт по AI-ботам и AI-переходам`,
     `${BUTTON_TOP} — топ страниц, источники и SEO/GEO/AIO возможности`,
     `${BUTTON_LEADS} — последние заявки, статусы и источники`,
+    `${BUTTON_ASSISTANT} — последние переписки с AI-ассистентом`,
     `${BUTTON_HELP} — показать это меню`,
     "",
-    "Также работают текстовые команды:",
-    "/health, /report, /week, /ai, /top, /leads, /help",
+    "Текстовые команды:",
+    "/health, /report, /week, /ai, /top, /leads, /assistant, /help",
     "",
-    "Следующая функция по списку: короткие уведомления по проблемам и падениям.",
+    "AI-диалоги:",
+    "/assistant <id> — прочитать переписку",
+    "/assistant_block <id или IP> — заблокировать IP",
+    "/assistant_unblock <IP> — разблокировать IP",
   ].join("\n");
 }
 
@@ -61,6 +71,7 @@ function normalizeCommand(text: string): string {
     [BUTTON_AI]: "/ai",
     [BUTTON_TOP]: "/top",
     [BUTTON_LEADS]: "/leads",
+    [BUTTON_ASSISTANT]: "/assistant",
     [BUTTON_HELP]: "/help",
   };
 
@@ -73,6 +84,7 @@ async function sendWithMenu(chatId: string | number, text: string): Promise<bool
 
 export async function handleTelegramCommand(chatId: string | number, text: string): Promise<boolean> {
   const command = normalizeCommand(text);
+  const args = text.trim().split(/\s+/).slice(1);
 
   if (command === "/health") {
     return sendWithMenu(chatId, await buildHealthReport());
@@ -96,6 +108,18 @@ export async function handleTelegramCommand(chatId: string | number, text: strin
 
   if (command === "/leads") {
     return sendWithMenu(chatId, await buildLeadsReport());
+  }
+
+  if (command === "/assistant") {
+    return sendWithMenu(chatId, await buildAssistantConversationReport(args[0]));
+  }
+
+  if (command === "/assistant_block") {
+    return sendWithMenu(chatId, await blockAssistantTarget(args[0], args.slice(1).join(" ")));
+  }
+
+  if (command === "/assistant_unblock") {
+    return sendWithMenu(chatId, await unblockAssistantTarget(args[0]));
   }
 
   if (command === "/start" || command === "/help" || command === "меню") {

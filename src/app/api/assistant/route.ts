@@ -7,6 +7,11 @@ import {
   buildAssistantInput,
   type AssistantChatMessage,
 } from "@/features/assistant/knowledge";
+import {
+  assistantRequestMeta,
+  isAssistantIpBlocked,
+  logAssistantExchange,
+} from "@/features/assistant/logging";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -31,6 +36,7 @@ const messageSchema = z.object({
 const requestSchema = z.object({
   locale: z.string().default("de"),
   pagePath: z.string().trim().max(300).optional(),
+  visitorId: z.string().trim().max(80).optional(),
   messages: z.array(messageSchema).min(1).max(MAX_MESSAGES),
 });
 
@@ -263,12 +269,35 @@ export async function POST(req: Request) {
   const locale = isAppLocale(parsed.data.locale) ? parsed.data.locale : "de";
   const latestMessage = latestUserMessage(parsed.data.messages);
   const responseLocale = detectResponseLocale(latestMessage, locale);
+  const meta = assistantRequestMeta(req, parsed.data.visitorId);
+
+  if (await isAssistantIpBlocked(meta.ipAddress)) {
+    return NextResponse.json(
+      {
+        ok: false,
+        error: "blocked",
+        responseLocale,
+      },
+      { status: 403, headers: { "Cache-Control": "no-store" } },
+    );
+  }
 
   if (isOffTopicQuestion(latestMessage)) {
+    const answer = sanitizeAssistantAnswer(assistantOffTopicAnswer(responseLocale));
+    await logAssistantExchange({
+      meta,
+      locale,
+      responseLocale,
+      pagePath: parsed.data.pagePath,
+      userMessage: latestMessage,
+      assistantAnswer: answer,
+      scoped: false,
+    });
+
     return NextResponse.json(
       {
         ok: true,
-        answer: sanitizeAssistantAnswer(assistantOffTopicAnswer(responseLocale)),
+        answer,
         configured: Boolean(process.env.OPENAI_API_KEY?.trim()),
         scoped: false,
         responseLocale,
@@ -283,6 +312,16 @@ export async function POST(req: Request) {
     messages: parsed.data.messages,
     pagePath: parsed.data.pagePath,
   });
+  await logAssistantExchange({
+    meta,
+    locale,
+    responseLocale,
+    pagePath: parsed.data.pagePath,
+    userMessage: latestMessage,
+    assistantAnswer: answer,
+    model: process.env.OPENAI_API_KEY?.trim() ? modelName() : undefined,
+    scoped: true,
+  });
 
   return NextResponse.json(
     {
@@ -290,6 +329,7 @@ export async function POST(req: Request) {
       answer,
       configured: Boolean(process.env.OPENAI_API_KEY?.trim()),
       model: process.env.OPENAI_API_KEY?.trim() ? modelName() : undefined,
+      scoped: true,
       responseLocale,
     },
     { headers: { "Cache-Control": "no-store" } },
