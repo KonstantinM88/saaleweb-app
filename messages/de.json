@@ -84,43 +84,86 @@
     "techNote": {
       "title": "Flexible Technologien",
       "text": "Nicht jedes Unternehmen benötigt dieselbe Technologie. Wir prüfen, welche Lösung für Ihr Unternehmen sinnvoll ist – moderne Website, WordPress, Online-Shop, individuelle Anwendung, Schnittstelle oder Automatisierung. Die Technologie folgt dem Ziel – nicht umgekehrt.",
-      "chips": ["Websites", "Online-Shops", "WordPress", "Automatisierung", "Schnittstellen", "Support"]
+      "chips": [
+        "Websites",
+        "Online-Shops",
+        "WordPress",
+        "Automatisierung",
+        "Schnittstellen",
+        "Support"
+      ]
     },
     "solutions": [
       {
         "title": "Websites, Portale & Online-Shops",
         "desc": "Professionelle digitale Auftritte und Systeme, die Vertrauen schaffen, Produkte präsentieren und Anfragen oder Verkäufe ermöglichen.",
-        "chips": ["Websites", "Portale", "Online-Shops", "WordPress", "UI/UX"],
+        "chips": [
+          "Websites",
+          "Portale",
+          "Online-Shops",
+          "WordPress",
+          "UI/UX"
+        ],
         "cta": "Mehr über Websites erfahren"
       },
       {
         "title": "SEO, Content & Sichtbarkeit",
         "desc": "Strukturierte Inhalte, technische Optimierung und redaktionell geprüfte Texte helfen, Ihr Unternehmen besser auffindbar und verständlich zu machen.",
-        "chips": ["SEO", "Local SEO", "Copywriting", "Landingpages", "KI-Suche"],
+        "chips": [
+          "SEO",
+          "Local SEO",
+          "Copywriting",
+          "Landingpages",
+          "KI-Suche"
+        ],
         "cta": "SEO-Potenzial prüfen"
       },
       {
         "title": "Automatisierung, KI & Prozesse",
         "desc": "Digitale Prozesse sparen Zeit, reduzieren manuelle Arbeit und unterstützen Ihr Team im Alltag.",
-        "chips": ["Workflows", "KI-Assistenten", "Interne Tools", "Datenverarbeitung", "Kundenservice"],
+        "chips": [
+          "Workflows",
+          "KI-Assistenten",
+          "Interne Tools",
+          "Datenverarbeitung",
+          "Kundenservice"
+        ],
         "cta": "Automatisierung besprechen"
       },
       {
         "title": "Daten, API & Integrationen",
         "desc": "Wir verbinden Systeme, strukturieren Daten und schaffen Schnittstellen, damit digitale Prozesse zuverlässig zusammenarbeiten.",
-        "chips": ["API", "Datenimport", "Datenbanken", "Migration", "Auswertungen"],
+        "chips": [
+          "API",
+          "Datenimport",
+          "Datenbanken",
+          "Migration",
+          "Auswertungen"
+        ],
         "cta": "Integration prüfen"
       },
       {
         "title": "Sicherheit, Wartung & Support",
         "desc": "Websites und Webanwendungen benötigen Pflege, Updates, Backups und technische Kontrolle.",
-        "chips": ["Wartung", "Backups", "Updates", "Performance", "Sicherheitscheck"],
+        "chips": [
+          "Wartung",
+          "Backups",
+          "Updates",
+          "Performance",
+          "Sicherheitscheck"
+        ],
         "cta": "Website-Sicherheit prüfen"
       },
       {
         "title": "Marketing, CRM & Kundenprozesse",
         "desc": "Digitale Kundengewinnung endet nicht bei der Website. Wir unterstützen strukturierte Anfragewege und DSGVO-bewusste Kommunikation.",
-        "chips": ["CRM-Struktur", "Lead-Management", "Newsletter", "Audit-Funnels", "Kontaktwege"],
+        "chips": [
+          "CRM-Struktur",
+          "Lead-Management",
+          "Newsletter",
+          "Audit-Funnels",
+          "Kontaktwege"
+        ],
         "cta": "Kundenprozesse verbessern"
       }
     ],
@@ -175,19 +218,36 @@
         "name": "Starter",
         "sub": "Landingpage",
         "price": "ab 990 €",
-        "features": ["One-Page Website", "Mobil-optimiert", "SEO-Grundlagen", "Kontaktformular"]
+        "features": [
+          "One-Page Website",
+          "Mobil-optimiert",
+          "SEO-Grundlagen",
+          "Kontaktformular"
+        ]
       },
       {
         "name": "Business",
         "sub": "Unternehmenswebsite",
         "price": "ab 1.990 €",
-        "features": ["Mehrseitige Website", "Vollständiges SEO", "Blog-System", "CMS zum Selbstpflegen", "Analytics & Tracking"]
+        "features": [
+          "Mehrseitige Website",
+          "Vollständiges SEO",
+          "Blog-System",
+          "CMS zum Selbstpflegen",
+          "Analytics & Tracking"
+        ]
       },
       {
         "name": "Premium",
         "sub": "SEO + Automatisierung + KI",
         "price": "ab 3.490 €",
-        "features": ["Alles aus Business", "KI-Optimierung (GEO)", "Automatisierung & Leads", "DE/EN/RU inklusive · weitere Sprachen auf Wunsch", "Laufende Betreuung"]
+        "features": [
+          "Alles aus Business",
+          "KI-Optimierung (GEO)",
+          "Automatisierung & Leads",
+          "DE/EN/RU inklusive · weitere Sprachen auf Wunsch",
+          "Laufende Betreuung"
+        ]
       }
     ]
   },
@@ -197,27 +257,75 @@
     "items": [
       {
         "q": "Was kostet eine Website bei SaaleWeb?",
-        "a": "Eine Landingpage startet bei 990 €, Unternehmenswebsites bei 1.990 €. Sie erhalten immer einen transparenten Festpreis nach einem kostenlosen Erstgespräch."
+        "a": "Ein kompakter WordPress-Onepager startet ab 600 €, eine moderne Landingpage ab 990 € und eine vollständige Unternehmenswebsite ab 1.990 €. Individuelle Systeme mit Online-Buchung, Shop oder Automatisierung kalkulieren wir nach Aufwand — immer als transparenter Festpreis nach einem kostenlosen Erstgespräch."
       },
       {
-        "q": "Wie lange dauert die Erstellung?",
-        "a": "Eine Landingpage ist oft in 1–2 Wochen fertig, eine vollständige Unternehmenswebsite in 3–5 Wochen — abhängig von Umfang und Inhalten."
+        "q": "Wie lange dauert die Erstellung einer Website?",
+        "a": "Eine Landingpage ist oft in 1–2 Wochen online, eine vollständige Unternehmenswebsite in 3–5 Wochen. Größere Projekte mit Online-Buchung, Mehrsprachigkeit oder Integrationen planen wir individuell — Sie erhalten von Anfang an einen klaren Zeitplan."
       },
       {
-        "q": "Kümmert ihr euch auch um SEO?",
-        "a": "Ja. SEO ist von Anfang an Teil jeder Website — technisch, inhaltlich und lokal. So werden Sie bei Google und in KI-Suchen gefunden."
+        "q": "Ist SEO bei jeder Website inklusive?",
+        "a": "Ja. Technisches SEO, saubere Seitenstruktur, schnelle Ladezeiten, Meta-Daten und strukturierte Daten gehören von Anfang an dazu. So werden Sie bei Google in Halle, Leipzig und Umgebung gefunden — auf Wunsch ergänzen wir zusätzliche SEO-Landingpages für einzelne Leistungen."
       },
       {
-        "q": "Was bedeutet „KI-optimiert\"?",
-        "a": "Wir strukturieren Ihre Inhalte so, dass auch ChatGPT, Gemini, Claude und Perplexity Ihr Unternehmen verstehen, zitieren und empfehlen können."
+        "q": "Was bedeutet GEO bzw. AIO — Optimierung für KI-Suche?",
+        "a": "GEO (Generative Engine Optimization) und AIO (AI Optimization) sorgen dafür, dass KI-Systeme wie ChatGPT, Gemini, Claude und Perplexity Ihr Unternehmen verstehen, korrekt zitieren und weiterempfehlen. Dafür strukturieren wir Inhalte semantisch, ergänzen strukturierte Daten nach Schema.org und beantworten echte Kundenfragen direkt auf der Website."
       },
       {
-        "q": "Kann ich Inhalte selbst pflegen?",
-        "a": "Ab dem Business-Paket erhalten Sie ein einfaches CMS, mit dem Sie Texte, Bilder und Blog-Beiträge selbst aktualisieren können."
+        "q": "Wie erscheint mein Unternehmen in Antworten von ChatGPT & Co.?",
+        "a": "KI-Suchsysteme bevorzugen Websites mit klaren Fakten: wer Sie sind, was Sie anbieten, wo Sie arbeiten und was es kostet. Genau diese Informationen bereiten wir maschinenlesbar auf — mit FAQ-Bereichen, LocalBusiness-Daten und eindeutigen Leistungsseiten. So steigt die Chance, dass KI-Antworten Ihr Unternehmen nennen."
       },
       {
-        "q": "Bietet ihr Hosting und Wartung?",
-        "a": "Ja. Wir hosten auf Vercel (blitzschnell und sicher) und bieten optionale Wartungspakete mit Updates, Monitoring und Support."
+        "q": "Macht ihr lokales SEO für Halle, Leipzig und den Saalekreis?",
+        "a": "Ja, das ist unser Kerngebiet. Wir optimieren Ihre Website für lokale Suchanfragen wie „Friseur Halle“ oder „Dachdecker Merseburg“, bauen Standort- und Leistungsseiten und verknüpfen alles mit Ihrem Google Business Profil — für Kunden aus Halle (Saale), Leipzig, Merseburg, Schkeuditz, Delitzsch und dem Saalekreis."
+      },
+      {
+        "q": "Helft ihr auch beim Google Business Profil?",
+        "a": "Ja. Ein gepflegtes Google Business Profil bringt Sichtbarkeit auf Google Maps und in der lokalen Suche. Wir richten das Profil ein oder optimieren es, verknüpfen es sauber mit der Website und sorgen für konsistente Unternehmensdaten — ein wichtiger Faktor für lokale Rankings."
+      },
+      {
+        "q": "Sind mehrsprachige Websites möglich?",
+        "a": "Ja — Deutsch, Englisch und Russisch gehören zur Basis, weitere Sprachen sind auf Anfrage möglich. Jede Sprachversion erhält eigene URLs, saubere hreflang-Verknüpfungen und angepasste Inhalte, damit Sie auch internationale und russischsprachige Kunden in der Region erreichen."
+      },
+      {
+        "q": "WordPress oder Next.js — was passt zu meinem Projekt?",
+        "a": "Die Technologie folgt dem Ziel. WordPress ist stark, wenn Sie Inhalte häufig selbst pflegen und ein bewährtes System wünschen. Next.js/React punktet mit maximaler Geschwindigkeit, individuellen Funktionen und langfristiger Skalierbarkeit. Im Erstgespräch empfehlen wir ehrlich, was zu Ihrem Budget und Ihren Plänen passt."
+      },
+      {
+        "q": "Ich habe schon eine Website — lohnt sich ein Relaunch?",
+        "a": "Oft ja: Wenn die Seite langsam lädt, auf dem Smartphone schlecht aussieht, kaum Anfragen bringt oder bei Google unsichtbar ist, kostet sie täglich Kunden. Wir analysieren den Ist-Zustand kostenlos, übernehmen bewährte Inhalte und bauen ein schnelles Fundament mit sauberer SEO-Struktur."
+      },
+      {
+        "q": "Könnt ihr Online-Terminbuchung integrieren?",
+        "a": "Ja. Ob Friseursalon, Kosmetikstudio, Praxis oder Handwerksbetrieb — wir integrieren Online-Buchung, Kalender-Anbindung und automatische Bestätigungen. Ihre Kunden buchen rund um die Uhr, Sie sparen Telefonzeit und verlieren keine Anfragen außerhalb der Öffnungszeiten."
+      },
+      {
+        "q": "Kann ich Inhalte später selbst pflegen?",
+        "a": "Ja. Ab dem Business-Paket erhalten Sie ein einfaches CMS, mit dem Sie Texte, Bilder, Preise und Blog-Beiträge ohne Programmierkenntnisse aktualisieren. Alternativ übernehmen wir die Pflege im Rahmen eines Wartungspakets."
+      },
+      {
+        "q": "Bietet ihr Hosting, Wartung und Support an?",
+        "a": "Ja. Wir hosten auf schneller, sicherer Infrastruktur (u. a. Vercel) und bieten optionale Wartungspakete mit Updates, Monitoring, Backups und persönlichem Support. Sie haben einen direkten Ansprechpartner — keine anonyme Hotline."
+      },
+      {
+        "q": "Wie läuft ein Projekt bei SaaleWeb ab?",
+        "a": "In sechs klaren Schritten: kostenloses Erstgespräch, Analyse Ihrer Ziele, individuelles Konzept mit Festpreis, Design und Entwicklung, gemeinsamer Launch — und danach Support. Sie sehen Zwischenstände, geben Feedback und wissen jederzeit, wo das Projekt steht."
+      },
+      {
+        "q": "Warum nicht einfach ein Baukasten wie Wix — oder nur Instagram?",
+        "a": "Baukästen und Social Media sind ein Start, aber selten ein Fundament: eingeschränktes SEO, generisches Design und Abhängigkeit von Plattform-Regeln. Eine eigene professionelle Website gehört Ihnen, wird bei Google und in KI-Suchen gefunden und wandelt Besucher gezielt in Anfragen um. Instagram ergänzt das ideal — ersetzt es aber nicht."
+      },
+      {
+        "q": "Wird die Website nach DSGVO-Grundsätzen umgesetzt?",
+        "a": "Ja. Impressum, Datenschutzerklärung, SSL-Verschlüsselung und europäische Hosting-Optionen gehören zum Standard. Unsere cookielose Besucherstatistik kommt ohne Cookie-Banner aus — das verbessert Nutzererlebnis und Conversion."
+      },
+      {
+        "q": "Arbeitet ihr auch remote bzw. außerhalb der Region?",
+        "a": "Ja. Unser Schwerpunkt liegt in Halle (Saale), Leipzig und dem Saalekreis — genauso zuverlässig arbeiten wir remote für Kunden in ganz Deutschland. Abstimmungen laufen bequem per Telefon, WhatsApp oder Videocall."
+      },
+      {
+        "q": "Was brauche ich, um zu starten?",
+        "a": "Nur Ihr Ziel. Für das kostenlose Erstgespräch reichen Ihre aktuelle Website (falls vorhanden) und eine kurze Beschreibung Ihres Angebots. Texte, Bilder und Struktur entwickeln wir gemeinsam — melden Sie sich einfach per Kontaktformular, WhatsApp oder Telefon."
       }
     ]
   },
@@ -355,25 +463,65 @@
       "successMeta": "Nächster Schritt: kostenloses Erstgespräch",
       "error": "Bitte prüfen Sie die Pflichtfelder und versuchen Sie es erneut.",
       "projectTypeOptions": [
-        { "value": "new-website", "label": "Neue Website" },
-        { "value": "seo", "label": "SEO / Local SEO" },
-        { "value": "ai", "label": "KI-Optimierung / GEO" },
-        { "value": "relaunch", "label": "Relaunch" },
-        { "value": "performance", "label": "Performance / Technik" },
-        { "value": "consulting", "label": "Beratung" }
+        {
+          "value": "new-website",
+          "label": "Neue Website"
+        },
+        {
+          "value": "seo",
+          "label": "SEO / Local SEO"
+        },
+        {
+          "value": "ai",
+          "label": "KI-Optimierung / GEO"
+        },
+        {
+          "value": "relaunch",
+          "label": "Relaunch"
+        },
+        {
+          "value": "performance",
+          "label": "Performance / Technik"
+        },
+        {
+          "value": "consulting",
+          "label": "Beratung"
+        }
       ],
       "budgetOptions": [
-        { "value": "under-2500", "label": "unter 2.500 €" },
-        { "value": "2500-5000", "label": "2.500–5.000 €" },
-        { "value": "5000-10000", "label": "5.000–10.000 €" },
-        { "value": "10000-plus", "label": "10.000 €+" },
-        { "value": "not-sure", "label": "Noch offen" }
+        {
+          "value": "under-2500",
+          "label": "unter 2.500 €"
+        },
+        {
+          "value": "2500-5000",
+          "label": "2.500–5.000 €"
+        },
+        {
+          "value": "5000-10000",
+          "label": "5.000–10.000 €"
+        },
+        {
+          "value": "10000-plus",
+          "label": "10.000 €+"
+        },
+        {
+          "value": "not-sure",
+          "label": "Noch offen"
+        }
       ]
     },
     "expectationsEyebrow": "Was danach passiert",
     "expectationsTitle": "Was passiert nach Ihrer Anfrage?",
     "expectationsLead": "Sie bekommen keinen Druckverkauf, sondern eine klare Einschätzung. Ziel ist, dass Sie eine gute Entscheidung treffen können — auch wenn wir nicht zusammenarbeiten.",
-    "expectations": ["Antwort innerhalb von 24 Stunden", "Kostenloses Erstgespräch", "Persönliche Beratung", "Transparente Festpreise", "Kein Verkaufsdruck", "Individuelles Konzept"],
+    "expectations": [
+      "Antwort innerhalb von 24 Stunden",
+      "Kostenloses Erstgespräch",
+      "Persönliche Beratung",
+      "Transparente Festpreise",
+      "Kein Verkaufsdruck",
+      "Individuelles Konzept"
+    ],
     "trustEyebrow": "Vertrauen",
     "trustTitle": "Erfahrung aus echten Projekten",
     "trustLead": "SaaleWeb arbeitet mit realen Unternehmen aus Dienstleistung, Beauty, Hotellerie, Bau und regionalem Gewerbe. Entscheidend ist nicht ein schöner Entwurf, sondern ein System, das schneller lädt, Vertrauen schafft und Anfragen messbar macht.",
@@ -400,20 +548,38 @@
       }
     ],
     "logosTitle": "Ausgewählte Projektbereiche",
-    "logos": ["Salon Elen", "Waldschlösschen", "SorgfaltBau"],
+    "logos": [
+      "Salon Elen",
+      "Waldschlösschen",
+      "SorgfaltBau"
+    ],
     "projectsCta": "Projekte ansehen",
     "localSeoEyebrow": "Local SEO",
     "localSeoTitle": "Webdesign und SEO für Halle, Leipzig und die Region",
-    "localSeoParagraphs": ["SaaleWeb ist eine Digitalagentur Halle für Unternehmen, die nicht nur eine schöne Website möchten, sondern planbar mehr Vertrauen und Anfragen gewinnen wollen. Wer nach Webdesign Halle, Webagentur Halle oder Website erstellen lassen Halle sucht, braucht meistens keine Standardseite, sondern einen klaren digitalen Vertriebsweg.", "Wir verbinden Webdesign Halle mit SEO Halle: saubere Technik, schnelle Ladezeiten, verständliche Leistungsseiten, lokale Suchsignale und Inhalte, die Kundenfragen beantworten. So entsteht eine Website, die für Menschen, Google und KI-Systeme leichter einzuordnen ist.", "Auch für Unternehmen in Leipzig ist SaaleWeb ein passender Partner. Webdesign Leipzig und SEO Leipzig bedeuten für uns: klare Positionierung, regionale Relevanz, gute Performance und Inhalte, die aus Besuchern qualifizierte Anfragen machen."],
+    "localSeoParagraphs": [
+      "SaaleWeb ist eine Digitalagentur Halle für Unternehmen, die nicht nur eine schöne Website möchten, sondern planbar mehr Vertrauen und Anfragen gewinnen wollen. Wer nach Webdesign Halle, Webagentur Halle oder Website erstellen lassen Halle sucht, braucht meistens keine Standardseite, sondern einen klaren digitalen Vertriebsweg.",
+      "Wir verbinden Webdesign Halle mit SEO Halle: saubere Technik, schnelle Ladezeiten, verständliche Leistungsseiten, lokale Suchsignale und Inhalte, die Kundenfragen beantworten. So entsteht eine Website, die für Menschen, Google und KI-Systeme leichter einzuordnen ist.",
+      "Auch für Unternehmen in Leipzig ist SaaleWeb ein passender Partner. Webdesign Leipzig und SEO Leipzig bedeuten für uns: klare Positionierung, regionale Relevanz, gute Performance und Inhalte, die aus Besuchern qualifizierte Anfragen machen."
+    ],
     "servicesLink": "Leistungen",
     "industriesLink": "Branchen",
     "pricingLink": "Preise",
     "aiEyebrow": "GEO & AI Search",
     "aiTitle": "Damit KI-Systeme Ihr Unternehmen besser verstehen",
-    "aiParagraphs": ["Immer mehr Kunden informieren sich über ChatGPT, Gemini, Claude, Perplexity und Google AI Overview. Deshalb strukturieren wir Inhalte so, dass Angebote, Standorte, Leistungen, Preise und Vertrauenssignale eindeutig erkennbar sind.", "Diese GEO-Arbeit ersetzt kein SEO. Sie erweitert SEO um klare Entitäten, FAQ-Bereiche, interne Links, strukturierte Daten und verständliche Sprache. Das macht Ihre Website für Menschen und für KI-Suchsysteme nutzbarer."],
+    "aiParagraphs": [
+      "Immer mehr Kunden informieren sich über ChatGPT, Gemini, Claude, Perplexity und Google AI Overview. Deshalb strukturieren wir Inhalte so, dass Angebote, Standorte, Leistungen, Preise und Vertrauenssignale eindeutig erkennbar sind.",
+      "Diese GEO-Arbeit ersetzt kein SEO. Sie erweitert SEO um klare Entitäten, FAQ-Bereiche, interne Links, strukturierte Daten und verständliche Sprache. Das macht Ihre Website für Menschen und für KI-Suchsysteme nutzbarer."
+    ],
     "aiPanelTitle": "Optimiert für Antworten",
     "aiPanelLead": "Strukturierte Inhalte statt Keyword-Stapel",
-    "aiPlatforms": ["ChatGPT", "Gemini", "Claude", "Perplexity", "Google AI Overview", "Klassische Google Suche"],
+    "aiPlatforms": [
+      "ChatGPT",
+      "Gemini",
+      "Claude",
+      "Perplexity",
+      "Google AI Overview",
+      "Klassische Google Suche"
+    ],
     "faqEyebrow": "FAQ",
     "faqTitle": "Häufige Fragen vor dem Erstgespräch",
     "faq": [
@@ -531,7 +697,11 @@
         "industry": "Beauty Studio",
         "goal": "Mehr Online-Termine und lokale Sichtbarkeit",
         "solution": "Moderner Auftritt mit Buchungslogik, mehrsprachiger Struktur und Fokus auf lokale Suchanfragen in Halle.",
-        "benefits": ["Einfache Online-Terminbuchung", "Mehrsprachige Nutzerführung", "Bessere lokale Auffindbarkeit"],
+        "benefits": [
+          "Einfache Online-Terminbuchung",
+          "Mehrsprachige Nutzerführung",
+          "Bessere lokale Auffindbarkeit"
+        ],
         "badge": "Beauty · Booking · Local SEO",
         "result": "Online-Termine & Local SEO"
       },
@@ -541,7 +711,11 @@
         "industry": "Restaurant / Gastronomie",
         "goal": "Mehr Sichtbarkeit und professioneller digitaler Auftritt",
         "solution": "Moderner Restaurantauftritt mit klarer Struktur, aktuellen Inhalten und starker mobiler Präsentation.",
-        "benefits": ["Mobile Nutzerführung", "Aktuelle Inhalte sichtbar", "Mehr Vertrauen bei Gästen"],
+        "benefits": [
+          "Mobile Nutzerführung",
+          "Aktuelle Inhalte sichtbar",
+          "Mehr Vertrauen bei Gästen"
+        ],
         "badge": "Restaurant · SEO · Mobile First",
         "result": "Restaurant-Sichtbarkeit"
       },
@@ -551,7 +725,11 @@
         "industry": "Hotel & Restaurant",
         "goal": "Mehr Direktbuchungen und bessere Präsentation von Hotel, Restaurant und Angeboten",
         "solution": "Hochwertiger digitaler Auftritt für Gastronomie, Hotelbetrieb und regionale Sichtbarkeit.",
-        "benefits": ["Angebote klar präsentiert", "Mehr Direktbuchungen möglich", "Professionelle Hotelwirkung"],
+        "benefits": [
+          "Angebote klar präsentiert",
+          "Mehr Direktbuchungen möglich",
+          "Professionelle Hotelwirkung"
+        ],
         "badge": "Hotel · Restaurant · Buchungen",
         "result": "Hotel & Restaurant"
       },
@@ -561,7 +739,11 @@
         "industry": "Bauunternehmen",
         "goal": "Mehr Vertrauen und qualifizierte Anfragen",
         "solution": "Professioneller Unternehmensauftritt, der Leistungen klar präsentiert und Vertrauen bei potenziellen Kunden schafft.",
-        "benefits": ["Mehr Vertrauen bei Neukunden", "Klare Leistungsstruktur", "Mehr qualifizierte Anfragen"],
+        "benefits": [
+          "Mehr Vertrauen bei Neukunden",
+          "Klare Leistungsstruktur",
+          "Mehr qualifizierte Anfragen"
+        ],
         "badge": "Bau · Vertrauen · Anfragen",
         "result": "Qualifizierte Anfragen"
       },
@@ -571,7 +753,11 @@
         "industry": "Handwerk / Glaserei",
         "goal": "Hochwertige Präsentation von Leistungen und Referenzen",
         "solution": "Moderner Auftritt für ein Handwerksunternehmen mit Fokus auf Vertrauen, klare Leistungen und lokale Auffindbarkeit.",
-        "benefits": ["Professionelle Außenwirkung", "Leistungen klar verständlich", "Bessere lokale Sichtbarkeit"],
+        "benefits": [
+          "Professionelle Außenwirkung",
+          "Leistungen klar verständlich",
+          "Bessere lokale Sichtbarkeit"
+        ],
         "badge": "Handwerk · Leistungen · Local SEO",
         "result": "Vertrauen & lokale Sichtbarkeit"
       }
@@ -765,7 +951,16 @@
     "eyebrow": "Flexible Technologien",
     "title": "Die richtige Technologie für Ihr Unternehmen",
     "lead": "Wir empfehlen nicht eine bestimmte Plattform. Wir empfehlen die Lösung, die für Ihr Unternehmen messbar am meisten bringt.",
-    "stack": ["Websites", "Online-Shops", "WordPress-Lösungen", "Automatisierung", "Schnittstellen", "Datenbanklösungen", "Buchungssysteme", "Support"],
+    "stack": [
+      "Websites",
+      "Online-Shops",
+      "WordPress-Lösungen",
+      "Automatisierung",
+      "Schnittstellen",
+      "Datenbanklösungen",
+      "Buchungssysteme",
+      "Support"
+    ],
     "noteTitle": "Das Framework ist nicht das Ziel.",
     "noteText": "Ob moderne Next.js-Plattform, professionell betreute WordPress-Website, individuelle Webanwendung, API-Integration oder Automatisierung: Entscheidend ist nicht das Framework, sondern der Nutzen für Ihr Unternehmen.",
     "benefits": [
@@ -936,7 +1131,13 @@
     "flow": {
       "title": "Business Flow",
       "heading": "Aus Geschwindigkeit entsteht geschäftliche Wirkung.",
-      "items": ["Schnellere Websites", "Mehr Vertrauen", "Bessere Rankings", "Mehr Sichtbarkeit", "Mehr qualifizierte Anfragen"]
+      "items": [
+        "Schnellere Websites",
+        "Mehr Vertrauen",
+        "Bessere Rankings",
+        "Mehr Sichtbarkeit",
+        "Mehr qualifizierte Anfragen"
+      ]
     },
     "disclaimer": "Durchschnittliche Werte ausgewählter SaaleWeb-Projekte. Gemessen mit Google PageSpeed Insights. Die tatsächlichen Ergebnisse können je nach Projektumfang, Hosting und eingesetzten Funktionen variieren.",
     "cta": {
@@ -946,7 +1147,14 @@
   },
   "AuthorityStrip": {
     "title": "Der SaaleWeb Qualitätsstandard",
-    "items": ["Performance optimiert", "SEO strukturiert", "Mobile First", "AI Ready", "Wartbar", "Business First"]
+    "items": [
+      "Performance optimiert",
+      "SEO strukturiert",
+      "Mobile First",
+      "AI Ready",
+      "Wartbar",
+      "Business First"
+    ]
   },
   "Comparison": {
     "eyebrow": "Vergleich",
@@ -1174,49 +1382,165 @@
       {
         "title": "Websites, Portale & Online-Shops",
         "desc": "Professionelle digitale Auftritte und Systeme, die Vertrauen schaffen, Produkte präsentieren und Anfragen oder Verkäufe ermöglichen.",
-        "chips": ["Websites", "Portale", "Online-Shops", "WordPress", "UI/UX"],
-        "services": ["Entwicklung von Websites", "Unternehmenswebsites", "Corporate Portale", "Online-Shops", "WordPress-Websites", "Website Relaunch", "Mehrsprachige Websites"],
-        "bullets": ["Professioneller erster Eindruck", "Klare Nutzerführung", "Mobile First", "Bessere Auffindbarkeit", "Einfache Erweiterbarkeit"],
+        "chips": [
+          "Websites",
+          "Portale",
+          "Online-Shops",
+          "WordPress",
+          "UI/UX"
+        ],
+        "services": [
+          "Entwicklung von Websites",
+          "Unternehmenswebsites",
+          "Corporate Portale",
+          "Online-Shops",
+          "WordPress-Websites",
+          "Website Relaunch",
+          "Mehrsprachige Websites"
+        ],
+        "bullets": [
+          "Professioneller erster Eindruck",
+          "Klare Nutzerführung",
+          "Mobile First",
+          "Bessere Auffindbarkeit",
+          "Einfache Erweiterbarkeit"
+        ],
         "cta": "Mehr über Websites erfahren"
       },
       {
         "title": "SEO, Content & Sichtbarkeit",
         "desc": "Strukturierte Inhalte, technische Optimierung und hochwertige Texte sorgen dafür, dass Ihr Unternehmen besser gefunden und verstanden wird.",
-        "chips": ["SEO", "Local SEO", "Copywriting", "Landingpages", "KI-Suche"],
-        "services": ["SEO-Optimierung", "Local SEO", "Technisches SEO", "Copywriting", "KI-gestützte Content-Produktion mit redaktioneller Prüfung", "Blog- und Landingpage-Strategie"],
-        "bullets": ["Mehr Sichtbarkeit", "Mehr relevante Besucher", "Bessere lokale Auffindbarkeit", "Klare Inhalte", "Zukunftsfähig für Google und KI-Suche"],
+        "chips": [
+          "SEO",
+          "Local SEO",
+          "Copywriting",
+          "Landingpages",
+          "KI-Suche"
+        ],
+        "services": [
+          "SEO-Optimierung",
+          "Local SEO",
+          "Technisches SEO",
+          "Copywriting",
+          "KI-gestützte Content-Produktion mit redaktioneller Prüfung",
+          "Blog- und Landingpage-Strategie"
+        ],
+        "bullets": [
+          "Mehr Sichtbarkeit",
+          "Mehr relevante Besucher",
+          "Bessere lokale Auffindbarkeit",
+          "Klare Inhalte",
+          "Zukunftsfähig für Google und KI-Suche"
+        ],
         "cta": "SEO-Potenzial prüfen"
       },
       {
         "title": "Automatisierung, KI & Geschäftsprozesse",
         "desc": "Digitale Prozesse sparen Zeit, reduzieren manuelle Arbeit und helfen Ihrem Unternehmen, effizienter zu arbeiten.",
-        "chips": ["Workflows", "KI-Assistenten", "Interne Tools", "Datenverarbeitung", "Kundenservice"],
-        "services": ["Automatisierung von Geschäftsprozessen", "KI-Assistenten für Kundenservice", "Individuelle Software und Skripte", "Interne Tools", "Datenverarbeitung", "Automatisierte Workflows"],
-        "bullets": ["Weniger manuelle Arbeit", "Schnellere Abläufe", "Besserer Kundenservice", "Skalierbare Prozesse", "Mehr Effizienz"],
+        "chips": [
+          "Workflows",
+          "KI-Assistenten",
+          "Interne Tools",
+          "Datenverarbeitung",
+          "Kundenservice"
+        ],
+        "services": [
+          "Automatisierung von Geschäftsprozessen",
+          "KI-Assistenten für Kundenservice",
+          "Individuelle Software und Skripte",
+          "Interne Tools",
+          "Datenverarbeitung",
+          "Automatisierte Workflows"
+        ],
+        "bullets": [
+          "Weniger manuelle Arbeit",
+          "Schnellere Abläufe",
+          "Besserer Kundenservice",
+          "Skalierbare Prozesse",
+          "Mehr Effizienz"
+        ],
         "cta": "Automatisierung besprechen"
       },
       {
         "title": "Daten, API & Integrationen",
         "desc": "Wir verbinden Systeme, strukturieren Daten und schaffen technische Schnittstellen, damit digitale Prozesse zuverlässig zusammenarbeiten.",
-        "chips": ["API", "Datenimport", "Datenbanken", "Migration", "Auswertungen"],
-        "services": ["API-Entwicklung", "API-Integrationen", "Datenbanklösungen", "Datenimport und Datenexport", "Datenmigration", "Rechtskonforme Datenextraktion und Datenaufbereitung"],
-        "bullets": ["Systeme verbinden", "Daten nutzbar machen", "Fehler reduzieren", "Zeit sparen", "Bessere Entscheidungen durch Daten"],
+        "chips": [
+          "API",
+          "Datenimport",
+          "Datenbanken",
+          "Migration",
+          "Auswertungen"
+        ],
+        "services": [
+          "API-Entwicklung",
+          "API-Integrationen",
+          "Datenbanklösungen",
+          "Datenimport und Datenexport",
+          "Datenmigration",
+          "Rechtskonforme Datenextraktion und Datenaufbereitung"
+        ],
+        "bullets": [
+          "Systeme verbinden",
+          "Daten nutzbar machen",
+          "Fehler reduzieren",
+          "Zeit sparen",
+          "Bessere Entscheidungen durch Daten"
+        ],
         "cta": "Integration prüfen"
       },
       {
         "title": "Sicherheit, Wartung & technischer Support",
         "desc": "Websites benötigen Pflege, Sicherheit und technische Kontrolle. SaaleWeb unterstützt bei Wartung, Fehlerbehebung und Sicherheitsoptimierung.",
-        "chips": ["Wartung", "Backups", "Updates", "Performance", "Sicherheitscheck"],
-        "services": ["Website-Wartung", "WordPress-Wartung", "Sicherheitsoptimierung für Websites und Webanwendungen", "Malware-Entfernung", "Updates", "Backups", "Monitoring"],
-        "bullets": ["Weniger Ausfälle", "Mehr Sicherheit", "Regelmäßige Updates", "Schutz vor technischen Risiken", "Langfristige Betreuung"],
+        "chips": [
+          "Wartung",
+          "Backups",
+          "Updates",
+          "Performance",
+          "Sicherheitscheck"
+        ],
+        "services": [
+          "Website-Wartung",
+          "WordPress-Wartung",
+          "Sicherheitsoptimierung für Websites und Webanwendungen",
+          "Malware-Entfernung",
+          "Updates",
+          "Backups",
+          "Monitoring"
+        ],
+        "bullets": [
+          "Weniger Ausfälle",
+          "Mehr Sicherheit",
+          "Regelmäßige Updates",
+          "Schutz vor technischen Risiken",
+          "Langfristige Betreuung"
+        ],
         "cta": "Website-Sicherheit prüfen"
       },
       {
         "title": "Marketing, CRM & Kundenprozesse",
         "desc": "Digitale Kundengewinnung endet nicht bei der Website. Auf Wunsch unterstützt SaaleWeb auch bei strukturierten Kundenprozessen und DSGVO-konformer Kommunikation.",
-        "chips": ["CRM-Struktur", "Lead-Management", "Newsletter", "Audit-Funnels", "Kontaktwege"],
-        "services": ["Aufbau von Kunden- oder Interessentenstrukturen", "CRM-Struktur", "Lead-Management", "Kontaktformulare", "Website-Audit-Funnels", "DSGVO-konforme E-Mail-Kommunikation mit rechtlich zulässigen Kontakten"],
-        "bullets": ["Bessere Kundenprozesse", "Strukturierte Anfragen", "Mehr Nachfassmöglichkeiten", "Bessere Kundenbindung", "Saubere Kommunikation"],
+        "chips": [
+          "CRM-Struktur",
+          "Lead-Management",
+          "Newsletter",
+          "Audit-Funnels",
+          "Kontaktwege"
+        ],
+        "services": [
+          "Aufbau von Kunden- oder Interessentenstrukturen",
+          "CRM-Struktur",
+          "Lead-Management",
+          "Kontaktformulare",
+          "Website-Audit-Funnels",
+          "DSGVO-konforme E-Mail-Kommunikation mit rechtlich zulässigen Kontakten"
+        ],
+        "bullets": [
+          "Bessere Kundenprozesse",
+          "Strukturierte Anfragen",
+          "Mehr Nachfassmöglichkeiten",
+          "Bessere Kundenbindung",
+          "Saubere Kommunikation"
+        ],
         "cta": "Kundenprozesse verbessern"
       }
     ],
