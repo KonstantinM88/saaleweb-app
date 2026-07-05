@@ -99,6 +99,38 @@ const defaultFinal = {
     "In einem kostenlosen Erstgespräch klären wir, welche Lösung zu Ihrer Situation passt und welche nächsten Schritte realistisch sind.",
 };
 
+// Delta 26: shared GEO/AIO FAQ blocks reused across service, industry and city
+// landing pages. Pricing follows the official 600/990/1990 EUR orientation.
+const pricingFaq: Record<Phase4Locale, Phase4Faq> = {
+  de: {
+    q: "Was kostet ein Projekt bei SaaleWeb?",
+    a: "Zur Orientierung: Ein kompakter WordPress-Onepager startet ab 600 €, eine moderne Landingpage ab 990 €, eine vollständige Unternehmenswebsite ab 1.990 €. Online-Buchung, Mehrsprachigkeit oder Integrationen sind zusätzlicher Umfang. Den genauen Festpreis klären wir im kostenlosen Erstgespräch.",
+  },
+  en: {
+    q: "What does a project at SaaleWeb cost?",
+    a: "For orientation: a compact WordPress one-pager starts at €600, a modern landing page at €990 and a full company website at €1,990. Online booking, multiple languages or integrations are additional scope. The exact fixed price is clarified in the free initial call.",
+  },
+  ru: {
+    q: "Сколько стоит проект в SaaleWeb?",
+    a: "Для ориентира: компактный WordPress one-pager — от 600 €, современный лендинг — от 990 €, полноценный корпоративный сайт — от 1 990 €. Онлайн-запись, несколько языков или интеграции — дополнительный объём. Точную фикс-цену уточняем на бесплатной консультации.",
+  },
+};
+
+const aiSearchFaq: Record<Phase4Locale, Phase4Faq> = {
+  de: {
+    q: "Hilft das auch für KI-Suche wie ChatGPT?",
+    a: "Ja. Wir strukturieren Leistungen, Region, Preise und Antworten auf echte Kundenfragen maschinenlesbar — mit FAQ-Bereichen und strukturierten Daten (GEO/AIO). So können ChatGPT, Gemini, Claude und Perplexity Ihr Unternehmen besser einordnen und in Antworten nennen.",
+  },
+  en: {
+    q: "Does this also help with AI search like ChatGPT?",
+    a: "Yes. We structure services, region, prices and answers to real customer questions in machine-readable form — with FAQ sections and structured data (GEO/AIO). That helps ChatGPT, Gemini, Claude and Perplexity classify your business and mention it in answers.",
+  },
+  ru: {
+    q: "Это помогает и в ИИ-поиске вроде ChatGPT?",
+    a: "Да. Мы структурируем услуги, регион, цены и ответы на реальные вопросы клиентов в машиночитаемом виде — с FAQ-блоками и структурированными данными (GEO/AIO). Так ChatGPT, Gemini, Claude и Perplexity лучше понимают ваш бизнес и могут называть его в ответах.",
+  },
+};
+
 function serviceFaq(topic: string, extra: Phase4Faq[] = []): Phase4Faq[] {
   return [
     ...extra,
@@ -122,11 +154,13 @@ function serviceFaq(topic: string, extra: Phase4Faq[] = []): Phase4Faq[] {
       q: "Gibt es eine Garantie für Platz 1 bei Google?",
       a: "Nein. Seriöse SEO-Arbeit verspricht keine garantierten Rankings. Wir arbeiten transparent an besseren technischen Voraussetzungen, klareren Inhalten und messbarer Sichtbarkeit.",
     },
+    pricingFaq.de,
+    aiSearchFaq.de,
     {
       q: "Wie starten wir am besten?",
       a: "Am sinnvollsten ist ein kurzes Erstgespräch. Danach können wir einschätzen, ob Analyse, Konzept, Relaunch, Optimierung oder laufende Betreuung der beste nächste Schritt ist.",
     },
-  ].slice(0, Math.max(6, extra.length + 4));
+  ].slice(0, Math.max(10, extra.length + 8));
 }
 
 const serviceCases = {
@@ -2423,7 +2457,10 @@ function phase5Faq(locale: Phase4Locale, topic: string, extra: Phase4Faq[] = [])
       },
     ],
   };
-  return [...extra, ...common[locale]].slice(0, 6);
+  return [...extra, ...common[locale], pricingFaq[locale], aiSearchFaq[locale]].slice(
+    0,
+    Math.max(8, extra.length + 6),
+  );
 }
 
 function buildPhase5ServicePage(canonicalSlug: string, locale: Phase4Locale): Phase4Landing | null {
@@ -2579,6 +2616,8 @@ function localizedServicePage(canonicalSlug: string, locale: Phase4Locale): Phas
               a: "С короткой консультации и, если полезно, анализа сайта: скорость, SEO, пользовательский путь и техническая база.",
             },
           ]),
+      pricingFaq[locale],
+      aiSearchFaq[locale],
     ],
     finalTitle: en
       ? "Let’s check what makes sense for your business."
@@ -2652,11 +2691,13 @@ function industryFaq(industry: string, extra: Phase4Faq[] = []): Phase4Faq[] {
       q: "Gibt es feste Umsatzversprechen?",
       a: "Nein. SaaleWeb macht keine unrealistischen Umsatz- oder Ranking-Versprechen. Ziel ist eine bessere digitale Grundlage für Vertrauen, Sichtbarkeit und Anfragen.",
     },
+    pricingFaq.de,
+    aiSearchFaq.de,
     {
       q: "Wie läuft der Start ab?",
       a: "Wir beginnen mit einem kostenlosen Gespräch, prüfen Ziele und aktuelle Website und schlagen dann eine realistische Vorgehensweise vor.",
     },
-  ].slice(0, Math.max(6, extra.length + 4));
+  ].slice(0, Math.max(10, extra.length + 8));
 }
 
 export const seoIndustryPages: Record<string, Phase4Landing> = {
@@ -3811,6 +3852,8 @@ function localizedIndustryPage(canonicalSlug: string, locale: Phase4Locale): Pha
             q: "Does SaaleWeb promise fixed revenue or rankings?",
             a: "No. We do not make unrealistic promises. The goal is a better digital foundation for trust, visibility and inquiries.",
           },
+          pricingFaq.en,
+          aiSearchFaq.en,
           {
             q: "How do we start?",
             a: "We begin with a free first call, review your goals and current website, then propose a realistic next step.",
@@ -3837,6 +3880,8 @@ function localizedIndustryPage(canonicalSlug: string, locale: Phase4Locale): Pha
             q: "SaaleWeb обещает фиксированный доход или позиции?",
             a: "Нет. Мы не даём нереалистичных обещаний. Цель — лучшая цифровая база для доверия, видимости и заявок.",
           },
+          pricingFaq.ru,
+          aiSearchFaq.ru,
           {
             q: "Как начать?",
             a: "Начинаем с бесплатного разговора, проверяем цели и текущий сайт, затем предлагаем реалистичный следующий шаг.",
@@ -3908,6 +3953,11 @@ function cityFaq(city: string): Phase4Faq[] {
     {
       q: "Ist eine persönliche Zusammenarbeit möglich?",
       a: "Ja. Die Zusammenarbeit ist persönlich, direkt und transparent. Viele Abstimmungen funktionieren effizient online, ohne den regionalen Bezug zu verlieren.",
+    },
+    pricingFaq.de,
+    {
+      q: `Wird mein Unternehmen in ${city} auch in KI-Antworten genannt?`,
+      a: `Die Chance steigt, wenn Leistungen, der Standortbezug zu ${city} und Antworten auf Kundenfragen maschinenlesbar strukturiert sind. Genau diese GEO/AIO-Basis bauen wir mit FAQ-Bereichen und strukturierten Daten auf — für Google und KI-Systeme wie ChatGPT, Gemini und Perplexity.`,
     },
     {
       q: "Wie startet ein regionales Website-Projekt?",
@@ -4382,6 +4432,11 @@ function localizedLocationPage(slug: string, locale: Phase4Locale) {
             q: "Is collaboration possible remotely?",
             a: "Yes. Most coordination works efficiently online while keeping a clear regional focus.",
           },
+          pricingFaq.en,
+          {
+            q: `Can my business in ${city} appear in AI answers?`,
+            a: `The chances rise when services, the local context of ${city} and answers to customer questions are structured in machine-readable form. That is exactly the GEO/AIO base we build with FAQ sections and structured data — for Google and AI systems like ChatGPT, Gemini and Perplexity.`,
+          },
           {
             q: "How does a regional website project start?",
             a: "With a free first consultation and a short analysis of goals, audience, current website and relevant local search terms.",
@@ -4407,6 +4462,11 @@ function localizedLocationPage(slug: string, locale: Phase4Locale) {
           {
             q: "Можно работать удалённо?",
             a: "Да. Большинство согласований удобно проводить онлайн, сохраняя региональный фокус.",
+          },
+          pricingFaq.ru,
+          {
+            q: `Может ли мой бизнес в ${city} попадать в ответы ИИ?`,
+            a: `Шансы растут, когда услуги, привязка к ${city} и ответы на вопросы клиентов структурированы машиночитаемо. Именно такую GEO/AIO-базу мы строим с FAQ-блоками и структурированными данными — для Google и ИИ-систем вроде ChatGPT, Gemini и Perplexity.`,
           },
           {
             q: "Как начинается региональный проект сайта?",
