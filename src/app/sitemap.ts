@@ -44,11 +44,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const entries: MetadataRoute.Sitemap = [];
 
   // Home + index pages (same path key across locales, prefix/pathnames differ)
-  for (const href of ["/", "/blog", "/leistungen", "/branchen", "/kontakt", "/preise", "/projekte"] as const) {
+  for (const href of ["/", "/blog", "/leistungen", "/branchen", "/kontakt", "/preise", "/projekte", "/audit"] as const) {
     const languages = Object.fromEntries(
       routing.locales.map((l) => [l, abs(getPathname({ locale: l, href }))]),
     );
-    entries.push(...entriesForLocalizedUrls(languages, href === "/" ? 1 : 0.7, "weekly"));
+    entries.push(...entriesForLocalizedUrls(languages, href === "/" ? 1 : href === "/audit" ? 0.8 : 0.7, "weekly"));
   }
 
   // Legal pages

@@ -13,6 +13,8 @@ export const contactSchema = z
     privacy: z.string().optional().or(z.literal("")),
     // Honeypot: must stay empty
     website: z.string().max(0).optional().or(z.literal("")),
+    // Ad-campaign attribution (utm_* / referrer), filled client-side
+    utm: z.string().max(400).optional().or(z.literal("")),
     locale: z.enum(["de", "en", "ru"]).default("de"),
     source: z.enum(["homepage_contact", "contact_page", "website_audit"]).default("homepage_contact"),
   })

@@ -25,6 +25,7 @@ export async function submitContact(
     message: formData.get("message"),
     privacy: formData.get("privacy") ?? "",
     website: formData.get("website") ?? "",
+    utm: formData.get("utm") ?? "",
     locale: formData.get("locale") ?? "de",
     source: formData.get("source") ?? "homepage_contact",
   });
@@ -48,6 +49,7 @@ export async function submitContact(
       ["Projektart", parsed.data.projectType || (parsed.data.source === "website_audit" ? "Website-Audit" : "")],
       ["Budget", parsed.data.budget],
       ["Website", parsed.data.projectWebsite],
+      ["Kampagne (UTM)", parsed.data.utm],
     ].filter(([, value]) => value);
     const message =
       projectDetails.length > 0

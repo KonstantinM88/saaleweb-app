@@ -66,6 +66,12 @@ export function Footer() {
           <FooterCol title={t("company")}>
             <Link href="/projekte">{tn("projects")}</Link>
             <Link href="/preise">{tn("pricing")}</Link>
+            <Link
+              href="/audit"
+              className="btn-shine mt-1 inline-flex w-fit items-center justify-center rounded-xl bg-brand px-4 py-2.5 text-[13.5px] font-extrabold !text-white shadow-[0_16px_34px_-22px_rgba(139,92,246,0.85)] transition hover:-translate-y-0.5 hover:!text-white"
+            >
+              {tn("audit")}
+            </Link>
             <a href={`${getHomeHref(locale)}#faq`}>{tn("faq")}</a>
             <Link href="/kontakt">{t("contact")}</Link>
           </FooterCol>

@@ -30,6 +30,11 @@ export const routing = defineRouting({
       ru: "/otrasli/[slug]",
     },
     "/kontakt": { de: "/kontakt", en: "/contact", ru: "/kontakt" },
+    "/audit": {
+      de: "/kostenlose-website-analyse",
+      en: "/free-website-audit",
+      ru: "/besplatnyy-audit-sayta",
+    },
     "/preise": { de: "/preise", en: "/pricing", ru: "/ceny" },
     "/projekte": { de: "/projekte", en: "/projects", ru: "/proekty" },
     "/projekte/[slug]": {
