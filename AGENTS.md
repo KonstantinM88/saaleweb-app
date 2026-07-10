@@ -63,6 +63,7 @@ Instructions and project memory for coding agents working in this repository.
 - `public/images/comparison/` - static WebP assets for the legacy before/after comparison slider.
 - `public/images/cases/` - static WebP assets used as project/case study covers when media should live in the committed public asset tree.
 - `public/images/sections/` - static optimized WebP/WebM assets for non-record-specific homepage/landing sections.
+- `public/images/audit/` - localized 1280×720 WebP Hero banners for the free website audit landing page (`audit-hero-de.webp`, `audit-hero-en.webp`, `audit-hero-ru.webp`). Keep the semantic H1/description and real CTA controls in HTML when replacing these image assets.
 - `public/images/blog/` - static optimized WebP cover images for DB-backed blog articles.
 - `public/llms.txt` - Markdown-formatted LLM discovery file with one H1, Markdown links, commercial service pages, industry pages, locations, projects, technology positioning, and contact; `next.config.ts` serves it as `text/markdown; charset=utf-8`.
 - `src/widgets/tech-stack/CodeWindow.tsx` - code-native animated editor/build scene used inside the tech-stack homepage section.
@@ -276,21 +277,27 @@ Instructions and project memory for coding agents working in this repository.
 
 ## Verification Expectations
 
-- For code changes, run the smallest useful check first.
-- Prefer at least `npm run typecheck` and `npm run lint` for TypeScript/UI changes.
-- Run `npm run build` when routing, i18n, metadata, Prisma generation, or Next.js config changes.
-- If Prisma schema changes, run `npm run db:generate` and the appropriate database command when `.env` is available.
-- After runtime HTTP verification, stop every temporary dev/production server started for the check and confirm its test port is no longer listening. Do not leave verification ports occupied.
-- Fast verification recipe for this Windows workspace:
-  - Start shell checks with Node on PATH and use `npm.cmd`: `$env:Path = 'C:\Program Files\nodejs;C:\Windows\System32;C:\Windows;' + $env:Path`.
-  - For `messages/*.json` edits, first run a small Node `JSON.parse` check over `messages/de.json`, `messages/en.json`, and `messages/ru.json`; then run the normal TypeScript/lint checks.
-  - For static `public/` text files only, `git diff --check` plus file/content review is usually enough unless headers, routes, sitemap, or served behavior changed.
-  - For TypeScript/UI edits, run `npm.cmd run typecheck` and `npm.cmd run lint`.
-  - For routing, localized URLs, metadata, sitemap, JSON-LD, Next config, or generated/static params, run `npm.cmd run build` after typecheck/lint.
-  - For localized route work, verify real public URLs with HTTP, not only the Next build route list. next-intl route output may show internal segments such as `/en/leistungen`, while the public URL should be `/en/services`.
-  - For runtime smoke tests, use a high temporary port such as `3146`, confirm it is free with `Get-NetTCPConnection -LocalPort <port> -State Listen`, start `next start` through `Start-Process -WindowStyle Hidden`, save the returned PID, and verify representative DE/EN/RU URLs with `fetch` or `Invoke-WebRequest`.
-  - After runtime checks, stop the saved PID and then also stop any remaining `OwningProcess` still listening on the test port. Finish by confirming `Get-NetTCPConnection -LocalPort <port> -State Listen` returns nothing.
-  - When verifying Cyrillic content from PowerShell/Node one-liners, console output can show mojibake or `???`; use UTF-8 file reads, Unicode escape needles, or browser/runtime HTML checks before assuming the source file is corrupted.
+- Verification is mandatory before reporting implementation work complete. Choose checks according to the change, but never skip validation silently.
+- Before editing, inspect `git status --short`. Preserve unrelated user changes and do not clean/reset files that are outside the task.
+- Always finish with `git diff --check`, review the relevant diff, and inspect `git status --short` so accidental files, whitespace errors, secrets, and consumed temporary inputs are visible.
+- Use this check matrix:
+  - Documentation/config-template-only changes: content review plus `git diff --check`; no production build is required unless served behavior changed.
+  - Static images/media: verify format, dimensions, file size, locale mapping, and rendered asset URL. Integrated Hero/LCP images must have explicit dimensions or an aspect ratio, responsive `sizes`, useful alt text, and no layout shift.
+  - `messages/*.json`: parse all three files (`de`, `en`, `ru`) with `JSON.parse`, then run TypeScript and lint checks when the messages are consumed by code.
+  - TypeScript, React, Tailwind, forms, or UI components: run `npm.cmd run typecheck` and `npm.cmd run lint`.
+  - Routing, i18n pathnames, localized slugs, metadata, sitemap, robots, JSON-LD, Next.js config, dependencies, generated/static params, or Server Actions: run `npm.cmd run typecheck`, `npm.cmd run lint`, and `npm.cmd run build` in that order.
+  - Prisma schema/client changes: run `npm.cmd run db:generate`, apply the explicitly requested migration or `db:push` when the configured database is in scope, then run typecheck, lint, and build. Confirm the generated client is not accidentally staged.
+  - API routes, forms, authentication, email, Telegram, analytics, or AI assistant behavior: add a targeted runtime test for the changed success and failure paths. Do not trigger real external messages, destructive actions, or production writes unless the user authorized them.
+- Windows command setup: if child npm commands cannot find Node, prepend it only for the verification shell with `$env:Path = 'C:\Program Files\nodejs;C:\Windows\System32;C:\Windows;' + $env:Path`, then use `npm.cmd`.
+- Allow at least 360 seconds for `npm.cmd run build`; this project generates roughly 260 static pages and a correct build can exceed 120 seconds.
+- For localized route changes, verify real public URLs over HTTP for representative DE/EN/RU pages. Do not rely only on the Next build route list: it may show internal segments such as `/de/audit` or `/en/leistungen`, while public URLs use the localized `next-intl` pathnames and German normally has no `/de` prefix.
+- Runtime smoke-test procedure:
+  - Use an unused high port (for example `3146`-`3199`) and confirm it is free with `Get-NetTCPConnection -LocalPort <port> -State Listen` before starting a server.
+  - Start `next start` or the required dev server through `Start-Process -WindowStyle Hidden`, retain the returned PID, and wait only until the server responds.
+  - Check status codes and task-specific evidence, not just `200`: localized content/assets, redirects, sitemap/robots entries, API JSON, or expected access protection as applicable.
+  - Put cleanup in a `finally` block. Stop the saved PID, terminate any remaining `OwningProcess` still listening on the test port, and confirm the port has no listener before completing the task.
+- When checking Cyrillic or German text from PowerShell/Node one-liners, console output can show mojibake or `???`; verify UTF-8 source bytes, use Unicode escape needles, or inspect runtime HTML before assuming content corruption.
+- The final handoff must list the checks actually run and their results, confirm temporary server ports were released when used, state whether changes remain local or were pushed, and classify the product outcome as better, worse, or riskier. If a change is worse or strategically questionable, pause and ask before applying or shipping it.
 
 ## Local Workspace Notes
 

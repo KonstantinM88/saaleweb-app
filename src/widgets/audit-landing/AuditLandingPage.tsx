@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   CheckCircle2,
   Eye,
@@ -6,6 +7,7 @@ import {
   ListChecks,
   MapPinned,
   Search,
+  Send,
   ShieldCheck,
   Smartphone,
   Sparkles,
@@ -29,17 +31,32 @@ export function AuditLandingPage({ copy, locale }: { copy: AuditLandingCopy; loc
         aria-labelledby="audit-hero-title"
       >
         <Container>
-          <div className="relative mx-auto max-w-3xl text-center">
-            <span className="eyebrow">{copy.eyebrow}</span>
-            <h1
-              id="audit-hero-title"
-              className="mt-4 text-[clamp(32px,5.2vw,56px)] font-extrabold leading-tight tracking-tight text-dark"
-            >
+          <div className="relative mx-auto max-w-[1280px] text-center">
+            <h1 id="audit-hero-title" className="sr-only">
               {copy.h1}
             </h1>
-            <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-ink">{copy.subtitle}</p>
+            <p className="sr-only">{copy.subtitle}</p>
 
-            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <div className="group relative block overflow-hidden rounded-[18px] border border-brand-purple/15 bg-white shadow-[0_30px_90px_-56px_rgba(88,28,135,0.55)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_34px_96px_-48px_rgba(88,28,135,0.62)] sm:rounded-[26px]">
+              <Image
+                src={copy.heroImage.src}
+                alt={copy.heroImage.alt}
+                width={1280}
+                height={720}
+                priority
+                sizes="(min-width: 1280px) 1200px, (min-width: 768px) calc(100vw - 64px), calc(100vw - 32px)"
+                className="h-auto w-full transition-transform duration-500 group-hover:scale-[1.006] motion-reduce:transition-none"
+              />
+              <a
+                href="#audit-form"
+                className="absolute left-[26.35%] top-[84.4%] z-10 flex h-[10.7%] w-[46.65%] items-center justify-center gap-[clamp(4px,0.8vw,12px)] rounded-[clamp(6px,1.25vw,18px)] bg-gradient-to-r from-[#eb3fad] via-[#bd45d5] to-[#6331e7] px-2 text-[clamp(9px,3vw,40px)] font-extrabold leading-none text-white shadow-[0_8px_28px_-10px_rgba(101,49,231,0.9)] transition duration-300 hover:brightness-110 hover:shadow-[0_12px_34px_-8px_rgba(101,49,231,0.95)] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/90 motion-reduce:transition-none"
+              >
+                <Send className="h-[0.95em] w-[0.95em] shrink-0" aria-hidden />
+                <span>{copy.heroImage.buttonLabel}</span>
+              </a>
+            </div>
+
+            <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row md:mt-8">
               <a
                 href="#audit-form"
                 className="btn-shine inline-flex min-h-12 w-full items-center justify-center rounded-xl bg-brand px-7 py-3 text-[15.5px] font-bold text-white shadow-[0_18px_38px_-18px_rgba(139,92,246,0.85)] transition hover:-translate-y-0.5 sm:w-auto"
@@ -56,7 +73,9 @@ export function AuditLandingPage({ copy, locale }: { copy: AuditLandingCopy; loc
               </a>
             </div>
 
-            <p className="mt-5 text-[13.5px] font-semibold text-muted">{copy.trustLine}</p>
+            <p className="mx-auto mt-5 max-w-3xl text-[13.5px] font-semibold leading-relaxed text-muted">
+              {copy.trustLine}
+            </p>
 
             <ul className="mt-6 flex flex-wrap items-center justify-center gap-2">
               {copy.badges.map((badge) => (

@@ -11,6 +11,7 @@ export type AuditFaqItem = { q: string; a: string };
 export type AuditLandingCopy = {
   metaTitle: string;
   metaDescription: string;
+  heroImage: { src: string; alt: string; buttonLabel: string };
   eyebrow: string;
   h1: string;
   subtitle: string;
@@ -44,6 +45,11 @@ const COPY: Record<AppLocale, AuditLandingCopy> = {
     metaTitle: "Kostenlose Website-Analyse für Unternehmen in Deutschland | SaaleWeb",
     metaDescription:
       "Kostenlose Prüfung Ihrer Website, Instagram-Seite oder Ihres Google-Unternehmensprofils mit 3–5 konkreten Empfehlungen für mehr Vertrauen, Sichtbarkeit und Anfragen.",
+    heroImage: {
+      src: "/images/audit/audit-hero-de.webp",
+      alt: "Kostenlose SaaleWeb Website-Analyse mit Prüfung von SEO, Geschwindigkeit, mobiler Version und Vertrauen",
+      buttonLabel: "Anfrage senden",
+    },
     eyebrow: "Kostenlose Analyse",
     h1: "Kostenlose Website-Analyse für Unternehmen in Deutschland",
     subtitle:
@@ -168,6 +174,11 @@ const COPY: Record<AppLocale, AuditLandingCopy> = {
     metaTitle: "Free Website Audit for Businesses in Germany | SaaleWeb",
     metaDescription:
       "Get a free manual review of your website, Instagram page or Google Business Profile with 3–5 practical recommendations to improve trust, visibility and leads.",
+    heroImage: {
+      src: "/images/audit/audit-hero-en.webp",
+      alt: "Free SaaleWeb website audit covering SEO, speed, mobile usability and trust",
+      buttonLabel: "Request Audit",
+    },
     eyebrow: "Free audit",
     h1: "Free Website Audit for Businesses in Germany",
     subtitle:
@@ -291,6 +302,11 @@ const COPY: Record<AppLocale, AuditLandingCopy> = {
     metaTitle: "Бесплатный аудит сайта для бизнеса в Германии | SaaleWeb",
     metaDescription:
       "Бесплатно проверю ваш сайт, Instagram или Google-профиль и покажу 3–5 ошибок, из-за которых бизнес может терять клиентов.",
+    heroImage: {
+      src: "/images/audit/audit-hero-ru.webp",
+      alt: "Бесплатный аудит сайта SaaleWeb с проверкой SEO, скорости, мобильной версии и доверия",
+      buttonLabel: "Оставить заявку",
+    },
     eyebrow: "Бесплатный аудит",
     h1: "Бесплатный аудит сайта для бизнеса в Германии",
     subtitle:
