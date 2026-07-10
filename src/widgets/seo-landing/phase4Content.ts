@@ -739,6 +739,97 @@ const coreSeoServicePages: Record<string, Phase4Landing> = {
   },
 };
 
+type CityServiceType = "webdesign" | "seo";
+
+type CityServiceTarget = {
+  slug: string;
+  name: string;
+  deArea: string;
+  enArea: string;
+  ruArea: string;
+  deAngle: string;
+  enAngle: string;
+  ruAngle: string;
+};
+
+const CITY_SERVICE_TARGETS: CityServiceTarget[] = [
+  {
+    slug: "leipzig",
+    name: "Leipzig",
+    deArea: "in Leipzig",
+    enArea: "in Leipzig",
+    ruArea: "в Leipzig",
+    deAngle: "einem wettbewerbsstarken Markt mit vielen digitalen Vergleichspunkten",
+    enAngle: "a competitive market where customers compare providers digitally",
+    ruAngle: "конкурентном рынке, где клиенты активно сравнивают компании онлайн",
+  },
+  {
+    slug: "merseburg",
+    name: "Merseburg",
+    deArea: "in Merseburg",
+    enArea: "in Merseburg",
+    ruArea: "в Merseburg",
+    deAngle: "regionaler Nähe zu Halle, lokalen Suchanfragen und Vertrauen vor der Anfrage",
+    enAngle: "regional proximity to Halle, local searches and trust before an inquiry",
+    ruAngle: "региональной близости к Halle, локальных запросах и доверии до заявки",
+  },
+  {
+    slug: "schkeuditz",
+    name: "Schkeuditz",
+    deArea: "in Schkeuditz",
+    enArea: "in Schkeuditz",
+    ruArea: "в Schkeuditz",
+    deAngle: "der Lage zwischen Halle, Leipzig und dem direkten regionalen Umfeld",
+    enAngle: "the position between Halle, Leipzig and the surrounding region",
+    ruAngle: "позиции между Halle, Leipzig и ближайшим региональным окружением",
+  },
+  {
+    slug: "delitzsch",
+    name: "Delitzsch",
+    deArea: "in Delitzsch",
+    enArea: "in Delitzsch",
+    ruArea: "в Delitzsch",
+    deAngle: "lokaler Auffindbarkeit für Dienstleister, Handwerk, Beauty, Gastronomie und regionale Anbieter",
+    enAngle: "local findability for service providers, trades, beauty, restaurants and regional businesses",
+    ruAngle: "локальной видимости для услуг, ремесла, beauty, гастрономии и региональных компаний",
+  },
+  {
+    slug: "saalekreis",
+    name: "Saalekreis",
+    deArea: "im Saalekreis",
+    enArea: "in Saalekreis",
+    ruArea: "в регионе Saalekreis",
+    deAngle: "regionaler Sichtbarkeit über einzelne Orte hinaus",
+    enAngle: "regional visibility beyond one single town",
+    ruAngle: "региональной видимости не только по одному городу",
+  },
+];
+
+const CITY_SERVICE_TYPES: CityServiceType[] = ["webdesign", "seo"];
+
+function cityServiceCanonical(type: CityServiceType, citySlug: string) {
+  return `${type}-${citySlug}`;
+}
+
+const CITY_SERVICE_SLUGS: Record<string, Phase4SlugMap> = Object.fromEntries(
+  CITY_SERVICE_TARGETS.flatMap((city) =>
+    CITY_SERVICE_TYPES.map((type) => [
+      cityServiceCanonical(type, city.slug),
+      type === "webdesign"
+        ? {
+            de: `webdesign-${city.slug}`,
+            en: `web-design-${city.slug}`,
+            ru: `webdesign-${city.slug}`,
+          }
+        : {
+            de: `seo-${city.slug}`,
+            en: `seo-${city.slug}`,
+            ru: `seo-${city.slug}`,
+          },
+    ]),
+  ),
+) as Record<string, Phase4SlugMap>;
+
 const SERVICE_SLUGS: Record<string, Phase4SlugMap> = {
   "website-erstellen-lassen": {
     de: "website-erstellen-lassen",
@@ -755,6 +846,7 @@ const SERVICE_SLUGS: Record<string, Phase4SlugMap> = {
     en: "seo-halle",
     ru: "seo-halle",
   },
+  ...CITY_SERVICE_SLUGS,
   "ki-optimierung": {
     de: "ki-optimierung",
     en: "ai-optimization",
@@ -2463,6 +2555,501 @@ function phase5Faq(locale: Phase4Locale, topic: string, extra: Phase4Faq[] = [])
   );
 }
 
+function localizedServiceSlug(canonicalSlug: string, locale: Phase4Locale) {
+  return SERVICE_SLUGS[canonicalSlug]?.[locale] ?? canonicalSlug;
+}
+
+function localizedAuditHref(locale: Phase4Locale) {
+  if (locale === "en") return "/en/free-website-audit";
+  if (locale === "ru") return "/ru/besplatnyy-audit-sayta";
+  return "/kostenlose-website-analyse";
+}
+
+function localizedContactHref(locale: Phase4Locale) {
+  if (locale === "en") return "/en/contact";
+  if (locale === "ru") return "/ru/kontakt";
+  return "/kontakt";
+}
+
+function localizedProjectsHref(locale: Phase4Locale) {
+  if (locale === "en") return "/en/projects";
+  if (locale === "ru") return "/ru/proekty";
+  return "/projekte";
+}
+
+function localizedCityServicePage(canonicalSlug: string, locale: Phase4Locale): Phase4Landing | null {
+  const match = /^(webdesign|seo)-(.+)$/.exec(canonicalSlug);
+  if (!match) return null;
+
+  const type = match[1] as CityServiceType;
+  const city = CITY_SERVICE_TARGETS.find((item) => item.slug === match[2]);
+  const slug = CITY_SERVICE_SLUGS[canonicalSlug]?.[locale];
+  if (!city || !slug) return null;
+
+  const label = phase5Labels[locale];
+  const isWebdesign = type === "webdesign";
+  const cityName = city.name;
+  const area = locale === "de" ? city.deArea : locale === "en" ? city.enArea : city.ruArea;
+  const angle = locale === "de" ? city.deAngle : locale === "en" ? city.enAngle : city.ruAngle;
+  const partnerCanonical = cityServiceCanonical(isWebdesign ? "seo" : "webdesign", city.slug);
+  const partnerSlug = localizedServiceSlug(partnerCanonical, locale);
+  const pageSlug = localizedServiceSlug(canonicalSlug, locale);
+  const websiteSlug = localizedServiceSlug("website-erstellen-lassen", locale);
+  const aiSlug = localizedServiceSlug("ki-optimierung", locale);
+  const performanceSlug = localizedServiceSlug("performance-optimierung", locale);
+
+  const cases = locale === "de" ? serviceCases.local : SERVICE_CASES_BY_LOCALE[locale];
+
+  if (locale === "de") {
+    const serviceName = isWebdesign ? `Webdesign ${cityName}` : `SEO ${cityName}`;
+    return {
+      slug: pageSlug,
+      navLabel: serviceName,
+      eyebrow: "Lokale Leistung",
+      title: isWebdesign
+        ? `Webdesign ${cityName} – moderne Websites für Sichtbarkeit, Vertrauen und Anfragen`
+        : `SEO ${cityName} – Local SEO, GEO und AI Search für mehr regionale Sichtbarkeit`,
+      metaTitle: isWebdesign
+        ? `Webdesign ${cityName} | Website erstellen lassen`
+        : `SEO ${cityName} | Local SEO, GEO & AI Search`,
+      metaDescription: isWebdesign
+        ? `Webdesign ${cityName}: SaaleWeb erstellt schnelle, klare Websites mit Local SEO, GEO/AIO-Struktur und Anfragefokus für Unternehmen ${area}.`
+        : `SEO ${cityName}: SaaleWeb verbessert technische SEO, Local SEO, Inhalte, strukturierte Daten und AI-Search-Verständlichkeit für Unternehmen ${area}.`,
+      lead: isWebdesign
+        ? [
+            `Unternehmen ${area} brauchen heute mehr als eine schöne Website. Entscheidend ist, ob Besucher sofort verstehen, warum sie Ihnen vertrauen und anfragen sollen.`,
+            `SaaleWeb entwickelt Websites mit klarer regionaler Struktur für ${angle}: schnell, mobil, SEO-bewusst und vorbereitet für moderne KI-Suche.`,
+          ]
+        : [
+            `SEO ${cityName} bedeutet nicht nur Keywords. Entscheidend ist, ob Google, Nutzer und KI-Systeme Ihre Leistungen, Region und fachliche Relevanz eindeutig verstehen.`,
+            `SaaleWeb verbindet technische SEO, Local SEO, Content-Struktur, FAQ, interne Links und GEO/AIO-Grundlagen für Unternehmen ${area}.`,
+          ],
+      problemTitle: isWebdesign
+        ? `Warum viele Websites ${area} zu wenig Wirkung haben`
+        : `Warum SEO ${area} oft nicht planbar genug wirkt`,
+      problems: isWebdesign
+        ? [
+            "Leistungen werden zu allgemein beschrieben und unterscheiden sich kaum vom Wettbewerb.",
+            "Der regionale Bezug ist nicht klar genug in Struktur, Texten und internen Links sichtbar.",
+            "Mobile Nutzer finden Kontakt, Leistungen oder Vertrauen nicht schnell genug.",
+            "Die Website wirkt optisch moderner als inhaltlich überzeugend — oder umgekehrt.",
+            "Performance, Metadaten, Überschriften und strukturierte Daten werden erst nachträglich betrachtet.",
+            "Inhalte sind für Google, ChatGPT, Gemini, Claude und Perplexity nicht eindeutig genug aufgebaut.",
+          ]
+        : [
+            "Es gibt keine klare Seitenstruktur für Leistungen, Zielgruppen und regionale Suchintentionen.",
+            "Lokale Suchbegriffe werden nicht mit echten Kundenfragen und Anfragewegen verbunden.",
+            "Technische Themen wie Indexierung, Ladezeit, Meta-Daten und interne Links bremsen Sichtbarkeit.",
+            "FAQ, Referenzen, Preise und Standortsignale sind nicht maschinenlesbar genug strukturiert.",
+            "Google Business Profile, Website-Inhalte und Landingpages arbeiten nicht sauber zusammen.",
+            "Es fehlen Prioritäten, Messpunkte und realistische nächste Schritte.",
+          ],
+      solutionTitle: isWebdesign
+        ? `Webdesign ${cityName} mit klarer Business-Logik`
+        : `SEO ${cityName} als System aus Technik, Inhalt und Vertrauen`,
+      solution: isWebdesign
+        ? [
+            `Wir planen die Website nicht als Einzelbild, sondern als digitales System: Startseite, Leistungsseiten, lokale Signale, FAQ, Projektbeispiele und Kontaktwege greifen zusammen.`,
+            `So entsteht ein Auftritt, der ${area} professionell wirkt, regionale Suchintentionen aufnimmt und Besucher ohne Umwege zur Anfrage führt.`,
+          ]
+        : [
+            "Wir prüfen zuerst, welche Suchintentionen geschäftlich relevant sind und welche technischen oder inhaltlichen Hürden Sichtbarkeit verhindern.",
+            `Danach entsteht ein priorisierter SEO-Plan für ${cityName}: technische Basis, Local SEO, Landingpages, strukturierte Inhalte, FAQ, interne Verlinkung und messbare Entwicklung.`,
+          ],
+      featuresTitle: isWebdesign
+        ? `Was starkes Webdesign ${area} leisten sollte`
+        : `Was SEO ${area} konkret umfasst`,
+      features: isWebdesign
+        ? [
+            { title: "Klare Positionierung", text: "Die Website erklärt schnell, für wen Sie arbeiten, was Sie anbieten und warum das relevant ist." },
+            { title: "Lokale Struktur", text: "Ort, Einzugsgebiet, Leistungen und interne Links werden sinnvoll verbunden." },
+            { title: "Conversion-Führung", text: "Kontakt, Telefon, Formular, WhatsApp oder Terminlogik bleiben sichtbar und nachvollziehbar." },
+            { title: "SEO-Basis", text: "Meta-Daten, Überschriften, Performance, strukturierte Daten und FAQ werden mitgedacht." },
+            { title: "Mobile Qualität", text: "Smartphone-Nutzer erhalten kurze Wege, gute Lesbarkeit und schnelle Ladezeiten." },
+            { title: "GEO/AIO-Vorbereitung", text: "Inhalte beantworten reale Fragen und helfen KI-Suchsystemen, Ihr Unternehmen korrekt einzuordnen." },
+          ]
+        : [
+            { title: "Technische SEO", text: "Indexierung, Ladezeit, Core Web Vitals, Meta-Daten, interne Links und strukturierte Daten." },
+            { title: "Local SEO", text: "Regionale Suchintentionen, Standortbezug, Einzugsgebiet und vertrauensbildende Inhalte." },
+            { title: "Content-Architektur", text: "Leistungsseiten, FAQ, Preise, Prozess und Referenzen werden klar zusammengeführt." },
+            { title: "AI Search / GEO", text: "Inhalte werden so formuliert, dass auch KI-Systeme Entitäten und Zusammenhänge verstehen." },
+            { title: "Prioritätenplan", text: "Wir starten mit den Maßnahmen, die für Sichtbarkeit und Anfragen realistisch den größten Hebel haben." },
+            { title: "Messbarkeit", text: "Wichtige Seiten, Anfragen und Entwicklung werden nachvollziehbar ausgewertet." },
+          ],
+      technologyTitle: "Die passende Technologie für Ihr Ziel",
+      technologyText,
+      processTitle: isWebdesign ? "Vom lokalen Ziel zur sichtbaren Website" : "Von Analyse zu messbarer Sichtbarkeit",
+      process: serviceProcess,
+      casesTitle: "Passende Projektbeispiele",
+      cases,
+      relatedTitle: "Sinnvolle nächste Seiten",
+      relatedLinks: [
+        {
+          label: isWebdesign ? `SEO ${cityName}` : `Webdesign ${cityName}`,
+          href: serviceHref(locale, partnerSlug),
+          description: isWebdesign
+            ? "Sichtbarkeit, Local SEO und AI-Search-Struktur ergänzend zur Website planen."
+            : "Website-Struktur, Design und Conversion gemeinsam mit SEO denken.",
+        },
+        {
+          label: cityName,
+          href: locationHref(locale, city.slug),
+          description: `Standortseite für regionale Sichtbarkeit ${area}.`,
+        },
+        {
+          label: isWebdesign ? "Website erstellen lassen" : "KI-Optimierung",
+          href: serviceHref(locale, isWebdesign ? websiteSlug : aiSlug),
+          description: isWebdesign
+            ? "Neue Website mit Strategie, SEO und sauberer technischer Basis planen."
+            : "Inhalte für ChatGPT, Gemini, Claude, Perplexity und Google AI Overview strukturieren.",
+        },
+        {
+          label: "Kostenlose Website-Analyse",
+          href: localizedAuditHref(locale),
+          description: "Aktuelle Website auf Sichtbarkeit, Technik und Anfragewege prüfen lassen.",
+        },
+        {
+          label: "Kontakt",
+          href: localizedContactHref(locale),
+          description: "Unverbindlich über Ziel, Umfang und nächste Schritte sprechen.",
+        },
+      ],
+      faq: cityServiceFaq(locale, city, type),
+      finalTitle: "Lassen Sie uns prüfen, welche Seite wirklich sinnvoll ist.",
+      finalText:
+        "Im kostenlosen Erstgespräch klären wir Ziel, Wettbewerb, aktuelles Setup und realistische nächste Schritte — ohne Verkaufsdruck.",
+    };
+  }
+
+  const en = locale === "en";
+  const serviceName = isWebdesign
+    ? en
+      ? `Web design ${cityName}`
+      : `Веб-дизайн ${cityName}`
+    : `SEO ${cityName}`;
+
+  return {
+    slug: pageSlug,
+    navLabel: serviceName,
+    eyebrow: en ? "Local service" : "Локальная услуга",
+    title: isWebdesign
+      ? en
+        ? `Web design ${cityName} – modern websites for visibility, trust and inquiries`
+        : `Веб-дизайн ${cityName} — современные сайты для видимости, доверия и заявок`
+      : en
+        ? `SEO ${cityName} – Local SEO, GEO and AI Search for regional visibility`
+        : `SEO ${cityName} — Local SEO, GEO и AI Search для региональной видимости`,
+    metaTitle: isWebdesign
+      ? en
+        ? `Web design ${cityName} | Get a website built`
+        : `Веб-дизайн ${cityName} | Создание сайта`
+      : en
+        ? `SEO ${cityName} | Local SEO, GEO & AI Search`
+        : `SEO ${cityName} | Local SEO, GEO и AI Search`,
+    metaDescription: isWebdesign
+      ? en
+        ? `Web design ${cityName}: SaaleWeb builds fast, clear websites with Local SEO, GEO/AIO structure and inquiry-focused UX for businesses ${area}.`
+        : `Веб-дизайн ${cityName}: SaaleWeb создаёт быстрые и понятные сайты с Local SEO, GEO/AIO-структурой и фокусом на заявки для компаний ${area}.`
+      : en
+        ? `SEO ${cityName}: technical SEO, Local SEO, structured content, FAQ, schema and AI-search readability for businesses ${area}.`
+        : `SEO ${cityName}: техническое SEO, Local SEO, структурированный контент, FAQ, schema и понятность для AI-поиска для компаний ${area}.`,
+    lead: isWebdesign
+      ? en
+        ? [
+            `Businesses ${area} need more than a nice layout. The website must explain the offer quickly, build trust and guide visitors toward an inquiry.`,
+            `SaaleWeb builds websites for ${angle}: fast, mobile-friendly, SEO-aware and ready for modern AI search systems.`,
+          ]
+        : [
+            `Компаниям ${area} нужен не просто красивый сайт. Сайт должен быстро объяснять предложение, вызывать доверие и вести посетителя к заявке.`,
+            `SaaleWeb создаёт сайты с учётом ${angle}: быстро, удобно на мобильных устройствах, с SEO-базой и подготовкой к AI-поиску.`,
+          ]
+      : en
+        ? [
+            `SEO ${cityName} is not only about keywords. Google, users and AI systems need to understand your services, region and relevance clearly.`,
+            `SaaleWeb combines technical SEO, Local SEO, content structure, FAQ, internal links and GEO/AIO foundations for businesses ${area}.`,
+          ]
+        : [
+            `SEO ${cityName} — это не только ключевые слова. Google, пользователи и AI-системы должны ясно понимать ваши услуги, регион и релевантность.`,
+            `SaaleWeb объединяет техническое SEO, Local SEO, структуру контента, FAQ, внутренние ссылки и GEO/AIO-основу для компаний ${area}.`,
+          ],
+    problemTitle: label.problemTitle,
+    problems: isWebdesign
+      ? en
+        ? [
+            "Services sound too generic and do not stand out from competitors.",
+            "The local context is not visible enough in structure, copy and internal links.",
+            "Mobile users do not find contact, services or trust signals fast enough.",
+            "Design, content and SEO foundation are not planned as one system.",
+            "Performance, metadata, headings and structured data are handled too late.",
+            "Content is not clear enough for Google, ChatGPT, Gemini, Claude and Perplexity.",
+          ]
+        : [
+            "Услуги описаны слишком общо и не отличаются от конкурентов.",
+            "Локальный контекст недостаточно виден в структуре, текстах и внутренних ссылках.",
+            "Пользователи с телефона не находят быстро контакт, услуги и сигналы доверия.",
+            "Дизайн, контент и SEO-база не спланированы как единая система.",
+            "Скорость, metadata, заголовки и структурированные данные учитываются слишком поздно.",
+            "Контент недостаточно понятен для Google, ChatGPT, Gemini, Claude и Perplexity.",
+          ]
+      : en
+        ? [
+            "There is no clear page structure for services, audiences and regional search intent.",
+            "Local search terms are not connected to real customer questions and inquiry paths.",
+            "Indexability, speed, metadata and internal links limit visibility.",
+            "FAQ, references, prices and location signals are not structured clearly enough.",
+            "Google Business Profile, website content and landing pages do not work together.",
+            "Priorities, measurement and realistic next steps are missing.",
+          ]
+        : [
+            "Нет понятной структуры страниц под услуги, аудитории и региональные поисковые намерения.",
+            "Локальные запросы не связаны с реальными вопросами клиентов и путём к заявке.",
+            "Индексация, скорость, metadata и внутренние ссылки ограничивают видимость.",
+            "FAQ, референсы, цены и сигналы региона структурированы недостаточно ясно.",
+            "Google Business Profile, сайт и landing pages не работают как единая система.",
+            "Не хватает приоритетов, измеримости и реалистичных следующих шагов.",
+          ],
+    solutionTitle: label.solutionTitle,
+    solution: isWebdesign
+      ? en
+        ? [
+            "We plan the website as a digital system: homepage, service pages, local signals, FAQ, case examples and contact paths work together.",
+            `That creates a presence ${area} that feels professional, addresses regional intent and guides visitors toward an inquiry without friction.`,
+          ]
+        : [
+            "Мы планируем сайт как цифровую систему: главная, страницы услуг, локальные сигналы, FAQ, кейсы и контактные пути работают вместе.",
+            `Так компания ${area} выглядит профессионально, отвечает на региональные запросы и ведёт посетителей к заявке без лишних шагов.`,
+          ]
+      : en
+        ? [
+            "We first identify which search intents matter commercially and which technical or content barriers prevent visibility.",
+            `Then we create a prioritized SEO plan for ${cityName}: technical foundation, Local SEO, landing pages, structured content, FAQ, internal linking and measurable progress.`,
+          ]
+        : [
+            "Сначала определяем, какие запросы имеют бизнес-смысл и какие технические или контентные барьеры мешают видимости.",
+            `После этого формируем приоритетный SEO-план для ${cityName}: техническая база, Local SEO, landing pages, структурированный контент, FAQ, внутренние ссылки и измеримое развитие.`,
+          ],
+    featuresTitle: label.featuresTitle,
+    features: isWebdesign
+      ? en
+        ? [
+            { title: "Clear positioning", text: "The website explains who you help, what you offer and why it matters." },
+            { title: "Local structure", text: "Location, service area, services and internal links are connected logically." },
+            { title: "Conversion guidance", text: "Contact, phone, form, WhatsApp or booking paths remain visible and credible." },
+            { title: "SEO foundation", text: "Metadata, headings, performance, structured data and FAQ are planned from the start." },
+            { title: "Mobile quality", text: "Smartphone users get short paths, readable content and fast loading times." },
+            { title: "GEO/AIO readiness", text: "Content answers real questions and helps AI search systems classify the business." },
+          ]
+        : [
+            { title: "Чёткое позиционирование", text: "Сайт объясняет, кому вы помогаете, что предлагаете и почему это важно." },
+            { title: "Локальная структура", text: "Локация, зона работы, услуги и внутренние ссылки связаны логично." },
+            { title: "Путь к заявке", text: "Контакт, телефон, форма, WhatsApp или запись остаются видимыми и понятными." },
+            { title: "SEO-база", text: "Metadata, заголовки, скорость, structured data и FAQ планируются с начала." },
+            { title: "Мобильное качество", text: "Пользователь с телефона получает короткий путь, читаемый контент и быструю загрузку." },
+            { title: "Готовность к GEO/AIO", text: "Контент отвечает на реальные вопросы и помогает AI-поиску классифицировать бизнес." },
+          ]
+      : en
+        ? [
+            { title: "Technical SEO", text: "Indexing, loading speed, Core Web Vitals, metadata, internal links and structured data." },
+            { title: "Local SEO", text: "Regional intent, location relevance, service area and trust-building content." },
+            { title: "Content architecture", text: "Service pages, FAQ, prices, process and references are connected clearly." },
+            { title: "AI Search / GEO", text: "Content is written so AI systems can understand entities and relationships." },
+            { title: "Priority roadmap", text: "We start with the actions that realistically create the strongest leverage." },
+            { title: "Measurability", text: "Important pages, inquiries and progress can be evaluated clearly." },
+          ]
+        : [
+            { title: "Техническое SEO", text: "Индексация, скорость, Core Web Vitals, metadata, внутренние ссылки и structured data." },
+            { title: "Local SEO", text: "Региональные намерения, связь с локацией, зона работы и контент доверия." },
+            { title: "Архитектура контента", text: "Страницы услуг, FAQ, цены, процесс и референсы связаны понятно." },
+            { title: "AI Search / GEO", text: "Контент написан так, чтобы AI-системы понимали сущности и связи." },
+            { title: "Приоритетный план", text: "Начинаем с действий, которые реалистично дают самый сильный рычаг." },
+            { title: "Измеримость", text: "Важные страницы, заявки и развитие можно понятно оценивать." },
+          ],
+    technologyTitle: label.technologyTitle,
+    technologyText: label.technologyText,
+    processTitle: en
+      ? isWebdesign
+        ? "From local goal to visible website"
+        : "From analysis to measurable visibility"
+      : isWebdesign
+        ? "От локальной цели к видимому сайту"
+        : "От анализа к измеримой видимости",
+    process: label.process,
+    casesTitle: label.casesTitle,
+    cases,
+    relatedTitle: label.relatedTitle,
+    relatedLinks: [
+      {
+        label: isWebdesign ? `SEO ${cityName}` : serviceName.replace("SEO", en ? "Web design" : "Веб-дизайн"),
+        href: serviceHref(locale, partnerSlug),
+        description: isWebdesign
+          ? en
+            ? "Plan visibility, Local SEO and AI-search structure together with the website."
+            : "Планировать видимость, Local SEO и AI-search структуру вместе с сайтом."
+          : en
+            ? "Connect website structure, design and conversion with SEO."
+            : "Связать структуру сайта, дизайн и конверсию с SEO.",
+      },
+      {
+        label: cityName,
+        href: locationHref(locale, city.slug),
+        description: en ? `Location page for regional visibility ${area}.` : `Страница локации для региональной видимости ${area}.`,
+      },
+      {
+        label: isWebdesign ? (en ? "Get a website built" : "Создание сайта") : en ? "AI optimization" : "AI-оптимизация",
+        href: serviceHref(locale, isWebdesign ? websiteSlug : aiSlug),
+        description: isWebdesign
+          ? en
+            ? "Plan a new website with strategy, SEO and a clean technical foundation."
+            : "Спланировать новый сайт со стратегией, SEO и чистой технической базой."
+          : en
+            ? "Structure content for ChatGPT, Gemini, Claude, Perplexity and Google AI Overview."
+            : "Структурировать контент для ChatGPT, Gemini, Claude, Perplexity и Google AI Overview.",
+      },
+      {
+        label: isWebdesign ? (en ? "Performance optimization" : "Оптимизация скорости") : en ? "Free website audit" : "Бесплатный аудит сайта",
+        href: isWebdesign ? serviceHref(locale, performanceSlug) : localizedAuditHref(locale),
+        description: isWebdesign
+          ? en
+            ? "Improve loading speed and technical quality."
+            : "Улучшить скорость загрузки и техническое качество."
+          : en
+            ? "Check the current website for visibility, technology and inquiry paths."
+            : "Проверить текущий сайт на видимость, технику и пути заявки.",
+      },
+      {
+        label: en ? "Projects" : "Проекты",
+        href: localizedProjectsHref(locale),
+        description: en ? "View selected practical examples." : "Посмотреть выбранные практические примеры.",
+      },
+      {
+        label: en ? "Contact" : "Контакты",
+        href: localizedContactHref(locale),
+        description: en ? "Discuss goals, scope and next steps without obligation." : "Обсудить цель, объём и следующие шаги без обязательств.",
+      },
+    ],
+    faq: cityServiceFaq(locale, city, type),
+    finalTitle: label.finalTitle,
+    finalText: label.finalText,
+  };
+}
+
+function cityServiceFaq(locale: Phase4Locale, city: CityServiceTarget, type: CityServiceType): Phase4Faq[] {
+  const cityName = city.name;
+  const isWebdesign = type === "webdesign";
+
+  if (locale === "de") {
+    return [
+      {
+        q: isWebdesign
+          ? `Was kostet Webdesign ${cityName}?`
+          : `Was kostet SEO ${cityName}?`,
+        a: isWebdesign
+          ? "Zur Orientierung: ein kompakter WordPress-Onepager startet ab 600 €, eine moderne Landingpage ab 990 € und eine vollständige Unternehmenswebsite ab 1.990 €. Lokale SEO-Seiten, Mehrsprachigkeit, Online-Buchung oder Integrationen sind zusätzlicher Umfang. Den genauen Festpreis klären wir nach Ziel und Inhalt."
+          : "SEO wird nach Ausgangslage, Wettbewerb, technischer Basis und Content-Umfang kalkuliert. Für einfache Optimierungen ist der Aufwand deutlich geringer als für laufende Local-SEO-Strategien mit Landingpages, FAQ, Content und Monitoring. Nach einer kurzen Analyse nennen wir einen transparenten Festpreis.",
+      },
+      {
+        q: isWebdesign
+          ? `Ist SEO bei einer Website für ${cityName} enthalten?`
+          : `Wie schnell wirkt SEO in ${cityName}?`,
+        a: isWebdesign
+          ? "Die technische und strukturelle SEO-Basis ist Teil der Website-Arbeit: Überschriften, Meta-Daten, Performance, interne Links, FAQ und strukturierte Daten. Laufende SEO-Optimierung oder zusätzliche Stadt-/Leistungsseiten planen wir separat."
+          : "Technische Korrekturen können schnell Wirkung zeigen, nachhaltige organische Sichtbarkeit entsteht aber meistens über mehrere Monate. Entscheidend sind Wettbewerb, bestehende Website, Inhalte, lokale Signale und konsequente Weiterentwicklung.",
+      },
+      {
+        q: `Hilft das auch für Kunden aus der Umgebung von ${cityName}?`,
+        a: "Ja. Wir bauen keine dünnen Keyword-Seiten, sondern verbinden Leistungen, Einzugsgebiet, Referenzen und Kontaktwege sinnvoll. So bleibt die regionale Sichtbarkeit glaubwürdig und nutzerfreundlich.",
+      },
+      pricingFaq.de,
+      {
+        q: "Hilft das auch für KI-Suche wie ChatGPT, Gemini oder Perplexity?",
+        a: `Ja. Wir strukturieren Leistungen, Region, Preise, FAQ und Unternehmensinformationen so, dass klassische Suchmaschinen und KI-Systeme Ihr Angebot ${city.deArea} besser einordnen können. Eine Garantie für KI-Antworten gibt es nicht, aber die Grundlage wird deutlich sauberer.`,
+      },
+      {
+        q: "Kann eine bestehende Website zuerst geprüft werden?",
+        a: "Ja. Die kostenlose Website-Analyse ist oft der sinnvollste Start. Danach sehen wir, ob Optimierung, Relaunch, neue Landingpages oder laufende Betreuung den besten nächsten Schritt darstellen.",
+      },
+      {
+        q: "Wie starten wir konkret?",
+        a: "Mit einem kurzen Erstgespräch. Wir klären Ziel, Zielgruppe, aktuelle Website, regionale Suchbegriffe und gewünschte Funktionen. Danach erhalten Sie eine klare Empfehlung mit realistischem Aufwand.",
+      },
+    ];
+  }
+
+  if (locale === "en") {
+    return [
+      {
+        q: isWebdesign
+          ? `What does web design ${cityName} cost?`
+          : `What does SEO ${cityName} cost?`,
+        a: isWebdesign
+          ? "For orientation: a compact WordPress one-pager starts at €600, a modern landing page at €990 and a full company website at €1,990. Local SEO pages, multiple languages, online booking or integrations add scope. The exact fixed price depends on goals and content."
+          : "SEO depends on the current website, competition, technical foundation and content scope. A focused optimization is smaller than an ongoing Local SEO strategy with landing pages, FAQ, content and monitoring. After a short analysis we give a transparent fixed price.",
+      },
+      {
+        q: isWebdesign
+          ? `Is SEO included in a website for ${cityName}?`
+          : `How fast does SEO work in ${cityName}?`,
+        a: isWebdesign
+          ? "The technical and structural SEO foundation is part of the website work: headings, metadata, performance, internal links, FAQ and structured data. Ongoing SEO or additional city/service pages are planned separately."
+          : "Technical fixes can show effects quickly, but sustainable organic visibility usually develops over several months. Competition, existing content, local signals and consistent improvement matter.",
+      },
+      {
+        q: `Does this also help with customers around ${cityName}?`,
+        a: "Yes. We do not build thin keyword pages. We connect services, service area, references and contact paths in a useful way so regional visibility stays credible and user-friendly.",
+      },
+      pricingFaq.en,
+      {
+        q: "Does this also help with AI search such as ChatGPT, Gemini or Perplexity?",
+        a: `Yes. We structure services, region, prices, FAQ and company information so classic search engines and AI systems can classify your offer ${city.enArea} more clearly. AI answers cannot be guaranteed, but the foundation becomes much stronger.`,
+      },
+      {
+        q: "Can an existing website be reviewed first?",
+        a: "Yes. The free website audit is often the best start. We then see whether optimization, relaunch, new landing pages or ongoing support is the right next step.",
+      },
+      {
+        q: "How do we start?",
+        a: "With a short initial call. We clarify goals, audience, current website, regional search terms and needed functions. Afterwards you receive a clear recommendation with realistic effort.",
+      },
+    ];
+  }
+
+  return [
+    {
+      q: isWebdesign
+        ? `Сколько стоит веб-дизайн ${cityName}?`
+        : `Сколько стоит SEO ${cityName}?`,
+      a: isWebdesign
+        ? "Для ориентира: компактный WordPress one-pager — от 600 €, современный лендинг — от 990 €, полноценный корпоративный сайт — от 1 990 €. Local SEO страницы, несколько языков, онлайн-запись или интеграции добавляют объём. Точная фикс-цена зависит от целей и контента."
+        : "SEO зависит от текущего сайта, конкуренции, технической базы и объёма контента. Точечная оптимизация меньше по объёму, чем постоянная Local SEO стратегия с landing pages, FAQ, контентом и мониторингом. После короткого анализа мы называем прозрачную фикс-цену.",
+    },
+    {
+      q: isWebdesign
+        ? `SEO входит в сайт для ${cityName}?`
+        : `Как быстро начинает работать SEO в ${cityName}?`,
+      a: isWebdesign
+        ? "Техническая и структурная SEO-база входит в работу над сайтом: заголовки, metadata, скорость, внутренние ссылки, FAQ и structured data. Постоянное SEO или дополнительные страницы город+услуга планируются отдельно."
+        : "Технические исправления могут дать эффект быстрее, но стабильная органическая видимость обычно развивается несколько месяцев. Важны конкуренция, существующий контент, локальные сигналы и последовательная доработка.",
+    },
+    {
+      q: `Это поможет привлекать клиентов рядом с ${cityName}?`,
+      a: "Да. Мы не делаем тонкие keyword-страницы. Мы связываем услуги, зону работы, референсы и контактные пути так, чтобы региональная видимость оставалась убедительной и полезной для пользователя.",
+    },
+    pricingFaq.ru,
+    {
+      q: "Это помогает и в AI-поиске вроде ChatGPT, Gemini или Perplexity?",
+      a: `Да. Мы структурируем услуги, регион, цены, FAQ и информацию о компании так, чтобы поисковики и AI-системы лучше понимали предложение ${city.ruArea}. Гарантировать ответы AI нельзя, но основа становится намного сильнее.`,
+    },
+    {
+      q: "Можно сначала проверить существующий сайт?",
+      a: "Да. Бесплатный аудит сайта часто является лучшим стартом. После него понятно, что разумнее: оптимизация, релонч, новые landing pages или сопровождение.",
+    },
+    {
+      q: "Как начать?",
+      a: "С короткой консультации. Мы уточним цель, аудиторию, текущий сайт, региональные запросы и нужные функции. После этого вы получите понятную рекомендацию с реалистичным объёмом.",
+    },
+  ];
+}
+
 function buildPhase5ServicePage(canonicalSlug: string, locale: Phase4Locale): Phase4Landing | null {
   const data = PHASE5_SERVICE_CONTENT[locale]?.[canonicalSlug];
   const slug = SERVICE_SLUGS[canonicalSlug]?.[locale];
@@ -2510,6 +3097,9 @@ export const seoServicePages: Record<string, Phase4Landing> = {
 };
 
 function localizedServicePage(canonicalSlug: string, locale: Phase4Locale): Phase4Landing | null {
+  const cityServicePage = localizedCityServicePage(canonicalSlug, locale);
+  if (cityServicePage) return cityServicePage;
+
   if (locale === "de") {
     const page = seoServicePages[canonicalSlug];
     return page ? { ...page, navLabel: page.navLabel ?? page.title.split(" – ")[0] } : null;
@@ -2636,7 +3226,7 @@ function serviceCanonicalFromSlug(locale: Phase4Locale, slug: string): string | 
   );
 }
 
-export const seoServiceSlugs = Object.keys(seoServicePages);
+export const seoServiceSlugs = Object.keys(SERVICE_SLUGS);
 
 export function getSeoServiceStaticParams() {
   const canonicalParams = Object.values(SERVICE_SLUGS).flatMap((slugs) =>
