@@ -16,6 +16,9 @@ export function organizationSchema() {
     founder: { "@type": "Person", name: siteConfig.founder },
     areaServed: siteConfig.locations,
     slogan: "Websites, SEO & KI für Unternehmen",
+    sameAs: [siteConfig.googleBusiness.profileUrl, siteConfig.googleBusiness.placeUrl].filter(
+      Boolean,
+    ),
   };
 }
 
@@ -34,6 +37,9 @@ export function websiteSchema(locale: string) {
 
 /** ProfessionalService / LocalBusiness — homepage + local landing pages. */
 export function localBusinessSchema(opts?: { areaServed?: string }) {
+  const gb = siteConfig.googleBusiness;
+  const sameAs = [gb.profileUrl, gb.placeUrl].filter(Boolean);
+
   return {
     "@context": "https://schema.org",
     "@type": ["ProfessionalService", "LocalBusiness"],
@@ -42,14 +48,34 @@ export function localBusinessSchema(opts?: { areaServed?: string }) {
     url: URL,
     email: siteConfig.email,
     telephone: siteConfig.phone.e164,
+    image: `${URL}/icons/icon-512.png`,
     priceRange: "€€",
     areaServed: opts?.areaServed ?? siteConfig.locations,
     founder: { "@type": "Person", name: siteConfig.founder },
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Halle (Saale)",
-      addressCountry: "DE",
+      streetAddress: siteConfig.address.street,
+      postalCode: siteConfig.address.postalCode,
+      addressLocality: siteConfig.address.locality,
+      addressRegion: siteConfig.address.region,
+      addressCountry: siteConfig.address.countryCode,
     },
+    ...(gb.latitude && gb.longitude
+      ? {
+          geo: {
+            "@type": "GeoCoordinates",
+            latitude: gb.latitude,
+            longitude: gb.longitude,
+          },
+        }
+      : {}),
+    openingHoursSpecification: gb.openingHours.map((slot) => ({
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: slot.days,
+      opens: slot.opens,
+      closes: slot.closes,
+    })),
+    ...(sameAs.length > 0 ? { sameAs } : {}),
   };
 }
 

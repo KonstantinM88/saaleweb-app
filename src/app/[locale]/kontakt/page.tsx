@@ -30,11 +30,12 @@ import {
   Zap,
   type LucideIcon,
 } from "lucide-react";
-import { routing } from "@/i18n/routing";
+import { routing, type AppLocale } from "@/i18n/routing";
 import { Link, getPathname } from "@/i18n/navigation";
 import { Navbar } from "@/widgets/navbar/Navbar";
 import { Footer } from "@/widgets/footer/Footer";
 import { ContactPageForm } from "@/widgets/contact/ContactPageForm";
+import { LocalContactSection } from "@/widgets/local-contact/LocalContactSection";
 import { FaqAccordion, type QA } from "@/widgets/faq/FaqAccordion";
 import { Container } from "@/shared/ui/Container";
 import { Breadcrumbs } from "@/shared/ui/Breadcrumbs";
@@ -361,6 +362,8 @@ export default async function ContactPage({ params }: { params: Promise<Params> 
             </div>
           </Container>
         </section>
+
+        <LocalContactSection locale={locale as AppLocale} />
 
         <section className="bg-surface py-16 md:py-24" aria-labelledby="after-request">
           <Container>

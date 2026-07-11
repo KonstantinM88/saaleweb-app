@@ -45,6 +45,34 @@ export function Footer() {
             <p className="mt-4 max-w-[280px] text-[14.5px] text-muted">
               <BrandText text={t("tagline")} />
             </p>
+            <address className="mt-4 text-[13.5px] not-italic leading-relaxed text-muted">
+              <a
+                href={siteConfig.googleBusiness.placeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${siteConfig.name}, ${siteConfig.address.street}, ${siteConfig.address.postalCode} ${siteConfig.address.locality} — Google Maps`}
+                className="transition hover:text-dark"
+              >
+                <span className="font-bold text-dark">{siteConfig.name}</span>
+                <br />
+                {siteConfig.address.street}
+                <br />
+                {siteConfig.address.postalCode} {siteConfig.address.locality}
+                <br />
+                {siteConfig.address.country}
+              </a>
+              <a href={siteConfig.phone.href} className="mt-1.5 block transition hover:text-dark">
+                {siteConfig.phone.display}
+              </a>
+              <a
+                href={siteConfig.googleBusiness.directionsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-1.5 inline-block font-semibold text-brand-purple transition hover:underline"
+              >
+                {t("route")}
+              </a>
+            </address>
           </div>
 
           <FooterCol title={t("services")}>
