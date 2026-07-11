@@ -7,7 +7,7 @@ export const dynamic = "force-dynamic";
 type LeadRow = {
   createdAt: Date | null;
   name: string;
-  email: string;
+  email: string | null;
   phone: string | null;
   company: string | null;
   message: string | null;

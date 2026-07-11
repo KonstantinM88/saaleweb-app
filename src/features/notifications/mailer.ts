@@ -5,7 +5,7 @@ import { defaultFromAddress, sendTransactionalMail } from "./transport";
 
 export type LeadNotification = {
   name: string;
-  email: string;
+  email?: string | null;
   phone?: string | null;
   company?: string | null;
   projectWebsite?: string | null;
@@ -95,7 +95,7 @@ export async function sendLeadNotification(lead: LeadNotification): Promise<bool
 
   const rows: [string, string][] = [
     ["Name", lead.name],
-    ["E-Mail", lead.email],
+    ["E-Mail", lead.email || "-"],
     ["Telefon", lead.phone || "-"],
     ["Firma", lead.company || "-"],
     ["Sprache", lead.locale || "-"],
@@ -121,7 +121,7 @@ export async function sendLeadNotification(lead: LeadNotification): Promise<bool
     subject: `Neue Anfrage von ${lead.name}`,
     text,
     html,
-    replyTo: lead.email,
+    replyTo: lead.email || undefined,
   });
 }
 

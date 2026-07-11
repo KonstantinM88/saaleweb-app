@@ -8,6 +8,7 @@ import {
   deleteAssistantConversation,
   unblockAssistantIp,
 } from "@/features/admin/assistant/actions";
+import { readAssistantSalesProfile } from "@/features/assistant/profile";
 
 export const dynamic = "force-dynamic";
 
@@ -81,6 +82,7 @@ export default async function AssistantConversationsAdminPage() {
             )}
             {conversations.map((conversation) => {
               const blocked = conversation.ipAddress ? blockedSet.has(conversation.ipAddress) : false;
+              const profile = readAssistantSalesProfile(conversation.salesProfile);
               return (
                 <tr key={conversation.id} className="border-b border-line align-top last:border-0">
                   <td className="whitespace-nowrap px-4 py-3 text-muted">
@@ -102,6 +104,11 @@ export default async function AssistantConversationsAdminPage() {
                     <div>
                       Sprache: {conversation.locale} / Antwort: {conversation.responseLocale}
                     </div>
+                    <div className="mt-1 font-semibold text-dark">
+                      Funnel: {conversation.funnelStage}
+                      {conversation.leadId ? " · Lead erstellt" : ""}
+                    </div>
+                    {profile.businessType && <div className="mt-1">Branche: {profile.businessType}</div>}
                     <div className="mt-1 max-w-[260px] truncate" title={conversation.userAgent ?? undefined}>
                       UA: {conversation.userAgent ?? "-"}
                     </div>

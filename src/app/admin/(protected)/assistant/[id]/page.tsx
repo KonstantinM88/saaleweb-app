@@ -9,6 +9,7 @@ import {
   deleteAssistantConversation,
   unblockAssistantIp,
 } from "@/features/admin/assistant/actions";
+import { readAssistantSalesProfile } from "@/features/assistant/profile";
 
 export const dynamic = "force-dynamic";
 
@@ -38,6 +39,7 @@ export default async function AssistantConversationDetailPage({ params }: { para
   const blocked = conversation.ipAddress
     ? await prisma.blockedIp.findUnique({ where: { ipAddress: conversation.ipAddress } })
     : null;
+  const profile = readAssistantSalesProfile(conversation.salesProfile);
 
   return (
     <>
@@ -99,6 +101,22 @@ export default async function AssistantConversationDetailPage({ params }: { para
             <dt className="text-xs uppercase tracking-wide text-muted">Status</dt>
             <dd className="mt-1 text-dark">{blocked ? `Blockiert: ${blocked.reason ?? "-"}` : "Nicht blockiert"}</dd>
           </div>
+          <div>
+            <dt className="text-xs uppercase tracking-wide text-muted">Verkaufsphase</dt>
+            <dd className="mt-1 font-semibold text-dark">{conversation.funnelStage}</dd>
+          </div>
+          <div>
+            <dt className="text-xs uppercase tracking-wide text-muted">Lead</dt>
+            <dd className="mt-1 text-dark">
+              {conversation.leadId ? (
+                <Link href="/admin/leads" className="font-semibold text-brand-purple hover:underline">
+                  Erstellt · ansehen
+                </Link>
+              ) : (
+                "Noch nicht erstellt"
+              )}
+            </dd>
+          </div>
           <div className="sm:col-span-2">
             <dt className="text-xs uppercase tracking-wide text-muted">Besucher-ID</dt>
             <dd className="mt-1 break-all font-mono text-xs text-dark">{conversation.visitorKey}</dd>
@@ -114,6 +132,46 @@ export default async function AssistantConversationDetailPage({ params }: { para
           <div className="sm:col-span-2 lg:col-span-4">
             <dt className="text-xs uppercase tracking-wide text-muted">User Agent</dt>
             <dd className="mt-1 break-all text-xs text-muted">{conversation.userAgent ?? "-"}</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section className={`${adminCard} mt-6 p-5`}>
+        <h2 className="text-lg font-bold text-dark">Verkaufskontext</h2>
+        <dl className="mt-4 grid gap-4 text-sm sm:grid-cols-2 lg:grid-cols-3">
+          <div>
+            <dt className="text-xs uppercase tracking-wide text-muted">Name</dt>
+            <dd className="mt-1 text-dark">{profile.name || "-"}</dd>
+          </div>
+          <div>
+            <dt className="text-xs uppercase tracking-wide text-muted">Branche</dt>
+            <dd className="mt-1 text-dark">{profile.businessType || "-"}</dd>
+          </div>
+          <div>
+            <dt className="text-xs uppercase tracking-wide text-muted">Website</dt>
+            <dd className="mt-1 text-dark">{profile.websiteStatus || "-"}</dd>
+          </div>
+          <div>
+            <dt className="text-xs uppercase tracking-wide text-muted">Telefon</dt>
+            <dd className="mt-1 text-dark">{profile.phone || "-"}</dd>
+          </div>
+          <div>
+            <dt className="text-xs uppercase tracking-wide text-muted">E-Mail</dt>
+            <dd className="mt-1 text-dark">{profile.email || "-"}</dd>
+          </div>
+          <div>
+            <dt className="text-xs uppercase tracking-wide text-muted">Sprachen</dt>
+            <dd className="mt-1 text-dark">{profile.languages.join(", ") || "-"}</dd>
+          </div>
+          <div className="sm:col-span-2 lg:col-span-3">
+            <dt className="text-xs uppercase tracking-wide text-muted">Ziele und Funktionen</dt>
+            <dd className="mt-1 text-dark">
+              {[...profile.goals, ...profile.features].join(" · ") || "-"}
+            </dd>
+          </div>
+          <div className="sm:col-span-2 lg:col-span-3">
+            <dt className="text-xs uppercase tracking-wide text-muted">Gesprächsnotizen</dt>
+            <dd className="mt-1 whitespace-pre-wrap text-dark">{profile.notes.join("\n") || "-"}</dd>
           </div>
         </dl>
       </section>

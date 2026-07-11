@@ -10,7 +10,8 @@ export const dynamic = "force-dynamic";
 type Lead = {
   id: string;
   name: string;
-  email: string;
+  email: string | null;
+  phone: string | null;
   company: string | null;
   message: string | null;
   source: string | null;
@@ -32,7 +33,7 @@ export default async function LeadsAdminPage() {
 
   return (
     <>
-      <PageHeader title="Anfragen" subtitle="Eingegangene Leads aus dem Kontaktformular." />
+      <PageHeader title="Anfragen" subtitle="Eingegangene Leads aus Formularen und dem AI-Assistenten." />
       <div className="mb-4 flex justify-end">
         <a href="/admin/leads/export" className={adminBtnGhost} download>
           CSV Export
@@ -65,9 +66,16 @@ export default async function LeadsAdminPage() {
                 </td>
                 <td className="px-4 py-3">
                   <div className="font-medium text-dark">{l.name}</div>
-                  <a href={`mailto:${l.email}`} className="text-xs text-brand-purple">
-                    {l.email}
-                  </a>
+                  {l.email && (
+                    <a href={`mailto:${l.email}`} className="block text-xs text-brand-purple">
+                      {l.email}
+                    </a>
+                  )}
+                  {l.phone && (
+                    <a href={`tel:${l.phone}`} className="block text-xs text-brand-purple">
+                      {l.phone}
+                    </a>
+                  )}
                   {l.company && <div className="text-xs text-muted">{l.company}</div>}
                   {l.source && <div className="text-[11px] text-line">{l.source}</div>}
                 </td>

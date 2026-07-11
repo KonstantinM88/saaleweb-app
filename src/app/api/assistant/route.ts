@@ -9,9 +9,20 @@ import {
 } from "@/features/assistant/knowledge";
 import {
   assistantRequestMeta,
+  ensureAssistantConversation,
   isAssistantIpBlocked,
+  loadAssistantMemory,
   logAssistantExchange,
 } from "@/features/assistant/logging";
+import { createAssistantLead } from "@/features/assistant/lead";
+import {
+  deriveAssistantFunnelStage,
+  latestMessageConfirmsContact,
+  latestMessageRequestsContact,
+  updateAssistantSalesProfile,
+  type AssistantFunnelStage,
+  type AssistantSalesProfile,
+} from "@/features/assistant/profile";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -82,6 +93,26 @@ const OFF_TOPIC_PATTERNS = [
 
 function latestUserMessage(messages: AssistantChatMessage[]): string {
   return [...messages].reverse().find((message) => message.role === "user")?.content || "";
+}
+
+function sameMessage(left: AssistantChatMessage, right: AssistantChatMessage): boolean {
+  return left.role === right.role && left.content.trim() === right.content.trim();
+}
+
+function mergeContextMessages(
+  stored: AssistantChatMessage[],
+  incoming: AssistantChatMessage[],
+): AssistantChatMessage[] {
+  const maxOverlap = Math.min(stored.length, incoming.length);
+  let overlap = 0;
+  for (let size = maxOverlap; size > 0; size -= 1) {
+    const storedOffset = stored.length - size;
+    if (incoming.slice(0, size).every((message, index) => sameMessage(stored[storedOffset + index], message))) {
+      overlap = size;
+      break;
+    }
+  }
+  return [...stored, ...incoming.slice(overlap)].slice(-18);
 }
 
 function countPatternMatches(text: string, pattern: RegExp): number {
@@ -191,11 +222,17 @@ async function createAssistantResponse({
   responseLocale,
   messages,
   pagePath,
+  profile,
+  funnelStage,
+  handoffConfirmed,
 }: {
   locale: AppLocale;
   responseLocale: AppLocale;
   messages: AssistantChatMessage[];
   pagePath?: string;
+  profile: AssistantSalesProfile;
+  funnelStage: AssistantFunnelStage;
+  handoffConfirmed: boolean;
 }): Promise<string> {
   const apiKey = process.env.OPENAI_API_KEY?.trim();
   if (!apiKey) {
@@ -210,7 +247,15 @@ async function createAssistantResponse({
     },
     body: JSON.stringify({
       model: modelName(),
-      input: buildAssistantInput({ locale, responseLocale, messages, pagePath }),
+      input: buildAssistantInput({
+        locale,
+        responseLocale,
+        messages,
+        pagePath,
+        profile,
+        funnelStage,
+        handoffConfirmed,
+      }),
       max_output_tokens: 650,
     }),
   });
@@ -282,9 +327,24 @@ export async function POST(req: Request) {
     );
   }
 
+  const memory = await loadAssistantMemory(meta.visitorKey);
+  const profile = updateAssistantSalesProfile(memory.profile, parsed.data.messages);
+  const initialStage = deriveAssistantFunnelStage(profile, Boolean(memory.leadId));
+  const prepared = await ensureAssistantConversation({
+    conversationId: memory.conversationId,
+    meta,
+    locale,
+    responseLocale,
+    pagePath: parsed.data.pagePath,
+    profile,
+    funnelStage: initialStage,
+  });
+  const contextMessages = mergeContextMessages(memory.messages, parsed.data.messages);
+
   if (isOffTopicQuestion(latestMessage)) {
     const answer = sanitizeAssistantAnswer(assistantOffTopicAnswer(responseLocale));
     await logAssistantExchange({
+      conversationId: prepared?.id,
       meta,
       locale,
       responseLocale,
@@ -292,6 +352,8 @@ export async function POST(req: Request) {
       userMessage: latestMessage,
       assistantAnswer: answer,
       scoped: false,
+      profile,
+      funnelStage: initialStage,
     });
 
     return NextResponse.json(
@@ -306,13 +368,41 @@ export async function POST(req: Request) {
     );
   }
 
+  const profileHasContact = Boolean(profile.phone || profile.email);
+  const incomingContainsContact = parsed.data.messages.some(
+    (message) =>
+      message.role === "user" &&
+      (latestMessageRequestsContact(message.content) ||
+        (profileHasContact && profile.contactRequested && latestMessageConfirmsContact(message.content))),
+  );
+  const shouldCreateLead =
+    Boolean(prepared?.id) &&
+    !prepared?.leadId &&
+    profile.contactRequested &&
+    profileHasContact &&
+    incomingContainsContact;
+  const leadResult = shouldCreateLead
+    ? await createAssistantLead({
+        conversationId: prepared!.id,
+        profile,
+        locale,
+        pagePath: parsed.data.pagePath,
+      })
+    : { created: false, leadId: prepared?.leadId };
+  const handoffConfirmed = Boolean(prepared?.leadId || leadResult.leadId);
+  const funnelStage = deriveAssistantFunnelStage(profile, handoffConfirmed);
+
   const answer = await createAssistantResponse({
     locale,
     responseLocale,
-    messages: parsed.data.messages,
+    messages: contextMessages,
     pagePath: parsed.data.pagePath,
+    profile,
+    funnelStage,
+    handoffConfirmed,
   });
   await logAssistantExchange({
+    conversationId: prepared?.id,
     meta,
     locale,
     responseLocale,
@@ -321,6 +411,8 @@ export async function POST(req: Request) {
     assistantAnswer: answer,
     model: process.env.OPENAI_API_KEY?.trim() ? modelName() : undefined,
     scoped: true,
+    profile,
+    funnelStage,
   });
 
   return NextResponse.json(
@@ -331,6 +423,8 @@ export async function POST(req: Request) {
       model: process.env.OPENAI_API_KEY?.trim() ? modelName() : undefined,
       scoped: true,
       responseLocale,
+      funnelStage,
+      handoffConfirmed,
     },
     { headers: { "Cache-Control": "no-store" } },
   );

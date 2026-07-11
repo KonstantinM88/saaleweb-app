@@ -21,7 +21,8 @@
     "db:sync-blog-content": "tsx scripts/sync-blog-content.ts",
     "db:sync-faq": "tsx scripts/sync-faq-content.ts",
     "db:studio": "prisma studio",
-    "assistant:test": "node scripts/test-assistant.mjs"
+    "assistant:test": "node scripts/test-assistant.mjs",
+    "assistant:test-profile": "tsx scripts/test-assistant-profile.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.1.0",

@@ -5,7 +5,7 @@ import type { AppLocale } from "@/i18n/routing";
 import { siteConfig } from "@/shared/config/site";
 
 const APPEAR_DELAY_MS = 8_000;
-const MAX_CONTEXT_MESSAGES = 10;
+const MAX_CONTEXT_MESSAGES = 16;
 const VISITOR_STORAGE_KEY = "saaleweb_assistant_visitor";
 
 type ChatRole = "user" | "assistant";

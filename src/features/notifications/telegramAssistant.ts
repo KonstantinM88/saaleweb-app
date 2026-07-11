@@ -1,6 +1,7 @@
 import "server-only";
 
 import { prisma } from "@/lib/prisma";
+import { readAssistantSalesProfile } from "@/features/assistant/profile";
 import { sendTelegramAdminMessage } from "./telegram";
 
 const LIST_LIMIT = 10;
@@ -166,10 +167,13 @@ export async function buildAssistantConversationsReply(): Promise<TelegramAssist
     const lines = conversations.map((conversation, index) => {
       const lastMessage = conversation.messages[0];
       const visitor = conversation.ipAddress || shortId(conversation.visitorKey);
+      const profile = readAssistantSalesProfile(conversation.salesProfile);
       return [
         `${index + 1}. #${shortId(conversation.id)} · ${visitor}`,
         `   🕒 ${formatDateTime(conversation.lastMessageAt)} · ${conversation.messageCount} сообщ.`,
         `   🌍 ${locationLabel(conversation)} · ${conversation.locale}/${conversation.responseLocale}`,
+        `   🎯 ${conversation.funnelStage}${conversation.leadId ? " · лид создан" : ""}`,
+        ...(profile.businessType ? [`   🏢 ${profile.businessType}`] : []),
         `   💬 ${trimText(lastMessage?.content, 120)}`,
       ].join("\n");
     });
@@ -210,6 +214,7 @@ export async function buildAssistantConversationReply(handle?: string): Promise<
     }
 
     const messages = conversation.messages.slice(-MESSAGE_LIMIT);
+    const profile = readAssistantSalesProfile(conversation.salesProfile);
     const messageLines = messages.map((message) => {
       const role = message.role === "user" ? "👤 Клиент" : "🤖 Ассистент";
       const meta = [
@@ -232,6 +237,12 @@ export async function buildAssistantConversationReply(handle?: string): Promise<
         `🧭 Страница: ${conversation.pagePath || "-"}`,
         `🗣 Язык: ${conversation.locale} / ответ: ${conversation.responseLocale}`,
         `🔢 Сообщений: ${conversation.messageCount}`,
+        `🎯 Воронка: ${conversation.funnelStage}${conversation.leadId ? " · лид создан" : ""}`,
+        `🏢 Сфера: ${profile.businessType || "-"}`,
+        `🌐 Сайт: ${profile.websiteStatus || "-"}${profile.websiteUrl ? ` · ${profile.websiteUrl}` : ""}`,
+        `🧩 Потребности: ${[...profile.goals, ...profile.features].join(", ") || "-"}`,
+        `🗣 Языки проекта: ${profile.languages.join(", ") || "-"}`,
+        `📞 Контакт: ${profile.phone || profile.email || "-"}`,
         "",
         ...messageLines,
         "",
@@ -340,6 +351,9 @@ function assistantDigestMessage(conversation: {
   locale: string;
   responseLocale: string;
   messageCount: number;
+  funnelStage: string;
+  leadId: string | null;
+  salesProfile: unknown;
   lastMessageAt: Date;
   messages: Array<{
     role: string;
@@ -350,6 +364,7 @@ function assistantDigestMessage(conversation: {
   }>;
 }): string {
   const messages = [...conversation.messages].reverse();
+  const profile = readAssistantSalesProfile(conversation.salesProfile);
   const messageLines = messages.map((message) => {
     const role = message.role === "user" ? "👤 Клиент" : "🤖 Ассистент";
     const meta = [
@@ -371,6 +386,10 @@ function assistantDigestMessage(conversation: {
     `🧭 Страница: ${conversation.pagePath || "-"}`,
     `🗣 Язык: ${conversation.locale} / ответ: ${conversation.responseLocale}`,
     `🔢 Сообщений: ${conversation.messageCount}`,
+    `🎯 Воронка: ${conversation.funnelStage}${conversation.leadId ? " · лид создан" : ""}`,
+    `🏢 Сфера: ${profile.businessType || "-"}`,
+    `🧩 Потребности: ${[...profile.goals, ...profile.features].join(", ") || "-"}`,
+    `📞 Контакт: ${profile.phone || profile.email || "-"}`,
     "",
     ...messageLines,
     "",

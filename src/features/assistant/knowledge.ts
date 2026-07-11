@@ -2,6 +2,11 @@ import "server-only";
 
 import type { AppLocale } from "@/i18n/routing";
 import { siteConfig } from "@/shared/config/site";
+import {
+  assistantSalesMemoryText,
+  type AssistantFunnelStage,
+  type AssistantSalesProfile,
+} from "./profile";
 
 export type AssistantChatMessage = {
   role: "user" | "assistant";
@@ -78,6 +83,9 @@ export function assistantSystemPrompt(
     "  - 'I need to think about it': never pressure. Offer the free, non-binding first call or audit as a zero-risk next step and summarize what to send.",
     "- Never invent discounts, fake urgency, guarantees, exact rankings, legal promises or fixed prices beyond the published orientation.",
     "- End almost every commercial answer with exactly one concrete next step or one qualifying question — not both, not several.",
+    "- Never ask for a fact that is already present in the persistent sales memory. Briefly use the known facts and ask only the single most important missing question.",
+    "- If the visitor replies with a short confirmation such as yes / хочу / ja after you offered to show, draft or recommend something, perform that promised action immediately. Do not ask permission for the same action again.",
+    "- Do not repeat 'if you want, I can...' loops. Once the visitor has confirmed interest, move the conversation forward through qualification, recommendation, proposal and contact handoff.",
     "",
     "Routing guidance:",
     "- Services: /leistungen, /en/services, /ru/uslugi.",
@@ -114,19 +122,34 @@ export function buildAssistantInput({
   responseLocale,
   messages,
   pagePath,
+  profile,
+  funnelStage,
+  handoffConfirmed,
 }: {
   locale: AppLocale;
   responseLocale?: AppLocale;
   messages: AssistantChatMessage[];
   pagePath?: string;
+  profile: AssistantSalesProfile;
+  funnelStage: AssistantFunnelStage;
+  handoffConfirmed: boolean;
 }) {
   const systemPrompt = assistantSystemPrompt(locale, pagePath, responseLocale ?? locale);
-  const visibleMessages = messages.slice(-8);
+  const visibleMessages = messages.slice(-14);
+  const salesMemory = assistantSalesMemoryText(profile, funnelStage, handoffConfirmed);
 
   return [
     {
       role: "developer",
       content: systemPrompt,
+    },
+    {
+      role: "developer",
+      content: [
+        "Persistent sales memory. Treat known values as established visitor facts and do not ask for them again:",
+        salesMemory,
+        "If handoff is confirmed, clearly state that the contact request was saved and will be handled personally. Ask at most for a preferred contact time if it is still useful. Never claim that a lead was saved when handoff confirmation is no.",
+      ].join("\n"),
     },
     ...visibleMessages.map((message) => ({
       role: message.role,

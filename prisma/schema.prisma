@@ -75,16 +75,17 @@ model AuthorTranslation {
 // ---------------------------------------------------------------------------
 
 model Lead {
-  id        String     @id @default(cuid())
-  name      String
-  email     String
-  phone     String?
-  company   String?
-  message   String?
-  source    String?
-  status    LeadStatus @default(NEW)
-  locale    Locale     @default(de)
-  createdAt DateTime   @default(now())
+  id                    String                 @id @default(cuid())
+  name                  String
+  email                 String?
+  phone                 String?
+  company               String?
+  message               String?
+  source                String?
+  status                LeadStatus             @default(NEW)
+  locale                Locale                 @default(de)
+  createdAt             DateTime               @default(now())
+  assistantConversation AssistantConversation?
 }
 
 model ContactRequest {
@@ -400,6 +401,10 @@ model AssistantConversation {
   messageCount       Int                @default(0)
   lastMessageAt      DateTime           @default(now())
   telegramNotifiedAt DateTime?
+  salesProfile       Json?
+  funnelStage        String             @default("DISCOVERY")
+  leadId             String?            @unique
+  lead               Lead?              @relation(fields: [leadId], references: [id], onDelete: SetNull)
   createdAt          DateTime           @default(now())
   updatedAt          DateTime           @updatedAt
   messages           AssistantMessage[]

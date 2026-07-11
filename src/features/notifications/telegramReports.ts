@@ -58,6 +58,7 @@ function sourceLabel(source?: string | null): string {
     contact_page: "страница контактов",
     homepage_contact: "форма на главной",
     website_audit: "аудит сайта",
+    ai_assistant: "AI-ассистент",
   };
   return source ? labels[source] ?? source : "-";
 }
@@ -628,7 +629,7 @@ export async function buildLeadsReport(now = new Date()): Promise<string> {
       ? recentLeads.flatMap((lead, index) => [
           `${index + 1}. ${formatDateTime(lead.createdAt)} — ${lead.name}${lead.company ? ` / ${lead.company}` : ""}`,
           `   • статус: ${leadStatusLabel(lead.status)}, источник: ${sourceLabel(lead.source)}, язык: ${localeLabel(lead.locale)}`,
-          `   • email: ${lead.email}${lead.phone ? `, телефон: ${lead.phone}` : ""}`,
+          `   • email: ${lead.email || "-"}${lead.phone ? `, телефон: ${lead.phone}` : ""}`,
           `   • сообщение: ${trimText(lead.message)}`,
         ])
       : ["• Последних заявок пока нет."];
