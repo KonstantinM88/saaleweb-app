@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -19,6 +19,10 @@ import "../globals.css";
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
+
+export const viewport: Viewport = {
+  themeColor: "#8B5CF6",
+};
 
 export async function generateMetadata({
   params,
@@ -49,7 +53,10 @@ export async function generateMetadata({
     icons: {
       icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
       shortcut: [{ url: "/favicon.svg", type: "image/svg+xml" }],
-      apple: [{ url: "/apple-icon.svg", type: "image/svg+xml" }],
+      apple: [
+        { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+        { url: "/apple-icon.svg", type: "image/svg+xml" },
+      ],
       other: [{ rel: "mask-icon", url: "/brand/saaleweb-mark-mono.svg", color: "#111827" }],
     },
     openGraph: {
