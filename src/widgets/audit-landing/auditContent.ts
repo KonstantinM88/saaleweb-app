@@ -42,7 +42,7 @@ export type AuditLandingCopy = {
 
 const COPY: Record<AppLocale, AuditLandingCopy> = {
   de: {
-    metaTitle: "Kostenlose Website-Analyse für Unternehmen in Deutschland | SaaleWeb",
+    metaTitle: "Kostenlose Website-Analyse für Unternehmen in Deutschland",
     metaDescription:
       "Kostenlose Prüfung Ihrer Website, Instagram-Seite oder Ihres Google-Unternehmensprofils mit 3–5 konkreten Empfehlungen für mehr Vertrauen, Sichtbarkeit und Anfragen.",
     heroImage: {
@@ -171,7 +171,7 @@ const COPY: Record<AppLocale, AuditLandingCopy> = {
     },
   },
   en: {
-    metaTitle: "Free Website Audit for Businesses in Germany | SaaleWeb",
+    metaTitle: "Free Website Audit for Businesses in Germany",
     metaDescription:
       "Get a free manual review of your website, Instagram page or Google Business Profile with 3–5 practical recommendations to improve trust, visibility and leads.",
     heroImage: {
@@ -299,7 +299,7 @@ const COPY: Record<AppLocale, AuditLandingCopy> = {
     },
   },
   ru: {
-    metaTitle: "Бесплатный аудит сайта для бизнеса в Германии | SaaleWeb",
+    metaTitle: "Бесплатный аудит сайта для бизнеса в Германии",
     metaDescription:
       "Бесплатно проверю ваш сайт, Instagram или Google-профиль и покажу 3–5 ошибок, из-за которых бизнес может терять клиентов.",
     heroImage: {

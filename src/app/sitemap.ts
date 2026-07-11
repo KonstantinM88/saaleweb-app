@@ -33,7 +33,6 @@ function entriesForLocalizedUrls(
     })
     .map((url) => ({
       url,
-      lastModified: new Date(),
       changeFrequency,
       priority,
       alternates: { languages: alternates },
