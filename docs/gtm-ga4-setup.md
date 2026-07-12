@@ -15,6 +15,38 @@ NEXT_PUBLIC_GA_MEASUREMENT_ID="G-30BVTE3FPZ"
 Both identifiers are public browser configuration, not secrets. Add them to
 Hostinger for both build and runtime, then rebuild the application.
 
+## Controlled App Router page views
+
+`src/features/analytics/GtmRouteTracker.tsx` publishes one event after the
+initial public render and after every real App Router URL change. It includes
+query parameters, reads the validated next-intl locale passed by the public
+layout, ignores `/admin`, and stores the last canonical tracking URL in a ref.
+The ref is updated only immediately before the real push, so a cancelled
+animation frame or React Strict Mode effect replay cannot lose or duplicate the
+initial event.
+
+The exact payload is:
+
+```js
+{
+  event: "page_view",
+  page_location: window.location.href,
+  page_path: `${window.location.pathname}${window.location.search}`,
+  page_title: document.title,
+  page_language: "de" | "en" | "ru"
+}
+```
+
+The event is queued in the single global `window.dataLayer` independently of
+the visitor's analytics choice. The Google tag remains responsible for its
+built-in consent checks; the application does not load a second GA script.
+
+Consent defaults are initialized by `src/instrumentation-client.ts`. Next.js
+runs this lightweight client instrumentation after the document loads but
+before React hydration; the official `GoogleTagManager` component loads after
+hydration. This preserves the required order without rendering a script tag
+from the locale React layout.
+
 ## Required GTM container setup
 
 1. Create a **Data Layer Variable** named `DLV - GA Measurement ID`:
@@ -36,8 +68,15 @@ Hostinger for both build and runtime, then rebuild the application.
    - Measurement ID: `{{DLV - GA Measurement ID}}`
    - Event Name: `page_view`
    - Trigger: `CE - page_view`
-   - Event parameters: `page_location`, `page_path`, `page_title`,
-     `page_language` using matching Data Layer Variables.
+   - Event parameters must use these **Data Layer Variables, Version 2**:
+     - `DLV - page_location` → Data Layer Variable Name `page_location`
+     - `DLV - page_path` → Data Layer Variable Name `page_path`
+     - `DLV - page_title` → Data Layer Variable Name `page_title`
+     - `DLV - page_language` → Data Layer Variable Name `page_language`
+
+Do not set `page_language` to a static `de` value and do not use an undefined
+placeholder such as `{{Page Title}}`. Use the four DLVs above in the GA4 Event
+tag so every locale and App Router navigation carries its real values.
 
 ## Business events
 

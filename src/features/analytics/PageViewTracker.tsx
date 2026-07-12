@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { detectAiReferrer } from "./aiTraffic";
 
@@ -17,10 +17,15 @@ function analyticsReferrer(): string | null {
 /** Fires a first-party page view (no cookies, no IP) on each navigation. */
 export function PageViewTracker({ locale }: { locale: string }) {
   const pathname = usePathname();
+  const lastTrackedRef = useRef<string | null>(null);
 
   useEffect(() => {
     if (!pathname || pathname.startsWith("/admin")) return;
     if (typeof navigator !== "undefined" && navigator.webdriver) return;
+    const trackingKey = `${locale}:${pathname}`;
+    if (lastTrackedRef.current === trackingKey) return;
+    lastTrackedRef.current = trackingKey;
+
     const body = JSON.stringify({
       path: pathname,
       locale,

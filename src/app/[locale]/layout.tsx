@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
-import Script from "next/script";
 import { Suspense } from "react";
 import { GoogleTagManager } from "@next/third-parties/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
@@ -17,7 +16,6 @@ import { PageViewTracker } from "@/features/analytics/PageViewTracker";
 import { AnalyticsConsentBanner } from "@/features/analytics/AnalyticsConsentBanner";
 import { GtmInteractionTracker } from "@/features/analytics/GtmInteractionTracker";
 import { GtmRouteTracker } from "@/features/analytics/GtmRouteTracker";
-import { googleConsentDefaultsCode } from "@/features/analytics/googleConsent";
 import { AiAssistantWidget } from "@/widgets/assistant/AiAssistantWidget";
 import { CustomCursor } from "@/shared/ui/CustomCursor";
 import { getPathname } from "@/i18n/navigation";
@@ -136,15 +134,11 @@ export default async function LocaleLayout({
   };
 
   return (
-    <html lang={locale} className={`${GeistSans.variable} ${GeistMono.variable}`}>
-      <head>
-        {/* Consent defaults must run before GTM and live inside the document head. */}
-        {analyticsConfigured ? (
-          <Script id="saaleweb-google-consent-defaults" strategy="beforeInteractive">
-            {googleConsentDefaultsCode(measurementId)}
-          </Script>
-        ) : null}
-      </head>
+    <html
+      lang={locale}
+      className={`${GeistSans.variable} ${GeistMono.variable}`}
+      data-scroll-behavior="smooth"
+    >
       {/* Next.js loads the optimized GTM scripts after hydration. */}
       {analyticsConfigured ? <GoogleTagManager gtmId={gtmId} /> : null}
       <body className="font-sans">
@@ -153,7 +147,7 @@ export default async function LocaleLayout({
         {analyticsConfigured ? (
           <>
             <Suspense fallback={null}>
-              <GtmRouteTracker />
+              <GtmRouteTracker locale={locale} />
             </Suspense>
             <GtmInteractionTracker />
             <AnalyticsConsentBanner labels={consentLabels} privacyHref={privacyHref} />
