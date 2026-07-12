@@ -26,6 +26,14 @@
     "title": "Direkt per WhatsApp schreiben",
     "prefill": "Hallo SaaleWeb, ich interessiere mich für eine Website, SEO oder KI-Sichtbarkeit und möchte kurz sprechen."
   },
+  "AnalyticsConsent": {
+    "title": "Datenschutz & Reichweitenmessung",
+    "text": "Mit Ihrer Einwilligung nutzen wir Google Analytics 4 über Google Tag Manager, um Seitenaufrufe und wichtige Interaktionen zu verstehen. Unsere eigene cookielose Statistik bleibt unabhängig davon aktiv. Werbung und personalisierte Anzeigen sind deaktiviert.",
+    "accept": "Analyse erlauben",
+    "reject": "Nur notwendige Funktionen",
+    "settings": "Datenschutz-Einstellungen",
+    "privacy": "Datenschutzerklärung"
+  },
   "AssistantWidget": {
     "aria": "SaaleWeb KI-Assistent öffnen",
     "badge": "KI-Assistent",
@@ -318,7 +326,7 @@
       },
       {
         "q": "Wird die Website nach DSGVO-Grundsätzen umgesetzt?",
-        "a": "Ja. Impressum, Datenschutzerklärung, SSL-Verschlüsselung und europäische Hosting-Optionen gehören zum Standard. Unsere cookielose Besucherstatistik kommt ohne Cookie-Banner aus — das verbessert Nutzererlebnis und Conversion."
+        "a": "Ja. Impressum, Datenschutzerklärung, SSL-Verschlüsselung und europäische Hosting-Optionen gehören zum Standard. Unsere eigene Besucherstatistik bleibt cookielos; die zusätzliche Google-Analytics-Messung wird nur nach Einwilligung aktiviert und kann jederzeit widerrufen werden."
       },
       {
         "q": "Arbeitet ihr auch remote bzw. außerhalb der Region?",

@@ -1,5 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
+import Script from "next/script";
+import { Suspense } from "react";
+import { GoogleTagManager } from "@next/third-parties/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { GeistSans } from "geist/font/sans";
@@ -11,6 +14,10 @@ import { organizationSchema, websiteSchema } from "@/shared/seo/schema";
 import { getSeoOverride } from "@/shared/seo/metadata";
 import { ogImageUrl } from "@/shared/seo/og";
 import { PageViewTracker } from "@/features/analytics/PageViewTracker";
+import { AnalyticsConsentBanner } from "@/features/analytics/AnalyticsConsentBanner";
+import { GtmInteractionTracker } from "@/features/analytics/GtmInteractionTracker";
+import { GtmRouteTracker } from "@/features/analytics/GtmRouteTracker";
+import { googleConsentDefaultsCode } from "@/features/analytics/googleConsent";
 import { AiAssistantWidget } from "@/widgets/assistant/AiAssistantWidget";
 import { CustomCursor } from "@/shared/ui/CustomCursor";
 import { getPathname } from "@/i18n/navigation";
@@ -95,6 +102,7 @@ export default async function LocaleLayout({
   }
   setRequestLocale(locale);
   const assistant = await getTranslations({ locale, namespace: "AssistantWidget" });
+  const consent = await getTranslations({ locale, namespace: "AnalyticsConsent" });
   const assistantLabels = {
     aria: assistant("aria"),
     badge: assistant("badge"),
@@ -114,12 +122,43 @@ export default async function LocaleLayout({
     quickPrompts: assistant.raw("quickPrompts") as string[],
   };
   const contactHref = getPathname({ locale, href: "/kontakt" });
+  const privacyHref = getPathname({ locale, href: "/datenschutz" });
+  const gtmId = process.env.NEXT_PUBLIC_GTM_ID?.trim() ?? "";
+  const measurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim() ?? "";
+  const analyticsConfigured = gtmId.startsWith("GTM-") && measurementId.startsWith("G-");
+  const consentLabels = {
+    title: consent("title"),
+    text: consent("text"),
+    accept: consent("accept"),
+    reject: consent("reject"),
+    settings: consent("settings"),
+    privacy: consent("privacy"),
+  };
 
   return (
     <html lang={locale} className={`${GeistSans.variable} ${GeistMono.variable}`}>
+      <head>
+        {/* Consent defaults must run before GTM and live inside the document head. */}
+        {analyticsConfigured ? (
+          <Script id="saaleweb-google-consent-defaults" strategy="beforeInteractive">
+            {googleConsentDefaultsCode(measurementId)}
+          </Script>
+        ) : null}
+      </head>
+      {/* Next.js loads the optimized GTM scripts after hydration. */}
+      {analyticsConfigured ? <GoogleTagManager gtmId={gtmId} /> : null}
       <body className="font-sans">
         <JsonLd data={[organizationSchema(), websiteSchema(locale)]} />
         <PageViewTracker locale={locale} />
+        {analyticsConfigured ? (
+          <>
+            <Suspense fallback={null}>
+              <GtmRouteTracker />
+            </Suspense>
+            <GtmInteractionTracker />
+            <AnalyticsConsentBanner labels={consentLabels} privacyHref={privacyHref} />
+          </>
+        ) : null}
         <CustomCursor />
         {/* next-intl 4: provider auto-inherits messages from i18n/request.ts */}
         <NextIntlClientProvider>

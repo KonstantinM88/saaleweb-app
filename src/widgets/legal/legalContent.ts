@@ -264,7 +264,7 @@ export const IMPRESSUM_CONTENT: Record<AppLocale, LegalPageContent> = {
 const datenschutzDe: LegalPageContent = {
   metaTitle: "Datenschutzerklärung | SaaleWeb – Webentwicklung & Webdesign in Halle (Saale)",
   metaDescription:
-    "Datenschutzerklärung von SaaleWeb: Welche Daten wir verarbeiten, zu welchen Zwecken und welche Rechte Sie haben – transparent, ohne Tracking-Cookies, ohne Werbung.",
+    "Datenschutzerklärung von SaaleWeb: eigene cookielose Statistik, einwilligungsbasierte Google-Analytics-Nutzung und Ihre Datenschutzrechte.",
   eyebrow: "Rechtliches",
   title: "Datenschutzerklärung",
   updated: "Stand: Juli 2026",
@@ -272,7 +272,7 @@ const datenschutzDe: LegalPageContent = {
     {
       title: "1. Überblick und Grundsätze",
       paragraphs: [
-        "Der Schutz Ihrer persönlichen Daten ist uns wichtig. Diese Website ist bewusst datensparsam aufgebaut: Wir verwenden keine Tracking-Cookies, keine Werbenetzwerke und keine Analysedienste von Drittanbietern. Personenbezogene Daten verarbeiten wir nur, soweit dies für die Bereitstellung der Website und die Bearbeitung Ihrer Anfragen erforderlich ist.",
+        "Der Schutz Ihrer persönlichen Daten ist uns wichtig. Diese Website ist bewusst datensparsam aufgebaut. Wir verwenden keine Werbenetzwerke. Neben unserer eigenen cookielosen Reichweitenmessung setzen wir Google Analytics 4 über Google Tag Manager ausschließlich nach Ihrer Einwilligung und mit deaktivierter Werbepersonalisierung ein. Personenbezogene Daten verarbeiten wir nur, soweit dies für die Bereitstellung der Website, die Analyse mit Ihrer Einwilligung und die Bearbeitung Ihrer Anfragen erforderlich ist.",
         "Diese Erklärung informiert Sie gemäß der Datenschutz-Grundverordnung (DSGVO) darüber, welche Daten wir verarbeiten, zu welchen Zwecken, auf welcher Rechtsgrundlage und welche Rechte Ihnen zustehen.",
       ],
     },
@@ -331,21 +331,29 @@ const datenschutzDe: LegalPageContent = {
       ],
     },
     {
-      title: "9. Cookies",
+      title: "9. Google Tag Manager und Google Analytics 4",
       paragraphs: [
-        "Diese Website verwendet keine Cookies zu Analyse-, Tracking- oder Werbezwecken.",
-        "Technisch notwendige Cookies können in zwei Fällen gesetzt werden: zur Speicherung Ihrer Sprachauswahl (wenn Sie die Sprache der Website wechseln) sowie für die Anmeldung autorisierter Administratoren im internen Verwaltungsbereich. Diese Cookies sind für die gewünschte Funktion unbedingt erforderlich (§ 25 Abs. 2 Nr. 2 TDDDG); Rechtsgrundlage der damit verbundenen Datenverarbeitung ist Art. 6 Abs. 1 lit. f DSGVO.",
+        "Auf den öffentlichen Seiten ist Google Tag Manager eingebunden. Anbieter für Nutzer im Europäischen Wirtschaftsraum ist Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland. Der Tag Manager verwaltet die technische Ausspielung von Analyse-Tags und übermittelt dabei technische Verbindungsdaten, insbesondere IP-Adresse, Browser- und Geräteinformationen sowie Zeitpunkt und aufgerufene URL an Google.",
+        "Google Analytics 4 wird über den Tag Manager im erweiterten Einwilligungsmodus gesteuert. Vor Ihrer Auswahl sind analytics_storage, ad_storage, ad_user_data und ad_personalization standardmäßig auf „denied“ gesetzt; Google kann dabei technisch eingeschränkte, cookielose Signale empfangen. Cookie-basierte Messung wird erst nach Ihrer freiwilligen Zustimmung aktiviert. Wir messen dann insbesondere Seitenaufrufe, ungefähren Standort, Gerätetyp, Referrer sowie Interaktionen wie Formularabschlüsse, Kontakt- und Messenger-Klicks, Scrolltiefe und das Öffnen des KI-Assistenten. Werbespeicherung und personalisierte Werbung bleiben deaktiviert.",
+        "Rechtsgrundlage ist Ihre Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TDDDG. Sie können Ihre Entscheidung jederzeit über die Schaltfläche „Datenschutz-Einstellungen“ mit Wirkung für die Zukunft ändern. Die Auswahl selbst wird im Local Storage gespeichert. Google kann Daten auch auf Servern außerhalb der EU verarbeiten; hierfür gelten die von Google bereitgestellten Datenschutzbedingungen und Übermittlungsmechanismen. Weitere Informationen finden Sie unter https://policies.google.com/privacy.",
+      ],
+    },
+    {
+      title: "10. Cookies und lokale Speicherung",
+      paragraphs: [
+        "Analyse-Cookies oder vergleichbare Kennungen von Google Analytics dürfen nur nach Ihrer ausdrücklichen Einwilligung gesetzt beziehungsweise ausgelesen werden. Ohne Zustimmung bleibt die Analysespeicherung deaktiviert.",
+        "Technisch notwendige Speicherungen können für die Sprachauswahl, die Anmeldung autorisierter Administratoren und das Merken Ihrer Datenschutzentscheidung erfolgen. Sie sind für die angeforderte Funktion erforderlich (§ 25 Abs. 2 Nr. 2 TDDDG); Rechtsgrundlage der damit verbundenen Verarbeitung ist Art. 6 Abs. 1 lit. f DSGVO.",
         "Der KI-Assistent kann zusätzlich eine zufällig erzeugte technische Besucherkennung im Local Storage Ihres Browsers speichern, damit Folgefragen demselben Gespräch zugeordnet werden können. Die Kennung enthält keine Nachrichtentexte und keine Kontaktdaten.",
       ],
     },
     {
-      title: "10. SSL-/TLS-Verschlüsselung",
+      title: "11. SSL-/TLS-Verschlüsselung",
       paragraphs: [
         "Diese Website nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte, wie z. B. Anfragen über das Kontaktformular, eine SSL-/TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie an dem Präfix „https://“ und dem Schloss-Symbol in der Adresszeile Ihres Browsers.",
       ],
     },
     {
-      title: "11. Ihre Rechte",
+      title: "12. Ihre Rechte",
       paragraphs: ["Ihnen stehen bezüglich Ihrer personenbezogenen Daten folgende Rechte zu:"],
       list: [
         "Recht auf Auskunft über die verarbeiteten Daten (Art. 15 DSGVO)",
@@ -362,14 +370,14 @@ const datenschutzDe: LegalPageContent = {
       ],
     },
     {
-      title: "12. Speicherdauer, Bereitstellungspflicht und automatisierte Entscheidungen",
+      title: "13. Speicherdauer, Bereitstellungspflicht und automatisierte Entscheidungen",
       paragraphs: [
         "Soweit in dieser Erklärung keine speziellere Speicherdauer genannt ist, verbleiben personenbezogene Daten bei uns, bis der Zweck der Verarbeitung entfällt oder Sie ein Lösch- bzw. Widerspruchsrecht ausüben – vorbehaltlich gesetzlicher Aufbewahrungsfristen (insbesondere aus Handels- und Steuerrecht).",
         "Die Bereitstellung personenbezogener Daten ist weder gesetzlich noch vertraglich vorgeschrieben; ohne Angabe von Kontaktdaten können wir Anfragen jedoch nicht beantworten. Eine automatisierte Entscheidungsfindung einschließlich Profiling im Sinne von Art. 22 DSGVO findet nicht statt.",
       ],
     },
     {
-      title: "13. Aktualität und Änderung dieser Datenschutzerklärung",
+      title: "14. Aktualität und Änderung dieser Datenschutzerklärung",
       paragraphs: [
         "Wir behalten uns vor, diese Datenschutzerklärung anzupassen, wenn sich die Rechtslage, die Website oder die eingesetzten Dienste ändern. Es gilt die jeweils auf dieser Seite veröffentlichte Fassung.",
       ],
@@ -380,7 +388,7 @@ const datenschutzDe: LegalPageContent = {
 const datenschutzEn: LegalPageContent = {
   metaTitle: "Privacy Policy | SaaleWeb – Web Development & Web Design in Halle (Saale)",
   metaDescription:
-    "Privacy policy of SaaleWeb: which data we process, for which purposes and which rights you have – transparent, without tracking cookies, without advertising.",
+    "SaaleWeb privacy policy: first-party cookie-free statistics, consent-based Google Analytics and your data protection rights.",
   eyebrow: "Legal",
   title: "Privacy Policy",
   updated: "Last updated: July 2026",
@@ -390,7 +398,7 @@ const datenschutzEn: LegalPageContent = {
     {
       title: "1. Overview and principles",
       paragraphs: [
-        "Protecting your personal data matters to us. This website is deliberately built to be data-minimal: we use no tracking cookies, no advertising networks and no third-party analytics services. We process personal data only insofar as this is necessary to provide the website and to handle your inquiries.",
+        "Protecting your personal data matters to us. This website is deliberately data-minimal and does not use advertising networks. In addition to our own cookie-free audience measurement, we use Google Analytics 4 through Google Tag Manager only with your consent and with advertising personalisation disabled. We process personal data only where necessary to provide the website, perform consented analytics and handle your inquiries.",
         "In accordance with the General Data Protection Regulation (GDPR), this policy informs you about which data we process, for which purposes, on which legal basis, and which rights you have.",
       ],
     },
@@ -449,21 +457,29 @@ const datenschutzEn: LegalPageContent = {
       ],
     },
     {
-      title: "9. Cookies",
+      title: "9. Google Tag Manager and Google Analytics 4",
       paragraphs: [
-        "This website does not use cookies for analytics, tracking or advertising purposes.",
-        "Technically necessary cookies may be set in two cases: to store your language selection (when you switch the website language) and for the login of authorised administrators in the internal administration area. These cookies are strictly necessary for the requested function (Section 25(2) no. 2 TDDDG); the legal basis for the associated data processing is Art. 6(1)(f) GDPR.",
+        "Google Tag Manager is integrated on the public pages. For users in the European Economic Area, the provider is Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland. Tag Manager controls the technical delivery of analytics tags and may transmit technical connection data, particularly IP address, browser and device information, time and the URL accessed, to Google.",
+        "Google Analytics 4 is controlled through Tag Manager in advanced consent mode. Before you make a choice, analytics_storage, ad_storage, ad_user_data and ad_personalization are set to “denied” by default; Google may receive technically restricted cookieless signals in this state. Cookie-based measurement is activated only after your voluntary consent. We then measure page views, approximate location, device type, referrer and interactions such as successful form submissions, contact and messenger clicks, scroll depth and opening the AI assistant. Advertising storage and personalised advertising remain disabled.",
+        "The legal basis is your consent under Art. 6(1)(a) GDPR and Section 25(1) TDDDG. You can change your decision at any time for the future using the “Privacy settings” button. The choice itself is stored in local storage. Google may also process data on servers outside the EU; Google's applicable data protection terms and transfer mechanisms apply. More information is available at https://policies.google.com/privacy.",
+      ],
+    },
+    {
+      title: "10. Cookies and local storage",
+      paragraphs: [
+        "Google Analytics cookies or comparable identifiers may only be set or read after your explicit consent. Analytics storage remains disabled without consent.",
+        "Technically necessary storage may be used for language selection, authorised administrator login and remembering your privacy choice. It is required for the requested function (Section 25(2) no. 2 TDDDG); the legal basis for the associated processing is Art. 6(1)(f) GDPR.",
         "The AI assistant may additionally store a randomly generated technical visitor identifier in your browser's local storage so that follow-up questions can be assigned to the same conversation. The identifier does not contain message texts or contact details.",
       ],
     },
     {
-      title: "10. SSL/TLS encryption",
+      title: "11. SSL/TLS encryption",
       paragraphs: [
         "For security reasons and to protect the transmission of confidential content, such as inquiries via the contact form, this website uses SSL/TLS encryption. You can recognise an encrypted connection by the prefix \u201chttps://\u201d and the lock symbol in your browser's address bar.",
       ],
     },
     {
-      title: "11. Your rights",
+      title: "12. Your rights",
       paragraphs: ["You have the following rights regarding your personal data:"],
       list: [
         "Right of access to the processed data (Art. 15 GDPR)",
@@ -480,14 +496,14 @@ const datenschutzEn: LegalPageContent = {
       ],
     },
     {
-      title: "12. Storage period, obligation to provide data, automated decisions",
+      title: "13. Storage period, obligation to provide data, automated decisions",
       paragraphs: [
         "Unless a more specific storage period is stated in this policy, personal data remains with us until the purpose of processing ceases to apply or you exercise a right to erasure or objection – subject to statutory retention periods (in particular under commercial and tax law).",
         "The provision of personal data is neither legally nor contractually required; however, we cannot answer inquiries without contact details. Automated decision-making, including profiling within the meaning of Art. 22 GDPR, does not take place.",
       ],
     },
     {
-      title: "13. Validity and changes to this privacy policy",
+      title: "14. Validity and changes to this privacy policy",
       paragraphs: [
         "We reserve the right to adapt this privacy policy if the legal situation, the website or the services used change. The version published on this page at the respective time applies.",
       ],
@@ -498,7 +514,7 @@ const datenschutzEn: LegalPageContent = {
 const datenschutzRu: LegalPageContent = {
   metaTitle: "Политика конфиденциальности | SaaleWeb — веб-разработка и веб-дизайн в Halle (Saale)",
   metaDescription:
-    "Политика конфиденциальности SaaleWeb: какие данные мы обрабатываем, для каких целей и какие права у вас есть — прозрачно, без трекинговых cookies и рекламы.",
+    "Политика конфиденциальности SaaleWeb: собственная аналитика без cookies, Google Analytics по согласию и ваши права на защиту данных.",
   eyebrow: "Правовая информация",
   title: "Политика конфиденциальности (Datenschutzerklärung)",
   updated: "Актуально на: июль 2026",
@@ -508,7 +524,7 @@ const datenschutzRu: LegalPageContent = {
     {
       title: "1. Обзор и принципы",
       paragraphs: [
-        "Защита ваших персональных данных важна для нас. Этот сайт осознанно построен по принципу минимизации данных: мы не используем трекинговые cookies, рекламные сети и сторонние аналитические сервисы. Персональные данные мы обрабатываем только в той мере, в какой это необходимо для работы сайта и обработки ваших обращений.",
+        "Защита ваших персональных данных важна для нас. Сайт построен по принципу минимизации данных и не использует рекламные сети. Помимо собственной аналитики без cookies, мы используем Google Analytics 4 через Google Tag Manager только с вашего согласия и с отключённой рекламной персонализацией. Персональные данные обрабатываются только в объёме, необходимом для работы сайта, согласованной аналитики и обработки обращений.",
         "В соответствии с Общим регламентом по защите данных (GDPR/DSGVO) эта политика информирует вас о том, какие данные мы обрабатываем, для каких целей, на каком правовом основании и какие права вам принадлежат.",
       ],
     },
@@ -567,21 +583,29 @@ const datenschutzRu: LegalPageContent = {
       ],
     },
     {
-      title: "9. Cookies",
+      title: "9. Google Tag Manager и Google Analytics 4",
       paragraphs: [
-        "Этот сайт не использует cookies для аналитики, трекинга или рекламы.",
-        "Технически необходимые cookies могут устанавливаться в двух случаях: для сохранения выбранного языка (при переключении языка сайта) и для входа авторизованных администраторов во внутреннюю панель управления. Эти cookies строго необходимы для запрошенной функции (§ 25 (2) № 2 TDDDG); правовое основание связанной с ними обработки — ст. 6 (1)(f) GDPR.",
+        "На публичных страницах подключён Google Tag Manager. Для пользователей в Европейской экономической зоне поставщиком является Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland. Tag Manager управляет технической загрузкой аналитических тегов и может передавать Google технические данные соединения, в частности IP-адрес, сведения о браузере и устройстве, время и открытый URL.",
+        "Google Analytics 4 управляется через Tag Manager в расширенном режиме согласия. До вашего выбора параметры analytics_storage, ad_storage, ad_user_data и ad_personalization по умолчанию имеют значение «denied»; в этом состоянии Google может получать технически ограниченные сигналы без cookies. Аналитика на основе cookies активируется только после добровольного согласия. После этого измеряются просмотры страниц, примерное местоположение, тип устройства, referrer и взаимодействия: успешная отправка форм, клики по контактам и мессенджерам, глубина прокрутки и открытие AI-ассистента. Рекламное хранение и персонализированная реклама остаются отключёнными.",
+        "Правовое основание — ваше согласие согласно ст. 6 (1)(a) GDPR и § 25 (1) TDDDG. Решение можно в любое время изменить на будущее кнопкой «Настройки конфиденциальности». Сам выбор сохраняется в localStorage. Google также может обрабатывать данные на серверах за пределами ЕС; применяются условия защиты данных и механизмы передачи Google. Подробнее: https://policies.google.com/privacy.",
+      ],
+    },
+    {
+      title: "10. Cookies и локальное хранилище",
+      paragraphs: [
+        "Аналитические cookies или сопоставимые идентификаторы Google Analytics могут устанавливаться или считываться только после вашего явного согласия. Без согласия аналитическое хранение остаётся отключённым.",
+        "Технически необходимое хранение может использоваться для выбора языка, входа авторизованных администраторов и запоминания решения о конфиденциальности. Оно необходимо для запрошенной функции (§ 25 (2) № 2 TDDDG); правовое основание связанной обработки — ст. 6 (1)(f) GDPR.",
         "AI-ассистент также может сохранять в localStorage браузера случайно созданный технический идентификатор посетителя, чтобы последующие вопросы можно было связать с тем же диалогом. Этот идентификатор не содержит тексты сообщений или контактные данные.",
       ],
     },
     {
-      title: "10. SSL/TLS-шифрование",
+      title: "11. SSL/TLS-шифрование",
       paragraphs: [
         "В целях безопасности и для защиты передачи конфиденциального содержимого, например обращений через контактную форму, сайт использует SSL/TLS-шифрование. Зашифрованное соединение можно узнать по префиксу «https://» и значку замка в адресной строке браузера.",
       ],
     },
     {
-      title: "11. Ваши права",
+      title: "12. Ваши права",
       paragraphs: ["В отношении ваших персональных данных вам принадлежат следующие права:"],
       list: [
         "Право на доступ к обрабатываемым данным (ст. 15 GDPR)",
@@ -598,14 +622,14 @@ const datenschutzRu: LegalPageContent = {
       ],
     },
     {
-      title: "12. Срок хранения, обязанность предоставления данных, автоматизированные решения",
+      title: "13. Срок хранения, обязанность предоставления данных, автоматизированные решения",
       paragraphs: [
         "Если в этой политике не указан более конкретный срок хранения, персональные данные остаются у нас до тех пор, пока не отпадёт цель обработки или вы не воспользуетесь правом на удаление или возражение — с учётом законных сроков хранения (в частности, по торговому и налоговому праву).",
         "Предоставление персональных данных не является ни законодательной, ни договорной обязанностью; однако без контактных данных мы не сможем ответить на обращение. Автоматизированное принятие решений, включая профилирование в смысле ст. 22 GDPR, не осуществляется.",
       ],
     },
     {
-      title: "13. Актуальность и изменение этой политики",
+      title: "14. Актуальность и изменение этой политики",
       paragraphs: [
         "Мы оставляем за собой право адаптировать эту политику при изменении правовой ситуации, сайта или используемых сервисов. Действует версия, опубликованная на этой странице в соответствующий момент.",
       ],

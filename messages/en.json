@@ -26,6 +26,14 @@
     "title": "Write directly on WhatsApp",
     "prefill": "Hello SaaleWeb, I am interested in a website, SEO or AI visibility and would like to talk briefly."
   },
+  "AnalyticsConsent": {
+    "title": "Privacy & audience measurement",
+    "text": "With your consent, we use Google Analytics 4 through Google Tag Manager to understand page views and important interactions. Our own cookie-free statistics remain active independently. Advertising and personalised ads are disabled.",
+    "accept": "Allow analytics",
+    "reject": "Necessary only",
+    "settings": "Privacy settings",
+    "privacy": "Privacy policy"
+  },
   "AssistantWidget": {
     "aria": "Open the SaaleWeb AI assistant",
     "badge": "AI assistant",
@@ -318,7 +326,7 @@
       },
       {
         "q": "Is the website built along GDPR principles?",
-        "a": "Yes. Legal notice, privacy policy, SSL encryption and European hosting options are standard. Our cookieless visitor statistics work without a cookie banner — which improves user experience and conversion."
+        "a": "Yes. Legal notice, privacy policy, SSL encryption and European hosting options are standard. Our own visitor statistics remain cookie-free; additional Google Analytics measurement is activated only with consent and can be withdrawn at any time."
       },
       {
         "q": "Do you also work remotely or outside the region?",

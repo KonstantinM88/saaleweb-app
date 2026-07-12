@@ -4,6 +4,7 @@ import { useActionState, useRef, useState, type FormEvent } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { ArrowRight, CheckCircle2, Sparkles } from "lucide-react";
 import { submitContact, type ContactState } from "@/features/contact/actions";
+import { useTrackFormSuccess } from "@/features/analytics/useTrackFormSuccess";
 import { BrandText } from "@/shared/ui/BrandText";
 
 const initialState: ContactState = { status: "idle" };
@@ -21,6 +22,7 @@ export function ContactPageForm() {
   const t = useTranslations("ContactPage.form");
   const locale = useLocale();
   const [state, formAction, pending] = useActionState(submitContact, initialState);
+  useTrackFormSuccess(state.status, "contact_page");
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
   const formRef = useRef<HTMLFormElement>(null);
   const projectTypeOptions = t.raw("projectTypeOptions") as SelectOption[];

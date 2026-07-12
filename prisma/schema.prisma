@@ -471,3 +471,12 @@ model Translation {
 
   @@unique([namespace, key, locale])
 }
+
+model SeoDailySnapshot {
+  id          String   @id @default(cuid())
+  day         String   @unique
+  score       Int
+  sitemapUrls Int
+  report      String
+  createdAt   DateTime @default(now())
+}

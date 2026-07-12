@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { AppLocale } from "@/i18n/routing";
+import { trackGtmEvent } from "@/features/analytics/gtm";
 import { siteConfig } from "@/shared/config/site";
 import { BrandMonogram } from "@/shared/ui/BrandLogo";
 
@@ -355,6 +356,10 @@ export function AiAssistantWidget({
             setHasOpened(true);
             setLogoNudge(false);
             setOpen(true);
+            trackGtmEvent("ai_assistant_open", {
+              page_path: window.location.pathname,
+              widget_locale: locale,
+            });
           }}
           className={`assistant-glass-trigger pointer-events-auto group ml-auto flex self-end items-center gap-3 rounded-full p-1.5 pr-3 text-white transition duration-500 hover:-translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-purple motion-reduce:transition-none sm:pr-4 ${
             pageScrolled ? "assistant-glass-trigger--scrolled" : ""

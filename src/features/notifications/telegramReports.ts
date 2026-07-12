@@ -195,6 +195,10 @@ async function queryReferrerRows(from: Date, to: Date): Promise<PathCountRow[]> 
   return prisma.$queryRaw<PathCountRow[]>`SELECT referrer AS path, count(*)::int AS count FROM "PageView" WHERE "createdAt" >= ${from} AND "createdAt" < ${to} AND referrer IS NOT NULL AND referrer <> '' GROUP BY referrer ORDER BY count DESC LIMIT 400`;
 }
 
+async function queryAiReferrerRows(from: Date, to: Date): Promise<PathCountRow[]> {
+  return prisma.$queryRaw<PathCountRow[]>`SELECT referrer AS path, count(DISTINCT COALESCE("visitorHash", id))::int AS count FROM "PageView" WHERE "createdAt" >= ${from} AND "createdAt" < ${to} AND referrer IS NOT NULL AND referrer <> '' GROUP BY referrer ORDER BY count DESC`;
+}
+
 function aiCountsByLabel(rows: PathCountRow[]): Map<string, number> {
   const map = new Map<string, number>();
   for (const row of rows) {
@@ -208,8 +212,8 @@ function aiCountsByLabel(rows: PathCountRow[]): Map<string, number> {
 async function loadAiReferralTraffic(from: Date, to: Date, previousFrom: Date, previousTo: Date) {
   try {
     const [rows, previousRows] = await Promise.all([
-      queryReferrerRows(from, to),
-      queryReferrerRows(previousFrom, previousTo),
+      queryAiReferrerRows(from, to),
+      queryAiReferrerRows(previousFrom, previousTo),
     ]);
     const current = aiCountsByLabel(rows);
     const previous = aiCountsByLabel(previousRows);

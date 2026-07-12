@@ -2,6 +2,7 @@
 
 import { useActionState } from "react";
 import { submitContact, type ContactState } from "@/features/contact/actions";
+import { useTrackFormSuccess } from "@/features/analytics/useTrackFormSuccess";
 import type { AuditLandingCopy } from "./auditContent";
 
 const initialState: ContactState = { status: "idle" };
@@ -28,6 +29,7 @@ function readUtmString(): string {
 
 export function AuditLeadForm({ copy, locale }: { copy: AuditLandingCopy["form"]; locale: string }) {
   const [state, formAction, pending] = useActionState(submitContact, initialState);
+  useTrackFormSuccess(state.status, "website_audit");
 
   const action = (formData: FormData) => {
     formData.set("utm", readUtmString());

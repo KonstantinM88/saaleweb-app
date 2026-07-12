@@ -2,6 +2,17 @@
 
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
+import { detectAiReferrer } from "./aiTraffic";
+
+function analyticsReferrer(): string | null {
+  if (typeof document === "undefined" || typeof window === "undefined") return null;
+  const referrer = document.referrer || null;
+  const source = new URLSearchParams(window.location.search).get("utm_source")?.trim();
+  if (!source) return referrer;
+
+  const candidate = /^https?:\/\//i.test(source) ? source : `https://${source}`;
+  return detectAiReferrer(candidate) ? candidate : referrer;
+}
 
 /** Fires a first-party page view (no cookies, no IP) on each navigation. */
 export function PageViewTracker({ locale }: { locale: string }) {
@@ -13,7 +24,7 @@ export function PageViewTracker({ locale }: { locale: string }) {
     const body = JSON.stringify({
       path: pathname,
       locale,
-      referrer: typeof document !== "undefined" ? document.referrer || null : null,
+      referrer: analyticsReferrer(),
     });
     try {
       const blob = new Blob([body], { type: "application/json" });

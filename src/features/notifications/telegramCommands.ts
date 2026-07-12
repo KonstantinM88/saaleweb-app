@@ -14,6 +14,7 @@ import {
   unblockAssistantTarget,
 } from "./telegramAssistant";
 import { buildHealthReport } from "./telegramHealth";
+import { buildSeoScoreReport } from "@/features/seo-monitor/seoScore";
 import { answerTelegramCallbackQuery, sendTelegramChatMessage } from "./telegram";
 
 const BUTTON_HEALTH = "🩺 Проверить сайт";
@@ -23,6 +24,7 @@ const BUTTON_AI = "🤖 AI-отчёт";
 const BUTTON_TOP = "🏆 Топ-страницы";
 const BUTTON_LEADS = "🎯 Заявки";
 const BUTTON_ASSISTANT = "💬 AI-диалоги";
+const BUTTON_SEO = "🧮 SEO Score";
 const BUTTON_HELP = "❔ Помощь";
 
 function commandKeyboard() {
@@ -31,7 +33,8 @@ function commandKeyboard() {
       [{ text: BUTTON_HEALTH }, { text: BUTTON_DAILY }],
       [{ text: BUTTON_WEEK }, { text: BUTTON_AI }],
       [{ text: BUTTON_TOP }, { text: BUTTON_LEADS }],
-      [{ text: BUTTON_ASSISTANT }, { text: BUTTON_HELP }],
+      [{ text: BUTTON_SEO }, { text: BUTTON_ASSISTANT }],
+      [{ text: BUTTON_HELP }],
     ],
     resize_keyboard: true,
     is_persistent: true,
@@ -51,10 +54,12 @@ function helpText(): string {
     `${BUTTON_TOP} — топ страниц, источники и SEO/GEO/AIO возможности`,
     `${BUTTON_LEADS} — последние заявки, статусы и источники`,
     `${BUTTON_ASSISTANT} — последние переписки с AI-ассистентом`,
+    `${BUTTON_SEO} — ежедневная оценка SEO/GEO/AIO по реальным данным`,
     `${BUTTON_HELP} — показать это меню`,
     "",
     "Текстовые команды:",
-    "/health, /report, /week, /ai, /top, /leads, /assistant, /help",
+    "/health, /report, /week, /ai, /top, /leads, /seo, /assistant, /help",
+    "/seo new — пересчитать SEO Score без кэша",
     "",
     "AI-диалоги:",
     "/assistant <id> — прочитать переписку",
@@ -73,6 +78,7 @@ function normalizeCommand(text: string): string {
     [BUTTON_TOP]: "/top",
     [BUTTON_LEADS]: "/leads",
     [BUTTON_ASSISTANT]: "/assistant",
+    [BUTTON_SEO]: "/seo",
     [BUTTON_HELP]: "/help",
   };
 
@@ -109,6 +115,15 @@ export async function handleTelegramCommand(chatId: string | number, text: strin
 
   if (command === "/leads") {
     return sendWithMenu(chatId, await buildLeadsReport());
+  }
+
+  if (command === "/seo") {
+    const fresh = args[0]?.toLowerCase() === "new";
+    await sendTelegramChatMessage(
+      chatId,
+      fresh ? "🧮 Пересчитываю SEO Score (до минуты)…" : "🧮 Готовлю SEO Score…",
+    );
+    return sendWithMenu(chatId, await buildSeoScoreReport({ forceFresh: fresh }));
   }
 
   if (command === "/assistant") {
