@@ -40,19 +40,41 @@ export const AI_AGENTS: AiAgentDefinition[] = [
     key: "apple",
     label: "Apple Intelligence / Applebot",
     userAgentPatterns: [/applebot/i],
-    referrerPatterns: [/apple\.com/i],
+    // Note: no referrer patterns — a click from apple.com is regular web
+    // traffic, not an AI-assistant referral.
+    referrerPatterns: [],
   },
   {
     key: "meta",
     label: "Meta AI",
     userAgentPatterns: [/meta-externalagent/i, /facebookexternalhit/i, /facebookbot/i],
-    referrerPatterns: [/facebook\.com/i, /meta\.com/i],
+    // Note: only meta.ai counts as an AI referral. facebook.com referrers are
+    // social traffic and previously inflated the AI numbers.
+    referrerPatterns: [/meta\.ai/i],
+  },
+  {
+    key: "xai",
+    label: "Grok / xAI",
+    userAgentPatterns: [/grokbot/i, /xai-?crawler/i],
+    referrerPatterns: [/grok\.com/i, /x\.ai/i],
+  },
+  {
+    key: "deepseek",
+    label: "DeepSeek",
+    userAgentPatterns: [/deepseekbot/i, /deepseek-ai/i],
+    referrerPatterns: [/deepseek\.com/i],
+  },
+  {
+    key: "mistral",
+    label: "Mistral / Le Chat",
+    userAgentPatterns: [/mistralai/i],
+    referrerPatterns: [/mistral\.ai/i],
   },
   {
     key: "other-ai",
     label: "Other AI bot",
     userAgentPatterns: [/bytespider/i, /ccbot/i, /diffbot/i, /youbot/i],
-    referrerPatterns: [/you\.com/i, /phind\.com/i],
+    referrerPatterns: [/you\.com/i, /phind\.com/i, /duck\.ai/i],
   },
 ];
 

@@ -10,6 +10,17 @@ type PathCountRow = { path: string | null; count: number | bigint | null };
 type LocaleCountRow = { locale: string | null; count: number | bigint | null };
 type StatusCountRow = { status: string | null; count: number | bigint | null };
 type LabelCount = { label: string; count: number };
+type LabelDeltaCount = { label: string; count: number; previousCount: number };
+type ReferrerBreakdown = {
+  directTotal: number;
+  previousDirectTotal: number;
+  searchTotal: number;
+  previousSearchTotal: number;
+  searchCounts: LabelDeltaCount[];
+  externalTotal: number;
+  previousExternalTotal: number;
+  externalCounts: LabelDeltaCount[];
+};
 type AiTrafficSummary = {
   botTotal: number;
   previousBotTotal: number;
@@ -17,7 +28,8 @@ type AiTrafficSummary = {
   botPaths: LabelCount[];
   botTrackingUnavailable: boolean;
   referralTotal: number;
-  referralCounts: LabelCount[];
+  previousReferralTotal: number;
+  referralCounts: LabelDeltaCount[];
 };
 
 const MS_IN_DAY = 24 * 60 * 60 * 1000;
@@ -51,6 +63,48 @@ function formatDateTime(date: Date): string {
 function formatDelta(value: number): string {
   if (value > 0) return `+${value}`;
   return String(value);
+}
+
+/** "+37%", "−12%", "новое" (рост с нуля) или "0%" — динамика к прошлому периоду. */
+function formatPercentDelta(current: number, previous: number): string {
+  if (previous === 0) return current > 0 ? "новое" : "0%";
+  const percent = Math.round(((current - previous) / previous) * 100);
+  if (percent > 0) return `+${percent}%`;
+  return `${percent}%`;
+}
+
+function referrerHost(value?: string | null): string | null {
+  if (!value) return null;
+  try {
+    const host = new URL(value).hostname.toLowerCase();
+    return host.startsWith("www.") ? host.slice(4) : host;
+  } catch {
+    return null;
+  }
+}
+
+const SEARCH_ENGINES: { label: string; pattern: RegExp }[] = [
+  { label: "Google", pattern: /(^|\.)google\.[a-z.]+$/i },
+  { label: "Bing", pattern: /(^|\.)bing\.com$/i },
+  { label: "DuckDuckGo", pattern: /(^|\.)duckduckgo\.com$/i },
+  { label: "Yandex", pattern: /(^|\.)yandex\.[a-z]+$/i },
+  { label: "Ecosia", pattern: /(^|\.)ecosia\.org$/i },
+  { label: "Brave Search", pattern: /(^|\.)search\.brave\.com$/i },
+  { label: "Startpage", pattern: /(^|\.)startpage\.com$/i },
+  { label: "Qwant", pattern: /(^|\.)qwant\.com$/i },
+];
+
+function detectSearchEngine(host: string): string | null {
+  const engine = SEARCH_ENGINES.find((item) => item.pattern.test(host));
+  return engine?.label ?? null;
+}
+
+function ownHost(): string {
+  try {
+    return new URL(siteUrl()).hostname.replace(/^www\./, "").toLowerCase();
+  } catch {
+    return "saaleweb.de";
+  }
 }
 
 function sourceLabel(source?: string | null): string {
@@ -98,18 +152,13 @@ function topCountLines(items: LabelCount[], emptyText: string): string[] {
   return items.map((item, index) => `${index + 1}. ${item.label} — ${item.count}`);
 }
 
-function aggregateLabelCounts(rows: PathCountRow[], detector: (value?: string | null) => string | null): LabelCount[] {
-  const map = new Map<string, number>();
-  for (const row of rows) {
-    const label = detector(row.path);
-    if (!label) continue;
-    map.set(label, (map.get(label) ?? 0) + Number(row.count ?? 0));
-  }
-
-  return [...map.entries()]
-    .map(([label, count]) => ({ label, count }))
-    .sort((a, b) => b.count - a.count)
-    .slice(0, 5);
+/** Строки с абсолютной динамикой источника: «1. Perplexity — 15 (+6)». */
+function topDeltaLines(items: LabelDeltaCount[], emptyText: string): string[] {
+  if (items.length === 0) return [`• ${emptyText}`];
+  return items.map(
+    (item, index) =>
+      `${index + 1}. ${item.label} — ${item.count} (${formatDelta(item.count - item.previousCount)})`,
+  );
 }
 
 async function loadAiBotTraffic(from: Date, to: Date, previousFrom: Date, previousTo: Date) {
@@ -142,13 +191,43 @@ async function loadAiBotTraffic(from: Date, to: Date, previousFrom: Date, previo
   }
 }
 
-async function loadAiReferralTraffic(from: Date, to: Date) {
+async function queryReferrerRows(from: Date, to: Date): Promise<PathCountRow[]> {
+  return prisma.$queryRaw<PathCountRow[]>`SELECT referrer AS path, count(*)::int AS count FROM "PageView" WHERE "createdAt" >= ${from} AND "createdAt" < ${to} AND referrer IS NOT NULL AND referrer <> '' GROUP BY referrer ORDER BY count DESC LIMIT 400`;
+}
+
+function aiCountsByLabel(rows: PathCountRow[]): Map<string, number> {
+  const map = new Map<string, number>();
+  for (const row of rows) {
+    const label = detectAiReferrer(row.path);
+    if (!label) continue;
+    map.set(label, (map.get(label) ?? 0) + Number(row.count ?? 0));
+  }
+  return map;
+}
+
+async function loadAiReferralTraffic(from: Date, to: Date, previousFrom: Date, previousTo: Date) {
   try {
-    const rows =
-      await prisma.$queryRaw<PathCountRow[]>`SELECT referrer AS path, count(*)::int AS count FROM "PageView" WHERE "createdAt" >= ${from} AND "createdAt" < ${to} AND referrer IS NOT NULL GROUP BY referrer ORDER BY count DESC LIMIT 50`;
-    const referralCounts = aggregateLabelCounts(rows, detectAiReferrer);
+    const [rows, previousRows] = await Promise.all([
+      queryReferrerRows(from, to),
+      queryReferrerRows(previousFrom, previousTo),
+    ]);
+    const current = aiCountsByLabel(rows);
+    const previous = aiCountsByLabel(previousRows);
+
+    const labels = new Set([...current.keys(), ...previous.keys()]);
+    const referralCounts = [...labels]
+      .map((label) => ({
+        label,
+        count: current.get(label) ?? 0,
+        previousCount: previous.get(label) ?? 0,
+      }))
+      .filter((item) => item.count > 0 || item.previousCount > 0)
+      .sort((a, b) => b.count - a.count || b.previousCount - a.previousCount)
+      .slice(0, 8);
+
     return {
-      referralTotal: referralCounts.reduce((sum, item) => sum + item.count, 0),
+      referralTotal: [...current.values()].reduce((sum, value) => sum + value, 0),
+      previousReferralTotal: [...previous.values()].reduce((sum, value) => sum + value, 0),
       referralCounts,
     };
   } catch (error) {
@@ -157,15 +236,102 @@ async function loadAiReferralTraffic(from: Date, to: Date) {
     });
     return {
       referralTotal: 0,
+      previousReferralTotal: 0,
       referralCounts: [],
     };
+  }
+}
+
+/**
+ * Полная картина источников: прямые заходы, поисковики, переходы с других
+ * сайтов (сгруппированы по хосту, без собственного домена и AI-источников —
+ * те считаются отдельно в AI-блоке).
+ */
+async function loadReferrerBreakdown(
+  from: Date,
+  to: Date,
+  previousFrom: Date,
+  previousTo: Date,
+): Promise<ReferrerBreakdown> {
+  const empty: ReferrerBreakdown = {
+    directTotal: 0,
+    previousDirectTotal: 0,
+    searchTotal: 0,
+    previousSearchTotal: 0,
+    searchCounts: [],
+    externalTotal: 0,
+    previousExternalTotal: 0,
+    externalCounts: [],
+  };
+
+  try {
+    const [rows, previousRows, directRows, previousDirectRows] = await Promise.all([
+      queryReferrerRows(from, to),
+      queryReferrerRows(previousFrom, previousTo),
+      prisma.$queryRaw<CountRow[]>`SELECT count(*)::int AS count FROM "PageView" WHERE "createdAt" >= ${from} AND "createdAt" < ${to} AND (referrer IS NULL OR referrer = '')`,
+      prisma.$queryRaw<CountRow[]>`SELECT count(*)::int AS count FROM "PageView" WHERE "createdAt" >= ${previousFrom} AND "createdAt" < ${previousTo} AND (referrer IS NULL OR referrer = '')`,
+    ]);
+
+    const own = ownHost();
+    const classify = (source: PathCountRow[]) => {
+      const search = new Map<string, number>();
+      const external = new Map<string, number>();
+      for (const row of source) {
+        const count = Number(row.count ?? 0);
+        const host = referrerHost(row.path);
+        if (!host || host === own || host.endsWith(`.${own}`) || host === "localhost") continue;
+        if (detectAiReferrer(row.path)) continue; // считается в AI-блоке
+        const engine = detectSearchEngine(host);
+        if (engine) {
+          search.set(engine, (search.get(engine) ?? 0) + count);
+        } else {
+          external.set(host, (external.get(host) ?? 0) + count);
+        }
+      }
+      return { search, external };
+    };
+
+    const current = classify(rows);
+    const previous = classify(previousRows);
+    const sum = (map: Map<string, number>) =>
+      [...map.values()].reduce((total, value) => total + value, 0);
+    const toDeltaList = (
+      currentMap: Map<string, number>,
+      previousMap: Map<string, number>,
+      limit: number,
+    ): LabelDeltaCount[] =>
+      [...new Set([...currentMap.keys(), ...previousMap.keys()])]
+        .map((label) => ({
+          label,
+          count: currentMap.get(label) ?? 0,
+          previousCount: previousMap.get(label) ?? 0,
+        }))
+        .filter((item) => item.count > 0 || item.previousCount > 0)
+        .sort((a, b) => b.count - a.count || b.previousCount - a.previousCount)
+        .slice(0, limit);
+
+    return {
+      directTotal: countValue(directRows),
+      previousDirectTotal: countValue(previousDirectRows),
+      searchTotal: sum(current.search),
+      previousSearchTotal: sum(previous.search),
+      searchCounts: toDeltaList(current.search, previous.search, 5),
+      externalTotal: sum(current.external),
+      previousExternalTotal: sum(previous.external),
+      externalCounts: toDeltaList(current.external, previous.external, 6),
+    };
+  } catch (error) {
+    console.warn("[telegram-report] Referrer breakdown query skipped.", {
+      message: error instanceof Error ? error.message : "Unknown referrer analytics error",
+    });
+    return empty;
   }
 }
 
 async function loadAiTraffic(from: Date, to: Date, previousFrom: Date, previousTo: Date): Promise<AiTrafficSummary> {
   const [botTraffic, referralTraffic] = await Promise.all([
     loadAiBotTraffic(from, to, previousFrom, previousTo),
-    loadAiReferralTraffic(from, to),
+    loadAiReferralTraffic(from, to, previousFrom, previousTo),
   ]);
 
   return {
@@ -217,9 +383,9 @@ export async function buildDailySiteReport(now = new Date()): Promise<string> {
     previousLeadsTotal,
     leadsNew,
     topPaths,
-    topReferrers,
     localeRows,
     aiTraffic,
+    referrers,
   ] = await Promise.all([
     prisma.pageView.count({ where: whereWindow }),
     prisma.pageView.count({ where: previousWhereWindow }),
@@ -229,9 +395,9 @@ export async function buildDailySiteReport(now = new Date()): Promise<string> {
     prisma.lead.count({ where: previousWhereWindow }),
     prisma.lead.count({ where: { status: "NEW" } }),
     prisma.$queryRaw<PathCountRow[]>`SELECT path, count(*)::int AS count FROM "PageView" WHERE "createdAt" >= ${from} AND "createdAt" < ${to} GROUP BY path ORDER BY count DESC LIMIT 5`,
-    prisma.$queryRaw<PathCountRow[]>`SELECT COALESCE(NULLIF(referrer, ''), 'Прямой заход') AS path, count(*)::int AS count FROM "PageView" WHERE "createdAt" >= ${from} AND "createdAt" < ${to} GROUP BY 1 ORDER BY count DESC LIMIT 5`,
     prisma.$queryRaw<LocaleCountRow[]>`SELECT locale, count(*)::int AS count FROM "PageView" WHERE "createdAt" >= ${from} AND "createdAt" < ${to} GROUP BY locale ORDER BY count DESC`,
     loadAiTraffic(from, to, previousFrom, previousTo),
+    loadReferrerBreakdown(from, to, previousFrom, previousTo),
   ]);
 
   const uniqueTotal = countValue(uniqueRows);
@@ -240,10 +406,6 @@ export async function buildDailySiteReport(now = new Date()): Promise<string> {
     topPaths.length > 0
       ? topPaths.map((item, index) => `${index + 1}. ${item.path || "/"} — ${Number(item.count ?? 0)}`)
       : ["• За период не было просмотров страниц."];
-  const referrerLines =
-    topReferrers.length > 0
-      ? topReferrers.map((item, index) => `${index + 1}. ${item.path || "Прямой заход"} — ${Number(item.count ?? 0)}`)
-      : ["• Источники не определены."];
   const localeLines =
     localeRows.length > 0
       ? localeRows.map((item) => `${item.locale || "-"} — ${Number(item.count ?? 0)}`).join(", ")
@@ -256,12 +418,20 @@ export async function buildDailySiteReport(now = new Date()): Promise<string> {
         ...topCountLines(aiTraffic.botCounts, "AI-боты за период не замечены."),
       ];
   const aiReferralLines = [
-    `• Переходы из AI-ассистентов: ${aiTraffic.referralTotal}`,
-    ...topCountLines(aiTraffic.referralCounts, "Переходов из ChatGPT, Claude, Perplexity, Gemini или Copilot не было."),
+    `• Переходы из AI: ${aiTraffic.referralTotal} (${formatPercentDelta(aiTraffic.referralTotal, aiTraffic.previousReferralTotal)} к прошлому дню)`,
+    ...topDeltaLines(aiTraffic.referralCounts, "Переходов из ChatGPT, Gemini, Claude, Perplexity или Copilot не было."),
   ];
   const aiPathLines = aiTraffic.botTrackingUnavailable
     ? []
     : ["", "🧭 Страницы, которые смотрели AI-боты:", ...topCountLines(aiTraffic.botPaths, "Пока нет данных по страницам.")];
+  const sourceLines = [
+    `• Прямые заходы: ${referrers.directTotal} (${formatPercentDelta(referrers.directTotal, referrers.previousDirectTotal)})`,
+    `• Поисковики: ${referrers.searchTotal} (${formatPercentDelta(referrers.searchTotal, referrers.previousSearchTotal)})`,
+    ...topDeltaLines(referrers.searchCounts, "Переходов из поисковиков не было."),
+    `• AI-ассистенты: ${aiTraffic.referralTotal} (${formatPercentDelta(aiTraffic.referralTotal, aiTraffic.previousReferralTotal)})`,
+    `• Другие сайты: ${referrers.externalTotal} (${formatPercentDelta(referrers.externalTotal, referrers.previousExternalTotal)})`,
+  ];
+  const externalLines = topDeltaLines(referrers.externalCounts, "Переходов с других сайтов не было.");
 
   return [
     "📊 SaaleWeb — ежедневный отчёт",
@@ -285,8 +455,11 @@ export async function buildDailySiteReport(now = new Date()): Promise<string> {
     "🏆 Топ-страницы",
     ...topPathLines,
     "",
-    "🔗 Источники",
-    ...referrerLines,
+    "🔗 Источники трафика",
+    ...sourceLines,
+    "",
+    "🌐 Топ внешних сайтов",
+    ...externalLines,
     "",
     `⚙️ Админка: ${siteUrl()}/admin`,
   ].join("\n");
@@ -309,9 +482,9 @@ export async function buildWeeklySiteReport(now = new Date()): Promise<string> {
     previousLeadsTotal,
     leadsNew,
     topPaths,
-    topReferrers,
     localeRows,
     aiTraffic,
+    referrers,
   ] = await Promise.all([
     prisma.pageView.count({ where: whereWindow }),
     prisma.pageView.count({ where: previousWhereWindow }),
@@ -321,9 +494,9 @@ export async function buildWeeklySiteReport(now = new Date()): Promise<string> {
     prisma.lead.count({ where: previousWhereWindow }),
     prisma.lead.count({ where: { status: "NEW" } }),
     prisma.$queryRaw<PathCountRow[]>`SELECT path, count(*)::int AS count FROM "PageView" WHERE "createdAt" >= ${from} AND "createdAt" < ${to} GROUP BY path ORDER BY count DESC LIMIT 8`,
-    prisma.$queryRaw<PathCountRow[]>`SELECT COALESCE(NULLIF(referrer, ''), 'Прямой заход') AS path, count(*)::int AS count FROM "PageView" WHERE "createdAt" >= ${from} AND "createdAt" < ${to} GROUP BY 1 ORDER BY count DESC LIMIT 6`,
     prisma.$queryRaw<LocaleCountRow[]>`SELECT locale, count(*)::int AS count FROM "PageView" WHERE "createdAt" >= ${from} AND "createdAt" < ${to} GROUP BY locale ORDER BY count DESC`,
     loadAiTraffic(from, to, previousFrom, previousTo),
+    loadReferrerBreakdown(from, to, previousFrom, previousTo),
   ]);
 
   const uniqueTotal = countValue(uniqueRows);
@@ -332,10 +505,6 @@ export async function buildWeeklySiteReport(now = new Date()): Promise<string> {
     topPaths.length > 0
       ? topPaths.map((item, index) => `${index + 1}. ${item.path || "/"} — ${Number(item.count ?? 0)}`)
       : ["• За неделю не было просмотров страниц."];
-  const referrerLines =
-    topReferrers.length > 0
-      ? topReferrers.map((item, index) => `${index + 1}. ${item.path || "Прямой заход"} — ${Number(item.count ?? 0)}`)
-      : ["• Источники не определены."];
   const localeLines =
     localeRows.length > 0
       ? localeRows.map((item) => `${item.locale || "-"} — ${Number(item.count ?? 0)}`).join(", ")
@@ -347,6 +516,15 @@ export async function buildWeeklySiteReport(now = new Date()): Promise<string> {
         `• AI-боты / краулеры: ${aiTraffic.botTotal} (${aiBotDelta})`,
         ...topCountLines(aiTraffic.botCounts, "AI-боты за неделю не замечены."),
       ];
+  const aiWeekTrend = formatPercentDelta(aiTraffic.referralTotal, aiTraffic.previousReferralTotal);
+  const sourceLines = [
+    `• Прямые заходы: ${referrers.directTotal} (${formatPercentDelta(referrers.directTotal, referrers.previousDirectTotal)})`,
+    `• Поисковики: ${referrers.searchTotal} (${formatPercentDelta(referrers.searchTotal, referrers.previousSearchTotal)})`,
+    ...topDeltaLines(referrers.searchCounts, "Переходов из поисковиков не было."),
+    `• AI-ассистенты: ${aiTraffic.referralTotal} (${aiWeekTrend})`,
+    `• Другие сайты: ${referrers.externalTotal} (${formatPercentDelta(referrers.externalTotal, referrers.previousExternalTotal)})`,
+  ];
+  const externalLines = topDeltaLines(referrers.externalCounts, "Переходов с других сайтов не было.");
 
   return [
     "📅 SaaleWeb — недельный отчёт",
@@ -364,14 +542,17 @@ export async function buildWeeklySiteReport(now = new Date()): Promise<string> {
     "",
     "🤖 AI-поиск и ассистенты",
     ...aiBotLines,
-    `• Переходы из AI-ассистентов: ${aiTraffic.referralTotal}`,
-    ...topCountLines(aiTraffic.referralCounts, "Переходов из AI-ассистентов не было."),
+    `• AI Traffic: ${aiTraffic.referralTotal} переходов (${aiWeekTrend} за неделю)`,
+    ...topDeltaLines(aiTraffic.referralCounts, "Переходов из AI-ассистентов не было."),
     "",
     "🏆 Топ-страницы недели",
     ...topPathLines,
     "",
     "🔗 Источники недели",
-    ...referrerLines,
+    ...sourceLines,
+    "",
+    "🌐 Топ внешних сайтов недели",
+    ...externalLines,
     "",
     `⚙️ Админка: ${siteUrl()}/admin`,
   ].join("\n");
@@ -415,7 +596,22 @@ function aiInterpretation(ai24h: AiTrafficSummary, ai7d: AiTrafficSummary): stri
   }
 
   if (ai7d.referralTotal > 0) {
-    lines.push("• Есть переходы из AI-ассистентов: стоит усилить страницы, которые они уже приводят.");
+    const trend = ai7d.referralTotal - ai7d.previousReferralTotal;
+    if (ai7d.previousReferralTotal > 0 && trend > 0) {
+      lines.push(
+        `• AI-трафик растёт: ${formatPercentDelta(ai7d.referralTotal, ai7d.previousReferralTotal)} за неделю — усиливай страницы, которые AI уже приводит.`,
+      );
+    } else if (ai7d.previousReferralTotal > 0 && trend < 0) {
+      lines.push(
+        `• AI-трафик просел (${formatPercentDelta(ai7d.referralTotal, ai7d.previousReferralTotal)} за неделю): проверь свежесть FAQ и структурированных данных на страницах-донорах.`,
+      );
+    } else {
+      lines.push("• Есть переходы из AI-ассистентов: стоит усилить страницы, которые они уже приводят.");
+    }
+    const leader = ai7d.referralCounts[0];
+    if (leader) {
+      lines.push(`• Лидер AI-переходов: ${leader.label} (${leader.count} за 7 дней).`);
+    }
   } else {
     lines.push("• Переходов из AI-ассистентов пока нет: сейчас видимость больше на уровне краулинга, не кликов.");
   }
@@ -483,11 +679,11 @@ export async function buildAiSearchReport(now = new Date()): Promise<string> {
     ...topCountLines(ai7d.botPaths, "Пока нет данных по страницам."),
     "",
     "🔗 Переходы из AI-ассистентов",
-    `• За 24 часа: ${ai24h.referralTotal}`,
-    ...topCountLines(ai24h.referralCounts, "Переходов из AI-ассистентов за 24 часа не было."),
+    `• За 24 часа: ${ai24h.referralTotal} (${formatPercentDelta(ai24h.referralTotal, ai24h.previousReferralTotal)} к прошлым 24 ч)`,
+    ...topDeltaLines(ai24h.referralCounts, "Переходов из AI-ассистентов за 24 часа не было."),
     "",
-    `• За 7 дней: ${ai7d.referralTotal}`,
-    ...topCountLines(ai7d.referralCounts, "Переходов из AI-ассистентов за 7 дней не было."),
+    `• AI Traffic за 7 дней: ${ai7d.referralTotal} (${formatPercentDelta(ai7d.referralTotal, ai7d.previousReferralTotal)} за неделю)`,
+    ...topDeltaLines(ai7d.referralCounts, "Переходов из AI-ассистентов за 7 дней не было."),
     "",
     "🧾 Последние AI-визиты",
     ...recentLines,
