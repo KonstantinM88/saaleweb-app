@@ -71,6 +71,84 @@ body {
     drop-shadow(0 16px 22px rgba(139, 92, 246, 0.22));
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  .assistant-logo-nudge {
+    animation: assistant-logo-nudge 2.8s ease-in-out infinite;
+    isolation: isolate;
+  }
+
+  .assistant-logo-nudge::after {
+    content: "";
+    position: absolute;
+    inset: -9px;
+    z-index: -1;
+    border-radius: 9999px;
+    border: 1px solid rgba(255, 79, 163, 0.34);
+    background:
+      radial-gradient(circle, rgba(255, 79, 163, 0.18) 0%, rgba(139, 92, 246, 0.1) 42%, transparent 68%);
+    animation: assistant-logo-ring 2.8s ease-out infinite;
+    pointer-events: none;
+  }
+
+  @keyframes assistant-logo-nudge {
+    0%,
+    100% {
+      transform: translateY(0) scale(1);
+      box-shadow:
+        0 16px 34px -16px rgba(139, 92, 246, 0.95),
+        0 0 0 0 rgba(255, 79, 163, 0);
+    }
+
+    12% {
+      transform: translateY(-2px) scale(1.07);
+      box-shadow:
+        0 20px 44px -16px rgba(139, 92, 246, 0.95),
+        0 0 0 8px rgba(255, 79, 163, 0.11);
+    }
+
+    24% {
+      transform: translateY(0) scale(1);
+    }
+
+    36% {
+      transform: translateY(-1px) scale(1.035);
+    }
+
+    48% {
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes assistant-logo-ring {
+    0% {
+      opacity: 0;
+      transform: scale(0.86);
+    }
+
+    12% {
+      opacity: 0.72;
+    }
+
+    74% {
+      opacity: 0;
+      transform: scale(1.45);
+    }
+
+    100% {
+      opacity: 0;
+      transform: scale(1.45);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .assistant-logo-nudge {
+    box-shadow:
+      0 16px 34px -16px rgba(139, 92, 246, 0.95),
+      0 0 0 6px rgba(255, 79, 163, 0.1);
+  }
+}
+
 /* ============================================================
    Motion system - "living gradient"
    All entrance animations live behind prefers-reduced-motion.

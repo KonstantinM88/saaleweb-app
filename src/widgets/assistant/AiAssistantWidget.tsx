@@ -6,6 +6,7 @@ import { siteConfig } from "@/shared/config/site";
 import { BrandMonogram } from "@/shared/ui/BrandLogo";
 
 const APPEAR_DELAY_MS = 8_000;
+const LOGO_NUDGE_DELAY_MS = 30_000;
 const MAX_CONTEXT_MESSAGES = 16;
 const VISITOR_STORAGE_KEY = "saaleweb_assistant_visitor";
 
@@ -84,6 +85,8 @@ export function AiAssistantWidget({
 }) {
   const [mounted, setMounted] = useState(false);
   const [open, setOpen] = useState(false);
+  const [hasOpened, setHasOpened] = useState(false);
+  const [logoNudge, setLogoNudge] = useState(false);
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState<ChatMessage[]>([{ role: "assistant", content: labels.intro }]);
   const [loading, setLoading] = useState(false);
@@ -101,6 +104,16 @@ export function AiAssistantWidget({
     const timer = window.setTimeout(() => setMounted(true), APPEAR_DELAY_MS);
     return () => window.clearTimeout(timer);
   }, []);
+
+  useEffect(() => {
+    if (!mounted || hasOpened) return;
+
+    const timer = window.setTimeout(() => {
+      setLogoNudge(true);
+    }, LOGO_NUDGE_DELAY_MS);
+
+    return () => window.clearTimeout(timer);
+  }, [hasOpened, mounted]);
 
   useEffect(() => {
     try {
@@ -319,12 +332,20 @@ export function AiAssistantWidget({
       {!open ? (
         <button
           type="button"
-          onClick={() => setOpen(true)}
+          onClick={() => {
+            setHasOpened(true);
+            setLogoNudge(false);
+            setOpen(true);
+          }}
           className="pointer-events-auto group ml-auto flex self-end items-center gap-3 rounded-full border border-white/55 bg-white/[0.92] p-2 pr-3 text-dark shadow-[0_24px_70px_-30px_rgba(17,24,39,0.65)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-brand-purple/35 hover:shadow-[0_28px_80px_-28px_rgba(139,92,246,0.5)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-purple motion-reduce:transition-none sm:pr-4"
           aria-label={labels.open}
           aria-expanded={false}
         >
-          <span className="relative grid h-14 w-14 shrink-0 place-items-center rounded-full bg-white shadow-[0_16px_34px_-16px_rgba(139,92,246,0.95)] ring-1 ring-brand-purple/15 transition group-hover:scale-105">
+          <span
+            className={`relative grid h-14 w-14 shrink-0 place-items-center rounded-full bg-white shadow-[0_16px_34px_-16px_rgba(139,92,246,0.95)] ring-1 ring-brand-purple/15 transition group-hover:scale-105 ${
+              logoNudge ? "assistant-logo-nudge" : ""
+            }`}
+          >
             <span aria-hidden className="absolute inset-0 rounded-full bg-gradient-to-br from-brand-pink/18 to-brand-purple/18" />
             <span aria-hidden className="absolute -inset-1 rounded-full bg-brand-pink/35 blur-xl" />
             <AssistantLogoMark className="relative grid h-10 w-10 place-items-center overflow-hidden rounded-full" />
