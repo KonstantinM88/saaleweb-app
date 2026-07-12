@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { AppLocale } from "@/i18n/routing";
 import { siteConfig } from "@/shared/config/site";
+import { BrandMonogram } from "@/shared/ui/BrandLogo";
 
 const APPEAR_DELAY_MS = 8_000;
 const MAX_CONTEXT_MESSAGES = 16;
@@ -41,14 +42,11 @@ function withPrefilledMessage(url: string, message: string): string {
   return `${url}${separator}text=${encodeURIComponent(message)}`;
 }
 
-function SparkIcon() {
+function AssistantLogoMark({ className }: { className?: string }) {
   return (
-    <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" aria-hidden focusable="false">
-      <path
-        d="M12 2.8 14.08 8a3 3 0 0 0 1.68 1.68L21.2 12l-5.44 2.32A3 3 0 0 0 14.08 16L12 21.2 9.92 16a3 3 0 0 0-1.68-1.68L2.8 12l5.44-2.32A3 3 0 0 0 9.92 8L12 2.8Z"
-        fill="currentColor"
-      />
-    </svg>
+    <span className={className} aria-hidden="true">
+      <BrandMonogram className="h-full w-full" />
+    </span>
   );
 }
 
@@ -201,8 +199,8 @@ export function AiAssistantWidget({
           <div className="absolute -bottom-14 left-12 h-24 w-24 rounded-full bg-brand-purple/40 blur-2xl" />
           <div className="relative flex items-start justify-between gap-3">
             <div className="min-w-0 pr-1">
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.14em] text-white/80 [&>svg]:h-3 [&>svg]:w-3 sm:px-3 sm:text-[10px] sm:[&>svg]:h-3.5 sm:[&>svg]:w-3.5">
-                <SparkIcon />
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.14em] text-white/80 sm:px-3 sm:text-[10px]">
+                <AssistantLogoMark className="grid h-3.5 w-3.5 shrink-0 place-items-center overflow-hidden rounded-full bg-white shadow-sm sm:h-4 sm:w-4" />
                 {labels.badge}
               </span>
               <h2 className="mt-2 text-[21px] font-black leading-[1.1] sm:text-lg">{labels.title}</h2>
@@ -326,11 +324,10 @@ export function AiAssistantWidget({
           aria-label={labels.open}
           aria-expanded={false}
         >
-          <span className="relative grid h-14 w-14 shrink-0 place-items-center rounded-full bg-gradient-to-br from-brand-pink to-brand-purple text-white shadow-[0_16px_34px_-16px_rgba(139,92,246,0.95)] transition group-hover:scale-105">
-            <span aria-hidden className="absolute inset-0 rounded-full bg-brand-pink/40 blur-xl" />
-            <span className="relative">
-              <SparkIcon />
-            </span>
+          <span className="relative grid h-14 w-14 shrink-0 place-items-center rounded-full bg-white shadow-[0_16px_34px_-16px_rgba(139,92,246,0.95)] ring-1 ring-brand-purple/15 transition group-hover:scale-105">
+            <span aria-hidden className="absolute inset-0 rounded-full bg-gradient-to-br from-brand-pink/18 to-brand-purple/18" />
+            <span aria-hidden className="absolute -inset-1 rounded-full bg-brand-pink/35 blur-xl" />
+            <AssistantLogoMark className="relative grid h-10 w-10 place-items-center overflow-hidden rounded-full" />
           </span>
           <span className="hidden min-w-0 pr-1 text-left sm:block">
             <span className="block text-[11px] font-bold uppercase tracking-[0.16em] text-brand-purple">
