@@ -130,7 +130,7 @@ const projects: ProjectConfig[] = [
       ru: "Hotel · Restaurant · Booking",
     },
     coverColor: "bg-gradient-to-br from-sky-500 to-brand-purple",
-    technologies: ["SEO", "Performance", "Content-Struktur", "Mobile UX"],
+    technologies: ["Next.js", "SEO", "Performance", "Content-Struktur", "Mobile UX"],
     resultValue: "+148%",
     year: 2026,
     order: 2,
@@ -141,7 +141,7 @@ const projects: ProjectConfig[] = [
         challenge:
           "Viele Unternehmen haben bereits eine Website, aber sie unterstützt den Geschäftsalltag nicht aktiv genug. Beim Waldschlösschen ging es darum, Hotel, Restaurant und Angebote hochwertiger zu präsentieren und mehr Direktbuchungen zu unterstützen.",
         solution:
-          "Für dieses Projekt wurde eine moderne Website-Struktur entwickelt, die Inhalte klar präsentiert, mobil sehr gut funktioniert und auf Suchmaschinen sowie Nutzererfahrung ausgerichtet ist.",
+          "Für Waldschlösschen wurde unter https://waldschlosschen-08.vercel.app/de eine interaktive Projektvorschau erstellt. Sie präsentiert Hotel, Restaurant und Angebote hochwertig, funktioniert auf mobilen Geräten sehr gut und führt Gäste klar zu direkten Buchungs- und Kontaktmöglichkeiten.",
         results:
           "Ein hochwertiger Hotel- und Restaurantauftritt mit Fokus auf Angebote, Buchungen und regionale Sichtbarkeit.",
       },
@@ -151,7 +151,7 @@ const projects: ProjectConfig[] = [
         challenge:
           "Many businesses already have a website, but it does not actively support daily operations enough. For Waldschlösschen, the goal was to present hotel, restaurant and offers at a higher quality and support more direct bookings.",
         solution:
-          "A modern website structure was developed to present content clearly, work very well on mobile and support both search visibility and user experience.",
+          "An interactive project preview was created for Waldschlösschen at https://waldschlosschen-08.vercel.app/de. It presents the hotel, restaurant and offers at a premium level, works very well on mobile devices and guides guests clearly toward direct booking and contact options.",
         results:
           "A premium hotel and restaurant presence focused on offers, bookings and regional visibility.",
       },
@@ -161,7 +161,7 @@ const projects: ProjectConfig[] = [
         challenge:
           "У многих компаний уже есть сайт, но он недостаточно активно помогает в повседневной работе. Для Waldschlösschen целью было качественнее представить отель, ресторан и предложения, а также поддержать больше прямых бронирований.",
         solution:
-          "Для проекта была разработана современная структура сайта, которая ясно представляет контент, хорошо работает на мобильных устройствах и учитывает поисковую видимость и пользовательский опыт.",
+          "Для Waldschlösschen подготовлена интерактивная проектная превью-страница https://waldschlosschen-08.vercel.app/de. Она качественно представляет отель, ресторан и предложения, удобно работает на мобильных устройствах и понятно ведёт гостей к прямому бронированию и связи.",
         results:
           "Качественное присутствие отеля и ресторана с фокусом на предложения, бронирования и региональную видимость.",
       },
@@ -250,7 +250,7 @@ const projects: ProjectConfig[] = [
         challenge:
           "Many businesses already have a website, but it does not actively support daily operations enough. For Glaserei Schubert, the focus was a high-quality presentation of services and references.",
         solution:
-          "For Glaserei Schubert, an interactive project preview was created at https://glaserei-schubert-01.vercel.app/de: a modern website structure that presents services, references and contact paths clearly, works very well on mobile and supports local visibility.",
+          "For Glaserei Schubert, an interactive project preview was created at https://glaserei-schubert-01.vercel.app/de a modern website structure that presents services, references and contact paths clearly, works very well on mobile and supports local visibility.",
         results:
           "A modern trade-business presence with clear service presentation and professional external impact.",
       },
@@ -260,7 +260,7 @@ const projects: ProjectConfig[] = [
         challenge:
           "У многих компаний уже есть сайт, но он недостаточно активно помогает в повседневной работе. Для Glaserei Schubert в центре была качественная презентация услуг и референсов.",
         solution:
-          "Для Glaserei Schubert подготовлена интерактивная проектная превью-страница https://glaserei-schubert-01.vercel.app/de: современная структура сайта, которая ясно показывает услуги, референсы и контактные пути, хорошо работает на мобильных устройствах и поддерживает локальную видимость.",
+          "Для Glaserei Schubert подготовлена интерактивная проектная превью-страница https://glaserei-schubert-01.vercel.app/de современная структура сайта, которая ясно показывает услуги, референсы и контактные пути, хорошо работает на мобильных устройствах и поддерживает локальную видимость.",
         results:
           "Современное присутствие ремесленной компании с понятной структурой услуг и профессиональным внешним образом.",
       },
