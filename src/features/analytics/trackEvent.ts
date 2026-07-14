@@ -13,7 +13,9 @@ export type LocalSeoEvent =
   | "click_directions"
   | "click_google_business_profile"
   | "click_google_review"
-  | "load_google_maps";
+  | "load_google_maps"
+  | "form_submit"
+  | "audit_request";
 
 export function trackEvent(name: LocalSeoEvent, locale: string): void {
   try {

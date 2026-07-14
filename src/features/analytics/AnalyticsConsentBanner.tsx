@@ -6,6 +6,7 @@ import {
   updateAnalyticsConsent,
   type AnalyticsConsent,
 } from "./gtm";
+import { ATTRIBUTION_CONSENT_EVENT } from "./attribution";
 
 export type AnalyticsConsentLabels = {
   title: string;
@@ -45,6 +46,9 @@ export function AnalyticsConsentBanner({
       // Consent still applies for the current page even if storage is blocked.
     }
     updateAnalyticsConsent(value);
+    // Attribution listens to the same consent decision; no parallel consent
+    // state is introduced. A denial also removes its versioned local record.
+    window.dispatchEvent(new CustomEvent(ATTRIBUTION_CONSENT_EVENT, { detail: { consent: value } }));
     setOpen(false);
   };
 

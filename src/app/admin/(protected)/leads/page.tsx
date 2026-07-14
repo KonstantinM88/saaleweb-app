@@ -18,11 +18,26 @@ type Lead = {
   status: string;
   locale: string;
   createdAt: Date;
+  attribution: {
+    firstSource: string | null;
+    firstMedium: string | null;
+    firstLandingPage: string | null;
+    lastSource: string | null;
+    lastMedium: string | null;
+    lastChannel: string | null;
+    lastCampaign: string | null;
+    conversionPage: string | null;
+    deviceCategory: string | null;
+    captureMode: string | null;
+  } | null;
 };
 
 async function getLeads(): Promise<Lead[]> {
   try {
-    return (await prisma.lead.findMany({ orderBy: { createdAt: "desc" } })) as Lead[];
+    return (await prisma.lead.findMany({
+      orderBy: { createdAt: "desc" },
+      include: { attribution: true },
+    })) as Lead[];
   } catch {
     return [];
   }
@@ -46,6 +61,7 @@ export default async function LeadsAdminPage() {
               <th className="px-4 py-3">Datum</th>
               <th className="px-4 py-3">Kontakt</th>
               <th className="px-4 py-3">Nachricht</th>
+              <th className="px-4 py-3">Attribution</th>
               <th className="px-4 py-3">Status</th>
               <th className="px-4 py-3 text-right">Aktion</th>
             </tr>
@@ -53,7 +69,7 @@ export default async function LeadsAdminPage() {
           <tbody>
             {leads.length === 0 && (
               <tr>
-                <td colSpan={5} className="px-4 py-8 text-center text-muted">
+                <td colSpan={6} className="px-4 py-8 text-center text-muted">
                   Noch keine Anfragen.
                 </td>
               </tr>
@@ -81,6 +97,30 @@ export default async function LeadsAdminPage() {
                 </td>
                 <td className="max-w-xs px-4 py-3 text-muted">
                   <p className="line-clamp-3">{l.message ?? "—"}</p>
+                </td>
+                <td className="min-w-64 px-4 py-3 text-xs leading-relaxed text-muted">
+                  {l.attribution ? (
+                    <dl className="grid grid-cols-[auto_1fr] gap-x-2 gap-y-0.5">
+                      <dt className="font-semibold text-dark">Channel</dt>
+                      <dd>{l.attribution.lastChannel || "—"}</dd>
+                      <dt className="font-semibold text-dark">First</dt>
+                      <dd>{[l.attribution.firstSource, l.attribution.firstMedium].filter(Boolean).join(" / ") || "—"}</dd>
+                      <dt className="font-semibold text-dark">First landing</dt>
+                      <dd className="break-all">{l.attribution.firstLandingPage || "—"}</dd>
+                      <dt className="font-semibold text-dark">Last</dt>
+                      <dd>{[l.attribution.lastSource, l.attribution.lastMedium].filter(Boolean).join(" / ") || "—"}</dd>
+                      <dt className="font-semibold text-dark">Campaign</dt>
+                      <dd>{l.attribution.lastCampaign || "—"}</dd>
+                      <dt className="font-semibold text-dark">Conversion</dt>
+                      <dd className="break-all">{l.attribution.conversionPage || "—"}</dd>
+                      <dt className="font-semibold text-dark">Device</dt>
+                      <dd>{l.attribution.deviceCategory || "—"}</dd>
+                      <dt className="font-semibold text-dark">Mode</dt>
+                      <dd>{l.attribution.captureMode || "—"}</dd>
+                    </dl>
+                  ) : (
+                    <span>Keine Daten</span>
+                  )}
                 </td>
                 <td className="px-4 py-3">
                   <form action={updateLeadStatus.bind(null, l.id)} className="flex items-center gap-2">

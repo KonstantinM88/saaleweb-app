@@ -30,6 +30,7 @@ Instructions and project memory for coding agents working in this repository.
 - Most homepage sections now prefer published DB rows and fall back to `messages/*.json` when DB data is unavailable, empty, or incomplete. DB-backed homepage sections include industries, case studies/projects, FAQ, and testimonials. The homepage services block is message-driven and presents four business solution cards; service index/detail pages remain DB-backed.
 - Database is required for contact form persistence and future CMS/content features.
 - First-party analytics stores page views in `PageView` via `/api/track` without cookies or raw IP storage; bot user agents and admin routes are not tracked, and unique visitors are counted through a daily salted `visitorHash`.
+- Stage 2A lead attribution stores consent-aware 90-day first/last touch in the one-to-one `LeadAttribution` model. Every active form and qualified AI handoff writes attribution with the `Lead`; public forms use nullable unique `Lead.submissionId` for idempotency. `ContactRequest` is currently legacy/no active call site and remains untouched.
 - Admin image uploads convert images to WebP with `sharp`; production storage uses Vercel Blob when `BLOB_READ_WRITE_TOKEN` is set, otherwise local/admin uploads write deployable public media to `public/uploads`.
 
 ## Important Paths
@@ -73,6 +74,8 @@ Instructions and project memory for coding agents working in this repository.
 - `src/features/analytics/PageViewTracker.tsx` - client-side first-party page-view tracker mounted in the locale layout.
 - `src/features/analytics/gtm.ts`, `GtmRouteTracker.tsx`, `GtmInteractionTracker.tsx`, `AnalyticsConsentBanner.tsx`, `googleConsent.ts` - consent-aware GTM/GA4 integration for public App Router pages. GTM is loaded through `@next/third-parties/google`; GA4 is configured only inside GTM. Manual `page_view`, typed business events and Consent Mode v2 share one data layer, while admin and first-party analytics remain separate.
 - `src/features/analytics/aiTraffic.ts` - shared AI crawler/referrer detector for ChatGPT/OpenAI, Claude, Perplexity, identifiable Google AI agents, Copilot referrals, Meta AI, and related AI agents. Keep ordinary Googlebot/Bingbot/social previews and ambiguous Applebot traffic out of AI counts.
+- `src/features/analytics/attribution.ts`, `attribution.client.ts`, `attribution.server.ts`, and `AttributionCapture.tsx` - shared source classification/sanitization, consent-aware browser capture, Zod server revalidation, and global public-route first/last-touch capture. Persistent storage uses `saaleweb_attribution_v1`; denied/unselected consent is request-only and never stores click IDs.
+- `src/features/analytics/useLeadAttributionSubmission.ts`, `trackLeadConversion.ts` - one UUID per form attempt plus post-persistence, non-PII `form_submit` / `audit_request` events through the existing GTM and first-party pipelines.
 - `src/features/admin/analytics/data.ts` - admin dashboard aggregations for page views, leads, and top paths.
 - `src/features/language-switcher/LocaleSlugsContext.tsx` - per-locale slug context used by detail pages for smart language switching.
 - `src/shared/` - shared UI, config, helpers.
@@ -171,6 +174,7 @@ Instructions and project memory for coding agents working in this repository.
 - Generate admin password hash: `node scripts/hash-password.mjs "your-password"`
 - Run AI assistant QA against a running local/prod endpoint: `npm run assistant:test`. Optional env: `ASSISTANT_TEST_URL`, `ASSISTANT_TEST_LIMIT`, `ASSISTANT_TEST_IDS`, `ASSISTANT_TEST_DELAY_MS`, `ASSISTANT_TEST_TIMEOUT_MS`.
 - Run deterministic AI assistant sales-memory/funnel extraction test without OpenAI or Telegram side effects: `npm run assistant:test-profile`.
+- Run pure lead-attribution classification, privacy, TTL, and first/last-touch tests without database or notification side effects: `npm run attribution:test`.
 - Sync the seven production DE/EN/RU blog articles (local SEO guide, website costs, Google Business Profile, AI search visibility, restaurant website, WordPress-or-Next.js, relaunch checklist) plus blog categories into the database: `npm run db:sync-blog-content`
 
 ## Environment

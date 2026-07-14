@@ -6,6 +6,7 @@ import { BarChart3, Compass, Gauge, Sparkles } from "lucide-react";
 import { Container } from "@/shared/ui/Container";
 import { submitContact, type ContactState } from "@/features/contact/actions";
 import { useTrackFormSuccess } from "@/features/analytics/useTrackFormSuccess";
+import { useLeadAttributionSubmission } from "@/features/analytics/useLeadAttributionSubmission";
 
 type AuditPoint = {
   title: string;
@@ -20,7 +21,9 @@ export function WebsiteAuditSection() {
   const locale = useLocale();
   const points = t.raw("points") as AuditPoint[];
   const [state, formAction, pending] = useActionState(submitContact, initialState);
-  useTrackFormSuccess(state.status, "website_audit");
+  const { submissionInputRef, attributionInputRef, prepareSubmission } =
+    useLeadAttributionSubmission();
+  useTrackFormSuccess(state, "website_audit");
 
   const inputCls =
     "w-full rounded-xl border border-line bg-white/[0.9] px-4 py-3 text-[15px] text-ink outline-none transition focus:border-brand-purple focus:ring-2 focus:ring-brand-purple/20";
@@ -87,10 +90,12 @@ export function WebsiteAuditSection() {
                   </div>
                 </div>
               ) : (
-                <form action={formAction} className="grid gap-3">
+                <form action={formAction} onSubmit={prepareSubmission} className="grid gap-3">
                   <input type="hidden" name="locale" value={locale} />
                   <input type="hidden" name="source" value="website_audit" />
                   <input type="hidden" name="projectType" value="Website Audit" />
+                  <input ref={submissionInputRef} type="hidden" name="submissionId" />
+                  <input ref={attributionInputRef} type="hidden" name="attribution" />
                   <input
                     type="text"
                     name="website"

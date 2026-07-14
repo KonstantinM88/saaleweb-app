@@ -2,6 +2,7 @@ import "server-only";
 
 import { emailBrandHeader } from "./emailBrand";
 import { defaultFromAddress, sendTransactionalMail } from "./transport";
+import { displaySource, type AttributionNotificationSummary } from "@/features/analytics/attribution";
 
 export type LeadNotification = {
   name: string;
@@ -14,6 +15,7 @@ export type LeadNotification = {
   message?: string | null;
   locale?: string | null;
   source?: string | null;
+  attribution?: AttributionNotificationSummary;
 };
 
 type LeadLocale = "de" | "en" | "ru";
@@ -101,6 +103,28 @@ export async function sendLeadNotification(lead: LeadNotification): Promise<bool
     ["Sprache", lead.locale || "-"],
     ["Quelle", lead.source || "-"],
   ];
+  const attributionRows: Array<[string, string | undefined]> = [
+    ["Kanal", lead.attribution?.channel],
+    [
+      "First Source",
+      lead.attribution?.firstSource
+        ? `${displaySource(lead.attribution.firstSource) || lead.attribution.firstSource}${lead.attribution.firstMedium ? ` / ${lead.attribution.firstMedium}` : ""}`
+        : undefined,
+    ],
+    ["First Landing Page", lead.attribution?.firstLandingPage],
+    [
+      "Last Source",
+      lead.attribution?.lastSource
+        ? `${displaySource(lead.attribution.lastSource) || lead.attribution.lastSource}${lead.attribution.lastMedium ? ` / ${lead.attribution.lastMedium}` : ""}`
+        : undefined,
+    ],
+    ["Campaign", lead.attribution?.campaign],
+    ["Conversion Page", lead.attribution?.conversionPage],
+    ["Device", lead.attribution?.deviceCategory],
+  ];
+  rows.push(
+    ...attributionRows.filter((row): row is [string, string] => Boolean(row[1])),
+  );
   const message = lead.message || "-";
   const text = rows.map(([key, value]) => `${key}: ${value}`).join("\n") + `\n\nNachricht:\n${message}`;
   const html =

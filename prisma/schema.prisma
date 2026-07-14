@@ -76,6 +76,7 @@ model AuthorTranslation {
 
 model Lead {
   id                    String                 @id @default(cuid())
+  submissionId          String?                @unique
   name                  String
   email                 String?
   phone                 String?
@@ -85,7 +86,54 @@ model Lead {
   status                LeadStatus             @default(NEW)
   locale                Locale                 @default(de)
   createdAt             DateTime               @default(now())
+  attribution           LeadAttribution?
   assistantConversation AssistantConversation?
+}
+
+model LeadAttribution {
+  id     String @id @default(cuid())
+  leadId String @unique
+  lead   Lead   @relation(fields: [leadId], references: [id], onDelete: Cascade)
+
+  firstSource      String?
+  firstMedium      String?
+  firstChannel     String?
+  firstCampaign    String?
+  firstContent     String?
+  firstTerm        String?
+  firstLandingPage String?
+  firstReferrer    String?
+  firstGclid       String?
+  firstFbclid      String?
+  firstMsclkid     String?
+  firstCapturedAt  DateTime?
+
+  lastSource      String?
+  lastMedium      String?
+  lastChannel     String?
+  lastCampaign    String?
+  lastContent     String?
+  lastTerm        String?
+  lastLandingPage String?
+  lastReferrer    String?
+  lastGclid       String?
+  lastFbclid      String?
+  lastMsclkid     String?
+  lastCapturedAt  DateTime?
+
+  conversionPage String?
+  deviceCategory String?
+  captureMode    String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([firstSource])
+  @@index([lastSource])
+  @@index([firstCampaign])
+  @@index([lastCampaign])
+  @@index([firstLandingPage])
+  @@index([conversionPage])
 }
 
 model ContactRequest {

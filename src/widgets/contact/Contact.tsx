@@ -6,6 +6,7 @@ import { Container } from "@/shared/ui/Container";
 import { BrandText } from "@/shared/ui/BrandText";
 import { submitContact, type ContactState } from "@/features/contact/actions";
 import { useTrackFormSuccess } from "@/features/analytics/useTrackFormSuccess";
+import { useLeadAttributionSubmission } from "@/features/analytics/useLeadAttributionSubmission";
 
 const initialState: ContactState = { status: "idle" };
 
@@ -17,7 +18,9 @@ export function Contact({
   const t = useTranslations("Contact");
   const locale = useLocale();
   const [state, formAction, pending] = useActionState(submitContact, initialState);
-  useTrackFormSuccess(state.status, source);
+  const { submissionInputRef, attributionInputRef, prepareSubmission } =
+    useLeadAttributionSubmission();
+  useTrackFormSuccess(state, source);
 
   const inputCls =
     "w-full rounded-xl border border-line bg-white px-4 py-3 text-[15px] text-ink outline-none transition focus:border-brand-purple focus:ring-2 focus:ring-brand-purple/20";
@@ -53,9 +56,11 @@ export function Contact({
                 <p className="font-semibold">{t("success")}</p>
               </div>
             ) : (
-              <form action={formAction} className="grid gap-3">
+              <form action={formAction} onSubmit={prepareSubmission} className="grid gap-3">
                 <input type="hidden" name="locale" value={locale} />
                 <input type="hidden" name="source" value={source} />
+                <input ref={submissionInputRef} type="hidden" name="submissionId" />
+                <input ref={attributionInputRef} type="hidden" name="attribution" />
                 {/* honeypot */}
                 <input
                   type="text"

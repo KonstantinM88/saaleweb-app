@@ -3,6 +3,9 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { AppLocale } from "@/i18n/routing";
 import { trackGtmEvent } from "@/features/analytics/gtm";
+import { getLeadAttributionForSubmission } from "@/features/analytics/attribution.client";
+import { trackLeadConversion } from "@/features/analytics/trackLeadConversion";
+import type { LeadConversionEvent } from "@/features/analytics/attribution";
 import { siteConfig } from "@/shared/config/site";
 import { BrandMonogram } from "@/shared/ui/BrandLogo";
 
@@ -94,6 +97,7 @@ export function AiAssistantWidget({
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const visitorIdRef = useRef<string | undefined>(undefined);
+  const leadEventTrackedRef = useRef(false);
   const scrollRef = useRef<HTMLDivElement | null>(null);
 
   const whatsappHref = useMemo(
@@ -187,21 +191,31 @@ export function AiAssistantWidget({
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({
-            locale,
-            pagePath: window.location.pathname,
-            visitorId: visitorIdRef.current,
-            messages: nextMessages
+          locale,
+          pagePath: window.location.pathname,
+          visitorId: visitorIdRef.current,
+          attribution: getLeadAttributionForSubmission(),
+          messages: nextMessages
             .filter((message) => message.role === "user" || message.role === "assistant")
             .slice(-MAX_CONTEXT_MESSAGES),
         }),
       });
-      const payload = (await response.json().catch(() => null)) as { ok?: boolean; answer?: string } | null;
+      const payload = (await response.json().catch(() => null)) as {
+        ok?: boolean;
+        answer?: string;
+        leadCreated?: boolean;
+        conversion?: LeadConversionEvent;
+      } | null;
 
       if (!response.ok || !payload?.ok || !payload.answer) {
         throw new Error("assistant_failed");
       }
 
       setMessages((current) => [...current, { role: "assistant", content: payload.answer || labels.error }]);
+      if (payload.leadCreated && payload.conversion && !leadEventTrackedRef.current) {
+        leadEventTrackedRef.current = true;
+        trackLeadConversion(payload.conversion);
+      }
     } catch {
       setError(labels.error);
       setMessages((current) => [...current, { role: "assistant", content: labels.error }]);

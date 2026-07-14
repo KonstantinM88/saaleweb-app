@@ -3,36 +3,18 @@
 import { useActionState } from "react";
 import { submitContact, type ContactState } from "@/features/contact/actions";
 import { useTrackFormSuccess } from "@/features/analytics/useTrackFormSuccess";
+import { useLeadAttributionSubmission } from "@/features/analytics/useLeadAttributionSubmission";
 import type { AuditLandingCopy } from "./auditContent";
 
 const initialState: ContactState = { status: "idle" };
 
-const UTM_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "ref"] as const;
-
-/** Reads UTM parameters from the current URL at submit time (ad traffic). */
-function readUtmString(): string {
-  try {
-    const params = new URLSearchParams(window.location.search);
-    const parts = UTM_KEYS.map((key) => {
-      const value = params.get(key);
-      return value ? `${key}=${value}` : null;
-    }).filter(Boolean) as string[];
-    if (parts.length === 0 && document.referrer) {
-      parts.push(`referrer=${document.referrer}`);
-    }
-    return parts.join(" | ").slice(0, 380);
-  } catch {
-    // non-critical: the lead still goes through without campaign data
-    return "";
-  }
-}
-
 export function AuditLeadForm({ copy, locale }: { copy: AuditLandingCopy["form"]; locale: string }) {
   const [state, formAction, pending] = useActionState(submitContact, initialState);
-  useTrackFormSuccess(state.status, "website_audit");
+  const { enrichFormData } = useLeadAttributionSubmission();
+  useTrackFormSuccess(state, "website_audit");
 
   const action = (formData: FormData) => {
-    formData.set("utm", readUtmString());
+    enrichFormData(formData);
     formAction(formData);
   };
 

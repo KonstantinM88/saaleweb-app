@@ -4,11 +4,19 @@ import type { AppLocale } from "@/i18n/routing";
 import { prisma } from "@/lib/prisma";
 import { sendLeadAutoReply, sendLeadNotification, type LeadNotification } from "@/features/notifications/mailer";
 import { sendLeadTelegramNotification } from "@/features/notifications/telegramReports";
+import {
+  attributionNotificationSummary,
+  leadAttributionCreateData,
+  leadConversionEvent,
+  normalizeLeadAttribution,
+} from "@/features/analytics/attribution.server";
+import type { LeadAttributionPayload, LeadConversionEvent } from "@/features/analytics/attribution";
 import type { AssistantSalesProfile } from "./profile";
 
 export type AssistantLeadResult = {
   created: boolean;
   leadId?: string;
+  conversion?: LeadConversionEvent;
 };
 
 function fallbackName(locale: AppLocale): string {
@@ -40,15 +48,20 @@ export async function createAssistantLead({
   profile,
   locale,
   pagePath,
+  attribution: attributionPayload,
 }: {
   conversationId: string;
   profile: AssistantSalesProfile;
   locale: AppLocale;
   pagePath?: string;
+  attribution?: LeadAttributionPayload;
 }): Promise<AssistantLeadResult> {
   if (!profile.contactRequested || (!profile.phone && !profile.email)) return { created: false };
 
   try {
+    const attribution = normalizeLeadAttribution(attributionPayload, {
+      fallbackConversionPage: pagePath,
+    });
     const leadData = {
       name: profile.name || fallbackName(locale),
       email: profile.email || null,
@@ -67,7 +80,13 @@ export async function createAssistantLead({
       if (!conversation) return { created: false as const };
       if (conversation.leadId) return { created: false as const, leadId: conversation.leadId };
 
-      const lead = await tx.lead.create({ data: leadData, select: { id: true } });
+      const lead = await tx.lead.create({
+        data: {
+          ...leadData,
+          attribution: { create: leadAttributionCreateData(attribution) },
+        },
+        select: { id: true },
+      });
       const claimed = await tx.assistantConversation.updateMany({
         where: { id: conversationId, leadId: null },
         data: { leadId: lead.id, funnelStage: "HANDOFF" },
@@ -92,25 +111,41 @@ export async function createAssistantLead({
       projectWebsite: profile.websiteUrl || null,
       projectType: profile.features.join(", ") || null,
       budget: profile.budget || null,
+      attribution: attributionNotificationSummary(attribution),
     };
-    const [adminNotificationSent, autoReplySent, telegramNotificationSent] = await Promise.all([
+    const notificationResults = await Promise.allSettled([
       sendLeadNotification(notification),
       profile.email ? sendLeadAutoReply(notification) : Promise.resolve(false),
       sendLeadTelegramNotification(notification),
     ]);
+    const [adminNotificationSent, autoReplySent, telegramNotificationSent] = notificationResults.map(
+      (item) => item.status === "fulfilled" && item.value,
+    );
     console.info("[assistant] Qualified contact converted to lead.", {
       conversationId,
       leadId: result.leadId,
       locale,
+      attributionPresent: Boolean(attributionPayload),
+      captureMode: attribution.captureMode,
+      classifiedSource: attribution.last.source,
+      classifiedMedium: attribution.last.medium,
+      submissionResult: "created",
       adminNotificationSent,
       autoReplySent,
       telegramNotificationSent,
     });
-    return result;
+    return {
+      ...result,
+      conversion: leadConversionEvent(attribution, "ai_assistant", locale),
+    };
   } catch (error) {
     console.error("[assistant] Lead conversion failed.", {
       conversationId,
-      message: error instanceof Error ? error.message : "Unknown database error",
+      code:
+        error && typeof error === "object" && "code" in error && typeof error.code === "string"
+          ? error.code
+          : "unknown",
+      submissionResult: "error",
     });
     return { created: false };
   }

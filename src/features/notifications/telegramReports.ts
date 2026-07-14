@@ -409,6 +409,30 @@ async function loadAiTraffic(from: Date, to: Date, previousFrom: Date, previousT
 
 export async function sendLeadTelegramNotification(lead: LeadNotification): Promise<boolean> {
   const adminUrl = `${siteUrl()}/admin/leads`;
+  const attribution = lead.attribution;
+  const attributionLines = attribution
+    ? [
+        "🎯 Атрибуция",
+        line("• Канал", attribution.channel),
+        attribution.firstSource
+          ? line(
+              "• First touch",
+              `${attribution.firstSource}${attribution.firstMedium ? ` / ${attribution.firstMedium}` : ""}`,
+            )
+          : undefined,
+        line("• First landing", attribution.firstLandingPage),
+        attribution.lastSource
+          ? line(
+              "• Last touch",
+              `${attribution.lastSource}${attribution.lastMedium ? ` / ${attribution.lastMedium}` : ""}`,
+            )
+          : undefined,
+        line("• Кампания", attribution.campaign),
+        line("• Conversion page", attribution.conversionPage),
+        line("• Устройство", attribution.deviceCategory),
+        line("• Режим", attribution.captureMode),
+      ].filter((part): part is string => Boolean(part))
+    : [];
   const message = [
     "🟣 Новая заявка SaaleWeb",
     "",
@@ -424,6 +448,7 @@ export async function sendLeadTelegramNotification(lead: LeadNotification): Prom
     "",
     "💬 Сообщение:",
     lead.message?.trim() || "-",
+    ...(attributionLines.length > 0 ? ["", ...attributionLines] : []),
     "",
     `⚙️ Админка: ${adminUrl}`,
   ]

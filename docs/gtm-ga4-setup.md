@@ -100,9 +100,11 @@ Create one Custom Event trigger with this regular expression:
 ```
 
 Then create a GA4 Event tag with Event Name `{{Event}}`. Add the useful custom
-parameters from Preview mode, for example `form_source`, `link_url`,
-`link_domain`, `link_text`, `percent_scrolled`, `page_path` and
-`widget_locale`. Configure `form_submit` and `audit_request` as GA4 key events
+parameters from Preview mode, for example `form_name`, `lead_source`,
+`lead_medium`, `lead_channel`, `lead_campaign`, `device_category`, `link_url`,
+`link_domain`, `link_text`, `percent_scrolled`, `page_path`, `locale` and
+`widget_locale`. Lead conversion dimensions contain no PII or advertising
+click IDs. Configure `form_submit` and `audit_request` as GA4 key events
 only after verifying them in DebugView.
 
 For a future booking control, add `data-gtm-event="booking_click"` to the

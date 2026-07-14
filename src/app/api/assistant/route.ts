@@ -15,6 +15,7 @@ import {
   logAssistantExchange,
 } from "@/features/assistant/logging";
 import { createAssistantLead } from "@/features/assistant/lead";
+import { leadAttributionPayloadSchema } from "@/features/analytics/attribution.server";
 import {
   deriveAssistantFunnelStage,
   latestMessageConfirmsContact,
@@ -48,6 +49,7 @@ const requestSchema = z.object({
   locale: z.string().default("de"),
   pagePath: z.string().trim().max(300).optional(),
   visitorId: z.string().trim().max(80).optional(),
+  attribution: leadAttributionPayloadSchema.optional(),
   messages: z.array(messageSchema).min(1).max(MAX_MESSAGES),
 });
 
@@ -387,6 +389,7 @@ export async function POST(req: Request) {
         profile,
         locale,
         pagePath: parsed.data.pagePath,
+        attribution: parsed.data.attribution,
       })
     : { created: false, leadId: prepared?.leadId };
   const handoffConfirmed = Boolean(prepared?.leadId || leadResult.leadId);
@@ -425,6 +428,8 @@ export async function POST(req: Request) {
       responseLocale,
       funnelStage,
       handoffConfirmed,
+      leadCreated: leadResult.created,
+      conversion: leadResult.created ? leadResult.conversion : undefined,
     },
     { headers: { "Cache-Control": "no-store" } },
   );

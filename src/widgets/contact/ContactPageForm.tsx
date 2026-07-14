@@ -5,6 +5,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { ArrowRight, CheckCircle2, Sparkles } from "lucide-react";
 import { submitContact, type ContactState } from "@/features/contact/actions";
 import { useTrackFormSuccess } from "@/features/analytics/useTrackFormSuccess";
+import { useLeadAttributionSubmission } from "@/features/analytics/useLeadAttributionSubmission";
 import { BrandText } from "@/shared/ui/BrandText";
 
 const initialState: ContactState = { status: "idle" };
@@ -22,7 +23,9 @@ export function ContactPageForm() {
   const t = useTranslations("ContactPage.form");
   const locale = useLocale();
   const [state, formAction, pending] = useActionState(submitContact, initialState);
-  useTrackFormSuccess(state.status, "contact_page");
+  const { submissionInputRef, attributionInputRef, prepareSubmission } =
+    useLeadAttributionSubmission();
+  useTrackFormSuccess(state, "contact_page");
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
   const formRef = useRef<HTMLFormElement>(null);
   const projectTypeOptions = t.raw("projectTypeOptions") as SelectOption[];
@@ -87,6 +90,7 @@ export function ContactPageForm() {
       focusFirstError(firstError);
     } else {
       setFieldErrors({});
+      prepareSubmission();
     }
   };
 
@@ -120,6 +124,8 @@ export function ContactPageForm() {
     >
       <input type="hidden" name="locale" value={locale} />
       <input type="hidden" name="source" value="contact_page" />
+      <input ref={submissionInputRef} type="hidden" name="submissionId" />
+      <input ref={attributionInputRef} type="hidden" name="attribution" />
       <input type="text" name="website" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden />
 
       <div className="mb-6">

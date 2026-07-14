@@ -16,6 +16,7 @@ import { PageViewTracker } from "@/features/analytics/PageViewTracker";
 import { AnalyticsConsentBanner } from "@/features/analytics/AnalyticsConsentBanner";
 import { GtmInteractionTracker } from "@/features/analytics/GtmInteractionTracker";
 import { GtmRouteTracker } from "@/features/analytics/GtmRouteTracker";
+import { AttributionCapture } from "@/features/analytics/AttributionCapture";
 import { AiAssistantWidget } from "@/widgets/assistant/AiAssistantWidget";
 import { CustomCursor } from "@/shared/ui/CustomCursor";
 import { getPathname } from "@/i18n/navigation";
@@ -144,6 +145,9 @@ export default async function LocaleLayout({
       <body className="font-sans">
         <JsonLd data={[organizationSchema(), websiteSchema(locale)]} />
         <PageViewTracker locale={locale} />
+        <Suspense fallback={null}>
+          <AttributionCapture />
+        </Suspense>
         {analyticsConfigured ? (
           <>
             <Suspense fallback={null}>

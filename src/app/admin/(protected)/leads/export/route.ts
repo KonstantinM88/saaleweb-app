@@ -14,6 +14,18 @@ type LeadRow = {
   source: string | null;
   status: string;
   locale: string;
+  attribution: {
+    firstSource: string | null;
+    firstMedium: string | null;
+    firstLandingPage: string | null;
+    lastSource: string | null;
+    lastMedium: string | null;
+    lastChannel: string | null;
+    lastCampaign: string | null;
+    conversionPage: string | null;
+    deviceCategory: string | null;
+    captureMode: string | null;
+  } | null;
 };
 
 function cell(v: unknown): string {
@@ -27,12 +39,35 @@ export async function GET() {
 
   let leads: LeadRow[] = [];
   try {
-    leads = (await prisma.lead.findMany({ orderBy: { createdAt: "desc" } })) as LeadRow[];
+    leads = (await prisma.lead.findMany({
+      orderBy: { createdAt: "desc" },
+      include: { attribution: true },
+    })) as LeadRow[];
   } catch {
     leads = [];
   }
 
-  const header = ["createdAt", "name", "email", "phone", "company", "message", "source", "status", "locale"];
+  const header = [
+    "createdAt",
+    "name",
+    "email",
+    "phone",
+    "company",
+    "message",
+    "source",
+    "status",
+    "locale",
+    "attributionChannel",
+    "firstSource",
+    "firstMedium",
+    "firstLandingPage",
+    "lastSource",
+    "lastMedium",
+    "campaign",
+    "conversionPage",
+    "deviceCategory",
+    "captureMode",
+  ];
   const lines = leads.map((l) =>
     [
       l.createdAt ? new Date(l.createdAt).toISOString() : "",
@@ -44,6 +79,16 @@ export async function GET() {
       l.source,
       l.status,
       l.locale,
+      l.attribution?.lastChannel,
+      l.attribution?.firstSource,
+      l.attribution?.firstMedium,
+      l.attribution?.firstLandingPage,
+      l.attribution?.lastSource,
+      l.attribution?.lastMedium,
+      l.attribution?.lastCampaign,
+      l.attribution?.conversionPage,
+      l.attribution?.deviceCategory,
+      l.attribution?.captureMode,
     ]
       .map(cell)
       .join(";"),

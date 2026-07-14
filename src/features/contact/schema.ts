@@ -12,9 +12,11 @@ export const contactSchema = z
     message: z.string().max(2000).optional().or(z.literal("")),
     privacy: z.string().optional().or(z.literal("")),
     // Honeypot: must stay empty
-    website: z.string().max(0).optional().or(z.literal("")),
-    // Ad-campaign attribution (utm_* / referrer), filled client-side
+    website: z.string().max(240).optional().or(z.literal("")),
+    // Legacy field accepted for old clients; structured attribution is used.
     utm: z.string().max(400).optional().or(z.literal("")),
+    submissionId: z.uuid().optional().or(z.literal("")),
+    attribution: z.string().max(8000).optional().or(z.literal("")),
     locale: z.enum(["de", "en", "ru"]).default("de"),
     source: z.enum(["homepage_contact", "contact_page", "website_audit"]).default("homepage_contact"),
   })
