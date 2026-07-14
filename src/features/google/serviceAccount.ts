@@ -5,6 +5,10 @@ import { SignJWT, importPKCS8 } from "jose";
 const GOOGLE_TOKEN_URL = "https://oauth2.googleapis.com/token";
 const TOKEN_TIMEOUT_MS = 15_000;
 const TOKEN_EXPIRY_SAFETY_MS = 120_000;
+const PRIVATE_KEY_BEGIN = "-----BEGIN PRIVATE KEY-----";
+const PRIVATE_KEY_END = "-----END PRIVATE KEY-----";
+
+type PrivateKeySource = "base64" | "legacy";
 
 type CachedToken = {
   accessToken: string;
@@ -29,16 +33,74 @@ export class GoogleServiceAccountError extends Error {
   }
 }
 
-function credentials(): { email: string; privateKey: string } | null {
-  const email = process.env.GSC_CLIENT_EMAIL?.trim();
-  const privateKey = process.env.GSC_PRIVATE_KEY?.replace(/\\n/g, "\n").trim();
+function normalizePrivateKey(value: string): string {
+  return value.replace(/\r\n?/g, "\n").trim();
+}
 
-  if (!email || !privateKey) return null;
-  return { email, privateKey };
+function privateKeyDiagnostics(source: PrivateKeySource, privateKey: string) {
+  return {
+    source,
+    normalizedLength: privateKey.length,
+    lineCount: privateKey ? privateKey.split("\n").length : 0,
+    startsCorrectly: privateKey.startsWith(PRIVATE_KEY_BEGIN),
+    endsCorrectly: privateKey.endsWith(PRIVATE_KEY_END),
+  };
+}
+
+function throwInvalidPrivateKey(source: PrivateKeySource, privateKey: string): never {
+  console.warn(
+    "[google-auth] Invalid Google service-account private key.",
+    privateKeyDiagnostics(source, privateKey),
+  );
+  throw new GoogleServiceAccountError("invalid_google_private_key");
+}
+
+function readPrivateKey(): { privateKey: string; source: PrivateKeySource } | null {
+  const encoded = process.env.GSC_PRIVATE_KEY_BASE64?.trim();
+  if (encoded) {
+    let privateKey = "";
+    try {
+      privateKey = normalizePrivateKey(Buffer.from(encoded, "base64").toString("utf8"));
+    } catch {
+      throwInvalidPrivateKey("base64", privateKey);
+    }
+
+    const diagnostics = privateKeyDiagnostics("base64", privateKey);
+    if (!diagnostics.startsCorrectly || !diagnostics.endsCorrectly) {
+      throwInvalidPrivateKey("base64", privateKey);
+    }
+    return { privateKey, source: "base64" };
+  }
+
+  const legacy = process.env.GSC_PRIVATE_KEY?.trim();
+  if (!legacy) return null;
+
+  const privateKey = normalizePrivateKey(legacy.replace(/\\n/g, "\n"));
+  const diagnostics = privateKeyDiagnostics("legacy", privateKey);
+  if (!diagnostics.startsCorrectly || !diagnostics.endsCorrectly) {
+    throwInvalidPrivateKey("legacy", privateKey);
+  }
+  return { privateKey, source: "legacy" };
+}
+
+function credentials(): {
+  email: string;
+  privateKey: string;
+  source: PrivateKeySource;
+} | null {
+  const email = process.env.GSC_CLIENT_EMAIL?.trim();
+  if (!email) return null;
+
+  const privateKey = readPrivateKey();
+  if (!privateKey) return null;
+  return { email, ...privateKey };
 }
 
 export function hasGoogleServiceAccountCredentials(): boolean {
-  return credentials() !== null;
+  const email = process.env.GSC_CLIENT_EMAIL?.trim();
+  const base64Key = process.env.GSC_PRIVATE_KEY_BASE64?.trim();
+  const legacyKey = process.env.GSC_PRIVATE_KEY?.trim();
+  return Boolean(email && (base64Key || legacyKey));
 }
 
 function isTimeoutError(error: unknown): boolean {
@@ -64,7 +126,7 @@ async function requestAccessToken(scope: string): Promise<string> {
       .setExpirationTime(now + 3600)
       .sign(privateKey);
   } catch {
-    throw new GoogleServiceAccountError("invalid_google_private_key");
+    throwInvalidPrivateKey(creds.source, creds.privateKey);
   }
 
   let response: Response;

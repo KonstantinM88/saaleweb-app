@@ -35,13 +35,33 @@ The current SaaleWeb property ID is `545228440`. A Measurement ID such as
 
 ```env
 GSC_CLIENT_EMAIL="service-account@project.iam.gserviceaccount.com"
-GSC_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----\n"
+GSC_PRIVATE_KEY_BASE64="BASE64_ENCODED_PRIVATE_KEY"
 GA4_PROPERTY_ID="545228440"
 ```
 
 These values are server-only. Never create `NEXT_PUBLIC_GSC_PRIVATE_KEY` or
 `NEXT_PUBLIC_GA4_PROPERTY_ID`, and never commit the private key. Hostinger must
 receive the variables for both build and runtime.
+
+For Hostinger, `GSC_PRIVATE_KEY_BASE64` is the preferred format. It keeps the
+entire PEM key on one line and prevents hosting dashboards from changing or
+dropping its line breaks. Encode the existing valid PEM file locally, then
+copy only the resulting Base64 string into Hostinger:
+
+```bash
+node -e "const fs=require('fs'); process.stdout.write(Buffer.from(fs.readFileSync('private-key.pem','utf8')).toString('base64'))"
+```
+
+The legacy variable remains supported as a fallback when the Base64 variable
+is empty:
+
+```env
+GSC_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----\n"
+```
+
+When both variables are present, `GSC_PRIVATE_KEY_BASE64` has priority. The
+server decodes it in memory, normalizes line endings, verifies the PKCS#8 PEM
+boundaries, and never logs or stores the encoded value or decoded key.
 
 The shared Google JWT helper exchanges the service-account assertion for an
 OAuth access token and caches that token only in process memory until shortly
@@ -74,8 +94,10 @@ Console, PageSpeed, AI monitoring, or first-party analytics.
 
 ## 6. Troubleshooting
 
-- `401`: verify the service-account email/private key and ensure the key keeps
-  escaped `\n` line breaks in the hosting environment.
+- `invalid_google_private_key`: on Hostinger prefer `GSC_PRIVATE_KEY_BASE64`;
+  otherwise verify that the legacy PEM keeps escaped `\n` line breaks.
+- `401`: verify the service-account email/key pair and that the key belongs to
+  the configured service account.
 - `403`: verify that Google Analytics Data API is enabled, then add the
   service-account email in GA4 **Property access management** with Viewer
   access and verify `GA4_PROPERTY_ID`.
