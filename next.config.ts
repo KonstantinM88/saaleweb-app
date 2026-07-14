@@ -7,6 +7,32 @@ const nextConfig: NextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
   },
+  async redirects() {
+    return [
+      // Permanent compatibility redirects keep old or cross-locale slugs out
+      // of the index while transferring their signals to one canonical URL.
+      {
+        source: "/en/services/webdesign-halle",
+        destination: "/en/services/web-design-halle",
+        permanent: true,
+      },
+      {
+        source: "/ru/blog/sichtbarkeit-in-ki-suche",
+        destination: "/ru/blog/vidimost-v-ai-poiske",
+        permanent: true,
+      },
+      {
+        source: "/ru/uslugi/ai-optimization",
+        destination: "/ru/uslugi/optimizaciya-pod-ii",
+        permanent: true,
+      },
+      {
+        source: "/leistungen/ai-optimization",
+        destination: "/leistungen/ki-optimierung",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {
