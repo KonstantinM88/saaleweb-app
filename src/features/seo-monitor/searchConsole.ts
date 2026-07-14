@@ -1,13 +1,15 @@
 import "server-only";
 
-import { SignJWT, importPKCS8 } from "jose";
+import {
+  getGoogleServiceAccountAccessToken,
+  hasGoogleServiceAccountCredentials,
+} from "@/features/google/serviceAccount";
 
 /**
  * Google Search Console API client using a service-account JWT and the
  * already-installed jose dependency.
  */
 
-const TOKEN_URL = "https://oauth2.googleapis.com/token";
 const SCOPE = "https://www.googleapis.com/auth/webmasters";
 
 export type SearchAnalyticsTotals = {
@@ -33,47 +35,11 @@ export type GscSnapshot = {
   error?: string;
 };
 
-function credentials(): { email: string; key: string } | null {
-  const email = process.env.GSC_CLIENT_EMAIL?.trim();
-  const key = process.env.GSC_PRIVATE_KEY?.replace(/\\n/g, "\n").trim();
-  if (!email || !key) return null;
-  return { email, key };
-}
-
 function gscSiteUrl(): string {
   const configured = process.env.GSC_SITE_URL?.trim();
   if (configured) return configured;
   const base = (process.env.NEXT_PUBLIC_SITE_URL || "https://saaleweb.de").replace(/\/+$/, "");
   return `${base}/`;
-}
-
-async function accessToken(): Promise<string> {
-  const creds = credentials();
-  if (!creds) throw new Error("GSC credentials missing");
-
-  const privateKey = await importPKCS8(creds.key, "RS256");
-  const now = Math.floor(Date.now() / 1000);
-  const assertion = await new SignJWT({ scope: SCOPE })
-    .setProtectedHeader({ alg: "RS256", typ: "JWT" })
-    .setIssuer(creds.email)
-    .setAudience(TOKEN_URL)
-    .setIssuedAt(now)
-    .setExpirationTime(now + 3600)
-    .sign(privateKey);
-
-  const response = await fetch(TOKEN_URL, {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams({
-      grant_type: "urn:ietf:params:oauth:grant-type:jwt-bearer",
-      assertion,
-    }),
-    signal: AbortSignal.timeout(15_000),
-  });
-  if (!response.ok) throw new Error(`GSC token HTTP ${response.status}`);
-  const data = (await response.json()) as { access_token?: string };
-  if (!data.access_token) throw new Error("GSC token response without access_token");
-  return data.access_token;
 }
 
 function isoDate(date: Date): string {
@@ -159,10 +125,12 @@ async function inspectUrls(token: string, urls: string[]): Promise<IndexationRes
 }
 
 export async function fetchGscSnapshot(keyUrls: string[]): Promise<GscSnapshot> {
-  if (!credentials()) return { configured: false, analytics: null, indexation: null };
+  if (!hasGoogleServiceAccountCredentials()) {
+    return { configured: false, analytics: null, indexation: null };
+  }
 
   try {
-    const token = await accessToken();
+    const token = await getGoogleServiceAccountAccessToken(SCOPE);
     const [analytics, indexation] = await Promise.all([
       querySearchAnalytics(token),
       inspectUrls(token, keyUrls),

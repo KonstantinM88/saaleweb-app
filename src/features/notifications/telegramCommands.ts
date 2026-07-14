@@ -3,6 +3,7 @@ import "server-only";
 import {
   buildAiSearchReport,
   buildDailySiteReport,
+  buildGa4Report,
   buildLeadsReport,
   buildTopPagesReport,
   buildWeeklySiteReport,
@@ -20,6 +21,7 @@ import { answerTelegramCallbackQuery, sendTelegramChatMessage } from "./telegram
 const BUTTON_HEALTH = "🩺 Проверить сайт";
 const BUTTON_DAILY = "📊 Отчёт 24 часа";
 const BUTTON_WEEK = "📅 Недельный отчёт";
+const BUTTON_GA4 = "📈 GA4";
 const BUTTON_AI = "🤖 AI-отчёт";
 const BUTTON_TOP = "🏆 Топ-страницы";
 const BUTTON_LEADS = "🎯 Заявки";
@@ -31,10 +33,10 @@ function commandKeyboard() {
   return {
     keyboard: [
       [{ text: BUTTON_HEALTH }, { text: BUTTON_DAILY }],
-      [{ text: BUTTON_WEEK }, { text: BUTTON_AI }],
-      [{ text: BUTTON_TOP }, { text: BUTTON_LEADS }],
-      [{ text: BUTTON_SEO }, { text: BUTTON_ASSISTANT }],
-      [{ text: BUTTON_HELP }],
+      [{ text: BUTTON_WEEK }, { text: BUTTON_GA4 }],
+      [{ text: BUTTON_AI }, { text: BUTTON_TOP }],
+      [{ text: BUTTON_LEADS }, { text: BUTTON_SEO }],
+      [{ text: BUTTON_ASSISTANT }, { text: BUTTON_HELP }],
     ],
     resize_keyboard: true,
     is_persistent: true,
@@ -50,6 +52,7 @@ function helpText(): string {
     `${BUTTON_HEALTH} — сайт, БД, почта, Telegram и ключевые URL`,
     `${BUTTON_DAILY} — отчёт за последние 24 часа`,
     `${BUTTON_WEEK} — недельный отчёт по трафику, заявкам и AI-поиску`,
+    `${BUTTON_GA4} — Google Analytics за 7 завершённых дней`,
     `${BUTTON_AI} — отдельный отчёт по AI-ботам и AI-переходам`,
     `${BUTTON_TOP} — топ страниц, источники и SEO/GEO/AIO возможности`,
     `${BUTTON_LEADS} — последние заявки, статусы и источники`,
@@ -58,7 +61,7 @@ function helpText(): string {
     `${BUTTON_HELP} — показать это меню`,
     "",
     "Текстовые команды:",
-    "/health, /report, /week, /ai, /top, /leads, /seo, /assistant, /help",
+    "/health, /report, /week, /ga4, /ai, /top, /leads, /seo, /assistant, /help",
     "/seo new — пересчитать SEO Score без кэша",
     "",
     "AI-диалоги:",
@@ -74,6 +77,7 @@ function normalizeCommand(text: string): string {
     [BUTTON_HEALTH]: "/health",
     [BUTTON_DAILY]: "/report",
     [BUTTON_WEEK]: "/week",
+    [BUTTON_GA4]: "/ga4",
     [BUTTON_AI]: "/ai",
     [BUTTON_TOP]: "/top",
     [BUTTON_LEADS]: "/leads",
@@ -103,6 +107,10 @@ export async function handleTelegramCommand(chatId: string | number, text: strin
 
   if (command === "/week") {
     return sendWithMenu(chatId, await buildWeeklySiteReport());
+  }
+
+  if (command === "/ga4") {
+    return sendWithMenu(chatId, await buildGa4Report());
   }
 
   if (command === "/ai") {

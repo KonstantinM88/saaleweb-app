@@ -1,6 +1,10 @@
 import "server-only";
 
 import { detectAiReferrer } from "@/features/analytics/aiTraffic";
+import {
+  fetchGa4Snapshot,
+  type Ga4Snapshot,
+} from "@/features/analytics/googleAnalytics";
 import { prisma } from "@/lib/prisma";
 import type { LeadNotification } from "./mailer";
 import { sendTelegramAdminMessage } from "./telegram";
@@ -34,9 +38,32 @@ type AiTrafficSummary = {
 
 const MS_IN_DAY = 24 * 60 * 60 * 1000;
 const MS_IN_WEEK = 7 * MS_IN_DAY;
+const SYNTHETIC_EVENT_PATH_PATTERN = "/e/%";
 
 function countValue(rows: CountRow[]): number {
   return Number(rows[0]?.count ?? 0);
+}
+
+async function countRealPageViews(from: Date, to: Date): Promise<number> {
+  const rows = await prisma.$queryRaw<CountRow[]>`SELECT count(*)::int AS count FROM "PageView" WHERE "createdAt" >= ${from} AND "createdAt" < ${to} AND path NOT LIKE ${SYNTHETIC_EVENT_PATH_PATTERN}`;
+  return countValue(rows);
+}
+
+async function countRealUniqueVisitors(from: Date, to: Date): Promise<number> {
+  const rows = await prisma.$queryRaw<CountRow[]>`SELECT count(DISTINCT "visitorHash")::int AS count FROM "PageView" WHERE "createdAt" >= ${from} AND "createdAt" < ${to} AND path NOT LIKE ${SYNTHETIC_EVENT_PATH_PATTERN} AND "visitorHash" IS NOT NULL`;
+  return countValue(rows);
+}
+
+async function queryTopRealPages(from: Date, to: Date, limit: number): Promise<PathCountRow[]> {
+  return prisma.$queryRaw<PathCountRow[]>`SELECT path, count(*)::int AS count FROM "PageView" WHERE "createdAt" >= ${from} AND "createdAt" < ${to} AND path NOT LIKE ${SYNTHETIC_EVENT_PATH_PATTERN} GROUP BY path ORDER BY count DESC LIMIT ${limit}`;
+}
+
+async function queryRealPageLocales(from: Date, to: Date): Promise<LocaleCountRow[]> {
+  return prisma.$queryRaw<LocaleCountRow[]>`SELECT locale, count(*)::int AS count FROM "PageView" WHERE "createdAt" >= ${from} AND "createdAt" < ${to} AND path NOT LIKE ${SYNTHETIC_EVENT_PATH_PATTERN} GROUP BY locale ORDER BY count DESC`;
+}
+
+async function queryTopRealReferrers(from: Date, to: Date, limit: number): Promise<PathCountRow[]> {
+  return prisma.$queryRaw<PathCountRow[]>`SELECT COALESCE(NULLIF(referrer, ''), 'Прямой заход') AS path, count(*)::int AS count FROM "PageView" WHERE "createdAt" >= ${from} AND "createdAt" < ${to} AND path NOT LIKE ${SYNTHETIC_EVENT_PATH_PATTERN} GROUP BY 1 ORDER BY count DESC LIMIT ${limit}`;
 }
 
 function siteUrl(): string {
@@ -71,6 +98,42 @@ function formatPercentDelta(current: number, previous: number): string {
   const percent = Math.round(((current - previous) / previous) * 100);
   if (percent > 0) return `+${percent}%`;
   return `${percent}%`;
+}
+
+function formatDecimal(value: number, maximumFractionDigits = 1): string {
+  return new Intl.NumberFormat("ru-RU", {
+    minimumFractionDigits: maximumFractionDigits,
+    maximumFractionDigits,
+  }).format(Number.isFinite(value) ? value : 0);
+}
+
+function formatInteger(value: number): string {
+  return new Intl.NumberFormat("ru-RU", { maximumFractionDigits: 0 }).format(
+    Number.isFinite(value) ? value : 0,
+  );
+}
+
+function formatRate(value: number): string {
+  return `${formatDecimal(value * 100)}%`;
+}
+
+function formatConversion(leads: number, uniqueVisitors: number): string {
+  if (uniqueVisitors <= 0) return "0,0%";
+  return `${formatDecimal((leads / uniqueVisitors) * 100)}%`;
+}
+
+function formatDuration(seconds: number): string {
+  const totalSeconds = Math.max(0, Math.round(Number.isFinite(seconds) ? seconds : 0));
+  const minutes = Math.floor(totalSeconds / 60);
+  const remainder = totalSeconds % 60;
+  return minutes > 0 ? `${minutes} мин ${remainder} сек` : `${remainder} сек`;
+}
+
+function formatGa4Delta(current: number, previous: number): string {
+  if (previous === 0) return current > 0 ? "новое" : "0%";
+  const percent = ((current - previous) / previous) * 100;
+  const prefix = percent > 0 ? "+" : "";
+  return `${prefix}${formatDecimal(percent)}%`;
 }
 
 function referrerHost(value?: string | null): string | null {
@@ -192,11 +255,11 @@ async function loadAiBotTraffic(from: Date, to: Date, previousFrom: Date, previo
 }
 
 async function queryReferrerRows(from: Date, to: Date): Promise<PathCountRow[]> {
-  return prisma.$queryRaw<PathCountRow[]>`SELECT referrer AS path, count(*)::int AS count FROM "PageView" WHERE "createdAt" >= ${from} AND "createdAt" < ${to} AND referrer IS NOT NULL AND referrer <> '' GROUP BY referrer ORDER BY count DESC LIMIT 400`;
+  return prisma.$queryRaw<PathCountRow[]>`SELECT referrer AS path, count(*)::int AS count FROM "PageView" WHERE "createdAt" >= ${from} AND "createdAt" < ${to} AND path NOT LIKE ${SYNTHETIC_EVENT_PATH_PATTERN} AND referrer IS NOT NULL AND referrer <> '' GROUP BY referrer ORDER BY count DESC LIMIT 400`;
 }
 
 async function queryAiReferrerRows(from: Date, to: Date): Promise<PathCountRow[]> {
-  return prisma.$queryRaw<PathCountRow[]>`SELECT referrer AS path, count(DISTINCT COALESCE("visitorHash", id))::int AS count FROM "PageView" WHERE "createdAt" >= ${from} AND "createdAt" < ${to} AND referrer IS NOT NULL AND referrer <> '' GROUP BY referrer ORDER BY count DESC`;
+  return prisma.$queryRaw<PathCountRow[]>`SELECT referrer AS path, count(DISTINCT COALESCE("visitorHash", id))::int AS count FROM "PageView" WHERE "createdAt" >= ${from} AND "createdAt" < ${to} AND path NOT LIKE ${SYNTHETIC_EVENT_PATH_PATTERN} AND referrer IS NOT NULL AND referrer <> '' GROUP BY referrer ORDER BY count DESC`;
 }
 
 function aiCountsByLabel(rows: PathCountRow[]): Map<string, number> {
@@ -272,8 +335,8 @@ async function loadReferrerBreakdown(
     const [rows, previousRows, directRows, previousDirectRows] = await Promise.all([
       queryReferrerRows(from, to),
       queryReferrerRows(previousFrom, previousTo),
-      prisma.$queryRaw<CountRow[]>`SELECT count(*)::int AS count FROM "PageView" WHERE "createdAt" >= ${from} AND "createdAt" < ${to} AND (referrer IS NULL OR referrer = '')`,
-      prisma.$queryRaw<CountRow[]>`SELECT count(*)::int AS count FROM "PageView" WHERE "createdAt" >= ${previousFrom} AND "createdAt" < ${previousTo} AND (referrer IS NULL OR referrer = '')`,
+      prisma.$queryRaw<CountRow[]>`SELECT count(*)::int AS count FROM "PageView" WHERE "createdAt" >= ${from} AND "createdAt" < ${to} AND path NOT LIKE ${SYNTHETIC_EVENT_PATH_PATTERN} AND (referrer IS NULL OR referrer = '')`,
+      prisma.$queryRaw<CountRow[]>`SELECT count(*)::int AS count FROM "PageView" WHERE "createdAt" >= ${previousFrom} AND "createdAt" < ${previousTo} AND path NOT LIKE ${SYNTHETIC_EVENT_PATH_PATTERN} AND (referrer IS NULL OR referrer = '')`,
     ]);
 
     const own = ownHost();
@@ -370,19 +433,147 @@ export async function sendLeadTelegramNotification(lead: LeadNotification): Prom
   return sendTelegramAdminMessage(message);
 }
 
+function ga4UnavailableText(snapshot: Ga4Snapshot): string {
+  if (!snapshot.configured) {
+    return "Интеграция не настроена: проверь GA4_PROPERTY_ID и Google service account.";
+  }
+  if (snapshot.errorCode === "ga4_no_data") return "За выбранный период в GA4 пока нет данных.";
+  return "Google Analytics временно недоступен; собственная аналитика продолжает работать.";
+}
+
+function ga4DailyLines(snapshot: Ga4Snapshot): string[] {
+  if (!snapshot.available) {
+    return ["📈 GA4 — завершённый календарный день", `• ${ga4UnavailableText(snapshot)}`];
+  }
+
+  const leader = snapshot.channels[0];
+  return [
+    "📈 GA4 — завершённый календарный день",
+    "• Данные с учётом Consent Mode; не равны first-party статистике.",
+    `• Активные пользователи GA4: ${formatInteger(snapshot.totals.activeUsers)} (${formatGa4Delta(snapshot.totals.activeUsers, snapshot.previousTotals.activeUsers)})`,
+    `• Сессии: ${formatInteger(snapshot.totals.sessions)} (${formatGa4Delta(snapshot.totals.sessions, snapshot.previousTotals.sessions)})`,
+    `• Вовлечённость: ${formatRate(snapshot.totals.engagementRate)}`,
+    `• Среднее время сессии: ${formatDuration(snapshot.totals.averageSessionDuration)}`,
+    `• Главный канал: ${leader ? `${trimText(leader.channel, 60)} — ${formatInteger(leader.sessions)}` : "данных пока нет"}`,
+  ];
+}
+
+function ga4WeeklyLines(snapshot: Ga4Snapshot): string[] {
+  if (!snapshot.available) {
+    return ["📈 GA4 — 7 завершённых дней", `• ${ga4UnavailableText(snapshot)}`];
+  }
+
+  const leader = snapshot.channels[0];
+  const landing = snapshot.landingPages[0];
+  return [
+    "📈 GA4 — 7 завершённых дней",
+    "• Данные с учётом Consent Mode; не равны first-party статистике.",
+    `• Активные пользователи GA4: ${formatInteger(snapshot.totals.activeUsers)} (${formatGa4Delta(snapshot.totals.activeUsers, snapshot.previousTotals.activeUsers)})`,
+    `• Сессии: ${formatInteger(snapshot.totals.sessions)} (${formatGa4Delta(snapshot.totals.sessions, snapshot.previousTotals.sessions)})`,
+    `• Просмотры: ${formatInteger(snapshot.totals.screenPageViews)} (${formatGa4Delta(snapshot.totals.screenPageViews, snapshot.previousTotals.screenPageViews)})`,
+    `• Engagement rate: ${formatRate(snapshot.totals.engagementRate)}`,
+    `• Средняя длительность: ${formatDuration(snapshot.totals.averageSessionDuration)}`,
+    `• Главный канал: ${leader ? `${trimText(leader.channel, 60)} — ${formatInteger(leader.sessions)}` : "данных пока нет"}`,
+    `• Главная landing page: ${landing ? `${trimText(landing.path, 100)} — ${formatInteger(landing.sessions)}` : "данных пока нет"}`,
+  ];
+}
+
+function capitalize(value: string): string {
+  return value ? `${value[0]?.toUpperCase() ?? ""}${value.slice(1)}` : value;
+}
+
+/** Полный GA4-отчёт для команды /ga4; данные не смешиваются с PageView. */
+export async function buildGa4Report(now = new Date()): Promise<string> {
+  void now;
+  const snapshot = await fetchGa4Snapshot("weekly");
+  if (!snapshot.available) {
+    return [
+      "📈 SaaleWeb — GA4",
+      "",
+      `• ${ga4UnavailableText(snapshot)}`,
+      "• Собственная cookieless-аналитика SaaleWeb продолжает работать независимо.",
+    ].join("\n");
+  }
+
+  const channelLines =
+    snapshot.channels.length > 0
+      ? snapshot.channels.map(
+          (row, index) =>
+            `${index + 1}. ${trimText(row.channel, 60)} — ${formatInteger(row.sessions)} сессий`,
+        )
+      : ["• Каналы за период не определены."];
+  const landingLines =
+    snapshot.landingPages.length > 0
+      ? snapshot.landingPages.map(
+          (row, index) =>
+            `${index + 1}. ${trimText(row.path, 100)} — ${formatInteger(row.sessions)} сессий`,
+        )
+      : ["• Посадочные страницы за период не определены."];
+  const deviceLines =
+    snapshot.devices.length > 0
+      ? snapshot.devices.map(
+          (row) =>
+            `• ${capitalize(row.device)} — ${formatInteger(row.activeUsers)} пользователей / ${formatInteger(row.sessions)} сессий`,
+        )
+      : ["• Данных по устройствам пока нет."];
+  const countryLines =
+    snapshot.countries.length > 0
+      ? snapshot.countries.map(
+          (row) =>
+            `• ${row.country} — ${formatInteger(row.activeUsers)} пользователей / ${formatInteger(row.sessions)} сессий`,
+        )
+      : ["• Данных по странам пока нет."];
+  const eventLines = snapshot.events.map(
+    (row) => `• ${row.eventName} — ${formatInteger(row.eventCount)}`,
+  );
+
+  return [
+    "📈 SaaleWeb — GA4",
+    "",
+    `🕘 Период: ${snapshot.periodLabel}`,
+    "🔐 GA4 учитывает Consent Mode и может включать моделированные показатели; это не first-party статистика.",
+    "",
+    "📊 Аудитория",
+    `• Активные пользователи: ${formatInteger(snapshot.totals.activeUsers)} (${formatGa4Delta(snapshot.totals.activeUsers, snapshot.previousTotals.activeUsers)})`,
+    `• Сессии: ${formatInteger(snapshot.totals.sessions)} (${formatGa4Delta(snapshot.totals.sessions, snapshot.previousTotals.sessions)})`,
+    `• Просмотры страниц: ${formatInteger(snapshot.totals.screenPageViews)} (${formatGa4Delta(snapshot.totals.screenPageViews, snapshot.previousTotals.screenPageViews)})`,
+    `• Вовлечённые сессии: ${formatInteger(snapshot.totals.engagedSessions)} (${formatGa4Delta(snapshot.totals.engagedSessions, snapshot.previousTotals.engagedSessions)})`,
+    `• Engagement rate: ${formatRate(snapshot.totals.engagementRate)}`,
+    `• Средняя длительность сессии: ${formatDuration(snapshot.totals.averageSessionDuration)}`,
+    "",
+    "📣 Каналы",
+    ...channelLines,
+    "",
+    "🏁 Посадочные страницы",
+    ...landingLines,
+    "",
+    "📱 Устройства",
+    ...deviceLines,
+    "",
+    "🌍 Страны",
+    ...countryLines,
+    "",
+    "🎯 События",
+    ...eventLines,
+    ...(snapshot.errorCode === "ga4_partial_data"
+      ? ["", "⚠️ Часть дополнительных срезов GA4 временно недоступна."]
+      : []),
+  ].join("\n");
+}
+
 export async function buildDailySiteReport(now = new Date()): Promise<string> {
   const to = now;
   const from = new Date(to.getTime() - MS_IN_DAY);
   const previousFrom = new Date(from.getTime() - MS_IN_DAY);
   const previousTo = from;
-  const whereWindow = { createdAt: { gte: from, lt: to } };
-  const previousWhereWindow = { createdAt: { gte: previousFrom, lt: previousTo } };
+  const leadWindow = { createdAt: { gte: from, lt: to } };
+  const previousLeadWindow = { createdAt: { gte: previousFrom, lt: previousTo } };
 
   const [
     viewsTotal,
     previousViewsTotal,
-    uniqueRows,
-    previousUniqueRows,
+    uniqueTotal,
+    previousUniqueTotal,
     leadsTotal,
     previousLeadsTotal,
     leadsNew,
@@ -390,22 +581,22 @@ export async function buildDailySiteReport(now = new Date()): Promise<string> {
     localeRows,
     aiTraffic,
     referrers,
+    ga4,
   ] = await Promise.all([
-    prisma.pageView.count({ where: whereWindow }),
-    prisma.pageView.count({ where: previousWhereWindow }),
-    prisma.$queryRaw<CountRow[]>`SELECT count(DISTINCT "visitorHash")::int AS count FROM "PageView" WHERE "createdAt" >= ${from} AND "createdAt" < ${to} AND "visitorHash" IS NOT NULL`,
-    prisma.$queryRaw<CountRow[]>`SELECT count(DISTINCT "visitorHash")::int AS count FROM "PageView" WHERE "createdAt" >= ${previousFrom} AND "createdAt" < ${previousTo} AND "visitorHash" IS NOT NULL`,
-    prisma.lead.count({ where: whereWindow }),
-    prisma.lead.count({ where: previousWhereWindow }),
+    countRealPageViews(from, to),
+    countRealPageViews(previousFrom, previousTo),
+    countRealUniqueVisitors(from, to),
+    countRealUniqueVisitors(previousFrom, previousTo),
+    prisma.lead.count({ where: leadWindow }),
+    prisma.lead.count({ where: previousLeadWindow }),
     prisma.lead.count({ where: { status: "NEW" } }),
-    prisma.$queryRaw<PathCountRow[]>`SELECT path, count(*)::int AS count FROM "PageView" WHERE "createdAt" >= ${from} AND "createdAt" < ${to} GROUP BY path ORDER BY count DESC LIMIT 5`,
-    prisma.$queryRaw<LocaleCountRow[]>`SELECT locale, count(*)::int AS count FROM "PageView" WHERE "createdAt" >= ${from} AND "createdAt" < ${to} GROUP BY locale ORDER BY count DESC`,
+    queryTopRealPages(from, to, 5),
+    queryRealPageLocales(from, to),
     loadAiTraffic(from, to, previousFrom, previousTo),
     loadReferrerBreakdown(from, to, previousFrom, previousTo),
+    fetchGa4Snapshot("daily"),
   ]);
 
-  const uniqueTotal = countValue(uniqueRows);
-  const previousUniqueTotal = countValue(previousUniqueRows);
   const topPathLines =
     topPaths.length > 0
       ? topPaths.map((item, index) => `${index + 1}. ${item.path || "/"} — ${Number(item.count ?? 0)}`)
@@ -450,6 +641,9 @@ export async function buildDailySiteReport(now = new Date()): Promise<string> {
     "🎯 Заявки",
     `• Новые заявки: ${leadsTotal} (${formatDelta(leadsTotal - previousLeadsTotal)})`,
     `• Открытые заявки всего: ${leadsNew}`,
+    `• Ориентировочная конверсия посетитель → заявка: ${formatConversion(leadsTotal, uniqueTotal)}`,
+    "",
+    ...ga4DailyLines(ga4),
     "",
     "🤖 AI-поиск и ассистенты",
     ...aiBotLines,
@@ -474,14 +668,14 @@ export async function buildWeeklySiteReport(now = new Date()): Promise<string> {
   const from = new Date(to.getTime() - MS_IN_WEEK);
   const previousFrom = new Date(from.getTime() - MS_IN_WEEK);
   const previousTo = from;
-  const whereWindow = { createdAt: { gte: from, lt: to } };
-  const previousWhereWindow = { createdAt: { gte: previousFrom, lt: previousTo } };
+  const leadWindow = { createdAt: { gte: from, lt: to } };
+  const previousLeadWindow = { createdAt: { gte: previousFrom, lt: previousTo } };
 
   const [
     viewsTotal,
     previousViewsTotal,
-    uniqueRows,
-    previousUniqueRows,
+    uniqueTotal,
+    previousUniqueTotal,
     leadsTotal,
     previousLeadsTotal,
     leadsNew,
@@ -489,22 +683,22 @@ export async function buildWeeklySiteReport(now = new Date()): Promise<string> {
     localeRows,
     aiTraffic,
     referrers,
+    ga4,
   ] = await Promise.all([
-    prisma.pageView.count({ where: whereWindow }),
-    prisma.pageView.count({ where: previousWhereWindow }),
-    prisma.$queryRaw<CountRow[]>`SELECT count(DISTINCT "visitorHash")::int AS count FROM "PageView" WHERE "createdAt" >= ${from} AND "createdAt" < ${to} AND "visitorHash" IS NOT NULL`,
-    prisma.$queryRaw<CountRow[]>`SELECT count(DISTINCT "visitorHash")::int AS count FROM "PageView" WHERE "createdAt" >= ${previousFrom} AND "createdAt" < ${previousTo} AND "visitorHash" IS NOT NULL`,
-    prisma.lead.count({ where: whereWindow }),
-    prisma.lead.count({ where: previousWhereWindow }),
+    countRealPageViews(from, to),
+    countRealPageViews(previousFrom, previousTo),
+    countRealUniqueVisitors(from, to),
+    countRealUniqueVisitors(previousFrom, previousTo),
+    prisma.lead.count({ where: leadWindow }),
+    prisma.lead.count({ where: previousLeadWindow }),
     prisma.lead.count({ where: { status: "NEW" } }),
-    prisma.$queryRaw<PathCountRow[]>`SELECT path, count(*)::int AS count FROM "PageView" WHERE "createdAt" >= ${from} AND "createdAt" < ${to} GROUP BY path ORDER BY count DESC LIMIT 8`,
-    prisma.$queryRaw<LocaleCountRow[]>`SELECT locale, count(*)::int AS count FROM "PageView" WHERE "createdAt" >= ${from} AND "createdAt" < ${to} GROUP BY locale ORDER BY count DESC`,
+    queryTopRealPages(from, to, 8),
+    queryRealPageLocales(from, to),
     loadAiTraffic(from, to, previousFrom, previousTo),
     loadReferrerBreakdown(from, to, previousFrom, previousTo),
+    fetchGa4Snapshot("weekly"),
   ]);
 
-  const uniqueTotal = countValue(uniqueRows);
-  const previousUniqueTotal = countValue(previousUniqueRows);
   const topPathLines =
     topPaths.length > 0
       ? topPaths.map((item, index) => `${index + 1}. ${item.path || "/"} — ${Number(item.count ?? 0)}`)
@@ -537,12 +731,16 @@ export async function buildWeeklySiteReport(now = new Date()): Promise<string> {
     "",
     "📈 Трафик",
     `• Просмотры: ${viewsTotal} (${formatDelta(viewsTotal - previousViewsTotal)})`,
-    `• Посетители: ${uniqueTotal} (${formatDelta(uniqueTotal - previousUniqueTotal)})`,
+    // visitorHash intentionally rotates daily, so this is not a cross-week person count.
+    `• Дневные уникальные посетители: ${uniqueTotal} (${formatDelta(uniqueTotal - previousUniqueTotal)})`,
     `• Языки: ${localeLines}`,
     "",
     "🎯 Заявки",
     `• Новые заявки: ${leadsTotal} (${formatDelta(leadsTotal - previousLeadsTotal)})`,
     `• Открытые заявки всего: ${leadsNew}`,
+    `• Ориентировочная конверсия дневных уникальных посещений → заявка: ${formatConversion(leadsTotal, uniqueTotal)}`,
+    "",
+    ...ga4WeeklyLines(ga4),
     "",
     "🤖 AI-поиск и ассистенты",
     ...aiBotLines,
@@ -705,10 +903,10 @@ export async function buildTopPagesReport(now = new Date()): Promise<string> {
   const from7d = new Date(to.getTime() - MS_IN_WEEK);
 
   const [top24h, top7d, referrers7d, locales7d, aiPaths7d] = await Promise.all([
-    prisma.$queryRaw<PathCountRow[]>`SELECT path, count(*)::int AS count FROM "PageView" WHERE "createdAt" >= ${from24h} AND "createdAt" < ${to} GROUP BY path ORDER BY count DESC LIMIT 8`,
-    prisma.$queryRaw<PathCountRow[]>`SELECT path, count(*)::int AS count FROM "PageView" WHERE "createdAt" >= ${from7d} AND "createdAt" < ${to} GROUP BY path ORDER BY count DESC LIMIT 12`,
-    prisma.$queryRaw<PathCountRow[]>`SELECT COALESCE(NULLIF(referrer, ''), 'Прямой заход') AS path, count(*)::int AS count FROM "PageView" WHERE "createdAt" >= ${from7d} AND "createdAt" < ${to} GROUP BY 1 ORDER BY count DESC LIMIT 8`,
-    prisma.$queryRaw<LocaleCountRow[]>`SELECT locale, count(*)::int AS count FROM "PageView" WHERE "createdAt" >= ${from7d} AND "createdAt" < ${to} GROUP BY locale ORDER BY count DESC`,
+    queryTopRealPages(from24h, to, 8),
+    queryTopRealPages(from7d, to, 12),
+    queryTopRealReferrers(from7d, to, 8),
+    queryRealPageLocales(from7d, to),
     prisma.$queryRaw<PathCountRow[]>`SELECT path, count(*)::int AS count FROM "AiBotVisit" WHERE "createdAt" >= ${from7d} AND "createdAt" < ${to} GROUP BY path ORDER BY count DESC LIMIT 8`.catch(() => []),
   ]);
 
