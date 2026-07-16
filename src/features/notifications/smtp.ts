@@ -29,24 +29,45 @@ function smtpPort(): number {
   return Number.isFinite(value) && value > 0 ? value : 465;
 }
 
-function cleanEnv(value: string | undefined): string | undefined {
+export function normalizeSmtpEnvValue(value: string | undefined): string | undefined {
   const cleaned = value?.trim();
-  return cleaned || undefined;
+  if (!cleaned) return undefined;
+
+  const firstCharacter = cleaned.at(0);
+  const lastCharacter = cleaned.at(-1);
+  const hasMatchingWrapper =
+    cleaned.length >= 2 &&
+    (firstCharacter === `"` || firstCharacter === "'") &&
+    lastCharacter === firstCharacter;
+
+  if (!hasMatchingWrapper) return cleaned;
+
+  const unwrapped = cleaned.slice(1, -1).trim();
+  return unwrapped || undefined;
 }
 
 function smtpSecure(port: number): boolean {
-  const value = cleanEnv(process.env.SMTP_SECURE);
+  const value = normalizeSmtpEnvValue(process.env.SMTP_SECURE);
   if (value == null || value === "") return port === 465;
   return value === "true" || value === "1";
 }
 
 function fallbackFrom(): string | undefined {
-  return cleanEnv(process.env.SMTP_FROM) || cleanEnv(process.env.SMTP_USER);
+  return normalizeSmtpEnvValue(process.env.SMTP_FROM) || normalizeSmtpEnvValue(process.env.SMTP_USER);
 }
 
 function redactSensitive(value: string): string {
   let redacted = value;
-  for (const secret of [process.env.SMTP_PASSWORD, process.env.SMTP_USER]) {
+  const secrets = new Set(
+    [
+      process.env.SMTP_PASSWORD,
+      process.env.SMTP_USER,
+      normalizeSmtpEnvValue(process.env.SMTP_PASSWORD),
+      normalizeSmtpEnvValue(process.env.SMTP_USER),
+    ].filter((secret): secret is string => Boolean(secret)),
+  );
+
+  for (const secret of secrets) {
     if (secret) redacted = redacted.replaceAll(secret, "[redacted]");
   }
   return redacted;
@@ -74,9 +95,9 @@ function smtpErrorDetails(error: unknown): SmtpErrorDetails {
  * must not break contact/newsletter form submissions.
  */
 export async function sendSmtpMailDetailed(mail: SmtpMail): Promise<SmtpSendResult> {
-  const host = cleanEnv(process.env.SMTP_HOST);
-  const user = cleanEnv(process.env.SMTP_USER);
-  const pass = cleanEnv(process.env.SMTP_PASSWORD);
+  const host = normalizeSmtpEnvValue(process.env.SMTP_HOST);
+  const user = normalizeSmtpEnvValue(process.env.SMTP_USER);
+  const pass = normalizeSmtpEnvValue(process.env.SMTP_PASSWORD);
   const port = smtpPort();
 
   if (!host || !user || !pass) {

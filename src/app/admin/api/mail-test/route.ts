@@ -8,7 +8,11 @@ import {
   sendTransactionalMail,
   type MailProvider,
 } from "@/features/notifications/transport";
-import { sendSmtpMailDetailed, type SmtpSendResult } from "@/features/notifications/smtp";
+import {
+  normalizeSmtpEnvValue,
+  sendSmtpMailDetailed,
+  type SmtpSendResult,
+} from "@/features/notifications/smtp";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -28,8 +32,12 @@ type MailDiagnostics = {
   hasSmtpPassword: boolean;
   smtpUserLength: number;
   smtpPasswordLength: number;
+  smtpUserNormalizedLength: number;
+  smtpPasswordNormalizedLength: number;
   smtpUserHasEdgeWhitespace: boolean;
   smtpPasswordHasEdgeWhitespace: boolean;
+  smtpUserHasWrappingQuotes: boolean;
+  smtpPasswordHasWrappingQuotes: boolean;
   smtpPort: string;
   smtpSecure: string;
   hasRecipient: boolean;
@@ -38,6 +46,14 @@ type MailDiagnostics = {
 
 function hasEnv(name: string) {
   return Boolean(process.env[name]?.trim());
+}
+
+function hasWrappingQuotes(value: string | undefined) {
+  const cleaned = value?.trim();
+  if (!cleaned || cleaned.length < 2) return false;
+
+  const firstCharacter = cleaned.at(0);
+  return (firstCharacter === `"` || firstCharacter === "'") && cleaned.at(-1) === firstCharacter;
 }
 
 function recipient() {
@@ -80,8 +96,12 @@ function diagnostics(requestedProvider?: MailProvider): MailDiagnostics {
     hasSmtpPassword: hasEnv("SMTP_PASSWORD"),
     smtpUserLength: process.env.SMTP_USER?.trim().length ?? 0,
     smtpPasswordLength: process.env.SMTP_PASSWORD?.trim().length ?? 0,
+    smtpUserNormalizedLength: normalizeSmtpEnvValue(process.env.SMTP_USER)?.length ?? 0,
+    smtpPasswordNormalizedLength: normalizeSmtpEnvValue(process.env.SMTP_PASSWORD)?.length ?? 0,
     smtpUserHasEdgeWhitespace: process.env.SMTP_USER !== process.env.SMTP_USER?.trim(),
     smtpPasswordHasEdgeWhitespace: process.env.SMTP_PASSWORD !== process.env.SMTP_PASSWORD?.trim(),
+    smtpUserHasWrappingQuotes: hasWrappingQuotes(process.env.SMTP_USER),
+    smtpPasswordHasWrappingQuotes: hasWrappingQuotes(process.env.SMTP_PASSWORD),
     smtpPort: process.env.SMTP_PORT || "465",
     smtpSecure: process.env.SMTP_SECURE || "",
     hasRecipient: Boolean(recipient()),
