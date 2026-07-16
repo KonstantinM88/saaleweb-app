@@ -36,8 +36,8 @@ export function Hero() {
       </div>
 
       <Container className="grid items-center gap-10 md:grid-cols-[1.02fr_0.98fr] md:gap-14">
-        <div className="hero-stagger">
-          <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-line bg-white/70 px-3.5 py-1.5 text-[13px] font-medium text-gray-700 backdrop-blur-sm">
+        <div>
+          <span className="hero-reveal hero-reveal-1 mb-6 inline-flex items-center gap-2 rounded-full border border-line bg-white/70 px-3.5 py-1.5 text-[13px] font-medium text-gray-700 backdrop-blur-sm">
             <span className="h-[7px] w-[7px] rounded-full bg-success [animation:pulse-dot_2.4s_ease-out_infinite]" />
             {t("badge")}
           </span>
@@ -53,7 +53,7 @@ export function Hero() {
             {t("lead2")}
           </p>
 
-          <div className="flex flex-wrap items-center gap-3.5">
+          <div className="hero-reveal hero-reveal-2 flex flex-wrap items-center gap-3.5">
             <Button href={getContactHref(locale)}>
               {t("ctaPrimary")}
               <span
@@ -68,7 +68,7 @@ export function Hero() {
             </Button>
           </div>
 
-          <p className="mt-5 flex items-center gap-2 text-[13.5px] text-muted">
+          <p className="hero-reveal hero-reveal-3 mt-5 flex items-center gap-2 text-[13.5px] text-muted">
             <Check size={16} className="text-success" />
             {t("note")}
           </p>

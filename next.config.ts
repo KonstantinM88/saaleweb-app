@@ -44,6 +44,9 @@ const nextConfig: NextConfig = {
   // sharp must stay external (native binaries) for the image-upload route.
   serverExternalPackages: ["sharp"],
   experimental: {
+    // This Tailwind marketing site is dominated by first-time mobile visits.
+    // Inline critical CSS removes two render-blocking stylesheet round trips.
+    inlineCss: true,
     optimizePackageImports: ["lucide-react"],
   },
 };

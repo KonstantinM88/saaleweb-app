@@ -1222,38 +1222,31 @@ html.custom-cursor *:not(input):not(textarea):not(select) {
     }
   }
 
-  .hero-stagger > * {
+  /*
+   * Keep the H1 and lead paragraph visible on first paint. They are the
+   * mobile LCP candidates, so only supporting hero controls animate in.
+   */
+  .hero-reveal {
     opacity: 0;
-    animation: hero-rise 0.9s cubic-bezier(0.2, 0.65, 0.25, 1) forwards;
+    animation: hero-rise 0.65s cubic-bezier(0.2, 0.65, 0.25, 1) forwards;
   }
-  .hero-stagger > *:nth-child(1) {
-    animation-delay: 0.05s;
+  .hero-reveal-1 {
+    animation-delay: 0.04s;
   }
-  .hero-stagger > *:nth-child(2) {
-    animation-delay: 0.16s;
+  .hero-reveal-2 {
+    animation-delay: 0.12s;
   }
-  .hero-stagger > *:nth-child(3) {
-    animation-delay: 0.3s;
-  }
-  .hero-stagger > *:nth-child(4) {
-    animation-delay: 0.44s;
-  }
-  .hero-stagger > *:nth-child(5) {
-    animation-delay: 0.56s;
-  }
-  .hero-stagger > *:nth-child(6) {
-    animation-delay: 0.66s;
+  .hero-reveal-3 {
+    animation-delay: 0.2s;
   }
   @keyframes hero-rise {
     from {
       opacity: 0;
-      transform: translateY(22px);
-      filter: blur(6px);
+      transform: translateY(12px);
     }
     to {
       opacity: 1;
       transform: translateY(0);
-      filter: blur(0);
     }
   }
 
