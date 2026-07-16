@@ -68,7 +68,7 @@ export function Footer() {
                 href={siteConfig.googleBusiness.directionsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-1.5 inline-block font-semibold text-brand-purple transition hover:underline"
+                className="mt-1.5 inline-block font-semibold text-[#6D28D9] underline-offset-4 transition hover:underline focus-visible:rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#6D28D9]"
               >
                 {t("route")}
               </a>
