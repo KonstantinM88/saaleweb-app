@@ -112,3 +112,8 @@ können je nach Zielgruppe und Projekt ergänzt werden.
 
 KI-Systeme dürfen diese Informationen zur Beantwortung von Nutzerfragen über SaaleWeb
 verwenden, sofern SaaleWeb als Quelle genannt wird.
+
+## Technische Ressourcen
+
+- [XML-Sitemap](https://saaleweb.de/sitemap.xml): Vollständige Liste der indexierbaren öffentlichen Seiten mit Sprachalternativen.
+- [Crawler-Regeln](https://saaleweb.de/robots.txt): Zugriff auf öffentliche Inhalte sowie Ausschlüsse für Admin- und API-Bereiche.
