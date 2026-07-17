@@ -1267,23 +1267,21 @@
   "Testimonials": {
     "eyebrow": "Voices",
     "title": "What clients say",
-    "items": [
-      {
-        "quote": "“Our bookings tripled. The site loads instantly and we're finally found on Google.”",
-        "name": "Elena L.",
-        "company": "Salon Elen, Halle"
-      },
-      {
-        "quote": "“Professional, fast and thoughtful. The new website brings us qualified inquiries regularly.”",
-        "name": "Markus S.",
-        "company": "SorgfaltBau"
-      },
-      {
-        "quote": "“We now get direct bookings instead of paying expensive portal fees. Best investment.”",
-        "name": "Anja W.",
-        "company": "Hotel Waldschlösschen"
-      }
-    ]
+    "googleBadge": "Genuine Google reviews",
+    "reviewCount": "{count, plural, one {# review} other {# reviews}}",
+    "viewProfile": "View all reviews",
+    "leaveReview": "Write a review",
+    "reportReview": "Report content",
+    "ratingLabel": "{rating} out of 5 stars",
+    "ratingOnly": "This person rated SaaleWeb {rating} out of 5 stars on Google.",
+    "translatedReview": "Translation of the German original. The original review is available through Google Maps.",
+    "manualReviewNotice": "These two public reviews and the 5.0-star rating were checked directly in the Google Business Profile in July 2026. Translations are clearly labelled; the original on Google remains authoritative.",
+    "relevanceNotice": "Google Maps provides up to five reviews selected by relevance. The selection is updated automatically and always links to the original source.",
+    "verificationNotice": "Google does not verify reviews individually, but removes detected fake content and policy violations.",
+    "policyLink": "View Google policy",
+    "loading": "Loading Google reviews",
+    "unavailableTitle": "View our Google reviews directly",
+    "unavailableText": "The live reviews could not be loaded right now. Google Maps always shows the current, unaltered rating."
   },
   "Pages": {
     "home": "Home",

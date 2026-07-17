@@ -1267,23 +1267,21 @@
   "Testimonials": {
     "eyebrow": "Stimmen",
     "title": "Was Kunden sagen",
-    "items": [
-      {
-        "quote": "„Unsere Buchungen haben sich verdreifacht. Die Seite lädt sofort und wir werden endlich bei Google gefunden.“",
-        "name": "Elena L.",
-        "company": "Salon Elen, Halle"
-      },
-      {
-        "quote": "„Professionell, schnell und mitdenkend. Die neue Website bringt uns regelmäßig qualifizierte Anfragen.“",
-        "name": "Markus S.",
-        "company": "SorgfaltBau"
-      },
-      {
-        "quote": "„Wir bekommen jetzt Direktbuchungen statt teure Portalgebühren zu zahlen. Beste Investition.“",
-        "name": "Anja W.",
-        "company": "Hotel Waldschlösschen"
-      }
-    ]
+    "googleBadge": "Echte Google-Rezensionen",
+    "reviewCount": "{count, plural, one {# Rezension} other {# Rezensionen}}",
+    "viewProfile": "Alle Rezensionen",
+    "leaveReview": "Rezension schreiben",
+    "reportReview": "Inhalt melden",
+    "ratingLabel": "{rating} von 5 Sternen",
+    "ratingOnly": "Diese Person hat SaaleWeb auf Google mit {rating} von 5 Sternen bewertet.",
+    "translatedReview": "Übersetzung des deutschen Originaltexts. Die Originalrezension ist über Google Maps erreichbar.",
+    "manualReviewNotice": "Diese beiden öffentlichen Rezensionen und die Bewertung von 5,0 Sternen wurden im Juli 2026 direkt im Google-Unternehmensprofil geprüft. Übersetzungen sind deutlich gekennzeichnet; maßgeblich bleibt das Original auf Google.",
+    "relevanceNotice": "Google Maps stellt maximal fünf nach Relevanz ausgewählte Rezensionen bereit. Die Auswahl wird automatisch aktualisiert und führt immer zur Originalquelle.",
+    "verificationNotice": "Google prüft Rezensionen nicht einzeln, entfernt jedoch erkannte Fälschungen und Richtlinienverstöße.",
+    "policyLink": "Google-Richtlinie ansehen",
+    "loading": "Google-Rezensionen werden geladen",
+    "unavailableTitle": "Unsere Google-Rezensionen direkt ansehen",
+    "unavailableText": "Die Live-Rezensionen konnten gerade nicht geladen werden. Auf Google Maps sehen Sie jederzeit die aktuelle, unveränderte Bewertung."
   },
   "Pages": {
     "home": "Start",

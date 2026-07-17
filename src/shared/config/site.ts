@@ -50,12 +50,8 @@ export const siteConfig = {
       "https://www.google.com/maps/dir/?api=1&destination=SaaleWeb%2C%20Hettstedter%20Str.%2064%2C%2006124%20Halle%20(Saale)",
     /** Direct "write a review" link. */
     reviewUrl: "https://g.page/r/CQgPij2bE5yLEBM/review",
-    /**
-     * TODO: real Place ID ("ChIJ..."), find via
-     * https://developers.google.com/maps/documentation/places/web-service/place-id
-     * Empty string = not set; nothing placeholder-like is emitted to production.
-     */
-    placeId: "",
+    /** Public, verified Google Place ID for direct Places API lookups. */
+    placeId: "ChIJpZR1A7F9pkcRCA-KPZsTnIs",
     /** Exact location (from the shared Maps link: !1d=lng, !2d=lat). */
     latitude: 51.4738593,
     longitude: 11.9106955,
