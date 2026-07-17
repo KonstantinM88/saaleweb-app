@@ -5,6 +5,10 @@ export const routing = defineRouting({
   defaultLocale: "de",
   // German lives at "/", English at "/en", Russian at "/ru"
   localePrefix: "as-needed",
+  // Do not redirect visitors or crawlers based on Accept-Language or the
+  // NEXT_LOCALE cookie. Unprefixed URLs always resolve to German, while
+  // explicit /en and /ru URLs keep their requested locale.
+  localeDetection: false,
   // Localized URL segments. The keys are the internal (canonical) pathnames
   // that match the App Router folder structure; the values are the public,
   // per-locale URLs that next-intl rewrites to/from.
