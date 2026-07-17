@@ -85,7 +85,7 @@ function readingTimeFromContent(content: string): number {
 
 async function ensureAuthor(): Promise<string> {
   const existing = await prisma.author.findFirst({
-    where: { name: { in: ["Konstantin Mykhailov", "Konstantin Michailow"] } },
+    where: { name: "Konstantin Mykhailov" },
     select: { id: true },
   });
   if (existing) return existing.id;

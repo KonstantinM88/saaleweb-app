@@ -10,6 +10,11 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
         disallow: [...robotsDisallow],
       },
+      {
+        userAgent: "OAI-SearchBot",
+        allow: "/",
+        disallow: [...robotsDisallow],
+      },
     ],
     sitemap: `${siteConfig.url}/sitemap.xml`,
     host: siteConfig.url,

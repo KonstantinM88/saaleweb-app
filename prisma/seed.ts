@@ -164,7 +164,7 @@ async function seedFaq() {
 
 async function seedBlogAuthor() {
   const existingAuthor = await prisma.author.findFirst({
-    where: { name: { in: ["Konstantin Mykhailov", "Konstantin Michailow"] } },
+    where: { name: "Konstantin Mykhailov" },
     select: { id: true },
   });
 
