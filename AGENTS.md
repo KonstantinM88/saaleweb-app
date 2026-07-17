@@ -215,6 +215,7 @@ Instructions and project memory for coding agents working in this repository.
 
 ## Stack Notes
 
+- Security dependency baseline (2026-07-17): keep the `package.json` overrides for `postcss@8.5.15` and `@hono/node-server@1.19.13`. Next.js 16.2.10 otherwise pins vulnerable `postcss@8.4.31`, while Prisma 7.8.0 tooling otherwise resolves the vulnerable Hono patch. The verified dependency tree uses `undici@6.27.0` through `@vercel/blob@2.6.1` and `esbuild@0.28.1` through `tsx@4.23.1`; `npm audit` reports zero vulnerabilities. Do not replace this with `npm audit fix --force` or downgrade Next/Prisma.
 - Next.js 16 uses `src/proxy.ts` instead of `middleware.ts`.
 - next-intl 4 `NextIntlClientProvider` is used without explicit props because messages are inherited from `src/i18n/request.ts`.
 - `getRequestConfig` must return `locale`.
