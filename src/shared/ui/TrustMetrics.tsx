@@ -17,7 +17,7 @@ type MetricStyle = CSSProperties & {
   "--metric-progress": string;
 };
 
-function handlePointerMove(event: PointerEvent<HTMLDivElement>) {
+function handlePointerMove(event: PointerEvent<HTMLLIElement>) {
   if (event.pointerType !== "mouse") return;
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   if (!window.matchMedia("(pointer: fine)").matches) return;
@@ -34,7 +34,7 @@ function handlePointerMove(event: PointerEvent<HTMLDivElement>) {
   card.dataset.active = "true";
 }
 
-function handlePointerLeave(event: PointerEvent<HTMLDivElement>) {
+function handlePointerLeave(event: PointerEvent<HTMLLIElement>) {
   const card = event.currentTarget;
   card.style.setProperty("--metric-x", "50%");
   card.style.setProperty("--metric-y", "50%");
@@ -50,7 +50,7 @@ export function TrustMetrics({ items }: { items: TrustMetric[] }) {
       <div aria-hidden className="service-trust-aura service-trust-aura-right" />
       <div aria-hidden className="service-trust-grid" />
 
-      <dl className="relative z-10 grid grid-cols-2 gap-2.5 sm:gap-4 lg:grid-cols-4">
+      <ul className="relative z-10 grid grid-cols-2 gap-2.5 sm:gap-4 lg:grid-cols-4">
         {items.map((item, index) => {
           const Icon = icons[index] ?? ShieldCheck;
           const style: MetricStyle = {
@@ -59,7 +59,7 @@ export function TrustMetrics({ items }: { items: TrustMetric[] }) {
           };
 
           return (
-            <div
+            <li
               key={item.label}
               className="service-trust-card"
               style={style}
@@ -78,21 +78,21 @@ export function TrustMetrics({ items }: { items: TrustMetric[] }) {
                   </span>
                 </div>
 
-                <dt className="mt-4 whitespace-nowrap text-[clamp(22px,6.4vw,32px)] font-extrabold leading-none tracking-[-0.045em] text-dark sm:mt-5">
+                <strong className="mt-4 block whitespace-nowrap text-[clamp(22px,6.4vw,32px)] font-extrabold leading-none tracking-[-0.045em] text-dark sm:mt-5">
                   <CountUp value={item.value} duration={1050 + index * 100} />
-                </dt>
-                <dd className="mt-2 text-[11px] font-medium leading-tight text-muted sm:text-[13px]">
+                </strong>
+                <span className="mt-2 block text-[11px] font-medium leading-tight text-muted sm:text-[13px]">
                   {item.label}
-                </dd>
+                </span>
 
                 <span className="service-trust-track mt-auto" aria-hidden>
                   <span />
                 </span>
               </div>
-            </div>
+            </li>
           );
         })}
-      </dl>
+      </ul>
     </div>
   );
 }

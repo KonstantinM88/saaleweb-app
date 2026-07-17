@@ -50,7 +50,6 @@ export function Footer() {
                 href={siteConfig.googleBusiness.placeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={`${siteConfig.name}, ${siteConfig.address.street}, ${siteConfig.address.postalCode} ${siteConfig.address.locality} — Google Maps`}
                 className="transition hover:text-dark"
               >
                 <span className="font-bold text-dark">{siteConfig.name}</span>

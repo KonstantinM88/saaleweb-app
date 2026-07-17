@@ -92,7 +92,11 @@ export function ProjectGrid({
   return (
     <div>
       {tags.length > 1 && (
-        <div className="mb-8 flex flex-wrap gap-2" aria-label={allLabel}>
+        <div
+          role="group"
+          aria-label={allLabel}
+          className="mb-8 flex flex-wrap gap-2"
+        >
           <FilterChip
             label={allLabel}
             active={activeTag === null}
@@ -114,7 +118,6 @@ export function ProjectGrid({
           <Link
             key={item.slug}
             href={{ pathname: "/projekte/[slug]", params: { slug: item.slug } }}
-            aria-label={`${viewLabel}: ${item.title}`}
             className="group flex h-full flex-col overflow-hidden rounded-[18px] border border-line bg-white transition-all duration-300 hover:-translate-y-1.5 hover:border-transparent hover:shadow-lift focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2"
           >
             <ProjectCover item={item} />
@@ -133,7 +136,7 @@ export function ProjectGrid({
                 ) : (
                   <span />
                 )}
-                <span className="inline-flex items-center gap-1 text-[13px] font-semibold text-brand-purple">
+                <span className="inline-flex items-center gap-1 text-[13px] font-semibold text-[#6D28D9]">
                   {viewLabel}
                   <ArrowUpRight size={14} aria-hidden />
                 </span>

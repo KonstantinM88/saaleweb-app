@@ -46,7 +46,11 @@ function formattedReviewDate(review: GoogleBusinessReview, locale: AppLocale) {
 
 function ReviewStars({ rating, label }: { rating: number; label: string }) {
   return (
-    <div className="flex gap-0.5 text-warning" aria-label={label}>
+    <div
+      role="img"
+      aria-label={label}
+      className="flex gap-0.5 text-warning"
+    >
       {Array.from({ length: 5 }).map((_, index) => {
         const filled = index < clampRating(rating);
         return (
