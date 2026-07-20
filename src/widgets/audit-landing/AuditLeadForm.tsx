@@ -4,6 +4,7 @@ import { useActionState } from "react";
 import { submitContact, type ContactState } from "@/features/contact/actions";
 import { useTrackFormSuccess } from "@/features/analytics/useTrackFormSuccess";
 import { useLeadAttributionSubmission } from "@/features/analytics/useLeadAttributionSubmission";
+import { TurnstileField } from "@/features/captcha/TurnstileField";
 import type { AuditLandingCopy } from "./auditContent";
 
 const initialState: ContactState = { status: "idle" };
@@ -70,7 +71,13 @@ export function AuditLeadForm({ copy, locale }: { copy: AuditLandingCopy["form"]
         <textarea name="message" rows={3} className={inputCls} />
       </label>
 
-      {state.status === "error" && (
+      <TurnstileField
+        action="website_audit"
+        serverError={state.status === "error" && state.message === "captcha"}
+        resetSignal={state}
+      />
+
+      {state.status === "error" && state.message !== "captcha" && (
         <p className="text-sm font-semibold text-brand-pink" role="alert">
           {copy.error}
         </p>

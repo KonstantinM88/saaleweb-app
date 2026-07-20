@@ -351,6 +351,15 @@
     "success": "Thanks! We'll get back to you within 24 hours.",
     "error": "Please check your input and try again."
   },
+  "Captcha": {
+    "label": "Security check",
+    "hint": "Protects this form from automated spam.",
+    "loading": "Preparing the security check …",
+    "ready": "If requested, please complete the check shown above.",
+    "verified": "Security check completed.",
+    "error": "Please complete the security check and submit your request again.",
+    "loadError": "The security check could not be loaded. Please check your connection and try again."
+  },
   "ContactPage": {
     "label": "Contact",
     "metaTitle": "Contact SaaleWeb — Web Design, SEO & AI Optimization from Halle",

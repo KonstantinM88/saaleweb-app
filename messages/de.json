@@ -351,6 +351,15 @@
     "success": "Danke! Wir melden uns innerhalb von 24 Stunden.",
     "error": "Bitte prüfen Sie Ihre Eingaben und versuchen Sie es erneut."
   },
+  "Captcha": {
+    "label": "Sicherheitsprüfung",
+    "hint": "Schützt dieses Formular vor automatisiertem Spam.",
+    "loading": "Sicherheitsprüfung wird vorbereitet …",
+    "ready": "Bitte bestätigen Sie bei Bedarf die oben angezeigte Prüfung.",
+    "verified": "Sicherheitsprüfung abgeschlossen.",
+    "error": "Bitte schließen Sie die Sicherheitsprüfung ab und senden Sie die Anfrage erneut.",
+    "loadError": "Die Sicherheitsprüfung konnte nicht geladen werden. Bitte prüfen Sie Ihre Verbindung und versuchen Sie es erneut."
+  },
   "ContactPage": {
     "label": "Kontakt",
     "metaTitle": "Kontakt zu SaaleWeb — Webdesign, SEO & KI-Optimierung aus Halle",

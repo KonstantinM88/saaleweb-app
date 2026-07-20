@@ -7,6 +7,7 @@ import { Container } from "@/shared/ui/Container";
 import { submitContact, type ContactState } from "@/features/contact/actions";
 import { useTrackFormSuccess } from "@/features/analytics/useTrackFormSuccess";
 import { useLeadAttributionSubmission } from "@/features/analytics/useLeadAttributionSubmission";
+import { TurnstileField } from "@/features/captcha/TurnstileField";
 
 type AuditPoint = {
   title: string;
@@ -118,7 +119,12 @@ export function WebsiteAuditSection() {
                     placeholder={t("message")}
                     className={inputCls}
                   />
-                  {state.status === "error" && (
+                  <TurnstileField
+                    action="website_audit"
+                    serverError={state.status === "error" && state.message === "captcha"}
+                    resetSignal={state}
+                  />
+                  {state.status === "error" && state.message !== "captcha" && (
                     <p className="text-sm font-semibold text-brand-pink">{t("error")}</p>
                   )}
                   <button

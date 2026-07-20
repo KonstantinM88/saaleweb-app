@@ -12,11 +12,12 @@ import {
   parseLeadAttributionFormValue,
 } from "@/features/analytics/attribution.server";
 import type { LeadConversionEvent } from "@/features/analytics/attribution";
+import { turnstileRemoteIp, verifyTurnstileToken } from "@/features/captcha/turnstile";
 import { contactSchema } from "./schema";
 
 export type ContactState = {
   status: "idle" | "success" | "error";
-  message?: string;
+  message?: "validation" | "captcha" | "server";
   created?: boolean;
   conversion?: LeadConversionEvent;
 };
@@ -64,6 +65,42 @@ export async function submitContact(
       fallbackConversionPage,
     );
     const submissionId = parsed.data.submissionId || null;
+
+    // A retried request that already created a lead remains idempotently
+    // successful and must not consume a new single-use Turnstile token.
+    if (submissionId) {
+      const duplicate = await prisma.lead.findUnique({
+        where: { submissionId },
+        select: { id: true },
+      });
+      if (duplicate) {
+        console.info("[contact] Duplicate submission accepted idempotently.", {
+          formName: parsed.data.source,
+          captureMode: attribution.captureMode,
+          classifiedSource: attribution.last.source,
+          classifiedMedium: attribution.last.medium,
+          submissionResult: "duplicate",
+        });
+        return { status: "success", created: false };
+      }
+    }
+
+    const captcha = await verifyTurnstileToken({
+      token: formData.get("cf-turnstile-response"),
+      expectedAction: parsed.data.source,
+      remoteIp: turnstileRemoteIp(requestHeaders),
+      idempotencyKey: submissionId,
+    });
+    if (!captcha.success) {
+      console.warn("[captcha] Contact submission rejected.", {
+        formName: parsed.data.source,
+        configured: captcha.configured,
+        reason: captcha.reason,
+        errorCodes: captcha.errorCodes,
+      });
+      return { status: "error", message: "captcha" };
+    }
+
     const baseMessage =
       parsed.data.message?.trim() ||
       (parsed.data.source === "website_audit"

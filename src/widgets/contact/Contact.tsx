@@ -7,6 +7,7 @@ import { BrandText } from "@/shared/ui/BrandText";
 import { submitContact, type ContactState } from "@/features/contact/actions";
 import { useTrackFormSuccess } from "@/features/analytics/useTrackFormSuccess";
 import { useLeadAttributionSubmission } from "@/features/analytics/useLeadAttributionSubmission";
+import { TurnstileField } from "@/features/captcha/TurnstileField";
 
 const initialState: ContactState = { status: "idle" };
 
@@ -74,7 +75,12 @@ export function Contact({
                 <input name="email" type="email" required placeholder={t("email")} className={inputCls} />
                 <input name="company" placeholder={t("company")} className={inputCls} />
                 <textarea name="message" required rows={4} placeholder={t("message")} className={inputCls} />
-                {state.status === "error" && (
+                <TurnstileField
+                  action={source}
+                  serverError={state.status === "error" && state.message === "captcha"}
+                  resetSignal={state}
+                />
+                {state.status === "error" && state.message !== "captcha" && (
                   <p className="text-sm text-brand-pink">{t("error")}</p>
                 )}
                 <button

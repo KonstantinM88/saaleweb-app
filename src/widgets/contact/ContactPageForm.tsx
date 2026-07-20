@@ -6,6 +6,7 @@ import { ArrowRight, CheckCircle2, Sparkles } from "lucide-react";
 import { submitContact, type ContactState } from "@/features/contact/actions";
 import { useTrackFormSuccess } from "@/features/analytics/useTrackFormSuccess";
 import { useLeadAttributionSubmission } from "@/features/analytics/useLeadAttributionSubmission";
+import { TurnstileField } from "@/features/captcha/TurnstileField";
 import { BrandText } from "@/shared/ui/BrandText";
 
 const initialState: ContactState = { status: "idle" };
@@ -279,7 +280,16 @@ export function ContactPageForm() {
         </p>
       ) : null}
 
-      {(state.status === "error" || Object.keys(fieldErrors).length > 0) && (
+      <div className="mt-5">
+        <TurnstileField
+          action="contact_page"
+          serverError={state.status === "error" && state.message === "captcha"}
+          resetSignal={state}
+        />
+      </div>
+
+      {((state.status === "error" && state.message !== "captcha") ||
+        Object.keys(fieldErrors).length > 0) && (
         <p className="mt-4 rounded-2xl border border-brand-pink/25 bg-brand-pink/10 px-4 py-3 text-sm font-semibold text-[#BE185D]" role="alert">
           {Object.keys(fieldErrors).length > 0 ? t("validation.summary") : t("error")}
         </p>
