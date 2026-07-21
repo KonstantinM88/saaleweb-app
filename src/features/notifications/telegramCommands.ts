@@ -16,6 +16,7 @@ import {
 } from "./telegramAssistant";
 import { buildHealthReport } from "./telegramHealth";
 import { buildSeoScoreReport } from "@/features/seo-monitor/seoScore";
+import { buildAiVisibilityReply, handleAiVisibilityCallback } from "./telegramAiVisibility";
 import { answerTelegramCallbackQuery, sendTelegramChatMessage } from "./telegram";
 
 const BUTTON_HEALTH = "🩺 Проверить сайт";
@@ -27,6 +28,7 @@ const BUTTON_TOP = "🏆 Топ-страницы";
 const BUTTON_LEADS = "🎯 Заявки";
 const BUTTON_ASSISTANT = "💬 AI-диалоги";
 const BUTTON_SEO = "🧮 SEO Score";
+const BUTTON_VISIBILITY = "🔎 AI-видимость";
 const BUTTON_HELP = "❔ Помощь";
 
 function commandKeyboard() {
@@ -36,7 +38,8 @@ function commandKeyboard() {
       [{ text: BUTTON_WEEK }, { text: BUTTON_GA4 }],
       [{ text: BUTTON_AI }, { text: BUTTON_TOP }],
       [{ text: BUTTON_LEADS }, { text: BUTTON_SEO }],
-      [{ text: BUTTON_ASSISTANT }, { text: BUTTON_HELP }],
+      [{ text: BUTTON_VISIBILITY }, { text: BUTTON_ASSISTANT }],
+      [{ text: BUTTON_HELP }],
     ],
     resize_keyboard: true,
     is_persistent: true,
@@ -58,10 +61,11 @@ function helpText(): string {
     `${BUTTON_LEADS} — последние заявки, статусы и источники`,
     `${BUTTON_ASSISTANT} — последние переписки с AI-ассистентом`,
     `${BUTTON_SEO} — ежедневная оценка SEO/GEO/AIO по реальным данным`,
+    `${BUTTON_VISIBILITY} — проверка упоминаний SaaleWeb в четырёх AI-поисках`,
     `${BUTTON_HELP} — показать это меню`,
     "",
     "Текстовые команды:",
-    "/health, /report, /week, /ga4, /ai, /top, /leads, /seo, /assistant, /help",
+    "/health, /report, /week, /ga4, /ai, /top, /leads, /seo, /visibility, /assistant, /help",
     "/seo new — пересчитать SEO Score без кэша",
     "",
     "AI-диалоги:",
@@ -83,6 +87,7 @@ function normalizeCommand(text: string): string {
     [BUTTON_LEADS]: "/leads",
     [BUTTON_ASSISTANT]: "/assistant",
     [BUTTON_SEO]: "/seo",
+    [BUTTON_VISIBILITY]: "/visibility",
     [BUTTON_HELP]: "/help",
   };
 
@@ -134,6 +139,11 @@ export async function handleTelegramCommand(chatId: string | number, text: strin
     return sendWithMenu(chatId, await buildSeoScoreReport({ forceFresh: fresh }));
   }
 
+  if (command === "/visibility") {
+    const reply = await buildAiVisibilityReply(args[0]);
+    return sendTelegramChatMessage(chatId, reply.text, { replyMarkup: reply.replyMarkup });
+  }
+
   if (command === "/assistant") {
     const reply = await buildAssistantConversationReply(args[0]);
     return sendTelegramChatMessage(chatId, reply.text, { replyMarkup: reply.replyMarkup });
@@ -161,10 +171,15 @@ export async function handleTelegramCallback(
 ): Promise<boolean> {
   await answerTelegramCallbackQuery(callbackQueryId);
 
-  if (!data.startsWith("assistant:")) {
-    return sendWithMenu(chatId, `Неизвестное действие: ${data}`);
+  if (data.startsWith("aiv:")) {
+    const reply = await handleAiVisibilityCallback(data);
+    return sendTelegramChatMessage(chatId, reply.text, { replyMarkup: reply.replyMarkup });
   }
 
-  const reply = await handleAssistantCallback(data);
-  return sendTelegramChatMessage(chatId, reply.text, { replyMarkup: reply.replyMarkup });
+  if (data.startsWith("assistant:")) {
+    const reply = await handleAssistantCallback(data);
+    return sendTelegramChatMessage(chatId, reply.text, { replyMarkup: reply.replyMarkup });
+  }
+
+  return sendWithMenu(chatId, `Неизвестное действие: ${data}`);
 }

@@ -30,7 +30,7 @@ const items = [
   { href: "/admin/leads", label: "Anfragen", icon: Inbox },
   { href: "/admin/newsletter", label: "Newsletter", icon: MailCheck },
   { href: "/admin/assistant", label: "AI-Dialoge", icon: Bot },
-  { href: "/admin/ai-visibility", label: "AI-Sichtbarkeit", icon: Radar },
+  { href: "/admin/ai-visibility", label: "AI-видимость", icon: Radar },
   { href: "/admin/services", label: "Leistungen", icon: Wrench },
   { href: "/admin/industries", label: "Branchen", icon: Building2 },
   { href: "/admin/projects", label: "Projekte", icon: FolderKanban },

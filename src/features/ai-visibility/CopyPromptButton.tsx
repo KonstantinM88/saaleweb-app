@@ -22,7 +22,7 @@ export function CopyPromptButton({ prompt }: { prompt: string }) {
       className="mt-2 text-xs font-semibold text-brand-purple hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2"
       aria-label={`Suchfrage kopieren: ${prompt}`}
     >
-      {copied ? "Kopiert ✓" : "Suchfrage kopieren"}
+      {copied ? "Скопировано ✓" : "Скопировать запрос"}
     </button>
   );
 }
