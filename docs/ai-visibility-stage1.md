@@ -57,6 +57,6 @@ IndexNow accelerates discovery; it does not guarantee crawling, indexing, rankin
 
 ## Telegram control
 
-Use the persistent **🔎 AI-видимость** button or `/visibility`. Inline buttons open the weekly summary, groups of five prompts, platform details and four status actions. Telegram supports fast status recording and IndexNow submission; position, citation URL, competitor and notes remain available through **Расширенное редактирование** in the protected admin area.
+Use `/visibility` from Telegram's compact native **Menu** button. Inline buttons open the weekly summary, groups of five prompts, platform details and four status actions. Telegram supports fast status recording and IndexNow submission; position, citation URL, competitor and notes remain available through **Расширенное редактирование** in the protected admin area. The old persistent reply keyboard is removed after the next command so it no longer occupies the bottom third of the chat.
 
 After four weeks, compare prompt groups rather than single volatile answers. Content and authority work should prioritize prompts that repeatedly cite competitors but not SaaleWeb.

@@ -24,6 +24,11 @@ export type TelegramSendOptions = {
   replyMarkup?: Record<string, unknown>;
 };
 
+export type TelegramBotCommand = {
+  command: string;
+  description: string;
+};
+
 function configuredBotToken(): string | undefined {
   return process.env.TELEGRAM_BOT_TOKEN?.trim() || undefined;
 }
@@ -126,6 +131,54 @@ export async function answerTelegramCallbackQuery(callbackQueryId: string, text?
     return response.ok && Boolean(payload?.ok);
   } catch (error) {
     console.error("[telegram] Callback answer request failed.", {
+      message: error instanceof Error ? error.message : "Unknown Telegram request error",
+    });
+    return false;
+  }
+}
+
+export async function configureTelegramCommandMenu(
+  chatId: string | number,
+  commands: TelegramBotCommand[],
+): Promise<boolean> {
+  const token = configuredBotToken();
+  if (!token) {
+    console.warn("[telegram] Command menu setup skipped because bot token is missing.", telegramDiagnostics());
+    return false;
+  }
+
+  try {
+    const scope = { type: "chat", chat_id: String(chatId) };
+    const commandsResponse = await fetch(`https://api.telegram.org/bot${token}/setMyCommands`, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ commands, scope }),
+    });
+    const commandsPayload = (await commandsResponse.json().catch(() => null)) as TelegramSendResponse | null;
+
+    const menuResponse = await fetch(`https://api.telegram.org/bot${token}/setChatMenuButton`, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({
+        chat_id: String(chatId),
+        menu_button: { type: "commands" },
+      }),
+    });
+    const menuPayload = (await menuResponse.json().catch(() => null)) as TelegramSendResponse | null;
+    const configured = commandsResponse.ok && Boolean(commandsPayload?.ok) && menuResponse.ok && Boolean(menuPayload?.ok);
+
+    if (!configured) {
+      console.error("[telegram] Compact command menu setup failed.", {
+        commandsStatus: commandsResponse.status,
+        menuStatus: menuResponse.status,
+        commandsErrorCode: commandsPayload && "error_code" in commandsPayload ? commandsPayload.error_code : undefined,
+        menuErrorCode: menuPayload && "error_code" in menuPayload ? menuPayload.error_code : undefined,
+      });
+    }
+
+    return configured;
+  } catch (error) {
+    console.error("[telegram] Compact command menu request failed.", {
       message: error instanceof Error ? error.message : "Unknown Telegram request error",
     });
     return false;

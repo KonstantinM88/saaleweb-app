@@ -17,7 +17,12 @@ import {
 import { buildHealthReport } from "./telegramHealth";
 import { buildSeoScoreReport } from "@/features/seo-monitor/seoScore";
 import { buildAiVisibilityReply, handleAiVisibilityCallback } from "./telegramAiVisibility";
-import { answerTelegramCallbackQuery, sendTelegramChatMessage } from "./telegram";
+import {
+  answerTelegramCallbackQuery,
+  configureTelegramCommandMenu,
+  sendTelegramChatMessage,
+  type TelegramBotCommand,
+} from "./telegram";
 
 const BUTTON_HEALTH = "🩺 Проверить сайт";
 const BUTTON_DAILY = "📊 Отчёт 24 часа";
@@ -31,26 +36,40 @@ const BUTTON_SEO = "🧮 SEO Score";
 const BUTTON_VISIBILITY = "🔎 AI-видимость";
 const BUTTON_HELP = "❔ Помощь";
 
-function commandKeyboard() {
-  return {
-    keyboard: [
-      [{ text: BUTTON_HEALTH }, { text: BUTTON_DAILY }],
-      [{ text: BUTTON_WEEK }, { text: BUTTON_GA4 }],
-      [{ text: BUTTON_AI }, { text: BUTTON_TOP }],
-      [{ text: BUTTON_LEADS }, { text: BUTTON_SEO }],
-      [{ text: BUTTON_VISIBILITY }, { text: BUTTON_ASSISTANT }],
-      [{ text: BUTTON_HELP }],
-    ],
-    resize_keyboard: true,
-    is_persistent: true,
-    one_time_keyboard: false,
-    input_field_placeholder: "Выберите действие",
-  };
+const TELEGRAM_COMMAND_MENU: TelegramBotCommand[] = [
+  { command: "start", description: "Открыть меню управления" },
+  { command: "health", description: "Проверить сайт и сервисы" },
+  { command: "report", description: "Отчёт за последние 24 часа" },
+  { command: "week", description: "Недельный отчёт" },
+  { command: "ga4", description: "Google Analytics за 7 дней" },
+  { command: "ai", description: "AI-боты и AI-переходы" },
+  { command: "visibility", description: "Упоминания в AI-поиске" },
+  { command: "seo", description: "SEO/GEO/AIO Score" },
+  { command: "top", description: "Топ страниц и источников" },
+  { command: "leads", description: "Последние заявки" },
+  { command: "assistant", description: "Диалоги с AI-ассистентом" },
+  { command: "help", description: "Справка по командам" },
+];
+
+const configuredMenuChats = new Set<string>();
+const initializedCompactChats = new Set<string>();
+
+async function ensureCompactMenu(chatId: string | number): Promise<boolean> {
+  const key = String(chatId);
+  const firstInteraction = !initializedCompactChats.has(key);
+  initializedCompactChats.add(key);
+
+  if (configuredMenuChats.has(key)) return firstInteraction;
+
+  const configured = await configureTelegramCommandMenu(chatId, TELEGRAM_COMMAND_MENU);
+  if (configured) configuredMenuChats.add(key);
+  return firstInteraction;
 }
 
 function helpText(): string {
   return [
     "🤖 SaaleWeb Bot — меню управления",
+    "Команды доступны через компактную кнопку «Меню» рядом с полем ввода.",
     "",
     `${BUTTON_HEALTH} — сайт, БД, почта, Telegram и ключевые URL`,
     `${BUTTON_DAILY} — отчёт за последние 24 часа`,
@@ -95,7 +114,24 @@ function normalizeCommand(text: string): string {
 }
 
 async function sendWithMenu(chatId: string | number, text: string): Promise<boolean> {
-  return sendTelegramChatMessage(chatId, text, { replyMarkup: commandKeyboard() });
+  await ensureCompactMenu(chatId);
+  return sendTelegramChatMessage(chatId, text, { replyMarkup: { remove_keyboard: true } });
+}
+
+async function sendWithInlineMenu(
+  chatId: string | number,
+  text: string,
+  replyMarkup?: Record<string, unknown>,
+): Promise<boolean> {
+  const newlyConfigured = await ensureCompactMenu(chatId);
+  if (newlyConfigured) {
+    await sendTelegramChatMessage(chatId, "☰ Команды доступны через кнопку «Меню».", {
+      replyMarkup: { remove_keyboard: true },
+    });
+  }
+  return sendTelegramChatMessage(chatId, text, {
+    replyMarkup: replyMarkup ?? { remove_keyboard: true },
+  });
 }
 
 export async function handleTelegramCommand(chatId: string | number, text: string): Promise<boolean> {
@@ -141,12 +177,12 @@ export async function handleTelegramCommand(chatId: string | number, text: strin
 
   if (command === "/visibility") {
     const reply = await buildAiVisibilityReply(args[0]);
-    return sendTelegramChatMessage(chatId, reply.text, { replyMarkup: reply.replyMarkup });
+    return sendWithInlineMenu(chatId, reply.text, reply.replyMarkup);
   }
 
   if (command === "/assistant") {
     const reply = await buildAssistantConversationReply(args[0]);
-    return sendTelegramChatMessage(chatId, reply.text, { replyMarkup: reply.replyMarkup });
+    return sendWithInlineMenu(chatId, reply.text, reply.replyMarkup);
   }
 
   if (command === "/assistant_block") {
@@ -173,12 +209,12 @@ export async function handleTelegramCallback(
 
   if (data.startsWith("aiv:")) {
     const reply = await handleAiVisibilityCallback(data);
-    return sendTelegramChatMessage(chatId, reply.text, { replyMarkup: reply.replyMarkup });
+    return sendWithInlineMenu(chatId, reply.text, reply.replyMarkup);
   }
 
   if (data.startsWith("assistant:")) {
     const reply = await handleAssistantCallback(data);
-    return sendTelegramChatMessage(chatId, reply.text, { replyMarkup: reply.replyMarkup });
+    return sendWithInlineMenu(chatId, reply.text, reply.replyMarkup);
   }
 
   return sendWithMenu(chatId, `Неизвестное действие: ${data}`);
