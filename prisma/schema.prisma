@@ -528,3 +528,24 @@ model SeoDailySnapshot {
   report      String
   createdAt   DateTime @default(now())
 }
+
+model AiVisibilityCheck {
+  id           String   @id @default(cuid())
+  week         String
+  promptKey    String
+  platform     String
+  mentioned    Boolean  @default(false)
+  cited        Boolean  @default(false)
+  mentionOrder Int?
+  citationUrl  String?
+  competitor   String?
+  notes        String?
+  checkedAt    DateTime @default(now())
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@unique([week, promptKey, platform])
+  @@index([week])
+  @@index([platform])
+  @@index([promptKey])
+}
