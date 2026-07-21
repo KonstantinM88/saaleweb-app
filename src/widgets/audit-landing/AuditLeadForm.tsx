@@ -20,7 +20,7 @@ export function AuditLeadForm({ copy, locale }: { copy: AuditLandingCopy["form"]
   };
 
   const inputCls =
-    "w-full rounded-xl border border-line bg-white px-4 py-3 text-[15px] text-ink outline-none transition focus:border-brand-purple focus:ring-2 focus:ring-brand-purple/20";
+    "w-full min-w-0 rounded-xl border border-line bg-white px-4 py-3 text-[15px] text-ink outline-none transition focus:border-brand-purple focus:ring-2 focus:ring-brand-purple/20";
 
   if (state.status === "success") {
     return (
@@ -37,36 +37,36 @@ export function AuditLeadForm({ copy, locale }: { copy: AuditLandingCopy["form"]
   }
 
   return (
-    <form action={action} className="grid gap-3">
+    <form action={action} className="grid min-w-0 gap-3">
       <input type="hidden" name="locale" value={locale} />
       <input type="hidden" name="source" value="website_audit" />
       <input type="hidden" name="projectType" value="Website Audit (Landing)" />
       {/* Honeypot: must stay empty */}
       <input type="text" name="website" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden />
 
-      <label className="grid gap-1.5">
+      <label className="grid min-w-0 gap-1.5">
         <span className="text-[13px] font-bold text-dark">{copy.labels.name} *</span>
         <input name="name" required autoComplete="name" className={inputCls} />
       </label>
-      <label className="grid gap-1.5">
+      <label className="grid min-w-0 gap-1.5">
         <span className="text-[13px] font-bold text-dark">{copy.labels.company}</span>
         <input name="company" autoComplete="organization" className={inputCls} />
       </label>
-      <label className="grid gap-1.5">
+      <label className="grid min-w-0 gap-1.5">
         <span className="text-[13px] font-bold text-dark">{copy.labels.website} *</span>
         <input name="projectWebsite" required inputMode="url" className={inputCls} placeholder="https:// / @instagram" />
       </label>
-      <div className="grid gap-3 sm:grid-cols-2">
-        <label className="grid gap-1.5">
+      <div className="grid min-w-0 gap-3 sm:grid-cols-2">
+        <label className="grid min-w-0 gap-1.5">
           <span className="text-[13px] font-bold text-dark">{copy.labels.email} *</span>
           <input name="email" type="email" required autoComplete="email" className={inputCls} />
         </label>
-        <label className="grid gap-1.5">
+        <label className="grid min-w-0 gap-1.5">
           <span className="text-[13px] font-bold text-dark">{copy.labels.phone}</span>
           <input name="phone" inputMode="tel" autoComplete="tel" className={inputCls} />
         </label>
       </div>
-      <label className="grid gap-1.5">
+      <label className="grid min-w-0 gap-1.5">
         <span className="text-[13px] font-bold text-dark">{copy.labels.message}</span>
         <textarea name="message" rows={3} className={inputCls} />
       </label>
@@ -86,7 +86,7 @@ export function AuditLeadForm({ copy, locale }: { copy: AuditLandingCopy["form"]
       <button
         type="submit"
         disabled={pending}
-        className="btn-shine mt-1 inline-flex min-h-12 items-center justify-center rounded-xl bg-brand px-5 py-3 text-[15px] font-bold text-white shadow-[0_18px_38px_-18px_rgba(139,92,246,0.85)] transition hover:-translate-y-0.5 disabled:opacity-60"
+        className="btn-shine mt-1 inline-flex min-h-12 w-full min-w-0 items-center justify-center whitespace-normal rounded-xl bg-brand px-4 py-3 text-center text-[15px] font-bold leading-snug text-white shadow-[0_18px_38px_-18px_rgba(139,92,246,0.85)] transition hover:-translate-y-0.5 disabled:opacity-60 sm:px-5"
       >
         {pending ? copy.sending : copy.submit}
       </button>

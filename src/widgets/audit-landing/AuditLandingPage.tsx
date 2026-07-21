@@ -24,13 +24,13 @@ const deliverableIcons = [Eye, LayoutPanelTop, Smartphone, MapPinned, Gauge, Lis
 
 export function AuditLandingPage({ copy, locale }: { copy: AuditLandingCopy; locale: string }) {
   return (
-    <main>
+    <main className="min-w-0 overflow-x-clip">
       {/* ---------------- Hero ---------------- */}
       <section
         className="overflow-hidden bg-[linear-gradient(180deg,#ffffff_0%,#f7f8fb_60%,#ffffff_100%)] pb-14 pt-16 md:pb-20 md:pt-24"
         aria-labelledby="audit-hero-title"
       >
-        <Container>
+        <Container className="min-w-0">
           <div className="relative mx-auto max-w-[1280px] text-center">
             <h1 id="audit-hero-title" className="sr-only">
               {copy.h1}
@@ -101,13 +101,13 @@ export function AuditLandingPage({ copy, locale }: { copy: AuditLandingCopy; loc
           >
             {copy.problem.title}
           </h2>
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-10 grid min-w-0 gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {copy.problem.cards.map((card, index) => {
               const Icon = problemIcons[index] ?? Sparkles;
               return (
                 <article
                   key={card.title}
-                  className="rounded-[18px] border border-line bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-brand-purple/25 hover:shadow-[0_22px_62px_-48px_rgba(139,92,246,0.58)]"
+                  className="min-w-0 rounded-[18px] border border-line bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-brand-purple/25 hover:shadow-[0_22px_62px_-48px_rgba(139,92,246,0.58)]"
                 >
                   <div className="mb-4 grid h-10 w-10 place-items-center rounded-2xl bg-brand-soft text-brand-purple">
                     <Icon className="h-5 w-5" aria-hidden />
@@ -130,11 +130,11 @@ export function AuditLandingPage({ copy, locale }: { copy: AuditLandingCopy; loc
           >
             {copy.deliverables.title}
           </h2>
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid min-w-0 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {copy.deliverables.cards.map((card, index) => {
               const Icon = deliverableIcons[index] ?? Sparkles;
               return (
-                <article key={card.title} className="rounded-[18px] border border-line bg-white p-5">
+                <article key={card.title} className="min-w-0 rounded-[18px] border border-line bg-white p-5">
                   <div className="mb-4 grid h-10 w-10 place-items-center rounded-2xl bg-brand-soft text-brand-purple">
                     <Icon className="h-5 w-5" aria-hidden />
                   </div>
@@ -153,8 +153,8 @@ export function AuditLandingPage({ copy, locale }: { copy: AuditLandingCopy; loc
       {/* ---------------- For whom + Process ---------------- */}
       <section className="py-14 md:py-20" aria-labelledby="audit-forwhom-title">
         <Container>
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-10">
-            <div>
+          <div className="grid min-w-0 gap-12 lg:grid-cols-2 lg:gap-10">
+            <div className="min-w-0">
               <h2
                 id="audit-forwhom-title"
                 className="text-[clamp(24px,3vw,34px)] font-extrabold leading-tight tracking-tight text-dark"
@@ -170,7 +170,7 @@ export function AuditLandingPage({ copy, locale }: { copy: AuditLandingCopy; loc
                 ))}
               </ul>
             </div>
-            <div>
+            <div className="min-w-0">
               <h2 className="text-[clamp(24px,3vw,34px)] font-extrabold leading-tight tracking-tight text-dark">
                 {copy.process.title}
               </h2>
@@ -226,13 +226,13 @@ export function AuditLandingPage({ copy, locale }: { copy: AuditLandingCopy; loc
 
       {/* ---------------- Form ---------------- */}
       <section id="audit-form" className="scroll-mt-24 py-14 md:py-20" aria-labelledby="audit-form-title">
-        <Container>
-          <div className="mx-auto max-w-xl rounded-[26px] border border-line bg-white p-6 shadow-[0_26px_82px_-58px_rgba(15,23,42,0.55)] md:p-8">
+        <Container className="min-w-0 px-4 sm:px-6">
+          <div className="mx-auto w-full min-w-0 max-w-xl rounded-[26px] border border-line bg-white p-4 shadow-[0_26px_82px_-58px_rgba(15,23,42,0.55)] sm:p-6 md:p-8">
             <h2 id="audit-form-title" className="text-2xl font-extrabold tracking-tight text-dark">
               {copy.form.title}
             </h2>
             <p className="mt-2 text-[14.5px] leading-relaxed text-muted">{copy.form.subtitle}</p>
-            <div className="mt-6">
+            <div className="mt-6 min-w-0">
               <AuditLeadForm copy={copy.form} locale={locale} />
             </div>
           </div>

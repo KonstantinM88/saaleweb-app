@@ -62,7 +62,7 @@ export function LanguageSwitcher() {
 
   return (
     <div
-      className="flex items-center gap-1 rounded-full border border-line/80 bg-white/85 p-1 shadow-[0_10px_28px_rgba(15,23,42,0.08)] backdrop-blur-xl transition-opacity data-[pending=true]:opacity-70"
+      className="flex items-center gap-1 rounded-full border border-line/80 bg-white/85 p-1 shadow-[0_10px_28px_rgba(15,23,42,0.08)] backdrop-blur-xl transition-opacity data-[pending=true]:opacity-70 max-[359px]:gap-0.5 max-[359px]:p-0.5"
       role="group"
       aria-label="Language"
       data-pending={isPending}
@@ -81,7 +81,7 @@ export function LanguageSwitcher() {
             aria-pressed={isActive}
             title={meta.label}
             className={cn(
-              "group relative grid size-8 place-items-center rounded-full transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-pink/40 focus-visible:ring-offset-2",
+              "group relative grid size-8 place-items-center rounded-full transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-pink/40 focus-visible:ring-offset-2 max-[359px]:size-7",
               isActive
                 ? "bg-white shadow-[0_8px_22px_rgba(139,92,246,0.22)] ring-1 ring-brand-purple/25"
                 : "hover:bg-white hover:shadow-[0_6px_16px_rgba(15,23,42,0.08)]",
@@ -94,14 +94,14 @@ export function LanguageSwitcher() {
                 isActive && "opacity-100",
               )}
             />
-            <span className="relative grid size-6 place-items-center overflow-hidden rounded-full bg-white shadow-sm ring-1 ring-black/5 transition-transform duration-200 group-hover:scale-105">
+            <span className="relative grid size-6 place-items-center overflow-hidden rounded-full bg-white shadow-sm ring-1 ring-black/5 transition-transform duration-200 group-hover:scale-105 max-[359px]:size-5">
               <Image
                 src={meta.flag}
                 alt=""
                 width={24}
                 height={24}
                 unoptimized
-                className="size-6"
+                className="size-6 max-[359px]:size-5"
               />
             </span>
             <span className="sr-only">{meta.label}</span>

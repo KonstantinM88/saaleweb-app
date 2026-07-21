@@ -11,6 +11,7 @@ const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY?.trim();
 
 type WidgetId = string;
 type WidgetStatus = "loading" | "ready" | "verified" | "error";
+type WidgetSize = "flexible" | "compact";
 
 type TurnstileApi = {
   render: (
@@ -20,7 +21,7 @@ type TurnstileApi = {
       action: TurnstileAction;
       language: string;
       theme: "light";
-      size: "flexible";
+      size: WidgetSize;
       appearance: "always";
       callback: (token: string) => void;
       "error-callback": () => void;
@@ -51,19 +52,28 @@ export function TurnstileField({
   const locale = useLocale();
   const containerRef = useRef<HTMLDivElement>(null);
   const widgetIdRef = useRef<WidgetId | null>(null);
+  const widgetSizeRef = useRef<WidgetSize | null>(null);
   const mountedRef = useRef(false);
   const [status, setStatus] = useState<WidgetStatus>("loading");
+  const [widgetSize, setWidgetSize] = useState<WidgetSize>("flexible");
   const [recoveredAfterServerError, setRecoveredAfterServerError] = useState(false);
 
   const renderWidget = useCallback(() => {
     if (!siteKey || !containerRef.current || !window.turnstile || widgetIdRef.current) return;
+
+    // Cloudflare's flexible widget has a documented 300 px minimum width.
+    // Narrow mobile forms therefore use the 150 px compact variant instead
+    // of widening the page and clipping the surrounding layout.
+    const nextSize: WidgetSize = containerRef.current.clientWidth < 300 ? "compact" : "flexible";
+    widgetSizeRef.current = nextSize;
+    setWidgetSize(nextSize);
 
     widgetIdRef.current = window.turnstile.render(containerRef.current, {
       sitekey: siteKey,
       action,
       language: locale,
       theme: "light",
-      size: "flexible",
+      size: nextSize,
       appearance: "always",
       callback: () => {
         setStatus("verified");
@@ -83,7 +93,33 @@ export function TurnstileField({
       if (widgetIdRef.current && window.turnstile) {
         window.turnstile.remove(widgetIdRef.current);
         widgetIdRef.current = null;
+        widgetSizeRef.current = null;
       }
+    };
+  }, [renderWidget]);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container || typeof ResizeObserver === "undefined") return;
+
+    let frameId: number | null = null;
+    const observer = new ResizeObserver(([entry]) => {
+      const nextSize: WidgetSize = entry.contentRect.width < 300 ? "compact" : "flexible";
+      if (!widgetIdRef.current || !widgetSizeRef.current || widgetSizeRef.current === nextSize) return;
+
+      window.turnstile?.remove(widgetIdRef.current);
+      widgetIdRef.current = null;
+      widgetSizeRef.current = null;
+      setStatus("loading");
+
+      if (frameId !== null) cancelAnimationFrame(frameId);
+      frameId = requestAnimationFrame(renderWidget);
+    });
+
+    observer.observe(container);
+    return () => {
+      observer.disconnect();
+      if (frameId !== null) cancelAnimationFrame(frameId);
     };
   }, [renderWidget]);
 
@@ -107,19 +143,27 @@ export function TurnstileField({
 
   return (
     <fieldset
-      className={`rounded-2xl border px-4 pb-4 pt-3 transition ${
+      className={`min-w-0 max-w-full overflow-hidden rounded-2xl border px-3 pb-4 pt-3 transition sm:px-4 ${
         hasError ? "border-brand-pink/60 bg-brand-pink/5" : "border-line bg-surface/70"
       }`}
     >
-      <legend className="flex items-center gap-2 px-1 text-[13px] font-bold text-dark">
+      <legend className="flex max-w-full items-center gap-2 px-1 text-[13px] font-bold text-dark">
         <ShieldCheck className="h-4 w-4 text-[#6D28D9]" aria-hidden />
         {t("label")}
       </legend>
 
-      <p className="mb-3 text-[12.5px] leading-relaxed text-muted">{t("hint")}</p>
-      <div ref={containerRef} className="min-h-[65px] w-full overflow-hidden rounded-xl" />
+      <p className="mb-3 break-words text-[12.5px] leading-relaxed text-muted">{t("hint")}</p>
+      <div
+        ref={containerRef}
+        className={`flex w-full min-w-0 max-w-full justify-center overflow-hidden rounded-xl ${
+          widgetSize === "compact" ? "min-h-[140px]" : "min-h-[65px]"
+        }`}
+      />
 
-      <div className="mt-2 flex items-start gap-2 text-[12.5px] leading-relaxed" aria-live="polite">
+      <div
+        className="mt-2 flex min-w-0 items-start gap-2 break-words text-[12.5px] leading-relaxed"
+        aria-live="polite"
+      >
         {hasError ? (
           <>
             <TriangleAlert className="mt-0.5 h-4 w-4 shrink-0 text-[#BE185D]" aria-hidden />

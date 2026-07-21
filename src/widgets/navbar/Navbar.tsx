@@ -62,7 +62,7 @@ export function Navbar() {
           : "bg-white/80",
       )}
     >
-      <Container className="flex h-[72px] items-center justify-between">
+      <Container className="flex h-[72px] items-center justify-between max-[359px]:px-4">
         <Link
           href="/"
           aria-label="SaaleWeb"
@@ -75,7 +75,7 @@ export function Navbar() {
           {siteConfig.nav.map((item) => renderItem(item))}
         </nav>
 
-        <div className="flex items-center gap-3.5">
+        <div className="flex items-center gap-3.5 max-[359px]:gap-1.5">
           <LanguageSwitcher />
           <Magnetic className="hidden sm:inline-block">
             <a
