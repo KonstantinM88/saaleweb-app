@@ -135,7 +135,9 @@ Instructions and project memory for coding agents working in this repository.
 - `src/app/admin/api/telegram-test/route.ts` - protected admin test endpoint for Telegram diagnostics and test report sending.
 - `src/app/admin/(protected)/newsletter/` and `src/features/admin/newsletter/actions.ts` - protected admin subscriber table, delete action, and UTF-8 BOM CSV export.
 - `src/app/admin/` - non-localized protected admin/CMS area.
+- The protected `/admin` UI supports German and Russian through the admin-only `saaleweb_admin_locale` cookie. Keep these languages on the same `/admin` routes instead of adding public-style locale prefixes. `AdminShell` provides a full-width mobile layout with an off-canvas navigation drawer; never restore an always-visible fixed-width sidebar on small screens.
 - `src/features/auth/` - env-based admin authentication, JWT session cookie, login/logout actions.
+- `src/features/admin/AdminLocaleProvider.tsx`, `src/features/admin/i18n.ts`, `src/features/admin/i18n.server.ts` - shared DE/RU admin locale state, common UI translations, and server cookie reader.
 - `src/features/admin/` - admin server actions for services, industries, pricing plans, blog posts, and leads.
 - `src/features/admin/crud.ts` - shared admin form helpers; keep translation rows typed with Prisma `Locale`.
 - `src/features/admin/projects/media.ts` - server actions for project media create/update/delete and homepage/admin revalidation.
@@ -147,6 +149,7 @@ Instructions and project memory for coding agents working in this repository.
 - `src/app/api/track/route.ts` - page-view ingestion endpoint for `PageView` analytics.
 - `src/app/blog/rss.xml/route.ts` - RSS 2.0 feed for blog posts; default German, with `?lang=en` and `?lang=ru`.
 - `src/widgets/admin/` - admin UI forms, sidebar, page headers, and controls.
+- `src/widgets/admin/AdminShell.tsx`, `AdminLanguageSwitch.tsx`, `Sidebar.tsx` - responsive admin shell, mobile drawer, persistent DE/RU switch, and localized navigation.
 - `src/widgets/admin/GenericForm.tsx` - reusable config-driven admin create/edit form for multilingual records.
 - `src/widgets/admin/ImageUpload.tsx` - admin image upload field with preview and editable URL.
 - `src/features/notifications/mailer.ts` - optional Hostinger SMTP email notification helper for new contact leads and localized client auto-replies.

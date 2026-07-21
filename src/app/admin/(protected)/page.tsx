@@ -4,6 +4,8 @@ import { getDashboardAnalytics, type DayPoint } from "@/features/admin/analytics
 import { cn } from "@/shared/lib/cn";
 import { PageHeader } from "@/widgets/admin/PageHeader";
 import { adminCard } from "@/widgets/admin/ui";
+import { getAdminLocale } from "@/features/admin/i18n.server";
+import { adminCopy } from "@/features/admin/i18n";
 
 export const dynamic = "force-dynamic";
 
@@ -53,6 +55,8 @@ export default async function AdminDashboard({
 }) {
   const sp = await searchParams;
   const range = RANGES.includes(Number(sp.range)) ? Number(sp.range) : 30;
+  const locale = await getAdminLocale();
+  const t = (de: string, ru: string) => adminCopy(locale, de, ru);
 
   const [analytics, services, industries, posts, projects] = await Promise.all([
     getDashboardAnalytics(range),
@@ -63,17 +67,20 @@ export default async function AdminDashboard({
   ]);
 
   const metrics = [
-    { label: `Aufrufe (${range} T.)`, value: analytics.viewsTotal },
-    { label: `Eindeutige Besucher (${range} T.)`, value: analytics.uniqueTotal },
-    { label: `Anfragen (${range} T.)`, value: analytics.leadsTotal },
-    { label: "Neue Anfragen", value: analytics.leadsNew, href: "/admin/leads" },
+    { label: t(`Aufrufe (${range} T.)`, `Просмотры (${range} дн.)`), value: analytics.viewsTotal },
+    { label: t(`Eindeutige Besucher (${range} T.)`, `Уникальные посетители (${range} дн.)`), value: analytics.uniqueTotal },
+    { label: t(`Anfragen (${range} T.)`, `Заявки (${range} дн.)`), value: analytics.leadsTotal },
+    { label: t("Neue Anfragen", "Новые заявки"), value: analytics.leadsNew, href: "/admin/leads" },
   ];
 
   const formatDay = (value: string) => value.slice(5).replace("-", ".");
 
   return (
     <>
-      <PageHeader title="Uebersicht" subtitle="Aufrufe und Anfragen im Zeitverlauf." />
+      <PageHeader
+        title={t("Übersicht", "Обзор")}
+        subtitle={t("Aufrufe und Anfragen im Zeitverlauf.", "Динамика просмотров и заявок.")}
+      />
 
       <div className="mb-6 flex gap-2">
         {RANGES.map((item) => (
@@ -87,7 +94,7 @@ export default async function AdminDashboard({
                 : "border-line bg-white text-ink hover:border-brand-purple",
             )}
           >
-            {item} Tage
+            {item} {t("Tage", "дней")}
           </Link>
         ))}
       </div>
@@ -120,7 +127,7 @@ export default async function AdminDashboard({
       <div className="mt-6 grid gap-4 lg:grid-cols-2">
         <div className={`${adminCard} p-5`}>
           <div className="mb-3 flex items-center justify-between">
-            <h2 className="font-semibold text-dark">Aufrufe</h2>
+            <h2 className="font-semibold text-dark">{t("Aufrufe", "Просмотры")}</h2>
             <span className="text-sm text-muted">{analytics.viewsTotal}</span>
           </div>
           <Bars data={analytics.viewsSeries} color="#FF4FA3" />
@@ -138,7 +145,7 @@ export default async function AdminDashboard({
 
         <div className={`${adminCard} p-5`}>
           <div className="mb-3 flex items-center justify-between">
-            <h2 className="font-semibold text-dark">Eindeutige Besucher</h2>
+            <h2 className="font-semibold text-dark">{t("Eindeutige Besucher", "Уникальные посетители")}</h2>
             <span className="text-sm text-muted">{analytics.uniqueTotal}</span>
           </div>
           <Bars data={analytics.uniqueSeries} color="#10B981" />
@@ -158,9 +165,9 @@ export default async function AdminDashboard({
       <div className="mt-6 grid gap-4 lg:grid-cols-2">
         <div className={`${adminCard} p-5`}>
           <div className="mb-3 flex items-center justify-between">
-            <h2 className="font-semibold text-dark">Anfragen</h2>
+            <h2 className="font-semibold text-dark">{t("Anfragen", "Заявки")}</h2>
             <span className="text-sm text-muted">
-              {analytics.leadsTotal} - gesamt {analytics.leadsAllTime}
+              {analytics.leadsTotal} · {t("gesamt", "всего")} {analytics.leadsAllTime}
             </span>
           </div>
           <Bars data={analytics.leadsSeries} color="#8B5CF6" />
@@ -177,9 +184,9 @@ export default async function AdminDashboard({
         </div>
 
         <div className={`${adminCard} p-5`}>
-          <h2 className="mb-3 font-semibold text-dark">Top-Seiten ({range} T.)</h2>
+          <h2 className="mb-3 font-semibold text-dark">{t(`Top-Seiten (${range} T.)`, `Лучшие страницы (${range} дн.)`)}</h2>
           {analytics.topPaths.length === 0 ? (
-            <p className="text-sm text-muted">Noch keine Daten.</p>
+            <p className="text-sm text-muted">{t("Noch keine Daten.", "Данных пока нет.")}</p>
           ) : (
             <ul className="space-y-2 text-sm">
               {analytics.topPaths.map((path) => (
@@ -195,29 +202,29 @@ export default async function AdminDashboard({
 
       <div className="mt-6 grid gap-4 lg:grid-cols-2">
         <div className={`${adminCard} p-5`}>
-          <h2 className="mb-3 font-semibold text-dark">Inhalte</h2>
+          <h2 className="mb-3 font-semibold text-dark">{t("Inhalte", "Контент")}</h2>
           <ul className="space-y-2 text-sm">
             <li className="flex justify-between">
               <Link href="/admin/services" className="text-ink hover:text-brand-purple">
-                Leistungen
+                {t("Leistungen", "Услуги")}
               </Link>
               <span className="font-semibold">{services}</span>
             </li>
             <li className="flex justify-between">
               <Link href="/admin/industries" className="text-ink hover:text-brand-purple">
-                Branchen
+                {t("Branchen", "Отрасли")}
               </Link>
               <span className="font-semibold">{industries}</span>
             </li>
             <li className="flex justify-between">
               <Link href="/admin/projects" className="text-ink hover:text-brand-purple">
-                Projekte
+                {t("Projekte", "Проекты")}
               </Link>
               <span className="font-semibold">{projects}</span>
             </li>
             <li className="flex justify-between">
               <Link href="/admin/blog" className="text-ink hover:text-brand-purple">
-                Artikel
+                {t("Artikel", "Статьи")}
               </Link>
               <span className="font-semibold">{posts}</span>
             </li>

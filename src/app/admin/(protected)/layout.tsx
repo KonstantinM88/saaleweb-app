@@ -1,6 +1,8 @@
 import { redirect } from "next/navigation";
 import { getSession } from "@/features/auth/session";
-import { AdminSidebar } from "@/widgets/admin/Sidebar";
+import { getAdminLocale } from "@/features/admin/i18n.server";
+import { AdminLocaleProvider } from "@/features/admin/AdminLocaleProvider";
+import { AdminShell } from "@/widgets/admin/AdminShell";
 
 export const dynamic = "force-dynamic";
 
@@ -11,11 +13,11 @@ export default async function ProtectedAdminLayout({
 }) {
   const session = await getSession();
   if (!session) redirect("/admin/login");
+  const locale = await getAdminLocale();
 
   return (
-    <div className="flex min-h-screen">
-      <AdminSidebar email={session.email} />
-      <main className="flex-1 overflow-x-hidden px-6 py-8 md:px-10">{children}</main>
-    </div>
+    <AdminLocaleProvider initialLocale={locale}>
+      <AdminShell email={session.email}>{children}</AdminShell>
+    </AdminLocaleProvider>
   );
 }

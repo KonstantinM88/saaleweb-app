@@ -1,5 +1,7 @@
 "use client";
 
+import { useAdminLocale } from "@/features/admin/AdminLocaleProvider";
+
 export function ConfirmButton({
   children,
   message,
@@ -9,15 +11,18 @@ export function ConfirmButton({
   message: string;
   className?: string;
 }) {
+  const { t } = useAdminLocale();
+  const label = typeof children === "string" ? t(children) : children;
+
   return (
     <button
       type="submit"
       className={className}
       onClick={(e) => {
-        if (!confirm(message)) e.preventDefault();
+        if (!confirm(t(message))) e.preventDefault();
       }}
     >
-      {children}
+      {label}
     </button>
   );
 }

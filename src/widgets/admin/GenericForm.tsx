@@ -4,6 +4,7 @@ import { useActionState } from "react";
 import { routing } from "@/i18n/routing";
 import { adminInput, adminLabel, adminBtn } from "./ui";
 import { ImageUpload } from "./ImageUpload";
+import { useAdminLocale } from "@/features/admin/AdminLocaleProvider";
 
 export type FieldType = "text" | "textarea" | "number" | "checkbox" | "select" | "image";
 export type Field = {
@@ -24,6 +25,7 @@ export type GenericDefaults = {
 const LOCALE_LABEL: Record<string, string> = { de: "Deutsch", en: "English", ru: "Русский" };
 
 function Input({ field, name, value }: { field: Field; name: string; value: string }) {
+  const { t } = useAdminLocale();
   if (field.type === "textarea")
     return <textarea name={name} defaultValue={value} rows={4} className={adminInput} />;
   if (field.type === "select")
@@ -32,7 +34,7 @@ function Input({ field, name, value }: { field: Field; name: string; value: stri
         <option value="">—</option>
         {field.options?.map((o) => (
           <option key={o.value} value={o.value}>
-            {o.label}
+            {t(o.label)}
           </option>
         ))}
       </select>
@@ -61,6 +63,7 @@ export function GenericForm({
   submitLabel: string;
 }) {
   const [state, formAction, pending] = useActionState<GenericState, FormData>(action, {});
+  const { t } = useAdminLocale();
 
   return (
     <form action={formAction} className="max-w-3xl space-y-6">
@@ -75,21 +78,21 @@ export function GenericForm({
                   defaultChecked={Boolean(defaults.top[f.name])}
                   className="h-4 w-4"
                 />
-                {f.label}
+                {t(f.label)}
               </label>
             ) : f.type === "image" ? (
               <div key={f.name} className={`${adminLabel} ${f.span2 ? "sm:col-span-2" : ""}`}>
-                {f.label}
+                {t(f.label)}
                 <ImageUpload
                   name={f.name}
                   defaultValue={String(defaults.top[f.name] ?? "")}
-                  hint={f.hint}
+                  hint={f.hint ? t(f.hint) : undefined}
                   maxWidth={f.maxWidth}
                 />
               </div>
             ) : (
               <label key={f.name} className={`${adminLabel} ${f.span2 ? "sm:col-span-2" : ""}`}>
-                {f.label}
+                {t(f.label)}
                 <Input field={f} name={f.name} value={String(defaults.top[f.name] ?? "")} />
               </label>
             ),
@@ -108,11 +111,11 @@ export function GenericForm({
               {localeFields.map((f) =>
                 f.type === "image" ? (
                   <div key={f.name} className={`${adminLabel} sm:col-span-2`}>
-                    {f.label}
+                    {t(f.label)}
                     <ImageUpload
                       name={`${f.name}_${locale}`}
                       defaultValue={tr[f.name] ?? ""}
-                      hint={f.hint}
+                      hint={f.hint ? t(f.hint) : undefined}
                       maxWidth={f.maxWidth}
                     />
                   </div>
@@ -121,7 +124,7 @@ export function GenericForm({
                     key={f.name}
                     className={`${adminLabel} ${f.type === "textarea" || f.span2 ? "sm:col-span-2" : ""}`}
                   >
-                    {f.label}
+                    {t(f.label)}
                     <Input field={f} name={`${f.name}_${locale}`} value={tr[f.name] ?? ""} />
                   </label>
                 ),
@@ -135,7 +138,7 @@ export function GenericForm({
         <p className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-600">{state.error}</p>
       )}
       <button type="submit" disabled={pending} className={adminBtn}>
-        {pending ? "…" : submitLabel}
+        {pending ? "…" : t(submitLabel)}
       </button>
     </form>
   );
