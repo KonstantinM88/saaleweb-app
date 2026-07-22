@@ -9,7 +9,7 @@ import { GeistMono } from "geist/font/mono";
 import { isAppLocale, routing } from "@/i18n/routing";
 import { siteConfig } from "@/shared/config/site";
 import { JsonLd } from "@/shared/seo/JsonLd";
-import { organizationSchema, websiteSchema } from "@/shared/seo/schema";
+import { organizationSchema, personSchema, websiteSchema } from "@/shared/seo/schema";
 import { getSeoOverride } from "@/shared/seo/metadata";
 import { ogImageUrl } from "@/shared/seo/og";
 import { PageViewTracker } from "@/features/analytics/PageViewTracker";
@@ -143,7 +143,7 @@ export default async function LocaleLayout({
       {/* Next.js loads the optimized GTM scripts after hydration. */}
       {analyticsConfigured ? <GoogleTagManager gtmId={gtmId} /> : null}
       <body className="font-sans">
-        <JsonLd data={[organizationSchema(), websiteSchema(locale)]} />
+        <JsonLd data={[organizationSchema(), personSchema(), websiteSchema(locale)]} />
         <PageViewTracker locale={locale} />
         <Suspense fallback={null}>
           <AttributionCapture />

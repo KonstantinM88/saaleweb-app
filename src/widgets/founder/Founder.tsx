@@ -20,7 +20,7 @@ export function Founder() {
   const points = t.raw("points") as FounderPoint[];
 
   return (
-    <section className="bg-surface py-16 md:py-24">
+    <section id="founder" className="scroll-mt-24 bg-surface py-16 md:py-24">
       <Container>
         <Reveal>
           <div className="grid items-center gap-8 rounded-3xl border border-line bg-white p-6 shadow-card sm:p-8 md:grid-cols-[280px_1fr] md:gap-11 md:p-11">

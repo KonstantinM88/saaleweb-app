@@ -23,6 +23,7 @@ import { Toc } from "@/widgets/blog/Toc";
 import { ShareButtons } from "@/widgets/blog/ShareButtons";
 import { PostCard } from "@/widgets/blog/PostCard";
 import { LocaleSlugsProvider } from "@/features/language-switcher/LocaleSlugsContext";
+import { EditorialTrust } from "@/shared/ui/EditorialTrust";
 
 type Params = { locale: string; slug: string };
 
@@ -92,13 +93,18 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
   const related = await getRelated(locale as AppLocale, slug, post.category?.slug);
   const path = `${locale === routing.defaultLocale ? "" : `/${locale}`}/blog/${slug}`;
   const fullUrl = `${siteConfig.url}${path}`;
-  const date = post.publishedAt
+  const publishedDate = post.publishedAt
     ? new Date(post.publishedAt).toLocaleDateString(locale, {
         year: "numeric",
         month: "long",
         day: "numeric",
       })
     : null;
+  const updatedDate = new Date(post.updatedAt).toLocaleDateString(locale, {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
 
   return (
     <LocaleSlugsProvider slugs={post.slugs}>
@@ -111,6 +117,7 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
             path,
             locale,
             datePublished: post.publishedAt,
+            dateModified: post.updatedAt,
             image: post.coverImage,
             authorName: post.author?.name,
           }),
@@ -151,8 +158,16 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
                     <span className="text-line">·</span>
                   </>
                 )}
-                {date && <span>{date}</span>}
-                {date && <span className="text-line">·</span>}
+                {publishedDate && (
+                  <time dateTime={post.publishedAt ?? undefined}>
+                    {t("published")} {publishedDate}
+                  </time>
+                )}
+                {publishedDate && <span className="text-line">·</span>}
+                <time dateTime={post.updatedAt}>
+                  {t("updated")} {updatedDate}
+                </time>
+                <span className="text-line">·</span>
                 <span>
                   {post.readingTime} {t("readingTime")}
                 </span>
@@ -176,6 +191,18 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
                 <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeSlug]}>
                   {post.content}
                 </ReactMarkdown>
+
+                <div className="mt-12">
+                  <EditorialTrust
+                    locale={locale as AppLocale}
+                    authorName={post.author?.name}
+                    authorRole={post.author?.role}
+                    authorBio={post.author?.bio}
+                    authorAvatar={post.author?.avatarUrl}
+                    reviewedAt={post.updatedAt.slice(0, 10)}
+                    id="blog-editorial-trust-title"
+                  />
+                </div>
 
                 <div className="mt-12 border-t border-line pt-6">
                   <ShareButtons

@@ -7,10 +7,12 @@ import { Breadcrumbs, type Crumb } from "@/shared/ui/Breadcrumbs";
 import { Reveal } from "@/shared/ui/Reveal";
 import { Magnetic } from "@/shared/ui/Magnetic";
 import { BrandText } from "@/shared/ui/BrandText";
+import { EditorialTrust } from "@/shared/ui/EditorialTrust";
 import { JsonLd } from "@/shared/seo/JsonLd";
 import { breadcrumbSchema, faqPageSchema, localBusinessSchema, serviceSchema, webPageSchema } from "@/shared/seo/schema";
 import { getContactHref } from "@/shared/lib/contactHref";
 import { getAuditHref, getHomeHref } from "@/shared/lib/localizedPath";
+import { EDITORIAL_REVIEW_DATE } from "@/shared/config/editorial";
 import { LocaleSlugsProvider } from "@/features/language-switcher/LocaleSlugsContext";
 import type { Phase4Landing, Phase4Link, Phase4SlugMap } from "./phase4Content";
 
@@ -177,6 +179,8 @@ export function Phase4LandingPage({ page, locale, path, parent, schemaKind, area
     path,
     locale,
     about: schemaKind === "industry" ? page.eyebrow : undefined,
+    dateModified: EDITORIAL_REVIEW_DATE,
+    author: true,
   });
 
   const uiCrumbs: Crumb[] = [
@@ -437,6 +441,14 @@ export function Phase4LandingPage({ page, locale, path, parent, schemaKind, area
             </Container>
           </section>
         ) : null}
+
+        <section className="bg-white py-16 md:py-20">
+          <Container>
+            <Reveal>
+              <EditorialTrust locale={locale} id="landing-editorial-trust-title" />
+            </Reveal>
+          </Container>
+        </section>
 
         <section className="bg-surface py-16 md:py-24">
           <Container>

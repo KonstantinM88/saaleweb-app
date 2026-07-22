@@ -2,6 +2,7 @@ import { siteConfig } from "@/shared/config/site";
 
 const URL = siteConfig.url;
 const ORG_ID = `${URL}/#organization`;
+const PERSON_ID = `${URL}/#founder`;
 
 /** Organization — emitted once globally. */
 export function organizationSchema() {
@@ -13,7 +14,7 @@ export function organizationSchema() {
     url: URL,
     email: siteConfig.email,
     telephone: siteConfig.phone.e164,
-    founder: { "@type": "Person", name: siteConfig.founder },
+    founder: { "@id": PERSON_ID },
     areaServed: siteConfig.locations,
     slogan: "Websites, SEO & KI für Unternehmen",
     sameAs: [siteConfig.googleBusiness.profileUrl, siteConfig.googleBusiness.placeUrl].filter(
@@ -51,7 +52,7 @@ export function localBusinessSchema(opts?: { areaServed?: string }) {
     image: `${URL}/icons/icon-512.png`,
     priceRange: "€€",
     areaServed: opts?.areaServed ?? siteConfig.locations,
-    founder: { "@type": "Person", name: siteConfig.founder },
+    founder: { "@id": PERSON_ID },
     address: {
       "@type": "PostalAddress",
       streetAddress: siteConfig.address.street,
@@ -108,6 +109,7 @@ export function personSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": PERSON_ID,
     name: siteConfig.founder,
     jobTitle: "Webentwickler & Gründer",
     worksFor: { "@id": ORG_ID },
@@ -140,6 +142,8 @@ export function webPageSchema(input: {
   path: string;
   locale: string;
   about?: string;
+  dateModified?: string;
+  author?: boolean;
 }) {
   return {
     "@context": "https://schema.org",
@@ -149,6 +153,8 @@ export function webPageSchema(input: {
     url: `${URL}${input.path}`,
     inLanguage: input.locale,
     about: input.about,
+    dateModified: input.dateModified,
+    author: input.author ? { "@id": PERSON_ID } : undefined,
     provider: { "@id": ORG_ID },
     publisher: { "@id": ORG_ID },
   };
@@ -276,6 +282,7 @@ export function articleSchema(input: {
   path: string;
   locale: string;
   datePublished?: string | null;
+  dateModified?: string | null;
   image?: string | null;
   authorName?: string | null;
 }) {
@@ -286,10 +293,14 @@ export function articleSchema(input: {
     description: input.description ?? undefined,
     inLanguage: input.locale,
     datePublished: input.datePublished ?? undefined,
+    dateModified: input.dateModified ?? input.datePublished ?? undefined,
     image: input.image ?? undefined,
     mainEntityOfPage: `${URL}${input.path}`,
     url: `${URL}${input.path}`,
-    author: { "@type": "Person", name: input.authorName ?? siteConfig.founder },
+    author:
+      !input.authorName || input.authorName === siteConfig.founder
+        ? { "@id": PERSON_ID }
+        : { "@type": "Person", name: input.authorName },
     publisher: { "@id": ORG_ID },
   };
 }

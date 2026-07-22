@@ -89,6 +89,14 @@ KI-Suchsystemen wie ChatGPT, Gemini, Claude, Perplexity und Google AI Overview.
 - [Qualifizierte Bauanfragen](https://saaleweb.de/projekte/qualifizierte-bauanfragen): Projektbeispiel für regionale Bau- und Handwerksanfragen.
 - [Glaserei Schubert](https://saaleweb.de/projekte/glaserei-schubert): Projektbeispiel für lokale Fachkompetenz, klare Struktur und digitale Vertrauensbildung.
 
+## Verantwortung, Aktualität und Nachweise
+
+- Fachlich verantwortlich für die redaktionellen Leistungsinhalte: Konstantin Mykhailov, Gründer und Webentwickler von SaaleWeb.
+- Redaktionsstand der gemeinsamen kommerziellen Landingpage-Methodik: 22.07.2026.
+- Grundlage der Empfehlungen: praktische Projektarbeit, technische Website-Audits und offizielle Dokumentation der eingesetzten Plattformen.
+- Nachweise: [reale SaaleWeb-Projekte](https://saaleweb.de/projekte) und das [öffentliche Google-Unternehmensprofil](https://g.page/r/CQgPij2bE5yLEBM).
+- SaaleWeb verspricht keine garantierten Suchpositionen oder Nennungen in KI-Antworten, da diese Ergebnisse auch von externen Such- und Antwortsystemen abhängen.
+
 ## Blog-Ressourcen für SEO, GEO und KI-Suche
 
 - [Lokales SEO in Halle und Leipzig](https://saaleweb.de/blog/lokales-seo-halle): Leitfaden für regionale Sichtbarkeit, Google-Unternehmensprofil, lokale Landingpages und messbare Anfragen.

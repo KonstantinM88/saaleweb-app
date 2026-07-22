@@ -93,6 +93,6 @@ Status meanings:
 
 Use `/visibility` from Telegram's compact native **Menu** button. Inline buttons open the weekly summary, groups of five prompts, platform details and four status actions. Telegram supports fast status recording and IndexNow submission; position, citation URL, competitor and notes remain available through **Расширенное редактирование** in the protected admin area. The old persistent reply keyboard is removed after the next command so it no longer occupies the bottom third of the chat.
 
-## Next stage
+## Stage 2 handoff
 
-After the first complete baseline and at least one repeat measurement, prioritize questions that show either competitor citations or SaaleWeb mentions without links. Stage 2 should add original evidence where it is genuinely available: concise case-study outcomes, named expert authorship, dated methodology, local data and externally corroborated profiles. Do not fabricate statistics, customer results or awards.
+The shared authority layer is documented in `docs/ai-visibility-stage2-authority.md`. It adds connected expert authorship, real modification dates, a dated methodology and links to verifiable projects and the public Google Business Profile. After the first complete baseline and at least one repeat measurement, prioritize questions that show either competitor citations or SaaleWeb mentions without links. Add query-specific original evidence only where it is genuinely available; never fabricate statistics, customer results or awards.

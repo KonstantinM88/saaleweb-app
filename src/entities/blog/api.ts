@@ -16,7 +16,13 @@ export type PostListItem = {
 
 export type PostDetail = PostListItem & {
   content: string;
-  author: { name: string; role: string | null } | null;
+  updatedAt: string;
+  author: {
+    name: string;
+    role: string | null;
+    bio: string | null;
+    avatarUrl: string | null;
+  } | null;
   languages: Record<string, string>;
   /** Per-locale slug map for smart language switching. */
   slugs: Record<string, string>;
@@ -97,13 +103,20 @@ export async function getPost(
       slugs[sib.locale] = sib.slug;
     }
 
-    const authorRole =
-      tr.post.author?.translations.find((a) => a.locale === locale)?.role ?? null;
+    const authorTranslation = tr.post.author?.translations.find((a) => a.locale === locale);
 
     return {
       ...toListItem(tr, locale),
       content: tr.content,
-      author: tr.post.author ? { name: tr.post.author.name, role: authorRole } : null,
+      updatedAt: tr.post.updatedAt.toISOString(),
+      author: tr.post.author
+        ? {
+            name: tr.post.author.name,
+            role: authorTranslation?.role ?? null,
+            bio: authorTranslation?.bio ?? null,
+            avatarUrl: tr.post.author.avatarUrl,
+          }
+        : null,
       languages,
       slugs,
     };
@@ -193,6 +206,7 @@ type RawTr = {
   post: {
     coverImage: string | null;
     publishedAt: Date | null;
+    updatedAt: Date;
     readingTime: number | null;
     category: { translations: CategoryTr[] } | null;
   };
@@ -201,7 +215,11 @@ type RawTr = {
 type RawDetail = RawTr & {
   post: RawTr["post"] & {
     translations: { locale: string; slug: string }[];
-    author: { name: string; translations: { locale: string; role: string }[] } | null;
+    author: {
+      name: string;
+      avatarUrl: string | null;
+      translations: { locale: string; role: string; bio: string }[];
+    } | null;
   };
 };
 
