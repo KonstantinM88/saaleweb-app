@@ -1019,6 +1019,8 @@ export function PricingLandingPage({
     individual: locale === "en" ? "Individual proposal" : locale === "ru" ? "Индивидуальное предложение" : "Individuelles Angebot",
   };
   const links = buildInternalLinks(locale, c.linkLabels);
+  const directAnswer = c.faq[0];
+  const remainingFaq = directAnswer ? c.faq.slice(1) : c.faq;
 
   return (
     <>
@@ -1119,6 +1121,48 @@ export function PricingLandingPage({
           </div>
         </Container>
       </section>
+
+      {/* Keep the principal price answer visible in HTML before the detailed package comparison. */}
+      {directAnswer ? (
+        <section className="border-y border-line bg-white py-10 md:py-14" aria-labelledby="pricing-direct-answer-title">
+          <Container>
+            <Reveal>
+              <div className="grid gap-7 rounded-[26px] border border-line bg-surface/70 p-6 shadow-sm md:p-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+                <div>
+                  <span className="eyebrow">{c.eyebrow}</span>
+                  <h2
+                    id="pricing-direct-answer-title"
+                    className="mt-4 text-[clamp(25px,3.2vw,38px)] font-extrabold leading-tight tracking-tight text-dark"
+                  >
+                    {directAnswer.q}
+                  </h2>
+                  <p className="mt-4 max-w-3xl text-[16px] leading-relaxed text-muted">
+                    <BrandText text={directAnswer.a} />
+                  </p>
+                  <a
+                    href="#pricing-packages"
+                    className="group mt-5 inline-flex items-center gap-2 text-[14px] font-bold text-brand-purple underline-offset-4 hover:underline"
+                  >
+                    {c.packagesTitle}
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden />
+                  </a>
+                </div>
+
+                <dl className="grid gap-3 sm:grid-cols-2">
+                  {packageOrder.map((key) => (
+                    <div key={key} className="min-w-0 rounded-2xl border border-line bg-white p-4">
+                      <dt className="text-[13px] font-extrabold leading-snug text-dark">{c.packageCopies[key].name}</dt>
+                      <dd className="mt-2 break-words text-[15px] font-extrabold leading-tight text-brand-purple">
+                        {prices[key]}
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            </Reveal>
+          </Container>
+        </section>
+      ) : null}
 
       <section id="pricing-packages" className="py-16 md:py-24">
         <Container>
@@ -1321,7 +1365,7 @@ export function PricingLandingPage({
               {c.faqTitle}
             </h2>
           </Reveal>
-          <FaqAccordion items={c.faq} />
+          <FaqAccordion items={remainingFaq} />
         </Container>
       </section>
     </>

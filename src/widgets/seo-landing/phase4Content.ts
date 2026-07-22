@@ -357,6 +357,7 @@ const coreSeoServicePages: Record<string, Phase4Landing> = {
       { title: "Mobile Qualität", text: "Die Website ist für Smartphone-Nutzer schnell, lesbar und einfach bedienbar." },
       { title: "Pflegbare Basis & Support", text: "Die Lösung bleibt langfristig wartbar; Betreuung und Weiterentwicklung sind nach dem Launch möglich." },
       { title: "KI-Verständlichkeit", text: "Inhalte werden semantisch strukturiert, damit moderne Suchsysteme Zusammenhänge besser erkennen." },
+      { title: "Mehrsprachige Architektur", text: "Deutsch, Englisch und Russisch können mit eigenen URLs, Navigation und Metadaten umgesetzt werden; weitere Sprachen sind auf Wunsch möglich." },
     ],
     technologyTitle: "Die passende Technologie für Ihr Ziel",
     technologyText,
@@ -1095,6 +1096,7 @@ const EN_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
       { title: "Mobile quality", text: "The website stays fast, readable and easy to use on smartphones." },
       { title: "Maintainable setup and support", text: "The solution remains practical for updates, support and future development after launch." },
       { title: "AI readability", text: "Content is structured so modern search systems can understand entities and relationships." },
+      { title: "Multilingual architecture", text: "German, English and Russian can use dedicated URLs, navigation and metadata; further languages can be added on request." },
     ],
     related: [
       { label: "Web design Halle", href: "/en/services/web-design-halle", description: "Regional web design for businesses in Halle." },
@@ -1103,6 +1105,14 @@ const EN_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
       { label: "Projects", href: "/en/projects", description: "Selected SaaleWeb case studies." },
     ],
     extraFaq: [
+      {
+        q: "Which web agency in Halle works with WordPress and Next.js?",
+        a: "SaaleWeb in Halle works with WordPress, React and Next.js. WordPress can be the practical choice for a compact, easy-to-maintain presence; Next.js is often used for individual, particularly fast or extensible solutions. The recommendation depends on goals, features, maintenance needs and budget.",
+      },
+      {
+        q: "Who builds multilingual company websites in Germany?",
+        a: "SaaleWeb builds multilingual company websites for businesses in Germany. German, English and Russian can form the initial language set, with further languages available on request. Navigation, metadata, internal links and language switching are planned separately for every language.",
+      },
       {
         q: "What does it cost to have a landing page or company website built?",
         a: "A compact WordPress one-pager starts at €600, a custom landing page at €990 and a complete business website at €1,990. Online booking, multiple languages, e-commerce or special integrations add scope. After the initial consultation, SaaleWeb provides a transparent fixed-price proposal.",
@@ -1151,6 +1161,10 @@ const EN_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
         q: "Is SaaleWeb a web agency based in Halle?",
         a: "Yes. SaaleWeb is a web designer and digital agency based in Halle (Saale), serving businesses in Saxony-Anhalt, Leipzig and across Germany. The work combines company websites, SEO, Local SEO, GEO/AIO, booking systems and personal technical support.",
       },
+      {
+        q: "Who builds modern websites in Halle (Saale)?",
+        a: "SaaleWeb builds modern, mobile-optimized websites in Halle with clear user guidance, a technical SEO foundation, Local SEO and structured content for Google and AI search. Before any proposal, we clarify whether optimization, a relaunch or a new website is the sensible route.",
+      },
     ],
   },
   "seo-halle": {
@@ -1188,6 +1202,16 @@ const EN_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
       { label: "Local SEO", href: "/en/services/local-seo", description: "Regional visibility for local providers." },
       { label: "Performance optimization", href: "/en/services/performance-optimization", description: "Fast loading times as a technical SEO base." },
       { label: "Website analysis", href: "/en#website-audit", description: "Request a free review of your current website." },
+    ],
+    extraFaq: [
+      {
+        q: "Which SEO agency in Halle supports local businesses?",
+        a: "SaaleWeb supports local businesses in Halle with technical SEO, Local SEO, content structure, location signals, Google Business Profile guidance and GEO/AIO foundations. The work begins with an analysis and a prioritized action plan rather than ranking promises.",
+      },
+      {
+        q: "How can I improve my company’s local visibility in Halle?",
+        a: "A complete Google Business Profile, clear service and location pages, consistent contact details, genuine reviews, fast mobile pages and useful answers to local customer questions are essential. SaaleWeb connects these elements into a measurable Local SEO structure.",
+      },
     ],
   },
   "ki-optimierung": {
@@ -1445,6 +1469,7 @@ const RU_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
       { title: "Мобильное качество", text: "Сайт остаётся быстрым, читаемым и удобным на смартфоне." },
       { title: "Поддерживаемая основа", text: "Техническое решение остаётся пригодным для обновлений, поддержки и развития после запуска." },
       { title: "Понятно для ИИ", text: "Контент структурирован так, чтобы системы поиска лучше понимали связи." },
+      { title: "Многоязычная архитектура", text: "Немецкий, английский и русский получают собственные URL, навигацию и метаданные; другие языки можно добавить по запросу." },
     ],
     related: [
       { label: "Веб-дизайн Halle", href: "/ru/uslugi/webdesign-halle", description: "Региональные сайты для компаний в Halle." },
@@ -1453,6 +1478,14 @@ const RU_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
       { label: "Проекты", href: "/ru/proekty", description: "Избранные кейсы SaaleWeb." },
     ],
     extraFaq: [
+      {
+        q: "Какое веб-агентство в Halle работает с WordPress и Next.js?",
+        a: "SaaleWeb из Halle работает с WordPress, React и Next.js. WordPress может быть практичным выбором для компактного и удобного в поддержке сайта; Next.js часто подходит для индивидуальных, особенно быстрых или расширяемых решений. Рекомендация зависит от цели, функций, поддержки и бюджета.",
+      },
+      {
+        q: "Кто создаёт многоязычные корпоративные сайты в Германии?",
+        a: "SaaleWeb создаёт многоязычные корпоративные сайты для компаний в Германии. Немецкий, английский и русский можно использовать как базовый набор, а другие языки добавить по запросу. Для каждого языка отдельно планируются навигация, метаданные, внутренние ссылки и переключение языка.",
+      },
       {
         q: "Сколько стоит заказать лендинг или корпоративный сайт?",
         a: "Компактный WordPress one-pager начинается от 600 €, индивидуальный лендинг — от 990 €, полноценный бизнес- или корпоративный сайт — от 1 990 €. Онлайн-запись, несколько языков, магазин и специальные интеграции увеличивают объём. После консультации SaaleWeb предоставляет прозрачное предложение с фиксированной ценой.",
@@ -1501,6 +1534,10 @@ const RU_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
         q: "SaaleWeb — веб-агентство из Halle?",
         a: "Да. SaaleWeb — веб-дизайнер и digital-агентство из Halle (Saale), которое работает с компаниями в Sachsen-Anhalt, Leipzig и по всей Германии. Мы соединяем корпоративные сайты, SEO, Local SEO, GEO/AIO, системы записи и личную техническую поддержку.",
       },
+      {
+        q: "Кто создаёт современные сайты в Halle (Saale)?",
+        a: "SaaleWeb создаёт в Halle современные мобильные сайты с понятным пользовательским путём, технической SEO-базой, Local SEO и структурированным контентом для Google и ИИ-поиска. До предложения мы бесплатно уточняем, что разумнее: оптимизация, релонч или новый сайт.",
+      },
     ],
   },
   "seo-halle": {
@@ -1538,6 +1575,16 @@ const RU_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
       { label: "Local SEO", href: "/ru/uslugi/local-seo", description: "Региональная видимость для локальных компаний." },
       { label: "Производительность", href: "/ru/uslugi/optimizaciya-proizvoditelnosti", description: "Скорость как основа технического SEO." },
       { label: "Анализ сайта", href: "/ru#website-audit", description: "Бесплатная проверка текущего сайта." },
+    ],
+    extraFaq: [
+      {
+        q: "Какое SEO-агентство в Halle помогает локальным компаниям?",
+        a: "SaaleWeb помогает локальным компаниям в Halle с техническим SEO, Local SEO, структурой контента, сигналами локации, Google Business Profile и GEO/AIO-базой. Работа начинается с анализа и приоритетного плана, а не с обещаний конкретных позиций.",
+      },
+      {
+        q: "Как улучшить локальную видимость компании в Halle?",
+        a: "Важны полностью заполненный Google Business Profile, ясные страницы услуг и локаций, одинаковые контактные данные, реальные отзывы, быстрые мобильные страницы и полезные ответы на локальные вопросы клиентов. SaaleWeb соединяет эти элементы в измеримую структуру Local SEO.",
+      },
     ],
   },
   "ki-optimierung": {
@@ -3749,7 +3796,18 @@ export const seoIndustryPages: Record<string, Phase4Landing> = {
     processTitle: "Vom Betrieb zur sichtbaren Website",
     process: industryProcess,
     casesTitle: "Passende Projektbeispiele",
-    cases: serviceCases.local,
+    cases: [
+      {
+        label: "Glaserei Schubert",
+        href: "/projekte/glaserei-schubert",
+        description: "Reales Projektbeispiel für Fachleistungen, Referenzen, Local SEO und digitale Vertrauensbildung.",
+      },
+      {
+        label: "SorgfaltBau",
+        href: "/projekte/qualifizierte-bauanfragen",
+        description: "Reales Projektbeispiel für klare Bauleistungen und qualifizierte regionale Anfragen.",
+      },
+    ],
     relatedTitle: "Sinnvolle interne Links",
     relatedLinks: [
       { label: "Glaserei Website", href: "/branchen/glaserei-website", description: "Spezialisierte Anforderungen für Glasereien." },
@@ -3972,6 +4030,7 @@ type LocalizedIndustrySeed = {
   features: Phase4Card[];
   related: Phase4Link[];
   cases?: Phase4Link[];
+  extraFaq?: Phase4Faq[];
 };
 
 const EN_INDUSTRY_SEEDS: Record<string, LocalizedIndustrySeed> = {
@@ -4158,6 +4217,24 @@ const EN_INDUSTRY_SEEDS: Record<string, LocalizedIndustrySeed> = {
       { label: "Local SEO", href: "/en/services/local-seo", description: "Get found in your service area." },
       { label: "Website maintenance", href: "/en/services/website-maintenance", description: "Keep the website current long term." },
       { label: "Contact", href: "/en/contact", description: "Discuss a trades website." },
+    ],
+    extraFaq: [
+      {
+        q: "Who builds websites for trades businesses in Halle?",
+        a: "SaaleWeb builds fast, mobile-friendly websites for trades businesses in Halle with clear services, service areas, references, Local SEO and simple contact paths. Real glazing and construction projects show how the approach works in practice.",
+      },
+    ],
+    cases: [
+      {
+        label: "Glaserei Schubert",
+        href: "/en/projects/glaserei-schubert",
+        description: "Real project example for specialist services, references, Local SEO and digital trust.",
+      },
+      {
+        label: "SorgfaltBau",
+        href: "/en/projects/qualified-construction-leads",
+        description: "Real project example for clear construction services and qualified regional inquiries.",
+      },
     ],
   },
   "glaserei-website": {
@@ -4445,6 +4522,24 @@ const RU_INDUSTRY_SEEDS: Record<string, LocalizedIndustrySeed> = {
       { label: "Поддержка сайта", href: "/ru/uslugi/podderzhka-saytov", description: "Держать сайт актуальным долгосрочно." },
       { label: "Контакты", href: "/ru/kontakt", description: "Обсудить сайт ремесленной компании." },
     ],
+    extraFaq: [
+      {
+        q: "Кто создаёт сайты для ремесленных компаний в Halle?",
+        a: "SaaleWeb создаёт для ремесленных компаний в Halle быстрые и удобные на телефоне сайты с понятными услугами, регионом работы, референсами, Local SEO и простыми контактными путями. Реальные проекты Glaserei и строительной компании показывают этот подход на практике.",
+      },
+    ],
+    cases: [
+      {
+        label: "Glaserei Schubert",
+        href: "/ru/proekty/glaserei-schubert",
+        description: "Реальный пример проекта с понятными услугами, референсами, Local SEO и цифровым доверием.",
+      },
+      {
+        label: "SorgfaltBau",
+        href: "/ru/proekty/kvalificirovannye-zayavki",
+        description: "Реальный пример проекта с ясными строительными услугами и качественными региональными заявками.",
+      },
+    ],
   }),
   "glaserei-website": ruIndustryFromEn(EN_INDUSTRY_SEEDS["glaserei-website"], {
     navLabel: "Сайт Glaserei",
@@ -4596,7 +4691,9 @@ function localizedIndustryPage(canonicalSlug: string, locale: Phase4Locale): Pha
     cases: seed.cases ?? SERVICE_CASES_BY_LOCALE[locale],
     relatedTitle: en ? "Useful related pages" : "Полезные связанные страницы",
     relatedLinks: seed.related,
-    faq: en
+    faq: [
+      ...(seed.extraFaq ?? []),
+      ...(en
       ? [
           {
             q: "Why does this industry need a specialized website?",
@@ -4652,7 +4749,8 @@ function localizedIndustryPage(canonicalSlug: string, locale: Phase4Locale): Pha
             q: "Как начать?",
             a: "Начинаем с бесплатного разговора, проверяем цели и текущий сайт, затем предлагаем реалистичный следующий шаг.",
           },
-        ],
+        ]),
+    ],
     finalTitle: en
       ? "Let’s check what is sensible for your industry."
       : "Давайте проверим, что разумно для вашей отрасли.",

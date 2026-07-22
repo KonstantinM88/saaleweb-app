@@ -67,6 +67,8 @@ const ui = {
     project: "Projekt",
     answerEyebrow: "Kurz erklärt",
     answerTitle: "Was SaaleWeb hier konkret anbietet",
+    alsoAsked: "Ebenfalls häufig gefragt",
+    evidenceLabel: "Nachweise aus Projekten",
     providerLabel: "Anbieter",
     providerValue: "SaaleWeb — Digitalstudio und Webagentur aus Halle (Saale)",
     focusLabel: "Schwerpunkte",
@@ -105,6 +107,8 @@ const ui = {
     project: "Project",
     answerEyebrow: "In brief",
     answerTitle: "What SaaleWeb provides on this page",
+    alsoAsked: "Also frequently asked",
+    evidenceLabel: "Evidence from projects",
     providerLabel: "Provider",
     providerValue: "SaaleWeb — digital studio and web agency based in Halle (Saale)",
     focusLabel: "Focus",
@@ -143,6 +147,8 @@ const ui = {
     project: "Проект",
     answerEyebrow: "Коротко",
     answerTitle: "Что именно предлагает SaaleWeb",
+    alsoAsked: "Также часто спрашивают",
+    evidenceLabel: "Подтверждение в проектах",
     providerLabel: "Исполнитель",
     providerValue: "SaaleWeb — digital-студия и веб-агентство из Halle (Saale)",
     focusLabel: "Фокус",
@@ -158,6 +164,9 @@ export function Phase4LandingPage({ page, locale, path, parent, schemaKind, area
   const homePath = getHomeHref(locale);
   const contactHref = getContactHref(locale);
   const auditHref = getAuditHref(locale);
+  const [primaryAnswer, secondaryAnswer] = page.faq;
+  const remainingFaq = page.faq.slice(secondaryAnswer ? 2 : primaryAnswer ? 1 : 0);
+  const evidenceCases = page.cases?.slice(0, 2) ?? [];
   const schema =
     schemaKind === "location"
       ? localBusinessSchema({ areaServed: areaServed ?? page.title })
@@ -250,11 +259,22 @@ export function Phase4LandingPage({ page, locale, path, parent, schemaKind, area
                 <div>
                   <span className="eyebrow">{labels.answerEyebrow}</span>
                   <h2 id="phase4-direct-answer" className="mt-4 text-[clamp(25px,3.2vw,38px)] font-extrabold tracking-tight text-dark">
-                    {labels.answerTitle}
+                    {primaryAnswer?.q ?? labels.answerTitle}
                   </h2>
                   <p className="mt-4 max-w-2xl text-[16px] leading-relaxed text-muted">
-                    <BrandText text={page.metaDescription} />
+                    <BrandText text={primaryAnswer?.a ?? page.metaDescription} />
                   </p>
+                  {secondaryAnswer ? (
+                    <div className="mt-6 border-t border-line pt-5">
+                      <p className="font-mono text-[11px] font-bold uppercase tracking-[0.14em] text-brand-purple">
+                        {labels.alsoAsked}
+                      </p>
+                      <h3 className="mt-2 text-[17px] font-extrabold leading-snug text-dark">{secondaryAnswer.q}</h3>
+                      <p className="mt-2 text-[14px] leading-relaxed text-muted">
+                        <BrandText text={secondaryAnswer.a} />
+                      </p>
+                    </div>
+                  ) : null}
                 </div>
 
                 <dl className="grid gap-3 sm:grid-cols-2">
@@ -265,6 +285,25 @@ export function Phase4LandingPage({ page, locale, path, parent, schemaKind, area
                   />
                   <AnswerFact label={labels.regionLabel} value={areaServed ?? labels.regionValue} />
                   <AnswerFact label={labels.nextStepLabel} value={labels.nextStepValue} />
+                  {evidenceCases.length > 0 ? (
+                    <div className="rounded-2xl border border-brand-purple/15 bg-white p-4 sm:col-span-2">
+                      <dt className="font-mono text-[11px] font-bold uppercase tracking-[0.14em] text-brand-purple">
+                        {labels.evidenceLabel}
+                      </dt>
+                      <dd className="mt-3 flex flex-wrap gap-2">
+                        {evidenceCases.map((project) => (
+                          <a
+                            key={project.href}
+                            href={project.href}
+                            className="group inline-flex min-h-10 items-center gap-2 rounded-xl border border-line bg-surface px-3.5 py-2 text-[13px] font-bold text-dark transition hover:border-brand-purple/35 hover:text-brand-purple"
+                          >
+                            <span>{project.label}</span>
+                            <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" aria-hidden />
+                          </a>
+                        ))}
+                      </dd>
+                    </div>
+                  ) : null}
                 </dl>
               </div>
             </Reveal>
@@ -523,7 +562,7 @@ export function Phase4LandingPage({ page, locale, path, parent, schemaKind, area
               </h2>
             </Reveal>
             <div className="mx-auto grid max-w-4xl gap-4">
-              {page.faq.map((item, index) => (
+              {remainingFaq.map((item, index) => (
                 <Reveal key={item.q} delay={(index % 3) * 60}>
                   <article className="rounded-[20px] border border-line bg-white p-5 md:p-6">
                     <h3 className="text-[17px] font-extrabold text-dark">{item.q}</h3>

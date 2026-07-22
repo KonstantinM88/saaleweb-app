@@ -23,6 +23,9 @@ const problemIcons = [Eye, ShieldCheck, Smartphone, Search];
 const deliverableIcons = [Eye, LayoutPanelTop, Smartphone, MapPinned, Gauge, ListChecks];
 
 export function AuditLandingPage({ copy, locale }: { copy: AuditLandingCopy; locale: string }) {
+  const directAnswer = copy.faq[0];
+  const remainingFaq = directAnswer ? copy.faq.slice(1) : copy.faq;
+
   return (
     <main className="min-w-0 overflow-x-clip">
       {/* ---------------- Hero ---------------- */}
@@ -91,6 +94,51 @@ export function AuditLandingPage({ copy, locale }: { copy: AuditLandingCopy; loc
           </div>
         </Container>
       </section>
+
+      {/* A direct, verifiable answer near the top is easier for visitors and answer engines to evaluate. */}
+      {directAnswer ? (
+        <section className="border-y border-line bg-white py-10 md:py-14" aria-labelledby="audit-direct-answer-title">
+          <Container>
+            <div className="grid gap-7 rounded-[26px] border border-line bg-surface/70 p-6 shadow-sm md:p-8 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
+              <div>
+                <span className="eyebrow">{copy.eyebrow}</span>
+                <h2
+                  id="audit-direct-answer-title"
+                  className="mt-4 text-[clamp(25px,3.2vw,38px)] font-extrabold leading-tight tracking-tight text-dark"
+                >
+                  {directAnswer.q}
+                </h2>
+                <p className="mt-4 max-w-3xl text-[16px] leading-relaxed text-muted">{directAnswer.a}</p>
+              </div>
+
+              <div className="rounded-[22px] border border-brand-purple/15 bg-white p-5">
+                <ul className="grid gap-2.5 sm:grid-cols-2 lg:grid-cols-1">
+                  {copy.badges.map((badge) => (
+                    <li key={badge} className="flex items-center gap-2 text-[14px] font-semibold text-ink">
+                      <CheckCircle2 className="h-4 w-4 shrink-0 text-brand-purple" aria-hidden />
+                      {badge}
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-5 flex flex-col gap-2 sm:flex-row lg:flex-col xl:flex-row">
+                  <a
+                    href="#audit-form"
+                    className="inline-flex min-h-11 flex-1 items-center justify-center rounded-xl bg-brand px-4 py-2.5 text-center text-[14px] font-bold text-white transition hover:-translate-y-0.5"
+                  >
+                    {copy.ctaPrimary}
+                  </a>
+                  <Link
+                    href="/projekte"
+                    className="inline-flex min-h-11 flex-1 items-center justify-center rounded-xl border border-line bg-white px-4 py-2.5 text-center text-[14px] font-bold text-dark transition hover:-translate-y-0.5 hover:border-brand-purple/35 hover:text-brand-purple"
+                  >
+                    {copy.trust.linkLabel}
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </Container>
+        </section>
+      ) : null}
 
       {/* ---------------- Problems ---------------- */}
       <section className="py-14 md:py-20" aria-labelledby="audit-problems-title">
@@ -249,7 +297,7 @@ export function AuditLandingPage({ copy, locale }: { copy: AuditLandingCopy; loc
             {copy.faqTitle}
           </h2>
           <div className="mx-auto mt-8 max-w-3xl">
-            <FaqAccordion items={copy.faq} />
+            <FaqAccordion items={remainingFaq} />
           </div>
         </Container>
       </section>
