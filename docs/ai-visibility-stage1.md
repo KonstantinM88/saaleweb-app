@@ -1,6 +1,12 @@
-# AI visibility stage 1
+# AI visibility — Stage 1
 
-Stage 1 creates a measurable baseline instead of treating crawler visits as search visibility.
+## Goal
+
+Stage 1 makes SaaleWeb easier to identify, understand and cite in answer engines without creating doorway pages or promising placements that no agency can guarantee.
+
+The benchmark contains 20 German commercial questions across ChatGPT Search, Google AI/Gemini, Perplexity and Microsoft Copilot. This produces 80 manual checks per week. A check records whether SaaleWeb was mentioned and whether a SaaleWeb URL was cited.
+
+The current dashboard can start at `0/80`. That means the weekly checks have not been recorded yet; it is not evidence that all platforms tested SaaleWeb and rejected it.
 
 ## What is included
 
@@ -14,16 +20,37 @@ Stage 1 creates a measurable baseline instead of treating crawler visits as sear
 
 Manual checks are intentional. API responses are not a reliable substitute for the results shown in the consumer products, which can vary by product, account, location and time.
 
-## Weekly procedure
+## What Stage 1 changes
 
-1. Open a clean/private browser session and avoid carrying an earlier conversation into the test.
-2. Open the platform from the admin monitor.
-3. Copy the prompt exactly without adding SaaleWeb to it.
-4. Record whether SaaleWeb is mentioned and whether a SaaleWeb page is linked as a source.
-5. Record the first clearly visible competitor and a short factual note when useful.
-6. Complete all 80 prompt/platform combinations during the same weekly test window.
+- Priority service, industry and location pages answer their assigned commercial benchmark question directly in the visible FAQ.
+- Code-backed landing pages include a compact answer-first facts block with provider, focus, region and next step.
+- The pricing page answers the Halle website-cost question with the published 600/990/1,990 EUR entry prices.
+- The free audit page explains who provides the audit, what is checked and that it is manual and non-binding.
+- The project index exposes real-project and verified-review evidence visibly and through `CollectionPage` and `ItemList` JSON-LD.
+- Existing detailed content, internal links, organization schema, `llms.txt`, sitemap and IndexNow remain the supporting discovery layer.
 
-The main KPIs are citation coverage, mention coverage, cited target pages and recurring competitors. Crawler visits alone are only a discovery signal.
+## Commercial intent ownership
+
+High-intent keyword variants are consolidated on existing authoritative pages instead of being split into near-duplicate landing pages:
+
+- `/leistungen/webdesign-halle` owns Webdesign Halle, Webdesigner Halle and Webagentur Halle.
+- `/leistungen/website-erstellen-lassen` owns Website-Erstellung für Unternehmen, Homepage erstellen lassen and Firmenwebsite erstellen lassen.
+- `/standorte/halle` connects the Halle service entity with Sachsen-Anhalt and the wider regional service area.
+- `/leistungen/ki-assistent` owns KI-Assistent and KI-Chatbot use cases for companies.
+- `/preise` remains the source of truth for published entry prices.
+
+The wording is used naturally in headings, summaries and decision-oriented FAQ answers. Do not create a separate page for every spelling variant; that would divide signals, duplicate intent and make both classical search and answer engines less certain about the primary source.
+
+The 20 benchmark questions remain unchanged while this content layer is refined. This keeps weekly results comparable. Paid-search keyword reports may inform page wording, but they are not copied into the benchmark or the page as a visible keyword list.
+
+## Weekly benchmark process
+
+1. Use clean consumer sessions where practical; do not tell the assistant which company to choose.
+2. Ask the exact saved question in each platform.
+3. Record `mentioned` only when the answer explicitly names SaaleWeb.
+4. Record `cited` only when the answer provides a clickable SaaleWeb URL or an identifiable source citation.
+5. Save a short neutral note when the answer names a competitor, uses stale information or cites the wrong page.
+6. Compare the same question set week over week; do not replace weak questions merely to improve the score.
 
 ## IndexNow setup
 
@@ -50,6 +77,13 @@ IndexNow accelerates discovery; it does not guarantee crawling, indexing, rankin
 
 ## Interpretation
 
+- A mention without a link shows entity recognition but weak source attribution.
+- A citation is the stronger signal because the platform selected a SaaleWeb page as supporting evidence.
+- Changes may take several crawls or model refreshes to appear. Evaluate trends over at least four to eight weeks.
+- Search personalization, location and model changes can alter answers. The benchmark is directional, not an official rank tracker.
+
+Status meanings:
+
 - **Не проверено**: the platform has not been checked for the selected week.
 - **Не найден**: it was checked and SaaleWeb did not appear.
 - **Упомянут**: SaaleWeb appeared but was not linked as a source.
@@ -59,4 +93,6 @@ IndexNow accelerates discovery; it does not guarantee crawling, indexing, rankin
 
 Use `/visibility` from Telegram's compact native **Menu** button. Inline buttons open the weekly summary, groups of five prompts, platform details and four status actions. Telegram supports fast status recording and IndexNow submission; position, citation URL, competitor and notes remain available through **Расширенное редактирование** in the protected admin area. The old persistent reply keyboard is removed after the next command so it no longer occupies the bottom third of the chat.
 
-After four weeks, compare prompt groups rather than single volatile answers. Content and authority work should prioritize prompts that repeatedly cite competitors but not SaaleWeb.
+## Next stage
+
+After the first complete baseline and at least one repeat measurement, prioritize questions that show either competitor citations or SaaleWeb mentions without links. Stage 2 should add original evidence where it is genuinely available: concise case-study outcomes, named expert authorship, dated methodology, local data and externally corroborated profiles. Do not fabricate statistics, customer results or awards.

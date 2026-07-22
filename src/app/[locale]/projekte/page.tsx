@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { hasLocale } from "next-intl";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, CheckCircle2, MapPin, Star } from "lucide-react";
 import { routing, type AppLocale } from "@/i18n/routing";
 import { getPathname } from "@/i18n/navigation";
 import { prisma } from "@/lib/prisma";
@@ -16,7 +17,7 @@ import { Magnetic } from "@/shared/ui/Magnetic";
 import { TrustMetrics } from "@/shared/ui/TrustMetrics";
 import { CtaBanner } from "@/shared/ui/CtaBanner";
 import { JsonLd } from "@/shared/seo/JsonLd";
-import { breadcrumbSchema } from "@/shared/seo/schema";
+import { breadcrumbSchema, collectionPageSchema, itemListSchema } from "@/shared/seo/schema";
 import { buildMetadata } from "@/shared/seo/metadata";
 import { getContactHref } from "@/shared/lib/contactHref";
 
@@ -111,10 +112,25 @@ export default async function ProjectsIndexPage({
     <>
       <Navbar />
       <JsonLd
-        data={breadcrumbSchema([
-          { name: pages("home"), path: homePath },
-          { name: t("label"), path: projectsPath },
-        ])}
+        data={[
+          breadcrumbSchema([
+            { name: pages("home"), path: homePath },
+            { name: t("label"), path: projectsPath },
+          ]),
+          collectionPageSchema({
+            name: t("pageTitle"),
+            description: t("pageLead"),
+            path: projectsPath,
+            locale,
+          }),
+          itemListSchema(
+            items.map((item) => ({
+              name: item.title,
+              description: item.result || item.tag,
+              path: `${projectsPath}/${item.slug}`,
+            })),
+          ),
+        ]}
       />
 
       <main>
@@ -177,6 +193,28 @@ export default async function ProjectsIndexPage({
           </Container>
         </section>
 
+        <section className="border-y border-line bg-white py-12 md:py-16" aria-labelledby="project-proof-title">
+          <Container>
+            <Reveal>
+              <div className="grid gap-7 rounded-[26px] border border-line bg-surface/70 p-6 shadow-sm md:p-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+                <div>
+                  <span className="eyebrow">{t("proofEyebrow")}</span>
+                  <h2 id="project-proof-title" className="mt-4 text-[clamp(26px,3.5vw,40px)] font-extrabold leading-tight tracking-tight text-dark">
+                    {t("proofTitle")}
+                  </h2>
+                  <p className="mt-4 text-[16px] leading-relaxed text-muted">{t("proofText")}</p>
+                </div>
+
+                <ul className="grid gap-3">
+                  <ProofItem icon={<CheckCircle2 size={19} aria-hidden />} text={t("proofProjects")} />
+                  <ProofItem icon={<Star size={19} aria-hidden />} text={t("proofReviews")} />
+                  <ProofItem icon={<MapPin size={19} aria-hidden />} text={t("proofRegion")} />
+                </ul>
+              </div>
+            </Reveal>
+          </Container>
+        </section>
+
         <section className="py-12 md:py-16">
           <Container>
             {items.length === 0 ? (
@@ -197,5 +235,16 @@ export default async function ProjectsIndexPage({
       </main>
       <Footer />
     </>
+  );
+}
+
+function ProofItem({ icon, text }: { icon: ReactNode; text: string }) {
+  return (
+    <li className="flex items-center gap-3 rounded-2xl border border-line bg-white p-4 text-[15px] font-semibold leading-relaxed text-ink">
+      <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-soft text-brand-purple">
+        {icon}
+      </span>
+      <span>{text}</span>
+    </li>
   );
 }

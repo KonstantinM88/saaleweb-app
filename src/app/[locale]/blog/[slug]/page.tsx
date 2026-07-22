@@ -26,6 +26,24 @@ import { LocaleSlugsProvider } from "@/features/language-switcher/LocaleSlugsCon
 
 type Params = { locale: string; slug: string };
 
+const technologyDecisionAnswer: Record<AppLocale, { question: string; answer: string }> = {
+  de: {
+    question: "WordPress oder Next.js – was ist besser für ein kleines Unternehmen?",
+    answer:
+      "Für einen kompakten, pflegeleichten Einstieg mit Standardfunktionen ist WordPress oft wirtschaftlich sinnvoll. Next.js passt besser, wenn individuelle Gestaltung, sehr hohe Performance, Mehrsprachigkeit, Integrationen oder langfristige Erweiterbarkeit wichtig sind. SaaleWeb arbeitet mit beiden Technologien und empfiehlt erst nach Ziel, Pflegebedarf und Budget.",
+  },
+  en: {
+    question: "WordPress or Next.js — which is better for a small business?",
+    answer:
+      "WordPress is often the economical choice for a compact, easy-to-maintain website with standard functions. Next.js is a stronger fit when individual design, very high performance, multiple languages, integrations or long-term extensibility matter. SaaleWeb works with both and recommends a platform only after reviewing the goal, maintenance needs and budget.",
+  },
+  ru: {
+    question: "WordPress или Next.js — что лучше для малого бизнеса?",
+    answer:
+      "WordPress часто экономически выгоднее для компактного сайта со стандартными функциями и простой поддержкой. Next.js лучше подходит, когда важны индивидуальный дизайн, высокая скорость, несколько языков, интеграции и дальнейшее расширение. SaaleWeb работает с обеими технологиями и рекомендует решение только после оценки цели, поддержки и бюджета.",
+  },
+};
+
 export async function generateStaticParams() {
   try {
     const rows = (await prisma.blogPostTranslation.findMany({
@@ -140,6 +158,18 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
                 </span>
               </div>
             </header>
+
+            {post.slugs.de === "nextjs-vs-wordpress" && (
+              <section className="mx-auto mt-8 max-w-3xl rounded-[22px] border border-brand-purple/20 bg-brand-soft/60 p-5 md:p-6" aria-labelledby="technology-decision-answer">
+                <p className="font-mono text-xs font-bold uppercase tracking-[0.14em] text-brand-purple">{locale === "de" ? "Kurzantwort" : locale === "en" ? "Short answer" : "Короткий ответ"}</p>
+                <h2 id="technology-decision-answer" className="mt-3 text-[clamp(21px,3vw,28px)] font-extrabold leading-tight text-dark">
+                  {technologyDecisionAnswer[locale].question}
+                </h2>
+                <p className="mt-3 text-[15.5px] leading-relaxed text-ink">
+                  {technologyDecisionAnswer[locale].answer}
+                </p>
+              </section>
+            )}
 
             <div className="mx-auto mt-10 grid max-w-5xl gap-12 lg:grid-cols-[1fr_240px]">
               <div className="markdown min-w-0 max-w-3xl">

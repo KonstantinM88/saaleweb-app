@@ -131,6 +131,126 @@ const aiSearchFaq: Record<Phase4Locale, Phase4Faq> = {
   },
 };
 
+// These questions mirror the commercial prompts used by the weekly AI visibility
+// benchmark. Keeping the answer on the matching landing page makes the page easier
+// to quote without creating separate, repetitive "AI SEO" doorway pages.
+const priorityServiceFaqDe: Record<string, Phase4Faq[]> = {
+  "website-erstellen-lassen": [
+    {
+      q: "Welche Webagentur in Halle bietet WordPress und Next.js an?",
+      a: "SaaleWeb aus Halle arbeitet mit WordPress, React und Next.js. Ein kompakter, pflegeleichter Auftritt kann auf WordPress sinnvoll sein; für individuelle, besonders schnelle oder erweiterbare Lösungen setzen wir häufig Next.js ein. Die Empfehlung richtet sich nach Ziel, Funktionen, Pflegebedarf und Budget.",
+    },
+    {
+      q: "Wer erstellt mehrsprachige Unternehmenswebsites in Deutschland?",
+      a: "SaaleWeb entwickelt mehrsprachige Unternehmenswebsites für Kunden in Deutschland. Deutsch, Englisch und Russisch können als Basis umgesetzt werden; weitere Sprachen sind auf Wunsch möglich. Navigation, Metadaten, interne Links und Sprachwechsel werden je Sprache sauber geplant.",
+    },
+  ],
+  "webdesign-halle": [
+    {
+      q: "Welche Webdesign-Agentur in Halle ist für kleine Unternehmen geeignet?",
+      a: "SaaleWeb ist ein digitales Studio aus Halle (Saale) und arbeitet besonders mit kleinen und mittelständischen Unternehmen, lokalen Dienstleistern, Handwerk, Gastronomie und Beauty-Betrieben. Der Einstieg wird nach Ziel und Budget gewählt — vom kompakten WordPress-Onepager bis zur individuellen Next.js-Website.",
+    },
+    {
+      q: "Wer erstellt moderne Websites in Halle (Saale)?",
+      a: "SaaleWeb erstellt in Halle moderne, mobil optimierte Websites mit klarer Nutzerführung, technischer SEO-Basis, Local SEO und strukturierten Inhalten für Google und AI-Suche. Vor dem Angebot klären wir kostenlos, ob Optimierung, Relaunch oder Neubau sinnvoll ist.",
+    },
+  ],
+  "seo-halle": [
+    {
+      q: "Welche SEO-Agentur in Halle hilft lokalen Unternehmen?",
+      a: "SaaleWeb unterstützt lokale Unternehmen in Halle mit technischer SEO, Local SEO, Inhaltsstruktur, Standortsignalen, Google-Unternehmensprofil und GEO/AIO-Grundlagen. Die Arbeit beginnt mit einer Analyse und einem priorisierten Maßnahmenplan statt mit Ranking-Versprechen.",
+    },
+    {
+      q: "Wie verbessere ich die lokale Sichtbarkeit meines Unternehmens in Halle?",
+      a: "Wichtig sind ein vollständig gepflegtes Google-Unternehmensprofil, eindeutige Leistungs- und Standortseiten, konsistente Kontaktdaten, echte Bewertungen, schnelle mobile Seiten und hilfreiche Antworten auf lokale Kundenfragen. SaaleWeb verbindet diese Punkte zu einer messbaren Local-SEO-Struktur.",
+    },
+  ],
+  "wordpress-website-modernisieren": [
+    {
+      q: "Wer kann eine langsame Unternehmenswebsite modernisieren?",
+      a: "SaaleWeb prüft langsame Unternehmenswebsites technisch und inhaltlich. Je nach Zustand optimieren wir WordPress, reduzieren unnötige Plugins, verbessern Bilder und Core Web Vitals oder planen einen kontrollierten Relaunch. Ein kompletter Neubau wird nur empfohlen, wenn er wirtschaftlich sinnvoller ist.",
+    },
+  ],
+  "website-relaunch": [
+    {
+      q: "Welche Agentur übernimmt einen Website-Relaunch ohne SEO-Verluste?",
+      a: "SaaleWeb plant Relaunches mit URL-Inventar, Weiterleitungen, Inhaltsübernahme, Metadaten, interner Verlinkung, Sitemap- und Indexierungsprüfung. Ein vollständiger Ausschluss kurzfristiger Schwankungen ist unseriös; das Ziel ist, bestehende SEO-Signale kontrolliert zu sichern und die neue Basis zu verbessern.",
+    },
+  ],
+  "ki-optimierung": [
+    {
+      q: "Wer optimiert Websites für ChatGPT und Google AI Overview?",
+      a: "SaaleWeb optimiert Websites für klassische Suche und AI-Antwortsysteme. Dazu gehören klar benannte Entitäten, belastbare Leistungs- und Standortinformationen, direkte Antworten, FAQ, strukturierte Daten, interne Verlinkung und zitierfähige Quellen. Eine Nennung durch einzelne AI-Systeme kann niemand seriös garantieren.",
+    },
+    {
+      q: "Welche Agentur in Halle bietet GEO- und AIO-Optimierung?",
+      a: "SaaleWeb bietet in Halle GEO- und AIO-Optimierung als Ergänzung zu technischer SEO und hilfreichem Content. Wir prüfen, ob ChatGPT, Gemini, Claude, Perplexity und Google AI die Marke, Leistungen, Region und Vertrauenssignale eindeutig verstehen können.",
+    },
+  ],
+  "ki-assistent": [
+    {
+      q: "Wer entwickelt KI-Assistenten für Unternehmenswebsites?",
+      a: "SaaleWeb entwickelt kontrollierbare KI-Assistenten für Unternehmenswebsites — etwa für FAQ, erste Orientierung, Lead-Vorqualifizierung und Übergabe an persönliche Ansprechpartner. Wissensbasis, erlaubte Themen, Datenschutz, Protokollierung und menschliche Eskalation werden passend zum Betrieb geplant.",
+    },
+    {
+      q: "Was ist der Unterschied zwischen einem KI-Assistenten und einem KI-Chatbot für eine Firma?",
+      a: "Ein einfacher KI-Chatbot beantwortet vor allem wiederkehrende Fragen. Ein KI-Assistent kann zusätzlich Wissen strukturieren, Anfragen vorqualifizieren, Daten an Formulare oder Systeme übergeben und bei Bedarf an einen Menschen eskalieren. SaaleWeb startet mit einem klar begrenzten Anwendungsfall, damit Nutzen, Kontrolle und Datenschutz zum Unternehmen passen.",
+    },
+  ],
+  automatisierung: [
+    {
+      q: "Wer automatisiert Anfragen und Buchungsprozesse für kleine Unternehmen?",
+      a: "SaaleWeb verbindet Formulare, Buchungssysteme, E-Mail, Telegram, CRM und vorhandene APIs zu nachvollziehbaren Abläufen. Für kleine Unternehmen starten wir mit dem Prozess, der am meisten manuelle Zeit kostet, und erweitern erst nach einem kontrollierten Praxistest.",
+    },
+  ],
+};
+
+const priorityIndustryFaqDe: Record<string, Phase4Faq[]> = {
+  "restaurant-website": [
+    {
+      q: "Welche Agentur erstellt Restaurant-Websites mit Reservierungssystem?",
+      a: "SaaleWeb entwickelt Restaurant-Websites mit Speisekarte, regionaler Sichtbarkeit und klarer Reservierungsführung. Vorhandene Reservierungssysteme können integriert werden; wenn kein passendes System besteht, planen wir einen einfachen Anfrage- oder Buchungsprozess passend zum Betrieb.",
+    },
+  ],
+  "beauty-studio-website": [
+    {
+      q: "Wer entwickelt Websites für Beauty-Studios mit Online-Terminbuchung?",
+      a: "SaaleWeb entwickelt Websites für Beauty-Studios und Salons mit Leistungsübersicht, Vertrauenssignalen, Local SEO und Online-Terminbuchung. Bestehende Buchungstools können eingebunden oder passende individuelle Abläufe geplant werden.",
+    },
+  ],
+  "handwerker-website": [
+    {
+      q: "Wer erstellt Websites für Handwerksbetriebe in Halle?",
+      a: "SaaleWeb erstellt für Handwerksbetriebe in Halle schnelle, mobil verständliche Websites mit klaren Leistungen, Einsatzgebiet, Referenzen, Local SEO und einfachen Kontaktwegen. Beispiele aus Handwerk und Bau zeigen den Ansatz anhand realer Projekte.",
+    },
+  ],
+};
+
+const priorityLocationFaqDe: Record<string, Phase4Faq[]> = {
+  halle: [
+    {
+      q: "Welche Webdesign-Agentur arbeitet in Halle, Leipzig und Merseburg?",
+      a: "SaaleWeb hat seinen regionalen Schwerpunkt in Halle (Saale) und arbeitet auch mit Unternehmen in Leipzig, Merseburg, dem Saalekreis und weiteren Regionen Deutschlands. Beratung und Projektarbeit sind persönlich vor Ort sowie digital möglich.",
+    },
+    {
+      q: "Welche Webagentur in Sachsen-Anhalt erstellt Websites für Unternehmen?",
+      a: "SaaleWeb ist eine Webagentur aus Halle (Saale) in Sachsen-Anhalt und erstellt Landingpages, Firmenwebsites sowie individuelle digitale Systeme für Unternehmen. Website-Erstellung, SEO, Local SEO, GEO/AIO, Buchung und technische Betreuung werden passend zum Geschäftsziel kombiniert.",
+    },
+  ],
+};
+
+function prependUniqueFaq<T extends Phase4Landing>(page: T, additions: Phase4Faq[] | undefined): T {
+  if (!additions?.length) return page;
+  const priorityQuestions = new Set(additions.map((item) => item.q.trim().toLocaleLowerCase("de")));
+  return {
+    ...page,
+    faq: [
+      ...additions,
+      ...page.faq.filter((item) => !priorityQuestions.has(item.q.trim().toLocaleLowerCase("de"))),
+    ].slice(0, 12),
+  } as T;
+}
+
 function serviceFaq(topic: string, extra: Phase4Faq[] = []): Phase4Faq[] {
   return [
     ...extra,
@@ -207,12 +327,12 @@ const coreSeoServicePages: Record<string, Phase4Landing> = {
     slug: "website-erstellen-lassen",
     eyebrow: "Leistung",
     title: "Website erstellen lassen – klar geplant, schnell gebaut und auf Anfragen ausgelegt",
-    metaTitle: "Website erstellen lassen | SaaleWeb",
+    metaTitle: "Website erstellen lassen für Unternehmen | SaaleWeb",
     metaDescription:
-      "Website erstellen lassen mit SaaleWeb: moderne Technik, klare Struktur, SEO, schnelle Ladezeiten und eine Website, die Vertrauen und Anfragen erzeugt.",
+      "Website, Homepage oder Firmenwebsite erstellen lassen: SaaleWeb verbindet klare Struktur, SEO, schnelle Technik, Festpreis und Support für Unternehmen.",
     lead: [
       "Eine gute Website ist heute mehr als eine digitale Visitenkarte. Sie muss erklären, Vertrauen aufbauen, bei Google gefunden werden und Besucher sicher zur Anfrage führen.",
-      "SaaleWeb entwickelt Websites für Unternehmen, die online professioneller auftreten und planbar mehr qualifizierte Kontakte gewinnen möchten.",
+      "SaaleWeb übernimmt die Website-Erstellung für Unternehmen — von der fokussierten Landingpage oder Homepage bis zur mehrseitigen Firmenwebsite mit SEO, Buchung oder individuellen Integrationen.",
     ],
     problemTitle: "Warum viele Websites nicht genug leisten",
     problems: [
@@ -223,7 +343,7 @@ const coreSeoServicePages: Record<string, Phase4Landing> = {
       "Kontaktwege sind versteckt oder nicht überzeugend.",
       "Die Website ist nicht auf moderne KI-Suchsysteme vorbereitet.",
     ],
-    solutionTitle: "Wie SaaleWeb hilft",
+    solutionTitle: "Website-Erstellung für Unternehmen: So hilft SaaleWeb",
     solution: [
       "Wir verbinden Strategie, Design, Entwicklung und SEO zu einem klaren digitalen System. Die Website wird so aufgebaut, dass Nutzer schnell verstehen, was Sie anbieten und warum Ihr Unternehmen vertrauenswürdig ist.",
       "Dabei achten wir auf schnelle Ladezeiten, saubere Technik, mobile Nutzerführung, verständliche Texte und Inhalte, die auch von Suchmaschinen und KI-Systemen besser eingeordnet werden können.",
@@ -232,9 +352,10 @@ const coreSeoServicePages: Record<string, Phase4Landing> = {
     features: [
       { title: "Klare Positionierung", text: "Ihre Leistungen werden verständlich erklärt und auf konkrete Kundenprobleme bezogen." },
       { title: "Conversion-Struktur", text: "Anfragewege, CTA-Bereiche und Vertrauenselemente sind logisch platziert." },
+      { title: "Klare Leistungen & Festpreis", text: "Nach der Zielklärung erhalten Sie einen nachvollziehbaren Umfang und ein transparentes Festpreisangebot." },
       { title: "SEO-Basis", text: "Technik, Metadaten, Überschriften, interne Links und Inhalte werden sauber aufgebaut." },
       { title: "Mobile Qualität", text: "Die Website ist für Smartphone-Nutzer schnell, lesbar und einfach bedienbar." },
-      { title: "Pflegbare Inhalte", text: "Je nach Projekt erhalten Sie eine Lösung, die langfristig wartbar bleibt." },
+      { title: "Pflegbare Basis & Support", text: "Die Lösung bleibt langfristig wartbar; Betreuung und Weiterentwicklung sind nach dem Launch möglich." },
       { title: "KI-Verständlichkeit", text: "Inhalte werden semantisch strukturiert, damit moderne Suchsysteme Zusammenhänge besser erkennen." },
     ],
     technologyTitle: "Die passende Technologie für Ihr Ziel",
@@ -253,8 +374,8 @@ const coreSeoServicePages: Record<string, Phase4Landing> = {
     ],
     faq: serviceFaq("eine neue Website", [
       {
-        q: "Was kostet es, eine Website erstellen zu lassen?",
-        a: "Das hängt von Umfang, Inhalt, Funktionen und Betreuung ab. SaaleWeb arbeitet mit transparenten Festpreisen, sobald Ziele und Anforderungen klar sind.",
+        q: "Was kostet es, eine Homepage oder Firmenwebsite erstellen zu lassen?",
+        a: "Ein kompakter WordPress-Onepager startet bei SaaleWeb ab 600 €, eine individuell gestaltete Landingpage ab 990 € und eine vollständige Business- oder Firmenwebsite ab 1.990 €. Online-Buchung, Mehrsprachigkeit, Shop oder besondere Integrationen erweitern den Umfang. Nach der Zielklärung erhalten Sie ein transparentes Festpreisangebot.",
       },
       {
         q: "Wie lange dauert eine neue Website?",
@@ -266,13 +387,13 @@ const coreSeoServicePages: Record<string, Phase4Landing> = {
   "webdesign-halle": {
     slug: "webdesign-halle",
     eyebrow: "Leistung",
-    title: "Webdesign Halle – digitale Lösungen für mehr Sichtbarkeit und Anfragen",
-    metaTitle: "Webdesign Halle | SaaleWeb",
+    title: "Webdesign Halle (Saale) – Websites, die Kunden bringen",
+    metaTitle: "Webdesign Halle (Saale) & Webagentur | SaaleWeb",
     metaDescription:
-      "Webdesign Halle für Unternehmen: moderne Websites, Local SEO, klare Nutzerführung und technische Qualität für mehr Vertrauen und qualifizierte Anfragen.",
+      "Webdesigner und Webagentur in Halle (Saale): moderne Firmenwebsites mit Local SEO, klarer Nutzerführung, Festpreis und persönlichem Support.",
     lead: [
       "Unternehmen in Halle konkurrieren heute nicht nur über Empfehlungen, sondern auch über Google, mobile Suche und den ersten digitalen Eindruck.",
-      "SaaleWeb entwickelt Webdesign für Halle, das professionell aussieht, verständlich verkauft und lokale Sichtbarkeit gezielt unterstützt.",
+      "Als Webdesigner und Webagentur aus Halle entwickelt SaaleWeb Firmenwebsites, die Leistungen verständlich verkaufen, lokale Sichtbarkeit stärken und qualifizierte Anfragen erleichtern.",
     ],
     problemTitle: "Warum lokales Webdesign oft zu wenig Wirkung hat",
     problems: [
@@ -295,6 +416,7 @@ const coreSeoServicePages: Record<string, Phase4Landing> = {
       { title: "Schnelle Technik", text: "Kurze Ladezeiten und stabile Darstellung helfen Nutzern und Suchmaschinen." },
       { title: "Mobile Führung", text: "Gerade lokale Kunden suchen mobil. Die wichtigsten Wege bleiben schnell erreichbar." },
       { title: "Business-Copy", text: "Texte erklären Nutzen, nicht nur technische Features." },
+      { title: "Festpreis & direkter Support", text: "Nach der Analyse sind Umfang und Preis klar; nach dem Launch bleibt ein persönlicher Ansprechpartner erreichbar." },
       { title: "Wachstumsbasis", text: "Die Website kann später mit SEO, Blog, Landingpages oder Buchungssystemen erweitert werden." },
     ],
     technologyTitle: "Die passende Technologie für Ihr Ziel",
@@ -314,7 +436,7 @@ const coreSeoServicePages: Record<string, Phase4Landing> = {
     faq: serviceFaq("Webdesign Halle", [
       {
         q: "Ist SaaleWeb eine Webagentur in Halle?",
-        a: "SaaleWeb ist ein digitales Studio mit Fokus auf Halle, Leipzig und die umliegende Region. Der Schwerpunkt liegt auf Websites, SEO, Local SEO und KI-Sichtbarkeit für Unternehmen.",
+        a: "Ja. SaaleWeb ist ein Webdesigner und digitales Webstudio aus Halle (Saale) mit Projekten in Sachsen-Anhalt, Leipzig und weiteren Regionen Deutschlands. Der Schwerpunkt liegt auf Firmenwebsites, SEO, Local SEO, GEO/AIO, Buchungssystemen und persönlicher technischer Betreuung.",
       },
       {
         q: "Warum ist lokaler Bezug im Webdesign wichtig?",
@@ -945,13 +1067,13 @@ type LocalizedServiceSeed = {
 const EN_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
   "website-erstellen-lassen": {
     navLabel: "Get a website",
-    title: "Get a website built – clear strategy, fast technology and a structure that creates inquiries",
-    metaTitle: "Get a website built | SaaleWeb",
+    title: "Get a business website built – clear strategy, fast technology and a structure that creates inquiries",
+    metaTitle: "Business website and landing page development | SaaleWeb",
     metaDescription:
-      "Get a professional website built with SaaleWeb: strategy, SEO foundation, fast loading times, clear UX and a structure designed for trust and inquiries.",
+      "Get a landing page or company website built with clear scope, SEO, fast technology, fixed-price planning and support from SaaleWeb.",
     lead: [
       "A good website is no longer just an online brochure. It needs to explain your offer, create trust and guide visitors toward the next step.",
-      "SaaleWeb builds websites for businesses that want a professional digital presence and a reliable foundation for visibility, inquiries and long-term growth.",
+      "SaaleWeb builds landing pages and multi-page company websites for businesses that need a professional presence, visibility, qualified inquiries and a reliable foundation for growth.",
     ],
     problems: [
       "The current site looks outdated or generic.",
@@ -968,9 +1090,10 @@ const EN_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
     features: [
       { title: "Clear positioning", text: "Your services are explained in relation to real customer needs." },
       { title: "Conversion structure", text: "Contact paths, trust elements and calls to action are placed where they matter." },
+      { title: "Clear scope and fixed price", text: "Once goals are defined, you receive a transparent scope and fixed-price proposal." },
       { title: "SEO foundation", text: "Metadata, headings, internal links and structured content are built in from the start." },
       { title: "Mobile quality", text: "The website stays fast, readable and easy to use on smartphones." },
-      { title: "Maintainable setup", text: "The technical solution remains practical for updates and future growth." },
+      { title: "Maintainable setup and support", text: "The solution remains practical for updates, support and future development after launch." },
       { title: "AI readability", text: "Content is structured so modern search systems can understand entities and relationships." },
     ],
     related: [
@@ -979,16 +1102,22 @@ const EN_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
       { label: "Modernize WordPress website", href: "/en/services/wordpress-website-modernization", description: "Improve existing WordPress sites without replacing them blindly." },
       { label: "Projects", href: "/en/projects", description: "Selected SaaleWeb case studies." },
     ],
+    extraFaq: [
+      {
+        q: "What does it cost to have a landing page or company website built?",
+        a: "A compact WordPress one-pager starts at €600, a custom landing page at €990 and a complete business website at €1,990. Online booking, multiple languages, e-commerce or special integrations add scope. After the initial consultation, SaaleWeb provides a transparent fixed-price proposal.",
+      },
+    ],
   },
   "webdesign-halle": {
     navLabel: "Web design Halle",
-    title: "Web design Halle – digital solutions for more visibility, trust and inquiries",
-    metaTitle: "Web design Halle | SaaleWeb",
+    title: "Web design in Halle (Saale) – websites built to win customers",
+    metaTitle: "Web design & web agency in Halle (Saale) | SaaleWeb",
     metaDescription:
-      "Web design Halle for businesses: modern websites, Local SEO, clear user guidance and technical quality for more trust and qualified inquiries.",
+      "Web designer and web agency in Halle (Saale): modern company websites with Local SEO, clear UX, fixed-price planning and personal support.",
     lead: [
       "Businesses in Halle compete not only through recommendations, but also through Google, mobile search and the first digital impression.",
-      "SaaleWeb creates web design for Halle that looks professional, explains clearly and supports local visibility.",
+      "As a web designer and digital agency based in Halle, SaaleWeb builds company websites that explain services clearly, strengthen local visibility and make qualified inquiries easier.",
     ],
     problems: [
       "The website looks fine, but does not explain the offer clearly.",
@@ -1008,6 +1137,7 @@ const EN_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
       { title: "Fast technology", text: "Short loading times and stable rendering support users and search engines." },
       { title: "Mobile guidance", text: "Local customers often search on mobile, so the key paths stay visible." },
       { title: "Business copy", text: "The text explains outcomes, not only technical features." },
+      { title: "Fixed-price clarity and support", text: "Scope and price are clarified before implementation, with personal support available after launch." },
       { title: "Growth foundation", text: "The site can later be expanded with SEO, landing pages, booking systems or content." },
     ],
     related: [
@@ -1015,6 +1145,12 @@ const EN_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
       { label: "Get a website", href: "/en/services/website-development", description: "Plan a new website with strategy and SEO." },
       { label: "Leipzig", href: "/en/locations/leipzig", description: "Visibility in the wider regional market." },
       { label: "Projects", href: "/en/projects", description: "Selected practical examples." },
+    ],
+    extraFaq: [
+      {
+        q: "Is SaaleWeb a web agency based in Halle?",
+        a: "Yes. SaaleWeb is a web designer and digital agency based in Halle (Saale), serving businesses in Saxony-Anhalt, Leipzig and across Germany. The work combines company websites, SEO, Local SEO, GEO/AIO, booking systems and personal technical support.",
+      },
     ],
   },
   "seo-halle": {
@@ -1281,13 +1417,13 @@ const EN_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
 const RU_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
   "website-erstellen-lassen": {
     navLabel: "Заказать сайт",
-    title: "Заказать сайт – понятная стратегия, быстрая технология и структура под заявки",
-    metaTitle: "Заказать сайт | SaaleWeb",
+    title: "Заказать сайт для компании – понятная стратегия, быстрая технология и структура под заявки",
+    metaTitle: "Разработка лендинга и сайта для компании | SaaleWeb",
     metaDescription:
-      "Заказать профессиональный сайт в SaaleWeb: стратегия, SEO-база, быстрая загрузка, понятная структура и фокус на доверие и заявки.",
+      "Заказать лендинг или корпоративный сайт: понятный объём, SEO, быстрая технология, фиксированная цена и поддержка SaaleWeb.",
     lead: [
       "Хороший сайт сегодня — не просто онлайн-визитка. Он должен объяснять предложение, вызывать доверие и вести посетителя к следующему шагу.",
-      "SaaleWeb создаёт сайты для компаний, которым нужно профессиональное цифровое присутствие, видимость и больше качественных заявок.",
+      "SaaleWeb создаёт лендинги и многостраничные корпоративные сайты для компаний, которым нужны видимость, доверие, качественные заявки и основа для роста.",
     ],
     problems: [
       "Текущий сайт выглядит устаревшим или шаблонным.",
@@ -1304,9 +1440,10 @@ const RU_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
     features: [
       { title: "Чёткое позиционирование", text: "Услуги объясняются через реальные потребности клиентов." },
       { title: "Структура под заявки", text: "Контакты, доверие и CTA размещаются там, где они нужны." },
+      { title: "Понятный объём и фикс-цена", text: "После уточнения целей вы получаете прозрачный состав работ и предложение с фиксированной ценой." },
       { title: "SEO-база", text: "Метаданные, заголовки, внутренние ссылки и контент строятся с самого начала." },
       { title: "Мобильное качество", text: "Сайт остаётся быстрым, читаемым и удобным на смартфоне." },
-      { title: "Поддерживаемая основа", text: "Техническое решение остаётся пригодным для обновлений и роста." },
+      { title: "Поддерживаемая основа", text: "Техническое решение остаётся пригодным для обновлений, поддержки и развития после запуска." },
       { title: "Понятно для ИИ", text: "Контент структурирован так, чтобы системы поиска лучше понимали связи." },
     ],
     related: [
@@ -1315,16 +1452,22 @@ const RU_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
       { label: "Модернизация WordPress", href: "/ru/uslugi/modernizaciya-wordpress-sayta", description: "Улучшить текущий WordPress без слепой замены." },
       { label: "Проекты", href: "/ru/proekty", description: "Избранные кейсы SaaleWeb." },
     ],
+    extraFaq: [
+      {
+        q: "Сколько стоит заказать лендинг или корпоративный сайт?",
+        a: "Компактный WordPress one-pager начинается от 600 €, индивидуальный лендинг — от 990 €, полноценный бизнес- или корпоративный сайт — от 1 990 €. Онлайн-запись, несколько языков, магазин и специальные интеграции увеличивают объём. После консультации SaaleWeb предоставляет прозрачное предложение с фиксированной ценой.",
+      },
+    ],
   },
   "webdesign-halle": {
     navLabel: "Веб-дизайн Halle",
-    title: "Веб-дизайн Halle – цифровые решения для видимости, доверия и заявок",
-    metaTitle: "Веб-дизайн Halle | SaaleWeb",
+    title: "Веб-дизайн в Halle (Saale) – сайты, которые приводят клиентов",
+    metaTitle: "Веб-дизайн и веб-агентство в Halle | SaaleWeb",
     metaDescription:
-      "Веб-дизайн Halle для компаний: современные сайты, Local SEO, понятная навигация и техническое качество для доверия и заявок.",
+      "Веб-дизайнер и веб-агентство в Halle (Saale): современные корпоративные сайты, Local SEO, фикс-цена и личная поддержка.",
     lead: [
       "Компании в Halle конкурируют не только рекомендациями, но и через Google, мобильный поиск и первое цифровое впечатление.",
-      "SaaleWeb создаёт веб-дизайн для Halle, который выглядит профессионально, понятно объясняет предложение и поддерживает локальную видимость.",
+      "SaaleWeb — веб-дизайнер и digital-агентство из Halle: мы создаём сайты, которые ясно объясняют услуги, усиливают локальную видимость и упрощают путь к заявке.",
     ],
     problems: [
       "Сайт выглядит нормально, но не объясняет предложение достаточно ясно.",
@@ -1344,6 +1487,7 @@ const RU_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
       { title: "Быстрая технология", text: "Короткая загрузка и стабильная отрисовка помогают пользователям и поиску." },
       { title: "Мобильный путь", text: "Клиенты часто ищут локально с телефона, поэтому ключевые действия всегда видны." },
       { title: "Бизнес-тексты", text: "Тексты объясняют пользу, а не только технические функции." },
+      { title: "Фикс-цена и поддержка", text: "Объём и цена определяются до реализации, а после запуска доступна личная техническая поддержка." },
       { title: "Основа для роста", text: "Сайт можно расширять SEO-страницами, контентом и системами бронирования." },
     ],
     related: [
@@ -1351,6 +1495,12 @@ const RU_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
       { label: "Заказать сайт", href: "/ru/uslugi/razrabotka-saytov", description: "Новый сайт со стратегией и SEO." },
       { label: "Leipzig", href: "/ru/goroda/leipzig", description: "Видимость в более широком региональном рынке." },
       { label: "Проекты", href: "/ru/proekty", description: "Практические примеры." },
+    ],
+    extraFaq: [
+      {
+        q: "SaaleWeb — веб-агентство из Halle?",
+        a: "Да. SaaleWeb — веб-дизайнер и digital-агентство из Halle (Saale), которое работает с компаниями в Sachsen-Anhalt, Leipzig и по всей Германии. Мы соединяем корпоративные сайты, SEO, Local SEO, GEO/AIO, системы записи и личную техническую поддержку.",
+      },
     ],
   },
   "seo-halle": {
@@ -1776,13 +1926,13 @@ const PHASE5_SERVICE_CONTENT: Record<Phase4Locale, Record<string, Phase5ServiceI
     "ki-assistent": {
       topic: "KI-Assistenten",
       navLabel: "KI-Assistent",
-      title: "KI-Assistent für Website und Prozesse – hilfreich, kontrollierbar und verständlich integriert",
-      metaTitle: "KI-Assistent für Unternehmen | SaaleWeb",
+      title: "KI-Assistent und KI-Chatbot für Unternehmen – hilfreich, kontrollierbar und sinnvoll integriert",
+      metaTitle: "KI-Assistent & KI-Chatbot für Unternehmen | SaaleWeb",
       metaDescription:
-        "KI-Assistenten für Websites und Geschäftsprozesse: FAQ, Anfragevorbereitung, interne Abläufe, Wissensstruktur und kontrollierte Integration.",
+        "KI-Assistent oder KI-Chatbot für Firmen: FAQ, Lead-Vorqualifizierung, Wissensstruktur, Prozessintegration und kontrollierte Übergabe an Menschen.",
       lead: [
         "KI ist nur dann sinnvoll, wenn sie echte Fragen schneller klärt oder interne Arbeit reduziert.",
-        "SaaleWeb hilft, KI-Assistenten so einzusetzen, dass sie zu Inhalten, Prozessen und Verantwortung im Unternehmen passen.",
+        "SaaleWeb entwickelt KI-Assistenten und KI-Chatbots für Unternehmen so, dass Wissensbasis, erlaubte Themen, Anfragewege und menschliche Übergabe zum realen Geschäftsprozess passen.",
       ],
       problems: [
         "Kunden stellen wiederholt ähnliche Fragen, bevor sie anfragen.",
@@ -2023,13 +2173,13 @@ const PHASE5_SERVICE_CONTENT: Record<Phase4Locale, Record<string, Phase5ServiceI
     "ki-assistent": {
       topic: "AI assistants",
       navLabel: "AI assistant",
-      title: "AI assistant for websites and processes – useful, controlled and integrated with purpose",
-      metaTitle: "AI assistant for businesses | SaaleWeb",
+      title: "AI assistant and AI chatbot for businesses – useful, controlled and integrated with purpose",
+      metaTitle: "AI assistant & AI chatbot for businesses | SaaleWeb",
       metaDescription:
-        "AI assistants for websites and business processes: FAQ support, inquiry preparation, internal workflows, knowledge structure and controlled handover.",
+        "AI assistant or AI chatbot for a business: FAQ support, lead qualification, knowledge structure, process integration and controlled human handover.",
       lead: [
         "AI is useful only when it answers real questions faster or reduces internal work.",
-        "SaaleWeb helps integrate AI assistants in a way that fits your content, processes and responsibility model.",
+        "SaaleWeb develops AI assistants and chatbots so their knowledge, allowed topics, inquiry paths and human handover fit the real business process.",
       ],
       problems: [
         "Customers ask the same questions before they can make an inquiry.",
@@ -2054,6 +2204,12 @@ const PHASE5_SERVICE_CONTENT: Record<Phase4Locale, Record<string, Phase5ServiceI
         { label: "Contact", href: "/en/contact", description: "Check a realistic AI use case." },
       ],
       cases: SERVICE_CASES_BY_LOCALE.en,
+      extraFaq: [
+        {
+          q: "What is the difference between an AI assistant and an AI chatbot for a business?",
+          a: "A basic chatbot mainly answers recurring questions. An AI assistant can also structure knowledge, qualify inquiries, pass data to forms or systems and escalate to a person. SaaleWeb starts with one clearly bounded use case so value, control and privacy fit the business.",
+        },
+      ],
     },
     automatisierung: {
       topic: "automation",
@@ -2270,13 +2426,13 @@ const PHASE5_SERVICE_CONTENT: Record<Phase4Locale, Record<string, Phase5ServiceI
     "ki-assistent": {
       topic: "ИИ-ассистента",
       navLabel: "ИИ-ассистент",
-      title: "ИИ-ассистент для сайта и процессов — полезно, контролируемо и без лишнего шума",
-      metaTitle: "ИИ-ассистент для бизнеса | SaaleWeb",
+      title: "ИИ-ассистент и ИИ-чатбот для бизнеса — полезно, контролируемо и без лишнего шума",
+      metaTitle: "ИИ-ассистент и ИИ-чатбот для бизнеса | SaaleWeb",
       metaDescription:
-        "ИИ-ассистенты для сайтов и бизнес-процессов: FAQ, подготовка заявок, внутренние процессы, структура знаний и контролируемая передача человеку.",
+        "ИИ-ассистент или чатбот для компании: FAQ, квалификация заявок, структура знаний, интеграция в процессы и передача человеку.",
       lead: [
         "ИИ имеет смысл только тогда, когда быстрее отвечает на реальные вопросы или снижает внутреннюю нагрузку.",
-        "SaaleWeb помогает внедрять ИИ-ассистентов так, чтобы они соответствовали контенту, процессам и ответственности компании.",
+        "SaaleWeb разрабатывает ИИ-ассистентов и чатботов так, чтобы база знаний, разрешённые темы, путь заявки и передача человеку соответствовали реальному процессу компании.",
       ],
       problems: [
         "Клиенты задают одни и те же вопросы до отправки заявки.",
@@ -2301,6 +2457,12 @@ const PHASE5_SERVICE_CONTENT: Record<Phase4Locale, Record<string, Phase5ServiceI
         { label: "Контакты", href: "/ru/kontakt", description: "Проверить реалистичный сценарий ИИ." },
       ],
       cases: SERVICE_CASES_BY_LOCALE.ru,
+      extraFaq: [
+        {
+          q: "Чем ИИ-ассистент отличается от ИИ-чатбота для компании?",
+          a: "Простой чатбот в основном отвечает на повторяющиеся вопросы. ИИ-ассистент может также структурировать знания, квалифицировать заявки, передавать данные в формы или системы и подключать сотрудника. SaaleWeb начинает с одного чётко ограниченного сценария, чтобы польза, контроль и приватность соответствовали бизнесу.",
+        },
+      ],
     },
     automatisierung: {
       topic: "автоматизации",
@@ -3098,11 +3260,20 @@ export const seoServicePages: Record<string, Phase4Landing> = {
 
 function localizedServicePage(canonicalSlug: string, locale: Phase4Locale): Phase4Landing | null {
   const cityServicePage = localizedCityServicePage(canonicalSlug, locale);
-  if (cityServicePage) return cityServicePage;
+  if (cityServicePage) {
+    return locale === "de"
+      ? prependUniqueFaq(cityServicePage, priorityServiceFaqDe[canonicalSlug])
+      : cityServicePage;
+  }
 
   if (locale === "de") {
     const page = seoServicePages[canonicalSlug];
-    return page ? { ...page, navLabel: page.navLabel ?? page.title.split(" – ")[0] } : null;
+    return page
+      ? prependUniqueFaq(
+          { ...page, navLabel: page.navLabel ?? page.title.split(" – ")[0] },
+          priorityServiceFaqDe[canonicalSlug],
+        )
+      : null;
   }
 
   const phase5Page = buildPhase5ServicePage(canonicalSlug, locale);
@@ -4374,7 +4545,12 @@ const RU_INDUSTRY_SEEDS: Record<string, LocalizedIndustrySeed> = {
 function localizedIndustryPage(canonicalSlug: string, locale: Phase4Locale): Phase4Landing | null {
   if (locale === "de") {
     const page = seoIndustryPages[canonicalSlug];
-    return page ? { ...page, navLabel: page.navLabel ?? page.title.split(" – ")[0] } : null;
+    return page
+      ? prependUniqueFaq(
+          { ...page, navLabel: page.navLabel ?? page.title.split(" – ")[0] },
+          priorityIndustryFaqDe[canonicalSlug],
+        )
+      : null;
   }
 
   const seed = (locale === "en" ? EN_INDUSTRY_SEEDS : RU_INDUSTRY_SEEDS)[canonicalSlug];
@@ -4594,12 +4770,12 @@ export const locationPages: Record<string, Phase4Landing & { cityName: string; n
     cityName: "Halle (Saale)",
     eyebrow: "Standort",
     title: "Webdesign in Halle (Saale) für Unternehmen, die online sichtbar werden möchten",
-    metaTitle: "Webdesign Halle (Saale) & SEO | SaaleWeb",
+    metaTitle: "Webagentur & Webdesign Halle (Saale) | SaaleWeb",
     metaDescription:
-      "Webdesign Halle (Saale), SEO Halle und moderne Websites für lokale Unternehmen: SaaleWeb entwickelt digitale Systeme für Sichtbarkeit, Vertrauen und Anfragen.",
+      "Webagentur in Halle (Saale), Sachsen-Anhalt: Webdesign, Firmenwebsites, SEO und digitale Systeme für Sichtbarkeit, Vertrauen und Anfragen.",
     lead: [
       "Halle ist für SaaleWeb der wichtigste regionale Bezugspunkt. Viele Unternehmen hier haben starke Leistungen, aber eine Website, die diese Stärke online nicht klar genug zeigt.",
-      "Wir entwickeln Websites, SEO-Strukturen und Inhalte, die lokale Kunden schneller verstehen und Suchsysteme besser einordnen können.",
+      "Als Webagentur aus Halle entwickeln wir Firmenwebsites, SEO-Strukturen und Inhalte, die lokale Kunden schneller verstehen und Such- sowie AI-Systeme eindeutig einordnen können.",
     ],
     problemTitle: "Lokale Herausforderung in Halle",
     problems: [
@@ -4610,9 +4786,9 @@ export const locationPages: Record<string, Phase4Landing & { cityName: string; n
       "Referenzen und Vertrauen werden zu schwach sichtbar.",
       "KI-Suchsysteme erkennen Unternehmensprofil und Region nicht eindeutig.",
     ],
-    solutionTitle: "SaaleWeb Lösung für Halle",
+    solutionTitle: "Webagentur in Halle: die SaaleWeb Lösung",
     solution: [
-      "Wir verbinden Webdesign Halle, SEO Halle, Local SEO und klare Conversion-Struktur. Die Website soll nicht nur gut aussehen, sondern verständlich verkaufen und Vertrauen aufbauen.",
+      "Wir verbinden Webdesign Halle, Website-Erstellung für Unternehmen, SEO Halle, Local SEO und klare Conversion-Struktur. Die Website soll nicht nur gut aussehen, sondern verständlich verkaufen und Vertrauen aufbauen.",
       "Dazu gehören regionale Inhalte, saubere Technik, schnelle Ladezeiten, strukturierte Daten, FAQ-Bereiche und interne Links zu Leistungen, Branchen und Projekten.",
     ],
     featuresTitle: "Relevante Leistungen in Halle",
@@ -4884,7 +5060,7 @@ export const locationSlugs = Object.keys(locationPages);
 function localizedLocationPage(slug: string, locale: Phase4Locale) {
   const base = locationPages[slug];
   if (!base) return null;
-  if (locale === "de") return base;
+  if (locale === "de") return prependUniqueFaq(base, priorityLocationFaqDe[slug]);
 
   const en = locale === "en";
   const city = base.cityName;

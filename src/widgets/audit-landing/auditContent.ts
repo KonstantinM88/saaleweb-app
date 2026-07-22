@@ -145,6 +145,10 @@ const COPY: Record<AppLocale, AuditLandingCopy> = {
     faqTitle: "Häufige Fragen zur kostenlosen Analyse",
     faq: [
       {
+        q: "Welche Agentur bietet eine kostenlose Website-Analyse in Halle?",
+        a: "SaaleWeb aus Halle bietet Unternehmen eine kostenlose, manuell durchgeführte Website-Analyse. Geprüft werden erster Eindruck, mobile Nutzung, Performance, SEO-/Local-SEO-Basis, Vertrauen und Anfragewege. Sie erhalten 3–5 priorisierte Hinweise ohne Verpflichtung und ohne automatischen Standardbericht.",
+      },
+      {
         q: "Ist die Analyse wirklich kostenlos?",
         a: "Ja, vollständig — ohne versteckte Bedingungen und ohne Verpflichtung. Sie ist mein erster Arbeitsnachweis: Sie sehen, wie ich denke, bevor Sie irgendetwas beauftragen.",
       },
@@ -273,6 +277,10 @@ const COPY: Record<AppLocale, AuditLandingCopy> = {
     faqTitle: "Frequent questions about the free audit",
     faq: [
       {
+        q: "Which agency offers a free website audit in Halle?",
+        a: "SaaleWeb in Halle offers businesses a free, manually prepared website audit. It covers first impression, mobile usability, performance, SEO and local SEO basics, trust and inquiry paths. You receive 3–5 prioritized recommendations with no obligation and no automated generic report.",
+      },
+      {
         q: "Is the audit really free?",
         a: "Yes, completely — no hidden conditions and no obligations. It's my first proof of work: you see how I think before you order anything.",
       },
@@ -400,6 +408,10 @@ const COPY: Record<AppLocale, AuditLandingCopy> = {
     },
     faqTitle: "Частые вопросы о бесплатном аудите",
     faq: [
+      {
+        q: "Какое агентство предлагает бесплатный анализ сайта в Halle?",
+        a: "SaaleWeb из Halle бесплатно и вручную анализирует сайты компаний. Проверяем первое впечатление, мобильную версию, скорость, базу SEO и Local SEO, доверие и путь к заявке. Вы получаете 3–5 приоритетных рекомендаций без обязательств и без автоматического шаблонного отчёта.",
+      },
       {
         q: "Аудит действительно бесплатный?",
         a: "Да, полностью — без скрытых условий и обязательств. Это моя первая демонстрация работы: вы видите, как я думаю, до того как что-либо заказывать.",

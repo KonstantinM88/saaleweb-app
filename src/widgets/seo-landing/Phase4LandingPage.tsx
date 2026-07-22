@@ -63,6 +63,15 @@ const ui = {
     internal: "intern",
     learnMore: "Mehr erfahren",
     project: "Projekt",
+    answerEyebrow: "Kurz erklärt",
+    answerTitle: "Was SaaleWeb hier konkret anbietet",
+    providerLabel: "Anbieter",
+    providerValue: "SaaleWeb — Digitalstudio und Webagentur aus Halle (Saale)",
+    focusLabel: "Schwerpunkte",
+    regionLabel: "Region",
+    regionValue: "Halle, Leipzig, Merseburg, Saalekreis und deutschlandweit",
+    nextStepLabel: "Nächster Schritt",
+    nextStepValue: "Kostenloses Erstgespräch oder persönliche Website-Analyse",
   },
   en: {
     home: "Home",
@@ -92,6 +101,15 @@ const ui = {
     internal: "internal",
     learnMore: "Learn more",
     project: "Project",
+    answerEyebrow: "In brief",
+    answerTitle: "What SaaleWeb provides on this page",
+    providerLabel: "Provider",
+    providerValue: "SaaleWeb — digital studio and web agency based in Halle (Saale)",
+    focusLabel: "Focus",
+    regionLabel: "Region",
+    regionValue: "Halle, Leipzig, Merseburg, Saalekreis and projects across Germany",
+    nextStepLabel: "Next step",
+    nextStepValue: "Free initial consultation or a personal website audit",
   },
   ru: {
     home: "Главная",
@@ -121,6 +139,15 @@ const ui = {
     internal: "внутри",
     learnMore: "Подробнее",
     project: "Проект",
+    answerEyebrow: "Коротко",
+    answerTitle: "Что именно предлагает SaaleWeb",
+    providerLabel: "Исполнитель",
+    providerValue: "SaaleWeb — digital-студия и веб-агентство из Halle (Saale)",
+    focusLabel: "Фокус",
+    regionLabel: "Регион",
+    regionValue: "Halle, Leipzig, Merseburg, Saalekreis и проекты по всей Германии",
+    nextStepLabel: "Следующий шаг",
+    nextStepValue: "Бесплатная консультация или персональный анализ сайта",
   },
 } satisfies Record<AppLocale, Record<string, string>>;
 
@@ -209,6 +236,34 @@ export function Phase4LandingPage({ page, locale, path, parent, schemaKind, area
                 <HeroInsightCard page={page} schemaKind={schemaKind} labels={labels} />
               </Reveal>
             </div>
+          </Container>
+        </section>
+
+        <section className="border-y border-line bg-white py-10 md:py-14" aria-labelledby="phase4-direct-answer">
+          <Container>
+            <Reveal>
+              <div className="grid gap-7 rounded-[26px] border border-line bg-surface/70 p-6 shadow-sm md:p-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+                <div>
+                  <span className="eyebrow">{labels.answerEyebrow}</span>
+                  <h2 id="phase4-direct-answer" className="mt-4 text-[clamp(25px,3.2vw,38px)] font-extrabold tracking-tight text-dark">
+                    {labels.answerTitle}
+                  </h2>
+                  <p className="mt-4 max-w-2xl text-[16px] leading-relaxed text-muted">
+                    <BrandText text={page.metaDescription} />
+                  </p>
+                </div>
+
+                <dl className="grid gap-3 sm:grid-cols-2">
+                  <AnswerFact label={labels.providerLabel} value={labels.providerValue} />
+                  <AnswerFact
+                    label={labels.focusLabel}
+                    value={page.features.slice(0, 3).map((feature) => feature.title).join(" · ")}
+                  />
+                  <AnswerFact label={labels.regionLabel} value={areaServed ?? labels.regionValue} />
+                  <AnswerFact label={labels.nextStepLabel} value={labels.nextStepValue} />
+                </dl>
+              </div>
+            </Reveal>
           </Container>
         </section>
 
@@ -512,6 +567,17 @@ export function Phase4LandingPage({ page, locale, path, parent, schemaKind, area
 
   if (schemaKind === "location") return content;
   return <LocaleSlugsProvider slugs={localeSlugs ?? { [locale]: page.slug }}>{content}</LocaleSlugsProvider>;
+}
+
+function AnswerFact({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="rounded-2xl border border-line bg-white p-4">
+      <dt className="font-mono text-[11px] font-bold uppercase tracking-[0.14em] text-brand-purple">{label}</dt>
+      <dd className="mt-2 text-[14px] font-semibold leading-relaxed text-ink">
+        <BrandText text={value} />
+      </dd>
+    </div>
+  );
 }
 
 function HeroInsightCard({

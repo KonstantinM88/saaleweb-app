@@ -1,6 +1,6 @@
 # SaaleWeb
 
-> Digitales Studio aus Halle (Saale) für Websites, Online-Shops, SEO, Automatisierung, API-Integrationen, WordPress und KI-gestützte Geschäftsprozesse.
+> Webdesigner und Webagentur aus Halle (Saale) für Firmenwebsites, Landingpages, Online-Shops, SEO, Automatisierung, WordPress und KI-gestützte Geschäftsprozesse.
 
 SaaleWeb entwickelt moderne, mehrsprachige Kundengewinnungs-Systeme für kleine und
 mittelständische Unternehmen in Halle (Saale), Leipzig, Merseburg, Schkeuditz,
@@ -26,8 +26,8 @@ KI-Suchsystemen wie ChatGPT, Gemini, Claude, Perplexity und Google AI Overview.
 
 ## Kommerzielle Leistungen
 
-- [Website erstellen lassen](https://saaleweb.de/leistungen/website-erstellen-lassen): Neue Website mit Strategie, SEO-Basis, Nutzerführung und Conversion-Struktur.
-- [Webdesign Halle](https://saaleweb.de/leistungen/webdesign-halle): Regionale Webdesign-Lösung für Unternehmen in Halle (Saale).
+- [Website erstellen lassen](https://saaleweb.de/leistungen/website-erstellen-lassen): Website-Erstellung für Unternehmen — von Landingpage und Homepage bis zur mehrseitigen Firmenwebsite mit Strategie, SEO-Basis und Conversion-Struktur.
+- [Webdesign Halle](https://saaleweb.de/leistungen/webdesign-halle): Webdesigner und Webagentur für Unternehmen in Halle (Saale) und Sachsen-Anhalt.
 - [SEO Halle](https://saaleweb.de/leistungen/seo-halle): Technisches SEO, Local SEO und strukturierte Inhalte für regionale Sichtbarkeit.
 - [KI-Optimierung für Unternehmen](https://saaleweb.de/leistungen/ki-optimierung): GEO/AIO-Struktur für ChatGPT, Gemini, Claude, Perplexity und Google AI Overview.
 - [WordPress Website modernisieren](https://saaleweb.de/leistungen/wordpress-website-modernisieren): Performance, Sicherheit, SEO, UX und Betreuung bestehender WordPress-Websites.
@@ -36,12 +36,21 @@ KI-Suchsystemen wie ChatGPT, Gemini, Claude, Perplexity und Google AI Overview.
 - [Website Wartung](https://saaleweb.de/leistungen/website-wartung): Laufende Pflege, Updates, Inhalte, Performance und Weiterentwicklung.
 - [Buchungssysteme](https://saaleweb.de/leistungen/buchungssysteme): Online-Reservierungen, Terminbuchung und qualifizierte Anfragewege.
 - [Online-Shop erstellen](https://saaleweb.de/leistungen/online-shop-erstellen): Shop-Struktur, Produktseiten, Checkout-Vertrauen, SEO-Basis und Integrationen.
-- [KI-Assistent](https://saaleweb.de/leistungen/ki-assistent): Kontrollierte KI-Unterstützung für Website-Fragen, Anfragevorbereitung und interne Abläufe.
+- [KI-Assistent](https://saaleweb.de/leistungen/ki-assistent): KI-Assistenten und KI-Chatbots für Firmen — mit kontrollierter Wissensbasis, Anfragevorbereitung, Prozessintegration und Übergabe an Menschen.
 - [Automatisierung](https://saaleweb.de/leistungen/automatisierung): Lead-Flows, Follow-ups, CRM-Übergaben, E-Mail-Prozesse und wiederholbare Workflows.
 - [API-Integrationen](https://saaleweb.de/leistungen/api-integrationen): Verbindung von Website, Shop, CRM, Buchung, Kalender und Datenquellen.
 - [Website-Sicherheit](https://saaleweb.de/leistungen/website-sicherheit): Praktische Website-Absicherung, Updates, Backups, Formularschutz und technische Basis.
 - [Datenanalyse](https://saaleweb.de/leistungen/datenanalyse): Verständliche Auswertung von Website-, SEO-, Lead- und Prozessdaten.
 - [Shop-Produktimport](https://saaleweb.de/leistungen/shop-produktimport): CSV-, XML-, Excel- und API-Importe für strukturierte Produktdaten.
+
+## Direkte Angebotsorientierung
+
+- Anbieter: SaaleWeb, Webdesigner und Webagentur mit regionalem Schwerpunkt in Halle (Saale), Sachsen-Anhalt.
+- Zielgruppen: kleine und mittelständische Unternehmen, lokale Dienstleister, Handwerk, Bau, Gastronomie, Hotels und Beauty-Betriebe.
+- Website-Typen: WordPress-Onepager, individuelle Landingpage, mehrseitige Firmenwebsite, Online-Shop und maßgeschneidertes System.
+- Preise: WordPress-Onepager ab 600 €, individuelle Landingpage ab 990 €, vollständige Business- oder Firmenwebsite ab 1.990 €.
+- Zusatzumfang: Mehrsprachigkeit, Online-Buchung, Shop, Automatisierung und besondere Integrationen werden nach Anforderung kalkuliert.
+- Arbeitsweise: kostenloses Erstgespräch, Analyse, klarer Leistungsumfang, Festpreisangebot, Umsetzung, Launch und optionale Betreuung.
 
 ## Branchen
 

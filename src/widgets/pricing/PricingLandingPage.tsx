@@ -356,6 +356,10 @@ const copy = {
     faqTitle: "Häufige Fragen zu Website-Preisen",
     faq: [
       {
+        q: "Was kostet eine professionelle Website in Halle?",
+        a: "Bei SaaleWeb startet ein kompakter WordPress-Onepager ab 600 €, eine individuelle React-/Next.js-Landingpage ab 990 € und eine mehrseitige Business-Website ab 1.990 €. Funktionen wie Online-Buchung, Mehrsprachigkeit, Shop oder Automatisierung werden nach Umfang kalkuliert. Nach dem kostenlosen Erstgespräch erhalten Sie ein transparentes Angebot; die Preise verstehen sich zzgl. 19 % MwSt.",
+      },
+      {
         q: "Warum gibt es Preise „ab“ und keine festen Endpreise?",
         a: "Weil Umfang, Inhalte, Funktionen, Sprachen, SEO-Tiefe und technische Anforderungen je nach Projekt unterschiedlich sind. Nach einem kurzen Erstgespräch erhalten Sie ein transparentes Angebot.",
       },
@@ -620,6 +624,10 @@ const copy = {
     faqTitle: "Frequently asked questions about website pricing",
     faq: [
       {
+        q: "How much does a professional website in Halle cost?",
+        a: "At SaaleWeb, a compact WordPress one-pager starts at €600, an individual React/Next.js landing page at €990 and a multi-page business website at €1,990. Online booking, multiple languages, shops or automation are calculated according to scope. You receive a transparent proposal after the free initial call; prices exclude 19% VAT.",
+      },
+      {
         q: "Why are prices listed as “from” and not fixed final prices?",
         a: "Scope, content, functions, languages, SEO depth and technical requirements differ from project to project. After a short first call you receive a transparent proposal.",
       },
@@ -883,6 +891,10 @@ const copy = {
     auditMicrocopy: "Без обязательств. Проверяется лично. Чёткая рекомендация вместо давления продаж.",
     faqTitle: "Частые вопросы о ценах на сайты",
     faq: [
+      {
+        q: "Сколько стоит профессиональный сайт в Halle?",
+        a: "В SaaleWeb компактный WordPress one-pager стоит от 600 €, индивидуальный лендинг на React/Next.js — от 990 €, а многостраничный бизнес-сайт — от 1 990 €. Онлайн-запись, мультиязычность, магазин и автоматизация рассчитываются по объёму. После бесплатной консультации вы получаете прозрачное предложение; цены указаны без 19 % НДС.",
+      },
       {
         q: "Почему цены указаны «от», а не как фиксированная финальная сумма?",
         a: "Потому что объём, контент, функции, языки, глубина SEO и технические требования отличаются от проекта к проекту. После короткой консультации вы получаете прозрачное предложение.",
