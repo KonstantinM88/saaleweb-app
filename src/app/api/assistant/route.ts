@@ -6,6 +6,7 @@ import {
   assistantImplementationBoundaryAnswer,
   assistantOffTopicAnswer,
   assistantSecurityBoundaryAnswer,
+  assistantWorkProductBoundaryAnswer,
   buildAssistantInput,
   type AssistantChatMessage,
 } from "@/features/assistant/knowledge";
@@ -28,8 +29,10 @@ import {
 } from "@/features/assistant/profile";
 import {
   containsCompleteSourceDeliverable,
+  isAssistantCommercialScopeMessage,
   isExecutableMarkupProbe,
   isImplementationDeliverableRequest,
+  isUnsupportedWorkProductRequest,
 } from "@/features/assistant/policy";
 
 export const runtime = "nodejs";
@@ -59,46 +62,6 @@ const requestSchema = z.object({
   attribution: leadAttributionPayloadSchema.optional(),
   messages: z.array(messageSchema).min(1).max(MAX_MESSAGES),
 });
-
-const GREETING_PATTERNS = [
-  /\bhello\b/i,
-  /\bhi\b/i,
-  /\bhey\b/i,
-  /\bhallo\b/i,
-  /\bguten\s+(tag|morgen|abend)\b/i,
-  /\bпривет\b/i,
-  /\bздравств/i,
-  /\bдобрый\s+(день|вечер|утро)\b/i,
-];
-
-const RELEVANT_PATTERNS = [
-  /saaleweb/i,
-  /website|webseite|webdesign|site|сайт|веб/i,
-  /seo|google|ranking|sichtbarkeit|видимост|поиск|lokal|local|halle|leipzig|галле|лейпциг/i,
-  /\bki\b|ai|gpt|chatgpt|gemini|claude|perplexity|aio|geo|llm|ассистент|искусствен/i,
-  /wordpress|next\.?js|react|java|cms|hosting|domain|домен|хостинг/i,
-  /relaunch|редизайн|перезапуск|modernisierung|модернизац/i,
-  /automation|automatisierung|автоматизац|api|integration|интеграц/i,
-  /booking|buchung|termin|запис|брон/i,
-  /shop|e-?commerce|магазин|online-shop/i,
-  /preis|kosten|budget|angebot|price|cost|стоимост|цена|бюджет/i,
-  /projekt|project|проект|консультац|kontakt|contact|whatsapp|telegram/i,
-  /услуг|leistungen|services|что\s+вы\s+дела|what\s+do\s+you\s+do|wer\s+seid/i,
-  /lead|anfrage|kunden|заявк|клиент|business|unternehmen|бизнес/i,
-];
-
-const OFF_TOPIC_PATTERNS = [
-  /(?:^|\s)\d+\s*[+\-*/x\u00d7\u00f7]\s*\d+(?=\s|[?.!,;:]|$)/i,
-  /(?:^|\s)\d+\s*[+\-*/x×÷]\s*\d+(?:\s|$)/i,
-  /сколько\s+будет/i,
-  /what\s+is\s+\d+/i,
-  /calculate|solve|реши|посчитай/i,
-  /weather|погода|wetter/i,
-  /recipe|рецепт|kochen/i,
-  /joke|анекдот|witz/i,
-  /политик|politics/i,
-  /homework|домашн/i,
-];
 
 function latestUserMessage(messages: AssistantChatMessage[]): string {
   return [...messages].reverse().find((message) => message.role === "user")?.content || "";
@@ -150,21 +113,6 @@ function detectResponseLocale(text: string, fallback: AppLocale): AppLocale {
   if (germanScore > englishScore && germanScore > 0) return "de";
 
   return fallback;
-}
-
-function isGreeting(text: string): boolean {
-  const clean = text.trim();
-  if (clean.length > 80) return false;
-  return GREETING_PATTERNS.some((pattern) => pattern.test(clean));
-}
-
-function isRelevantQuestion(text: string): boolean {
-  return RELEVANT_PATTERNS.some((pattern) => pattern.test(text));
-}
-
-function isOffTopicQuestion(text: string): boolean {
-  if (isGreeting(text) || isRelevantQuestion(text)) return false;
-  return OFF_TOPIC_PATTERNS.some((pattern) => pattern.test(text));
 }
 
 function clientKey(req: Request): string {
@@ -339,8 +287,19 @@ export async function POST(req: Request) {
     );
   }
 
+  const isSecurityProbe = isExecutableMarkupProbe(latestMessage);
+  const isImplementationRequest = isImplementationDeliverableRequest(latestMessage);
+  const isUnsupportedWorkProduct = isUnsupportedWorkProductRequest(latestMessage);
+  const isCommercialScope = isAssistantCommercialScopeMessage(latestMessage);
+  const shouldUpdateProfile =
+    isImplementationRequest ||
+    (!isSecurityProbe && !isUnsupportedWorkProduct && isCommercialScope);
+
   const memory = await loadAssistantMemory(meta.visitorKey);
-  const profile = updateAssistantSalesProfile(memory.profile, parsed.data.messages);
+  // Unrelated prompts must not pollute persistent sales memory or advance the funnel.
+  const profile = shouldUpdateProfile
+    ? updateAssistantSalesProfile(memory.profile, parsed.data.messages)
+    : memory.profile;
   const initialStage = deriveAssistantFunnelStage(profile, Boolean(memory.leadId));
   const prepared = await ensureAssistantConversation({
     conversationId: memory.conversationId,
@@ -353,14 +312,18 @@ export async function POST(req: Request) {
   });
   const contextMessages = mergeContextMessages(memory.messages, parsed.data.messages);
 
-  const policyAnswer = isExecutableMarkupProbe(latestMessage)
-    ? assistantSecurityBoundaryAnswer(responseLocale)
-    : isImplementationDeliverableRequest(latestMessage)
-      ? assistantImplementationBoundaryAnswer(responseLocale)
-      : undefined;
+  const policyResponse = isSecurityProbe
+    ? { answer: assistantSecurityBoundaryAnswer(responseLocale), scoped: true }
+    : isImplementationRequest
+      ? { answer: assistantImplementationBoundaryAnswer(responseLocale), scoped: true }
+      : isUnsupportedWorkProduct
+        ? { answer: assistantWorkProductBoundaryAnswer(responseLocale), scoped: false }
+        : !isCommercialScope
+          ? { answer: assistantOffTopicAnswer(responseLocale), scoped: false }
+          : undefined;
 
-  if (policyAnswer) {
-    const answer = sanitizeAssistantAnswer(policyAnswer);
+  if (policyResponse) {
+    const answer = sanitizeAssistantAnswer(policyResponse.answer);
     await logAssistantExchange({
       conversationId: prepared?.id,
       meta,
@@ -369,7 +332,7 @@ export async function POST(req: Request) {
       pagePath: parsed.data.pagePath,
       userMessage: latestMessage,
       assistantAnswer: answer,
-      scoped: true,
+      scoped: policyResponse.scoped,
       profile,
       funnelStage: initialStage,
     });
@@ -379,36 +342,9 @@ export async function POST(req: Request) {
         ok: true,
         answer,
         configured: Boolean(process.env.OPENAI_API_KEY?.trim()),
-        scoped: true,
+        scoped: policyResponse.scoped,
         responseLocale,
         funnelStage: initialStage,
-      },
-      { headers: { "Cache-Control": "no-store" } },
-    );
-  }
-
-  if (isOffTopicQuestion(latestMessage)) {
-    const answer = sanitizeAssistantAnswer(assistantOffTopicAnswer(responseLocale));
-    await logAssistantExchange({
-      conversationId: prepared?.id,
-      meta,
-      locale,
-      responseLocale,
-      pagePath: parsed.data.pagePath,
-      userMessage: latestMessage,
-      assistantAnswer: answer,
-      scoped: false,
-      profile,
-      funnelStage: initialStage,
-    });
-
-    return NextResponse.json(
-      {
-        ok: true,
-        answer,
-        configured: Boolean(process.env.OPENAI_API_KEY?.trim()),
-        scoped: false,
-        responseLocale,
       },
       { headers: { "Cache-Control": "no-store" } },
     );

@@ -6,8 +6,10 @@ import {
 } from "../src/features/assistant/profile";
 import {
   containsCompleteSourceDeliverable,
+  isAssistantCommercialScopeMessage,
   isExecutableMarkupProbe,
   isImplementationDeliverableRequest,
+  isUnsupportedWorkProductRequest,
 } from "../src/features/assistant/policy";
 import type { AssistantChatMessage } from "../src/features/assistant/knowledge";
 
@@ -60,6 +62,24 @@ assert.equal(isImplementationDeliverableRequest("Напиши мне HTML про
 assert.equal(isImplementationDeliverableRequest("Можете разработать сайт для стоматологии?"), false);
 assert.equal(isExecutableMarkupProbe("<img src=x onerror=\"alert(1)\">"), true);
 assert.equal(isExecutableMarkupProbe("%3Cscript%3Ealert(1)%3C/script%3E"), true);
+assert.equal(isAssistantCommercialScopeMessage("Сколько стоит сайт для стоматологии?"), true);
+assert.equal(isAssistantCommercialScopeMessage("У меня салон красоты"), true);
+assert.equal(isAssistantCommercialScopeMessage("Что входит?"), true);
+assert.equal(isAssistantCommercialScopeMessage("Что вы делаете?"), true);
+assert.equal(isAssistantCommercialScopeMessage("Покажите примеры работ"), true);
+assert.equal(isAssistantCommercialScopeMessage("Сколько по времени?"), true);
+assert.equal(isAssistantCommercialScopeMessage("Около 3 месяцев"), true);
+assert.equal(isAssistantCommercialScopeMessage("Was kostet eine Website in Halle?"), true);
+assert.equal(isAssistantCommercialScopeMessage("Can SaaleWeb improve my local SEO?"), true);
+assert.equal(isAssistantCommercialScopeMessage("Переведи эти стихи на немецкий язык"), false);
+assert.equal(isAssistantCommercialScopeMessage("Какая погода завтра?"), false);
+assert.equal(isAssistantCommercialScopeMessage("Кто сейчас президент Франции?"), false);
+assert.equal(isAssistantCommercialScopeMessage("Как лечить зубную боль?"), false);
+assert.equal(isAssistantCommercialScopeMessage("Напиши школьное эссе"), false);
+assert.equal(isUnsupportedWorkProductRequest("Переведи эти стихи на немецкий язык"), true);
+assert.equal(isUnsupportedWorkProductRequest("Создай структуру рекламной кампании"), true);
+assert.equal(isUnsupportedWorkProductRequest("Напиши статью о путешествиях"), true);
+assert.equal(isUnsupportedWorkProductRequest("Составь план SEO для моего сайта"), false);
 assert.equal(
   containsCompleteSourceDeliverable("```html\n<!doctype html><html><body>" + "x".repeat(130) + "</body></html>\n```"),
   true,

@@ -143,7 +143,7 @@ export async function loadAssistantMemory(visitorKey: string): Promise<Assistant
         messages: {
           orderBy: { createdAt: "desc" },
           take: 12,
-          select: { role: true, content: true },
+          select: { role: true, content: true, scoped: true },
         },
       },
     });
@@ -163,11 +163,16 @@ export async function loadAssistantMemory(visitorKey: string): Promise<Assistant
       leadId: conversation.leadId || undefined,
       messages: conversation.messages
         .reverse()
-        .filter(
-          (message): message is AssistantChatMessage =>
-            (message.role === "user" || message.role === "assistant") && Boolean(message.content.trim()),
-        )
-        .map((message) => ({ role: message.role, content: message.content })),
+        .filter((message) => message.scoped !== false)
+        .flatMap((message): AssistantChatMessage[] => {
+          if (
+            (message.role !== "user" && message.role !== "assistant") ||
+            !message.content.trim()
+          ) {
+            return [];
+          }
+          return [{ role: message.role, content: message.content }];
+        }),
     };
   } catch (error) {
     console.warn("[assistant-log] Memory loading skipped.", {
@@ -305,7 +310,7 @@ export async function logAssistantExchange({
     if (!prepared) return {};
 
     const newMessages = [
-      { role: "user", content: userMessage.trim(), responseLocale: undefined },
+      { role: "user", content: userMessage.trim(), scoped, responseLocale: undefined },
       { role: "assistant", content: assistantAnswer.trim(), model, scoped, responseLocale },
     ];
 
