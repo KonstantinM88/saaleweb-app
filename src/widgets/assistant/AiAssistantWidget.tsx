@@ -10,7 +10,6 @@ import { ASSISTANT_SESSION_IDLE_MS, assistantSessionNow } from "@/features/assis
 import { siteConfig } from "@/shared/config/site";
 import { BrandMonogram } from "@/shared/ui/BrandLogo";
 
-const APPEAR_DELAY_MS = 8_000;
 const LOGO_NUDGE_DELAY_MS = 30_000;
 const MAX_CONTEXT_MESSAGES = 16;
 const VISITOR_STORAGE_KEY = "saaleweb_assistant_visitor";
@@ -79,16 +78,17 @@ function readableMessage(content: string): string {
     .trim();
 }
 
+export type AiAssistantWidgetProps = {
+  locale: AppLocale;
+  labels: AiAssistantWidgetLabels;
+  contactHref: string;
+};
+
 export function AiAssistantWidget({
   locale,
   labels,
   contactHref,
-}: {
-  locale: AppLocale;
-  labels: AiAssistantWidgetLabels;
-  contactHref: string;
-}) {
-  const [mounted, setMounted] = useState(false);
+}: AiAssistantWidgetProps) {
   const [open, setOpen] = useState(false);
   const [hasOpened, setHasOpened] = useState(false);
   const [logoNudge, setLogoNudge] = useState(false);
@@ -110,23 +110,16 @@ export function AiAssistantWidget({
   const showQuickPrompts = messages.length === 1 && !loading;
 
   useEffect(() => {
-    const timer = window.setTimeout(() => setMounted(true), APPEAR_DELAY_MS);
-    return () => window.clearTimeout(timer);
-  }, []);
-
-  useEffect(() => {
-    if (!mounted || hasOpened) return;
+    if (hasOpened) return;
 
     const timer = window.setTimeout(() => {
       setLogoNudge(true);
     }, LOGO_NUDGE_DELAY_MS);
 
     return () => window.clearTimeout(timer);
-  }, [hasOpened, mounted]);
+  }, [hasOpened]);
 
   useEffect(() => {
-    if (!mounted) return;
-
     let frameId = 0;
     const updateScrollState = () => {
       window.cancelAnimationFrame(frameId);
@@ -140,7 +133,7 @@ export function AiAssistantWidget({
       window.removeEventListener("scroll", updateScrollState);
       window.cancelAnimationFrame(frameId);
     };
-  }, [mounted]);
+  }, []);
 
   useEffect(() => {
     try {
@@ -237,8 +230,6 @@ export function AiAssistantWidget({
       setLoading(false);
     }
   }
-
-  if (!mounted) return null;
 
   return (
     <div

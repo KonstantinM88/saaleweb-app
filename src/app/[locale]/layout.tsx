@@ -18,8 +18,8 @@ import { AnalyticsConsentBanner } from "@/features/analytics/AnalyticsConsentBan
 import { GtmInteractionTracker } from "@/features/analytics/GtmInteractionTracker";
 import { GtmRouteTracker } from "@/features/analytics/GtmRouteTracker";
 import { AttributionCapture } from "@/features/analytics/AttributionCapture";
-import { AiAssistantWidget } from "@/widgets/assistant/AiAssistantWidget";
-import { CustomCursor } from "@/shared/ui/CustomCursor";
+import { DeferredAiAssistantWidget } from "@/widgets/assistant/DeferredAiAssistantWidget";
+import { DeferredCustomCursor } from "@/shared/ui/DeferredCustomCursor";
 import { getPathname } from "@/i18n/navigation";
 import "../globals.css";
 
@@ -158,11 +158,15 @@ export default async function LocaleLayout({
             <AnalyticsConsentBanner labels={consentLabels} privacyHref={privacyHref} />
           </>
         ) : null}
-        <CustomCursor />
+        <DeferredCustomCursor />
         {/* next-intl 4: provider auto-inherits messages from i18n/request.ts */}
         <NextIntlClientProvider>
           {children}
-          <AiAssistantWidget locale={locale} labels={assistantLabels} contactHref={contactHref} />
+          <DeferredAiAssistantWidget
+            locale={locale}
+            labels={assistantLabels}
+            contactHref={contactHref}
+          />
         </NextIntlClientProvider>
       </body>
     </html>

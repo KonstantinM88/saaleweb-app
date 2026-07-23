@@ -26,6 +26,10 @@ export function CustomCursor() {
     let lastAngle = 0;
     let raf = 0;
 
+    const scheduleFrame = () => {
+      if (!raf) raf = requestAnimationFrame(loop);
+    };
+
     const onMove = (event: MouseEvent) => {
       mx = event.clientX;
       my = event.clientY;
@@ -40,12 +44,14 @@ export function CustomCursor() {
         "is-text",
         Boolean(target?.closest("input,textarea,select,[contenteditable='true']")),
       );
+      scheduleFrame();
     };
     const onDown = () => wrap.classList.add("is-down");
     const onUp = () => wrap.classList.remove("is-down");
     const onLeave = () => wrap.classList.add("is-hidden");
 
     const loop = () => {
+      raf = 0;
       rx += (mx - rx) * 0.16;
       ry += (my - ry) * 0.16;
       const vx = mx - px;
@@ -65,9 +71,10 @@ export function CustomCursor() {
         `perspective(460px) rotateX(${tiltX.toFixed(2)}deg) rotateY(${tiltY.toFixed(2)}deg) ` +
         `rotate(${lastAngle.toFixed(1)}deg) scaleX(${stretch.toFixed(3)}) scaleY(${(1 / stretch).toFixed(3)})`;
 
-      raf = requestAnimationFrame(loop);
+      if (Math.hypot(mx - rx, my - ry) > 0.1 || speed > 0.1) {
+        raf = requestAnimationFrame(loop);
+      }
     };
-    raf = requestAnimationFrame(loop);
 
     window.addEventListener("mousemove", onMove, { passive: true });
     window.addEventListener("mousedown", onDown);
