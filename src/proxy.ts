@@ -6,6 +6,29 @@ import { detectAiAgent } from "./features/analytics/aiTraffic";
 
 const intlMiddleware = createMiddleware(routing);
 
+// App Router documents and React Server Component payloads can share the same
+// pathname but must never share a CDN cache entry. Keep the response variants
+// explicit in addition to Next.js' `_rsc` query-string cache discriminator.
+const RSC_VARY_HEADERS = [
+  "RSC",
+  "Next-Router-State-Tree",
+  "Next-Router-Prefetch",
+  "Next-Router-Segment-Prefetch",
+  "Next-Url",
+  "Accept-Encoding",
+] as const;
+
+function protectAppRouterResponse(req: NextRequest, response: NextResponse) {
+  const existingVary = (response.headers.get("Vary") ?? "")
+    .split(",")
+    .map((value) => value.trim())
+    .filter(Boolean);
+
+  response.headers.set("Vary", [...new Set([...existingVary, ...RSC_VARY_HEADERS])].join(", "));
+
+  return response;
+}
+
 function trackAiVisit(req: NextRequest, event: NextFetchEvent) {
   if (req.method !== "GET") return;
   const { pathname } = req.nextUrl;
@@ -56,7 +79,7 @@ export default async function middleware(req: NextRequest, event: NextFetchEvent
     return NextResponse.next();
   }
 
-  return intlMiddleware(req);
+  return protectAppRouterResponse(req, intlMiddleware(req));
 }
 
 export const config = {

@@ -6,6 +6,7 @@ import { trackGtmEvent } from "@/features/analytics/gtm";
 import { getLeadAttributionForSubmission } from "@/features/analytics/attribution.client";
 import { trackLeadConversion } from "@/features/analytics/trackLeadConversion";
 import type { LeadConversionEvent } from "@/features/analytics/attribution";
+import { ASSISTANT_SESSION_IDLE_MS, assistantSessionNow } from "@/features/assistant/session";
 import { siteConfig } from "@/shared/config/site";
 import { BrandMonogram } from "@/shared/ui/BrandLogo";
 
@@ -98,6 +99,8 @@ export function AiAssistantWidget({
   const [error, setError] = useState<string | null>(null);
   const visitorIdRef = useRef<string | undefined>(undefined);
   const leadEventTrackedRef = useRef(false);
+  const requestInFlightRef = useRef(false);
+  const lastInteractionAtRef = useRef<number | null>(null);
   const scrollRef = useRef<HTMLDivElement | null>(null);
 
   const whatsappHref = useMemo(
@@ -178,9 +181,18 @@ export function AiAssistantWidget({
 
   async function sendMessage(nextText?: string) {
     const text = (nextText || input).trim();
-    if (!text || loading) return;
+    if (!text || loading || requestInFlightRef.current) return;
+    requestInFlightRef.current = true;
 
-    const nextMessages: ChatMessage[] = [...messages, { role: "user", content: text }];
+    const now = assistantSessionNow();
+    const sessionExpired =
+      lastInteractionAtRef.current !== null &&
+      now - lastInteractionAtRef.current >= ASSISTANT_SESSION_IDLE_MS;
+    const currentMessages: ChatMessage[] = sessionExpired
+      ? [{ role: "assistant", content: labels.intro }]
+      : messages;
+    const nextMessages: ChatMessage[] = [...currentMessages, { role: "user", content: text }];
+    lastInteractionAtRef.current = now;
     setMessages(nextMessages);
     setInput("");
     setError(null);
@@ -212,6 +224,7 @@ export function AiAssistantWidget({
       }
 
       setMessages((current) => [...current, { role: "assistant", content: payload.answer || labels.error }]);
+      lastInteractionAtRef.current = assistantSessionNow();
       if (payload.leadCreated && payload.conversion && !leadEventTrackedRef.current) {
         leadEventTrackedRef.current = true;
         trackLeadConversion(payload.conversion);
@@ -220,6 +233,7 @@ export function AiAssistantWidget({
       setError(labels.error);
       setMessages((current) => [...current, { role: "assistant", content: labels.error }]);
     } finally {
+      requestInFlightRef.current = false;
       setLoading(false);
     }
   }

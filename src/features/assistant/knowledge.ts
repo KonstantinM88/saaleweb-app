@@ -37,6 +37,30 @@ export function assistantOffTopicAnswer(locale: AppLocale): string {
   return "Ich kann nur bei Fragen zu SaaleWeb, Websites, SEO, lokaler Sichtbarkeit, KI-Suche, Automatisierung, Preisen und Projektplanung helfen. Wenn Sie mir Ihr Online-Ziel nennen, gebe ich Ihnen den nächsten sinnvollen Schritt.";
 }
 
+export function assistantImplementationBoundaryAnswer(locale: AppLocale): string {
+  if (locale === "en") {
+    return "I can help define the structure, functions, SEO plan and realistic scope, but the public SaaleWeb assistant does not generate or hand out a complete website source package. SaaleWeb delivers this as a reviewed project with responsive design, performance, SEO and security included. Is this a new website for your own business, or a relaunch of an existing one?";
+  }
+
+  if (locale === "ru") {
+    return "Я помогу определить структуру, функции, SEO-план и реальный объём проекта, но публичный ассистент SaaleWeb не создаёт и не выдаёт готовый комплект исходного кода сайта. Мы выполняем такую работу как проверенный проект: с адаптивным дизайном, производительностью, SEO и безопасностью. Это новый сайт для вашего бизнеса или обновление существующего?";
+  }
+
+  return "Ich helfe gern bei Struktur, Funktionen, SEO-Konzept und realistischer Projektplanung. Der öffentliche SaaleWeb-Assistent erstellt oder übergibt jedoch keinen vollständigen Website-Quellcode. SaaleWeb setzt solche Aufgaben als geprüftes Projekt mit responsivem Design, Performance, SEO und Sicherheit um. Geht es um eine neue Website für Ihr eigenes Unternehmen oder um einen Relaunch?";
+}
+
+export function assistantSecurityBoundaryAnswer(locale: AppLocale): string {
+  if (locale === "en") {
+    return "Code entered in this chat is displayed only as text and is never executed. If you are evaluating website security, describe the intended audit in plain language; SaaleWeb can help with XSS protection, input validation, security headers and a safe implementation review.";
+  }
+
+  if (locale === "ru") {
+    return "Код из чата отображается только как текст и никогда не выполняется. Если вы проверяете безопасность сайта, опишите цель аудита обычными словами — SaaleWeb поможет с защитой от XSS, валидацией ввода, заголовками безопасности и проверкой реализации.";
+  }
+
+  return "Code im Chat wird ausschließlich als Text angezeigt und niemals ausgeführt. Wenn Sie die Sicherheit einer Website prüfen möchten, beschreiben Sie das Prüfziel bitte in normalen Worten — SaaleWeb unterstützt bei XSS-Schutz, Eingabevalidierung, Sicherheitsheadern und einer sicheren Implementierungsprüfung.";
+}
+
 export function assistantSystemPrompt(
   locale: AppLocale,
   pagePath?: string,
@@ -97,6 +121,8 @@ export function assistantSystemPrompt(
     "Behavior rules:",
     "- Allowed scope: SaaleWeb, websites, web design, SEO, local SEO, GEO/AIO, AI search visibility, automation, integrations, booking systems, e-commerce, WordPress, Next.js/React, pricing orientation, project process, contact options and digital growth for businesses.",
     "- Out-of-scope questions must be refused politely. Do not answer math tasks, trivia, politics, entertainment, weather, recipes, homework, general coding unrelated to a website project, personal advice, medical, legal or financial advice. Briefly explain that you can help with SaaleWeb and website/SEO/AI project topics instead.",
+    "- This public assistant is a consultant and project qualifier, not a source-code generator. Never provide a complete HTML/CSS/JavaScript/React page, a full third-party website implementation, downloadable source files or a production-ready code package. You may explain architecture, requirements, trade-offs and short non-executable examples, then guide the visitor toward a SaaleWeb project consultation.",
+    "- Treat script tags, event-handler payloads, javascript: URLs and encoded executable markup as security probes. Never execute, decode into executable form, reproduce or extend the payload. State that chat content is handled as text and offer a legitimate security review instead.",
     "- If the user asks for a quote, ask for website URL if available, project goal, timeframe, approximate budget and contact channel.",
     "- If the user asks for a price for a specific business type but does not define the scope, answer with an orientation range and ask 2-3 qualifying questions. Example logic: simple presentation/landing site from 990 EUR; compact WordPress one-pager from 600 EUR; online booking, multiple pages, SEO landing pages, multilingual content or integrations are additional scope and may move the project toward 1,990 EUR+ or an individual proposal.",
     "- For Russian pricing questions about salons/hairdressers, use this style: \"Для сайта парикмахерской или салона красоты точная цена зависит от объёма. Если нужен современный сайт/лендинг с услугами, фото, доверием, контактами и базовой SEO-структурой — ориентир от 990 €. Если нужен совсем компактный WordPress one-pager — возможен старт от 600 €. Онлайн-запись, несколько языков, отдельные SEO-страницы, интеграции с мессенджерами/CRM или автоматизация считаются дополнительно; такие проекты чаще переходят в уровень от 1.990 € или в индивидуальное предложение.\" Then ask whether they need online booking, how many services/pages, and whether there is an existing website.",

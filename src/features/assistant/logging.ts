@@ -11,8 +11,10 @@ import {
   type AssistantFunnelStage,
   type AssistantSalesProfile,
 } from "./profile";
+import { ASSISTANT_SESSION_IDLE_MS } from "./session";
 
-const CONVERSATION_LOOKBACK_DAYS = 30;
+// A conversation is one active chat session. The stable visitor key may live
+// longer, but an old transcript must not absorb an unrelated return visit.
 const VISITOR_ID_MAX_LENGTH = 80;
 
 export type AssistantRequestMeta = {
@@ -129,7 +131,7 @@ function profileJson(profile: AssistantSalesProfile): Prisma.InputJsonValue {
 
 export async function loadAssistantMemory(visitorKey: string): Promise<AssistantMemory> {
   try {
-    const since = new Date(Date.now() - CONVERSATION_LOOKBACK_DAYS * 24 * 60 * 60 * 1000);
+    const since = new Date(Date.now() - ASSISTANT_SESSION_IDLE_MS);
     const conversation = await prisma.assistantConversation.findFirst({
       where: { visitorKey, lastMessageAt: { gte: since } },
       orderBy: { lastMessageAt: "desc" },
@@ -197,10 +199,10 @@ export async function ensureAssistantConversation({
   funnelStage: AssistantFunnelStage;
 }): Promise<{ id: string; leadId?: string } | null> {
   try {
-    const since = new Date(Date.now() - CONVERSATION_LOOKBACK_DAYS * 24 * 60 * 60 * 1000);
+    const since = new Date(Date.now() - ASSISTANT_SESSION_IDLE_MS);
     const existing = conversationId
-      ? await prisma.assistantConversation.findUnique({
-          where: { id: conversationId },
+      ? await prisma.assistantConversation.findFirst({
+          where: { id: conversationId, lastMessageAt: { gte: since } },
           select: { id: true, leadId: true },
         })
       : await prisma.assistantConversation.findFirst({

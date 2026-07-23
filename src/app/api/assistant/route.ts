@@ -3,7 +3,9 @@ import { z } from "zod";
 import { isAppLocale, type AppLocale } from "@/i18n/routing";
 import {
   assistantFallbackAnswer,
+  assistantImplementationBoundaryAnswer,
   assistantOffTopicAnswer,
+  assistantSecurityBoundaryAnswer,
   buildAssistantInput,
   type AssistantChatMessage,
 } from "@/features/assistant/knowledge";
@@ -24,6 +26,11 @@ import {
   type AssistantFunnelStage,
   type AssistantSalesProfile,
 } from "@/features/assistant/profile";
+import {
+  containsCompleteSourceDeliverable,
+  isExecutableMarkupProbe,
+  isImplementationDeliverableRequest,
+} from "@/features/assistant/policy";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -275,7 +282,10 @@ async function createAssistantResponse({
     return sanitizeAssistantAnswer(assistantFallbackAnswer(responseLocale));
   }
 
-  return sanitizeAssistantAnswer(outputText(payload) || assistantFallbackAnswer(responseLocale));
+  const answer = sanitizeAssistantAnswer(outputText(payload) || assistantFallbackAnswer(responseLocale));
+  return containsCompleteSourceDeliverable(answer)
+    ? assistantImplementationBoundaryAnswer(responseLocale)
+    : answer;
 }
 
 export async function POST(req: Request) {
@@ -342,6 +352,40 @@ export async function POST(req: Request) {
     funnelStage: initialStage,
   });
   const contextMessages = mergeContextMessages(memory.messages, parsed.data.messages);
+
+  const policyAnswer = isExecutableMarkupProbe(latestMessage)
+    ? assistantSecurityBoundaryAnswer(responseLocale)
+    : isImplementationDeliverableRequest(latestMessage)
+      ? assistantImplementationBoundaryAnswer(responseLocale)
+      : undefined;
+
+  if (policyAnswer) {
+    const answer = sanitizeAssistantAnswer(policyAnswer);
+    await logAssistantExchange({
+      conversationId: prepared?.id,
+      meta,
+      locale,
+      responseLocale,
+      pagePath: parsed.data.pagePath,
+      userMessage: latestMessage,
+      assistantAnswer: answer,
+      scoped: true,
+      profile,
+      funnelStage: initialStage,
+    });
+
+    return NextResponse.json(
+      {
+        ok: true,
+        answer,
+        configured: Boolean(process.env.OPENAI_API_KEY?.trim()),
+        scoped: true,
+        responseLocale,
+        funnelStage: initialStage,
+      },
+      { headers: { "Cache-Control": "no-store" } },
+    );
+  }
 
   if (isOffTopicQuestion(latestMessage)) {
     const answer = sanitizeAssistantAnswer(assistantOffTopicAnswer(responseLocale));

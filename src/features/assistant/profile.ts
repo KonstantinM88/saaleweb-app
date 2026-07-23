@@ -1,5 +1,6 @@
 import type { AppLocale } from "@/i18n/routing";
 import type { AssistantChatMessage } from "./knowledge";
+import { isExecutableMarkupProbe } from "./policy";
 
 export const ASSISTANT_FUNNEL_STAGES = [
   "DISCOVERY",
@@ -30,7 +31,8 @@ export type AssistantSalesProfile = {
 };
 
 const BUSINESS_PATTERNS: Array<[RegExp, string]> = [
-  [/(?:создан|разработ|продвиж)[\p{L}-]*\s+(?:веб[- ]?)?сайт|web(?:site|design|entwicklung|agentur)|website creation/iu, "Web development / website creation"],
+  [/стоматолог|стоматол|зубн|dental|dentist|zahnarzt|zahnklinik/i, "Dental practice / clinic"],
+  [/веб[- ]?студи|webstudio|webagentur|web\s+agency|digital\s+agency/i, "Web agency / digital studio"],
   [/салон|парикмах|косметолог|beauty|friseur|kosmetik|barber/i, "Beauty salon / hairdresser"],
   [/ресторан|кафе|гастроном|restaurant|café|cafe|gastronom/i, "Restaurant / gastronomy"],
   [/строител|ремонт|bauunternehmen|bau |construction/i, "Construction"],
@@ -43,6 +45,9 @@ const BUSINESS_PATTERNS: Array<[RegExp, string]> = [
   [/магазин|online[- ]?shop|e-?commerce/i, "E-commerce"],
 ];
 
+const NEW_WEBSITE_INTENT =
+  /(?:напиш|созда|сдела|разработ|запуст|нужен|нужна|хочу)[\p{L}-]*[^\n]{0,70}(?:сайт|лендинг)|(?:write|build|create|launch|need)[^\n]{0,60}(?:website|landing page)|(?:website|landingpage)[^\n]{0,50}(?:erstellen|aufbauen|benötig)/iu;
+
 const GOAL_PATTERNS: Array<[RegExp, string]> = [
   [/заявк|лид|anfragen|leads?|inquir/i, "more qualified inquiries"],
   [/онлайн[- ]?запис|бронир|terminbuch|booking|reservation/i, "more online bookings"],
@@ -51,6 +56,7 @@ const GOAL_PATTERNS: Array<[RegExp, string]> = [
   [/релонч|редизайн|обнов|relaunch|redesign|modernis/i, "website relaunch"],
   [/имидж|довер|präsent|image|trust/i, "stronger business presentation and trust"],
   [/с нуля|нов(?:ый|ого) сайт|new website|neue website/i, "launch a new website"],
+  [NEW_WEBSITE_INTENT, "launch a new website"],
 ];
 
 const FEATURE_PATTERNS: Array<[RegExp, string]> = [
@@ -163,6 +169,7 @@ function extractTimeframe(text: string): string | undefined {
 }
 
 function noteFromMessage(text: string): string | undefined {
+  if (isExecutableMarkupProbe(text)) return undefined;
   const clean = text.replace(/(?:\+|00)\d(?:[\s().-]*\d){7,14}/g, "[phone]").replace(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/gi, "[email]").trim();
   if (clean.length < 12 || GENERIC_REPLY.test(clean)) return undefined;
   return clean.slice(0, 220);
@@ -184,7 +191,10 @@ function applyMessage(profile: AssistantSalesProfile, text: string): AssistantSa
     }
   }
 
-  if (/с нуля|нет\s+(?:ещ[ёе]\s+)?сайт|без сайта|from scratch|no website|keine website|noch keine website/i.test(text)) {
+  if (
+    /с нуля|нет\s+(?:ещ[ёе]\s+)?сайт|без сайта|from scratch|no website|keine website|noch keine website/i.test(text) ||
+    NEW_WEBSITE_INTENT.test(text)
+  ) {
     next.websiteStatus = "new";
   } else if (/(?:у\s+(?:меня|нас)\s+)?(?:уже\s+)?есть сайт|existing website|already have a website|bestehende website|website vorhanden/i.test(text)) {
     next.websiteStatus = "existing";
