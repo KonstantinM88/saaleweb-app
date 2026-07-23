@@ -1,9 +1,12 @@
 "use client";
 
 import { useTransition } from "react";
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
 import { useLocale } from "next-intl";
 import { useParams } from "next/navigation";
+import deFlag from "@/assets/flags/de.svg";
+import enFlag from "@/assets/flags/en.svg";
+import ruFlag from "@/assets/flags/ru.svg";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import { cn } from "@/shared/lib/cn";
@@ -11,10 +14,10 @@ import { useLocaleSlugs } from "./LocaleSlugsContext";
 
 type Locale = (typeof routing.locales)[number];
 
-const LANGUAGE_META: Record<Locale, { label: string; flag: string }> = {
-  de: { label: "Deutsch", flag: "/flags/de.svg" },
-  en: { label: "English", flag: "/flags/en.svg" },
-  ru: { label: "Русский", flag: "/flags/ru.svg" },
+const LANGUAGE_META: Record<Locale, { label: string; flag: StaticImageData }> = {
+  de: { label: "Deutsch", flag: deFlag },
+  en: { label: "English", flag: enFlag },
+  ru: { label: "Русский", flag: ruFlag },
 };
 
 export function LanguageSwitcher() {

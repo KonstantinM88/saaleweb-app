@@ -70,6 +70,17 @@ Instructions and project memory for coding agents working in this repository.
 - `public/images/comparison/` - static WebP assets for the legacy before/after comparison slider.
 - `public/images/cases/` - static WebP assets used as project/case study covers when media should live in the committed public asset tree.
 - `public/images/sections/` - static optimized WebP/WebM assets for non-record-specific homepage/landing sections.
+- `src/assets/` - content-hashed UI assets imported by Next.js when long-lived
+  browser caching is required. Hostinger's static layer can serve unchanged
+  `public/` URLs without browser `Cache-Control`, so frequently rendered
+  section artwork, flags, and the visible brand SVG should use static imports
+  from here instead of raw public URLs.
+- `src/app/media/premium-saas-technology-v1.webm/route.ts` - versioned media
+  endpoint for the homepage growth video. It supplies `video/webm`, ETag,
+  one-year immutable browser/CDN caching, and single-range responses because
+  Hostinger may serve the source `.webm` from `public/` as `text/plain` without
+  a browser cache lifetime. Increment the URL version whenever the video
+  content changes.
 - `public/images/audit/` - localized 1280×720 WebP Hero banners for the free website audit landing page (`audit-hero-de.webp`, `audit-hero-en.webp`, `audit-hero-ru.webp`). Keep the semantic H1/description and real CTA controls in HTML when replacing these image assets.
 - `public/images/blog/` - static optimized WebP cover images for DB-backed blog articles.
 - `public/llms.txt` - Markdown-formatted LLM discovery file with one H1, Markdown links, commercial service pages, industry pages, locations, projects, technology positioning, and contact; `next.config.ts` serves it as `text/markdown; charset=utf-8`.

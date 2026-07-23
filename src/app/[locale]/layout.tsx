@@ -6,6 +6,7 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
+import brandIcon from "@/assets/brand/favicon.svg";
 import { isAppLocale, routing } from "@/i18n/routing";
 import { siteConfig } from "@/shared/config/site";
 import { JsonLd } from "@/shared/seo/JsonLd";
@@ -59,7 +60,7 @@ export async function generateMetadata({
     icons: {
       icon: [
         { url: "/favicon.ico", sizes: "any" },
-        { url: "/favicon.svg", type: "image/svg+xml" },
+        { url: brandIcon.src, type: "image/svg+xml" },
         { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
         { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
       ],

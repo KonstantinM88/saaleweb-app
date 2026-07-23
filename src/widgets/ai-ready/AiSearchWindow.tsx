@@ -1,8 +1,12 @@
 import type { ReactNode } from "react";
 import Image from "next/image";
+import aiSearchEcosystem from "@/assets/sections/ai-search-ecosystem.webp";
+import chatGptIcon from "@/assets/sections/chatgpt-icon.webp";
+import claudeIcon from "@/assets/sections/claude-icon.webp";
+import copilotIcon from "@/assets/sections/copilot-icon.webp";
+import googleAiIcon from "@/assets/sections/google-ai-icon.webp";
+import perplexityIcon from "@/assets/sections/perplexity-icon.webp";
 import { BrandLogo } from "@/shared/ui/BrandLogo";
-
-const imageSrc = "/images/sections/ai-search-ecosystem.webp";
 
 type AiNode = {
   label: string;
@@ -82,7 +86,7 @@ function ChatGptIcon() {
   return (
     <PremiumIconShell className="bg-gradient-to-br from-white via-[#F8FAFC] to-[#EEF2F7] ring-black/10">
       <Image
-        src="/images/sections/chatgpt-icon.webp"
+        src={chatGptIcon}
         alt=""
         width={40}
         height={40}
@@ -123,7 +127,7 @@ function ClaudeIcon() {
   return (
     <PremiumIconShell className="bg-gradient-to-br from-white via-[#FFF7ED] to-[#F6E5D2]">
       <Image
-        src="/images/sections/claude-icon.webp"
+        src={claudeIcon}
         alt=""
         width={42}
         height={42}
@@ -139,7 +143,7 @@ function PerplexityIcon() {
   return (
     <PremiumIconShell className="bg-gradient-to-br from-white via-[#F8FAFC] to-[#E5F8F5]">
       <Image
-        src="/images/sections/perplexity-icon.webp"
+        src={perplexityIcon}
         alt=""
         width={42}
         height={42}
@@ -155,7 +159,7 @@ function GoogleAiIcon() {
   return (
     <PremiumIconShell className="bg-gradient-to-br from-white via-[#F8FAFC] to-[#EAF2FF]">
       <Image
-        src="/images/sections/google-ai-icon.webp"
+        src={googleAiIcon}
         alt=""
         width={42}
         height={42}
@@ -171,7 +175,7 @@ function CopilotIcon() {
   return (
     <PremiumIconShell className="bg-gradient-to-br from-white via-[#ECFEFF] to-[#F3E8FF]">
       <Image
-        src="/images/sections/copilot-icon.webp"
+        src={copilotIcon}
         alt=""
         width={42}
         height={42}
@@ -199,7 +203,7 @@ export function AiSearchWindow({
           role="img"
           aria-label={label}
           className="relative min-h-[500px] overflow-hidden rounded-[22px] bg-cover bg-center transition-transform duration-[1400ms] ease-out group-hover:scale-[1.015] sm:min-h-[560px] md:min-h-[560px] md:bg-fixed"
-          style={{ backgroundImage: `url(${imageSrc})` }}
+          style={{ backgroundImage: `url(${aiSearchEcosystem.src})` }}
         >
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_44%,rgba(255,79,163,0.05),transparent_36%),linear-gradient(180deg,rgba(17,24,39,0.00)_0%,rgba(17,24,39,0.03)_48%,rgba(17,24,39,0.22)_100%)]" />
 

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import brandIcon from "@/assets/brand/favicon.svg";
 import { BrandWord } from "./BrandText";
 import { cn } from "@/shared/lib/cn";
 
@@ -74,10 +75,10 @@ export function BrandLogo({
 
 export function BrandMonogram({ className }: { className?: string }) {
   return (
-    // Keep the visible UI mark aligned with favicon/PWA/email assets.
-    // The SVG lives in /public so every channel uses the same source artwork.
+    // Static import gives the frequently rendered mark a content-hashed,
+    // immutable URL while preserving the same source artwork as the favicon.
     <Image
-      src="/favicon.svg"
+      src={brandIcon}
       alt=""
       aria-hidden="true"
       width={512}

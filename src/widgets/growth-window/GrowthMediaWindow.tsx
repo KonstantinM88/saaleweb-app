@@ -1,10 +1,12 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import premiumSaasPoster from "@/assets/sections/premium-saas-technology.webp";
 import { cn } from "@/shared/lib/cn";
 
-const videoSrc = "/images/sections/premium-saas-technology.webm";
-const posterSrc = "/images/sections/premium-saas-technology.webp";
+// The versioned route sets the video MIME type and immutable browser/CDN
+// caching itself. The imported poster is emitted with a content-hashed URL.
+const videoSrc = "/media/premium-saas-technology-v1.webm";
 
 export function GrowthMediaWindow({
   imageAlt,
@@ -93,7 +95,7 @@ export function GrowthMediaWindow({
         loop
         playsInline
         preload="metadata"
-        poster={posterSrc}
+        poster={premiumSaasPoster.src}
       >
         <source src={videoSrc} type="video/webm" />
       </video>
