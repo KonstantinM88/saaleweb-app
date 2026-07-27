@@ -21,6 +21,8 @@ import { FaqAccordion } from "@/widgets/faq/FaqAccordion";
 import { industryContent } from "@/widgets/industry-detail/industryContent";
 import { IndustryGlyph } from "@/widgets/industries-page/IndustryGlyph";
 import { Phase4LandingPage } from "@/widgets/seo-landing/Phase4LandingPage";
+import { HotelLandingPage } from "@/widgets/industry-premium/HotelLandingPage";
+import { getPremiumIndustry } from "@/widgets/industry-premium/registry";
 import {
   getSeoIndustryPage,
   getSeoIndustrySlugMapByLocalizedSlug,
@@ -83,7 +85,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   if (!hasLocale(routing.locales, locale)) return {};
   const seoPage = getSeoIndustryPage(slug, locale);
   const seoSlugMap = getSeoIndustrySlugMapByLocalizedSlug(locale, slug);
-  if (seoPage && seoSlugMap) {
+  if (seoSlugMap) {
     const path = getPathname({ locale, href: { pathname: "/branchen/[slug]", params: { slug } } });
     const languages = Object.fromEntries(
       routing.locales.map((l) => [
@@ -94,15 +96,31 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
         }),
       ]),
     );
-    return buildMetadata({
-      path: `/branchen/${seoSlugMap.de}`,
-      canonical: path,
-      locale,
-      title: seoPage.metaTitle,
-      description: seoPage.metaDescription,
-      eyebrow: seoPage.eyebrow,
-      languages,
-    });
+
+    const premium = getPremiumIndustry(seoSlugMap.de, locale);
+    if (premium) {
+      return buildMetadata({
+        path: `/branchen/${seoSlugMap.de}`,
+        canonical: path,
+        locale,
+        title: premium.metaTitle,
+        description: premium.metaDescription,
+        eyebrow: premium.eyebrow,
+        languages,
+      });
+    }
+
+    if (seoPage) {
+      return buildMetadata({
+        path: `/branchen/${seoSlugMap.de}`,
+        canonical: path,
+        locale,
+        title: seoPage.metaTitle,
+        description: seoPage.metaDescription,
+        eyebrow: seoPage.eyebrow,
+        languages,
+      });
+    }
   }
   const data = await getIndustryData(locale, slug);
   if (!data) return {};
@@ -126,6 +144,25 @@ export default async function IndustryPage({ params }: { params: Promise<Params>
 
   const seoPage = getSeoIndustryPage(slug, locale);
   const seoSlugMap = getSeoIndustrySlugMapByLocalizedSlug(locale, slug);
+
+  const premium = seoSlugMap ? getPremiumIndustry(seoSlugMap.de, locale) : null;
+  if (premium && seoSlugMap) {
+    const tp = await getTranslations({ locale, namespace: "Pages" });
+    const path = getPathname({ locale, href: { pathname: "/branchen/[slug]", params: { slug } } });
+    const industriesPath = getPathname({ locale, href: "/branchen" });
+
+    return (
+      <HotelLandingPage
+        content={premium}
+        locale={locale}
+        path={path}
+        parent={{ name: tp("industriesLabel"), href: "/branchen", path: industriesPath }}
+        homeLabel={tp("home")}
+        localeSlugs={seoSlugMap}
+      />
+    );
+  }
+
   if (seoPage && seoSlugMap) {
     const tp = await getTranslations({ locale, namespace: "Pages" });
     const path = getPathname({ locale, href: { pathname: "/branchen/[slug]", params: { slug } } });

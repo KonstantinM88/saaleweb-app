@@ -1572,7 +1572,7 @@ const RU_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
     ],
     related: [
       { label: "Веб-дизайн Halle", href: "/ru/uslugi/webdesign-halle", description: "Думать сайт и SEO вместе." },
-      { label: "Local SEO", href: "/ru/uslugi/local-seo", description: "Региональная видимость для локальных компаний." },
+      { label: "Local SEO", href: "/ru/uslugi/lokalnoe-seo", description: "Региональная видимость для локальных компаний." },
       { label: "Производительность", href: "/ru/uslugi/optimizaciya-proizvoditelnosti", description: "Скорость как основа технического SEO." },
       { label: "Анализ сайта", href: "/ru#website-audit", description: "Бесплатная проверка текущего сайта." },
     ],
@@ -1620,7 +1620,7 @@ const RU_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
     related: [
       { label: "SEO Halle", href: "/ru/uslugi/seo-halle", description: "Классическая SEO-база для видимости." },
       { label: "Заказать сайт", href: "/ru/uslugi/razrabotka-saytov", description: "Новый сайт с понятной архитектурой контента." },
-      { label: "Local SEO", href: "/ru/uslugi/local-seo", description: "Региональные сущности и локальные сигналы." },
+      { label: "Local SEO", href: "/ru/uslugi/lokalnoe-seo", description: "Региональные сущности и локальные сигналы." },
       { label: "Контакты", href: "/ru/kontakt", description: "Обсудить готовность к ИИ-поиску." },
     ],
   },
@@ -4371,7 +4371,7 @@ const RU_INDUSTRY_SEEDS: Record<string, LocalizedIndustrySeed> = {
     related: [
       { label: "Neue Liebe Nebra", href: "/ru/proekty/neue-liebe-nebra", description: "Ресторанный проект с фокусом на бронирование." },
       { label: "Системы бронирования", href: "/ru/uslugi/sistemy-bronirovaniya", description: "Сделать брони и заявки проще онлайн." },
-      { label: "Local SEO", href: "/ru/uslugi/local-seo", description: "Стать заметнее в регионе." },
+      { label: "Local SEO", href: "/ru/uslugi/lokalnoe-seo", description: "Стать заметнее в регионе." },
       { label: "Контакты", href: "/ru/kontakt", description: "Обсудить сайт ресторана." },
     ],
   }),
@@ -4407,7 +4407,7 @@ const RU_INDUSTRY_SEEDS: Record<string, LocalizedIndustrySeed> = {
     ],
     related: [
       { label: "Системы бронирования", href: "/ru/uslugi/sistemy-bronirovaniya", description: "Чисто интегрировать цифровой путь бронирования." },
-      { label: "Local SEO", href: "/ru/uslugi/local-seo", description: "Стать заметнее в регионе и туристическом поиске." },
+      { label: "Local SEO", href: "/ru/uslugi/lokalnoe-seo", description: "Стать заметнее в регионе и туристическом поиске." },
       { label: "Релонч сайта", href: "/ru/uslugi/relonch-sajta", description: "Модернизировать существующий сайт отеля." },
       { label: "Контакты", href: "/ru/kontakt", description: "Обсудить сайт отеля." },
     ],
@@ -4444,7 +4444,7 @@ const RU_INDUSTRY_SEEDS: Record<string, LocalizedIndustrySeed> = {
     ],
     related: [
       { label: "Системы бронирования", href: "/ru/uslugi/sistemy-bronirovaniya", description: "Упростить онлайн-запись." },
-      { label: "Local SEO", href: "/ru/uslugi/local-seo", description: "Быть заметнее в своём регионе." },
+      { label: "Local SEO", href: "/ru/uslugi/lokalnoe-seo", description: "Быть заметнее в своём регионе." },
       { label: "Заказать сайт", href: "/ru/uslugi/razrabotka-saytov", description: "Спланировать новый сайт для студии." },
       { label: "Контакты", href: "/ru/kontakt", description: "Обсудить сайт beauty-студии." },
     ],
@@ -4518,7 +4518,7 @@ const RU_INDUSTRY_SEEDS: Record<string, LocalizedIndustrySeed> = {
     ],
     related: [
       { label: "Сайт стекольной мастерской", href: "/ru/otrasli/sayt-dlya-stekolnoy-masterskoy", description: "Специализированные задачи для стекольных компаний." },
-      { label: "Local SEO", href: "/ru/uslugi/local-seo", description: "Быть заметнее в зоне работы." },
+      { label: "Local SEO", href: "/ru/uslugi/lokalnoe-seo", description: "Быть заметнее в зоне работы." },
       { label: "Поддержка сайта", href: "/ru/uslugi/podderzhka-saytov", description: "Держать сайт актуальным долгосрочно." },
       { label: "Контакты", href: "/ru/kontakt", description: "Обсудить сайт ремесленной компании." },
     ],
@@ -4618,7 +4618,7 @@ const RU_INDUSTRY_SEEDS: Record<string, LocalizedIndustrySeed> = {
     related: [
       { label: "Разработка сайтов", href: "/ru/uslugi/razrabotka-saytov", description: "Спланировать новый сайт с понятным путём к заявке." },
       { label: "SEO Halle", href: "/ru/uslugi/seo-halle", description: "Региональная SEO-база для локальных компаний." },
-      { label: "Local SEO", href: "/ru/uslugi/local-seo", description: "Быть заметнее в зоне работы." },
+      { label: "Local SEO", href: "/ru/uslugi/lokalnoe-seo", description: "Быть заметнее в зоне работы." },
       { label: "Анализ сайта", href: "/ru#website-audit", description: "Бесплатно проверить текущий сайт." },
       { label: "Контакты", href: "/ru/kontakt", description: "Обсудить сайт для сферы услуг." },
     ],

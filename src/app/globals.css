@@ -1360,3 +1360,139 @@ html.custom-cursor *:not(input):not(textarea):not(select) {
 .markdown th {
   @apply bg-surface font-semibold;
 }
+
+/* ──────────────────────────────────────────────────────────────
+   Delta 34 — premium industry landing (hotel).
+
+   Page-scoped hospitality accents keep the premium hotel template
+   recognisable without changing the shared SaaleWeb design system.
+   ────────────────────────────────────────────────────────────── */
+.hotel-page {
+  --hotel-night: #0c1424;
+  --hotel-night-2: #16223a;
+  --hotel-brass: #d9a441;
+  --hotel-brass-light: #e8c071;
+  --hotel-brass-ink: #241906;
+}
+
+.hotel-night {
+  background: linear-gradient(160deg, #0c1424 0%, #16223a 100%);
+}
+
+.hotel-figure {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+/* Background underline supports wrapped phrases on narrow RU/EN screens. */
+.hotel-underline {
+  background-image: linear-gradient(90deg, #d9a441 0%, rgba(217, 164, 65, 0.35) 100%);
+  background-position: 0 94%;
+  background-repeat: no-repeat;
+  background-size: 100% 0.14em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.hotel-brass-card {
+  background: linear-gradient(135deg, #e8c071 0%, #d9a441 100%);
+  border: 1px solid rgba(36, 25, 6, 0.16);
+}
+
+.hotel-marker {
+  display: grid;
+  height: 1.75rem;
+  width: 1.75rem;
+  place-items: center;
+  border-radius: 0.625rem;
+  border: 1px solid rgba(217, 164, 65, 0.4);
+  background: rgba(217, 164, 65, 0.12);
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 12px;
+  font-weight: 700;
+  color: #8a6316;
+}
+
+.hotel-prompt {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: 0.875rem;
+  border: 1px solid #e5e7eb;
+  background: #f8fafc;
+  padding: 0.7rem 0.9rem;
+  font-size: 14.5px;
+  line-height: 1.45;
+  color: #1f2937;
+}
+
+.hotel-rail {
+  border-top: 1px solid #e5e7eb;
+}
+
+.hotel-rail:last-child {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.hotel-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.hotel-faq summary:focus-visible {
+  outline: 2px solid #8b5cf6;
+  outline-offset: 2px;
+  border-radius: 18px;
+}
+
+.hotel-range {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 0.5rem;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    #ffffff calc(var(--fill, 50%) - 1px),
+    rgba(255, 255, 255, 0.14) var(--fill, 50%)
+  );
+  cursor: pointer;
+}
+
+.hotel-range--accent {
+  background: linear-gradient(
+    90deg,
+    #e8c071 calc(var(--fill, 50%) - 1px),
+    rgba(255, 255, 255, 0.14) var(--fill, 50%)
+  );
+}
+
+.hotel-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 1.375rem;
+  width: 1.375rem;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 4px solid #16223a;
+  box-shadow: 0 6px 18px -6px rgba(0, 0, 0, 0.8);
+}
+
+.hotel-range--accent::-webkit-slider-thumb {
+  background: #e8c071;
+}
+
+.hotel-range::-moz-range-thumb {
+  height: 1.375rem;
+  width: 1.375rem;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 4px solid #16223a;
+}
+
+.hotel-range--accent::-moz-range-thumb {
+  background: #e8c071;
+}
+
+.hotel-range:focus-visible {
+  outline: 2px solid #e8c071;
+  outline-offset: 4px;
+}
