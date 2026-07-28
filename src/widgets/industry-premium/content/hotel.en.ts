@@ -103,13 +103,15 @@ export const hotelEn: HotelLandingContent = {
     rateLabel: "Average accommodation revenue per booking",
     bookingsLabel: "Portal bookings per month",
     commissionLabel: "Commission rate",
-    shiftLabel: "Share that would move to direct booking",
+    shiftLabel: "Share of portal bookings that would move to direct booking",
     perMonth: "per month",
     perYear: "per year",
+    calculationLabel: "Calculation",
     commissionResult: "Commission volume",
     commissionHint: "Amount paid to portals per year under these assumptions.",
-    shiftResult: "Calculated effect of the shift",
-    shiftHint: "Amount that would stay in the house at this shift.",
+    shiftResult: "Potential portal commission avoided",
+    shiftHint:
+      "Gross portal commission that would mathematically no longer be paid to the portal at this shift.",
     disclaimer:
       "Simplified example, no warranty. Your actual conditions are defined in your portal contract; commission rates, cancellation rates, payment fees and marketing costs differ per property. Nobody can guarantee a specific shift in your booking mix.",
     cta: "Discuss these numbers with us",

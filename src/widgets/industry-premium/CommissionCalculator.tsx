@@ -23,6 +23,8 @@ const defaults = {
   shift: 10,
 };
 
+const rangeThumbSizePx = 22;
+
 /**
  * Delta 34 — the signature element of the hotel landing page.
  *
@@ -38,15 +40,22 @@ export function CommissionCalculator({ copy, locale, ctaHref }: Props) {
   const [shift, setShift] = useState(defaults.shift);
 
   const id = useId();
-  const money = useMemo(
-    () =>
-      new Intl.NumberFormat(numberLocale[locale], {
-        style: "currency",
-        currency: "EUR",
-        maximumFractionDigits: 0,
-      }),
-    [locale],
-  );
+  const formatMoney = useMemo(() => {
+    const formatter = new Intl.NumberFormat(numberLocale[locale], {
+      style: "currency",
+      currency: "EUR",
+      maximumFractionDigits: 0,
+    });
+
+    // A German thousands dot such as "15.120 €" is correct but can look like
+    // a decimal separator. Preserve the locale's currency position while
+    // using one unambiguous narrow no-break space for grouped thousands.
+    return (value: number) =>
+      formatter
+        .formatToParts(value)
+        .map((part) => (part.type === "group" ? "\u202F" : part.value))
+        .join("");
+  }, [locale]);
 
   const commissionYear = rate * bookings * 12 * (commission / 100);
   const commissionMonth = commissionYear / 12;
@@ -59,7 +68,7 @@ export function CommissionCalculator({ copy, locale, ctaHref }: Props) {
           id={`${id}-rate`}
           label={copy.rateLabel}
           value={rate}
-          display={money.format(rate)}
+          display={formatMoney(rate)}
           min={40}
           max={400}
           step={5}
@@ -107,10 +116,14 @@ export function CommissionCalculator({ copy, locale, ctaHref }: Props) {
             {copy.commissionResult}
           </p>
           <p className="hotel-figure mt-3 text-[clamp(34px,5vw,52px)] font-extrabold leading-none text-white">
-            {money.format(commissionYear)}
+            {formatMoney(commissionYear)}
           </p>
           <p className="mt-2 text-[13px] text-white/55">
-            {copy.perYear} · {money.format(commissionMonth)} {copy.perMonth}
+            {copy.perYear} · {formatMoney(commissionMonth)} {copy.perMonth}
+          </p>
+          <p className="mt-3 rounded-xl border border-white/[0.08] bg-black/10 px-3 py-2 font-mono text-[11.5px] leading-relaxed text-white/60">
+            <span className="font-bold text-white/75">{copy.calculationLabel}:</span>{" "}
+            {formatMoney(rate)} × {bookings} {copy.perMonth} × 12 × {commission} %
           </p>
           <p className="mt-4 border-t border-white/[0.08] pt-4 text-[13.5px] leading-relaxed text-white/65">
             {copy.commissionHint}
@@ -122,9 +135,13 @@ export function CommissionCalculator({ copy, locale, ctaHref }: Props) {
             {copy.shiftResult}
           </p>
           <p className="hotel-figure mt-3 text-[clamp(30px,4.4vw,44px)] font-extrabold leading-none text-[#241906]">
-            {money.format(shiftYear)}
+            {formatMoney(shiftYear)}
           </p>
           <p className="mt-2 text-[13px] font-medium text-[#3A2A08]/75">{copy.perYear}</p>
+          <p className="mt-3 rounded-xl border border-[#241906]/[0.12] bg-white/20 px-3 py-2 font-mono text-[11.5px] leading-relaxed text-[#3A2A08]/75">
+            <span className="font-bold text-[#241906]/85">{copy.calculationLabel}:</span>{" "}
+            {formatMoney(commissionYear)} × {shift} % = {formatMoney(shiftYear)}
+          </p>
           <p className="mt-4 border-t border-[#241906]/[0.14] pt-4 text-[13.5px] leading-relaxed text-[#3A2A08]/85">
             {copy.shiftHint}
           </p>
@@ -164,7 +181,13 @@ function Slider({
   onChange: (value: number) => void;
   accent?: boolean;
 }) {
-  const percent = ((value - min) / (max - min)) * 100;
+  const percent = Math.min(100, Math.max(0, ((value - min) / (max - min)) * 100));
+
+  // A native range thumb travels across the track width minus its own width.
+  // Compensate for that geometry so the gradient boundary meets the exact
+  // centre of the 22 px thumb at every value, including both endpoints.
+  const fillOffsetPx = rangeThumbSizePx * (0.5 - percent / 100);
+  const fillPosition = `calc(${percent}% + ${fillOffsetPx.toFixed(2)}px)`;
 
   return (
     <div>
@@ -188,7 +211,7 @@ function Slider({
         value={value}
         onChange={(event) => onChange(Number(event.target.value))}
         className={`hotel-range mt-3 w-full ${accent ? "hotel-range--accent" : ""}`}
-        style={{ "--fill": `${percent}%` } as CSSProperties}
+        style={{ "--fill": fillPosition } as CSSProperties}
       />
     </div>
   );

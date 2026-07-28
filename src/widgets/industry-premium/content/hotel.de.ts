@@ -103,13 +103,15 @@ export const hotelDe: HotelLandingContent = {
     rateLabel: "Durchschnittlicher Übernachtungsumsatz pro Buchung",
     bookingsLabel: "Buchungen über Portale pro Monat",
     commissionLabel: "Provisionssatz",
-    shiftLabel: "Anteil, der künftig direkt gebucht wird",
+    shiftLabel: "Anteil der Portalbuchungen, der künftig direkt gebucht wird",
     perMonth: "pro Monat",
     perYear: "pro Jahr",
+    calculationLabel: "Rechenweg",
     commissionResult: "Provisionsvolumen",
     commissionHint: "Summe, die bei diesen Annahmen jährlich an Portale geht.",
-    shiftResult: "Rechnerischer Effekt der Verschiebung",
-    shiftHint: "Betrag, der bei dieser Verschiebung im Haus bleiben würde.",
+    shiftResult: "Potenziell vermiedene Portalprovision",
+    shiftHint:
+      "Bruttobetrag der Portalprovision, der bei dieser Verschiebung rechnerisch nicht mehr an das Portal gezahlt würde.",
     disclaimer:
       "Vereinfachtes Rechenbeispiel ohne Gewähr. Ihre tatsächlichen Konditionen stehen in Ihrem Portalvertrag; Provisionssätze, Ausfallquoten, Zahlungsgebühren und Marketingkosten unterscheiden sich je Haus. Eine bestimmte Verschiebung des Buchungsverhältnisses kann niemand garantieren.",
     cta: "Zahlen gemeinsam einordnen",

@@ -110,6 +110,7 @@ export type HotelLandingContent = {
     shiftLabel: string;
     perMonth: string;
     perYear: string;
+    calculationLabel: string;
     commissionResult: string;
     commissionHint: string;
     shiftResult: string;
