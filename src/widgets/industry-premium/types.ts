@@ -188,6 +188,198 @@ export type HotelLandingContent = {
     bullets: string[];
     linkLabel: string;
     linkHref: string;
+    /** Live project URL — external, opens the real deliverable. */
+    liveUrl: string;
+    liveLabel: string;
+  };
+
+  packages: {
+    eyebrow: string;
+    title: string;
+    intro: string;
+    tiers: PremiumTier[];
+    note: string;
+    catalogName: string;
+  };
+
+  faq: {
+    eyebrow: string;
+    title: string;
+    items: PremiumFaq[];
+  };
+
+  related: {
+    eyebrow: string;
+    title: string;
+    links: PremiumLink[];
+  };
+
+  final: {
+    title: string;
+    text: string;
+    primary: string;
+    secondary: string;
+    assurance: string;
+  };
+};
+
+/* ────────────────────────────────────────────────────────────────
+   Delta 35 — restaurant industry.
+
+   The restaurant's defining artifact is its menu, so the content model
+   carries a real menu structure (categories, dishes, allergens, badges)
+   instead of the hotel's booking/commission blocks.
+   ──────────────────────────────────────────────────────────────── */
+
+export type MenuDish = {
+  name: string;
+  description: string;
+  price: string;
+  /** Short labels such as "Vegetarisch" or "Empfehlung". */
+  badges: string[];
+  /** Allergen letter code as used on restaurant menus, e.g. "A, G". */
+  allergens?: string;
+  /**
+   * Optional real photo under /public (e.g. "/images/industries/dish.webp").
+   * When absent the showcase renders an annotated placeholder slot instead.
+   */
+  image?: string;
+  imageAlt?: string;
+  /**
+   * Optional short WebM clip. It is loaded only after the visitor activates
+   * the dish photo, so menu media does not increase the initial page payload.
+   */
+  video?: string;
+};
+
+export type MenuCategory = {
+  name: string;
+  /** Human-readable count, e.g. "9 Positionen". */
+  count: string;
+  note: string;
+  dishes: MenuDish[];
+};
+
+export type MenuProof = {
+  name: string;
+  /** Live project URL — external. */
+  url: string;
+  /** Internal case-study path. */
+  projectHref: string;
+  text: string;
+  stats: string[];
+};
+
+export type RestaurantLandingContent = {
+  slug: string;
+  metaTitle: string;
+  metaDescription: string;
+
+  eyebrow: string;
+  h1: string;
+  h1Accent: string;
+  lead: string;
+  heroPoints: string[];
+  ctaPrimary: string;
+  ctaSecondary: string;
+
+  /** Hero mock-up: a single dish entry, the smallest unit of a menu. */
+  heroCard: {
+    badge: string;
+    image: string;
+    imageAlt: string;
+    video: string;
+    category: string;
+    name: string;
+    description: string;
+    price: string;
+    allergenLabel: string;
+    allergens: string;
+    badges: string[];
+    footnote: string;
+  };
+
+  answer: {
+    eyebrow: string;
+    question: string;
+    text: string;
+    facts: PremiumFact[];
+  };
+
+  pdfProblem: {
+    eyebrow: string;
+    title: string;
+    intro: string;
+    problems: PremiumItem[];
+    conclusion: string;
+  };
+
+  menu: {
+    eyebrow: string;
+    title: string;
+    intro: string;
+    demoLabel: string;
+    categoriesLabel: string;
+    allergenLabel: string;
+    videoLabel: string;
+    closeVideoLabel: string;
+    videoUnsupported: string;
+    categories: MenuCategory[];
+    featuresTitle: string;
+    features: PremiumItem[];
+    proofTitle: string;
+    proofIntro: string;
+    proofs: MenuProof[];
+    proofLive: string;
+    proofCase: string;
+  };
+
+  reservation: {
+    eyebrow: string;
+    title: string;
+    intro: string;
+    items: PremiumItem[];
+    honesty: string;
+  };
+
+  journey: {
+    eyebrow: string;
+    title: string;
+    intro: string;
+    guestLabel: string;
+    siteLabel: string;
+    steps: PremiumJourneyStep[];
+  };
+
+  build: {
+    eyebrow: string;
+    title: string;
+    intro: string;
+    items: PremiumItem[];
+  };
+
+  visibility: {
+    eyebrow: string;
+    title: string;
+    intro: string;
+    promptsLabel: string;
+    prompts: string[];
+    promptsNote: string;
+    signals: PremiumItem[];
+  };
+
+  events: {
+    eyebrow: string;
+    title: string;
+    intro: string;
+    items: PremiumItem[];
+  };
+
+  legal: {
+    eyebrow: string;
+    title: string;
+    items: PremiumItem[];
+    note: string;
   };
 
   packages: {

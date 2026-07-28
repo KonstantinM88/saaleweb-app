@@ -1,19 +1,39 @@
-import type { HotelLandingContent, PremiumLocale } from "./types";
+import type { HotelLandingContent, PremiumLocale, RestaurantLandingContent } from "./types";
 import { hotelDe } from "./content/hotel.de";
 import { hotelEn } from "./content/hotel.en";
 import { hotelRu } from "./content/hotel.ru";
+import { restaurantDe } from "./content/restaurant.de";
+import { restaurantEn } from "./content/restaurant.en";
+import { restaurantRu } from "./content/restaurant.ru";
 
 /**
  * Canonical industry slugs (the German slug, matching INDUSTRY_SLUGS in
- * `@/widgets/seo-landing/phase4Content`) that are rendered with the premium
- * template instead of the generic Phase-4 landing page.
+ * `@/widgets/seo-landing/phase4Content`) that are rendered with a dedicated
+ * premium template instead of the generic Phase-4 landing page.
  *
- * Adding an industry here is the only wiring needed: the route resolves the
- * canonical slug from any localized or alias slug and looks it up in this map.
+ * Each entry declares its own `kind`, because the templates are deliberately
+ * not interchangeable: a hotel page is built around booking economics, a
+ * restaurant page around the menu. Adding an industry means adding content,
+ * a template and one line here.
  */
-const premiumIndustries: Record<string, Record<PremiumLocale, HotelLandingContent>> = {
-  "hotel-website": { de: hotelDe, en: hotelEn, ru: hotelRu },
+type PremiumEntry =
+  | { kind: "hotel"; byLocale: Record<PremiumLocale, HotelLandingContent> }
+  | { kind: "restaurant"; byLocale: Record<PremiumLocale, RestaurantLandingContent> };
+
+const premiumIndustries: Record<string, PremiumEntry> = {
+  "hotel-website": {
+    kind: "hotel",
+    byLocale: { de: hotelDe, en: hotelEn, ru: hotelRu },
+  },
+  "restaurant-website": {
+    kind: "restaurant",
+    byLocale: { de: restaurantDe, en: restaurantEn, ru: restaurantRu },
+  },
 };
+
+export type PremiumIndustry =
+  | { kind: "hotel"; content: HotelLandingContent }
+  | { kind: "restaurant"; content: RestaurantLandingContent };
 
 export const premiumIndustrySlugs = Object.keys(premiumIndustries);
 
@@ -21,10 +41,13 @@ export function isPremiumIndustry(canonicalSlug: string): boolean {
   return canonicalSlug in premiumIndustries;
 }
 
-export function getPremiumIndustry(
-  canonicalSlug: string,
-  locale: string,
-): HotelLandingContent | null {
+export function getPremiumIndustry(canonicalSlug: string, locale: string): PremiumIndustry | null {
   if (locale !== "de" && locale !== "en" && locale !== "ru") return null;
-  return premiumIndustries[canonicalSlug]?.[locale] ?? null;
+
+  const entry = premiumIndustries[canonicalSlug];
+  if (!entry) return null;
+
+  return entry.kind === "hotel"
+    ? { kind: "hotel", content: entry.byLocale[locale] }
+    : { kind: "restaurant", content: entry.byLocale[locale] };
 }

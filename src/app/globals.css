@@ -881,7 +881,8 @@ html.custom-cursor *:not(input):not(textarea):not(select) {
 .cursor-layer {
   position: fixed;
   inset: 0;
-  z-index: 9999;
+  /* The cursor must remain visible above portal-based dialogs and video overlays. */
+  z-index: 2147483647;
   pointer-events: none;
 }
 .cursor-dot,
@@ -1495,4 +1496,245 @@ html.custom-cursor *:not(input):not(textarea):not(select) {
 .hotel-range:focus-visible {
   outline: 2px solid #e8c071;
   outline-offset: 4px;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   Delta 35 — premium industry landing (restaurant).
+
+   Sibling of the hotel accent, but with its own vocabulary: a warm
+   near-black and a Saale-Unstrut wine red. Used only for the signature
+   moments (dish card, digital menu, final CTA); everything else stays
+   on the regular brand palette.
+   ────────────────────────────────────────────────────────────── */
+.rest-page {
+  --rest-night: #16100f;
+  --rest-night-2: #241716;
+  --rest-wine: #8e2f43;
+  --rest-wine-light: #c25a6e;
+  --rest-wine-pale: #e8b4bf;
+}
+
+.rest-night {
+  background: linear-gradient(160deg, #16100f 0%, #241716 100%);
+}
+
+.rest-figure {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+/* Wine rule under the key phrase of the H1. */
+.rest-underline {
+  position: relative;
+}
+
+.rest-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.04em;
+  height: 0.13em;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #8e2f43 0%, rgba(194, 90, 110, 0.32) 100%);
+}
+
+/* Search-style rows for the example queries in the GEO/AIO block. */
+.rest-prompt {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: 0.875rem;
+  border: 1px solid #e5e7eb;
+  background: #f8fafc;
+  padding: 0.7rem 0.9rem;
+  font-size: 14.5px;
+  line-height: 1.45;
+  color: #1f2937;
+}
+
+/* Journey rail: the hairline that carries the 01–05 sequence. */
+.rest-rail {
+  border-top: 1px solid #e5e7eb;
+}
+
+.rest-rail:last-child {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.rest-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.rest-faq summary:focus-visible {
+  outline: 2px solid #8b5cf6;
+  outline-offset: 2px;
+  border-radius: 18px;
+}
+
+/* ── Digital menu showcase ────────────────────────────────── */
+.rest-menu {
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+}
+
+.rest-tab {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.rest-tab:hover {
+  border-color: rgba(194, 90, 110, 0.45);
+  color: #fff;
+}
+
+.rest-tab--active {
+  border-color: transparent;
+  background: linear-gradient(135deg, #8e2f43 0%, #b04156 100%);
+  color: #fff;
+}
+
+.rest-tab:focus-visible {
+  outline: 2px solid #e3909f;
+  outline-offset: 3px;
+}
+
+.rest-dish {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  transition: border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.rest-dish:hover {
+  border-color: rgba(194, 90, 110, 0.32);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Image slot of a dish: stands in for the photo plus the short clip that
+   sits behind it in the real projects. */
+.rest-dish-media {
+  position: relative;
+  display: grid;
+  height: 4.5rem;
+  width: 4.5rem;
+  flex-shrink: 0;
+  place-items: center;
+  border-radius: 1rem;
+  border: 1px dashed rgba(255, 255, 255, 0.16);
+  background: linear-gradient(135deg, rgba(194, 90, 110, 0.16), rgba(139, 92, 246, 0.14));
+}
+
+.rest-dish-play {
+  position: absolute;
+  right: 0.35rem;
+  bottom: 0.35rem;
+  height: 1.65rem;
+  width: 1.65rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: rgba(142, 47, 67, 0.92);
+  box-shadow: 0 6px 16px rgba(23, 11, 15, 0.35);
+  padding: 0.38rem;
+  color: #fff;
+}
+
+.rest-badge {
+  border-radius: 999px;
+  border: 1px solid rgba(194, 90, 110, 0.3);
+  background: rgba(194, 90, 110, 0.12);
+  padding: 0.2rem 0.6rem;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #e8b4bf;
+}
+
+/* Dish slot with a real photo: same footprint, no dashed placeholder. */
+.rest-dish-media--photo {
+  overflow: visible;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.14);
+  background: #241716;
+}
+
+.rest-dish-media--photo > img {
+  border-radius: 0.94rem;
+}
+
+.rest-dish-media--interactive {
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.rest-dish-media--interactive:hover {
+  border-color: rgba(227, 144, 159, 0.75);
+  box-shadow: 0 10px 24px rgba(23, 11, 15, 0.3);
+  transform: translateY(-1px);
+}
+
+.rest-dish-media--interactive:focus-visible {
+  outline: 2px solid #e3909f;
+  outline-offset: 3px;
+}
+
+.rest-video-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: grid;
+  place-items: center;
+  padding: 0.75rem;
+  background: rgba(12, 8, 13, 0.82);
+  backdrop-filter: blur(10px);
+}
+
+.rest-video-dialog {
+  width: min(100%, 48rem);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 1.5rem;
+  background: #171115;
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.5);
+}
+
+.rest-video-close {
+  display: grid;
+  height: 2.75rem;
+  width: 2.75rem;
+  flex-shrink: 0;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.82);
+  transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.rest-video-close:hover {
+  border-color: rgba(227, 144, 159, 0.55);
+  background: rgba(194, 90, 110, 0.16);
+  color: #fff;
+}
+
+.rest-video-close:focus-visible {
+  outline: 2px solid #e3909f;
+  outline-offset: 3px;
+}
+
+@media (min-width: 640px) {
+  .rest-dish-media {
+    height: 5.25rem;
+    width: 5.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rest-dish-media--interactive {
+    transition: none;
+  }
+
+  .rest-dish-media--interactive:hover {
+    transform: none;
+  }
 }

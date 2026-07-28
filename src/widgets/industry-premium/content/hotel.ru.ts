@@ -387,6 +387,8 @@ export const hotelRu: HotelLandingContent = {
     ],
     linkLabel: "Посмотреть проект",
     linkHref: "/ru/proekty/pryamye-broni-bez-agregatorov",
+    liveUrl: "https://waldschlosschen-08.vercel.app/de/hotel",
+    liveLabel: "Посмотреть вживую",
   },
 
   packages: {

@@ -22,6 +22,7 @@ import { industryContent } from "@/widgets/industry-detail/industryContent";
 import { IndustryGlyph } from "@/widgets/industries-page/IndustryGlyph";
 import { Phase4LandingPage } from "@/widgets/seo-landing/Phase4LandingPage";
 import { HotelLandingPage } from "@/widgets/industry-premium/HotelLandingPage";
+import { RestaurantLandingPage } from "@/widgets/industry-premium/RestaurantLandingPage";
 import { getPremiumIndustry } from "@/widgets/industry-premium/registry";
 import {
   getSeoIndustryPage,
@@ -103,9 +104,9 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
         path: `/branchen/${seoSlugMap.de}`,
         canonical: path,
         locale,
-        title: premium.metaTitle,
-        description: premium.metaDescription,
-        eyebrow: premium.eyebrow,
+        title: premium.content.metaTitle,
+        description: premium.content.metaDescription,
+        eyebrow: premium.content.eyebrow,
         languages,
       });
     }
@@ -151,15 +152,18 @@ export default async function IndustryPage({ params }: { params: Promise<Params>
     const path = getPathname({ locale, href: { pathname: "/branchen/[slug]", params: { slug } } });
     const industriesPath = getPathname({ locale, href: "/branchen" });
 
-    return (
-      <HotelLandingPage
-        content={premium}
-        locale={locale}
-        path={path}
-        parent={{ name: tp("industriesLabel"), href: "/branchen", path: industriesPath }}
-        homeLabel={tp("home")}
-        localeSlugs={seoSlugMap}
-      />
+    const shared = {
+      locale,
+      path,
+      parent: { name: tp("industriesLabel"), href: "/branchen" as const, path: industriesPath },
+      homeLabel: tp("home"),
+      localeSlugs: seoSlugMap,
+    };
+
+    return premium.kind === "hotel" ? (
+      <HotelLandingPage content={premium.content} {...shared} />
+    ) : (
+      <RestaurantLandingPage content={premium.content} {...shared} />
     );
   }
 

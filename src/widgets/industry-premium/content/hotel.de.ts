@@ -387,6 +387,8 @@ export const hotelDe: HotelLandingContent = {
     ],
     linkLabel: "Projekt ansehen",
     linkHref: "/projekte/direktbuchungen-ohne-portale",
+    liveUrl: "https://waldschlosschen-08.vercel.app/de/hotel",
+    liveLabel: "Live ansehen",
   },
 
   packages: {
