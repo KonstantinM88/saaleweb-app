@@ -1738,3 +1738,152 @@ html.custom-cursor *:not(input):not(textarea):not(select) {
     transform: none;
   }
 }
+
+/* ──────────────────────────────────────────────────────────────
+   Delta 36 — premium industry landing (construction).
+
+   Where the hotel page uses midnight and brass, and the restaurant page
+   warm black and wine, this one borrows from a technical drawing:
+   a light blueprint sheet with a fine grid, drawing-blue rules and a
+   single graphite band for the reference block and the final CTA.
+   The signature section is deliberately light — the page rhythm differs
+   from its siblings, not just the hue.
+   ────────────────────────────────────────────────────────────── */
+.bau-page {
+  --bau-ink: #0c2e4e;
+  --bau-ink-soft: #40607f;
+  --bau-blue: #2d6ca3;
+  --bau-blue-light: #7fb6e4;
+  --bau-sheet: #eef4fa;
+  --bau-graphite: #14181d;
+}
+
+/* Blueprint grid, drawn with two hairline gradients. */
+.bau-grid-bg {
+  background-image:
+    linear-gradient(rgba(45, 108, 163, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(45, 108, 163, 0.07) 1px, transparent 1px);
+  background-size: 34px 34px;
+}
+
+.bau-blueprint {
+  background-color: #eef4fa;
+}
+
+.bau-graphite {
+  background: linear-gradient(160deg, #14181d 0%, #212932 100%);
+}
+
+.bau-figure {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+/* Technical rule under the key phrase of the H1. */
+.bau-underline {
+  position: relative;
+}
+.bau-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.04em;
+  height: 0.12em;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #2d6ca3 0%, rgba(45, 108, 163, 0.3) 100%);
+}
+
+/* Sheet surface used by the inquiry assistant. */
+.bau-sheet {
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(45, 108, 163, 0.18);
+  backdrop-filter: blur(4px);
+}
+
+/* The assembled inquiry — the artifact the whole page is about. */
+.bau-inquiry {
+  background: #ffffff;
+  border: 1px solid rgba(45, 108, 163, 0.28);
+  box-shadow: 0 24px 70px -60px rgba(12, 46, 78, 0.7);
+}
+
+/* Selectable option chips of the inquiry assistant. */
+.bau-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 2.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(45, 108, 163, 0.24);
+  background: #ffffff;
+  padding: 0.5rem 0.85rem;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #123a5e;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+.bau-chip:hover {
+  border-color: rgba(45, 108, 163, 0.6);
+}
+.bau-chip--active {
+  border-color: transparent;
+  background: linear-gradient(135deg, #1b4e7a 0%, #2d6ca3 100%);
+  color: #ffffff;
+}
+.bau-chip:focus-visible {
+  outline: 2px solid #2d6ca3;
+  outline-offset: 3px;
+}
+
+/* URL rows in the service-page structure block. */
+.bau-url {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 0.6rem;
+  border-radius: 0.7rem;
+  border: 1px solid rgba(45, 108, 163, 0.16);
+  background: rgba(45, 108, 163, 0.04);
+  padding: 0.6rem 0.8rem;
+}
+
+/* Search-style rows for the example queries in the GEO/AIO block. */
+.bau-prompt {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: 0.875rem;
+  border: 1px solid #e5e7eb;
+  background: #f8fafc;
+  padding: 0.7rem 0.9rem;
+  font-size: 14.5px;
+  line-height: 1.45;
+  color: #1f2937;
+}
+
+/* Journey rail: the hairline that carries the 01–05 sequence. */
+.bau-rail {
+  border-top: 1px solid #e5e7eb;
+}
+.bau-rail:last-child {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.bau-faq summary::-webkit-details-marker {
+  display: none;
+}
+.bau-faq summary:focus-visible {
+  outline: 2px solid #8b5cf6;
+  outline-offset: 2px;
+  border-radius: 18px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bau-chip {
+    transition: none;
+  }
+}

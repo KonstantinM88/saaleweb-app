@@ -1,4 +1,12 @@
-import type { HotelLandingContent, PremiumLocale, RestaurantLandingContent } from "./types";
+import type {
+  ConstructionLandingContent,
+  HotelLandingContent,
+  PremiumLocale,
+  RestaurantLandingContent,
+} from "./types";
+import { constructionDe } from "./content/construction.de";
+import { constructionEn } from "./content/construction.en";
+import { constructionRu } from "./content/construction.ru";
 import { hotelDe } from "./content/hotel.de";
 import { hotelEn } from "./content/hotel.en";
 import { hotelRu } from "./content/hotel.ru";
@@ -18,7 +26,8 @@ import { restaurantRu } from "./content/restaurant.ru";
  */
 type PremiumEntry =
   | { kind: "hotel"; byLocale: Record<PremiumLocale, HotelLandingContent> }
-  | { kind: "restaurant"; byLocale: Record<PremiumLocale, RestaurantLandingContent> };
+  | { kind: "restaurant"; byLocale: Record<PremiumLocale, RestaurantLandingContent> }
+  | { kind: "construction"; byLocale: Record<PremiumLocale, ConstructionLandingContent> };
 
 const premiumIndustries: Record<string, PremiumEntry> = {
   "hotel-website": {
@@ -29,11 +38,16 @@ const premiumIndustries: Record<string, PremiumEntry> = {
     kind: "restaurant",
     byLocale: { de: restaurantDe, en: restaurantEn, ru: restaurantRu },
   },
+  "bauunternehmen-website": {
+    kind: "construction",
+    byLocale: { de: constructionDe, en: constructionEn, ru: constructionRu },
+  },
 };
 
 export type PremiumIndustry =
   | { kind: "hotel"; content: HotelLandingContent }
-  | { kind: "restaurant"; content: RestaurantLandingContent };
+  | { kind: "restaurant"; content: RestaurantLandingContent }
+  | { kind: "construction"; content: ConstructionLandingContent };
 
 export const premiumIndustrySlugs = Object.keys(premiumIndustries);
 
@@ -47,7 +61,7 @@ export function getPremiumIndustry(canonicalSlug: string, locale: string): Premi
   const entry = premiumIndustries[canonicalSlug];
   if (!entry) return null;
 
-  return entry.kind === "hotel"
-    ? { kind: "hotel", content: entry.byLocale[locale] }
-    : { kind: "restaurant", content: entry.byLocale[locale] };
+  if (entry.kind === "hotel") return { kind: "hotel", content: entry.byLocale[locale] };
+  if (entry.kind === "restaurant") return { kind: "restaurant", content: entry.byLocale[locale] };
+  return { kind: "construction", content: entry.byLocale[locale] };
 }

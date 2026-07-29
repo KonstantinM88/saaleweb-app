@@ -411,3 +411,214 @@ export type RestaurantLandingContent = {
     assurance: string;
   };
 };
+
+/* ────────────────────────────────────────────────────────────────
+   Delta 36 — construction industry.
+
+   A construction firm's problem is rarely "no website" — it is the
+   unqualified inquiry: a phone call asking for a price with no scope,
+   no location and no photos. The content model is therefore built
+   around inquiry quality and around service pages that carry the
+   location in the slug, the pattern used on both live reference sites.
+   ──────────────────────────────────────────────────────────────── */
+
+export type InquiryOptionGroup = {
+  /** Stable key used by the demo to assemble the preview. */
+  key: "service" | "object" | "timing" | "area";
+  label: string;
+  options: string[];
+};
+
+export type ServicePageExample = {
+  /** Real slug pattern, e.g. "badsanierung-halle". */
+  slug: string;
+  label: string;
+};
+
+export type ConstructionProof = {
+  name: string;
+  url: string;
+  /** Internal case-study path, empty string when no case study exists yet. */
+  projectHref: string;
+  text: string;
+  stats: string[];
+  /** Optional, owner-supplied visual proof from the referenced public project. */
+  media?: {
+    key: "sorgfaltbau-projects" | "onebbau-projects";
+    primaryAlt: string;
+    secondaryAlt: string;
+    caption: string;
+  };
+};
+
+export type ConstructionLandingContent = {
+  slug: string;
+  metaTitle: string;
+  metaDescription: string;
+
+  eyebrow: string;
+  h1: string;
+  h1Accent: string;
+  lead: string;
+  heroPoints: string[];
+  ctaPrimary: string;
+  ctaSecondary: string;
+
+  /** Hero mock-up: a structured inquiry as it arrives at the company. */
+  heroCard: {
+    badge: string;
+    channel: string;
+    time: string;
+    fields: PremiumFact[];
+    photosLabel: string;
+    photosValue: string;
+    footnote: string;
+  };
+
+  answer: {
+    eyebrow: string;
+    question: string;
+    text: string;
+    facts: PremiumFact[];
+  };
+
+  problem: {
+    eyebrow: string;
+    title: string;
+    intro: string;
+    items: PremiumItem[];
+    conclusion: string;
+  };
+
+  /** Signature block: the interactive inquiry assistant. */
+  inquiry: {
+    eyebrow: string;
+    title: string;
+    intro: string;
+    formTitle: string;
+    formHint: string;
+    groups: InquiryOptionGroup[];
+    photosLabel: string;
+    photosOptions: string[];
+    badTitle: string;
+    badSubtitle: string;
+    badMessage: string;
+    badProblems: string[];
+    goodTitle: string;
+    goodSubtitle: string;
+    fieldLabels: {
+      service: string;
+      object: string;
+      timing: string;
+      area: string;
+      photos: string;
+    };
+    goodNote: string;
+    outcomeTitle: string;
+    outcomes: string[];
+    disclaimer: string;
+    cta: string;
+  };
+
+  /** Service pages that carry the location in the slug. */
+  structure: {
+    eyebrow: string;
+    title: string;
+    intro: string;
+    badTitle: string;
+    badNote: string;
+    badItems: string[];
+    goodTitle: string;
+    goodNote: string;
+    goodItems: ServicePageExample[];
+    urlPrefix: string;
+    conclusion: string;
+  };
+
+  trust: {
+    eyebrow: string;
+    title: string;
+    intro: string;
+    items: PremiumItem[];
+    note: string;
+  };
+
+  proofs: {
+    eyebrow: string;
+    title: string;
+    intro: string;
+    items: ConstructionProof[];
+    live: string;
+    caseLabel: string;
+  };
+
+  journey: {
+    eyebrow: string;
+    title: string;
+    intro: string;
+    guestLabel: string;
+    siteLabel: string;
+    steps: PremiumJourneyStep[];
+  };
+
+  build: {
+    eyebrow: string;
+    title: string;
+    intro: string;
+    items: PremiumItem[];
+  };
+
+  visibility: {
+    eyebrow: string;
+    title: string;
+    intro: string;
+    promptsLabel: string;
+    prompts: string[];
+    promptsNote: string;
+    signals: PremiumItem[];
+  };
+
+  reachability: {
+    eyebrow: string;
+    title: string;
+    intro: string;
+    items: PremiumItem[];
+    honesty: string;
+  };
+
+  legal: {
+    eyebrow: string;
+    title: string;
+    items: PremiumItem[];
+    note: string;
+  };
+
+  packages: {
+    eyebrow: string;
+    title: string;
+    intro: string;
+    tiers: PremiumTier[];
+    note: string;
+    catalogName: string;
+  };
+
+  faq: {
+    eyebrow: string;
+    title: string;
+    items: PremiumFaq[];
+  };
+
+  related: {
+    eyebrow: string;
+    title: string;
+    links: PremiumLink[];
+  };
+
+  final: {
+    title: string;
+    text: string;
+    primary: string;
+    secondary: string;
+    assurance: string;
+  };
+};

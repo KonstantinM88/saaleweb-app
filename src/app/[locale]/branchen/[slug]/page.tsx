@@ -23,6 +23,7 @@ import { IndustryGlyph } from "@/widgets/industries-page/IndustryGlyph";
 import { Phase4LandingPage } from "@/widgets/seo-landing/Phase4LandingPage";
 import { HotelLandingPage } from "@/widgets/industry-premium/HotelLandingPage";
 import { RestaurantLandingPage } from "@/widgets/industry-premium/RestaurantLandingPage";
+import { ConstructionLandingPage } from "@/widgets/industry-premium/ConstructionLandingPage";
 import { getPremiumIndustry } from "@/widgets/industry-premium/registry";
 import {
   getSeoIndustryPage,
@@ -160,11 +161,15 @@ export default async function IndustryPage({ params }: { params: Promise<Params>
       localeSlugs: seoSlugMap,
     };
 
-    return premium.kind === "hotel" ? (
-      <HotelLandingPage content={premium.content} {...shared} />
-    ) : (
-      <RestaurantLandingPage content={premium.content} {...shared} />
-    );
+    if (premium.kind === "hotel") {
+      return <HotelLandingPage content={premium.content} {...shared} />;
+    }
+
+    if (premium.kind === "restaurant") {
+      return <RestaurantLandingPage content={premium.content} {...shared} />;
+    }
+
+    return <ConstructionLandingPage content={premium.content} {...shared} />;
   }
 
   if (seoPage && seoSlugMap) {
