@@ -1,4 +1,5 @@
 import type {
+  BeautyLandingContent,
   ConstructionLandingContent,
   HotelLandingContent,
   PremiumLocale,
@@ -7,6 +8,9 @@ import type {
 import { constructionDe } from "./content/construction.de";
 import { constructionEn } from "./content/construction.en";
 import { constructionRu } from "./content/construction.ru";
+import { beautyDe } from "./content/beauty.de";
+import { beautyEn } from "./content/beauty.en";
+import { beautyRu } from "./content/beauty.ru";
 import { hotelDe } from "./content/hotel.de";
 import { hotelEn } from "./content/hotel.en";
 import { hotelRu } from "./content/hotel.ru";
@@ -27,7 +31,8 @@ import { restaurantRu } from "./content/restaurant.ru";
 type PremiumEntry =
   | { kind: "hotel"; byLocale: Record<PremiumLocale, HotelLandingContent> }
   | { kind: "restaurant"; byLocale: Record<PremiumLocale, RestaurantLandingContent> }
-  | { kind: "construction"; byLocale: Record<PremiumLocale, ConstructionLandingContent> };
+  | { kind: "construction"; byLocale: Record<PremiumLocale, ConstructionLandingContent> }
+  | { kind: "beauty"; byLocale: Record<PremiumLocale, BeautyLandingContent> };
 
 const premiumIndustries: Record<string, PremiumEntry> = {
   "hotel-website": {
@@ -42,12 +47,17 @@ const premiumIndustries: Record<string, PremiumEntry> = {
     kind: "construction",
     byLocale: { de: constructionDe, en: constructionEn, ru: constructionRu },
   },
+  "beauty-studio-website": {
+    kind: "beauty",
+    byLocale: { de: beautyDe, en: beautyEn, ru: beautyRu },
+  },
 };
 
 export type PremiumIndustry =
   | { kind: "hotel"; content: HotelLandingContent }
   | { kind: "restaurant"; content: RestaurantLandingContent }
-  | { kind: "construction"; content: ConstructionLandingContent };
+  | { kind: "construction"; content: ConstructionLandingContent }
+  | { kind: "beauty"; content: BeautyLandingContent };
 
 export const premiumIndustrySlugs = Object.keys(premiumIndustries);
 
@@ -61,7 +71,18 @@ export function getPremiumIndustry(canonicalSlug: string, locale: string): Premi
   const entry = premiumIndustries[canonicalSlug];
   if (!entry) return null;
 
-  if (entry.kind === "hotel") return { kind: "hotel", content: entry.byLocale[locale] };
-  if (entry.kind === "restaurant") return { kind: "restaurant", content: entry.byLocale[locale] };
-  return { kind: "construction", content: entry.byLocale[locale] };
+  switch (entry.kind) {
+    case "hotel":
+      return { kind: "hotel", content: entry.byLocale[locale] };
+    case "restaurant":
+      return { kind: "restaurant", content: entry.byLocale[locale] };
+    case "construction":
+      return { kind: "construction", content: entry.byLocale[locale] };
+    case "beauty":
+      return { kind: "beauty", content: entry.byLocale[locale] };
+    default: {
+      const exhaustiveEntry: never = entry;
+      return exhaustiveEntry;
+    }
+  }
 }

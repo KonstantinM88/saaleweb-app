@@ -622,3 +622,263 @@ export type ConstructionLandingContent = {
     assurance: string;
   };
 };
+
+/* ────────────────────────────────────────────────────────────────
+   Delta 37 — beauty studio industry.
+
+   A studio owner works with her hands: during a treatment she cannot
+   answer the phone or a DM. The defining artifact is therefore the
+   online booking flow — service, stylist, slot, confirmation — plus
+   treatment pages that carry the location in the slug, the pattern
+   used on the live Salon Elen site.
+   ──────────────────────────────────────────────────────────────── */
+
+export type BookingService = {
+  name: string;
+  /** Duration label, e.g. "120 Min." */
+  duration: string;
+  price: string;
+  note: string;
+};
+
+export type BookingStylist = {
+  name: string;
+  role: string;
+  /** Two-letter monogram shown in the avatar circle. */
+  initials: string;
+};
+
+export type BookingSlot = {
+  time: string;
+  /** Already booked slots stay visible but are not selectable. */
+  taken?: boolean;
+};
+
+export type TreatmentPageExample = {
+  slug: string;
+  label: string;
+  price: string;
+};
+
+export type BeautyProof = {
+  name: string;
+  url: string;
+  projectHref: string;
+  text: string;
+  stats: string[];
+  /**
+   * Optional owner-supplied visual proof, wired exactly like the
+   * construction gallery. Left undefined until real photos exist.
+   */
+  media?: {
+    key: "salon-elen-projects";
+    primaryAlt: string;
+    secondaryAlt: string;
+    caption: string;
+  };
+};
+
+export type BeautyLandingContent = {
+  slug: string;
+  metaTitle: string;
+  metaDescription: string;
+
+  eyebrow: string;
+  h1: string;
+  h1Accent: string;
+  lead: string;
+  heroPoints: string[];
+  ctaPrimary: string;
+  ctaSecondary: string;
+
+  /** Hero mock-up: a confirmed appointment, the outcome of the whole page. */
+  heroCard: {
+    badge: string;
+    status: string;
+    service: string;
+    stylistLabel: string;
+    stylist: string;
+    when: string;
+    durationLabel: string;
+    duration: string;
+    priceLabel: string;
+    price: string;
+    channel: string;
+    footnote: string;
+  };
+
+  answer: {
+    eyebrow: string;
+    question: string;
+    text: string;
+    facts: PremiumFact[];
+  };
+
+  problem: {
+    eyebrow: string;
+    title: string;
+    intro: string;
+    items: PremiumItem[];
+    conclusion: string;
+  };
+
+  /** Signature block: the interactive three-step booking flow. */
+  booking: {
+    eyebrow: string;
+    title: string;
+    intro: string;
+    demoLabel: string;
+    stepLabel: string;
+    steps: string[];
+    servicesLabel: string;
+    services: BookingService[];
+    stylistsLabel: string;
+    stylists: BookingStylist[];
+    slotsLabel: string;
+    slotDate: string;
+    slots: BookingSlot[];
+    takenLabel: string;
+    backLabel: string;
+    restartLabel: string;
+    confirmTitle: string;
+    confirmBadge: string;
+    confirmFields: {
+      service: string;
+      stylist: string;
+      when: string;
+      duration: string;
+      price: string;
+    };
+    confirmNote: string;
+    outcomeTitle: string;
+    outcomes: string[];
+    disclaimer: string;
+    cta: string;
+  };
+
+  /** Treatment pages that carry the location in the slug. */
+  structure: {
+    eyebrow: string;
+    title: string;
+    intro: string;
+    badTitle: string;
+    badNote: string;
+    badItems: string[];
+    goodTitle: string;
+    goodNote: string;
+    goodItems: TreatmentPageExample[];
+    conclusion: string;
+  };
+
+  /** Anatomy of a single treatment entry. */
+  card: {
+    eyebrow: string;
+    title: string;
+    intro: string;
+    mock: {
+      category: string;
+      name: string;
+      duration: string;
+      price: string;
+      description: string;
+      benefitsLabel: string;
+      benefits: string[];
+      aftercareLabel: string;
+      aftercare: string;
+      touchupLabel: string;
+      touchup: string;
+      cta: string;
+    };
+    callouts: PremiumCallout[];
+  };
+
+  proofs: {
+    eyebrow: string;
+    title: string;
+    intro: string;
+    items: BeautyProof[];
+    live: string;
+    caseLabel: string;
+  };
+
+  journey: {
+    eyebrow: string;
+    title: string;
+    intro: string;
+    guestLabel: string;
+    siteLabel: string;
+    steps: PremiumJourneyStep[];
+  };
+
+  build: {
+    eyebrow: string;
+    title: string;
+    intro: string;
+    items: PremiumItem[];
+  };
+
+  /** Optional sales and service assistant, scoped separately from the base site. */
+  assistant: {
+    eyebrow: string;
+    title: string;
+    intro: string;
+    items: PremiumItem[];
+    guardrail: string;
+    pricing: string;
+    cta: string;
+  };
+
+  visibility: {
+    eyebrow: string;
+    title: string;
+    intro: string;
+    promptsLabel: string;
+    prompts: string[];
+    promptsNote: string;
+    signals: PremiumItem[];
+  };
+
+  trust: {
+    eyebrow: string;
+    title: string;
+    intro: string;
+    items: PremiumItem[];
+    note: string;
+  };
+
+  legal: {
+    eyebrow: string;
+    title: string;
+    items: PremiumItem[];
+    note: string;
+  };
+
+  packages: {
+    eyebrow: string;
+    title: string;
+    intro: string;
+    tiers: PremiumTier[];
+    note: string;
+    catalogName: string;
+  };
+
+  faq: {
+    eyebrow: string;
+    title: string;
+    items: PremiumFaq[];
+  };
+
+  related: {
+    eyebrow: string;
+    title: string;
+    links: PremiumLink[];
+  };
+
+  final: {
+    title: string;
+    text: string;
+    primary: string;
+    secondary: string;
+    assurance: string;
+  };
+};

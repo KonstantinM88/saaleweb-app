@@ -1887,3 +1887,272 @@ html.custom-cursor *:not(input):not(textarea):not(select) {
     transition: none;
   }
 }
+
+/* ──────────────────────────────────────────────────────────────
+   Delta 37 — premium industry landing (beauty studio).
+
+   The brand palette is already pink, so a rose-on-white beauty page
+   would read as no decision at all. This one goes the other way: a deep
+   aubergine night with a muted rose accent, restrained rather than
+   sweet — the register of an evening appointment, which is exactly when
+   these bookings happen.
+   ────────────────────────────────────────────────────────────── */
+.bty-page {
+  --bty-night: #1a0f1e;
+  --bty-night-2: #2e1b33;
+  --bty-rose: #b5527a;
+  --bty-rose-light: #f0bfcf;
+  --bty-ink: #3a1b2a;
+}
+
+.bty-night {
+  background: linear-gradient(160deg, #1a0f1e 0%, #2e1b33 100%);
+}
+
+.bty-figure {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+/* Rose rule under the key phrase of the H1. */
+.bty-underline {
+  position: relative;
+}
+.bty-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.04em;
+  height: 0.12em;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #b5527a 0%, rgba(181, 82, 122, 0.3) 100%);
+}
+
+/* Lettered markers tying the annotated service card to its callouts. */
+.bty-marker {
+  display: grid;
+  height: 1.75rem;
+  width: 1.75rem;
+  place-items: center;
+  border-radius: 0.625rem;
+  border: 1px solid rgba(181, 82, 122, 0.4);
+  background: rgba(181, 82, 122, 0.1);
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 12px;
+  font-weight: 700;
+  color: #a2416a;
+}
+
+.bty-url {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 0.6rem;
+  border-radius: 0.7rem;
+  border: 1px solid rgba(181, 82, 122, 0.16);
+  background: rgba(181, 82, 122, 0.04);
+  padding: 0.6rem 0.8rem;
+}
+
+.bty-prompt {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: 0.875rem;
+  border: 1px solid #e5e7eb;
+  background: #f8fafc;
+  padding: 0.7rem 0.9rem;
+  font-size: 14.5px;
+  line-height: 1.45;
+  color: #1f2937;
+}
+
+.bty-rail {
+  border-top: 1px solid #e5e7eb;
+}
+.bty-rail:last-child {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.bty-faq summary::-webkit-details-marker {
+  display: none;
+}
+.bty-faq summary:focus-visible {
+  outline: 2px solid #8b5cf6;
+  outline-offset: 2px;
+  border-radius: 18px;
+}
+
+/* ── Booking flow demo ────────────────────────────────────── */
+.bty-panel {
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+}
+
+.bty-demo-badge {
+  border-radius: 999px;
+  border: 1px solid rgba(181, 82, 122, 0.4);
+  background: rgba(181, 82, 122, 0.14);
+  padding: 0.35rem 0.75rem;
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #f0bfcf;
+}
+
+.bty-step {
+  display: grid;
+  height: 1.4rem;
+  width: 1.4rem;
+  place-items: center;
+  border-radius: 999px;
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 700;
+}
+.bty-step--todo {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.4);
+}
+.bty-step--current {
+  border: 1px solid #b5527a;
+  background: #b5527a;
+  color: #ffffff;
+}
+.bty-step--done {
+  border: 1px solid rgba(240, 191, 207, 0.5);
+  background: rgba(240, 191, 207, 0.18);
+  color: #f0bfcf;
+}
+
+.bty-option {
+  width: 100%;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+  padding: 0.9rem 1rem;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+.bty-option:hover {
+  border-color: rgba(181, 82, 122, 0.55);
+  background: rgba(255, 255, 255, 0.055);
+  transform: translateY(-1px);
+}
+.bty-option:focus-visible {
+  outline: 2px solid #f0bfcf;
+  outline-offset: 3px;
+}
+
+.bty-avatar {
+  display: grid;
+  height: 2.75rem;
+  width: 2.75rem;
+  flex-shrink: 0;
+  place-items: center;
+  border-radius: 999px;
+  border: 1px solid rgba(240, 191, 207, 0.35);
+  background: linear-gradient(135deg, rgba(181, 82, 122, 0.55), rgba(46, 27, 51, 0.9));
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #f8e7ee;
+}
+
+.bty-slot {
+  border-radius: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 0.7rem 0.5rem;
+  color: #ffffff;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+.bty-slot:hover:not(:disabled) {
+  border-color: rgba(181, 82, 122, 0.6);
+  background: rgba(181, 82, 122, 0.18);
+  transform: translateY(-1px);
+}
+.bty-slot:focus-visible {
+  outline: 2px solid #f0bfcf;
+  outline-offset: 3px;
+}
+.bty-slot--taken {
+  cursor: not-allowed;
+  border-style: dashed;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.bty-done {
+  display: grid;
+  height: 4rem;
+  width: 4rem;
+  place-items: center;
+  border-radius: 999px;
+  border: 1px solid rgba(240, 191, 207, 0.45);
+  background: rgba(181, 82, 122, 0.22);
+  color: #f0bfcf;
+}
+
+.bty-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 2.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.45rem 0.9rem;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+.bty-ghost:hover {
+  border-color: rgba(240, 191, 207, 0.5);
+  color: #ffffff;
+}
+.bty-ghost:focus-visible {
+  outline: 2px solid #f0bfcf;
+  outline-offset: 3px;
+}
+
+/* The assembled appointment — light card against the dark panel. */
+.bty-card {
+  background: #fdf6f9;
+  border: 1px solid rgba(181, 82, 122, 0.28);
+  box-shadow: 0 24px 70px -60px rgba(26, 15, 30, 0.8);
+}
+
+.bty-chip-done {
+  border-radius: 999px;
+  border: 1px solid rgba(181, 82, 122, 0.35);
+  background: rgba(181, 82, 122, 0.12);
+  padding: 0.25rem 0.65rem;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #a2416a;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bty-option,
+  .bty-slot,
+  .bty-ghost {
+    transition: none;
+  }
+  .bty-option:hover,
+  .bty-slot:hover:not(:disabled) {
+    transform: none;
+  }
+}
