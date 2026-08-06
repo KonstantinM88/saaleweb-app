@@ -15,6 +15,10 @@ export type AssistantDigestResult = {
   failed: number;
 };
 
+export type AssistantDigestDeliveryResult = {
+  status: "sent" | "skipped" | "failed";
+};
+
 export type TelegramAssistantReply = {
   text: string;
   replyMarkup?: Record<string, unknown>;
@@ -400,6 +404,93 @@ function assistantDigestMessage(conversation: {
   ].join("\n\n");
 }
 
+export async function sendAssistantConversationDigest({
+  conversationId,
+  visitorKey,
+  quietSeconds = DEFAULT_QUIET_SECONDS,
+  force = false,
+}: {
+  conversationId: string;
+  visitorKey?: string;
+  quietSeconds?: number;
+  force?: boolean;
+}): Promise<AssistantDigestDeliveryResult> {
+  const safeQuietSeconds = Math.max(0, Math.min(3600, Math.floor(quietSeconds)));
+  const cutoff = new Date(Date.now() - safeQuietSeconds * 1000);
+  const candidate = await prisma.assistantConversation.findFirst({
+    where: {
+      id: conversationId,
+      ...(visitorKey ? { visitorKey } : {}),
+      messageCount: { gt: 0 },
+      ...(force
+        ? {}
+        : {
+            lastMessageAt: { lte: cutoff },
+            telegramNotifiedAt: null,
+          }),
+    },
+    select: { lastMessageAt: true },
+  });
+
+  if (!candidate) return { status: "skipped" };
+
+  // Claim the exact quiet transcript before the network call. A newer chat
+  // message changes lastMessageAt and resets telegramNotifiedAt, so a stale
+  // browser timer and the fallback cron cannot send the same pause twice.
+  const claimedAt = new Date();
+  if (!force) {
+    const claimed = await prisma.assistantConversation.updateMany({
+      where: {
+        id: conversationId,
+        ...(visitorKey ? { visitorKey } : {}),
+        lastMessageAt: candidate.lastMessageAt,
+        telegramNotifiedAt: null,
+      },
+      data: { telegramNotifiedAt: claimedAt },
+    });
+    if (claimed.count !== 1) return { status: "skipped" };
+  }
+
+  const conversation = await prisma.assistantConversation.findUnique({
+    where: { id: conversationId },
+    include: {
+      messages: {
+        orderBy: { createdAt: "desc" },
+        take: MESSAGE_LIMIT,
+      },
+    },
+  });
+
+  const claimIsCurrent =
+    force ||
+    (conversation?.lastMessageAt.getTime() === candidate.lastMessageAt.getTime() &&
+      conversation.telegramNotifiedAt?.getTime() === claimedAt.getTime());
+  if (!conversation || !claimIsCurrent) return { status: "skipped" };
+
+  const delivered = await sendTelegramAdminMessage(assistantDigestMessage(conversation), {
+    replyMarkup: assistantConversationKeyboard(conversation),
+  });
+
+  if (!delivered) {
+    if (!force) {
+      await prisma.assistantConversation.updateMany({
+        where: { id: conversation.id, telegramNotifiedAt: claimedAt },
+        data: { telegramNotifiedAt: null },
+      });
+    }
+    return { status: "failed" };
+  }
+
+  if (force) {
+    await prisma.assistantConversation.updateMany({
+      where: { id: conversation.id, lastMessageAt: candidate.lastMessageAt },
+      data: { telegramNotifiedAt: new Date() },
+    });
+  }
+
+  return { status: "sent" };
+}
+
 export async function sendAssistantConversationDigests({
   quietSeconds = DEFAULT_QUIET_SECONDS,
   limit = DIGEST_LIMIT,
@@ -425,31 +516,21 @@ export async function sendAssistantConversationDigests({
     },
     orderBy: { lastMessageAt: "desc" },
     take: safeLimit,
-    include: {
-      messages: {
-        orderBy: { createdAt: "desc" },
-        take: MESSAGE_LIMIT,
-      },
-    },
+    select: { id: true },
   });
 
   let sent = 0;
   let failed = 0;
 
   for (const conversation of conversations) {
-    const delivered = await sendTelegramAdminMessage(assistantDigestMessage(conversation), {
-      replyMarkup: assistantConversationKeyboard(conversation),
+    const result = await sendAssistantConversationDigest({
+      conversationId: conversation.id,
+      quietSeconds: safeQuietSeconds,
+      force,
     });
-    if (delivered) {
+    if (result.status === "sent") {
       sent += 1;
-      await prisma.assistantConversation.updateMany({
-        where: {
-          id: conversation.id,
-          lastMessageAt: conversation.lastMessageAt,
-        },
-        data: { telegramNotifiedAt: new Date() },
-      });
-    } else {
+    } else if (result.status === "failed") {
       failed += 1;
     }
   }

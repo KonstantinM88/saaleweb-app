@@ -324,7 +324,7 @@ export async function POST(req: Request) {
 
   if (policyResponse) {
     const answer = sanitizeAssistantAnswer(policyResponse.answer);
-    await logAssistantExchange({
+    const logged = await logAssistantExchange({
       conversationId: prepared?.id,
       meta,
       locale,
@@ -345,6 +345,7 @@ export async function POST(req: Request) {
         scoped: policyResponse.scoped,
         responseLocale,
         funnelStage: initialStage,
+        conversationId: logged.conversationId,
       },
       { headers: { "Cache-Control": "no-store" } },
     );
@@ -384,7 +385,7 @@ export async function POST(req: Request) {
     funnelStage,
     handoffConfirmed,
   });
-  await logAssistantExchange({
+  const logged = await logAssistantExchange({
     conversationId: prepared?.id,
     meta,
     locale,
@@ -410,6 +411,7 @@ export async function POST(req: Request) {
       handoffConfirmed,
       leadCreated: leadResult.created,
       conversion: leadResult.created ? leadResult.conversion : undefined,
+      conversationId: logged.conversationId,
     },
     { headers: { "Cache-Control": "no-store" } },
   );

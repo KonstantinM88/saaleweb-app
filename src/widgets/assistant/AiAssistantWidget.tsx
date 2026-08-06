@@ -12,6 +12,8 @@ import { BrandMonogram } from "@/shared/ui/BrandLogo";
 
 const APPEAR_DELAY_MS = 8_000;
 const LOGO_NUDGE_DELAY_MS = 30_000;
+const DIGEST_IDLE_DELAY_MS = 60_000;
+const DIGEST_RETRY_DELAY_MS = 30_000;
 const MAX_CONTEXT_MESSAGES = 16;
 const VISITOR_STORAGE_KEY = "saaleweb_assistant_visitor";
 
@@ -98,6 +100,10 @@ export function AiAssistantWidget({
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const visitorIdRef = useRef<string | undefined>(undefined);
+  const conversationIdRef = useRef<string | undefined>(undefined);
+  const digestTimerRef = useRef<number | null>(null);
+  const digestRetryRef = useRef(0);
+  const digestRequestInFlightRef = useRef(false);
   const leadEventTrackedRef = useRef(false);
   const requestInFlightRef = useRef(false);
   const lastInteractionAtRef = useRef<number | null>(null);
@@ -179,10 +185,87 @@ export function AiAssistantWidget({
     });
   }, [messages, loading]);
 
+  useEffect(() => {
+    const handlePageHide = () => {
+      clearDigestTimer();
+      notifyAssistantDigest("pagehide", true);
+    };
+
+    window.addEventListener("pagehide", handlePageHide);
+    return () => {
+      window.removeEventListener("pagehide", handlePageHide);
+      clearDigestTimer();
+    };
+  }, []);
+
+  function clearDigestTimer() {
+    if (digestTimerRef.current !== null) {
+      window.clearTimeout(digestTimerRef.current);
+      digestTimerRef.current = null;
+    }
+  }
+
+  async function notifyAssistantDigest(reason: "idle" | "pagehide", useBeacon = false): Promise<boolean> {
+    const conversationId = conversationIdRef.current;
+    if (!conversationId) return true;
+
+    const body = JSON.stringify({
+      conversationId,
+      visitorId: visitorIdRef.current,
+      reason,
+    });
+
+    if (useBeacon && typeof navigator.sendBeacon === "function") {
+      return navigator.sendBeacon(
+        "/api/assistant/notify",
+        new Blob([body], { type: "application/json" }),
+      );
+    }
+
+    if (digestRequestInFlightRef.current) return true;
+    digestRequestInFlightRef.current = true;
+    try {
+      const response = await fetch("/api/assistant/notify", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body,
+        keepalive: true,
+      });
+      const payload = (await response.json().catch(() => null)) as { ok?: boolean } | null;
+      return response.ok && payload?.ok === true;
+    } catch {
+      return false;
+    } finally {
+      digestRequestInFlightRef.current = false;
+    }
+  }
+
+  function scheduleDigestNotification(delay = DIGEST_IDLE_DELAY_MS) {
+    clearDigestTimer();
+    const scheduledConversationId = conversationIdRef.current;
+    if (!scheduledConversationId) return;
+
+    digestTimerRef.current = window.setTimeout(() => {
+      digestTimerRef.current = null;
+      void notifyAssistantDigest("idle").then((delivered) => {
+        if (delivered || conversationIdRef.current !== scheduledConversationId) {
+          digestRetryRef.current = 0;
+          return;
+        }
+        if (digestRetryRef.current < 2) {
+          digestRetryRef.current += 1;
+          scheduleDigestNotification(DIGEST_RETRY_DELAY_MS);
+        }
+      });
+    }, delay);
+  }
+
   async function sendMessage(nextText?: string) {
     const text = (nextText || input).trim();
     if (!text || loading || requestInFlightRef.current) return;
     requestInFlightRef.current = true;
+    clearDigestTimer();
+    digestRetryRef.current = 0;
 
     const now = assistantSessionNow();
     const sessionExpired =
@@ -217,6 +300,7 @@ export function AiAssistantWidget({
         answer?: string;
         leadCreated?: boolean;
         conversion?: LeadConversionEvent;
+        conversationId?: string;
       } | null;
 
       if (!response.ok || !payload?.ok || !payload.answer) {
@@ -225,6 +309,10 @@ export function AiAssistantWidget({
 
       setMessages((current) => [...current, { role: "assistant", content: payload.answer || labels.error }]);
       lastInteractionAtRef.current = assistantSessionNow();
+      if (payload.conversationId) {
+        conversationIdRef.current = payload.conversationId;
+        scheduleDigestNotification();
+      }
       if (payload.leadCreated && payload.conversion && !leadEventTrackedRef.current) {
         leadEventTrackedRef.current = true;
         trackLeadConversion(payload.conversion);
