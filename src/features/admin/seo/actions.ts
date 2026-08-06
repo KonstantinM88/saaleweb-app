@@ -1,9 +1,10 @@
 "use server";
-import { revalidatePath } from "next/cache";
+import { revalidatePath, updateTag } from "next/cache";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/prisma";
 import { readTranslations, str, revalidateHome, type CrudState } from "@/features/admin/crud";
 import type { AppLocale } from "@/i18n/routing";
+import { SEO_OVERRIDE_CACHE_TAG } from "@/shared/seo/cache";
 import { SEO_TR_FIELDS } from "./config";
 
 type SeoTranslationInput = {
@@ -31,9 +32,13 @@ function read(fd: FormData) {
   };
 }
 
-function revalidate(path?: string) {
+function revalidate(...paths: Array<string | null | undefined>) {
+  // SEO edits must bypass the normal one-hour metadata cache immediately.
+  updateTag(SEO_OVERRIDE_CACHE_TAG);
   revalidatePath("/admin/seo");
-  if (path) revalidatePath(path);
+  for (const path of new Set(paths.filter((value): value is string => Boolean(value)))) {
+    revalidatePath(path);
+  }
   revalidateHome();
 }
 
@@ -46,12 +51,13 @@ export async function createSEOPage(_p: CrudState, fd: FormData): Promise<CrudSt
 
 export async function updateSEOPage(id: string, _p: CrudState, fd: FormData): Promise<CrudState> {
   const r = read(fd); if ("error" in r) return r;
+  const previous = await prisma.sEOPage.findUnique({ where: { id }, select: { path: true } });
   try { await prisma.sEOPage.update({ where: { id }, data: { path: r.path, translations: { deleteMany: {}, create: r.trs } } }); }
   catch { return { error: "Speichern fehlgeschlagen — Pfad evtl. bereits vorhanden." }; }
-  revalidate(r.path); redirect("/admin/seo");
+  revalidate(previous?.path, r.path); redirect("/admin/seo");
 }
 
 export async function deleteSEOPage(id: string) {
-  await prisma.sEOPage.delete({ where: { id } });
-  revalidate();
+  const deleted = await prisma.sEOPage.delete({ where: { id }, select: { path: true } });
+  revalidate(deleted.path);
 }

@@ -349,7 +349,18 @@
     "submit": "Send request",
     "sending": "Sending …",
     "success": "Thanks! We'll get back to you within 24 hours.",
-    "error": "Please check your input and try again."
+    "error": "Please check your input and try again.",
+    "response": "Reply within 24 hours",
+    "consultation": "Free initial consultation",
+    "noPressure": "No sales pressure",
+    "choiceTitle": "Choose the next step that suits you",
+    "choiceText": "Tell us about your project in detail or contact us directly.",
+    "primary": "Discuss your project without obligation",
+    "primaryHint": "Review goals, scope and budget at your pace",
+    "whatsapp": "WhatsApp",
+    "whatsappHint": "Send a quick message",
+    "call": "Call us directly",
+    "privacy": "Confidential and without obligation. We use your details exclusively for personal consultation."
   },
   "Captcha": {
     "label": "Security check",

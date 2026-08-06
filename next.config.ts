@@ -137,6 +137,10 @@ const nextConfig: NextConfig = {
     // Inline critical CSS removes two render-blocking stylesheet round trips.
     inlineCss: true,
     optimizePackageImports: ["lucide-react"],
+    // DB-backed static pages do not benefit from aggressive build concurrency.
+    // Two workers with one page each keep deploy-time PostgreSQL usage bounded.
+    cpus: 2,
+    staticGenerationMaxConcurrency: 1,
   },
 };
 

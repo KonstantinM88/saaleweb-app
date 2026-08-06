@@ -62,7 +62,7 @@ export default async function HomePage({
         <WebsiteAuditSection />
         <Pricing />
         <Faq />
-        <Contact />
+        <Contact locale={locale} />
       </main>
       <Footer />
     </>

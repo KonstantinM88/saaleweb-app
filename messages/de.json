@@ -349,7 +349,18 @@
     "submit": "Anfrage senden",
     "sending": "Wird gesendet …",
     "success": "Danke! Wir melden uns innerhalb von 24 Stunden.",
-    "error": "Bitte prüfen Sie Ihre Eingaben und versuchen Sie es erneut."
+    "error": "Bitte prüfen Sie Ihre Eingaben und versuchen Sie es erneut.",
+    "response": "Antwort in 24 Std.",
+    "consultation": "Kostenloses Erstgespräch",
+    "noPressure": "Kein Verkaufsdruck",
+    "choiceTitle": "Wählen Sie den passenden nächsten Schritt",
+    "choiceText": "Beschreiben Sie Ihr Vorhaben ausführlich oder erreichen Sie uns direkt.",
+    "primary": "Projekt unverbindlich besprechen",
+    "primaryHint": "Ziele, Umfang und Budget in Ruhe einordnen",
+    "whatsapp": "WhatsApp",
+    "whatsappHint": "Kurze Nachricht senden",
+    "call": "Direkt anrufen",
+    "privacy": "Vertraulich und unverbindlich. Wir verwenden Ihre Angaben ausschließlich zur persönlichen Beratung."
   },
   "Captcha": {
     "label": "Sicherheitsprüfung",

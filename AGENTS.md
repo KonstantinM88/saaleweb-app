@@ -112,6 +112,7 @@ Instructions and project memory for coding agents working in this repository.
 - `src/shared/ui/EditorialTrust.tsx`, `src/shared/config/editorial.ts` - shared DE/EN/RU authority block and the genuine review date for code-backed commercial landing pages. It links named expert responsibility, methodology, real projects and the public Google Business Profile. Update `EDITORIAL_REVIEW_DATE` only after a material human review; never bump it only to simulate freshness.
 - `src/shared/config/site.ts` - site identity, contact data, nav keys.
 - `src/shared/seo/metadata.ts` - admin-managed `SEOPage` overrides and Open Graph/Twitter metadata builder.
+- Admin-managed `SEOPage` metadata reads are shared through a one-hour `unstable_cache` tagged with `SEO_OVERRIDE_CACHE_TAG`. Every SEO create/update/delete action must call `updateTag` and revalidate affected old/new paths so public metadata updates immediately without repeated database reads.
 - `src/shared/seo/og.ts` - absolute dynamic OG image URL helper for `/api/og`.
 - `src/entities/blog/api.ts` - DB-backed blog queries.
 - `src/shared/lib/markdown.ts` - Markdown TOC extraction and reading-time helper.
@@ -127,6 +128,7 @@ Instructions and project memory for coding agents working in this repository.
 - `src/widgets/contact/ContactPageForm.tsx` - premium contact-page form with extra context fields (`projectWebsite`, project type, budget, phone, privacy consent) while keeping the legacy `website` honeypot name untouched.
 - `src/features/captcha/TurnstileField.tsx`, `turnstile.ts` - shared Cloudflare Turnstile protection for every public `Lead` form. The responsive explicit widget supplies `cf-turnstile-response`; the server action validates the single-use token, expected form action and production hostname before persistence. Setup and production checks live in `docs/cloudflare-turnstile.md`.
 - `src/widgets/contact/WhatsAppFloatingCta.tsx` - legacy public delayed floating WhatsApp CTA component. The active public bottom-right widget is now the AI assistant, which keeps WhatsApp as an internal CTA instead of rendering a separate floating WhatsApp button.
+- `src/widgets/contact/Contact.tsx` - server-rendered homepage closing CTA with localized links to the full contact page, WhatsApp and phone. Keep it form-free: the homepage Website Audit is the single protected lead form, avoiding a second Turnstile instance and duplicate client-side form hydration.
 - `src/widgets/assistant/AiAssistantWidget.tsx` - public lightweight bottom-right AI assistant widget with localized DE/EN/RU labels, quick prompts, contact and WhatsApp CTAs, and no heavy animation.
 - `src/features/assistant/knowledge.ts` - server-only SaaleWeb assistant prompt, localized fallback answer, and OpenAI Responses input builder.
 - `src/features/assistant/policy.ts` - deterministic public-assistant boundaries. A positive commercial-scope allowlist keeps unknown and unrelated tasks away from the model; translations and other finished third-party work are declined, complete source-code requests are converted into project qualification, obvious executable-markup/XSS probes receive a safe text-only response, and generated full-page source is rejected as a final model-output guard.
@@ -176,6 +178,7 @@ Instructions and project memory for coding agents working in this repository.
 - `src/widgets/admin/ImageUpload.tsx` - admin image upload field with preview and editable URL.
 - `src/features/notifications/mailer.ts` - optional Hostinger SMTP email notification helper for new contact leads and localized client auto-replies.
 - `src/lib/prisma.ts` - Prisma singleton with `@prisma/adapter-pg`.
+- PostgreSQL pools are intentionally bounded by `DATABASE_POOL_MAX` (default `2`) and Next static generation uses two workers with one page each. Keep these limits unless production monitoring proves a higher value is needed; the default pg pool of ten per build worker can exhaust the hosted database during prerendering.
 - `prisma/schema.prisma` - Prisma 7 schema.
 - `prisma.config.ts` - Prisma 7 runtime config.
 - `src/generated/prisma/` - generated Prisma client; git-ignored and created by `postinstall` / `npm run db:generate`.

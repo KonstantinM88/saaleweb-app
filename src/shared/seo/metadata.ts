@@ -1,22 +1,43 @@
 import type { Metadata } from "next";
+import { unstable_cache } from "next/cache";
 import { prisma } from "@/lib/prisma";
 import { isAppLocale } from "@/i18n/routing";
+import type { AppLocale } from "@/i18n/routing";
+import { SEO_OVERRIDE_CACHE_TAG } from "./cache";
 import { ogImageUrl } from "./og";
 
 type SeoOverride = { title: string | null; description: string | null; ogImage: string | null };
+
+const readCachedSeoOverride = unstable_cache(
+  async (path: string, locale: AppLocale): Promise<SeoOverride | null> => {
+    const page = (await prisma.sEOPage.findUnique({
+      where: { path },
+      include: { translations: { where: { locale }, take: 1 } },
+    })) as { translations: { title: string; description: string; ogImage: string | null }[] } | null;
+    const translation = page?.translations?.[0];
+
+    if (!translation) return null;
+
+    return {
+      title: translation.title ?? null,
+      description: translation.description ?? null,
+      ogImage: translation.ogImage ?? null,
+    };
+  },
+  ["seo-page-override-v1"],
+  {
+    // Metadata changes are rare. Admin actions invalidate this tag immediately.
+    revalidate: 3600,
+    tags: [SEO_OVERRIDE_CACHE_TAG],
+  },
+);
 
 /** Reads an admin-managed SEOPage override for a path + locale. */
 export async function getSeoOverride(path: string, locale: string): Promise<SeoOverride | null> {
   if (!isAppLocale(locale)) return null;
 
   try {
-    const page = (await prisma.sEOPage.findUnique({
-      where: { path },
-      include: { translations: { where: { locale }, take: 1 } },
-    })) as { translations: { title: string; description: string; ogImage: string | null }[] } | null;
-    const tr = page?.translations?.[0];
-    if (!tr) return null;
-    return { title: tr.title ?? null, description: tr.description ?? null, ogImage: tr.ogImage ?? null };
+    return await readCachedSeoOverride(path, locale);
   } catch {
     return null;
   }
