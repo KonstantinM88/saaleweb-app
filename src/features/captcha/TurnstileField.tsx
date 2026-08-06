@@ -10,7 +10,7 @@ const TURNSTILE_SCRIPT = "https://challenges.cloudflare.com/turnstile/v0/api.js?
 const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY?.trim();
 
 type WidgetId = string;
-type WidgetStatus = "loading" | "ready" | "verified" | "error";
+type WidgetStatus = "idle" | "loading" | "ready" | "verified" | "error";
 type WidgetSize = "flexible" | "compact";
 
 type TurnstileApi = {
@@ -54,12 +54,15 @@ export function TurnstileField({
   const widgetIdRef = useRef<WidgetId | null>(null);
   const widgetSizeRef = useRef<WidgetSize | null>(null);
   const mountedRef = useRef(false);
-  const [status, setStatus] = useState<WidgetStatus>("loading");
+  const [shouldLoad, setShouldLoad] = useState(false);
+  const [status, setStatus] = useState<WidgetStatus>("idle");
   const [widgetSize, setWidgetSize] = useState<WidgetSize>("flexible");
   const [recoveredAfterServerError, setRecoveredAfterServerError] = useState(false);
 
   const renderWidget = useCallback(() => {
-    if (!siteKey || !containerRef.current || !window.turnstile || widgetIdRef.current) return;
+    if (!shouldLoad || !siteKey || !containerRef.current || !window.turnstile || widgetIdRef.current) {
+      return;
+    }
 
     // Cloudflare's flexible widget has a documented 300 px minimum width.
     // Narrow mobile forms therefore use the 150 px compact variant instead
@@ -84,10 +87,46 @@ export function TurnstileField({
       "timeout-callback": () => setStatus("ready"),
     });
     setStatus("ready");
-  }, [action, locale]);
+  }, [action, locale, shouldLoad]);
 
   useEffect(() => {
-    renderWidget();
+    const container = containerRef.current;
+    if (!container || !siteKey) return;
+
+    const activate = () => {
+      setShouldLoad(true);
+      setStatus((current) => (current === "idle" ? "loading" : current));
+    };
+    const form = container.closest("form");
+    const observer =
+      typeof IntersectionObserver === "undefined"
+        ? null
+        : new IntersectionObserver(
+            ([entry]) => {
+              if (!entry.isIntersecting) return;
+              activate();
+              observer?.disconnect();
+            },
+            // Start the challenge shortly before the visitor reaches the form,
+            // without competing with the first screen for network and CPU time.
+            { rootMargin: "600px 0px", threshold: 0.01 },
+          );
+
+    if (observer) observer.observe(container);
+    else activate();
+
+    form?.addEventListener("focusin", activate, { once: true });
+    form?.addEventListener("pointerdown", activate, { once: true, passive: true });
+
+    return () => {
+      observer?.disconnect();
+      form?.removeEventListener("focusin", activate);
+      form?.removeEventListener("pointerdown", activate);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (shouldLoad) renderWidget();
 
     return () => {
       if (widgetIdRef.current && window.turnstile) {
@@ -96,7 +135,7 @@ export function TurnstileField({
         widgetSizeRef.current = null;
       }
     };
-  }, [renderWidget]);
+  }, [renderWidget, shouldLoad]);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -176,7 +215,7 @@ export function TurnstileField({
             <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600" aria-hidden />
             <span className="font-semibold text-emerald-700">{t("verified")}</span>
           </>
-        ) : status === "ready" ? (
+        ) : status === "ready" || status === "idle" ? (
           <>
             <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-[#6D28D9]" aria-hidden />
             <span className="text-muted">{t("ready")}</span>
@@ -189,13 +228,15 @@ export function TurnstileField({
         )}
       </div>
 
-      <Script
-        id="saaleweb-turnstile"
-        src={TURNSTILE_SCRIPT}
-        strategy="afterInteractive"
-        onReady={renderWidget}
-        onError={() => setStatus("error")}
-      />
+      {shouldLoad ? (
+        <Script
+          id="saaleweb-turnstile"
+          src={TURNSTILE_SCRIPT}
+          strategy="afterInteractive"
+          onReady={renderWidget}
+          onError={() => setStatus("error")}
+        />
+      ) : null}
     </fieldset>
   );
 }

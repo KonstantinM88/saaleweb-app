@@ -24,6 +24,7 @@ export function GrowthMediaWindow({
   const allowMotionRef = useRef(true);
   const [isVisible, setIsVisible] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
 
   useEffect(() => {
     const root = rootRef.current;
@@ -34,18 +35,12 @@ export function GrowthMediaWindow({
     allowMotionRef.current = !reducedMotion;
     if (reducedMotion) return;
 
-    const play = () => {
-      void video.play().catch(() => {
-        // Browser autoplay policies can still reject playback in edge cases.
-      });
-    };
-
     const observer = new IntersectionObserver(
       ([entry]) => {
         const visible = entry.isIntersecting;
         setIsVisible(visible);
         if (visible) {
-          play();
+          setShouldLoadVideo(true);
         } else {
           video.pause();
         }
@@ -57,12 +52,23 @@ export function GrowthMediaWindow({
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video || !shouldLoadVideo || !allowMotionRef.current) return;
+
+    if (isVisible || isHovered) {
+      void video.play().catch(() => {
+        // Browser autoplay policies can still reject playback in edge cases.
+      });
+    } else {
+      video.pause();
+    }
+  }, [isHovered, isVisible, shouldLoadVideo]);
+
   function handlePointerEnter() {
     setIsHovered(true);
     if (!allowMotionRef.current) return;
-    const video = videoRef.current;
-    if (!video) return;
-    void video.play().catch(() => {});
+    setShouldLoadVideo(true);
   }
 
   function handlePointerLeave() {
@@ -94,10 +100,10 @@ export function GrowthMediaWindow({
         muted
         loop
         playsInline
-        preload="metadata"
+        preload="none"
         poster={premiumSaasPoster.src}
       >
-        <source src={videoSrc} type="video/webm" />
+        {shouldLoadVideo ? <source src={videoSrc} type="video/webm" /> : null}
       </video>
 
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_62%_30%,rgba(255,79,163,0.10),transparent_34%),linear-gradient(180deg,rgba(17,24,39,0.08)_0%,rgba(17,24,39,0.02)_42%,rgba(17,24,39,0.44)_100%)] transition-opacity duration-700 group-hover:opacity-80" />

@@ -45,6 +45,7 @@ export function Navbar() {
       <Link
         key={item.key}
         href={item.href as "/leistungen" | "/branchen" | "/projekte" | "/preise" | "/blog" | "/kontakt"}
+        prefetch={false}
         onClick={onClick}
         className="nav-link transition-colors hover:text-dark"
       >
@@ -65,6 +66,7 @@ export function Navbar() {
       <Container className="flex h-[72px] items-center justify-between max-[359px]:px-4">
         <Link
           href="/"
+          prefetch={false}
           aria-label="SaaleWeb"
           className="group flex items-center text-dark"
         >
