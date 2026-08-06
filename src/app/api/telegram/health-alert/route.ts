@@ -54,8 +54,10 @@ async function handle(req: Request) {
   }
 
   const url = new URL(req.url);
+  const mode = url.searchParams.get("mode") === "full" ? "full" : "light";
   const threshold = url.searchParams.get("level") === "warn" ? "warn" : "fail";
   const result = await sendHealthAlertReport({
+    mode,
     threshold,
     force: flag(url.searchParams.get("force")),
     cooldownMinutes: cooldownMinutes(req),

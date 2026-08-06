@@ -10,6 +10,7 @@ import { sendTelegramAdminMessage, telegramDiagnostics } from "./telegram";
 
 type HealthStatus = "ok" | "warn" | "fail";
 type HealthAlertThreshold = "warn" | "fail";
+export type HealthCheckMode = "light" | "full";
 
 type HealthCheck = {
   label: string;
@@ -25,6 +26,7 @@ type PublicRouteCheck = {
 };
 
 type HealthSnapshot = {
+  mode: HealthCheckMode;
   checkedAt: string;
   serviceChecks: HealthCheck[];
   routeChecks: PublicRouteCheck[];
@@ -34,6 +36,7 @@ type HealthSnapshot = {
 };
 
 export type HealthAlertResult = {
+  mode: HealthCheckMode;
   sent: boolean;
   alertNeeded: boolean;
   overall: HealthStatus;
@@ -194,20 +197,18 @@ function formatCheckedAt(date = new Date()): string {
   }).format(date);
 }
 
-async function buildHealthSnapshot(): Promise<HealthSnapshot> {
+async function buildHealthSnapshot(mode: HealthCheckMode): Promise<HealthSnapshot> {
   const checkedAt = formatCheckedAt();
-  const routeChecks = await Promise.all([
-    checkPublicRoute("/"),
-    checkPublicRoute("/kontakt"),
-    checkPublicRoute("/preise"),
-    checkPublicRoute("/leistungen"),
-    checkPublicRoute("/branchen"),
-    checkPublicRoute("/projekte"),
-    checkPublicRoute("/llms.txt"),
-    checkPublicRoute("/sitemap.xml"),
-    checkPublicRoute("/robots.txt"),
+  const routePaths =
+    mode === "full"
+      ? ["/", "/kontakt", "/preise", "/leistungen", "/branchen", "/projekte", "/llms.txt", "/sitemap.xml", "/robots.txt"]
+      : ["/robots.txt"];
+  const [routeChecks, database, counters] = await Promise.all([
+    Promise.all(routePaths.map(checkPublicRoute)),
+    checkDatabase(),
+    mode === "full" ? loadCounters() : Promise.resolve([]),
   ]);
-  const serviceChecks = [await checkDatabase(), checkMail(), checkTelegram(), ...(await loadCounters())];
+  const serviceChecks = [database, checkMail(), checkTelegram(), ...counters];
   const failedCount =
     serviceChecks.filter((check) => check.status === "fail").length +
     routeChecks.filter((check) => check.status === "fail").length;
@@ -217,6 +218,7 @@ async function buildHealthSnapshot(): Promise<HealthSnapshot> {
   const overall: HealthStatus = failedCount > 0 ? "fail" : warnCount > 0 ? "warn" : "ok";
 
   return {
+    mode,
     checkedAt,
     serviceChecks,
     routeChecks,
@@ -231,6 +233,7 @@ function formatFullHealthReport(snapshot: HealthSnapshot): string {
     `${icon(snapshot.overall)} SaaleWeb — Health Check`,
     "",
     `🕘 Проверка: ${snapshot.checkedAt}`,
+    `🔎 Режим: ${snapshot.mode === "full" ? "полный" : "быстрый"}`,
     `📌 Статус: ${statusLabel(snapshot.overall)}`,
     "",
     "🧩 Сервисы",
@@ -293,6 +296,7 @@ function formatHealthAlert(snapshot: HealthSnapshot, threshold: HealthAlertThres
     title,
     "",
     `🕘 Проверка: ${snapshot.checkedAt}`,
+    `🔎 Режим: ${snapshot.mode === "full" ? "полный" : "быстрый"}`,
     `📌 Общий статус: ${statusLabel(snapshot.overall)}`,
     `🚨 Ошибки: ${snapshot.failedCount}`,
     `⚠️ Предупреждения: ${snapshot.warnCount}`,
@@ -313,20 +317,23 @@ function formatHealthAlert(snapshot: HealthSnapshot, threshold: HealthAlertThres
 }
 
 export async function buildHealthReport(): Promise<string> {
-  return formatFullHealthReport(await buildHealthSnapshot());
+  return formatFullHealthReport(await buildHealthSnapshot("full"));
 }
 
 export async function sendHealthAlertReport(options: {
+  mode?: HealthCheckMode;
   threshold?: HealthAlertThreshold;
   force?: boolean;
   cooldownMinutes?: number;
 } = {}): Promise<HealthAlertResult> {
+  const mode = options.mode || "light";
   const threshold = options.threshold || "fail";
-  const snapshot = await buildHealthSnapshot();
+  const snapshot = await buildHealthSnapshot(mode);
   const alertNeeded = options.force || statusRank(snapshot.overall) >= statusRank(threshold);
 
   if (!alertNeeded) {
     return {
+      mode,
       sent: false,
       alertNeeded: false,
       overall: snapshot.overall,
@@ -341,6 +348,7 @@ export async function sendHealthAlertReport(options: {
   const now = Date.now();
   if (!options.force && cooldownMs > 0 && lastHealthAlert?.key === key && now - lastHealthAlert.sentAt < cooldownMs) {
     return {
+      mode,
       sent: false,
       alertNeeded: true,
       overall: snapshot.overall,
@@ -356,6 +364,7 @@ export async function sendHealthAlertReport(options: {
   }
 
   return {
+    mode,
     sent,
     alertNeeded: true,
     overall: snapshot.overall,
