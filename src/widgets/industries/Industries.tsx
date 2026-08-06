@@ -1,7 +1,9 @@
 import { getTranslations, getLocale } from "next-intl/server";
+import { unstable_cache } from "next/cache";
 import type { CSSProperties } from "react";
 import { prisma } from "@/lib/prisma";
 import type { AppLocale } from "@/i18n/routing";
+import { HOMEPAGE_CACHE_SECONDS, HOMEPAGE_CACHE_TAGS } from "@/features/homepage/cache";
 import { Link } from "@/i18n/navigation";
 import { Container } from "@/shared/ui/Container";
 import { Reveal } from "@/shared/ui/Reveal";
@@ -42,8 +44,8 @@ const fallbackSlugs: Record<AppLocale, string[]> = {
   ],
 };
 
-async function getDbIndustries(locale: AppLocale): Promise<Item[]> {
-  try {
+const readCachedDbIndustries = unstable_cache(
+  async (locale: AppLocale): Promise<Item[]> => {
     const rows = await prisma.industry.findMany({
       where: { published: true },
       orderBy: { order: "asc" },
@@ -60,6 +62,17 @@ async function getDbIndustries(locale: AppLocale): Promise<Item[]> {
         coverImage: row.coverImage ?? null,
       };
     });
+  },
+  ["homepage-industry-cards"],
+  {
+    revalidate: HOMEPAGE_CACHE_SECONDS,
+    tags: [HOMEPAGE_CACHE_TAGS.industries],
+  },
+);
+
+async function getDbIndustries(locale: AppLocale): Promise<Item[]> {
+  try {
+    return await readCachedDbIndustries(locale);
   } catch {
     return [];
   }

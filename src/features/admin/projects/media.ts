@@ -1,12 +1,13 @@
 "use server";
 import { revalidatePath } from "next/cache";
 import { prisma } from "@/lib/prisma";
-import { str, num, type CrudState } from "@/features/admin/crud";
+import { revalidateHome, str, num, type CrudState } from "@/features/admin/crud";
+import { HOMEPAGE_CACHE_TAGS } from "@/features/homepage/cache";
 
 function revalidate(projectId: string) {
   revalidatePath(`/admin/projects/${projectId}`);
   revalidatePath("/admin/projects");
-  for (const p of ["/", "/en", "/ru"]) revalidatePath(p);
+  revalidateHome(HOMEPAGE_CACHE_TAGS.projects);
 }
 
 export async function addProjectMedia(projectId: string, fd: FormData): Promise<CrudState> {

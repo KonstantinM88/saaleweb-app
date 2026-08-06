@@ -3,6 +3,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/prisma";
 import { LOCALES, str, num, bool, revalidateHome, type CrudState } from "@/features/admin/crud";
+import { HOMEPAGE_CACHE_TAGS } from "@/features/homepage/cache";
 
 function read(fd: FormData) {
   const trs = LOCALES.map((locale) => ({
@@ -21,7 +22,7 @@ function read(fd: FormData) {
 
 function revalidate() {
   revalidatePath("/admin/pricing");
-  revalidateHome();
+  revalidateHome(HOMEPAGE_CACHE_TAGS.pricing);
 }
 
 export async function createPricingPlan(_p: CrudState, fd: FormData): Promise<CrudState> {

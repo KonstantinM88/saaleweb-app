@@ -1,6 +1,8 @@
 import { getTranslations, getLocale } from "next-intl/server";
+import { unstable_cache } from "next/cache";
 import type { AppLocale } from "@/i18n/routing";
 import { prisma } from "@/lib/prisma";
+import { HOMEPAGE_CACHE_SECONDS, HOMEPAGE_CACHE_TAGS } from "@/features/homepage/cache";
 import { Container } from "@/shared/ui/Container";
 import { getContactHref } from "@/shared/lib/contactHref";
 import { getPricingLandingCopy } from "./PricingLandingPage";
@@ -13,8 +15,8 @@ type StaticPackage = {
   features: string[];
 };
 
-async function getDbPlans(locale: AppLocale): Promise<PricingPlanView[]> {
-  try {
+const readCachedDbPlans = unstable_cache(
+  async (locale: AppLocale): Promise<PricingPlanView[]> => {
     const rows = await prisma.pricingPlan.findMany({
       where: { published: true },
       orderBy: { order: "asc" },
@@ -32,6 +34,17 @@ async function getDbPlans(locale: AppLocale): Promise<PricingPlanView[]> {
         featured: row.featured,
       };
     });
+  },
+  ["homepage-pricing-plans"],
+  {
+    revalidate: HOMEPAGE_CACHE_SECONDS,
+    tags: [HOMEPAGE_CACHE_TAGS.pricing],
+  },
+);
+
+async function getDbPlans(locale: AppLocale): Promise<PricingPlanView[]> {
+  try {
+    return await readCachedDbPlans(locale);
   } catch {
     return [];
   }

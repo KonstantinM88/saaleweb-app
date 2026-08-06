@@ -1,7 +1,9 @@
 import { getTranslations, getLocale } from "next-intl/server";
+import { unstable_cache } from "next/cache";
 import { Link } from "@/i18n/navigation";
 import { prisma } from "@/lib/prisma";
 import type { AppLocale } from "@/i18n/routing";
+import { HOMEPAGE_CACHE_SECONDS, HOMEPAGE_CACHE_TAGS } from "@/features/homepage/cache";
 import { Container } from "@/shared/ui/Container";
 import { SectionHeader } from "@/shared/ui/SectionHeader";
 import { CaseStudyCard, type CaseStudyCardLabels, type CaseStudyCardView } from "./CaseStudyCard";
@@ -29,8 +31,8 @@ const covers = [
   "bg-gradient-to-br from-amber-500 to-brand-pink",
 ];
 
-async function getDbCases(locale: AppLocale): Promise<Card[]> {
-  try {
+const readCachedDbCases = unstable_cache(
+  async (locale: AppLocale): Promise<Card[]> => {
     const rows = await prisma.project.findMany({
       where: { published: true },
       orderBy: [{ featured: "desc" }, { order: "asc" }],
@@ -55,6 +57,17 @@ async function getDbCases(locale: AppLocale): Promise<Card[]> {
         },
       } as Card;
     });
+  },
+  ["homepage-project-cards"],
+  {
+    revalidate: HOMEPAGE_CACHE_SECONDS,
+    tags: [HOMEPAGE_CACHE_TAGS.projects],
+  },
+);
+
+async function getDbCases(locale: AppLocale): Promise<Card[]> {
+  try {
+    return await readCachedDbCases(locale);
   } catch {
     return [];
   }

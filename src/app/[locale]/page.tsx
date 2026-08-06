@@ -26,7 +26,9 @@ import { Footer } from "@/widgets/footer/Footer";
 import { isAppLocale } from "@/i18n/routing";
 import { HomeJsonLd } from "@/shared/seo/HomeJsonLd";
 
-export const revalidate = 300;
+// CMS actions invalidate this route immediately. The daily fallback prevents
+// public traffic from repeatedly waking Neon's five-minute autosuspended DB.
+export const revalidate = 86_400;
 
 export default async function HomePage({
   params,

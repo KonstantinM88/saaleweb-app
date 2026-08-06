@@ -1,12 +1,14 @@
 import { getTranslations, getLocale } from "next-intl/server";
+import { unstable_cache } from "next/cache";
 import { prisma } from "@/lib/prisma";
 import type { AppLocale } from "@/i18n/routing";
+import { HOMEPAGE_CACHE_SECONDS, HOMEPAGE_CACHE_TAGS } from "@/features/homepage/cache";
 import { Container } from "@/shared/ui/Container";
 import { SectionHeader } from "@/shared/ui/SectionHeader";
 import { FaqAccordion, type QA } from "./FaqAccordion";
 
-async function getDbFaq(locale: AppLocale): Promise<QA[]> {
-  try {
+const readCachedDbFaq = unstable_cache(
+  async (locale: AppLocale): Promise<QA[]> => {
     const rows = await prisma.faq.findMany({
       where: { published: true },
       orderBy: { order: "asc" },
@@ -17,6 +19,17 @@ async function getDbFaq(locale: AppLocale): Promise<QA[]> {
       if (!tr) return [];
       return { q: tr.question, a: tr.answer };
     });
+  },
+  ["homepage-faq-items"],
+  {
+    revalidate: HOMEPAGE_CACHE_SECONDS,
+    tags: [HOMEPAGE_CACHE_TAGS.faq],
+  },
+);
+
+async function getDbFaq(locale: AppLocale): Promise<QA[]> {
+  try {
+    return await readCachedDbFaq(locale);
   } catch {
     return [];
   }

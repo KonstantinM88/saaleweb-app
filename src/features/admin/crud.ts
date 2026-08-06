@@ -1,12 +1,16 @@
 import { routing, type AppLocale } from "@/i18n/routing";
-import { revalidatePath } from "next/cache";
+import { revalidatePath, updateTag } from "next/cache";
+import type { HomepageCacheTag } from "@/features/homepage/cache";
 
 export type CrudState = { error?: string };
 
 export const LOCALES = routing.locales;
 
-/** Revalidates the localized homepages so CMS edits surface on "/". */
-export function revalidateHome() {
+/** Revalidates localized homepages and any affected DB-backed home section. */
+export function revalidateHome(...cacheTags: HomepageCacheTag[]) {
+  for (const tag of new Set(cacheTags)) {
+    updateTag(tag);
+  }
   for (const path of ["/", "/en", "/ru"]) {
     revalidatePath(path);
   }

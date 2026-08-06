@@ -3,7 +3,7 @@ import { unstable_cache } from "next/cache";
 import { prisma } from "@/lib/prisma";
 import { isAppLocale } from "@/i18n/routing";
 import type { AppLocale } from "@/i18n/routing";
-import { SEO_OVERRIDE_CACHE_TAG } from "./cache";
+import { SEO_OVERRIDE_CACHE_SECONDS, SEO_OVERRIDE_CACHE_TAG } from "./cache";
 import { ogImageUrl } from "./og";
 
 type SeoOverride = { title: string | null; description: string | null; ogImage: string | null };
@@ -27,7 +27,7 @@ const readCachedSeoOverride = unstable_cache(
   ["seo-page-override-v1"],
   {
     // Metadata changes are rare. Admin actions invalidate this tag immediately.
-    revalidate: 3600,
+    revalidate: SEO_OVERRIDE_CACHE_SECONDS,
     tags: [SEO_OVERRIDE_CACHE_TAG],
   },
 );

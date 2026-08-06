@@ -3,6 +3,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/prisma";
 import { revalidateHome, readTranslations, str, strOrNull, num, numOrNull, bool, type CrudState } from "@/features/admin/crud";
+import { HOMEPAGE_CACHE_TAGS } from "@/features/homepage/cache";
 import { PROJECT_TR_FIELDS } from "./config";
 
 function read(fd: FormData) {
@@ -31,13 +32,13 @@ export async function createProject(_p: CrudState, fd: FormData): Promise<CrudSt
   const r = read(fd); if ("error" in r) return r;
   try { await prisma.project.create({ data: { ...r.top, translations: { create: r.trs } } }); }
   catch { return { error: "Speichern fehlgeschlagen — Slug evtl. nicht eindeutig." }; }
-  revalidatePath("/admin/projects"); revalidateHome(); redirect("/admin/projects");
+  revalidatePath("/admin/projects"); revalidateHome(HOMEPAGE_CACHE_TAGS.projects); redirect("/admin/projects");
 }
 export async function updateProject(id: string, _p: CrudState, fd: FormData): Promise<CrudState> {
   const r = read(fd); if ("error" in r) return r;
   try { await prisma.project.update({ where: { id }, data: { ...r.top, translations: { deleteMany: {}, create: r.trs } } }); }
   catch { return { error: "Speichern fehlgeschlagen — Slug evtl. nicht eindeutig." }; }
-  revalidatePath("/admin/projects"); revalidateHome(); redirect("/admin/projects");
+  revalidatePath("/admin/projects"); revalidateHome(HOMEPAGE_CACHE_TAGS.projects); redirect("/admin/projects");
 }
-export async function deleteProject(id: string) { await prisma.project.delete({ where: { id } }); revalidatePath("/admin/projects"); revalidateHome(); }
-export async function toggleProjectPublished(id: string, published: boolean) { await prisma.project.update({ where: { id }, data: { published } }); revalidatePath("/admin/projects"); revalidateHome(); }
+export async function deleteProject(id: string) { await prisma.project.delete({ where: { id } }); revalidatePath("/admin/projects"); revalidateHome(HOMEPAGE_CACHE_TAGS.projects); }
+export async function toggleProjectPublished(id: string, published: boolean) { await prisma.project.update({ where: { id }, data: { published } }); revalidatePath("/admin/projects"); revalidateHome(HOMEPAGE_CACHE_TAGS.projects); }
