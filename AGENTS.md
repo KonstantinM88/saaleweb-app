@@ -23,7 +23,8 @@ Instructions and project memory for coding agents working in this repository.
 - Locale routing: German lives at `/`, English at `/en`, Russian at `/ru`.
 - Automatic locale detection is disabled in `src/i18n/routing.ts`. Never redirect unprefixed URLs from `Accept-Language` or `NEXT_LOCALE`: `/` and all unprefixed public paths must resolve to German, while explicit `/en/...` and `/ru/...` links must retain their requested locale. This keeps every language URL independently crawlable and avoids browser-language redirects.
 - Hostinger/CDN App Router safety lives in `src/proxy.ts`: public responses explicitly vary on the RSC/router headers in addition to Next.js' `_rsc` query-string cache discriminator. Keep this protection when changing proxy/cache behavior; without correctly separated variants a cache layer can serve the raw `$Sreact.fragment` payload as a browser document. After changing this behavior, verify production HTML and RSC `Content-Type`, `Cache-Control`, and `Vary` separately and purge Hostinger CDN cache after deployment.
-- Historical cross-locale and malformed public URLs reported by Search Console are handled as explicit permanent compatibility redirects in `next.config.ts`. The 2026-07-28 404 export contained 50 such URLs. Preserve these redirects unless Search Console and external-link checks prove they are obsolete; do not recreate duplicate pages or add redirect sources to `sitemap.xml`, which must contain canonical URLs only.
+- Historical cross-locale and malformed public URLs reported by Search Console are handled as explicit permanent compatibility redirects in `next.config.mjs`. The 2026-07-28 404 export contained 50 such URLs. Preserve these redirects unless Search Console and external-link checks prove they are obsolete; do not recreate duplicate pages or add redirect sources to `sitemap.xml`, which must contain canonical URLs only.
+- Hostinger currently runs an older glibc than the native Linux SWC binary shipped with Next.js 16.3 requires. Keep the root Next config as plain ESM `next.config.mjs`, not `next.config.ts`: this lets Next fall back to its official WASM compiler without first needing SWC to transpile the config itself. The default `npm run build` intentionally uses `next build --webpack`, because Turbopack requires native bindings and cannot run on the SWC-WASM fallback; `npm run build:turbo` remains available for optional local native testing. When changing Next versions, verify both the normal local build and a forced-WASM build with `NEXT_TEST_WASM=1 npm run build`; do not suppress the native SWC warning or downgrade dependencies before testing the supported fallback.
 - Public URL segments are localized through `next-intl` `pathnames`: services use `/leistungen`, `/services`, `/uslugi`; industries use `/branchen`, `/industries`, `/otrasli`; contact uses `/kontakt`, `/contact`, `/kontakt`; pricing uses `/preise`, `/pricing`, `/ceny`; locations use `/standorte`, `/locations`, `/goroda`; blog categories use `/blog/kategorie`, `/blog/category`, `/blog/kategoriya`.
 - Public service and industry index pages exist at `/leistungen` and `/branchen` with localized public URLs. The service index remains DB-backed; the industry index is a Phase 7 code-backed SEO/GEO/AIO overview with seven industry cards and links to code-backed detail pages first, falling back to DB-backed industry detail pages for non-Phase slugs.
 - Public project/case pages exist at `/projekte`, `/projects`, `/proekty` and detail pages at localized `/projekte/[slug]`, `/projects/[slug]`, `/proekty/[slug]`.
@@ -89,7 +90,7 @@ Instructions and project memory for coding agents working in this repository.
   content changes.
 - `public/images/audit/` - localized 1280×720 WebP Hero banners for the free website audit landing page (`audit-hero-de.webp`, `audit-hero-en.webp`, `audit-hero-ru.webp`). Keep the semantic H1/description and real CTA controls in HTML when replacing these image assets.
 - `public/images/blog/` - static optimized WebP cover images for DB-backed blog articles.
-- `public/llms.txt` - Markdown-formatted LLM discovery file with one H1, Markdown links, commercial service pages, industry pages, locations, projects, technology positioning, and contact; `next.config.ts` serves it as `text/markdown; charset=utf-8`.
+- `public/llms.txt` - Markdown-formatted LLM discovery file with one H1, Markdown links, commercial service pages, industry pages, locations, projects, technology positioning, and contact; `next.config.mjs` serves it as `text/markdown; charset=utf-8`.
 - `src/widgets/tech-stack/CodeWindow.tsx` - code-native animated editor/build scene used inside the tech-stack homepage section.
 - `src/widgets/blog/` - blog UI pieces such as post cards, table of contents, and share buttons.
 - `src/features/` - interactive feature units such as contact and language switching.
@@ -202,7 +203,8 @@ Instructions and project memory for coding agents working in this repository.
 - Start dev server: `npm run dev`
 - Typecheck: `npm run typecheck`
 - Lint: `npm run lint`
-- Production build: `npm run build`
+- Production/Hostinger-compatible build: `npm run build` (Webpack; supports SWC-WASM fallback on old glibc)
+- Optional local native Turbopack build: `npm run build:turbo`
 - Generate Prisma client: `npm run db:generate`
 - Push schema to database: `npm run db:push`
 - Create migration: `npm run db:migrate`
@@ -265,8 +267,8 @@ Instructions and project memory for coding agents working in this repository.
 - Admin authentication uses `jose`, `bcryptjs`, and `server-only`; bcrypt only runs in server actions, not middleware.
 - Generate admin password hashes with `node scripts/hash-password.mjs "your-password"` and copy the printed `Next.js .env value`.
 - Admin multilingual CRUD actions should use `readTranslations` from `src/features/admin/crud.ts`; Prisma translation creates require `locale` to remain typed as generated `Locale`, not widened to plain `string`.
-- Admin image uploads require `sharp`; `next.config.ts` keeps `sharp` in `serverExternalPackages` because it ships native binaries.
-- `next.config.ts` defines a custom header for `/llms.txt`; keep the file Markdown-compatible and served as `text/markdown; charset=utf-8`.
+- Admin image uploads require `sharp`; `next.config.mjs` keeps `sharp` in `serverExternalPackages` because it ships native binaries.
+- `next.config.mjs` defines a custom header for `/llms.txt`; keep the file Markdown-compatible and served as `text/markdown; charset=utf-8`.
 - Analytics bot filtering uses the `isbot` package inside `/api/track`; update the package periodically if crawler detection quality matters.
 - Prisma 7 `prisma db execute` reads the datasource from `prisma.config.ts`; do not pass the old `--schema` flag.
 - Use `-LiteralPath` in PowerShell for paths containing square brackets, for example `src/app/[locale]/page.tsx`.

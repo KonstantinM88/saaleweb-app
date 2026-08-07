@@ -1,4 +1,5 @@
-import type { NextConfig } from "next";
+// @ts-check
+
 import createNextIntlPlugin from "next-intl/plugin";
 
 const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
@@ -108,9 +109,10 @@ const permanentCompatibilityRedirects = [
   // Search Console 404 cleanup, 2026-07-28: malformed historical URLs.
   { source: "/projekte-Projekte", destination: "/projekte" },
   { source: "/en/locations/merseburg-Merseburg", destination: "/en/locations/merseburg" },
-] satisfies Array<{ source: string; destination: string }>;
+];
 
-const nextConfig: NextConfig = {
+/** @type {import("next").NextConfig} */
+const nextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
   },
