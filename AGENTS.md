@@ -16,7 +16,8 @@ Instructions and project memory for coding agents working in this repository.
 ## Project Snapshot
 
 - Product: SaaleWeb marketing site for `saaleweb.de`.
-- Stack: Next.js 16 App Router, React 19.2, TypeScript, Tailwind CSS 3.4, next-intl 4, Prisma 7, PostgreSQL, Zod 4.
+- Stack: Next.js 16.3 App Router, React 19.2.8, TypeScript 5.9, Tailwind CSS 3.4, next-intl 4.13, Prisma 7.9, PostgreSQL, Zod 4.
+- Security-sensitive transitive dependencies are intentionally pinned in `package.json` overrides: `js-yaml` 4.3.1, `fast-uri` 3.1.5, `undici` 6.28.0, and separate compatible `brace-expansion` fixes for `minimatch` 3.x (1.1.18) and 10.x (5.0.9). Do not replace the two `brace-expansion` branches with one global version; their APIs/engine ranges belong to different dependency generations. Re-run `npm audit`, typecheck, lint, and production build whenever these overrides or the Next/Prisma toolchain change.
 - Architecture: Feature-Sliced Design.
 - Locales: `de`, `en`, `ru`; German is the default locale.
 - Locale routing: German lives at `/`, English at `/en`, Russian at `/ru`.
