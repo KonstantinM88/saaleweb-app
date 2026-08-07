@@ -5,9 +5,14 @@ import {
   fetchGa4Snapshot,
   type Ga4Snapshot,
 } from "@/features/analytics/googleAnalytics";
+import { withDatabaseConnectionRetry } from "@/lib/databaseRetry";
 import { prisma } from "@/lib/prisma";
 import type { LeadNotification } from "./mailer";
-import { sendTelegramAdminMessage } from "./telegram";
+import {
+  sendTelegramAdminMessage,
+  sendTelegramAdminMessageDetailed,
+  type TelegramAdminDeliverySummary,
+} from "./telegram";
 
 type CountRow = { count: number | bigint | null };
 type PathCountRow = { path: string | null; count: number | bigint | null };
@@ -44,26 +49,42 @@ function countValue(rows: CountRow[]): number {
   return Number(rows[0]?.count ?? 0);
 }
 
+function reportDatabaseQuery<T>(operation: string, task: () => Promise<T>): Promise<T> {
+  return withDatabaseConnectionRetry(task, {
+    operation: `telegram_report:${operation}`,
+  });
+}
+
 async function countRealPageViews(from: Date, to: Date): Promise<number> {
-  const rows = await prisma.$queryRaw<CountRow[]>`SELECT count(*)::int AS count FROM "PageView" WHERE "createdAt" >= ${from} AND "createdAt" < ${to} AND path NOT LIKE ${SYNTHETIC_EVENT_PATH_PATTERN}`;
+  const rows = await reportDatabaseQuery("page_views", () =>
+    prisma.$queryRaw<CountRow[]>`SELECT count(*)::int AS count FROM "PageView" WHERE "createdAt" >= ${from} AND "createdAt" < ${to} AND path NOT LIKE ${SYNTHETIC_EVENT_PATH_PATTERN}`,
+  );
   return countValue(rows);
 }
 
 async function countRealUniqueVisitors(from: Date, to: Date): Promise<number> {
-  const rows = await prisma.$queryRaw<CountRow[]>`SELECT count(DISTINCT "visitorHash")::int AS count FROM "PageView" WHERE "createdAt" >= ${from} AND "createdAt" < ${to} AND path NOT LIKE ${SYNTHETIC_EVENT_PATH_PATTERN} AND "visitorHash" IS NOT NULL`;
+  const rows = await reportDatabaseQuery("unique_visitors", () =>
+    prisma.$queryRaw<CountRow[]>`SELECT count(DISTINCT "visitorHash")::int AS count FROM "PageView" WHERE "createdAt" >= ${from} AND "createdAt" < ${to} AND path NOT LIKE ${SYNTHETIC_EVENT_PATH_PATTERN} AND "visitorHash" IS NOT NULL`,
+  );
   return countValue(rows);
 }
 
 async function queryTopRealPages(from: Date, to: Date, limit: number): Promise<PathCountRow[]> {
-  return prisma.$queryRaw<PathCountRow[]>`SELECT path, count(*)::int AS count FROM "PageView" WHERE "createdAt" >= ${from} AND "createdAt" < ${to} AND path NOT LIKE ${SYNTHETIC_EVENT_PATH_PATTERN} GROUP BY path ORDER BY count DESC LIMIT ${limit}`;
+  return reportDatabaseQuery("top_pages", () =>
+    prisma.$queryRaw<PathCountRow[]>`SELECT path, count(*)::int AS count FROM "PageView" WHERE "createdAt" >= ${from} AND "createdAt" < ${to} AND path NOT LIKE ${SYNTHETIC_EVENT_PATH_PATTERN} GROUP BY path ORDER BY count DESC LIMIT ${limit}`,
+  );
 }
 
 async function queryRealPageLocales(from: Date, to: Date): Promise<LocaleCountRow[]> {
-  return prisma.$queryRaw<LocaleCountRow[]>`SELECT locale, count(*)::int AS count FROM "PageView" WHERE "createdAt" >= ${from} AND "createdAt" < ${to} AND path NOT LIKE ${SYNTHETIC_EVENT_PATH_PATTERN} GROUP BY locale ORDER BY count DESC`;
+  return reportDatabaseQuery("page_locales", () =>
+    prisma.$queryRaw<LocaleCountRow[]>`SELECT locale, count(*)::int AS count FROM "PageView" WHERE "createdAt" >= ${from} AND "createdAt" < ${to} AND path NOT LIKE ${SYNTHETIC_EVENT_PATH_PATTERN} GROUP BY locale ORDER BY count DESC`,
+  );
 }
 
 async function queryTopRealReferrers(from: Date, to: Date, limit: number): Promise<PathCountRow[]> {
-  return prisma.$queryRaw<PathCountRow[]>`SELECT COALESCE(NULLIF(referrer, ''), 'Прямой заход') AS path, count(*)::int AS count FROM "PageView" WHERE "createdAt" >= ${from} AND "createdAt" < ${to} AND path NOT LIKE ${SYNTHETIC_EVENT_PATH_PATTERN} GROUP BY 1 ORDER BY count DESC LIMIT ${limit}`;
+  return reportDatabaseQuery("top_referrers", () =>
+    prisma.$queryRaw<PathCountRow[]>`SELECT COALESCE(NULLIF(referrer, ''), 'Прямой заход') AS path, count(*)::int AS count FROM "PageView" WHERE "createdAt" >= ${from} AND "createdAt" < ${to} AND path NOT LIKE ${SYNTHETIC_EVENT_PATH_PATTERN} GROUP BY 1 ORDER BY count DESC LIMIT ${limit}`,
+  );
 }
 
 function siteUrl(): string {
@@ -226,12 +247,18 @@ function topDeltaLines(items: LabelDeltaCount[], emptyText: string): string[] {
 
 async function loadAiBotTraffic(from: Date, to: Date, previousFrom: Date, previousTo: Date) {
   try {
-    const [botTotal, previousBotTotal, botRows, pathRows] = await Promise.all([
+    const botTotal = await reportDatabaseQuery("ai_bot_total", () =>
       prisma.aiBotVisit.count({ where: { createdAt: { gte: from, lt: to } } }),
+    );
+    const previousBotTotal = await reportDatabaseQuery("ai_bot_previous_total", () =>
       prisma.aiBotVisit.count({ where: { createdAt: { gte: previousFrom, lt: previousTo } } }),
+    );
+    const botRows = await reportDatabaseQuery("ai_bot_sources", () =>
       prisma.$queryRaw<PathCountRow[]>`SELECT bot AS path, count(*)::int AS count FROM "AiBotVisit" WHERE "createdAt" >= ${from} AND "createdAt" < ${to} GROUP BY bot ORDER BY count DESC LIMIT 5`,
+    );
+    const pathRows = await reportDatabaseQuery("ai_bot_paths", () =>
       prisma.$queryRaw<PathCountRow[]>`SELECT path, count(*)::int AS count FROM "AiBotVisit" WHERE "createdAt" >= ${from} AND "createdAt" < ${to} GROUP BY path ORDER BY count DESC LIMIT 5`,
-    ]);
+    );
 
     return {
       botTotal: Number(botTotal),
@@ -255,11 +282,15 @@ async function loadAiBotTraffic(from: Date, to: Date, previousFrom: Date, previo
 }
 
 async function queryReferrerRows(from: Date, to: Date): Promise<PathCountRow[]> {
-  return prisma.$queryRaw<PathCountRow[]>`SELECT referrer AS path, count(*)::int AS count FROM "PageView" WHERE "createdAt" >= ${from} AND "createdAt" < ${to} AND path NOT LIKE ${SYNTHETIC_EVENT_PATH_PATTERN} AND referrer IS NOT NULL AND referrer <> '' GROUP BY referrer ORDER BY count DESC LIMIT 400`;
+  return reportDatabaseQuery("referrer_rows", () =>
+    prisma.$queryRaw<PathCountRow[]>`SELECT referrer AS path, count(*)::int AS count FROM "PageView" WHERE "createdAt" >= ${from} AND "createdAt" < ${to} AND path NOT LIKE ${SYNTHETIC_EVENT_PATH_PATTERN} AND referrer IS NOT NULL AND referrer <> '' GROUP BY referrer ORDER BY count DESC LIMIT 400`,
+  );
 }
 
 async function queryAiReferrerRows(from: Date, to: Date): Promise<PathCountRow[]> {
-  return prisma.$queryRaw<PathCountRow[]>`SELECT referrer AS path, count(DISTINCT COALESCE("visitorHash", id))::int AS count FROM "PageView" WHERE "createdAt" >= ${from} AND "createdAt" < ${to} AND path NOT LIKE ${SYNTHETIC_EVENT_PATH_PATTERN} AND referrer IS NOT NULL AND referrer <> '' GROUP BY referrer ORDER BY count DESC`;
+  return reportDatabaseQuery("ai_referrer_rows", () =>
+    prisma.$queryRaw<PathCountRow[]>`SELECT referrer AS path, count(DISTINCT COALESCE("visitorHash", id))::int AS count FROM "PageView" WHERE "createdAt" >= ${from} AND "createdAt" < ${to} AND path NOT LIKE ${SYNTHETIC_EVENT_PATH_PATTERN} AND referrer IS NOT NULL AND referrer <> '' GROUP BY referrer ORDER BY count DESC`,
+  );
 }
 
 function aiCountsByLabel(rows: PathCountRow[]): Map<string, number> {
@@ -274,10 +305,8 @@ function aiCountsByLabel(rows: PathCountRow[]): Map<string, number> {
 
 async function loadAiReferralTraffic(from: Date, to: Date, previousFrom: Date, previousTo: Date) {
   try {
-    const [rows, previousRows] = await Promise.all([
-      queryAiReferrerRows(from, to),
-      queryAiReferrerRows(previousFrom, previousTo),
-    ]);
+    const rows = await queryAiReferrerRows(from, to);
+    const previousRows = await queryAiReferrerRows(previousFrom, previousTo);
     const current = aiCountsByLabel(rows);
     const previous = aiCountsByLabel(previousRows);
 
@@ -332,12 +361,14 @@ async function loadReferrerBreakdown(
   };
 
   try {
-    const [rows, previousRows, directRows, previousDirectRows] = await Promise.all([
-      queryReferrerRows(from, to),
-      queryReferrerRows(previousFrom, previousTo),
+    const rows = await queryReferrerRows(from, to);
+    const previousRows = await queryReferrerRows(previousFrom, previousTo);
+    const directRows = await reportDatabaseQuery("direct_referrers", () =>
       prisma.$queryRaw<CountRow[]>`SELECT count(*)::int AS count FROM "PageView" WHERE "createdAt" >= ${from} AND "createdAt" < ${to} AND path NOT LIKE ${SYNTHETIC_EVENT_PATH_PATTERN} AND (referrer IS NULL OR referrer = '')`,
+    );
+    const previousDirectRows = await reportDatabaseQuery("previous_direct_referrers", () =>
       prisma.$queryRaw<CountRow[]>`SELECT count(*)::int AS count FROM "PageView" WHERE "createdAt" >= ${previousFrom} AND "createdAt" < ${previousTo} AND path NOT LIKE ${SYNTHETIC_EVENT_PATH_PATTERN} AND (referrer IS NULL OR referrer = '')`,
-    ]);
+    );
 
     const own = ownHost();
     const classify = (source: PathCountRow[]) => {
@@ -396,10 +427,8 @@ async function loadReferrerBreakdown(
 }
 
 async function loadAiTraffic(from: Date, to: Date, previousFrom: Date, previousTo: Date): Promise<AiTrafficSummary> {
-  const [botTraffic, referralTraffic] = await Promise.all([
-    loadAiBotTraffic(from, to, previousFrom, previousTo),
-    loadAiReferralTraffic(from, to, previousFrom, previousTo),
-  ]);
+  const botTraffic = await loadAiBotTraffic(from, to, previousFrom, previousTo);
+  const referralTraffic = await loadAiReferralTraffic(from, to, previousFrom, previousTo);
 
   return {
     ...botTraffic,
@@ -594,33 +623,27 @@ export async function buildDailySiteReport(now = new Date()): Promise<string> {
   const leadWindow = { createdAt: { gte: from, lt: to } };
   const previousLeadWindow = { createdAt: { gte: previousFrom, lt: previousTo } };
 
-  const [
-    viewsTotal,
-    previousViewsTotal,
-    uniqueTotal,
-    previousUniqueTotal,
-    leadsTotal,
-    previousLeadsTotal,
-    leadsNew,
-    topPaths,
-    localeRows,
-    aiTraffic,
-    referrers,
-    ga4,
-  ] = await Promise.all([
-    countRealPageViews(from, to),
-    countRealPageViews(previousFrom, previousTo),
-    countRealUniqueVisitors(from, to),
-    countRealUniqueVisitors(previousFrom, previousTo),
+  // Keep report queries sequential. On Hostinger several cold Node processes
+  // can start together, so a Promise.all fan-out here would create a burst of
+  // Neon connection attempts even with a small per-process pool.
+  const viewsTotal = await countRealPageViews(from, to);
+  const previousViewsTotal = await countRealPageViews(previousFrom, previousTo);
+  const uniqueTotal = await countRealUniqueVisitors(from, to);
+  const previousUniqueTotal = await countRealUniqueVisitors(previousFrom, previousTo);
+  const leadsTotal = await reportDatabaseQuery("daily_leads", () =>
     prisma.lead.count({ where: leadWindow }),
+  );
+  const previousLeadsTotal = await reportDatabaseQuery("previous_daily_leads", () =>
     prisma.lead.count({ where: previousLeadWindow }),
+  );
+  const leadsNew = await reportDatabaseQuery("open_leads", () =>
     prisma.lead.count({ where: { status: "NEW" } }),
-    queryTopRealPages(from, to, 5),
-    queryRealPageLocales(from, to),
-    loadAiTraffic(from, to, previousFrom, previousTo),
-    loadReferrerBreakdown(from, to, previousFrom, previousTo),
-    fetchGa4Snapshot("daily"),
-  ]);
+  );
+  const topPaths = await queryTopRealPages(from, to, 5);
+  const localeRows = await queryRealPageLocales(from, to);
+  const aiTraffic = await loadAiTraffic(from, to, previousFrom, previousTo);
+  const referrers = await loadReferrerBreakdown(from, to, previousFrom, previousTo);
+  const ga4 = await fetchGa4Snapshot("daily");
 
   const topPathLines =
     topPaths.length > 0
@@ -696,33 +719,24 @@ export async function buildWeeklySiteReport(now = new Date()): Promise<string> {
   const leadWindow = { createdAt: { gte: from, lt: to } };
   const previousLeadWindow = { createdAt: { gte: previousFrom, lt: previousTo } };
 
-  const [
-    viewsTotal,
-    previousViewsTotal,
-    uniqueTotal,
-    previousUniqueTotal,
-    leadsTotal,
-    previousLeadsTotal,
-    leadsNew,
-    topPaths,
-    localeRows,
-    aiTraffic,
-    referrers,
-    ga4,
-  ] = await Promise.all([
-    countRealPageViews(from, to),
-    countRealPageViews(previousFrom, previousTo),
-    countRealUniqueVisitors(from, to),
-    countRealUniqueVisitors(previousFrom, previousTo),
+  const viewsTotal = await countRealPageViews(from, to);
+  const previousViewsTotal = await countRealPageViews(previousFrom, previousTo);
+  const uniqueTotal = await countRealUniqueVisitors(from, to);
+  const previousUniqueTotal = await countRealUniqueVisitors(previousFrom, previousTo);
+  const leadsTotal = await reportDatabaseQuery("weekly_leads", () =>
     prisma.lead.count({ where: leadWindow }),
+  );
+  const previousLeadsTotal = await reportDatabaseQuery("previous_weekly_leads", () =>
     prisma.lead.count({ where: previousLeadWindow }),
+  );
+  const leadsNew = await reportDatabaseQuery("weekly_open_leads", () =>
     prisma.lead.count({ where: { status: "NEW" } }),
-    queryTopRealPages(from, to, 8),
-    queryRealPageLocales(from, to),
-    loadAiTraffic(from, to, previousFrom, previousTo),
-    loadReferrerBreakdown(from, to, previousFrom, previousTo),
-    fetchGa4Snapshot("weekly"),
-  ]);
+  );
+  const topPaths = await queryTopRealPages(from, to, 8);
+  const localeRows = await queryRealPageLocales(from, to);
+  const aiTraffic = await loadAiTraffic(from, to, previousFrom, previousTo);
+  const referrers = await loadReferrerBreakdown(from, to, previousFrom, previousTo);
+  const ga4 = await fetchGa4Snapshot("weekly");
 
   const topPathLines =
     topPaths.length > 0
@@ -1088,6 +1102,10 @@ export async function buildLeadsReport(now = new Date()): Promise<string> {
 }
 
 export async function sendDailySiteReport(): Promise<boolean> {
+  return (await sendDailySiteReportDetailed()).ok;
+}
+
+export async function sendDailySiteReportDetailed(): Promise<TelegramAdminDeliverySummary> {
   const report = await buildDailySiteReport();
-  return sendTelegramAdminMessage(report);
+  return sendTelegramAdminMessageDetailed(report);
 }

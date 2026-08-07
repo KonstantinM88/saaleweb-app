@@ -24,6 +24,37 @@ export type TelegramSendOptions = {
   replyMarkup?: Record<string, unknown>;
 };
 
+type TelegramDeliveryFailureReason =
+  | "bot_blocked"
+  | "chat_not_found"
+  | "forbidden"
+  | "rate_limited"
+  | "telegram_api_error"
+  | "request_failed"
+  | "bot_token_missing";
+
+type TelegramMessageDelivery = {
+  sent: boolean;
+  status?: number;
+  errorCode?: number;
+  failureReason?: TelegramDeliveryFailureReason;
+};
+
+export type TelegramAdminDeliverySummary = {
+  ok: boolean;
+  partial: boolean;
+  attempted: number;
+  sent: number;
+  failed: number;
+  recipients: Array<{
+    recipient: string;
+    sent: boolean;
+    status?: number;
+    errorCode?: number;
+    failureReason?: TelegramDeliveryFailureReason;
+  }>;
+};
+
 export type TelegramBotCommand = {
   command: string;
   description: string;
@@ -56,16 +87,33 @@ function truncateTelegramText(text: string): string {
   return `${text.slice(0, TELEGRAM_TEXT_LIMIT - 24)}\n\n…сообщение сокращено`;
 }
 
+function maskedChatId(chatId: string): string {
+  const suffix = chatId.replace(/\s+/g, "").slice(-4);
+  return suffix ? `***${suffix}` : "***";
+}
+
+function telegramFailureReason(
+  status: number,
+  errorCode: number | undefined,
+  description: string | undefined,
+): TelegramDeliveryFailureReason {
+  if (status === 403 && /blocked by the user/i.test(description ?? "")) return "bot_blocked";
+  if (status === 400 && /chat not found/i.test(description ?? "")) return "chat_not_found";
+  if (status === 403 || errorCode === 403) return "forbidden";
+  if (status === 429 || errorCode === 429) return "rate_limited";
+  return "telegram_api_error";
+}
+
 export function isTelegramAdminChatId(chatId: string | number): boolean {
   return telegramAdminChatIds().includes(String(chatId));
 }
 
-async function sendTelegramMessage(
+async function deliverTelegramMessage(
   chatId: string,
   text: string,
   token: string,
   options: TelegramSendOptions = {},
-): Promise<boolean> {
+): Promise<TelegramMessageDelivery> {
   try {
     const response = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
       method: "POST",
@@ -80,21 +128,40 @@ async function sendTelegramMessage(
 
     const payload = (await response.json().catch(() => null)) as TelegramSendResponse | null;
     if (!response.ok || !payload?.ok) {
+      const errorCode = payload && "error_code" in payload ? payload.error_code : undefined;
+      const description = payload && "description" in payload ? payload.description : undefined;
+      const failureReason = telegramFailureReason(response.status, errorCode, description);
       console.error("[telegram] Admin message failed.", {
+        recipient: maskedChatId(chatId),
         status: response.status,
-        errorCode: payload && "error_code" in payload ? payload.error_code : undefined,
-        description: payload && "description" in payload ? payload.description : "Unknown Telegram API error",
+        errorCode,
+        failureReason,
       });
-      return false;
+      return {
+        sent: false,
+        status: response.status,
+        errorCode,
+        failureReason,
+      };
     }
 
-    return true;
+    return { sent: true, status: response.status };
   } catch (error) {
     console.error("[telegram] Admin message request failed.", {
+      recipient: maskedChatId(chatId),
       message: error instanceof Error ? error.message : "Unknown Telegram request error",
     });
-    return false;
+    return { sent: false, failureReason: "request_failed" };
   }
+}
+
+async function sendTelegramMessage(
+  chatId: string,
+  text: string,
+  token: string,
+  options: TelegramSendOptions = {},
+): Promise<boolean> {
+  return (await deliverTelegramMessage(chatId, text, token, options)).sent;
 }
 
 export async function sendTelegramChatMessage(
@@ -189,14 +256,61 @@ export async function sendTelegramAdminMessage(
   text: string,
   options: TelegramSendOptions = {},
 ): Promise<boolean> {
+  return (await sendTelegramAdminMessageDetailed(text, options)).ok;
+}
+
+export async function sendTelegramAdminMessageDetailed(
+  text: string,
+  options: TelegramSendOptions = {},
+): Promise<TelegramAdminDeliverySummary> {
   const token = configuredBotToken();
   const chatIds = telegramAdminChatIds();
 
   if (!token || chatIds.length === 0) {
     console.warn("[telegram] Admin message skipped because Telegram is not configured.", telegramDiagnostics());
-    return false;
+    const recipients = chatIds.map((chatId) => ({
+      recipient: maskedChatId(chatId),
+      sent: false,
+      failureReason: "bot_token_missing" as const,
+    }));
+    return {
+      ok: false,
+      partial: false,
+      attempted: chatIds.length,
+      sent: 0,
+      failed: chatIds.length,
+      recipients,
+    };
   }
 
-  const results = await Promise.all(chatIds.map((chatId) => sendTelegramMessage(chatId, text, token, options)));
-  return results.some(Boolean);
+  const deliveries = await Promise.all(
+    chatIds.map(async (chatId) => ({
+      recipient: maskedChatId(chatId),
+      ...(await deliverTelegramMessage(chatId, text, token, options)),
+    })),
+  );
+  const sent = deliveries.filter((delivery) => delivery.sent).length;
+  const failed = deliveries.length - sent;
+
+  if (failed > 0) {
+    console.warn("[telegram] Admin message delivery was incomplete.", {
+      attempted: deliveries.length,
+      sent,
+      failed,
+      recipients: deliveries.map(({ recipient, sent: recipientSent, failureReason }) => ({
+        recipient,
+        sent: recipientSent,
+        failureReason,
+      })),
+    });
+  }
+
+  return {
+    ok: sent > 0,
+    partial: sent > 0 && failed > 0,
+    attempted: deliveries.length,
+    sent,
+    failed,
+    recipients: deliveries,
+  };
 }

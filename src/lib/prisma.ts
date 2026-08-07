@@ -7,7 +7,7 @@ const globalForPrisma = globalThis as unknown as {
 
 function databasePoolMax() {
   const configured = Number.parseInt(process.env.DATABASE_POOL_MAX ?? "", 10);
-  return Number.isFinite(configured) && configured >= 1 && configured <= 20 ? configured : 2;
+  return Number.isFinite(configured) && configured >= 1 && configured <= 20 ? configured : 1;
 }
 
 function createClient() {
@@ -27,6 +27,8 @@ function createClient() {
 
 export const prisma = globalForPrisma.prisma ?? createClient();
 
-if (process.env.NODE_ENV !== "production") {
-  globalForPrisma.prisma = prisma;
-}
+// Hostinger can evaluate multiple route bundles in one persistent Node process.
+// Reuse the same client there as well as in development so each bundle does not
+// create another PostgreSQL pool. Separate Node processes still have one pool
+// each, which is why the conservative default above remains important.
+globalForPrisma.prisma = prisma;

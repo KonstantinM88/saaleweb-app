@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
-import { sendDailySiteReport } from "@/features/notifications/telegramReports";
+import { sendDailySiteReportDetailed } from "@/features/notifications/telegramReports";
 import { telegramDiagnostics } from "@/features/notifications/telegram";
+import { isTransientDatabaseConnectionError } from "@/lib/databaseRetry";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -40,15 +41,42 @@ async function handle(req: Request) {
     );
   }
 
-  const sent = await sendDailySiteReport();
-  return NextResponse.json(
-    {
-      ok: sent,
-      sent,
-      telegram: telegramDiagnostics(),
-    },
-    { status: sent ? 200 : 502, headers: { "Cache-Control": "no-store" } },
-  );
+  try {
+    const delivery = await sendDailySiteReportDetailed();
+    return NextResponse.json(
+      {
+        ok: delivery.ok,
+        sent: delivery.ok,
+        partial: delivery.partial,
+        delivery,
+        telegram: telegramDiagnostics(),
+      },
+      { status: delivery.ok ? 200 : 502, headers: { "Cache-Control": "no-store" } },
+    );
+  } catch (error) {
+    const transientDatabaseError = isTransientDatabaseConnectionError(error);
+    console.error("[telegram-report] Daily report failed after safe retries.", {
+      transientDatabaseError,
+      errorType: error instanceof Error ? error.name : "UnknownError",
+    });
+    return NextResponse.json(
+      {
+        ok: false,
+        sent: false,
+        error: transientDatabaseError
+          ? "database_temporarily_unavailable"
+          : "daily_report_generation_failed",
+        telegram: telegramDiagnostics(),
+      },
+      {
+        status: transientDatabaseError ? 503 : 500,
+        headers: {
+          "Cache-Control": "no-store",
+          ...(transientDatabaseError ? { "Retry-After": "30" } : {}),
+        },
+      },
+    );
+  }
 }
 
 export async function GET(req: Request) {
