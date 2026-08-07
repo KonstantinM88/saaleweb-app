@@ -8,9 +8,10 @@
     "build": "next build --webpack",
     "build:turbo": "next build",
     "start": "next start",
+    "prelint": "node scripts/patch-minimatch-brace-expansion.mjs",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
-    "postinstall": "prisma generate",
+    "postinstall": "node scripts/patch-minimatch-brace-expansion.mjs && prisma generate",
     "db:generate": "prisma generate",
     "db:push": "prisma db push",
     "db:migrate": "prisma migrate dev",
@@ -78,7 +79,7 @@
     "fast-uri": "3.1.5",
     "undici": "6.28.0",
     "minimatch@3": {
-      "brace-expansion": "1.1.18"
+      "brace-expansion": "5.0.9"
     },
     "minimatch@10": {
       "brace-expansion": "5.0.9"

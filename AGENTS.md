@@ -17,7 +17,7 @@ Instructions and project memory for coding agents working in this repository.
 
 - Product: SaaleWeb marketing site for `saaleweb.de`.
 - Stack: Next.js 16.3 App Router, React 19.2.8, TypeScript 5.9, Tailwind CSS 3.4, next-intl 4.13, Prisma 7.9, PostgreSQL, Zod 4.
-- Security-sensitive transitive dependencies are intentionally pinned in `package.json` overrides: `js-yaml` 4.3.1, `fast-uri` 3.1.5, `undici` 6.28.0, and separate compatible `brace-expansion` fixes for `minimatch` 3.x (1.1.18) and 10.x (5.0.9). Do not replace the two `brace-expansion` branches with one global version; their APIs/engine ranges belong to different dependency generations. Re-run `npm audit`, typecheck, lint, and production build whenever these overrides or the Next/Prisma toolchain change.
+- Security-sensitive transitive dependencies are intentionally pinned in `package.json` overrides: `js-yaml` 4.3.1, `fast-uri` 3.1.5, `undici` 6.28.0, and `brace-expansion` 5.0.9 for both current and legacy `minimatch` branches. Hostinger's scanner treats every `brace-expansion` release below 5.0.8 as vulnerable even though the upstream advisory also marks patched maintenance releases for older majors. Keep `scripts/patch-minimatch-brace-expansion.mjs`: legacy ESLint plugins expect the old callable CommonJS export, so the postinstall/prelint compatibility patch preserves the full Next/React/a11y lint rules while using secure `brace-expansion` 5.x. After dependency updates, verify `npm ls brace-expansion --all`, `npm audit`, typecheck, lint, and production build; remove this bridge only after every ESLint plugin has stopped depending on `minimatch@3`.
 - Architecture: Feature-Sliced Design.
 - Locales: `de`, `en`, `ru`; German is the default locale.
 - Locale routing: German lives at `/`, English at `/en`, Russian at `/ru`.
@@ -255,7 +255,7 @@ Instructions and project memory for coding agents working in this repository.
 
 ## Stack Notes
 
-- Security dependency baseline (2026-07-17): keep the `package.json` overrides for `postcss@8.5.15` and `@hono/node-server@1.19.13`. Next.js 16.2.10 otherwise pins vulnerable `postcss@8.4.31`, while Prisma 7.8.0 tooling otherwise resolves the vulnerable Hono patch. The verified dependency tree uses `undici@6.27.0` through `@vercel/blob@2.6.1` and `esbuild@0.28.1` through `tsx@4.23.1`; `npm audit` reports zero vulnerabilities. Do not replace this with `npm audit fix --force` or downgrade Next/Prisma.
+- Security dependency baseline (2026-08-07): Next.js 16.3.0 / Prisma 7.9.1 use explicit safe overrides for `postcss@8.5.26`, `js-yaml@4.3.1`, `fast-uri@3.1.5`, `undici@6.28.0`, and `brace-expansion@5.0.9`. The verified install contains no older `brace-expansion` package and `npm audit` reports zero vulnerabilities. Do not replace this with `npm audit fix --force`, copy another project's lock file, or downgrade Next/Prisma; update each project's direct packages first, inspect `npm ls` for the reported dependency, then add only the smallest compatible override and repeat all project checks.
 - Next.js 16 uses `src/proxy.ts` instead of `middleware.ts`.
 - next-intl 4 `NextIntlClientProvider` is used without explicit props because messages are inherited from `src/i18n/request.ts`.
 - `getRequestConfig` must return `locale`.
