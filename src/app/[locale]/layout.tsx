@@ -56,6 +56,10 @@ export async function generateMetadata({
     metadataBase: new URL(siteConfig.url),
     title: { default: title, template: `%s · ${siteConfig.name}` },
     description,
+    // Public Search Console ownership token. Next.js renders it in <head>.
+    verification: {
+      google: "QRjpFG6PznICNn6fTL-ljvDHjYh-qrxSVICP7Jb8lVI",
+    },
     alternates: { canonical, languages },
     icons: {
       icon: [
