@@ -16,7 +16,11 @@ import {
 } from "./telegramAssistant";
 import { buildHealthReport } from "./telegramHealth";
 import { buildSeoScoreReport } from "@/features/seo-monitor/seoScore";
-import { buildAiVisibilityReply, handleAiVisibilityCallback } from "./telegramAiVisibility";
+import {
+  buildAiVisibilityReply,
+  handleAiVisibilityCallback,
+  submitAiVisibilityIndexNow,
+} from "./telegramAiVisibility";
 import {
   answerTelegramCallbackQuery,
   configureTelegramCommandMenu,
@@ -44,6 +48,7 @@ const TELEGRAM_COMMAND_MENU: TelegramBotCommand[] = [
   { command: "ga4", description: "Google Analytics за 7 дней" },
   { command: "ai", description: "AI-боты и AI-переходы" },
   { command: "visibility", description: "Упоминания в AI-поиске" },
+  { command: "indexnow", description: "Отправить приоритетные страницы" },
   { command: "seo", description: "SEO/GEO/AIO Score" },
   { command: "top", description: "Топ страниц и источников" },
   { command: "leads", description: "Последние заявки" },
@@ -84,8 +89,9 @@ function helpText(): string {
     `${BUTTON_HELP} — показать это меню`,
     "",
     "Текстовые команды:",
-    "/health, /report, /week, /ga4, /ai, /top, /leads, /seo, /visibility, /assistant, /help",
+    "/health, /report, /week, /ga4, /ai, /top, /leads, /seo, /visibility, /indexnow, /assistant, /help",
     "/seo new — пересчитать SEO Score без кэша",
+    "/indexnow — отправить изменённые приоритетные страницы в Bing и участвующие поисковые системы",
     "",
     "AI-диалоги:",
     "/assistant <id> — прочитать переписку",
@@ -177,6 +183,11 @@ export async function handleTelegramCommand(chatId: string | number, text: strin
 
   if (command === "/visibility") {
     const reply = await buildAiVisibilityReply(args[0]);
+    return sendWithInlineMenu(chatId, reply.text, reply.replyMarkup);
+  }
+
+  if (command === "/indexnow") {
+    const reply = await submitAiVisibilityIndexNow(args[0]);
     return sendWithInlineMenu(chatId, reply.text, reply.replyMarkup);
   }
 

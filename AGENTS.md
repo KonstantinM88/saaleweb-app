@@ -12,6 +12,7 @@ Instructions and project memory for coding agents working in this repository.
 6. After applying package/content changes, explicitly report whether the result is better, worse, or riskier for the product. If the change appears worse or strategically questionable, pause and ask the user before applying it instead of silently shipping it.
 7. After every change to `prisma/schema.prisma`, always check the schema diff and migration history, create a committed Prisma migration, apply it to the configured database when that database is in scope, regenerate Prisma Client, and verify `prisma migrate status`. Do not treat `prisma db push` alone as a complete migration workflow. If `db push` already created the structure, reconcile it safely with `prisma migrate resolve --applied` only after confirming that the live table/columns match the migration; never reset a database or discard data to resolve drift without explicit user approval.
 8. Keep sales copy capability-positive and business-specific. Do not arbitrarily state that SaaleWeb cannot build a CRM, booking system, process-management system, automation, or other custom software when the stack supports a tailored solution. Present the professional choice instead: integrate the customer's existing tools or scope and build a custom system after discovery. Avoid unlimited promises such as “anything you want”; describe flexible capability while making requirements, scope, and pricing subject to analysis.
+9. Run project verification sequentially, never launch typecheck, lint, and production build in parallel. They compete for CPU/memory and generated files, can exceed the tool's shared execution limit, and can leave orphaned Node processes. Use the repository-specific Windows verification workflow below, give each command its own timeout, run the build last, and release only processes/ports started by the current agent task.
 
 ## Project Snapshot
 
@@ -159,7 +160,7 @@ Instructions and project memory for coding agents working in this repository.
 - `src/features/notifications/telegramReports.ts` - Telegram lead notification formatter and daily traffic report builder using `PageView` / `Lead` analytics.
 - `src/features/seo-monitor/` - daily Telegram SEO Score integration: PageSpeed/CrUX, Search Console analytics and URL Inspection, public URL/sitemap self-checks, weighted scoring, and daily Prisma snapshots. `lighthouseSnapshot.ts` is the only public Hero read adapter: it never calls Google during rendering and returns last-good/median SEO, desktop Performance, Accessibility and Best Practices values with a reviewed non-zero fallback. CrUX and AI crawler observations remain internal diagnostics.
 - `src/features/notifications/telegramHealth.ts` - Telegram health monitoring with two intentional modes. Manual `/health` uses the full DB/counters/nine-URL diagnostic; the cron alert defaults to a light check with one DB connectivity query, mail/Telegram readiness and static `/robots.txt`, plus cooldown-safe failure delivery.
-- `src/features/notifications/telegramCommands.ts` - Telegram command router and compact native Russian command menu; currently handles `/start`, `/help`, `/health`, `/report`, `/week`, `/ga4`, `/ai`, `/seo`, `/top`, `/leads`, `/visibility`, and `/assistant` for configured admin chat IDs only. Do not restore a persistent reply keyboard: it consumes too much mobile chat space. `/start` or the next command removes the legacy keyboard and registers the per-chat native Menu button.
+- `src/features/notifications/telegramCommands.ts` - Telegram command router and compact native Russian command menu; currently handles `/start`, `/help`, `/health`, `/report`, `/week`, `/ga4`, `/ai`, `/seo`, `/top`, `/leads`, `/visibility`, `/indexnow`, and `/assistant` for configured admin chat IDs only. `/indexnow` reuses the AI-visibility priority URL publisher and is intended only after material page changes. Do not restore a persistent reply keyboard: it consumes too much mobile chat space. `/start` or the next command removes the legacy keyboard and registers the per-chat native Menu button.
 - `src/features/notifications/telegramAiVisibility.ts` - protected Russian inline-button workflow for viewing weekly AI visibility, navigating the 20 benchmark prompts, opening platform checks, saving not-found/mentioned/cited states, clearing a check, and submitting priority URLs to IndexNow. Detailed position, citation URL, competitor and notes remain in the admin page.
 - `src/widgets/newsletter/NewsletterForm.tsx`, `src/widgets/newsletter/NewsletterBanner.tsx`, `src/app/[locale]/newsletter/page.tsx` - footer/blog newsletter signup UI and public status page.
 - `src/app/api/newsletter/confirm/route.ts`, `src/app/api/newsletter/unsubscribe/route.ts` - newsletter DOI confirmation and GDPR-friendly unsubscribe routes.
@@ -224,6 +225,26 @@ Instructions and project memory for coding agents working in this repository.
 - Run deterministic AI assistant sales-memory/funnel extraction test without OpenAI or Telegram side effects: `npm run assistant:test-profile`.
 - Run pure lead-attribution classification, privacy, TTL, and first/last-touch tests without database or notification side effects: `npm run attribution:test`.
 - Sync the seven production DE/EN/RU blog articles (local SEO guide, website costs, Google Business Profile, AI search visibility, restaurant website, WordPress-or-Next.js, relaunch checklist) plus blog categories into the database: `npm run db:sync-blog-content`
+
+### Local Verification Workflow (Windows / Codex)
+
+- For source, runtime, dependency, routing, configuration, or Prisma changes, run in this exact order: `npm run typecheck`, then `npm run lint`, then `npm run build`, then `git diff --check`, and finally `git status --short`. Do not use `Promise.all`, multiple terminals, or overlapping build/typecheck/lint processes. Documentation-only edits may use the proportionate minimum of `git diff --check` plus status unless the documentation reflects an accompanying code/configuration change.
+- This managed Windows shell may not expose `npm`, `node`, or `cmd.exe` through `PATH`. Before verification, set only the process-local path and invoke the known installation directly:
+
+  ```powershell
+  $env:Path = 'C:\Program Files\nodejs;C:\Windows\System32;C:\Windows;' + $env:Path
+  & 'C:\Program Files\nodejs\npm.cmd' run typecheck
+  & 'C:\Program Files\nodejs\npm.cmd' run lint
+  & 'C:\Program Files\nodejs\npm.cmd' run build
+  git diff --check
+  git status --short
+  ```
+
+- Use separate execution budgets of at least 180 seconds for typecheck, 180 seconds for lint, and 300 seconds for the Hostinger-compatible production build. The build currently prerenders roughly 250 localized routes and can legitimately take more than two minutes. If a tool call yields a running cell, wait for that same cell instead of starting a duplicate command.
+- If a verification command times out, first inspect Node processes by PID and start time. Stop only the process IDs started by the timed-out command/current task. Never use a blanket `taskkill /IM node.exe`, because other SaaleWeb projects, IDE services, or user dev servers may be running simultaneously. Rerun the failed check by itself after cleanup.
+- Runtime/browser checks must use a deliberately selected temporary port, record the spawned PID, and stop that exact PID when verification finishes. Confirm the port is free afterward. Do not leave `next dev`, `next start`, browser automation, or debug-server processes running.
+- Build remains `npm run build` (`next build --webpack`) because Hostinger needs the SWC-WASM-compatible Webpack path. Use `npm run build:turbo` only as an additional local check, never as a substitute for the deploy build. When Next.js or build tooling changes, also run the forced-WASM Hostinger check documented in the Project Snapshot.
+- Treat a timeout, missing executable in `PATH`, or sandbox/profile `EPERM` as an environment/check-runner problem until the command is rerun correctly. Do not modify application code merely to silence such an infrastructure failure. Report the failed attempt separately from the final reliable check results.
 
 ## Environment
 

@@ -321,7 +321,9 @@ async function saveStatus(
   return buildPlatformReply(week, String(selected.index), platformValue, pageValue, "✅ Статус сохранён.");
 }
 
-async function submitIndexNow(weekValue?: string): Promise<TelegramAiVisibilityReply> {
+export async function submitAiVisibilityIndexNow(
+  weekValue?: string,
+): Promise<TelegramAiVisibilityReply> {
   const week = safeWeek(weekValue);
   const result = await submitIndexNowPaths(AI_VISIBILITY_TARGET_PATHS);
   const notice = result.ok
@@ -341,7 +343,7 @@ export async function handleAiVisibilityCallback(data: string): Promise<Telegram
   if (action === "prompt") return buildPromptReply(args[0], args[1], args[2]);
   if (action === "check") return buildPlatformReply(args[0], args[1], args[2], args[3]);
   if (action === "set") return saveStatus(args[0], args[1], args[2], args[3], args[4]);
-  if (action === "indexnow") return submitIndexNow(args[0]);
+  if (action === "indexnow") return submitAiVisibilityIndexNow(args[0]);
 
   return buildAiVisibilityReply(args[0], "⚠️ Неизвестное действие.");
 }
