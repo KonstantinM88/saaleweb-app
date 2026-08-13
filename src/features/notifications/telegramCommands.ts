@@ -27,6 +27,12 @@ import {
   sendTelegramChatMessage,
   type TelegramBotCommand,
 } from "./telegram";
+import {
+  buildTelegramAnalystAnswer,
+  buildTelegramAnalystMenu,
+  handleTelegramAnalystCallback,
+  isTelegramAnalystQuestionReply,
+} from "./telegramAnalyst";
 
 const BUTTON_HEALTH = "🩺 Проверить сайт";
 const BUTTON_DAILY = "📊 Отчёт 24 часа";
@@ -38,6 +44,7 @@ const BUTTON_LEADS = "🎯 Заявки";
 const BUTTON_ASSISTANT = "💬 AI-диалоги";
 const BUTTON_SEO = "🧮 SEO Score";
 const BUTTON_VISIBILITY = "🔎 AI-видимость";
+const BUTTON_ANALYST = "🧠 AI-аналитик";
 const BUTTON_HELP = "❔ Помощь";
 
 const TELEGRAM_COMMAND_MENU: TelegramBotCommand[] = [
@@ -48,6 +55,7 @@ const TELEGRAM_COMMAND_MENU: TelegramBotCommand[] = [
   { command: "ga4", description: "Google Analytics за 7 дней" },
   { command: "ai", description: "AI-боты и AI-переходы" },
   { command: "visibility", description: "Упоминания в AI-поиске" },
+  { command: "ask", description: "Спросить AI-аналитика" },
   { command: "indexnow", description: "Отправить приоритетные страницы" },
   { command: "seo", description: "SEO/GEO/AIO Score" },
   { command: "top", description: "Топ страниц и источников" },
@@ -86,12 +94,14 @@ function helpText(): string {
     `${BUTTON_ASSISTANT} — последние переписки с AI-ассистентом`,
     `${BUTTON_SEO} — ежедневная оценка SEO/GEO/AIO по реальным данным`,
     `${BUTTON_VISIBILITY} — проверка упоминаний SaaleWeb в четырёх AI-поисках`,
+    `${BUTTON_ANALYST} — анализ статистики и произвольные вопросы`,
     `${BUTTON_HELP} — показать это меню`,
     "",
     "Текстовые команды:",
-    "/health, /report, /week, /ga4, /ai, /top, /leads, /seo, /visibility, /indexnow, /assistant, /help",
+    "/health, /report, /week, /ga4, /ai, /top, /leads, /seo, /visibility, /indexnow, /assistant, /ask, /help",
     "/seo new — пересчитать SEO Score без кэша",
     "/indexnow — отправить изменённые приоритетные страницы в Bing и участвующие поисковые системы",
+    "/ask <вопрос> — получить безопасный AI-анализ агрегированной статистики",
     "",
     "AI-диалоги:",
     "/assistant <id> — прочитать переписку",
@@ -113,6 +123,7 @@ function normalizeCommand(text: string): string {
     [BUTTON_ASSISTANT]: "/assistant",
     [BUTTON_SEO]: "/seo",
     [BUTTON_VISIBILITY]: "/visibility",
+    [BUTTON_ANALYST]: "/ask",
     [BUTTON_HELP]: "/help",
   };
 
@@ -140,9 +151,19 @@ async function sendWithInlineMenu(
   });
 }
 
-export async function handleTelegramCommand(chatId: string | number, text: string): Promise<boolean> {
+export async function handleTelegramCommand(
+  chatId: string | number,
+  text: string,
+  context: { replyToText?: string } = {},
+): Promise<boolean> {
   const command = normalizeCommand(text);
   const args = text.trim().split(/\s+/).slice(1);
+
+  if (isTelegramAnalystQuestionReply(context.replyToText) && !text.trim().startsWith("/")) {
+    await sendTelegramChatMessage(chatId, "🧠 Анализирую доступную статистику…");
+    const reply = await buildTelegramAnalystAnswer(text);
+    return sendWithInlineMenu(chatId, reply.text, reply.replyMarkup);
+  }
 
   if (command === "/health") {
     return sendWithMenu(chatId, await buildHealthReport());
@@ -196,6 +217,17 @@ export async function handleTelegramCommand(chatId: string | number, text: strin
     return sendWithInlineMenu(chatId, reply.text, reply.replyMarkup);
   }
 
+  if (command === "/ask") {
+    const question = args.join(" ");
+    if (!question) {
+      const reply = buildTelegramAnalystMenu();
+      return sendWithInlineMenu(chatId, reply.text, reply.replyMarkup);
+    }
+    await sendTelegramChatMessage(chatId, "🧠 Анализирую доступную статистику…");
+    const reply = await buildTelegramAnalystAnswer(question);
+    return sendWithInlineMenu(chatId, reply.text, reply.replyMarkup);
+  }
+
   if (command === "/assistant_block") {
     return sendWithMenu(chatId, await blockAssistantTarget(args[0], args.slice(1).join(" ")));
   }
@@ -225,6 +257,14 @@ export async function handleTelegramCallback(
 
   if (data.startsWith("assistant:")) {
     const reply = await handleAssistantCallback(data);
+    return sendWithInlineMenu(chatId, reply.text, reply.replyMarkup);
+  }
+
+  if (data.startsWith("analyst:")) {
+    if (data.startsWith("analyst:topic:")) {
+      await sendTelegramChatMessage(chatId, "🧠 Собираю профильный срез и готовлю вывод…");
+    }
+    const reply = await handleTelegramAnalystCallback(data);
     return sendWithInlineMenu(chatId, reply.text, reply.replyMarkup);
   }
 

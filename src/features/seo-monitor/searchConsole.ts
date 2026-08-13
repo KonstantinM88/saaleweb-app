@@ -19,7 +19,13 @@ export type SearchAnalyticsTotals = {
   position: number;
   startDate: string;
   endDate: string;
-  topQueries: { query: string; clicks: number; position: number }[];
+  topQueries: {
+    query: string;
+    clicks: number;
+    impressions: number;
+    ctr: number;
+    position: number;
+  }[];
 };
 
 export type IndexationResult = {
@@ -35,6 +41,12 @@ export type GscSnapshot = {
   error?: string;
 };
 
+export type GscAnalyticsSnapshot = {
+  configured: boolean;
+  analytics: SearchAnalyticsTotals | null;
+  error?: string;
+};
+
 function gscSiteUrl(): string {
   const configured = process.env.GSC_SITE_URL?.trim();
   if (configured) return configured;
@@ -46,7 +58,7 @@ function isoDate(date: Date): string {
   return date.toISOString().slice(0, 10);
 }
 
-async function querySearchAnalytics(token: string): Promise<SearchAnalyticsTotals> {
+async function querySearchAnalytics(token: string, rowLimit = 5): Promise<SearchAnalyticsTotals> {
   const end = new Date(Date.now() - 2 * 24 * 60 * 60 * 1000);
   const start = new Date(end.getTime() - 6 * 24 * 60 * 60 * 1000);
   const site = encodeURIComponent(gscSiteUrl());
@@ -73,7 +85,15 @@ async function querySearchAnalytics(token: string): Promise<SearchAnalyticsTotal
 
   const [totals, byQuery] = await Promise.all([
     run({ startDate: isoDate(start), endDate: isoDate(end) }),
-    run({ startDate: isoDate(start), endDate: isoDate(end), dimensions: ["query"], rowLimit: 5 }),
+    run({
+      startDate: isoDate(start),
+      endDate: isoDate(end),
+      dimensions: ["query"],
+      // Keep the request bounded while allowing reports to rank a useful
+      // candidate pool by impressions instead of relying only on Google's
+      // default click ordering.
+      rowLimit: Math.max(1, Math.min(250, Math.trunc(rowLimit))),
+    }),
   ]);
 
   const total = totals.rows?.[0];
@@ -87,9 +107,34 @@ async function querySearchAnalytics(token: string): Promise<SearchAnalyticsTotal
     topQueries: (byQuery.rows ?? []).map((row) => ({
       query: row.keys?.[0] ?? "-",
       clicks: Math.round(row.clicks ?? 0),
+      impressions: Math.round(row.impressions ?? 0),
+      ctr: row.ctr ?? 0,
       position: Math.round((row.position ?? 0) * 10) / 10,
     })),
   };
+}
+
+/**
+ * Lightweight Search Console snapshot for the on-demand Telegram analyst.
+ * Unlike fetchGscSnapshot it does not inspect URLs, so a keyword question
+ * cannot trigger an unnecessary batch of Indexing API requests.
+ */
+export async function fetchGscSearchAnalytics(rowLimit = 20): Promise<GscAnalyticsSnapshot> {
+  if (!hasGoogleServiceAccountCredentials()) {
+    return { configured: false, analytics: null };
+  }
+
+  try {
+    const token = await getGoogleServiceAccountAccessToken(SCOPE);
+    const analytics = await querySearchAnalytics(token, rowLimit);
+    return { configured: true, analytics };
+  } catch (error) {
+    return {
+      configured: true,
+      analytics: null,
+      error: error instanceof Error ? error.message : "GSC request failed",
+    };
+  }
 }
 
 async function inspectUrl(token: string, url: string, site: string) {
@@ -132,7 +177,7 @@ export async function fetchGscSnapshot(keyUrls: string[]): Promise<GscSnapshot> 
   try {
     const token = await getGoogleServiceAccountAccessToken(SCOPE);
     const [analytics, indexation] = await Promise.all([
-      querySearchAnalytics(token),
+      querySearchAnalytics(token, 5),
       inspectUrls(token, keyUrls),
     ]);
     return { configured: true, analytics, indexation };

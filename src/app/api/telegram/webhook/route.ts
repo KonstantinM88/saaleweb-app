@@ -8,6 +8,9 @@ export const dynamic = "force-dynamic";
 type TelegramUpdate = {
   message?: {
     text?: string;
+    reply_to_message?: {
+      text?: string;
+    };
     chat?: {
       id?: string | number;
     };
@@ -63,7 +66,9 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: true, handled: false }, { headers: { "Cache-Control": "no-store" } });
   }
 
-  const sent = await handleTelegramCommand(chatId, text);
+  const sent = await handleTelegramCommand(chatId, text, {
+    replyToText: update?.message?.reply_to_message?.text,
+  });
   return NextResponse.json({ ok: sent, handled: true }, { headers: { "Cache-Control": "no-store" } });
 }
 

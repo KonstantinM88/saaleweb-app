@@ -82,9 +82,22 @@ export function telegramDiagnostics(): TelegramDiagnostics {
   };
 }
 
-function truncateTelegramText(text: string): string {
-  if (text.length <= TELEGRAM_TEXT_LIMIT) return text;
-  return `${text.slice(0, TELEGRAM_TEXT_LIMIT - 24)}\n\n…сообщение сокращено`;
+function splitTelegramText(text: string): string[] {
+  if (text.length <= TELEGRAM_TEXT_LIMIT) return [text];
+
+  const chunks: string[] = [];
+  let remaining = text;
+  while (remaining.length > TELEGRAM_TEXT_LIMIT) {
+    const candidate = remaining.slice(0, TELEGRAM_TEXT_LIMIT);
+    const lastLineBreak = candidate.lastIndexOf("\n");
+    const boundary = lastLineBreak >= Math.floor(TELEGRAM_TEXT_LIMIT * 0.6)
+      ? lastLineBreak
+      : TELEGRAM_TEXT_LIMIT;
+    chunks.push(remaining.slice(0, boundary).trimEnd());
+    remaining = remaining.slice(boundary).trimStart();
+  }
+  if (remaining) chunks.push(remaining);
+  return chunks;
 }
 
 function maskedChatId(chatId: string): string {
@@ -120,7 +133,7 @@ async function deliverTelegramMessage(
       headers: { "content-type": "application/json" },
       body: JSON.stringify({
         chat_id: chatId,
-        text: truncateTelegramText(text),
+        text,
         disable_web_page_preview: true,
         ...(options.replyMarkup ? { reply_markup: options.replyMarkup } : {}),
       }),
@@ -161,7 +174,25 @@ async function sendTelegramMessage(
   token: string,
   options: TelegramSendOptions = {},
 ): Promise<boolean> {
-  return (await deliverTelegramMessage(chatId, text, token, options)).sent;
+  return (await deliverTelegramText(chatId, text, token, options)).sent;
+}
+
+async function deliverTelegramText(
+  chatId: string,
+  text: string,
+  token: string,
+  options: TelegramSendOptions = {},
+): Promise<TelegramMessageDelivery> {
+  const chunks = splitTelegramText(text);
+  let lastDelivery: TelegramMessageDelivery = { sent: true };
+  for (let index = 0; index < chunks.length; index += 1) {
+    const isLastChunk = index === chunks.length - 1;
+    lastDelivery = await deliverTelegramMessage(chatId, chunks[index] ?? "", token, {
+      ...(isLastChunk ? options : {}),
+    });
+    if (!lastDelivery.sent) return lastDelivery;
+  }
+  return lastDelivery;
 }
 
 export async function sendTelegramChatMessage(
@@ -286,7 +317,7 @@ export async function sendTelegramAdminMessageDetailed(
   const deliveries = await Promise.all(
     chatIds.map(async (chatId) => ({
       recipient: maskedChatId(chatId),
-      ...(await deliverTelegramMessage(chatId, text, token, options)),
+      ...(await deliverTelegramText(chatId, text, token, options)),
     })),
   );
   const sent = deliveries.filter((delivery) => delivery.sent).length;

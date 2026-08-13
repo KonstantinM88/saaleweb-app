@@ -8,6 +8,7 @@ import {
 import { withDatabaseConnectionRetry } from "@/lib/databaseRetry";
 import { prisma } from "@/lib/prisma";
 import type { LeadNotification } from "./mailer";
+import { buildDailySearchInsights } from "./telegramSearchInsights";
 import {
   sendTelegramAdminMessage,
   sendTelegramAdminMessageDetailed,
@@ -623,6 +624,11 @@ export async function buildDailySiteReport(now = new Date()): Promise<string> {
   const leadWindow = { createdAt: { gte: from, lt: to } };
   const previousLeadWindow = { createdAt: { gte: previousFrom, lt: previousTo } };
 
+  // Search Console and its bounded AI interpretation do not use PostgreSQL.
+  // Start them while the intentionally sequential Neon queries run so the
+  // daily cron does not gain a long external-request waterfall.
+  const searchInsightsPromise = buildDailySearchInsights();
+
   // Keep report queries sequential. On Hostinger several cold Node processes
   // can start together, so a Promise.all fan-out here would create a burst of
   // Neon connection attempts even with a small per-process pool.
@@ -644,6 +650,7 @@ export async function buildDailySiteReport(now = new Date()): Promise<string> {
   const aiTraffic = await loadAiTraffic(from, to, previousFrom, previousTo);
   const referrers = await loadReferrerBreakdown(from, to, previousFrom, previousTo);
   const ga4 = await fetchGa4Snapshot("daily");
+  const searchInsightLines = await searchInsightsPromise;
 
   const topPathLines =
     topPaths.length > 0
@@ -692,6 +699,8 @@ export async function buildDailySiteReport(now = new Date()): Promise<string> {
     `• Ориентировочная конверсия посетитель → заявка: ${formatConversion(leadsTotal, uniqueTotal)}`,
     "",
     ...ga4DailyLines(ga4),
+    "",
+    ...searchInsightLines,
     "",
     "🤖 AI-поиск и ассистенты",
     ...aiBotLines,
