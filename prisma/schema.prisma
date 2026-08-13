@@ -521,12 +521,19 @@ model Translation {
 }
 
 model SeoDailySnapshot {
-  id          String   @id @default(cuid())
-  day         String   @unique
-  score       Int
-  sitemapUrls Int
-  report      String
-  createdAt   DateTime @default(now())
+  id                      String    @id @default(cuid())
+  day                     String    @unique
+  score                   Int
+  sitemapUrls             Int
+  report                  String
+  lighthouseMobile        Int?
+  lighthouseDesktop       Int?
+  lighthouseSeo           Int?
+  lighthouseAccessibility Int?
+  lighthouseBestPractices Int?
+  coreWebVitalsPassed     Boolean?
+  lighthouseMeasuredAt    DateTime?
+  createdAt               DateTime  @default(now())
 }
 
 model AiVisibilityCheck {

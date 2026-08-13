@@ -10,6 +10,7 @@ import { Reveal } from "@/shared/ui/Reveal";
 import { SectionHeader } from "@/shared/ui/SectionHeader";
 import { Phase4LinkCluster, type Phase4HubCopy } from "@/widgets/seo-landing/Phase4LinkCluster";
 import { getPhase4IndustryLinks } from "@/widgets/seo-landing/phase4Content";
+import { resolveIndustrySlug } from "@/widgets/seo-landing/industryMerges";
 
 type StaticItem = { name: string; desc: string };
 type Item = {
@@ -90,7 +91,16 @@ export async function Industries() {
     coverImage: null,
   }));
   const dbItems = await getDbIndustries(locale);
-  const items = dbItems.length >= fallback.length ? dbItems : fallback;
+  // Legacy industry slugs now 301 to their premium counterpart. Point the cards
+  // straight at the surviving URL so the homepage never links through a redirect.
+  const items = Array.from(
+    new Map(
+      (dbItems.length >= fallback.length ? dbItems : fallback).map((item) => {
+        const slug = resolveIndustrySlug(locale, item.slug);
+        return [slug, { ...item, slug }] as const;
+      }),
+    ).values(),
+  );
 
   return (
     <section id="industries" className="bg-surface py-16 md:py-24">

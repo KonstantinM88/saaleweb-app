@@ -26,6 +26,7 @@ import { RestaurantLandingPage } from "@/widgets/industry-premium/RestaurantLand
 import { ConstructionLandingPage } from "@/widgets/industry-premium/ConstructionLandingPage";
 import { BeautyLandingPage } from "@/widgets/industry-premium/BeautyLandingPage";
 import { getPremiumIndustry } from "@/widgets/industry-premium/registry";
+import { isMergedIndustrySlug } from "@/widgets/seo-landing/industryMerges";
 import {
   getSeoIndustryPage,
   getSeoIndustrySlugMapByLocalizedSlug,
@@ -41,7 +42,14 @@ export async function generateStaticParams() {
       where: { industry: { published: true } },
       select: { locale: true, slug: true },
     })) as { locale: string; slug: string }[];
-    const params = [...rows.map((r) => ({ locale: r.locale, slug: r.slug })), ...staticParams];
+    // Legacy industry slugs are 301-redirected in next.config.mjs and must not
+    // be prerendered as competing pages.
+    const params = [
+      ...rows
+        .filter((r) => !isMergedIndustrySlug(r.locale, r.slug))
+        .map((r) => ({ locale: r.locale, slug: r.slug })),
+      ...staticParams,
+    ];
     const seen = new Set<string>();
     return params.filter((p) => {
       const key = `${p.locale}:${p.slug}`;

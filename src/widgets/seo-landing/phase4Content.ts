@@ -446,6 +446,80 @@ const coreSeoServicePages: Record<string, Phase4Landing> = {
     ]),
     ...defaultFinal,
   },
+  "wordpress-agentur-halle": {
+    slug: "wordpress-agentur-halle",
+    eyebrow: "Leistung",
+    title: "WordPress Agentur Halle (Saale) – Betreuung, Relaunch und Weiterentwicklung",
+    metaTitle: "WordPress Agentur Halle (Saale) | SaaleWeb",
+    metaDescription:
+      "WordPress Agentur in Halle (Saale): Betreuung, Relaunch, Performance, Sicherheit und SEO für bestehende und neue WordPress-Websites. Fester Ansprechpartner, transparentes Angebot nach Analyse.",
+    lead: [
+      "Viele Unternehmen in Halle arbeiten seit Jahren mit WordPress — und suchen keinen Systemwechsel, sondern jemanden, der die vorhandene Website zuverlässig betreut, absichert und weiterentwickelt.",
+      "SaaleWeb übernimmt WordPress-Projekte in Halle (Saale) und Umgebung: von der Übernahme einer bestehenden Installation über Relaunch und Performance bis zur laufenden Pflege — mit einem festen Ansprechpartner statt wechselnder Bearbeiter.",
+    ],
+    problemTitle: "Woran WordPress-Projekte in der Praxis scheitern",
+    problems: [
+      "Der frühere Dienstleister ist nicht mehr erreichbar und niemand kennt das Setup.",
+      "Themes und Plugins sind veraltet; Updates werden aus Angst vor Fehlern aufgeschoben.",
+      "Ein überladener Page Builder macht die Seite auf dem Smartphone langsam.",
+      "Zugänge, Hosting, Domain und Lizenzen liegen verstreut oder unvollständig vor.",
+      "Sicherheitsthemen wie Backups, Login-Schutz und Formular-Spam sind ungeklärt.",
+      "SEO-Grundlagen fehlen oder wurden durch ein Plugin ersetzt, das niemand konfiguriert hat.",
+    ],
+    solutionTitle: "WordPress-Betreuung mit klarer Verantwortung",
+    solution: [
+      "Am Anfang steht eine Bestandsaufnahme: Zugänge, Hosting, Theme, Plugins, Performance, Sicherheit und SEO-Zustand werden dokumentiert. Erst danach entsteht ein Plan mit Prioritäten.",
+      "Danach entscheidet der Nutzen, nicht die Technik: Manche Websites brauchen nur saubere Updates und Performance-Arbeit, andere einen Relaunch. Beides ist möglich — inklusive Wechsel zu React/Next.js, wenn das nachweislich sinnvoll ist.",
+    ],
+    featuresTitle: "Leistungen einer WordPress-Agentur in Halle",
+    features: [
+      { title: "Übernahme bestehender Websites", text: "Bestandsaufnahme von Zugängen, Hosting, Theme, Plugins und Lizenzen — dokumentiert und nachvollziehbar." },
+      { title: "Updates und Wartung", text: "WordPress-Core, Theme und Plugins werden kontrolliert aktualisiert, mit Backup vor jedem Eingriff." },
+      { title: "Performance und Core Web Vitals", text: "Bilder, Caching, überflüssige Plugins und Render-Blocker werden geprüft und aufgeräumt." },
+      { title: "Sicherheit", text: "Backups, Login-Absicherung, Formularschutz und regelmäßige Kontrolle statt einmaliger Einrichtung." },
+      { title: "SEO-Grundlagen", text: "Meta-Daten, Überschriftenstruktur, interne Links, Indexierbarkeit und strukturierte Daten werden sauber gesetzt." },
+      { title: "Local SEO für Halle", text: "Standortsignale, Google-Unternehmensprofil und regionale Inhalte werden mit der Website verbunden." },
+      { title: "Relaunch ohne Sichtbarkeitsverlust", text: "Redirects, URL-Struktur und bestehende Rankings werden vor dem Umzug abgesichert." },
+      { title: "Fester Ansprechpartner", text: "Sie sprechen direkt mit dem Entwickler, der Ihre Installation kennt — kein Ticketsystem." },
+    ],
+    technologyTitle: "WordPress oder etwas anderes?",
+    technologyText,
+    processTitle: "Von der Bestandsaufnahme zur betreuten Website",
+    process: serviceProcess,
+    casesTitle: "Projektbeispiele aus der Region",
+    cases: serviceCases.local,
+    relatedTitle: "Passende weiterführende Seiten",
+    relatedLinks: [
+      { label: "WordPress Website modernisieren", href: "/leistungen/wordpress-website-modernisieren", description: "Bestehende WordPress-Website gezielt verbessern statt neu bauen." },
+      { label: "Website Wartung", href: "/leistungen/website-wartung", description: "Laufende Pflege, Updates, Backups und technische Kontrolle." },
+      { label: "Website Relaunch", href: "/leistungen/website-relaunch", description: "Relaunch mit gesicherter SEO, Redirects und sauberer Basis." },
+      { label: "Webdesign Halle", href: "/leistungen/webdesign-halle", description: "Regionales Webdesign für Unternehmen in Halle (Saale)." },
+      { label: "Kontakt", href: "/kontakt", description: "Bestehende WordPress-Website kostenlos einschätzen lassen." },
+    ],
+    faq: serviceFaq("Eine WordPress-Agentur in Halle", [
+      {
+        q: "Welche WordPress-Agentur in Halle (Saale) übernimmt bestehende Websites?",
+        a: "SaaleWeb übernimmt bestehende WordPress-Installationen in Halle (Saale) und Umgebung. Am Anfang steht eine Bestandsaufnahme von Zugängen, Hosting, Theme, Plugins, Performance und Sicherheit. Danach erhalten Sie eine dokumentierte Übersicht und einen priorisierten Plan — auch dann, wenn der frühere Dienstleister nicht mehr erreichbar ist.",
+      },
+      {
+        q: "Was kostet die Betreuung einer WordPress-Website?",
+        a: "Die Bestandsaufnahme und das Erstgespräch sind kostenlos. Der Aufwand für laufende Betreuung hängt von Umfang, Plugin-Anzahl, Hosting und gewünschter Reaktionszeit ab und wird nach der Analyse als transparentes Angebot kalkuliert. Eine neue Website startet bei 600 € für einen WordPress-Onepager.",
+      },
+      {
+        q: "Muss ich von WordPress zu Next.js wechseln?",
+        a: "Nein. WordPress ist eine gute Wahl, wenn Sie Inhalte häufig selbst pflegen und ein bewährtes, verbreitetes System möchten. Ein Wechsel wird nur dann empfohlen, wenn Geschwindigkeit, Sonderfunktionen oder Skalierung das konkret erfordern — nicht als Grundsatz.",
+      },
+      {
+        q: "Kann ein Relaunch die bestehenden Google-Rankings gefährden?",
+        a: "Ja, wenn Redirects, URL-Struktur und Inhalte nicht vorbereitet werden. Deshalb wird vor dem Umzug die bestehende URL- und Ranking-Situation erfasst und ein vollständiger Redirect-Plan erstellt. Kurzfristige Schwankungen sind normal; dauerhafter Sichtbarkeitsverlust ist vermeidbar.",
+      },
+      {
+        q: "Arbeitet SaaleWeb auch mit WooCommerce?",
+        a: "Ja. WooCommerce-Shops werden betreut, erweitert und bei Bedarf an Warenwirtschaft, Zahlungsanbieter oder Produktimporte angebunden. Ob WooCommerce oder eine andere Lösung sinnvoll ist, hängt von Sortiment, Prozessen und Pflegeaufwand ab.",
+      },
+    ]),
+    ...defaultFinal,
+  },
   "seo-halle": {
     slug: "seo-halle",
     eyebrow: "Leistung",
@@ -969,6 +1043,14 @@ const SERVICE_SLUGS: Record<string, Phase4SlugMap> = {
     en: "seo-halle",
     ru: "seo-halle",
   },
+  // Delta 38: "wordpress agentur halle" was the second-largest query in Search
+  // Console (83 impressions / 28 days, position 19.9) with no landing page —
+  // only the homepage ranked for it.
+  "wordpress-agentur-halle": {
+    de: "wordpress-agentur-halle",
+    en: "wordpress-agency-halle",
+    ru: "wordpress-agentstvo-halle",
+  },
   ...CITY_SERVICE_SLUGS,
   "ki-optimierung": {
     de: "ki-optimierung",
@@ -1066,6 +1148,59 @@ type LocalizedServiceSeed = {
 };
 
 const EN_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
+  "wordpress-agentur-halle": {
+    navLabel: "WordPress agency Halle",
+    title: "WordPress agency in Halle (Saale) – maintenance, relaunch and ongoing development",
+    metaTitle: "WordPress agency in Halle (Saale) | SaaleWeb",
+    metaDescription:
+      "WordPress agency in Halle (Saale): maintenance, relaunch, performance, security and SEO for existing and new WordPress sites. One named contact, fixed-price planning.",
+    lead: [
+      "Many businesses in Halle have run on WordPress for years and are not looking to switch systems — they are looking for someone who will maintain, secure and keep developing the site they already have.",
+      "SaaleWeb takes on WordPress projects in Halle (Saale) and the surrounding region: inheriting an existing installation, relaunching, improving performance, or handling ongoing maintenance — with one named contact rather than rotating staff.",
+    ],
+    problems: [
+      "The previous provider is unreachable and nobody knows how the setup works.",
+      "Themes and plugins are outdated; updates get postponed for fear of breaking something.",
+      "An overloaded page builder makes the site slow on mobile.",
+      "Logins, hosting, domain and licences are scattered or incomplete.",
+      "Backups, login protection and form spam have never been properly addressed.",
+      "SEO basics are missing, or were delegated to a plugin nobody configured.",
+    ],
+    solution: [
+      "It starts with an inventory: access credentials, hosting, theme, plugins, performance, security and SEO status are documented. Only then does a prioritised plan follow.",
+      "After that, value decides — not technology. Some sites only need clean updates and performance work; others need a relaunch. Both are possible, including a move to React/Next.js where that is demonstrably the better option.",
+    ],
+    features: [
+      { title: "Taking over existing sites", text: "Access, hosting, theme, plugins and licences are inventoried and documented." },
+      { title: "Updates and maintenance", text: "Core, theme and plugins are updated under control, with a backup before every change." },
+      { title: "Performance and Core Web Vitals", text: "Images, caching, redundant plugins and render blockers are reviewed and cleaned up." },
+      { title: "Security", text: "Backups, login hardening and form protection as an ongoing routine, not a one-off setup." },
+      { title: "SEO foundations", text: "Metadata, heading structure, internal links, indexability and structured data are set up properly." },
+      { title: "Local SEO for Halle", text: "Location signals, Google Business Profile and regional content are connected to the website." },
+      { title: "Relaunch without losing visibility", text: "Redirects, URL structure and existing rankings are secured before the move." },
+      { title: "One named contact", text: "You speak directly to the developer who knows your installation — no ticket queue." },
+    ],
+    related: [
+      { label: "Modernize WordPress website", href: "/en/services/wordpress-website-modernization", description: "Improve an existing WordPress site instead of rebuilding blindly." },
+      { label: "Website maintenance", href: "/en/services/website-maintenance", description: "Ongoing care, updates, backups and technical monitoring." },
+      { label: "Web design Halle", href: "/en/services/web-design-halle", description: "Regional web design for businesses in Halle (Saale)." },
+      { label: "Contact", href: "/en/contact", description: "Get your existing WordPress site reviewed at no cost." },
+    ],
+    extraFaq: [
+      {
+        q: "Which WordPress agency in Halle (Saale) takes over existing websites?",
+        a: "SaaleWeb takes over existing WordPress installations in Halle (Saale) and the surrounding region. It begins with an inventory of access credentials, hosting, theme, plugins, performance and security. You then receive a documented overview and a prioritised plan — including when the previous provider is no longer reachable.",
+      },
+      {
+        q: "What does WordPress maintenance cost?",
+        a: "The inventory and the first consultation are free. Ongoing maintenance depends on scope, plugin count, hosting and the response time you need, and is quoted transparently after the analysis. A new site starts at €600 for a WordPress one-pager.",
+      },
+      {
+        q: "Do I have to migrate from WordPress to Next.js?",
+        a: "No. WordPress is a good fit if you edit content often and want a proven, widely supported system. A migration is only recommended when speed, custom functionality or scale genuinely require it — never as a matter of principle.",
+      },
+    ],
+  },
   "website-erstellen-lassen": {
     navLabel: "Get a website",
     title: "Get a business website built – clear strategy, fast technology and a structure that creates inquiries",
@@ -1439,6 +1574,59 @@ const EN_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
 };
 
 const RU_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
+  "wordpress-agentur-halle": {
+    navLabel: "WordPress-агентство Halle",
+    title: "WordPress-агентство в Halle (Saale) — поддержка, релонч и развитие сайта",
+    metaTitle: "WordPress-агентство в Halle (Saale) | SaaleWeb",
+    metaDescription:
+      "WordPress-агентство в Halle (Saale): поддержка, релонч, производительность, безопасность и SEO для существующих и новых сайтов на WordPress. Один ответственный контакт, прозрачное предложение после анализа.",
+    lead: [
+      "Многие компании в Halle работают на WordPress годами и не хотят менять систему — им нужен тот, кто будет надёжно поддерживать, защищать и развивать уже существующий сайт.",
+      "SaaleWeb берёт WordPress-проекты в Halle (Saale) и окрестностях: приём существующей установки, релонч, работа над скоростью или регулярное обслуживание — с одним ответственным человеком вместо сменяющихся исполнителей.",
+    ],
+    problems: [
+      "Прежний подрядчик недоступен, и никто не знает, как устроен сайт.",
+      "Тема и плагины устарели, обновления откладываются из страха что-то сломать.",
+      "Перегруженный конструктор страниц замедляет сайт на смартфоне.",
+      "Доступы, хостинг, домен и лицензии разрознены или неполны.",
+      "Бэкапы, защита входа и спам в формах так и не были нормально решены.",
+      "Базового SEO нет, либо оно отдано плагину, который никто не настроил.",
+    ],
+    solution: [
+      "Всё начинается с инвентаризации: доступы, хостинг, тема, плагины, производительность, безопасность и состояние SEO документируются. Только после этого появляется план с приоритетами.",
+      "Дальше решает польза, а не технология. Одним сайтам нужны только аккуратные обновления и работа над скоростью, другим — релонч. Возможно и то и другое, включая переход на React/Next.js, если это действительно оправдано.",
+    ],
+    features: [
+      { title: "Приём существующих сайтов", text: "Доступы, хостинг, тема, плагины и лицензии описываются и документируются." },
+      { title: "Обновления и обслуживание", text: "Ядро, тема и плагины обновляются под контролем, с бэкапом перед каждым изменением." },
+      { title: "Скорость и Core Web Vitals", text: "Изображения, кэширование, лишние плагины и блокирующие ресурсы проверяются и вычищаются." },
+      { title: "Безопасность", text: "Бэкапы, защита входа и защита форм как постоянная практика, а не разовая настройка." },
+      { title: "База SEO", text: "Мета-данные, структура заголовков, внутренние ссылки, индексируемость и структурированные данные настраиваются корректно." },
+      { title: "Локальное SEO для Halle", text: "Сигналы местоположения, профиль Google и региональный контент связываются с сайтом." },
+      { title: "Релонч без потери видимости", text: "Редиректы, структура URL и текущие позиции фиксируются до переезда." },
+      { title: "Один ответственный контакт", text: "Вы общаетесь напрямую с разработчиком, который знает вашу установку, — без тикет-системы." },
+    ],
+    related: [
+      { label: "Модернизация WordPress-сайта", href: "/ru/uslugi/modernizaciya-wordpress-sajta", description: "Улучшить существующий сайт вместо слепой переделки." },
+      { label: "Поддержка сайта", href: "/ru/uslugi/podderzhka-sajta", description: "Регулярный уход, обновления, бэкапы и технический контроль." },
+      { label: "Веб-дизайн Halle", href: "/ru/uslugi/webdesign-halle", description: "Региональный веб-дизайн для бизнеса в Halle (Saale)." },
+      { label: "Контакт", href: "/ru/kontakt", description: "Бесплатно оценить текущий сайт на WordPress." },
+    ],
+    extraFaq: [
+      {
+        q: "Какое WordPress-агентство в Halle (Saale) принимает существующие сайты?",
+        a: "SaaleWeb принимает существующие установки WordPress в Halle (Saale) и окрестностях. Начинаем с инвентаризации: доступы, хостинг, тема, плагины, производительность, безопасность. После этого вы получаете задокументированный обзор и план с приоритетами — в том числе если прежний подрядчик уже недоступен.",
+      },
+      {
+        q: "Сколько стоит поддержка сайта на WordPress?",
+        a: "Инвентаризация и первая консультация бесплатны. Стоимость регулярной поддержки зависит от объёма, количества плагинов, хостинга и нужного времени реакции; расчёт даётся прозрачно после анализа. Новый сайт начинается от 600 € за одностраничник на WordPress.",
+      },
+      {
+        q: "Нужно ли переходить с WordPress на Next.js?",
+        a: "Нет. WordPress хорош, если вы часто правите контент сами и хотите проверенную распространённую систему. Переход рекомендуется только тогда, когда этого действительно требуют скорость, нестандартные функции или масштаб, — а не из принципа.",
+      },
+    ],
+  },
   "website-erstellen-lassen": {
     navLabel: "Заказать сайт",
     title: "Заказать сайт для компании – понятная стратегия, быстрая технология и структура под заявки",

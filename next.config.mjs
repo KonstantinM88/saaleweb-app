@@ -12,7 +12,10 @@ const permanentCompatibilityRedirects = [
   { source: "/leistungen/ai-optimization", destination: "/leistungen/ki-optimierung" },
 
   // Search Console 404 cleanup, 2026-07-28: cross-locale industry slugs.
-  { source: "/ru/otrasli/bau", destination: "/ru/otrasli/stroitelstvo" },
+  {
+    source: "/ru/otrasli/bau",
+    destination: "/ru/otrasli/sayt-dlya-stroitelnoy-kompanii",
+  },
   { source: "/ru/otrasli/arztpraxen", destination: "/ru/otrasli/medcentry" },
   { source: "/ru/otrasli/dienstleister-website", destination: "/ru/otrasli/sayt-dlya-sfery-uslug" },
   { source: "/en/industries/arztpraxen", destination: "/en/industries/medical-practices" },
@@ -109,6 +112,39 @@ const permanentCompatibilityRedirects = [
   // Search Console 404 cleanup, 2026-07-28: malformed historical URLs.
   { source: "/projekte-Projekte", destination: "/projekte" },
   { source: "/en/locations/merseburg-Merseburg", destination: "/en/locations/merseburg" },
+
+  // Industry consolidation, 2026-08-13. The legacy CMS industry pages competed
+  // with the premium templates for the same queries and both stalled around
+  // position 60+. Mirrors src/widgets/seo-landing/industryMerges.ts, which
+  // stays the source of truth for application code; this file cannot import
+  // TypeScript, so the pairs are repeated here. Keep the two in sync.
+  { source: "/branchen/hotels", destination: "/branchen/hotel-website" },
+  { source: "/branchen/restaurants", destination: "/branchen/restaurant-website" },
+  { source: "/branchen/beauty-salons", destination: "/branchen/beauty-studio-website" },
+  { source: "/branchen/bau", destination: "/branchen/bauunternehmen-website" },
+  { source: "/branchen/handwerk", destination: "/branchen/handwerker-website" },
+  { source: "/en/industries/hotels", destination: "/en/industries/hotel-website" },
+  { source: "/en/industries/restaurants", destination: "/en/industries/restaurant-website" },
+  {
+    source: "/en/industries/beauty-salons",
+    destination: "/en/industries/beauty-studio-website",
+  },
+  {
+    source: "/en/industries/construction",
+    destination: "/en/industries/construction-company-website",
+  },
+  { source: "/en/industries/craftsmen", destination: "/en/industries/craftsmen-website" },
+  { source: "/ru/otrasli/oteli", destination: "/ru/otrasli/sayt-dlya-otelya" },
+  { source: "/ru/otrasli/restorany", destination: "/ru/otrasli/sayt-dlya-restorana" },
+  {
+    source: "/ru/otrasli/beauty-salony",
+    destination: "/ru/otrasli/sayt-dlya-salona-krasoty",
+  },
+  {
+    source: "/ru/otrasli/stroitelstvo",
+    destination: "/ru/otrasli/sayt-dlya-stroitelnoy-kompanii",
+  },
+  { source: "/ru/otrasli/remeslenniki", destination: "/ru/otrasli/sayt-dlya-masterov" },
 ];
 
 /** @type {import("next").NextConfig} */

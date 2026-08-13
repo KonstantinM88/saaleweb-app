@@ -68,8 +68,15 @@ export async function buildMetadata(opts: {
       : opts.languages;
   const canonical = opts.canonical ?? languages?.[opts.locale] ?? opts.path;
 
+  // Most managed landing-page titles already include SaaleWeb. Make only
+  // those absolute; genuinely unbranded titles may still use the root layout
+  // template instead of silently losing the brand suffix.
+  const metadataTitle: Metadata["title"] = /saaleweb/i.test(title)
+    ? { absolute: title }
+    : title;
+
   return {
-    title,
+    title: metadataTitle,
     description,
     alternates: languages || canonical ? { canonical, languages } : undefined,
     openGraph: {

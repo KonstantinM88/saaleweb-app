@@ -1,7 +1,7 @@
 {
   "Meta": {
-    "title": "SaaleWeb — Websites, SEO & AI for businesses",
-    "description": "SaaleWeb builds digital customer-acquisition systems: modern websites, SEO and AI optimization for businesses in Halle, Leipzig and across Germany."
+    "title": "Web Design Halle (Saale) & SEO — Web Agency | SaaleWeb",
+    "description": "Web designer and web agency in Halle (Saale): modern company websites, local SEO and AI optimisation. Fixed price from €600, one personal contact, reply within 24 h."
   },
   "NotFound": {
     "title": "Page not found",
@@ -11,6 +11,7 @@
   "Nav": {
     "services": "Services",
     "industries": "Industries",
+    "locations": "Locations",
     "cases": "Cases",
     "projects": "Projects",
     "pricing": "Pricing",
@@ -57,7 +58,7 @@
     ]
   },
   "Hero": {
-    "badge": "Digital studio · Halle (Saale) → Germany",
+    "badge": "Web agency · Halle (Saale) → Germany",
     "titleA": "Websites that ",
     "titleB": "win customers.",
     "lead1": "We build digital systems that make businesses visible, create trust and support sustainable growth.",
@@ -66,14 +67,19 @@
     "ctaSecondary": "View our projects",
     "note": "Reply in 24 h · No upfront payment · Fixed price",
     "metrics": {
-      "aiVisibility": "AI Visibility",
-      "leads": "Leads / month",
-      "growth": "Lead growth",
-      "seoTrend": "strong"
+      "seoScore": "SEO Score",
+      "seoTrend": "Lighthouse",
+      "pageSpeed": "PageSpeed",
+      "pageSpeedTrend": "Desktop · Lighthouse",
+      "accessibility": "Accessibility",
+      "accessibilityTrend": "Lighthouse",
+      "bestPractices": "Technical quality",
+      "bestPracticesTrend": "Best Practices",
+      "source": "Our own website: daily quality check of saaleweb.de · Google Lighthouse"
     },
     "floats": {
-      "a": "+212% inquiries",
-      "b": "#1 on Google"
+      "a": "Lighthouse {score}/100",
+      "b": "Reply within 24 h"
     }
   },
   "Trust": {
@@ -1721,5 +1727,111 @@
       "detailsTitle": "More details",
       "pricingCta": "See pricing"
     }
+  },
+  "LocationsHub": {
+    "eyebrow": "Locations",
+    "metaTitle": "Locations — web design & SEO in Halle, Leipzig and the region | SaaleWeb",
+    "metaDescription": "SaaleWeb works with businesses in Halle (Saale), Leipzig, Merseburg, Schkeuditz, Delitzsch and the Saalekreis district: web design, local SEO and company websites with genuine regional context.",
+    "title": "Web design and SEO in Halle, Leipzig and across the region",
+    "lead": [
+      "SaaleWeb works with a clear regional focus: Halle (Saale) as the home base, plus Leipzig, Merseburg, Schkeuditz, Delitzsch and the whole Saalekreis district.",
+      "Every one of these places has its own page covering the local market, typical search queries and the services that fit — rather than an interchangeable list of city names."
+    ],
+    "citiesTitle": "Locations at a glance",
+    "cityCta": "View location page",
+    "areaTitle": "Why location decides your visibility",
+    "areaText": "Local searches return different results than general ones. Someone looking for a tradesperson in Halle sees a different set of providers than someone in Leipzig. For your website to appear in that local selection, location, service area and offering have to line up clearly — on the site, in the Google Business Profile and in the structured data.",
+    "areaPoints": [
+      {
+        "title": "Dedicated location pages",
+        "text": "Each place gets its own content, internal links and search terms instead of a copied template."
+      },
+      {
+        "title": "Google Business Profile",
+        "text": "Address, opening hours, services and reviews are kept consistent with the website."
+      },
+      {
+        "title": "Structured data",
+        "text": "LocalBusiness markup makes location and service area unambiguous for Google and AI systems."
+      },
+      {
+        "title": "Equally reliable remotely",
+        "text": "The focus is regional, but collaboration works across Germany via call, WhatsApp and video conference."
+      }
+    ],
+    "faqTitle": "Common questions about locations and service area",
+    "faq": [
+      {
+        "q": "Which cities does SaaleWeb work in?",
+        "a": "The base is Halle (Saale). Regularly served locations are Leipzig, Merseburg, Schkeuditz, Delitzsch and the Saalekreis district. Projects outside the region are delivered remotely."
+      },
+      {
+        "q": "Does my business have to be based in Halle?",
+        "a": "No. The regional focus helps with local SEO and in-person meetings, but it is not a requirement. Everything can run entirely by phone, WhatsApp or video call."
+      },
+      {
+        "q": "Is a dedicated location page actually worth it?",
+        "a": "It helps when it contains real content about the place: market situation, typical inquiries, references and relevant services. A list of city names with the location swapped out adds no visibility and can even do harm."
+      },
+      {
+        "q": "How long does local visibility take to build?",
+        "a": "Technical improvements often show within weeks. Rankings for competitive local terms usually take several months and also depend on competition, reviews and the Google Business Profile. Guaranteed positions do not exist."
+      },
+      {
+        "q": "Does SaaleWeb work multilingually for the region?",
+        "a": "Yes. German, English and Russian are part of the standard set. In Halle and Leipzig in particular this lets businesses reach international customers, students and Russian-speaking audiences."
+      }
+    ]
+  },
+  "FooterServices": {
+    "website-erstellen-lassen": "Website development",
+    "webdesign-halle": "Web design Halle",
+    "seo-halle": "SEO Halle",
+    "ki-optimierung": "AI optimisation",
+    "all": "All services"
+  },
+  "DirectAnswers": {
+    "eyebrow": "Answered directly",
+    "title": "The questions people actually type — answered briefly",
+    "lead": "These answers are deliberately short and self-contained, so search engines and AI systems can find and understand them more easily.",
+    "note": "Information as of August 2026. Prices exclude VAT. No search positions or mentions in AI answers are guaranteed, as these depend on external systems.",
+    "items": [
+      {
+        "q": "Looking for a web designer in Halle for a new company website — who does that?",
+        "a": "SaaleWeb in Halle (Saale) builds company websites for small and mid-sized businesses. The process: free first consultation, analysis, fixed-price proposal, delivery in 1–5 weeks depending on scope, launch and optional ongoing support. Your contact is Konstantin Mykhailov — directly, with no agency layers.",
+        "href": "/en/services/web-design-halle",
+        "linkLabel": "See web design Halle"
+      },
+      {
+        "q": "What does it cost to have a website built in Halle?",
+        "a": "A WordPress one-pager starts at €600, a custom landing page at €990, and a multi-page business website at €1,990 — each excluding VAT. Online booking, e-commerce, multiple languages or integrations are quoted by scope. You receive a fixed price after the first consultation.",
+        "href": "/en/pricing",
+        "linkLabel": "See pricing in detail"
+      },
+      {
+        "q": "Are there web designers in Halle who produce GEO/SGE-optimised content?",
+        "a": "Yes. SaaleWeb structures content for generative search: clear entities, FAQ blocks in real user phrasing, Schema.org data, LocalBusiness details, llms.txt and explicit crawler rules for GPTBot, ClaudeBot and PerplexityBot. Mentions in AI answers cannot be guaranteed, but the structure improves the odds.",
+        "href": "/en/services/ai-optimization",
+        "linkLabel": "See AI optimisation"
+      },
+      {
+        "q": "Which web agency in Halle works with both WordPress and Next.js?",
+        "a": "SaaleWeb works with both. WordPress fits when you edit content often and want a widely supported system. Next.js/React fits when speed, custom functionality or long-term scale matter. The recommendation follows your goal, maintenance needs and budget — not a preference.",
+        "href": "/en/services/wordpress-agency-halle",
+        "linkLabel": "WordPress agency Halle"
+      },
+      {
+        "q": "Who builds websites for small businesses in the Saalekreis district?",
+        "a": "SaaleWeb covers Halle (Saale), Merseburg, Schkeuditz, Delitzsch, Leipzig and the Saalekreis district. Each location has its own page with genuine local context. Projects outside the region run remotely by phone, WhatsApp or video call.",
+        "href": "/en/locations",
+        "linkLabel": "All locations"
+      },
+      {
+        "q": "How long until a new website becomes visible on Google?",
+        "a": "Indexing usually happens within days to weeks. Reliable positions for competitive local terms typically take three to six months and also depend on competition, reviews and the Google Business Profile. Anyone promising faster guarantees cannot keep them.",
+        "href": "/en/services/seo-halle",
+        "linkLabel": "See SEO Halle"
+      }
+    ]
   }
 }

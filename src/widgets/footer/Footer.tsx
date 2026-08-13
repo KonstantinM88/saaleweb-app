@@ -6,6 +6,19 @@ import { siteConfig } from "@/shared/config/site";
 import { Link } from "@/i18n/navigation";
 import { getHomeHref } from "@/shared/lib/localizedPath";
 import { NewsletterForm } from "@/widgets/newsletter/NewsletterForm";
+import { getSeoServiceSlugMap, type Phase4Locale } from "@/widgets/seo-landing/phase4Content";
+
+/**
+ * Footer service links previously all pointed at /leistungen, so four link
+ * slots passed their internal weight to a single hub. They now point at the
+ * commercial landing pages they describe.
+ */
+const footerServiceSlugs = [
+  "website-erstellen-lassen",
+  "webdesign-halle",
+  "seo-halle",
+  "ki-optimierung",
+] as const;
 
 const locationLinks = [
   { label: "Halle (Saale)", slug: "halle" },
@@ -20,9 +33,9 @@ export function Footer() {
   const locale = useLocale();
   const t = useTranslations("Footer");
   const tn = useTranslations("Nav");
-  const ts = useTranslations("Services");
   const tnl = useTranslations("Newsletter");
-  const services = (ts.raw("items") as { title: string }[]).slice(0, 4);
+  const tsvc = useTranslations("FooterServices");
+  const phase4Locale = locale as Phase4Locale;
 
   return (
     <footer className="border-t border-line bg-surface pb-8 pt-14">
@@ -75,11 +88,23 @@ export function Footer() {
           </div>
 
           <FooterCol title={t("services")}>
-            {services.map((s, i) => (
-              <Link key={i} href="/leistungen">
-                {s.title}
+            {footerServiceSlugs.map((canonical) => (
+              <Link
+                key={canonical}
+                href={{
+                  pathname: "/leistungen/[slug]",
+                  params: {
+                    slug: getSeoServiceSlugMap(canonical)?.[phase4Locale] ?? canonical,
+                  },
+                }}
+                prefetch={false}
+              >
+                {tsvc(canonical)}
               </Link>
             ))}
+            <Link href="/leistungen" className="font-semibold">
+              {tsvc("all")}
+            </Link>
           </FooterCol>
 
           <FooterCol title={t("locations")}>
@@ -88,6 +113,9 @@ export function Footer() {
                 {location.label}
               </Link>
             ))}
+            <Link href="/standorte" className="font-semibold">
+              {tn("locations")}
+            </Link>
           </FooterCol>
 
           <FooterCol title={t("company")}>

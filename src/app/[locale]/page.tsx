@@ -25,6 +25,7 @@ import { Contact } from "@/widgets/contact/Contact";
 import { Footer } from "@/widgets/footer/Footer";
 import { isAppLocale } from "@/i18n/routing";
 import { HomeJsonLd } from "@/shared/seo/HomeJsonLd";
+import { DirectAnswers } from "@/widgets/direct-answers/DirectAnswers";
 
 // CMS actions invalidate this route immediately. The daily fallback prevents
 // public traffic from repeatedly waking Neon's five-minute autosuspended DB.
@@ -52,6 +53,7 @@ export default async function HomePage({
         <PerformanceProof />
         <AuthorityStrip />
         <AiReady />
+        <DirectAnswers />
         <Services />
         <Comparison />
         <Industries />

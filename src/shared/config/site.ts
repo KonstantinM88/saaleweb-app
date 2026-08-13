@@ -64,6 +64,7 @@ export const siteConfig = {
   nav: [
     { key: "services", href: "/leistungen" },
     { key: "industries", href: "/branchen" },
+    { key: "locations", href: "/standorte" },
     { key: "projects", href: "/projekte" },
     { key: "pricing", href: "/preise" },
     { key: "blog", href: "/blog" },

@@ -1,7 +1,9 @@
 import "server-only";
 
+import { revalidatePath, revalidateTag } from "next/cache";
 import { detectAiReferrer } from "@/features/analytics/aiTraffic";
 import { prisma } from "@/lib/prisma";
+import { HERO_LIGHTHOUSE_CACHE_TAG } from "./cache";
 import { fetchPageSpeed, type PageSpeedResult } from "./pagespeed";
 import { fetchGscSnapshot, type GscSnapshot } from "./searchConsole";
 import { keyUrls, runSelfCheck, type SelfCheckResult } from "./selfCheck";
@@ -56,7 +58,10 @@ async function aiReferrals7d(): Promise<{ current: number; previous: number }> {
   const from = new Date(to.getTime() - 7 * MS_IN_DAY);
   const previousFrom = new Date(from.getTime() - 7 * MS_IN_DAY);
   try {
-    const [current, previous] = await Promise.all([sum(from, to), sum(previousFrom, from)]);
+    // Keep DB work sequential: production intentionally uses one pooled
+    // PostgreSQL connection per Node process.
+    const current = await sum(from, to);
+    const previous = await sum(previousFrom, from);
     return { current, previous };
   } catch {
     return { current: 0, previous: 0 };
@@ -112,8 +117,22 @@ function cwvComponent(psi: PageSpeedResult): Component {
   };
 }
 
-function lighthouseComponent(psi: PageSpeedResult): Component {
-  const score = psi.available && psi.performanceScore !== null ? psi.performanceScore : null;
+function lighthouseComponent(mobile: PageSpeedResult, desktop: PageSpeedResult): Component {
+  const score = mobile.available && mobile.performanceScore !== null ? mobile.performanceScore : null;
+  const desktopScore =
+    desktop.available && desktop.performanceScore !== null ? desktop.performanceScore : null;
+  const seoScore = desktop.available && desktop.seoScore !== null ? desktop.seoScore : null;
+  const accessibilityScore =
+    desktop.available && desktop.accessibilityScore !== null ? desktop.accessibilityScore : null;
+  const bestPracticesScore =
+    desktop.available && desktop.bestPracticesScore !== null ? desktop.bestPracticesScore : null;
+  const details = [
+    score === null ? null : `mobile ${score}`,
+    desktopScore === null ? null : `desktop ${desktopScore}`,
+    seoScore === null ? null : `SEO ${seoScore}`,
+    accessibilityScore === null ? null : `Accessibility ${accessibilityScore}`,
+    bestPracticesScore === null ? null : `Best Practices ${bestPracticesScore}`,
+  ].filter((value): value is string => value !== null);
   return {
     key: "lighthouse",
     weight: 10,
@@ -121,7 +140,7 @@ function lighthouseComponent(psi: PageSpeedResult): Component {
     line:
       score === null
         ? "• PageSpeed — ⚙️ недоступно"
-        : `• PageSpeed — ${mark(score >= 90)} ${score}/100 (mobile, главная)`,
+        : `• PageSpeed — ${mark(score >= 90)} ${details.join(" · ")} (главная)`,
   };
 }
 
@@ -238,17 +257,94 @@ async function readCachedReport(day: string): Promise<string | null> {
   }
 }
 
-async function storeSnapshot(day: string, score: number, sitemapUrls: number, report: string) {
+function successfulScore(
+  result: PageSpeedResult,
+  key: "performanceScore" | "seoScore" | "accessibilityScore" | "bestPracticesScore",
+) {
+  const value = result.available ? result[key] : null;
+  return typeof value === "number" && value >= 0 && value <= 100 ? value : undefined;
+}
+
+function cwvPassed(result: PageSpeedResult): boolean | undefined {
+  if (!result.available || result.fieldMetrics.length !== 3) return undefined;
+  return result.fieldMetrics.every((metric) => metric.category === "FAST");
+}
+
+function measuredAt(result: PageSpeedResult): Date | undefined {
+  if (!result.available || !result.measuredAt) return undefined;
+  const value = new Date(result.measuredAt);
+  return Number.isNaN(value.getTime()) ? undefined : value;
+}
+
+async function storeSnapshot(
+  day: string,
+  score: number,
+  sitemapUrls: number,
+  report: string,
+  mobile: PageSpeedResult,
+  desktop: PageSpeedResult,
+) {
+  const lighthouseMobile = successfulScore(mobile, "performanceScore");
+  const lighthouseDesktop = successfulScore(desktop, "performanceScore");
+  const lighthouseSeo = successfulScore(desktop, "seoScore");
+  const lighthouseAccessibility = successfulScore(desktop, "accessibilityScore");
+  const lighthouseBestPractices = successfulScore(desktop, "bestPracticesScore");
+  const coreWebVitalsPassed = cwvPassed(mobile);
+  const hasPublicLighthouseMeasurement =
+    lighthouseDesktop !== undefined ||
+    lighthouseSeo !== undefined ||
+    lighthouseAccessibility !== undefined ||
+    lighthouseBestPractices !== undefined;
+  const lighthouseMeasuredAt =
+    hasPublicLighthouseMeasurement ? (measuredAt(desktop) ?? new Date()) : undefined;
+
   try {
     await prisma.seoDailySnapshot.upsert({
       where: { day },
-      update: { score, sitemapUrls, report },
-      create: { day, score, sitemapUrls, report },
+      // `undefined` deliberately leaves a previously successful field intact
+      // when Google times out or omits a category on a later retry that day.
+      update: {
+        score,
+        sitemapUrls,
+        report,
+        lighthouseMobile,
+        lighthouseDesktop,
+        lighthouseSeo,
+        lighthouseAccessibility,
+        lighthouseBestPractices,
+        coreWebVitalsPassed,
+        lighthouseMeasuredAt,
+      },
+      create: {
+        day,
+        score,
+        sitemapUrls,
+        report,
+        lighthouseMobile,
+        lighthouseDesktop,
+        lighthouseSeo,
+        lighthouseAccessibility,
+        lighthouseBestPractices,
+        coreWebVitalsPassed,
+        lighthouseMeasuredAt,
+      },
     });
+    if (
+      lighthouseDesktop !== undefined ||
+      lighthouseSeo !== undefined ||
+      lighthouseAccessibility !== undefined ||
+      lighthouseBestPractices !== undefined ||
+      coreWebVitalsPassed !== undefined
+    ) {
+      revalidateTag(HERO_LIGHTHOUSE_CACHE_TAG, { expire: 0 });
+      for (const path of ["/", "/en", "/ru"]) revalidatePath(path);
+    }
+    return true;
   } catch (error) {
-    console.warn("[seo-score] Snapshot not stored (run `prisma db push`?).", {
+    console.warn("[seo-score] Snapshot not stored (check the deployed Prisma migration).", {
       message: error instanceof Error ? error.message : "unknown",
     });
+    return false;
   }
 }
 
@@ -260,20 +356,24 @@ export async function buildSeoScoreReport(options?: { forceFresh?: boolean }): P
     if (cached) return `${cached}\n\n♻️ Кэш за сегодня. Пересчитать: /seo new`;
   }
 
-  const [selfCheck, psi, gsc, ai] = await Promise.all([
+  const [selfCheck, mobilePsi, desktopPsi, gsc, ai] = await Promise.all([
     runSelfCheck(),
-    fetchPageSpeed(`${siteBase()}/`),
+    fetchPageSpeed(`${siteBase()}/`, { strategy: "mobile", categories: ["performance"] }),
+    fetchPageSpeed(`${siteBase()}/`, {
+      strategy: "desktop",
+      categories: ["performance", "seo", "accessibility", "best-practices"],
+    }),
     fetchGscSnapshot(keyUrls().slice(0, 6)),
     aiReferrals7d(),
   ]);
 
   const components: Component[] = [
     indexationComponent(gsc),
-    cwvComponent(psi),
+    cwvComponent(mobilePsi),
     errorsComponent(selfCheck),
     ctrComponent(gsc),
     await newPagesComponent(selfCheck, day),
-    lighthouseComponent(psi),
+    lighthouseComponent(mobilePsi, desktopPsi),
     aiComponent(ai),
   ];
 
@@ -304,6 +404,6 @@ export async function buildSeoScoreReport(options?: { forceFresh?: boolean }): P
     `📐 Учтено компонент: ${components.filter((component) => component.score !== null).length}/${components.length} (вес ${usedWeight}/100).`,
   ].join("\n");
 
-  await storeSnapshot(day, score, selfCheck.sitemapUrls, report);
+  await storeSnapshot(day, score, selfCheck.sitemapUrls, report, mobilePsi, desktopPsi);
   return report;
 }

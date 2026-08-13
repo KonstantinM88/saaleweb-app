@@ -2,13 +2,13 @@ import type { HotelLandingContent } from "../types";
 
 export const hotelEn: HotelLandingContent = {
   slug: "hotel-website",
-  metaTitle: "Hotel website development — more direct bookings",
+  metaTitle: "Hotel website Halle & Saxony-Anhalt — without portal commission",
   metaDescription:
-    "Hotel website built around direct bookings: individual room pages, your existing booking engine connected, Local SEO for Halle, Leipzig and Saalekreis, multilingual content and structured data for Google and AI search.",
+    "Hotel website for properties in Halle, Leipzig, Merseburg and Saxony-Anhalt: direct bookings instead of Booking.com commission, individual room pages, your booking engine connected, Local SEO and transparent fixed-price planning after analysis.",
 
   eyebrow: "Industry solution · Hospitality",
-  h1: "A hotel website that leads guests to a direct booking",
-  h1Accent: "direct booking",
+  h1: "Hotel website in Halle and Saxony-Anhalt: direct bookings instead of portal commission",
+  h1Accent: "direct bookings instead of portal commission",
   lead:
     "Portals bring reach — and take commission. A hotel website by SaaleWeb makes the direct path visible, fast and trustworthy: individual room pages, your booking engine connected, honest prices, real reviews and content that Google and AI systems can interpret correctly.",
   heroPoints: [

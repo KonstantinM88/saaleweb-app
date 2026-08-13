@@ -44,7 +44,16 @@ export function Navbar() {
     return (
       <Link
         key={item.key}
-        href={item.href as "/leistungen" | "/branchen" | "/projekte" | "/preise" | "/blog" | "/kontakt"}
+        href={
+          item.href as
+            | "/leistungen"
+            | "/branchen"
+            | "/standorte"
+            | "/projekte"
+            | "/preise"
+            | "/blog"
+            | "/kontakt"
+        }
         prefetch={false}
         onClick={onClick}
         className="nav-link transition-colors hover:text-dark"
@@ -73,7 +82,7 @@ export function Navbar() {
           <BrandLogo size="md" animated />
         </Link>
 
-        <nav className="hidden items-center gap-8 text-[15px] font-medium text-gray-700 md:flex">
+        <nav className="hidden items-center gap-5 text-[15px] font-medium text-gray-700 min-[1180px]:flex xl:gap-7">
           {siteConfig.nav.map((item) => renderItem(item))}
         </nav>
 
@@ -89,7 +98,7 @@ export function Navbar() {
           </Magnetic>
           <button
             type="button"
-            className="text-dark md:hidden"
+            className="text-dark min-[1180px]:hidden"
             aria-label="Menu"
             onClick={() => setOpen((v) => !v)}
           >
@@ -101,7 +110,7 @@ export function Navbar() {
       <ScrollProgress />
 
       {open && (
-        <nav className="border-t border-line bg-white md:hidden">
+        <nav className="border-t border-line bg-white min-[1180px]:hidden">
           <Container className="flex flex-col py-3 [&_a]:py-2.5 [&_a]:text-[15px] [&_a]:font-medium [&_a]:text-gray-700">
             {siteConfig.nav.map((item) => renderItem(item, () => setOpen(false)))}
             <a

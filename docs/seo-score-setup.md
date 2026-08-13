@@ -8,7 +8,7 @@ Core Web Vitals, Search Console и уникальные переходы из AI
 
 | Переменная | Назначение |
 |---|---|
-| `PAGESPEED_API_KEY` | Lighthouse mobile и полевые CrUX Core Web Vitals |
+| `PAGESPEED_API_KEY` | Lighthouse mobile/desktop, SEO, Accessibility, Best Practices и полевые CrUX Core Web Vitals |
 | `GSC_CLIENT_EMAIL` | Email сервисного аккаунта Google Cloud |
 | `GSC_PRIVATE_KEY` | Приватный PKCS8-ключ сервисного аккаунта; поддерживаются `\n` |
 | `GSC_SITE_URL` | Точное имя свойства GSC: `https://saaleweb.de/` или `sc-domain:saaleweb.de` |
@@ -35,17 +35,46 @@ Core Web Vitals, Search Console и уникальные переходы из AI
 ## PageSpeed Insights
 
 В Google Cloud включите **PageSpeed Insights API**, создайте API key и добавьте
-его в Hostinger как `PAGESPEED_API_KEY`. На один расчёт выполняется один mobile
-запрос. Полевые CrUX данные появятся только когда Google накопит достаточный
-объём реальных посещений.
+его в Hostinger как `PAGESPEED_API_KEY`. Один суточный расчёт выполняет два
+запроса к главной странице:
+
+- mobile: Performance и полевые CrUX Core Web Vitals;
+- desktop: Performance, SEO, Accessibility и Best Practices.
+
+Полевые CrUX данные появятся только когда Google накопит достаточный объём
+реальных посещений. Они остаются внутренней диагностикой Telegram/admin и не
+выводятся в публичный Hero как слабое состояние «идёт замер».
 
 ## Таблица снапшотов
 
-Модель `SeoDailySnapshot` хранит один отчёт в день, SEO Score и количество URL
-в sitemap. Она нужна для дневной дельты и мгновенной команды `/seo` из кэша.
+Модель `SeoDailySnapshot` хранит один отчёт в день, общий SEO Score, количество
+URL в sitemap, mobile/desktop Lighthouse, Lighthouse SEO, Accessibility,
+Best Practices, состояние полевых Core Web Vitals и время измерения. Она нужна
+для дневной дельты, мгновенной команды `/seo` из кэша и фактических показателей
+в Hero главной страницы.
+
+Hero не обращается к Google во время рендера. Он читает суточные снимки из БД:
+
+- SEO — последнее успешное Lighthouse-измерение;
+- PageSpeed — медиана трёх последних успешных desktop-измерений Performance;
+- Accessibility — последнее успешное Lighthouse-измерение доступности;
+- Technical quality — последнее успешное Lighthouse-измерение Best Practices;
+- при временной ошибке Google или БД используется последний успешный результат,
+  а до первого результата — проверенные редакционные значения, но никогда `0`.
+
+Все четыре публичных показателя относятся только к собственной странице
+`saaleweb.de`. Это демонстрация стандарта SaaleWeb, а не гарантия одинаковых
+баллов для любого будущего клиентского проекта. CrUX и визиты AI-краулеров
+остаются во внутренних отчётах, где отсутствие данных имеет диагностический
+смысл. Один desktop-запрос PageSpeed запрашивает сразу четыре Lighthouse-
+категории, поэтому новые карточки не создают дополнительные API-вызовы.
+
+Не используйте `prisma db push` вместо миграции. Для этой автоматизации нужна
+миграции `20260813210000_automate_hero_lighthouse_metrics` и
+`20260813223000_add_public_hero_quality_metrics`.
 
 ```bash
-npm run db:push
+npx prisma migrate deploy
 ```
 
 ## Ежедневный cron
@@ -63,4 +92,6 @@ Authorization: Bearer <TELEGRAM_REPORT_SECRET>
 ```
 
 Расчёт может занимать до минуты. Не запускайте его чаще одного раза в день,
-кроме ручной проверки `/seo new` после настройки.
+кроме ручной проверки `/seo new` после настройки. Отдельное cron-задание для
+Hero не требуется: успешный суточный SEO-отчёт сохраняет показатели и сразу
+инвалидирует 24-часовой кэш главной страницы.

@@ -1,7 +1,7 @@
 {
   "Meta": {
-    "title": "SaaleWeb — Websites, SEO & KI für Unternehmen",
-    "description": "SaaleWeb baut digitale Kundengewinnungs-Systeme: moderne Websites, SEO und KI-Optimierung für Unternehmen in Halle, Leipzig und ganz Deutschland."
+    "title": "Webdesign Halle (Saale) & SEO — Webagentur | SaaleWeb",
+    "description": "Webdesigner und Webagentur in Halle (Saale): moderne Firmenwebsites, Local SEO und KI-Optimierung. Festpreis ab 600 €, persönlicher Ansprechpartner, Antwort in 24 h."
   },
   "NotFound": {
     "title": "Seite nicht gefunden",
@@ -11,6 +11,7 @@
   "Nav": {
     "services": "Leistungen",
     "industries": "Branchen",
+    "locations": "Standorte",
     "cases": "Cases",
     "projects": "Projekte",
     "pricing": "Preise",
@@ -57,7 +58,7 @@
     ]
   },
   "Hero": {
-    "badge": "Digitales Studio · Halle (Saale) → Deutschland",
+    "badge": "Webagentur · Halle (Saale) → Deutschland",
     "titleA": "Websites, die ",
     "titleB": "Kunden bringen.",
     "lead1": "Wir entwickeln digitale Systeme, die Unternehmen sichtbar machen, Vertrauen schaffen und nachhaltig wachsen lassen.",
@@ -66,14 +67,19 @@
     "ctaSecondary": "Unsere Projekte ansehen",
     "note": "Antwort in 24 h · Keine Vorkasse · Festpreis",
     "metrics": {
-      "aiVisibility": "AI Visibility",
-      "leads": "Leads / Monat",
-      "growth": "Lead-Wachstum",
-      "seoTrend": "stark"
+      "seoScore": "SEO Score",
+      "seoTrend": "Lighthouse",
+      "pageSpeed": "PageSpeed",
+      "pageSpeedTrend": "Desktop · Lighthouse",
+      "accessibility": "Barrierefreiheit",
+      "accessibilityTrend": "Lighthouse",
+      "bestPractices": "Technische Qualität",
+      "bestPracticesTrend": "Best Practices",
+      "source": "Unsere eigene Website: täglicher Qualitätscheck von saaleweb.de · Google Lighthouse"
     },
     "floats": {
-      "a": "+212 % Anfragen",
-      "b": "Platz 1 bei Google"
+      "a": "Lighthouse {score}/100",
+      "b": "Antwort in 24 h"
     }
   },
   "Trust": {
@@ -1721,5 +1727,111 @@
       "detailsTitle": "Mehr Details",
       "pricingCta": "Preise ansehen"
     }
+  },
+  "LocationsHub": {
+    "eyebrow": "Standorte",
+    "metaTitle": "Standorte — Webdesign & SEO in Halle, Leipzig und Umgebung | SaaleWeb",
+    "metaDescription": "SaaleWeb arbeitet für Unternehmen in Halle (Saale), Leipzig, Merseburg, Schkeuditz, Delitzsch und im Saalekreis: Webdesign, Local SEO und Firmenwebsites mit regionalem Bezug.",
+    "title": "Webdesign und SEO in Halle, Leipzig und der ganzen Region",
+    "lead": [
+      "SaaleWeb arbeitet mit einem klaren regionalen Schwerpunkt: Halle (Saale) als Sitz, dazu Leipzig, Merseburg, Schkeuditz, Delitzsch und der gesamte Saalekreis.",
+      "Für jeden dieser Orte gibt es eine eigene Seite mit Marktsituation, typischen Suchanfragen und passenden Leistungen — statt einer austauschbaren Städteliste."
+    ],
+    "citiesTitle": "Standorte im Überblick",
+    "cityCta": "Standortseite ansehen",
+    "areaTitle": "Warum der Standort für Ihre Sichtbarkeit zählt",
+    "areaText": "Lokale Suchanfragen führen zu anderen Ergebnissen als allgemeine. Wer in Halle nach einem Handwerker sucht, sieht andere Anbieter als jemand in Leipzig. Damit Ihre Website in dieser lokalen Auswahl auftaucht, müssen Standort, Einzugsgebiet und Leistungen eindeutig zusammenpassen — auf der Website, im Google-Unternehmensprofil und in den strukturierten Daten.",
+    "areaPoints": [
+      {
+        "title": "Eigene Standortseiten",
+        "text": "Jeder Ort erhält eigene Inhalte, interne Links und Suchbegriffe statt einer kopierten Vorlage."
+      },
+      {
+        "title": "Google-Unternehmensprofil",
+        "text": "Adresse, Öffnungszeiten, Leistungen und Bewertungen werden mit der Website konsistent verknüpft."
+      },
+      {
+        "title": "Strukturierte Daten",
+        "text": "LocalBusiness-Angaben machen Standort und Einzugsgebiet für Google und KI-Systeme eindeutig."
+      },
+      {
+        "title": "Remote genauso zuverlässig",
+        "text": "Der Schwerpunkt liegt in der Region — die Zusammenarbeit funktioniert bundesweit per Call, WhatsApp und Videokonferenz."
+      }
+    ],
+    "faqTitle": "Häufige Fragen zu Standorten und Einzugsgebiet",
+    "faq": [
+      {
+        "q": "In welchen Städten arbeitet SaaleWeb?",
+        "a": "Der Sitz ist Halle (Saale). Regelmäßig betreute Orte sind Leipzig, Merseburg, Schkeuditz, Delitzsch und der Saalekreis. Projekte außerhalb der Region werden remote umgesetzt."
+      },
+      {
+        "q": "Muss mein Unternehmen in Halle sitzen?",
+        "a": "Nein. Der regionale Schwerpunkt hilft bei Local SEO und persönlichen Terminen, ist aber keine Voraussetzung. Abstimmungen laufen bei Bedarf vollständig per Telefon, WhatsApp oder Videocall."
+      },
+      {
+        "q": "Bringt eine eigene Standortseite wirklich etwas?",
+        "a": "Sie hilft dann, wenn sie echte Inhalte zum Ort enthält: Marktsituation, typische Anfragen, Referenzen und passende Leistungen. Eine reine Städteliste mit ausgetauschtem Ortsnamen bringt keine zusätzliche Sichtbarkeit und kann sogar schaden."
+      },
+      {
+        "q": "Wie lange dauert es, bis lokale Sichtbarkeit entsteht?",
+        "a": "Technische Verbesserungen wirken oft innerhalb weniger Wochen. Rankings für umkämpfte lokale Suchbegriffe brauchen in der Regel mehrere Monate und hängen zusätzlich von Wettbewerb, Bewertungen und Google-Unternehmensprofil ab. Garantierte Positionen gibt es nicht."
+      },
+      {
+        "q": "Arbeitet SaaleWeb auch mehrsprachig für die Region?",
+        "a": "Ja. Deutsch, Englisch und Russisch gehören zur Basis. Gerade in Halle und Leipzig erreichen Unternehmen damit auch internationale Kunden, Studierende und russischsprachige Zielgruppen."
+      }
+    ]
+  },
+  "FooterServices": {
+    "website-erstellen-lassen": "Website erstellen lassen",
+    "webdesign-halle": "Webdesign Halle",
+    "seo-halle": "SEO Halle",
+    "ki-optimierung": "KI-Optimierung",
+    "all": "Alle Leistungen"
+  },
+  "DirectAnswers": {
+    "eyebrow": "Direkt beantwortet",
+    "title": "Fragen, die Menschen wirklich eingeben — kurz beantwortet",
+    "lead": "Diese Antworten stehen bewusst kurz und vollständig hier auf der Seite, damit Suchmaschinen und KI-Systeme sie leichter finden und richtig einordnen können.",
+    "note": "Stand der Angaben: August 2026. Preise verstehen sich zzgl. MwSt. Es werden keine Suchpositionen oder Nennungen in KI-Antworten garantiert, da diese von externen Systemen abhängen.",
+    "items": [
+      {
+        "q": "Webdesigner in Halle gesucht für eine neue Firmenwebsite — wer macht sowas?",
+        "a": "SaaleWeb in Halle (Saale) baut Firmenwebsites für kleine und mittelständische Unternehmen. Der Ablauf: kostenloses Erstgespräch, Analyse, Festpreisangebot, Umsetzung in 1–5 Wochen je nach Umfang, Launch und optionale Betreuung. Ansprechpartner ist Konstantin Mykhailov — direkt, ohne Agenturkette.",
+        "href": "/leistungen/webdesign-halle",
+        "linkLabel": "Webdesign Halle ansehen"
+      },
+      {
+        "q": "Was kostet es, in Halle eine Website erstellen zu lassen?",
+        "a": "Ein WordPress-Onepager startet bei 600 €, eine individuelle Landingpage bei 990 €, eine mehrseitige Business-Website bei 1.990 € — jeweils zzgl. MwSt. Online-Buchung, Shop, Mehrsprachigkeit oder Integrationen werden nach Umfang kalkuliert. Nach dem Erstgespräch erhalten Sie einen Festpreis.",
+        "href": "/preise",
+        "linkLabel": "Preise im Detail"
+      },
+      {
+        "q": "Gibt es Webdesigner in Halle, die GEO/SGE-optimierten Content machen?",
+        "a": "Ja. SaaleWeb strukturiert Inhalte für generative Suchsysteme: klare Entitäten, FAQ-Blöcke in echter Nutzersprache, Schema.org-Daten, LocalBusiness-Angaben, llms.txt und explizite Crawler-Regeln für GPTBot, ClaudeBot und PerplexityBot. Garantierte Nennungen in KI-Antworten gibt es nicht — die Struktur erhöht aber die Chance.",
+        "href": "/leistungen/ki-optimierung",
+        "linkLabel": "KI-Optimierung ansehen"
+      },
+      {
+        "q": "Welche Webagentur in Halle arbeitet sowohl mit WordPress als auch mit Next.js?",
+        "a": "SaaleWeb arbeitet mit beidem. WordPress passt, wenn Sie Inhalte häufig selbst pflegen und ein verbreitetes System wollen. Next.js/React passt bei hohem Tempo-Anspruch, Sonderfunktionen oder langfristiger Skalierung. Die Empfehlung richtet sich nach Ziel, Pflegeaufwand und Budget — nicht nach Vorliebe.",
+        "href": "/leistungen/wordpress-agentur-halle",
+        "linkLabel": "WordPress Agentur Halle"
+      },
+      {
+        "q": "Wer erstellt Websites für kleine Unternehmen im Saalekreis?",
+        "a": "SaaleWeb betreut Halle (Saale), Merseburg, Schkeuditz, Delitzsch, Leipzig und den Saalekreis. Für jeden Ort gibt es eine eigene Standortseite mit lokalem Bezug. Projekte außerhalb der Region laufen remote per Telefon, WhatsApp oder Videocall.",
+        "href": "/standorte",
+        "linkLabel": "Alle Standorte"
+      },
+      {
+        "q": "Wie lange dauert es, bis eine neue Website bei Google sichtbar ist?",
+        "a": "Indexierung erfolgt meist innerhalb weniger Tage bis Wochen. Belastbare Positionen für umkämpfte lokale Suchbegriffe brauchen in der Regel drei bis sechs Monate und hängen zusätzlich von Wettbewerb, Bewertungen und Google-Unternehmensprofil ab. Wer schnellere Garantien verspricht, kann sie nicht einhalten.",
+        "href": "/leistungen/seo-halle",
+        "linkLabel": "SEO Halle ansehen"
+      }
+    ]
   }
 }

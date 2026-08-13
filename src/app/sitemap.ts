@@ -7,6 +7,7 @@ import { getBlogSlugGroups, getCategorySlugGroups } from "@/entities/blog/api";
 import { prisma } from "@/lib/prisma";
 import { isSitemapIndexablePath } from "@/shared/seo/crawl";
 import { getSeoIndustrySlugGroups, getSeoServiceSlugGroups } from "@/widgets/seo-landing/phase4Content";
+import { isMergedIndustrySlug } from "@/widgets/seo-landing/industryMerges";
 
 const BASE = siteConfig.url;
 const abs = (p: string) => `${BASE}${p}`;
@@ -43,7 +44,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const entries: MetadataRoute.Sitemap = [];
 
   // Home + index pages (same path key across locales, prefix/pathnames differ)
-  for (const href of ["/", "/blog", "/leistungen", "/branchen", "/kontakt", "/preise", "/projekte", "/audit"] as const) {
+  for (const href of [
+    "/",
+    "/blog",
+    "/leistungen",
+    "/branchen",
+    "/standorte",
+    "/kontakt",
+    "/preise",
+    "/projekte",
+    "/audit",
+  ] as const) {
     const languages = Object.fromEntries(
       routing.locales.map((l) => [l, abs(getPathname({ locale: l, href }))]),
     );
@@ -122,10 +133,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })) as { locale: string; slug: string; serviceId: string }[];
     entries.push(...groupDbEntries(services, (r) => r.serviceId, "/leistungen/[slug]"));
 
-    const industries = (await prisma.industryTranslation.findMany({
-      where: { industry: { published: true } },
-      select: { locale: true, slug: true, industryId: true },
-    })) as { locale: string; slug: string; industryId: string }[];
+    const industries = (
+      (await prisma.industryTranslation.findMany({
+        where: { industry: { published: true } },
+        select: { locale: true, slug: true, industryId: true },
+      })) as { locale: string; slug: string; industryId: string }[]
+    ).filter((row) => !isMergedIndustrySlug(row.locale, row.slug));
     entries.push(...groupDbEntries(industries, (r) => r.industryId, "/branchen/[slug]"));
 
     const projects = (await prisma.projectTranslation.findMany({

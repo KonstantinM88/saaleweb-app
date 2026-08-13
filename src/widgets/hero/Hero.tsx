@@ -4,7 +4,7 @@ import { Container } from "@/shared/ui/Container";
 import { Button } from "@/shared/ui/Button";
 import { getContactHref } from "@/shared/lib/contactHref";
 import { getLocalizedHref } from "@/shared/lib/localizedPath";
-import { Dashboard } from "./Dashboard";
+import { HeroDashboard } from "./HeroDashboard";
 
 export function Hero() {
   const t = useTranslations("Hero");
@@ -74,7 +74,7 @@ export function Hero() {
           </p>
         </div>
 
-        <Dashboard />
+        <HeroDashboard />
       </Container>
     </section>
   );

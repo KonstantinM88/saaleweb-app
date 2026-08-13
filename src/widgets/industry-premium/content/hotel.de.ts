@@ -2,13 +2,13 @@ import type { HotelLandingContent } from "../types";
 
 export const hotelDe: HotelLandingContent = {
   slug: "hotel-website",
-  metaTitle: "Hotel Website erstellen lassen — mehr Direktbuchungen",
+  metaTitle: "Hotel Website Halle & Sachsen-Anhalt — ohne Portalprovision",
   metaDescription:
-    "Hotel-Website mit Direktbuchungs-Fokus: Zimmerseiten, Anbindung Ihrer Buchungsstrecke, Local SEO für Halle, Leipzig und Saalekreis, Mehrsprachigkeit und strukturierte Daten für Google und KI-Suche.",
+    "Hotel-Website für Häuser in Halle, Leipzig, Merseburg und Sachsen-Anhalt: Direktbuchungen statt Booking.com-Provision, eigene Zimmerseiten, Ihre Buchungsstrecke angebunden, Local SEO und transparente Festpreisplanung nach Analyse.",
 
   eyebrow: "Branchenlösung · Hotellerie",
-  h1: "Hotel-Website, die Gäste zur Direktbuchung führt",
-  h1Accent: "Direktbuchung",
+  h1: "Hotel-Website in Halle und Sachsen-Anhalt: Direktbuchung statt Portalprovision",
+  h1Accent: "Direktbuchung statt Portalprovision",
   lead:
     "Portale bringen Reichweite — und kosten Provision. Eine Hotel-Website von SaaleWeb macht den direkten Weg zur Buchung sichtbar, schnell und vertrauenswürdig: eigene Zimmerseiten, angebundene Buchungsstrecke, klare Preise, echte Bewertungen und Inhalte, die Google und KI-Systeme sauber einordnen können.",
   heroPoints: [
