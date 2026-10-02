@@ -2,16 +2,14 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { AppLocale } from "@/i18n/routing";
-import { trackGtmEvent } from "@/features/analytics/gtm";
 import { getLeadAttributionForSubmission } from "@/features/analytics/attribution.client";
 import { trackLeadConversion } from "@/features/analytics/trackLeadConversion";
 import type { LeadConversionEvent } from "@/features/analytics/attribution";
 import { ASSISTANT_SESSION_IDLE_MS, assistantSessionNow } from "@/features/assistant/session";
 import { siteConfig } from "@/shared/config/site";
 import { BrandMonogram } from "@/shared/ui/BrandLogo";
+import { AiAssistantTrigger } from "./AiAssistantTrigger";
 
-const APPEAR_DELAY_MS = 8_000;
-const LOGO_NUDGE_DELAY_MS = 30_000;
 const DIGEST_IDLE_DELAY_MS = 60_000;
 const DIGEST_RETRY_DELAY_MS = 30_000;
 const MAX_CONTEXT_MESSAGES = 16;
@@ -90,10 +88,7 @@ export function AiAssistantWidget({
   labels: AiAssistantWidgetLabels;
   contactHref: string;
 }) {
-  const [mounted, setMounted] = useState(false);
-  const [open, setOpen] = useState(false);
-  const [hasOpened, setHasOpened] = useState(false);
-  const [logoNudge, setLogoNudge] = useState(false);
+  const [open, setOpen] = useState(true);
   const [pageScrolled, setPageScrolled] = useState(false);
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState<ChatMessage[]>([{ role: "assistant", content: labels.intro }]);
@@ -116,23 +111,6 @@ export function AiAssistantWidget({
   const showQuickPrompts = messages.length === 1 && !loading;
 
   useEffect(() => {
-    const timer = window.setTimeout(() => setMounted(true), APPEAR_DELAY_MS);
-    return () => window.clearTimeout(timer);
-  }, []);
-
-  useEffect(() => {
-    if (!mounted || hasOpened) return;
-
-    const timer = window.setTimeout(() => {
-      setLogoNudge(true);
-    }, LOGO_NUDGE_DELAY_MS);
-
-    return () => window.clearTimeout(timer);
-  }, [hasOpened, mounted]);
-
-  useEffect(() => {
-    if (!mounted) return;
-
     let frameId = 0;
     const updateScrollState = () => {
       window.cancelAnimationFrame(frameId);
@@ -146,7 +124,7 @@ export function AiAssistantWidget({
       window.removeEventListener("scroll", updateScrollState);
       window.cancelAnimationFrame(frameId);
     };
-  }, [mounted]);
+  }, []);
 
   useEffect(() => {
     try {
@@ -326,8 +304,6 @@ export function AiAssistantWidget({
     }
   }
 
-  if (!mounted) return null;
-
   return (
     <div
       className={`pointer-events-none fixed bottom-[calc(0.25rem+env(safe-area-inset-bottom))] left-1 right-1 flex max-w-none flex-col items-stretch sm:bottom-[calc(0.75rem+env(safe-area-inset-bottom))] sm:left-auto sm:right-5 sm:max-w-[calc(100vw-2rem)] sm:items-end md:bottom-[calc(1.25rem+env(safe-area-inset-bottom))] md:right-7 ${
@@ -466,41 +442,12 @@ export function AiAssistantWidget({
       </div>
 
       {!open ? (
-        <button
-          type="button"
-          onClick={() => {
-            setHasOpened(true);
-            setLogoNudge(false);
-            setOpen(true);
-            trackGtmEvent("ai_assistant_open", {
-              page_path: window.location.pathname,
-              widget_locale: locale,
-            });
-          }}
-          className={`assistant-glass-trigger pointer-events-auto group ml-auto flex self-end items-center gap-3 rounded-full p-1.5 pr-3 text-white transition duration-500 hover:-translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-purple motion-reduce:transition-none sm:pr-4 ${
-            pageScrolled ? "assistant-glass-trigger--scrolled" : ""
-          }`}
-          aria-label={labels.open}
-          aria-expanded={false}
-        >
-          <span
-            className={`assistant-glass-orb relative z-[2] grid h-12 w-12 shrink-0 place-items-center rounded-full transition duration-500 group-hover:scale-105 sm:h-13 sm:w-13 ${
-              logoNudge ? "assistant-logo-nudge" : ""
-            }`}
-          >
-            <span aria-hidden className="absolute inset-0 rounded-full bg-gradient-to-br from-white/20 via-transparent to-brand-purple/15" />
-            <AssistantLogoMark className="relative grid h-9 w-9 place-items-center overflow-hidden rounded-full sm:h-10 sm:w-10" />
-          </span>
-          <span className="relative z-[2] hidden min-w-0 pr-1 text-left sm:block">
-            <span className="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.17em] text-fuchsia-200">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.85)]" aria-hidden />
-              {labels.badge}
-            </span>
-            <span className="mt-0.5 block max-w-[210px] text-sm font-extrabold leading-snug text-white">
-              {labels.open}
-            </span>
-          </span>
-        </button>
+        <AiAssistantTrigger
+          locale={locale}
+          labels={labels}
+          pageScrolled={pageScrolled}
+          onOpen={() => setOpen(true)}
+        />
       ) : null}
     </div>
   );

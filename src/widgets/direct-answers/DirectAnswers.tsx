@@ -53,7 +53,7 @@ export async function DirectAnswers({
                 {item.href && item.linkLabel && (
                   <Link
                     href={item.href}
-                    className="mt-3 inline-flex items-center gap-1.5 break-words text-[14px] font-extrabold text-brand-purple underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-purple"
+                    className="mt-3 inline-flex items-center gap-1.5 break-words text-[14px] font-extrabold text-[#6D28D9] underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#6D28D9]"
                   >
                     {item.linkLabel}
                     <ArrowUpRight size={15} aria-hidden />
