@@ -50,14 +50,19 @@ views and confirmed persisted-lead events. Automatic form detection must not be
 mistaken for a successfully saved lead. Registered six event-scoped dimensions:
 `page_language`, `locale`, `form_name`, `lead_source`, `lead_medium`, `lead_channel`.
 All six definitions, category and both disabled settings passed API readback.
-Retention and existing key events remain as found. Add lead key events only after
-runtime verification. An audit submission emits both `form_submit` and
-`audit_request`; do not sum those as two leads.
+Retention and the pre-existing key events remain as found. After the owner
+verified a saved test lead in Tag Assistant and GA4 Realtime, `form_submit` was
+registered as a GA4 key event with `ONCE_PER_EVENT` counting and passed API
+readback. An audit submission emits both `form_submit` and `audit_request`;
+`audit_request` remains a regular event so one audit lead has one primary key
+event.
 
-Browser Preview/DebugView and end-to-end collection remain unverified: the
-supported browser connection still reports `No browser is available`. The owner
-can run GTM Preview in the signed-in browser and supply the event/consent results.
-The successful API configuration is not proof that events have reached GA4.
+The supported browser connection still reports `No browser is available`, so
+the owner uses signed-in Tag Assistant screenshots for the runtime verification.
+Page-view, consent, AI-assistant, scroll-depth, email-click and persisted-lead
+observations are recorded below. Separate GA4 DebugView UI and a normal browser
+session after GTM publication still need verification. Realtime confirms event
+receipt during Preview; GTM API separately confirms the published live version.
 
 ### Consent queue regression found in owner Preview
 
@@ -84,9 +89,52 @@ grant on acceptance and denial on revocation before publishing the container.
 Local verification passed: consent regression script, `npm run typecheck`,
 `npm run lint`, `npm run build` (252 static pages), and `git diff --check`.
 
+Post-deploy check at 2026-10-03 00:00 Europe/Berlin: production HTTP 200 loads
+`main-app-ed98bbe6ec8c4f36.js`, whose gtag wrapper now pushes `arguments`. The
+owner's Tag Assistant screenshot shows default denial for all four signals and
+an update granting only `analytics_storage`; advertising signals remain denied.
+GA4 Realtime API reports 6 page_view, 1 session_start and 1 user_engagement in its
+last-30-minute window. These observations confirm receipt during testing, not a
+published production container: the live GTM version at that time was `1`,
+Empty Container.
+The owner's next Tag Assistant screenshot shows default denial of all four
+signals after choosing `Nur notwendige Funktionen`, with the current state also
+denied on a subsequent `page_view` history event. Consent revocation now passes
+the observed Preview check. After analytics was granted again, Tag Assistant
+showed an `ai_assistant_open` data-layer event and exactly one firing of
+`GA4 - AI assistant open` on that event. GA4 Realtime API then returned
+`ai_assistant_open: 1` (alongside `page_view: 4` and `user_engagement: 4`) at
+2026-10-03 00:14 Europe/Berlin. This verifies GA4 receipt of that business
+event during Preview.
+The next owner screenshot showed two `scroll_depth` data-layer events after
+scrolling across two thresholds; the selected event fired `GA4 - Scroll depth`
+once. GA4 Realtime API returned `scroll_depth: 2` at 2026-10-03 00:19
+Europe/Berlin. The two events correspond to separate threshold crossings,
+not duplicate tag firings on one event.
+The owner next clicked a mail link; Tag Assistant showed `email_click` and
+exactly one `GA4 - Contact and outbound clicks` firing on that event. GA4
+Realtime API returned `email_click: 1` at 2026-10-03 00:24 Europe/Berlin.
+The owner then submitted a test contact form. Tag Assistant showed `form_submit`
+and exactly one `GA4 - Persisted leads` firing. The application emits this event
+only after the server action reports that a new lead was saved. GA4 Realtime API
+returned `form_submit: 1` at 2026-10-03 00:29 Europe/Berlin. No form values or
+personal data were used in API verification.
+
+### Publication on 2026-10-03
+
+Before publication, GTM workspace `2` contained exactly the six reviewed tags,
+five triggers and twelve data-layer variables, with no merge conflicts. A fresh
+`quick_preview` compiled successfully. Version `2`, `GA4 launch - consent, page
+views and business events`, was created and published through the GTM API. GET
+readback of `versions:live` confirmed version `2` with all six expected tags.
+The production site continued serving the deployed consent-fix bundle and HTTP
+200. The prior live version `1` was the empty container. Recheck collection in
+a normal browser session without GTM Preview; publication is verified by API,
+while normal-session event receipt is a separate check.
+
 ### GTM draft prepared on 2026-10-02
 
-Workspace `2` now has six tags: the two preserved existing tags plus
+Workspace `2` had six tags before version creation: the two preserved existing tags plus
 `GA4 - Persisted leads`, `GA4 - Contact and outbound clicks`,
 `GA4 - Scroll depth`, and `GA4 - AI assistant open`. Eight DLV v2 variables and
 four custom-event triggers were added. The ten existing application business
@@ -96,12 +144,10 @@ sent only by the lead tag; contact tags do not forward raw link URLs/text or for
 fields. Scroll depth and assistant locale have their own parameter groups.
 
 Google API quick_preview compiled successfully; API readback and local event/
-hostname mapping assertions passed. This is configuration validation, not browser
-Preview or proof of GA4 event receipt. No version was published; live remains the
-empty container. GA4 Editor access/settings are now complete; finish browser
-consent/navigation/event checks and DebugView before publishing per the checklist below. Existing
-Google/page-view draft tags remain as found; their production-only filtering and
-consent behavior must be included in that runtime check.
+hostname mapping assertions passed. Owner Tag Assistant screenshots and GA4
+Realtime subsequently verified representative events from each tag group.
+The reviewed workspace was published as version `2`; keep the original Google
+and page-view tag configuration intact in future versions.
 
 ## Controlled App Router page views
 
@@ -135,25 +181,22 @@ before React hydration; the official `GoogleTagManager` component loads after
 hydration. This preserves the required order without rendering a script tag
 from the locale React layout.
 
-## Required GTM container setup
+## Published GTM container setup
 
-1. Create a **Data Layer Variable** named `DLV - GA Measurement ID`:
-   - Data Layer Variable Name: `ga_measurement_id`
-   - Data Layer Version: 2
-2. Create a **Google tag**:
-   - Tag ID: `{{DLV - GA Measurement ID}}`
+1. Data Layer Variable `DLV - ga_measurement_id` reads `ga_measurement_id`
+   with Data Layer Version 2 for the four business-event tags.
+2. Google tag `Google tag - GA4`:
+   - Tag ID: `G-30BVTE3FPZ`
    - Trigger: **Initialization – All Pages**
    - Configuration parameter: `send_page_view` = `false`
    - Consent: keep the built-in consent checks enabled. Do not grant ad
      storage; the application defaults all Consent Mode v2 signals to denied.
-3. In the GA4 web stream, open **Enhanced measurement → Page views → Advanced
-   settings** and disable **Page changes based on browser history events**.
-   SaaleWeb sends controlled App Router `page_view` events itself, so leaving
-   this enabled would produce duplicates.
-4. Create a **Custom Event trigger** named `CE - page_view` with event name
-   `page_view`.
-5. Create a **Google Analytics: GA4 Event** tag:
-   - Measurement ID: `{{DLV - GA Measurement ID}}`
+3. The GA4 web stream has Enhanced measurement history-change page views and
+   automatic form interactions disabled. SaaleWeb sends controlled App Router
+   `page_view` events and tracks only successfully saved leads.
+4. Custom Event trigger `CE - page_view` matches `page_view`.
+5. Google Analytics: GA4 Event tag `GA4 - page_view`:
+   - Measurement ID: `G-30BVTE3FPZ`
    - Event Name: `page_view`
    - Trigger: `CE - page_view`
    - Event parameters must use these **Data Layer Variables, Version 2**:
@@ -162,9 +205,8 @@ from the locale React layout.
      - `DLV - page_title` → Data Layer Variable Name `page_title`
      - `DLV - page_language` → Data Layer Variable Name `page_language`
 
-Do not set `page_language` to a static `de` value and do not use an undefined
-placeholder such as `{{Page Title}}`. Use the four DLVs above in the GA4 Event
-tag so every locale and App Router navigation carries its real values.
+Keep `page_language` dynamic. The four DLVs above give each locale and App
+Router navigation its actual URL, title and language.
 
 ## Business events
 
@@ -181,19 +223,21 @@ The application already publishes these stable data layer event names:
 - `outbound_link`
 - `ai_assistant_open`
 
-Create one Custom Event trigger with this regular expression:
+The published version groups them into four Custom Event triggers and four
+GA4 Event tags, each with Event Name `{{Event}}` and Measurement ID override
+`{{DLV - ga_measurement_id}}`:
 
-```text
-^(form_submit|phone_click|email_click|telegram_click|whatsapp_click|booking_click|audit_request|scroll_depth|outbound_link|ai_assistant_open)$
-```
+| Tag | Events | Additional parameters |
+| --- | --- | --- |
+| `GA4 - Persisted leads` | `form_submit`, `audit_request` | `form_name`, `lead_source`, `lead_medium`, `lead_channel`, `locale` |
+| `GA4 - Contact and outbound clicks` | `phone_click`, `email_click`, `telegram_click`, `whatsapp_click`, `booking_click`, `outbound_link` | none |
+| `GA4 - Scroll depth` | `scroll_depth` | `percent_scrolled` |
+| `GA4 - AI assistant open` | `ai_assistant_open` | `widget_locale` |
 
-Then create a GA4 Event tag with Event Name `{{Event}}`. Add the useful custom
-parameters from Preview mode, for example `form_name`, `lead_source`,
-`lead_medium`, `lead_channel`, `lead_campaign`, `device_category`, `link_url`,
-`link_domain`, `link_text`, `percent_scrolled`, `page_path`, `locale` and
-`widget_locale`. Lead conversion dimensions contain no PII or advertising
-click IDs. Configure `form_submit` and `audit_request` as GA4 key events
-only after verifying them in DebugView.
+All four tags also send `page_path` and `page_language`. Contact tags do not
+send raw URLs, link text or contact data. Lead conversion dimensions contain
+no PII or advertising click IDs. `form_submit` is the primary lead key event;
+`audit_request` remains descriptive because an audit lead emits both names.
 
 For a future booking control, add `data-gtm-event="booking_click"` to the
 interactive element. The delegated tracker will publish the event without a
@@ -229,7 +273,13 @@ reviewing the consent UI and privacy policy again.
 5. Test a phone, email and WhatsApp link, submit a test form, open the AI
    assistant, and inspect the corresponding data layer events.
 6. Verify `page_view` and business events in GA4 DebugView and Realtime.
-7. Publish the GTM container only after Preview shows no duplicates.
+7. For changes to this container, publish only after Preview shows no duplicates.
+
+For this launch, Preview and GA4 Realtime verified `page_view`,
+`ai_assistant_open`, `scroll_depth`, `email_click` and `form_submit`. Consent
+denial, analytics-only grant and revocation were observed in Preview. The
+owner still needs to confirm collection outside Preview and inspect the same
+events in the GA4 DebugView UI when access is available.
 
 GTM/GA4 is an additional consent-aware layer. The existing SaaleWeb first-party
 cookieless analytics remains active and independent.
