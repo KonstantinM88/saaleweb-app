@@ -2,6 +2,7 @@ import {
   ANALYTICS_CONSENT_STORAGE_KEY,
   GA_MEASUREMENT_ID,
   ensureGtmDataLayer,
+  ensureGoogleTag,
   isAdminTrackingPath,
   isGtmConfigured,
 } from "./gtm";
@@ -27,12 +28,8 @@ export function initializeGoogleConsent(): void {
     site_name: "SaaleWeb",
     app_router: true,
   });
-  window.gtag =
-    window.gtag ||
-    ((...args: unknown[]) => {
-      ensureGtmDataLayer().push(args);
-    });
-  window.gtag("consent", "default", {
+  const gtag = ensureGoogleTag();
+  gtag("consent", "default", {
     analytics_storage: "denied",
     ad_storage: "denied",
     ad_user_data: "denied",
@@ -42,7 +39,7 @@ export function initializeGoogleConsent(): void {
 
   try {
     if (window.localStorage.getItem(ANALYTICS_CONSENT_STORAGE_KEY) === "granted") {
-      window.gtag("consent", "update", {
+      gtag("consent", "update", {
         analytics_storage: "granted",
         ad_storage: "denied",
         ad_user_data: "denied",

@@ -1,0 +1,6295 @@
+{
+  "generatedAt": "2026-10-02T20:38:55.414Z",
+  "site": "https://saaleweb.de/",
+  "scope": "Internal read-only audit. Final GSC web data; no PII or credentials.",
+  "periods": {
+    "current28": {
+      "start": "2026-09-02",
+      "end": "2026-09-29",
+      "total": {
+        "clicks": 9,
+        "impressions": 1536,
+        "ctr": 0.005859375,
+        "position": 16.615234375
+      },
+      "germany": {
+        "clicks": 6,
+        "impressions": 1352,
+        "ctr": 0.004437869822485207,
+        "position": 15.461538461538462
+      },
+      "visibleQueryImpressions": 1197,
+      "visibleQueryClicks": 0,
+      "visibleQueries": 143,
+      "visiblePages": 67,
+      "pageImpressions": 1632,
+      "positionBands": {
+        "21+": 288,
+        "11-20": 472,
+        "1-3": 23,
+        "4-10": 414
+      }
+    },
+    "previous28": {
+      "start": "2026-08-05",
+      "end": "2026-09-01",
+      "total": {
+        "clicks": 12,
+        "impressions": 1894,
+        "ctr": 0.006335797254487857,
+        "position": 20.458817317845828
+      },
+      "germany": {
+        "clicks": 8,
+        "impressions": 1608,
+        "ctr": 0.004975124378109453,
+        "position": 19.858830845771145
+      },
+      "visibleQueryImpressions": 1538,
+      "visibleQueryClicks": 5,
+      "visibleQueries": 146,
+      "visiblePages": 87,
+      "pageImpressions": 2048,
+      "positionBands": {
+        "21+": 498,
+        "11-20": 734,
+        "4-10": 276,
+        "1-3": 30
+      }
+    },
+    "current7": {
+      "start": "2026-09-23",
+      "end": "2026-09-29",
+      "total": {
+        "clicks": 2,
+        "impressions": 267,
+        "ctr": 0.00749063670411985,
+        "position": 12.426966292134832
+      },
+      "germany": {
+        "clicks": 2,
+        "impressions": 250,
+        "ctr": 0.008,
+        "position": 12.212
+      },
+      "visibleQueryImpressions": 208,
+      "visibleQueryClicks": 0,
+      "visibleQueries": 59,
+      "visiblePages": 28,
+      "pageImpressions": 288
+    },
+    "previous7": {
+      "start": "2026-09-16",
+      "end": "2026-09-22",
+      "total": {
+        "clicks": 3,
+        "impressions": 434,
+        "ctr": 0.0069124423963133645,
+        "position": 14.559907834101383
+      },
+      "germany": {
+        "clicks": 1,
+        "impressions": 387,
+        "ctr": 0.002583979328165375,
+        "position": 13.914728682170542
+      },
+      "visibleQueryImpressions": 356,
+      "visibleQueryClicks": 0,
+      "visibleQueries": 56,
+      "visiblePages": 37,
+      "pageImpressions": 455
+    }
+  },
+  "daily": [
+    {
+      "keys": [
+        "2026-07-01"
+      ],
+      "clicks": 0,
+      "impressions": 0,
+      "ctr": 0,
+      "position": 0
+    },
+    {
+      "keys": [
+        "2026-07-02"
+      ],
+      "clicks": 1,
+      "impressions": 7,
+      "ctr": 0.14285714285714285,
+      "position": 1
+    },
+    {
+      "keys": [
+        "2026-07-03"
+      ],
+      "clicks": 1,
+      "impressions": 4,
+      "ctr": 0.25,
+      "position": 27.75
+    },
+    {
+      "keys": [
+        "2026-07-04"
+      ],
+      "clicks": 8,
+      "impressions": 13,
+      "ctr": 0.6153846153846154,
+      "position": 1.0769230769230769
+    },
+    {
+      "keys": [
+        "2026-07-05"
+      ],
+      "clicks": 3,
+      "impressions": 13,
+      "ctr": 0.23076923076923078,
+      "position": 30
+    },
+    {
+      "keys": [
+        "2026-07-06"
+      ],
+      "clicks": 0,
+      "impressions": 8,
+      "ctr": 0,
+      "position": 22.75
+    },
+    {
+      "keys": [
+        "2026-07-07"
+      ],
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 78
+    },
+    {
+      "keys": [
+        "2026-07-08"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 2
+    },
+    {
+      "keys": [
+        "2026-07-09"
+      ],
+      "clicks": 2,
+      "impressions": 9,
+      "ctr": 0.2222222222222222,
+      "position": 10.555555555555555
+    },
+    {
+      "keys": [
+        "2026-07-10"
+      ],
+      "clicks": 3,
+      "impressions": 6,
+      "ctr": 0.5,
+      "position": 9.833333333333334
+    },
+    {
+      "keys": [
+        "2026-07-11"
+      ],
+      "clicks": 4,
+      "impressions": 44,
+      "ctr": 0.09090909090909091,
+      "position": 31.181818181818183
+    },
+    {
+      "keys": [
+        "2026-07-12"
+      ],
+      "clicks": 0,
+      "impressions": 135,
+      "ctr": 0,
+      "position": 38.94814814814815
+    },
+    {
+      "keys": [
+        "2026-07-13"
+      ],
+      "clicks": 3,
+      "impressions": 131,
+      "ctr": 0.022900763358778626,
+      "position": 38.87786259541985
+    },
+    {
+      "keys": [
+        "2026-07-14"
+      ],
+      "clicks": 2,
+      "impressions": 65,
+      "ctr": 0.03076923076923077,
+      "position": 33.353846153846156
+    },
+    {
+      "keys": [
+        "2026-07-15"
+      ],
+      "clicks": 0,
+      "impressions": 42,
+      "ctr": 0,
+      "position": 53.857142857142854
+    },
+    {
+      "keys": [
+        "2026-07-16"
+      ],
+      "clicks": 0,
+      "impressions": 38,
+      "ctr": 0,
+      "position": 57.55263157894737
+    },
+    {
+      "keys": [
+        "2026-07-17"
+      ],
+      "clicks": 1,
+      "impressions": 53,
+      "ctr": 0.018867924528301886,
+      "position": 38.37735849056604
+    },
+    {
+      "keys": [
+        "2026-07-18"
+      ],
+      "clicks": 0,
+      "impressions": 30,
+      "ctr": 0,
+      "position": 65.3
+    },
+    {
+      "keys": [
+        "2026-07-19"
+      ],
+      "clicks": 0,
+      "impressions": 75,
+      "ctr": 0,
+      "position": 44.653333333333336
+    },
+    {
+      "keys": [
+        "2026-07-20"
+      ],
+      "clicks": 0,
+      "impressions": 42,
+      "ctr": 0,
+      "position": 49.857142857142854
+    },
+    {
+      "keys": [
+        "2026-07-21"
+      ],
+      "clicks": 5,
+      "impressions": 54,
+      "ctr": 0.09259259259259259,
+      "position": 47.18518518518518
+    },
+    {
+      "keys": [
+        "2026-07-22"
+      ],
+      "clicks": 0,
+      "impressions": 53,
+      "ctr": 0,
+      "position": 41.43396226415094
+    },
+    {
+      "keys": [
+        "2026-07-23"
+      ],
+      "clicks": 2,
+      "impressions": 58,
+      "ctr": 0.034482758620689655,
+      "position": 40.706896551724135
+    },
+    {
+      "keys": [
+        "2026-07-24"
+      ],
+      "clicks": 0,
+      "impressions": 59,
+      "ctr": 0,
+      "position": 45.66101694915254
+    },
+    {
+      "keys": [
+        "2026-07-25"
+      ],
+      "clicks": 0,
+      "impressions": 60,
+      "ctr": 0,
+      "position": 45.6
+    },
+    {
+      "keys": [
+        "2026-07-26"
+      ],
+      "clicks": 2,
+      "impressions": 143,
+      "ctr": 0.013986013986013986,
+      "position": 28.90909090909091
+    },
+    {
+      "keys": [
+        "2026-07-27"
+      ],
+      "clicks": 0,
+      "impressions": 66,
+      "ctr": 0,
+      "position": 42.39393939393939
+    },
+    {
+      "keys": [
+        "2026-07-28"
+      ],
+      "clicks": 0,
+      "impressions": 78,
+      "ctr": 0,
+      "position": 48.705128205128204
+    },
+    {
+      "keys": [
+        "2026-07-29"
+      ],
+      "clicks": 0,
+      "impressions": 67,
+      "ctr": 0,
+      "position": 25.73134328358209
+    },
+    {
+      "keys": [
+        "2026-07-30"
+      ],
+      "clicks": 0,
+      "impressions": 32,
+      "ctr": 0,
+      "position": 32.0625
+    },
+    {
+      "keys": [
+        "2026-07-31"
+      ],
+      "clicks": 0,
+      "impressions": 29,
+      "ctr": 0,
+      "position": 14.655172413793103
+    },
+    {
+      "keys": [
+        "2026-08-01"
+      ],
+      "clicks": 0,
+      "impressions": 43,
+      "ctr": 0,
+      "position": 26.069767441860463
+    },
+    {
+      "keys": [
+        "2026-08-02"
+      ],
+      "clicks": 0,
+      "impressions": 158,
+      "ctr": 0,
+      "position": 22.803797468354432
+    },
+    {
+      "keys": [
+        "2026-08-03"
+      ],
+      "clicks": 1,
+      "impressions": 34,
+      "ctr": 0.029411764705882353,
+      "position": 19.38235294117647
+    },
+    {
+      "keys": [
+        "2026-08-04"
+      ],
+      "clicks": 1,
+      "impressions": 61,
+      "ctr": 0.01639344262295082,
+      "position": 21.885245901639344
+    },
+    {
+      "keys": [
+        "2026-08-05"
+      ],
+      "clicks": 0,
+      "impressions": 59,
+      "ctr": 0,
+      "position": 22.576271186440678
+    },
+    {
+      "keys": [
+        "2026-08-06"
+      ],
+      "clicks": 0,
+      "impressions": 58,
+      "ctr": 0,
+      "position": 14.810344827586206
+    },
+    {
+      "keys": [
+        "2026-08-07"
+      ],
+      "clicks": 1,
+      "impressions": 104,
+      "ctr": 0.009615384615384616,
+      "position": 19.057692307692307
+    },
+    {
+      "keys": [
+        "2026-08-08"
+      ],
+      "clicks": 2,
+      "impressions": 46,
+      "ctr": 0.043478260869565216,
+      "position": 21.02173913043478
+    },
+    {
+      "keys": [
+        "2026-08-09"
+      ],
+      "clicks": 0,
+      "impressions": 151,
+      "ctr": 0,
+      "position": 25.75496688741722
+    },
+    {
+      "keys": [
+        "2026-08-10"
+      ],
+      "clicks": 0,
+      "impressions": 60,
+      "ctr": 0,
+      "position": 18.766666666666666
+    },
+    {
+      "keys": [
+        "2026-08-11"
+      ],
+      "clicks": 0,
+      "impressions": 36,
+      "ctr": 0,
+      "position": 21.63888888888889
+    },
+    {
+      "keys": [
+        "2026-08-12"
+      ],
+      "clicks": 1,
+      "impressions": 70,
+      "ctr": 0.014285714285714285,
+      "position": 17.771428571428572
+    },
+    {
+      "keys": [
+        "2026-08-13"
+      ],
+      "clicks": 0,
+      "impressions": 71,
+      "ctr": 0,
+      "position": 19.816901408450704
+    },
+    {
+      "keys": [
+        "2026-08-14"
+      ],
+      "clicks": 0,
+      "impressions": 67,
+      "ctr": 0,
+      "position": 17.17910447761194
+    },
+    {
+      "keys": [
+        "2026-08-15"
+      ],
+      "clicks": 0,
+      "impressions": 50,
+      "ctr": 0,
+      "position": 16
+    },
+    {
+      "keys": [
+        "2026-08-16"
+      ],
+      "clicks": 0,
+      "impressions": 156,
+      "ctr": 0,
+      "position": 26.378205128205128
+    },
+    {
+      "keys": [
+        "2026-08-17"
+      ],
+      "clicks": 1,
+      "impressions": 48,
+      "ctr": 0.020833333333333332,
+      "position": 14.729166666666666
+    },
+    {
+      "keys": [
+        "2026-08-18"
+      ],
+      "clicks": 0,
+      "impressions": 57,
+      "ctr": 0,
+      "position": 18.68421052631579
+    },
+    {
+      "keys": [
+        "2026-08-19"
+      ],
+      "clicks": 0,
+      "impressions": 58,
+      "ctr": 0,
+      "position": 20.310344827586206
+    },
+    {
+      "keys": [
+        "2026-08-20"
+      ],
+      "clicks": 1,
+      "impressions": 48,
+      "ctr": 0.020833333333333332,
+      "position": 20.125
+    },
+    {
+      "keys": [
+        "2026-08-21"
+      ],
+      "clicks": 0,
+      "impressions": 36,
+      "ctr": 0,
+      "position": 15.833333333333334
+    },
+    {
+      "keys": [
+        "2026-08-22"
+      ],
+      "clicks": 0,
+      "impressions": 40,
+      "ctr": 0,
+      "position": 21.45
+    },
+    {
+      "keys": [
+        "2026-08-23"
+      ],
+      "clicks": 1,
+      "impressions": 129,
+      "ctr": 0.007751937984496124,
+      "position": 17.906976744186046
+    },
+    {
+      "keys": [
+        "2026-08-24"
+      ],
+      "clicks": 2,
+      "impressions": 56,
+      "ctr": 0.03571428571428571,
+      "position": 25.178571428571427
+    },
+    {
+      "keys": [
+        "2026-08-25"
+      ],
+      "clicks": 1,
+      "impressions": 57,
+      "ctr": 0.017543859649122806,
+      "position": 14.157894736842104
+    },
+    {
+      "keys": [
+        "2026-08-26"
+      ],
+      "clicks": 0,
+      "impressions": 61,
+      "ctr": 0,
+      "position": 17.868852459016395
+    },
+    {
+      "keys": [
+        "2026-08-27"
+      ],
+      "clicks": 0,
+      "impressions": 51,
+      "ctr": 0,
+      "position": 16.019607843137255
+    },
+    {
+      "keys": [
+        "2026-08-28"
+      ],
+      "clicks": 0,
+      "impressions": 53,
+      "ctr": 0,
+      "position": 17.528301886792452
+    },
+    {
+      "keys": [
+        "2026-08-29"
+      ],
+      "clicks": 0,
+      "impressions": 38,
+      "ctr": 0,
+      "position": 26.842105263157894
+    },
+    {
+      "keys": [
+        "2026-08-30"
+      ],
+      "clicks": 1,
+      "impressions": 136,
+      "ctr": 0.007352941176470588,
+      "position": 23.264705882352942
+    },
+    {
+      "keys": [
+        "2026-08-31"
+      ],
+      "clicks": 0,
+      "impressions": 51,
+      "ctr": 0,
+      "position": 24.058823529411764
+    },
+    {
+      "keys": [
+        "2026-09-01"
+      ],
+      "clicks": 1,
+      "impressions": 47,
+      "ctr": 0.02127659574468085,
+      "position": 20.851063829787233
+    },
+    {
+      "keys": [
+        "2026-09-02"
+      ],
+      "clicks": 0,
+      "impressions": 52,
+      "ctr": 0,
+      "position": 17.5
+    },
+    {
+      "keys": [
+        "2026-09-03"
+      ],
+      "clicks": 1,
+      "impressions": 69,
+      "ctr": 0.014492753623188406,
+      "position": 18.26086956521739
+    },
+    {
+      "keys": [
+        "2026-09-04"
+      ],
+      "clicks": 1,
+      "impressions": 55,
+      "ctr": 0.01818181818181818,
+      "position": 15.945454545454545
+    },
+    {
+      "keys": [
+        "2026-09-05"
+      ],
+      "clicks": 1,
+      "impressions": 47,
+      "ctr": 0.02127659574468085,
+      "position": 20.4468085106383
+    },
+    {
+      "keys": [
+        "2026-09-06"
+      ],
+      "clicks": 0,
+      "impressions": 145,
+      "ctr": 0,
+      "position": 17.220689655172414
+    },
+    {
+      "keys": [
+        "2026-09-07"
+      ],
+      "clicks": 0,
+      "impressions": 64,
+      "ctr": 0,
+      "position": 22.890625
+    },
+    {
+      "keys": [
+        "2026-09-08"
+      ],
+      "clicks": 0,
+      "impressions": 56,
+      "ctr": 0,
+      "position": 17.232142857142858
+    },
+    {
+      "keys": [
+        "2026-09-09"
+      ],
+      "clicks": 0,
+      "impressions": 59,
+      "ctr": 0,
+      "position": 23
+    },
+    {
+      "keys": [
+        "2026-09-10"
+      ],
+      "clicks": 0,
+      "impressions": 48,
+      "ctr": 0,
+      "position": 12.458333333333334
+    },
+    {
+      "keys": [
+        "2026-09-11"
+      ],
+      "clicks": 1,
+      "impressions": 38,
+      "ctr": 0.02631578947368421,
+      "position": 15.236842105263158
+    },
+    {
+      "keys": [
+        "2026-09-12"
+      ],
+      "clicks": 0,
+      "impressions": 27,
+      "ctr": 0,
+      "position": 15.62962962962963
+    },
+    {
+      "keys": [
+        "2026-09-13"
+      ],
+      "clicks": 0,
+      "impressions": 58,
+      "ctr": 0,
+      "position": 32.05172413793103
+    },
+    {
+      "keys": [
+        "2026-09-14"
+      ],
+      "clicks": 0,
+      "impressions": 53,
+      "ctr": 0,
+      "position": 21.71698113207547
+    },
+    {
+      "keys": [
+        "2026-09-15"
+      ],
+      "clicks": 0,
+      "impressions": 64,
+      "ctr": 0,
+      "position": 15.359375
+    },
+    {
+      "keys": [
+        "2026-09-16"
+      ],
+      "clicks": 0,
+      "impressions": 64,
+      "ctr": 0,
+      "position": 13.6875
+    },
+    {
+      "keys": [
+        "2026-09-17"
+      ],
+      "clicks": 1,
+      "impressions": 58,
+      "ctr": 0.017241379310344827,
+      "position": 14.258620689655173
+    },
+    {
+      "keys": [
+        "2026-09-18"
+      ],
+      "clicks": 0,
+      "impressions": 58,
+      "ctr": 0,
+      "position": 16.862068965517242
+    },
+    {
+      "keys": [
+        "2026-09-19"
+      ],
+      "clicks": 1,
+      "impressions": 36,
+      "ctr": 0.027777777777777776,
+      "position": 12.61111111111111
+    },
+    {
+      "keys": [
+        "2026-09-20"
+      ],
+      "clicks": 0,
+      "impressions": 74,
+      "ctr": 0,
+      "position": 15.283783783783784
+    },
+    {
+      "keys": [
+        "2026-09-21"
+      ],
+      "clicks": 1,
+      "impressions": 81,
+      "ctr": 0.012345679012345678,
+      "position": 11.148148148148149
+    },
+    {
+      "keys": [
+        "2026-09-22"
+      ],
+      "clicks": 0,
+      "impressions": 63,
+      "ctr": 0,
+      "position": 18.253968253968253
+    },
+    {
+      "keys": [
+        "2026-09-23"
+      ],
+      "clicks": 0,
+      "impressions": 63,
+      "ctr": 0,
+      "position": 14.206349206349206
+    },
+    {
+      "keys": [
+        "2026-09-24"
+      ],
+      "clicks": 1,
+      "impressions": 50,
+      "ctr": 0.02,
+      "position": 7.16
+    },
+    {
+      "keys": [
+        "2026-09-25"
+      ],
+      "clicks": 0,
+      "impressions": 49,
+      "ctr": 0,
+      "position": 8.63265306122449
+    },
+    {
+      "keys": [
+        "2026-09-26"
+      ],
+      "clicks": 0,
+      "impressions": 24,
+      "ctr": 0,
+      "position": 7.666666666666667
+    },
+    {
+      "keys": [
+        "2026-09-27"
+      ],
+      "clicks": 1,
+      "impressions": 35,
+      "ctr": 0.02857142857142857,
+      "position": 24.6
+    },
+    {
+      "keys": [
+        "2026-09-28"
+      ],
+      "clicks": 0,
+      "impressions": 22,
+      "ctr": 0,
+      "position": 12.045454545454545
+    },
+    {
+      "keys": [
+        "2026-09-29"
+      ],
+      "clicks": 0,
+      "impressions": 24,
+      "ctr": 0,
+      "position": 13.833333333333334
+    }
+  ],
+  "weekly": [
+    {
+      "start": "2026-09-23",
+      "end": "2026-09-29",
+      "clicks": 2,
+      "impressions": 267,
+      "position": 12.43
+    },
+    {
+      "start": "2026-09-16",
+      "end": "2026-09-22",
+      "clicks": 3,
+      "impressions": 434,
+      "position": 14.56
+    },
+    {
+      "start": "2026-09-09",
+      "end": "2026-09-15",
+      "clicks": 1,
+      "impressions": 347,
+      "position": 20.03
+    },
+    {
+      "start": "2026-09-02",
+      "end": "2026-09-08",
+      "clicks": 3,
+      "impressions": 488,
+      "position": 18.31
+    },
+    {
+      "start": "2026-08-26",
+      "end": "2026-09-01",
+      "clicks": 2,
+      "impressions": 437,
+      "position": 21.11
+    },
+    {
+      "start": "2026-08-19",
+      "end": "2026-08-25",
+      "clicks": 5,
+      "impressions": 424,
+      "position": 19.1
+    },
+    {
+      "start": "2026-08-12",
+      "end": "2026-08-18",
+      "clicks": 2,
+      "impressions": 519,
+      "position": 20.21
+    },
+    {
+      "start": "2026-08-05",
+      "end": "2026-08-11",
+      "clicks": 3,
+      "impressions": 514,
+      "position": 21.27
+    },
+    {
+      "start": "2026-07-29",
+      "end": "2026-08-04",
+      "clicks": 2,
+      "impressions": 424,
+      "position": 23.33
+    },
+    {
+      "start": "2026-07-22",
+      "end": "2026-07-28",
+      "clicks": 4,
+      "impressions": 517,
+      "position": 40.07
+    },
+    {
+      "start": "2026-07-15",
+      "end": "2026-07-21",
+      "clicks": 6,
+      "impressions": 334,
+      "position": 49.2
+    },
+    {
+      "start": "2026-07-08",
+      "end": "2026-07-14",
+      "clicks": 14,
+      "impressions": 391,
+      "position": 35.93
+    }
+  ],
+  "cohort": {
+    "commonQueries": 97,
+    "currentImpressions": 1128,
+    "previousImpressions": 1405,
+    "previousWeightedPosition": 18.618505338078293,
+    "currentWeightedPosition": 16.506205673758867,
+    "currentPositionWithPreviousWeights": 17.07612827539721,
+    "newQueries": 46,
+    "lostQueries": 49,
+    "lostQueryImpressions": 133
+  },
+  "priorityQueries": [
+    {
+      "query": "webdesign halle",
+      "current": {
+        "keys": [
+          "webdesign halle"
+        ],
+        "clicks": 0,
+        "impressions": 97,
+        "ctr": 0,
+        "position": 17.536082474226806
+      },
+      "previous": {
+        "keys": [
+          "webdesign halle"
+        ],
+        "clicks": 0,
+        "impressions": 110,
+        "ctr": 0,
+        "position": 17.418181818181818
+      },
+      "germany": {
+        "keys": [
+          "webdesign halle"
+        ],
+        "clicks": 0,
+        "impressions": 74,
+        "ctr": 0,
+        "position": 17.2972972972973
+      },
+      "pages": [
+        {
+          "keys": [
+            "webdesign halle",
+            "https://saaleweb.de/"
+          ],
+          "clicks": 0,
+          "impressions": 97,
+          "ctr": 0,
+          "position": 17.536082474226806
+        }
+      ]
+    },
+    {
+      "query": "wordpress agentur halle",
+      "current": {
+        "keys": [
+          "wordpress agentur halle"
+        ],
+        "clicks": 0,
+        "impressions": 74,
+        "ctr": 0,
+        "position": 20.66216216216216
+      },
+      "previous": {
+        "keys": [
+          "wordpress agentur halle"
+        ],
+        "clicks": 0,
+        "impressions": 109,
+        "ctr": 0,
+        "position": 22.38532110091743
+      },
+      "germany": {
+        "keys": [
+          "wordpress agentur halle"
+        ],
+        "clicks": 0,
+        "impressions": 71,
+        "ctr": 0,
+        "position": 20.507042253521128
+      },
+      "pages": [
+        {
+          "keys": [
+            "wordpress agentur halle",
+            "https://saaleweb.de/"
+          ],
+          "clicks": 0,
+          "impressions": 74,
+          "ctr": 0,
+          "position": 20.66216216216216
+        }
+      ]
+    },
+    {
+      "query": "webdesigner halle saale",
+      "current": {
+        "keys": [
+          "webdesigner halle saale"
+        ],
+        "clicks": 0,
+        "impressions": 40,
+        "ctr": 0,
+        "position": 17.175
+      },
+      "previous": {
+        "keys": [
+          "webdesigner halle saale"
+        ],
+        "clicks": 0,
+        "impressions": 65,
+        "ctr": 0,
+        "position": 17.907692307692308
+      },
+      "germany": {
+        "keys": [
+          "webdesigner halle saale"
+        ],
+        "clicks": 0,
+        "impressions": 35,
+        "ctr": 0,
+        "position": 17.4
+      },
+      "pages": [
+        {
+          "keys": [
+            "webdesigner halle saale",
+            "https://saaleweb.de/"
+          ],
+          "clicks": 0,
+          "impressions": 40,
+          "ctr": 0,
+          "position": 17.175
+        }
+      ]
+    },
+    {
+      "query": "seo halle",
+      "current": {
+        "keys": [
+          "seo halle"
+        ],
+        "clicks": 0,
+        "impressions": 39,
+        "ctr": 0,
+        "position": 6.17948717948718
+      },
+      "previous": {
+        "keys": [
+          "seo halle"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 5
+      },
+      "germany": {
+        "keys": [
+          "seo halle"
+        ],
+        "clicks": 0,
+        "impressions": 38,
+        "ctr": 0,
+        "position": 6.2368421052631575
+      },
+      "pages": [
+        {
+          "keys": [
+            "seo halle",
+            "https://saaleweb.de/"
+          ],
+          "clicks": 0,
+          "impressions": 39,
+          "ctr": 0,
+          "position": 6.17948717948718
+        }
+      ]
+    },
+    {
+      "query": "webdesign halle saale",
+      "current": {
+        "keys": [
+          "webdesign halle saale"
+        ],
+        "clicks": 0,
+        "impressions": 35,
+        "ctr": 0,
+        "position": 17.485714285714284
+      },
+      "previous": {
+        "keys": [
+          "webdesign halle saale"
+        ],
+        "clicks": 1,
+        "impressions": 51,
+        "ctr": 0.0196078431372549,
+        "position": 18.254901960784313
+      },
+      "germany": {
+        "keys": [
+          "webdesign halle saale"
+        ],
+        "clicks": 0,
+        "impressions": 33,
+        "ctr": 0,
+        "position": 17.636363636363637
+      },
+      "pages": [
+        {
+          "keys": [
+            "webdesign halle saale",
+            "https://saaleweb.de/"
+          ],
+          "clicks": 0,
+          "impressions": 35,
+          "ctr": 0,
+          "position": 17.485714285714284
+        }
+      ]
+    },
+    {
+      "query": "seo halle saale",
+      "current": {
+        "keys": [
+          "seo halle saale"
+        ],
+        "clicks": 0,
+        "impressions": 33,
+        "ctr": 0,
+        "position": 14.454545454545455
+      },
+      "previous": {
+        "keys": [
+          "seo halle saale"
+        ],
+        "clicks": 1,
+        "impressions": 52,
+        "ctr": 0.019230769230769232,
+        "position": 16.01923076923077
+      },
+      "germany": {
+        "keys": [
+          "seo halle saale"
+        ],
+        "clicks": 0,
+        "impressions": 31,
+        "ctr": 0,
+        "position": 14.806451612903226
+      },
+      "pages": [
+        {
+          "keys": [
+            "seo halle saale",
+            "https://saaleweb.de/"
+          ],
+          "clicks": 0,
+          "impressions": 33,
+          "ctr": 0,
+          "position": 14.454545454545455
+        }
+      ]
+    },
+    {
+      "query": "website erstellen lassen kleines unternehmen halle",
+      "current": {
+        "keys": [
+          "website erstellen lassen kleines unternehmen halle"
+        ],
+        "clicks": 0,
+        "impressions": 31,
+        "ctr": 0,
+        "position": 11.258064516129032
+      },
+      "previous": {
+        "keys": [
+          "website erstellen lassen kleines unternehmen halle"
+        ],
+        "clicks": 0,
+        "impressions": 52,
+        "ctr": 0,
+        "position": 11.634615384615385
+      },
+      "germany": {
+        "keys": [
+          "website erstellen lassen kleines unternehmen halle"
+        ],
+        "clicks": 0,
+        "impressions": 27,
+        "ctr": 0,
+        "position": 11.222222222222221
+      },
+      "pages": [
+        {
+          "keys": [
+            "website erstellen lassen kleines unternehmen halle",
+            "https://saaleweb.de/"
+          ],
+          "clicks": 0,
+          "impressions": 31,
+          "ctr": 0,
+          "position": 11.258064516129032
+        }
+      ]
+    },
+    {
+      "query": "suchmaschinenoptimierung halle",
+      "current": {
+        "keys": [
+          "suchmaschinenoptimierung halle"
+        ],
+        "clicks": 0,
+        "impressions": 29,
+        "ctr": 0,
+        "position": 21.689655172413794
+      },
+      "previous": {
+        "keys": [
+          "suchmaschinenoptimierung halle"
+        ],
+        "clicks": 0,
+        "impressions": 52,
+        "ctr": 0,
+        "position": 20.23076923076923
+      },
+      "germany": {
+        "keys": [
+          "suchmaschinenoptimierung halle"
+        ],
+        "clicks": 0,
+        "impressions": 29,
+        "ctr": 0,
+        "position": 21.689655172413794
+      },
+      "pages": [
+        {
+          "keys": [
+            "suchmaschinenoptimierung halle",
+            "https://saaleweb.de/"
+          ],
+          "clicks": 0,
+          "impressions": 29,
+          "ctr": 0,
+          "position": 21.689655172413794
+        }
+      ]
+    },
+    {
+      "query": "webagentur halle",
+      "current": {
+        "keys": [
+          "webagentur halle"
+        ],
+        "clicks": 0,
+        "impressions": 29,
+        "ctr": 0,
+        "position": 16.517241379310345
+      },
+      "previous": {
+        "keys": [
+          "webagentur halle"
+        ],
+        "clicks": 0,
+        "impressions": 36,
+        "ctr": 0,
+        "position": 16.52777777777778
+      },
+      "germany": {
+        "keys": [
+          "webagentur halle"
+        ],
+        "clicks": 0,
+        "impressions": 28,
+        "ctr": 0,
+        "position": 16.607142857142858
+      },
+      "pages": [
+        {
+          "keys": [
+            "webagentur halle",
+            "https://saaleweb.de/"
+          ],
+          "clicks": 0,
+          "impressions": 29,
+          "ctr": 0,
+          "position": 16.517241379310345
+        }
+      ]
+    },
+    {
+      "query": "webdesign agentur saalekreis",
+      "current": {
+        "keys": [
+          "webdesign agentur saalekreis"
+        ],
+        "clicks": 0,
+        "impressions": 26,
+        "ctr": 0,
+        "position": 14.615384615384615
+      },
+      "previous": {
+        "keys": [
+          "webdesign agentur saalekreis"
+        ],
+        "clicks": 0,
+        "impressions": 15,
+        "ctr": 0,
+        "position": 17.066666666666666
+      },
+      "germany": {
+        "keys": [
+          "webdesign agentur saalekreis"
+        ],
+        "clicks": 0,
+        "impressions": 26,
+        "ctr": 0,
+        "position": 14.615384615384615
+      },
+      "pages": [
+        {
+          "keys": [
+            "webdesign agentur saalekreis",
+            "https://saaleweb.de/"
+          ],
+          "clicks": 0,
+          "impressions": 26,
+          "ctr": 0,
+          "position": 14.615384615384615
+        }
+      ]
+    },
+    {
+      "query": "webdesign merseburg",
+      "current": {
+        "keys": [
+          "webdesign merseburg"
+        ],
+        "clicks": 0,
+        "impressions": 21,
+        "ctr": 0,
+        "position": 16.42857142857143
+      },
+      "previous": {
+        "keys": [
+          "webdesign merseburg"
+        ],
+        "clicks": 0,
+        "impressions": 34,
+        "ctr": 0,
+        "position": 15.294117647058824
+      },
+      "germany": {
+        "keys": [
+          "webdesign merseburg"
+        ],
+        "clicks": 0,
+        "impressions": 21,
+        "ctr": 0,
+        "position": 16.42857142857143
+      },
+      "pages": [
+        {
+          "keys": [
+            "webdesign merseburg",
+            "https://saaleweb.de/"
+          ],
+          "clicks": 0,
+          "impressions": 21,
+          "ctr": 0,
+          "position": 16.42857142857143
+        }
+      ]
+    },
+    {
+      "query": "webdesigner halle",
+      "current": {
+        "keys": [
+          "webdesigner halle"
+        ],
+        "clicks": 0,
+        "impressions": 21,
+        "ctr": 0,
+        "position": 22.19047619047619
+      },
+      "previous": {
+        "keys": [
+          "webdesigner halle"
+        ],
+        "clicks": 0,
+        "impressions": 21,
+        "ctr": 0,
+        "position": 20.38095238095238
+      },
+      "germany": {
+        "keys": [
+          "webdesigner halle"
+        ],
+        "clicks": 0,
+        "impressions": 21,
+        "ctr": 0,
+        "position": 22.19047619047619
+      },
+      "pages": [
+        {
+          "keys": [
+            "webdesigner halle",
+            "https://saaleweb.de/"
+          ],
+          "clicks": 0,
+          "impressions": 21,
+          "ctr": 0,
+          "position": 22.19047619047619
+        }
+      ]
+    },
+    {
+      "query": "digitalagentur halle",
+      "current": {
+        "keys": [
+          "digitalagentur halle"
+        ],
+        "clicks": 0,
+        "impressions": 12,
+        "ctr": 0,
+        "position": 13.583333333333334
+      },
+      "previous": {
+        "keys": [
+          "digitalagentur halle"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 65
+      },
+      "germany": {
+        "keys": [
+          "digitalagentur halle"
+        ],
+        "clicks": 0,
+        "impressions": 12,
+        "ctr": 0,
+        "position": 13.583333333333334
+      },
+      "pages": [
+        {
+          "keys": [
+            "digitalagentur halle",
+            "https://saaleweb.de/"
+          ],
+          "clicks": 0,
+          "impressions": 7,
+          "ctr": 0,
+          "position": 23
+        },
+        {
+          "keys": [
+            "digitalagentur halle",
+            "https://saaleweb.de/kontakt"
+          ],
+          "clicks": 0,
+          "impressions": 6,
+          "ctr": 0,
+          "position": 16.166666666666664
+        }
+      ]
+    }
+  ],
+  "devices": {
+    "current": [
+      {
+        "keys": [
+          "DESKTOP"
+        ],
+        "clicks": 5,
+        "impressions": 1021,
+        "ctr": 0.004897159647404506,
+        "position": 16.77081292850147
+      },
+      {
+        "keys": [
+          "MOBILE"
+        ],
+        "clicks": 4,
+        "impressions": 513,
+        "ctr": 0.007797270955165692,
+        "position": 16.346978557504872
+      },
+      {
+        "keys": [
+          "TABLET"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 6
+      }
+    ],
+    "previous": [
+      {
+        "keys": [
+          "DESKTOP"
+        ],
+        "clicks": 6,
+        "impressions": 1179,
+        "ctr": 0.005089058524173028,
+        "position": 22.324851569126377
+      },
+      {
+        "keys": [
+          "MOBILE"
+        ],
+        "clicks": 6,
+        "impressions": 715,
+        "ctr": 0.008391608391608392,
+        "position": 17.381818181818183
+      }
+    ]
+  },
+  "pages": {
+    "current": [
+      {
+        "keys": [
+          "https://saaleweb.de/"
+        ],
+        "clicks": 5,
+        "impressions": 1179,
+        "ctr": 0.004240882103477523,
+        "position": 12.480067854113656
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/blog/was-kostet-eine-website-in-halle"
+        ],
+        "clicks": 1,
+        "impressions": 2,
+        "ctr": 0.5,
+        "position": 2
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/branchen/arztpraxen"
+        ],
+        "clicks": 1,
+        "impressions": 19,
+        "ctr": 0.05263157894736842,
+        "position": 52.421052631578945
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/branchen/glaserei-website"
+        ],
+        "clicks": 1,
+        "impressions": 1,
+        "ctr": 1,
+        "position": 4
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/kostenlose-website-analyse"
+        ],
+        "clicks": 1,
+        "impressions": 5,
+        "ctr": 0.2,
+        "position": 38.4
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/blog/google-unternehmensprofil-optimieren"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 16.5
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/blog/restaurant-website-mehr-reservierungen"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 10
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/blog/sichtbarkeit-in-ki-suche"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 9
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/branchen"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 6.5
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/branchen/bauunternehmen-website"
+        ],
+        "clicks": 0,
+        "impressions": 23,
+        "ctr": 0,
+        "position": 17.043478260869566
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/branchen/beauty-studio-website"
+        ],
+        "clicks": 0,
+        "impressions": 8,
+        "ctr": 0,
+        "position": 9.5
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/branchen/dienstleister-website"
+        ],
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 47.5
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/branchen/handwerker-website"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 98
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/branchen/hotel-website"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 5.5
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/branchen/kanzleien"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 59
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/branchen/restaurant-website"
+        ],
+        "clicks": 0,
+        "impressions": 19,
+        "ctr": 0,
+        "position": 20.473684210526315
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/datenschutz"
+        ],
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 6.25
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/en"
+        ],
+        "clicks": 0,
+        "impressions": 26,
+        "ctr": 0,
+        "position": 13.807692307692308
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/en/blog/optimize-google-business-profile"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 6
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/en/imprint"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 2
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/en/industries/beauty-studio-website"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 5
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/en/industries/construction"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 10
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/en/industries/construction-company-website"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 8
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/en/industries/restaurant-website"
+        ],
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 5.5
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/en/privacy-policy"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 2
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/en/projects/glaserei-schubert"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 4
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/en/projects/neue-liebe-nebra"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 1
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/en/services/ai-assistant"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 3
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/en/services/seo-halle"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 3
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/en/services/web-development"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 10
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/en/services/wordpress-agency-halle"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 1.5
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/impressum"
+        ],
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 3.6666666666666665
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/kontakt"
+        ],
+        "clicks": 0,
+        "impressions": 32,
+        "ctr": 0,
+        "position": 18.28125
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/leistungen"
+        ],
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 7.75
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/leistungen/automatisierung"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 27.5
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/leistungen/buchungssysteme"
+        ],
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0,
+        "position": 20.833333333333332
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/leistungen/ki-optimierung"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 81
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/leistungen/seo-halle"
+        ],
+        "clicks": 0,
+        "impressions": 8,
+        "ctr": 0,
+        "position": 28.75
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/leistungen/seo-leipzig"
+        ],
+        "clicks": 0,
+        "impressions": 8,
+        "ctr": 0,
+        "position": 73
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/leistungen/webdesign-delitzsch"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 7.5
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/leistungen/webdesign-halle"
+        ],
+        "clicks": 0,
+        "impressions": 16,
+        "ctr": 0,
+        "position": 44.4375
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/leistungen/webdesign-leipzig"
+        ],
+        "clicks": 0,
+        "impressions": 17,
+        "ctr": 0,
+        "position": 76.29411764705883
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/leistungen/webdesign-schkeuditz"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 19
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/leistungen/website-erstellen-lassen"
+        ],
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 5
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/leistungen/website-sicherheit"
+        ],
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 24
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/leistungen/wordpress-agentur-halle"
+        ],
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 44
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/preise"
+        ],
+        "clicks": 0,
+        "impressions": 8,
+        "ctr": 0,
+        "position": 35.75
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/projekte"
+        ],
+        "clicks": 0,
+        "impressions": 8,
+        "ctr": 0,
+        "position": 44.625
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/projekte/direktbuchungen-ohne-portale"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 5
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/projekte/glaserei-schubert"
+        ],
+        "clicks": 0,
+        "impressions": 16,
+        "ctr": 0,
+        "position": 7.4375
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/projekte/neue-liebe-nebra"
+        ],
+        "clicks": 0,
+        "impressions": 7,
+        "ctr": 0,
+        "position": 8.428571428571429
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/projekte/online-buchungen-verdreifacht"
+        ],
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 7.666666666666667
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/projekte/qualifizierte-bauanfragen"
+        ],
+        "clicks": 0,
+        "impressions": 7,
+        "ctr": 0,
+        "position": 7
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/ru"
+        ],
+        "clicks": 0,
+        "impressions": 7,
+        "ctr": 0,
+        "position": 6
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/ru/blog/lokalnoe-seo-halle"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 8
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/ru/blog/nextjs-vs-wordpress"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 10
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/ru/blog/skolko-stoit-sajt-v-halle"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 4
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/ru/otrasli"
+        ],
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 8
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/ru/uslugi/relonch-sajta"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 8
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/ru/uslugi/wordpress-agentstvo-halle"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 4.5
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/standorte"
+        ],
+        "clicks": 0,
+        "impressions": 25,
+        "ctr": 0,
+        "position": 41.12
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/standorte/delitzsch"
+        ],
+        "clicks": 0,
+        "impressions": 28,
+        "ctr": 0,
+        "position": 11.928571428571429
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/standorte/halle"
+        ],
+        "clicks": 0,
+        "impressions": 36,
+        "ctr": 0,
+        "position": 37.916666666666664
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/standorte/leipzig"
+        ],
+        "clicks": 0,
+        "impressions": 7,
+        "ctr": 0,
+        "position": 69
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/standorte/merseburg"
+        ],
+        "clicks": 0,
+        "impressions": 10,
+        "ctr": 0,
+        "position": 47.4
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/standorte/saalekreis"
+        ],
+        "clicks": 0,
+        "impressions": 26,
+        "ctr": 0,
+        "position": 20.5
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/standorte/schkeuditz"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 2
+      }
+    ],
+    "previous": [
+      {
+        "keys": [
+          "https://saaleweb.de/"
+        ],
+        "clicks": 8,
+        "impressions": 1474,
+        "ctr": 0.005427408412483039,
+        "position": 14.613297150610583
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/en"
+        ],
+        "clicks": 2,
+        "impressions": 24,
+        "ctr": 0.08333333333333333,
+        "position": 20.458333333333332
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/branchen/kanzleien"
+        ],
+        "clicks": 1,
+        "impressions": 29,
+        "ctr": 0.034482758620689655,
+        "position": 67.41379310344827
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/projekte/direktbuchungen-ohne-portale"
+        ],
+        "clicks": 1,
+        "impressions": 1,
+        "ctr": 1,
+        "position": 4
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/blog"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 9
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/blog/lokales-seo-halle"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 4
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/blog/restaurant-website-mehr-reservierungen"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 5
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/branchen"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 49
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/branchen/arztpraxen"
+        ],
+        "clicks": 0,
+        "impressions": 8,
+        "ctr": 0,
+        "position": 61.875
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/branchen/bauunternehmen-website"
+        ],
+        "clicks": 0,
+        "impressions": 8,
+        "ctr": 0,
+        "position": 27
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/branchen/beauty-studio-website"
+        ],
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 8.25
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/branchen/dienstleister-website"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 10
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/branchen/glaserei-website"
+        ],
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 17
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/branchen/handwerker-website"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 9.5
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/branchen/hotel-website"
+        ],
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 10.666666666666666
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/branchen/hotels"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 64
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/branchen/immobilien"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 10
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/branchen/restaurant-website"
+        ],
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0,
+        "position": 9
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/branchen/restaurants"
+        ],
+        "clicks": 0,
+        "impressions": 15,
+        "ctr": 0,
+        "position": 47.53333333333333
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/datenschutz"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 5
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/en/blog/optimize-google-business-profile"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 11
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/en/blog/restaurant-website-more-reservations"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 4
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/en/blog/website-cost-in-halle"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 3
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/en/contact"
+        ],
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 1.4
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/en/imprint"
+        ],
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 2.5
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/en/industries/beauty-studio-website"
+        ],
+        "clicks": 0,
+        "impressions": 16,
+        "ctr": 0,
+        "position": 7.8125
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/en/industries/construction-company-website"
+        ],
+        "clicks": 0,
+        "impressions": 11,
+        "ctr": 0,
+        "position": 10.090909090909092
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/en/industries/hotel-website"
+        ],
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 5
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/en/industries/medical-practices"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 10
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/en/industries/restaurant-website"
+        ],
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 8.5
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/en/industries/service-provider-website"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 1
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/en/locations"
+        ],
+        "clicks": 0,
+        "impressions": 9,
+        "ctr": 0,
+        "position": 28.11111111111111
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/en/locations/halle"
+        ],
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 3
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/en/locations/leipzig"
+        ],
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 5.666666666666667
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/en/locations/merseburg"
+        ],
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 17.4
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/en/locations/schkeuditz"
+        ],
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 44.25
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/en/privacy-policy"
+        ],
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 2.333333333333333
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/en/projects/online-bookings-tripled"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 8
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/en/projects/qualified-construction-leads"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 12
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/en/services/automation"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 61.5
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/en/services/data-analytics"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 5
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/en/services/seo-halle"
+        ],
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 2.333333333333333
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/en/services/web-design-delitzsch"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 3
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/en/services/web-design-halle"
+        ],
+        "clicks": 0,
+        "impressions": 9,
+        "ctr": 0,
+        "position": 3
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/en/services/web-design-leipzig"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 2
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/en/services/web-design-merseburg"
+        ],
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 1.6666666666666665
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/en/services/web-design-saalekreis"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 3
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/en/services/web-design-schkeuditz"
+        ],
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0,
+        "position": 3.6666666666666665
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/en/services/website-relaunch"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 80
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/en/services/wordpress-website-modernization"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 8
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/impressum"
+        ],
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 5.2
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/kontakt"
+        ],
+        "clicks": 0,
+        "impressions": 30,
+        "ctr": 0,
+        "position": 42.666666666666664
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/kostenlose-website-analyse"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 51.5
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/leistungen"
+        ],
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 6.5
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/leistungen/api-integrationen"
+        ],
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0,
+        "position": 73.33333333333333
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/leistungen/automatisierung"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 33.5
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/leistungen/buchungssysteme"
+        ],
+        "clicks": 0,
+        "impressions": 10,
+        "ctr": 0,
+        "position": 46.1
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/leistungen/ki-optimierung"
+        ],
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 75.25
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/leistungen/seo-halle"
+        ],
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 9.75
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/leistungen/seo-leipzig"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 89.5
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/leistungen/webdesign-delitzsch"
+        ],
+        "clicks": 0,
+        "impressions": 7,
+        "ctr": 0,
+        "position": 8
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/leistungen/webdesign-halle"
+        ],
+        "clicks": 0,
+        "impressions": 55,
+        "ctr": 0,
+        "position": 60.81818181818182
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/leistungen/webdesign-leipzig"
+        ],
+        "clicks": 0,
+        "impressions": 14,
+        "ctr": 0,
+        "position": 81.71428571428571
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/leistungen/webdesign-merseburg"
+        ],
+        "clicks": 0,
+        "impressions": 8,
+        "ctr": 0,
+        "position": 19.25
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/leistungen/webdesign-schkeuditz"
+        ],
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 2.8
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/leistungen/website-erstellen-lassen"
+        ],
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 23.8
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/leistungen/wordpress-agentur-halle"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 3
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/preise"
+        ],
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 64.66666666666666
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/projekte"
+        ],
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 67.8
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/projekte/glaserei-schubert"
+        ],
+        "clicks": 0,
+        "impressions": 16,
+        "ctr": 0,
+        "position": 9.875
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/projekte/neue-liebe-nebra"
+        ],
+        "clicks": 0,
+        "impressions": 9,
+        "ctr": 0,
+        "position": 8.222222222222221
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/projekte/online-buchungen-verdreifacht"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 14.5
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/projekte/qualifizierte-bauanfragen"
+        ],
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 7.4
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/ru/blog/kategoriya/rost-biznesa"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 8
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/ru/impressum"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 5
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/ru/otrasli/sayt-dlya-otelya"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 9
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/ru/otrasli/sayt-dlya-salona-krasoty"
+        ],
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 7.666666666666667
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/ru/proekty/onlajn-zapisi-vyrosli-vtroe"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 2
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/ru/uslugi"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 4
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/ru/uslugi/webdesign-halle"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 6
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/standorte"
+        ],
+        "clicks": 0,
+        "impressions": 11,
+        "ctr": 0,
+        "position": 60.54545454545455
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/standorte/delitzsch"
+        ],
+        "clicks": 0,
+        "impressions": 7,
+        "ctr": 0,
+        "position": 13.857142857142858
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/standorte/halle"
+        ],
+        "clicks": 0,
+        "impressions": 65,
+        "ctr": 0,
+        "position": 61.86153846153846
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/standorte/leipzig"
+        ],
+        "clicks": 0,
+        "impressions": 15,
+        "ctr": 0,
+        "position": 82.46666666666667
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/standorte/merseburg"
+        ],
+        "clicks": 0,
+        "impressions": 10,
+        "ctr": 0,
+        "position": 69.3
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/standorte/saalekreis"
+        ],
+        "clicks": 0,
+        "impressions": 12,
+        "ctr": 0,
+        "position": 35.916666666666664
+      },
+      {
+        "keys": [
+          "https://saaleweb.de/standorte/schkeuditz"
+        ],
+        "clicks": 0,
+        "impressions": 17,
+        "ctr": 0,
+        "position": 15.470588235294118
+      }
+    ]
+  },
+  "sitemaps": {
+    "sitemap": [
+      {
+        "path": "https://saaleweb.de/sitemap.xml",
+        "lastSubmitted": "2026-08-13T22:18:31.343Z",
+        "isPending": false,
+        "isSitemapsIndex": false,
+        "type": "sitemap",
+        "lastDownloaded": "2026-10-02T10:28:06.566Z",
+        "warnings": "0",
+        "errors": "0",
+        "contents": [
+          {
+            "type": "web",
+            "submitted": "234",
+            "indexed": "0"
+          }
+        ]
+      }
+    ]
+  },
+  "inspections": [
+    {
+      "url": "https://saaleweb.de/",
+      "index": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-09-23T14:40:55Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/",
+        "userCanonical": "https://saaleweb.de/",
+        "referringUrls": [
+          "https://www.saaleweb.de/ru/uslugi/sistemy-bronirovaniya",
+          "https://www.neueliebe-nebra.de/news",
+          "https://drjack.world/report/4310101",
+          "http://saaleweb.de/"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/leistungen/webdesign-halle",
+      "index": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-09-21T09:43:23Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/leistungen/webdesign-halle",
+        "userCanonical": "https://saaleweb.de/leistungen/webdesign-halle",
+        "referringUrls": [
+          "https://saaleweb.de/ru/uslugi/webdesign-halle",
+          "https://saaleweb.de/blog/lokales-seo-halle",
+          "https://www.saaleweb.de/leistungen/webdesign-halle"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/leistungen/website-erstellen-lassen",
+      "index": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-09-25T04:11:47Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/leistungen/website-erstellen-lassen",
+        "userCanonical": "https://saaleweb.de/leistungen/website-erstellen-lassen",
+        "referringUrls": [
+          "https://saaleweb.de/ru/uslugi/razrabotka-saytov",
+          "https://www.saaleweb.de/leistungen/website-erstellen-lassen"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/leistungen/seo-halle",
+      "index": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-09-27T15:06:08Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/leistungen/seo-halle",
+        "userCanonical": "https://saaleweb.de/leistungen/seo-halle",
+        "referringUrls": [
+          "https://saaleweb.de/en/services/seo-halle",
+          "https://saaleweb.de/blog/lokales-seo-halle",
+          "https://www.saaleweb.de/leistungen/seo-halle"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/leistungen/local-seo",
+      "index": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-09-08T08:20:24Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/leistungen/local-seo",
+        "userCanonical": "https://saaleweb.de/leistungen/local-seo",
+        "sitemap": [
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "referringUrls": [
+          "https://saaleweb.de/en/services/local-seo",
+          "https://www.saaleweb.de/leistungen/local-seo"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/leistungen/wordpress-agentur-halle",
+      "index": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-09-09T04:20:22Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/leistungen/wordpress-agentur-halle",
+        "userCanonical": "https://saaleweb.de/leistungen/wordpress-agentur-halle",
+        "referringUrls": [
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/leistungen/ki-optimierung",
+      "index": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-08-02T18:20:12Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/leistungen/ki-optimierung",
+        "userCanonical": "https://saaleweb.de/leistungen/ki-optimierung",
+        "referringUrls": [
+          "https://saaleweb.de/ru/uslugi/optimizaciya-pod-ii",
+          "https://www.saaleweb.de/leistungen/ki-optimierung",
+          "https://saaleweb.de/en/services/ai-optimization"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/leistungen/ki-assistent",
+      "index": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-09-04T09:04:54Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/leistungen/ki-assistent",
+        "userCanonical": "https://saaleweb.de/leistungen/ki-assistent",
+        "sitemap": [
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "referringUrls": [
+          "https://saaleweb.de/en/services/ai-assistant",
+          "https://saaleweb.de/leistungen"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/preise",
+      "index": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-09-25T11:44:03Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/preise",
+        "userCanonical": "https://saaleweb.de/preise",
+        "referringUrls": [
+          "https://www.saaleweb.de/en/pricing",
+          "https://saaleweb.de/standorte/merseburg"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/standorte/halle",
+      "index": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-09-15T00:49:23Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/standorte/halle",
+        "userCanonical": "https://saaleweb.de/standorte/halle",
+        "sitemap": [
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "referringUrls": [
+          "https://www.saaleweb.de/en/locations/halle",
+          "https://saaleweb.de/projekte/neue-liebe-nebra",
+          "https://www.saaleweb.de/standorte/halle",
+          "https://saaleweb.de/leistungen/seo-halle"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/branchen/hotel-website",
+      "index": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-09-25T01:34:21Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/branchen/hotel-website",
+        "userCanonical": "https://saaleweb.de/branchen/hotel-website",
+        "referringUrls": [
+          "https://saaleweb.de/en/industries/hotel-website",
+          "https://saaleweb.de/ru/otrasli/sayt-dlya-otelya",
+          "https://www.saaleweb.de/en/industries/hotel-website"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/branchen/restaurant-website",
+      "index": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-09-24T23:14:52Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/branchen/restaurant-website",
+        "userCanonical": "https://saaleweb.de/branchen/restaurant-website",
+        "referringUrls": [
+          "https://saaleweb.de/en/industries/restaurant-website",
+          "https://www.saaleweb.de/en/industries/restaurant-website"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/branchen/bauunternehmen-website",
+      "index": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-09-24T03:29:36Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/branchen/bauunternehmen-website",
+        "userCanonical": "https://saaleweb.de/branchen/bauunternehmen-website",
+        "referringUrls": [
+          "https://saaleweb.de/en/industries/construction-company-website",
+          "https://saaleweb.de/branchen",
+          "https://www.saaleweb.de/en/industries/construction-company-website"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/branchen/beauty-studio-website",
+      "index": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-09-26T05:11:12Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/branchen/beauty-studio-website",
+        "userCanonical": "https://saaleweb.de/branchen/beauty-studio-website",
+        "referringUrls": [
+          "https://saaleweb.de/en/industries/beauty-studio-website",
+          "https://www.saaleweb.de/branchen/beauty-studio-website",
+          "https://www.saaleweb.de/en/industries/beauty-studio-website"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/projekte",
+      "index": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-09-24T23:35:16Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/projekte",
+        "userCanonical": "https://saaleweb.de/projekte",
+        "sitemap": [
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "referringUrls": [
+          "https://saaleweb.de/blog/restaurant-website-mehr-reservierungen",
+          "https://saaleweb.de/branchen/restaurant-website"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    }
+  ],
+  "technical": {
+    "generatedAt": "2026-10-02T20:30:19.326Z",
+    "sitemapChecks": [
+      {
+        "url": "https://saaleweb.de/en",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/blog",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/blog",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/blog",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/leistungen",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/services",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/branchen",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/uslugi",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/industries",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/otrasli",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/standorte",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/locations",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/goroda",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/kontakt",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/contact",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/kontakt",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/preise",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/pricing",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/ceny",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/projekte",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/projects",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/proekty",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/kostenlose-website-analyse",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/free-website-audit",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/besplatnyy-audit-sayta",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/impressum",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/imprint",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/impressum",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/datenschutz",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/privacy-policy",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/datenschutz",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/standorte/halle",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/locations/halle",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/goroda/halle",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/standorte/leipzig",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/locations/leipzig",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/goroda/leipzig",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/standorte/merseburg",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/goroda/merseburg",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/locations/merseburg",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/standorte/schkeuditz",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/goroda/schkeuditz",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/locations/schkeuditz",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/standorte/delitzsch",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/locations/delitzsch",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/goroda/delitzsch",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/standorte/saalekreis",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/locations/saalekreis",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/goroda/saalekreis",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/services/website-development",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/leistungen/website-erstellen-lassen",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/uslugi/razrabotka-saytov",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/leistungen/webdesign-halle",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/services/web-design-halle",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/uslugi/webdesign-halle",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/leistungen/seo-halle",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/services/seo-halle",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/leistungen/wordpress-agentur-halle",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/uslugi/seo-halle",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/uslugi/wordpress-agentstvo-halle",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/services/wordpress-agency-halle",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/leistungen/webdesign-leipzig",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/services/web-design-leipzig",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/leistungen/seo-leipzig",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/uslugi/webdesign-leipzig",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/services/seo-leipzig",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/uslugi/seo-leipzig",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/leistungen/webdesign-merseburg",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/services/web-design-merseburg",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/uslugi/webdesign-merseburg",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/leistungen/seo-merseburg",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/services/seo-merseburg",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/uslugi/seo-merseburg",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/leistungen/webdesign-schkeuditz",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/services/web-design-schkeuditz",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/leistungen/seo-schkeuditz",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/uslugi/webdesign-schkeuditz",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/services/seo-schkeuditz",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/uslugi/seo-schkeuditz",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/leistungen/webdesign-delitzsch",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/services/web-design-delitzsch",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/uslugi/webdesign-delitzsch",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/leistungen/seo-delitzsch",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/services/seo-delitzsch",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/uslugi/seo-delitzsch",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/leistungen/webdesign-saalekreis",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/services/web-design-saalekreis",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/uslugi/webdesign-saalekreis",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/leistungen/seo-saalekreis",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/services/seo-saalekreis",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/uslugi/seo-saalekreis",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/leistungen/ki-optimierung",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/services/ai-optimization",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/uslugi/optimizaciya-pod-ii",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/leistungen/wordpress-website-modernisieren",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/services/wordpress-website-modernization",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/uslugi/modernizaciya-wordpress-sayta",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/leistungen/website-relaunch",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/services/website-relaunch",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/uslugi/relonch-sajta",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/leistungen/performance-optimierung",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/services/performance-optimization",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/uslugi/optimizaciya-proizvoditelnosti",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/leistungen/website-wartung",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/services/website-maintenance",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/uslugi/podderzhka-saytov",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/leistungen/buchungssysteme",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/services/booking-systems",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/uslugi/sistemy-bronirovaniya",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/services/online-shop-development",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/leistungen/online-shop-erstellen",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/leistungen/ki-assistent",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/uslugi/sozdanie-internet-magazina",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/services/ai-assistant",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/uslugi/ai-assistent",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/leistungen/automatisierung",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/services/automation",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/uslugi/avtomatizaciya",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/leistungen/api-integrationen",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/services/api-integrations",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/uslugi/api-integracii",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/leistungen/website-sicherheit",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/services/website-security",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/leistungen/datenanalyse",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/uslugi/bezopasnost-sayta",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/services/data-analytics",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/uslugi/analitika-dannyh",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/services/shop-product-import",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/leistungen/shop-produktimport",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/uslugi/import-tovarov",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/branchen/restaurant-website",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/otrasli/sayt-dlya-restorana",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/industries/restaurant-website",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/branchen/hotel-website",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/industries/hotel-website",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/otrasli/sayt-dlya-otelya",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/branchen/beauty-studio-website",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/industries/beauty-studio-website",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/otrasli/sayt-dlya-salona-krasoty",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/branchen/bauunternehmen-website",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/industries/construction-company-website",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/otrasli/sayt-dlya-stroitelnoy-kompanii",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/branchen/handwerker-website",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/industries/craftsmen-website",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/otrasli/sayt-dlya-masterov",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/branchen/glaserei-website",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/industries/glazier-website",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/otrasli/sayt-dlya-stekolnoy-masterskoy",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/branchen/dienstleister-website",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/industries/service-provider-website",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/otrasli/sayt-dlya-sfery-uslug",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/blog/lokales-seo-halle",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/blog/local-seo-halle",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/blog/sichtbarkeit-in-ki-suche",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/blog/lokalnoe-seo-halle",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/blog/ai-search-visibility",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/blog/vidimost-v-ai-poiske",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/blog/was-kostet-eine-website-in-halle",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/blog/website-cost-in-halle",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/blog/skolko-stoit-sajt-v-halle",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/blog/restaurant-website-mehr-reservierungen",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/blog/restaurant-website-more-reservations",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/blog/sajt-restorana-bolshe-bronirovanij",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/blog/website-relaunch-checkliste",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/blog/website-relaunch-checklist",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/blog/relonch-sajta-checklist",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/blog/google-unternehmensprofil-optimieren",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/blog/optimizaciya-google-biznes-profilya",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/blog/optimize-google-business-profile",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/blog/nextjs-vs-wordpress",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/blog/nextjs-vs-wordpress",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/blog/nextjs-vs-wordpress",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/blog/kategorie/seo",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/blog/category/seo",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/blog/kategoriya/seo",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/blog/kategorie/webdesign",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/blog/category/web-design",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/blog/kategoriya/veb-dizajn",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/blog/kategorie/ki-suche",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/blog/category/ai-search",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/blog/kategoriya/ii-i-poisk",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/blog/kategorie/praxis",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/blog/category/business-growth",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/blog/kategoriya/rost-biznesa",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/uslugi/razrabotka-sajtov",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/services/web-development",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/leistungen/website-entwicklung",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/uslugi/seo-optimizaciya",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/services/seo-optimization",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/leistungen/seo-optimierung",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/uslugi/lokalnoe-seo",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/services/local-seo",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/leistungen/local-seo",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/uslugi/integraciya-ii",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/services/ai-integration",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/leistungen/ki-integration",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/uslugi/proizvoditelnost",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/services/performance",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/leistungen/performance",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/uslugi/hosting",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/services/hosting",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/leistungen/hosting",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/uslugi/podderzhka",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/services/maintenance",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/leistungen/wartung",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/uslugi/cifrovoj-konsalting",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/services/digital-consulting",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/leistungen/digitalberatung",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/branchen/arztpraxen",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/otrasli/medcentry",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/industries/medical-practices",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/industries/real-estate",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/branchen/immobilien",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/otrasli/nedvizhimost",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/branchen/kanzleien",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/otrasli/yuristy",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/industries/law-firms",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/proekty/onlajn-zapisi-vyrosli-vtroe",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/projekte/online-buchungen-verdreifacht",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/projects/online-bookings-tripled",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/proekty/neue-liebe-nebra",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/projects/neue-liebe-nebra",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/projekte/neue-liebe-nebra",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/proekty/pryamye-broni-bez-agregatorov",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/projects/direct-bookings-without-portals",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/projekte/direktbuchungen-ohne-portale",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/proekty/kvalificirovannye-zayavki",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/projekte/qualifizierte-bauanfragen",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/projects/qualified-construction-leads",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/en/projects/glaserei-schubert",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/ru/proekty/glaserei-schubert",
+        "status": 200,
+        "location": null,
+        "robots": null
+      },
+      {
+        "url": "https://saaleweb.de/projekte/glaserei-schubert",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "www": {
+      "status": 200,
+      "canonical": "https://saaleweb.de"
+    },
+    "gaStreams": {
+      "status": 403
+    },
+    "pageSummary": {
+      "count": 31,
+      "non200": [],
+      "badH1": [],
+      "badCanonical": [
+        {
+          "path": "/",
+          "url": "https://saaleweb.de/",
+          "canonical": "https://saaleweb.de"
+        }
+      ],
+      "badAlternates": [],
+      "invalidJsonLd": []
+    },
+    "contentSample": [
+      {
+        "path": "/",
+        "status": 200,
+        "bytes": 1178893,
+        "title": "Webdesign Halle (Saale) &amp; SEO — Webagentur | SaaleWeb",
+        "h1": [
+          "Websites, die Kunden bringen."
+        ],
+        "canonical": "https://saaleweb.de",
+        "hreflang": [
+          {
+            "rel": "alternate",
+            "hreflang": "de",
+            "href": "https://saaleweb.de"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "en",
+            "href": "https://saaleweb.de/en"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "ru",
+            "href": "https://saaleweb.de/ru"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "x-default",
+            "href": "https://saaleweb.de"
+          }
+        ],
+        "robots": []
+      },
+      {
+        "path": "/leistungen/webdesign-halle",
+        "status": 200,
+        "bytes": 660707,
+        "title": "Webdesign Halle (Saale) &amp; Webagentur | SaaleWeb",
+        "h1": [
+          "Webdesign Halle (Saale) – Websites, die Kunden bringen"
+        ],
+        "canonical": "https://saaleweb.de/leistungen/webdesign-halle",
+        "hreflang": [
+          {
+            "rel": "alternate",
+            "hreflang": "de",
+            "href": "https://saaleweb.de/leistungen/webdesign-halle"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "en",
+            "href": "https://saaleweb.de/en/services/web-design-halle"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "ru",
+            "href": "https://saaleweb.de/ru/uslugi/webdesign-halle"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "x-default",
+            "href": "https://saaleweb.de/leistungen/webdesign-halle"
+          }
+        ],
+        "robots": []
+      },
+      {
+        "path": "/leistungen/seo-halle",
+        "status": 200,
+        "bytes": 656539,
+        "title": "SEO Halle | SaaleWeb",
+        "h1": [
+          "SEO Halle – bessere Sichtbarkeit für Unternehmen in der Region"
+        ],
+        "canonical": "https://saaleweb.de/leistungen/seo-halle",
+        "hreflang": [
+          {
+            "rel": "alternate",
+            "hreflang": "de",
+            "href": "https://saaleweb.de/leistungen/seo-halle"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "en",
+            "href": "https://saaleweb.de/en/services/seo-halle"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "ru",
+            "href": "https://saaleweb.de/ru/uslugi/seo-halle"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "x-default",
+            "href": "https://saaleweb.de/leistungen/seo-halle"
+          }
+        ],
+        "robots": []
+      },
+      {
+        "path": "/leistungen/wordpress-agentur-halle",
+        "status": 200,
+        "bytes": 667173,
+        "title": "WordPress Agentur Halle (Saale) | SaaleWeb",
+        "h1": [
+          "WordPress Agentur Halle (Saale) – Betreuung, Relaunch und Weiterentwicklung"
+        ],
+        "canonical": "https://saaleweb.de/leistungen/wordpress-agentur-halle",
+        "hreflang": [
+          {
+            "rel": "alternate",
+            "hreflang": "de",
+            "href": "https://saaleweb.de/leistungen/wordpress-agentur-halle"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "en",
+            "href": "https://saaleweb.de/en/services/wordpress-agency-halle"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "ru",
+            "href": "https://saaleweb.de/ru/uslugi/wordpress-agentstvo-halle"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "x-default",
+            "href": "https://saaleweb.de/leistungen/wordpress-agentur-halle"
+          }
+        ],
+        "robots": []
+      },
+      {
+        "path": "/leistungen/website-erstellen-lassen",
+        "status": 200,
+        "bytes": 671291,
+        "title": "Website erstellen lassen für Unternehmen | SaaleWeb",
+        "h1": [
+          "Website erstellen lassen – klar geplant, schnell gebaut und auf Anfragen ausgelegt"
+        ],
+        "canonical": "https://saaleweb.de/leistungen/website-erstellen-lassen",
+        "hreflang": [
+          {
+            "rel": "alternate",
+            "hreflang": "de",
+            "href": "https://saaleweb.de/leistungen/website-erstellen-lassen"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "en",
+            "href": "https://saaleweb.de/en/services/website-development"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "ru",
+            "href": "https://saaleweb.de/ru/uslugi/razrabotka-saytov"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "x-default",
+            "href": "https://saaleweb.de/leistungen/website-erstellen-lassen"
+          }
+        ],
+        "robots": []
+      },
+      {
+        "path": "/leistungen/local-seo",
+        "status": 200,
+        "bytes": 568932,
+        "title": "Local SEO — Leistungen | SaaleWeb",
+        "h1": [
+          "Local SEO"
+        ],
+        "canonical": "https://saaleweb.de/leistungen/local-seo",
+        "hreflang": [
+          {
+            "rel": "alternate",
+            "hreflang": "de",
+            "href": "https://saaleweb.de/leistungen/local-seo"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "en",
+            "href": "https://saaleweb.de/en/services/local-seo"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "ru",
+            "href": "https://saaleweb.de/ru/uslugi/lokalnoe-seo"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "x-default",
+            "href": "https://saaleweb.de/leistungen/local-seo"
+          }
+        ],
+        "robots": []
+      },
+      {
+        "path": "/leistungen/ki-optimierung",
+        "status": 200,
+        "bytes": 654770,
+        "title": "KI-Optimierung für Unternehmen | SaaleWeb",
+        "h1": [
+          "KI-Optimierung für Unternehmen – Inhalte, die auch moderne Suchsysteme verstehen"
+        ],
+        "canonical": "https://saaleweb.de/leistungen/ki-optimierung",
+        "hreflang": [
+          {
+            "rel": "alternate",
+            "hreflang": "de",
+            "href": "https://saaleweb.de/leistungen/ki-optimierung"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "en",
+            "href": "https://saaleweb.de/en/services/ai-optimization"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "ru",
+            "href": "https://saaleweb.de/ru/uslugi/optimizaciya-pod-ii"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "x-default",
+            "href": "https://saaleweb.de/leistungen/ki-optimierung"
+          }
+        ],
+        "robots": []
+      },
+      {
+        "path": "/leistungen/ki-assistent",
+        "status": 200,
+        "bytes": 643379,
+        "title": "KI-Assistent &amp; KI-Chatbot für Unternehmen | SaaleWeb",
+        "h1": [
+          "KI-Assistent und KI-Chatbot für Unternehmen – hilfreich, kontrollierbar und sinnvoll integriert"
+        ],
+        "canonical": "https://saaleweb.de/leistungen/ki-assistent",
+        "hreflang": [
+          {
+            "rel": "alternate",
+            "hreflang": "de",
+            "href": "https://saaleweb.de/leistungen/ki-assistent"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "en",
+            "href": "https://saaleweb.de/en/services/ai-assistant"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "ru",
+            "href": "https://saaleweb.de/ru/uslugi/ai-assistent"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "x-default",
+            "href": "https://saaleweb.de/leistungen/ki-assistent"
+          }
+        ],
+        "robots": []
+      },
+      {
+        "path": "/leistungen/wordpress-website-modernisieren",
+        "status": 200,
+        "bytes": 651612,
+        "title": "WordPress Website modernisieren | SaaleWeb",
+        "h1": [
+          "WordPress Website modernisieren – schneller, klarer und besser wartbar"
+        ],
+        "canonical": "https://saaleweb.de/leistungen/wordpress-website-modernisieren",
+        "hreflang": [
+          {
+            "rel": "alternate",
+            "hreflang": "de",
+            "href": "https://saaleweb.de/leistungen/wordpress-website-modernisieren"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "en",
+            "href": "https://saaleweb.de/en/services/wordpress-website-modernization"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "ru",
+            "href": "https://saaleweb.de/ru/uslugi/modernizaciya-wordpress-sayta"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "x-default",
+            "href": "https://saaleweb.de/leistungen/wordpress-website-modernisieren"
+          }
+        ],
+        "robots": []
+      },
+      {
+        "path": "/leistungen/website-relaunch",
+        "status": 200,
+        "bytes": 657720,
+        "title": "Website Relaunch | SaaleWeb",
+        "h1": [
+          "Website Relaunch – modernisieren, ohne Sichtbarkeit zu verlieren"
+        ],
+        "canonical": "https://saaleweb.de/leistungen/website-relaunch",
+        "hreflang": [
+          {
+            "rel": "alternate",
+            "hreflang": "de",
+            "href": "https://saaleweb.de/leistungen/website-relaunch"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "en",
+            "href": "https://saaleweb.de/en/services/website-relaunch"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "ru",
+            "href": "https://saaleweb.de/ru/uslugi/relonch-sajta"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "x-default",
+            "href": "https://saaleweb.de/leistungen/website-relaunch"
+          }
+        ],
+        "robots": []
+      },
+      {
+        "path": "/standorte/halle",
+        "status": 200,
+        "bytes": 668400,
+        "title": "Webagentur &amp; Webdesign Halle (Saale) | SaaleWeb",
+        "h1": [
+          "Webdesign in Halle (Saale) für Unternehmen, die online sichtbar werden möchten"
+        ],
+        "canonical": "https://saaleweb.de/standorte/halle",
+        "hreflang": [
+          {
+            "rel": "alternate",
+            "hreflang": "de",
+            "href": "https://saaleweb.de/standorte/halle"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "en",
+            "href": "https://saaleweb.de/en/locations/halle"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "ru",
+            "href": "https://saaleweb.de/ru/goroda/halle"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "x-default",
+            "href": "https://saaleweb.de/standorte/halle"
+          }
+        ],
+        "robots": []
+      },
+      {
+        "path": "/standorte/delitzsch",
+        "status": 200,
+        "bytes": 655842,
+        "title": "Webdesign Delitzsch &amp; SEO | SaaleWeb",
+        "h1": [
+          "Webdesign Delitzsch – moderne Websites für lokale Anbieter und Dienstleister"
+        ],
+        "canonical": "https://saaleweb.de/standorte/delitzsch",
+        "hreflang": [
+          {
+            "rel": "alternate",
+            "hreflang": "de",
+            "href": "https://saaleweb.de/standorte/delitzsch"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "en",
+            "href": "https://saaleweb.de/en/locations/delitzsch"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "ru",
+            "href": "https://saaleweb.de/ru/goroda/delitzsch"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "x-default",
+            "href": "https://saaleweb.de/standorte/delitzsch"
+          }
+        ],
+        "robots": []
+      },
+      {
+        "path": "/standorte/saalekreis",
+        "status": 200,
+        "bytes": 655631,
+        "title": "Webdesign Saalekreis &amp; SEO | SaaleWeb",
+        "h1": [
+          "Webdesign im Saalekreis – regionale Sichtbarkeit über einzelne Orte hinaus"
+        ],
+        "canonical": "https://saaleweb.de/standorte/saalekreis",
+        "hreflang": [
+          {
+            "rel": "alternate",
+            "hreflang": "de",
+            "href": "https://saaleweb.de/standorte/saalekreis"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "en",
+            "href": "https://saaleweb.de/en/locations/saalekreis"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "ru",
+            "href": "https://saaleweb.de/ru/goroda/saalekreis"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "x-default",
+            "href": "https://saaleweb.de/standorte/saalekreis"
+          }
+        ],
+        "robots": []
+      },
+      {
+        "path": "/standorte/merseburg",
+        "status": 200,
+        "bytes": 655519,
+        "title": "Webdesign Merseburg &amp; SEO | SaaleWeb",
+        "h1": [
+          "Webdesign Merseburg – regionale Sichtbarkeit für Unternehmen im Saalekreis"
+        ],
+        "canonical": "https://saaleweb.de/standorte/merseburg",
+        "hreflang": [
+          {
+            "rel": "alternate",
+            "hreflang": "de",
+            "href": "https://saaleweb.de/standorte/merseburg"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "en",
+            "href": "https://saaleweb.de/en/locations/merseburg"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "ru",
+            "href": "https://saaleweb.de/ru/goroda/merseburg"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "x-default",
+            "href": "https://saaleweb.de/standorte/merseburg"
+          }
+        ],
+        "robots": []
+      },
+      {
+        "path": "/standorte/leipzig",
+        "status": 200,
+        "bytes": 662431,
+        "title": "Webdesign Leipzig &amp; SEO Leipzig | SaaleWeb",
+        "h1": [
+          "Webdesign Leipzig – moderne Websites für einen stark umkämpften Markt"
+        ],
+        "canonical": "https://saaleweb.de/standorte/leipzig",
+        "hreflang": [
+          {
+            "rel": "alternate",
+            "hreflang": "de",
+            "href": "https://saaleweb.de/standorte/leipzig"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "en",
+            "href": "https://saaleweb.de/en/locations/leipzig"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "ru",
+            "href": "https://saaleweb.de/ru/goroda/leipzig"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "x-default",
+            "href": "https://saaleweb.de/standorte/leipzig"
+          }
+        ],
+        "robots": []
+      },
+      {
+        "path": "/preise",
+        "status": 200,
+        "bytes": 745006,
+        "title": "Preise für Websites, SEO &amp; digitale Lösungen | SaaleWeb",
+        "h1": [
+          "Preise für Websites und digitale Lösungen, die zu Ihrem Ziel passen."
+        ],
+        "canonical": "https://saaleweb.de/preise",
+        "hreflang": [
+          {
+            "rel": "alternate",
+            "hreflang": "de",
+            "href": "https://saaleweb.de/preise"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "en",
+            "href": "https://saaleweb.de/en/pricing"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "ru",
+            "href": "https://saaleweb.de/ru/ceny"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "x-default",
+            "href": "https://saaleweb.de/preise"
+          }
+        ],
+        "robots": []
+      },
+      {
+        "path": "/projekte",
+        "status": 200,
+        "bytes": 568056,
+        "title": "Projekte, die Kunden bringen · SaaleWeb",
+        "h1": [
+          "Projekte, die Kunden bringen"
+        ],
+        "canonical": "https://saaleweb.de/projekte",
+        "hreflang": [
+          {
+            "rel": "alternate",
+            "hreflang": "de",
+            "href": "https://saaleweb.de/projekte"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "en",
+            "href": "https://saaleweb.de/en/projects"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "ru",
+            "href": "https://saaleweb.de/ru/proekty"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "x-default",
+            "href": "https://saaleweb.de/projekte"
+          }
+        ],
+        "robots": []
+      },
+      {
+        "path": "/projekte/online-buchungen-verdreifacht",
+        "status": 200,
+        "bytes": 572419,
+        "title": "Salon Elen / Permanent Halle – digitale Lösung für Beauty Studio — Projekte · SaaleWeb",
+        "h1": [
+          "Salon Elen / Permanent Halle – digitale Lösung für Beauty Studio"
+        ],
+        "canonical": "https://saaleweb.de/projekte/online-buchungen-verdreifacht",
+        "hreflang": [
+          {
+            "rel": "alternate",
+            "hreflang": "en",
+            "href": "https://saaleweb.de/en/projects/online-bookings-tripled"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "de",
+            "href": "https://saaleweb.de/projekte/online-buchungen-verdreifacht"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "ru",
+            "href": "https://saaleweb.de/ru/proekty/onlajn-zapisi-vyrosli-vtroe"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "x-default",
+            "href": "https://saaleweb.de/projekte/online-buchungen-verdreifacht"
+          }
+        ],
+        "robots": []
+      },
+      {
+        "path": "/projekte/qualifizierte-bauanfragen",
+        "status": 200,
+        "bytes": 571022,
+        "title": "SorgfaltBau – digitale Lösung für Bauunternehmen — Projekte · SaaleWeb",
+        "h1": [
+          "SorgfaltBau – digitale Lösung für Bauunternehmen"
+        ],
+        "canonical": "https://saaleweb.de/projekte/qualifizierte-bauanfragen",
+        "hreflang": [
+          {
+            "rel": "alternate",
+            "hreflang": "en",
+            "href": "https://saaleweb.de/en/projects/qualified-construction-leads"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "de",
+            "href": "https://saaleweb.de/projekte/qualifizierte-bauanfragen"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "ru",
+            "href": "https://saaleweb.de/ru/proekty/kvalificirovannye-zayavki"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "x-default",
+            "href": "https://saaleweb.de/projekte/qualifizierte-bauanfragen"
+          }
+        ],
+        "robots": []
+      },
+      {
+        "path": "/projekte/neue-liebe-nebra",
+        "status": 200,
+        "bytes": 571630,
+        "title": "Neue Liebe – digitale Lösung für Gastronomie — Projekte · SaaleWeb",
+        "h1": [
+          "Neue Liebe – digitale Lösung für Gastronomie"
+        ],
+        "canonical": "https://saaleweb.de/projekte/neue-liebe-nebra",
+        "hreflang": [
+          {
+            "rel": "alternate",
+            "hreflang": "de",
+            "href": "https://saaleweb.de/projekte/neue-liebe-nebra"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "en",
+            "href": "https://saaleweb.de/en/projects/neue-liebe-nebra"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "ru",
+            "href": "https://saaleweb.de/ru/proekty/neue-liebe-nebra"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "x-default",
+            "href": "https://saaleweb.de/projekte/neue-liebe-nebra"
+          }
+        ],
+        "robots": []
+      },
+      {
+        "path": "/branchen/bauunternehmen-website",
+        "status": 200,
+        "bytes": 812032,
+        "title": "Website für Bauunternehmen — qualifizierte Anfragen statt Preisfragen · SaaleWeb",
+        "h1": [
+          "Website für Bauunternehmen, die qualifizierte Anfragen bringt"
+        ],
+        "canonical": "https://saaleweb.de/branchen/bauunternehmen-website",
+        "hreflang": [
+          {
+            "rel": "alternate",
+            "hreflang": "de",
+            "href": "https://saaleweb.de/branchen/bauunternehmen-website"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "en",
+            "href": "https://saaleweb.de/en/industries/construction-company-website"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "ru",
+            "href": "https://saaleweb.de/ru/otrasli/sayt-dlya-stroitelnoy-kompanii"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "x-default",
+            "href": "https://saaleweb.de/branchen/bauunternehmen-website"
+          }
+        ],
+        "robots": []
+      },
+      {
+        "path": "/branchen/restaurant-website",
+        "status": 200,
+        "bytes": 831485,
+        "title": "Restaurant Website mit digitaler Speisekarte erstellen lassen · SaaleWeb",
+        "h1": [
+          "Restaurant-Website mit einer Speisekarte, die Appetit macht"
+        ],
+        "canonical": "https://saaleweb.de/branchen/restaurant-website",
+        "hreflang": [
+          {
+            "rel": "alternate",
+            "hreflang": "de",
+            "href": "https://saaleweb.de/branchen/restaurant-website"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "en",
+            "href": "https://saaleweb.de/en/industries/restaurant-website"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "ru",
+            "href": "https://saaleweb.de/ru/otrasli/sayt-dlya-restorana"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "x-default",
+            "href": "https://saaleweb.de/branchen/restaurant-website"
+          }
+        ],
+        "robots": []
+      },
+      {
+        "path": "/branchen/beauty-studio-website",
+        "status": 200,
+        "bytes": 854050,
+        "title": "Beauty-Studio Website mit Online-Terminbuchung erstellen lassen · SaaleWeb",
+        "h1": [
+          "Beauty-Studio Website, die Termine bucht, während Sie arbeiten"
+        ],
+        "canonical": "https://saaleweb.de/branchen/beauty-studio-website",
+        "hreflang": [
+          {
+            "rel": "alternate",
+            "hreflang": "de",
+            "href": "https://saaleweb.de/branchen/beauty-studio-website"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "en",
+            "href": "https://saaleweb.de/en/industries/beauty-studio-website"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "ru",
+            "href": "https://saaleweb.de/ru/otrasli/sayt-dlya-salona-krasoty"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "x-default",
+            "href": "https://saaleweb.de/branchen/beauty-studio-website"
+          }
+        ],
+        "robots": []
+      },
+      {
+        "path": "/branchen/hotel-website",
+        "status": 200,
+        "bytes": 788103,
+        "title": "Hotel Website Halle &amp; Sachsen-Anhalt — ohne Portalprovision · SaaleWeb",
+        "h1": [
+          "Hotel-Website in Halle und Sachsen-Anhalt: Direktbuchung statt Portalprovision"
+        ],
+        "canonical": "https://saaleweb.de/branchen/hotel-website",
+        "hreflang": [
+          {
+            "rel": "alternate",
+            "hreflang": "de",
+            "href": "https://saaleweb.de/branchen/hotel-website"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "en",
+            "href": "https://saaleweb.de/en/industries/hotel-website"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "ru",
+            "href": "https://saaleweb.de/ru/otrasli/sayt-dlya-otelya"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "x-default",
+            "href": "https://saaleweb.de/branchen/hotel-website"
+          }
+        ],
+        "robots": []
+      },
+      {
+        "path": "/branchen/handwerker-website",
+        "status": 200,
+        "bytes": 650695,
+        "title": "Website für Handwerker | SaaleWeb",
+        "h1": [
+          "Website für Handwerker – lokal sichtbar und vertrauenswürdig auftreten"
+        ],
+        "canonical": "https://saaleweb.de/branchen/handwerker-website",
+        "hreflang": [
+          {
+            "rel": "alternate",
+            "hreflang": "de",
+            "href": "https://saaleweb.de/branchen/handwerker-website"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "en",
+            "href": "https://saaleweb.de/en/industries/craftsmen-website"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "ru",
+            "href": "https://saaleweb.de/ru/otrasli/sayt-dlya-masterov"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "x-default",
+            "href": "https://saaleweb.de/branchen/handwerker-website"
+          }
+        ],
+        "robots": []
+      },
+      {
+        "path": "/blog/was-kostet-eine-website-in-halle",
+        "status": 200,
+        "bytes": 568476,
+        "title": "Was kostet eine Website in Halle (Saale)? Ehrliche Preise 2026 · SaaleWeb",
+        "h1": [
+          "Was kostet eine Website in Halle (Saale)? Ehrliche Preise 2026"
+        ],
+        "canonical": "https://saaleweb.de/blog/was-kostet-eine-website-in-halle",
+        "hreflang": [
+          {
+            "rel": "alternate",
+            "hreflang": "de",
+            "href": "https://saaleweb.de/blog/was-kostet-eine-website-in-halle"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "en",
+            "href": "https://saaleweb.de/en/blog/website-cost-in-halle"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "ru",
+            "href": "https://saaleweb.de/ru/blog/skolko-stoit-sajt-v-halle"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "x-default",
+            "href": "https://saaleweb.de/blog/was-kostet-eine-website-in-halle"
+          }
+        ],
+        "robots": []
+      },
+      {
+        "path": "/blog/nextjs-vs-wordpress",
+        "status": 200,
+        "bytes": 569887,
+        "title": "WordPress oder Next.js? Welche Technologie zu Ihrem Unternehmen passt · SaaleWeb",
+        "h1": [
+          "WordPress oder Next.js? Welche Technologie zu Ihrem Unternehmen passt"
+        ],
+        "canonical": "https://saaleweb.de/blog/nextjs-vs-wordpress",
+        "hreflang": [
+          {
+            "rel": "alternate",
+            "hreflang": "de",
+            "href": "https://saaleweb.de/blog/nextjs-vs-wordpress"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "en",
+            "href": "https://saaleweb.de/en/blog/nextjs-vs-wordpress"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "ru",
+            "href": "https://saaleweb.de/ru/blog/nextjs-vs-wordpress"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "x-default",
+            "href": "https://saaleweb.de/blog/nextjs-vs-wordpress"
+          }
+        ],
+        "robots": []
+      },
+      {
+        "path": "/en",
+        "status": 200,
+        "bytes": 1168456,
+        "title": "Web Design Halle (Saale) &amp; SEO — Web Agency | SaaleWeb",
+        "h1": [
+          "Websites that win customers."
+        ],
+        "canonical": "https://saaleweb.de/en",
+        "hreflang": [
+          {
+            "rel": "alternate",
+            "hreflang": "de",
+            "href": "https://saaleweb.de"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "en",
+            "href": "https://saaleweb.de/en"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "ru",
+            "href": "https://saaleweb.de/ru"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "x-default",
+            "href": "https://saaleweb.de"
+          }
+        ],
+        "robots": []
+      },
+      {
+        "path": "/en/services/web-design-halle",
+        "status": 200,
+        "bytes": 645212,
+        "title": "Web design &amp; web agency in Halle (Saale) | SaaleWeb",
+        "h1": [
+          "Web design in Halle (Saale) – websites built to win customers"
+        ],
+        "canonical": "https://saaleweb.de/en/services/web-design-halle",
+        "hreflang": [
+          {
+            "rel": "alternate",
+            "hreflang": "de",
+            "href": "https://saaleweb.de/leistungen/webdesign-halle"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "en",
+            "href": "https://saaleweb.de/en/services/web-design-halle"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "ru",
+            "href": "https://saaleweb.de/ru/uslugi/webdesign-halle"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "x-default",
+            "href": "https://saaleweb.de/leistungen/webdesign-halle"
+          }
+        ],
+        "robots": []
+      },
+      {
+        "path": "/ru",
+        "status": 200,
+        "bytes": 1266315,
+        "title": "Веб-дизайн Halle (Saale) и SEO — веб-агентство | SaaleWeb",
+        "h1": [
+          "Сайты, которые приводят клиентов."
+        ],
+        "canonical": "https://saaleweb.de/ru",
+        "hreflang": [
+          {
+            "rel": "alternate",
+            "hreflang": "de",
+            "href": "https://saaleweb.de"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "en",
+            "href": "https://saaleweb.de/en"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "ru",
+            "href": "https://saaleweb.de/ru"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "x-default",
+            "href": "https://saaleweb.de"
+          }
+        ],
+        "robots": []
+      },
+      {
+        "path": "/ru/uslugi/webdesign-halle",
+        "status": 200,
+        "bytes": 703680,
+        "title": "Веб-дизайн и веб-агентство в Halle | SaaleWeb",
+        "h1": [
+          "Веб-дизайн в Halle (Saale) – сайты, которые приводят клиентов"
+        ],
+        "canonical": "https://saaleweb.de/ru/uslugi/webdesign-halle",
+        "hreflang": [
+          {
+            "rel": "alternate",
+            "hreflang": "de",
+            "href": "https://saaleweb.de/leistungen/webdesign-halle"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "en",
+            "href": "https://saaleweb.de/en/services/web-design-halle"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "ru",
+            "href": "https://saaleweb.de/ru/uslugi/webdesign-halle"
+          },
+          {
+            "rel": "alternate",
+            "hreflang": "x-default",
+            "href": "https://saaleweb.de/leistungen/webdesign-halle"
+          }
+        ],
+        "robots": []
+      }
+    ],
+    "redirects": [
+      {
+        "url": "http://saaleweb.de/",
+        "status": 301,
+        "location": "https://saaleweb.de/"
+      },
+      {
+        "url": "https://www.saaleweb.de/",
+        "status": 200,
+        "location": null
+      },
+      {
+        "url": "https://saaleweb.de/de",
+        "status": 307,
+        "location": "/"
+      },
+      {
+        "url": "https://saaleweb.de/branchen/restaurants",
+        "status": 308,
+        "location": "/branchen/restaurant-website"
+      },
+      {
+        "url": "https://saaleweb.de/en/services/webdesign-halle",
+        "status": 308,
+        "location": "/en/services/web-design-halle"
+      }
+    ]
+  },
+  "database": {
+    "visibility": [
+      {
+        "week": "2026-W30",
+        "platform": "chatgpt",
+        "checked": 20,
+        "mentioned": 6,
+        "cited": 3,
+        "first_checked": "2026-07-22T08:07:44.781Z",
+        "last_checked": "2026-07-22T20:55:55.061Z"
+      },
+      {
+        "week": "2026-W30",
+        "platform": "copilot",
+        "checked": 20,
+        "mentioned": 2,
+        "cited": 1,
+        "first_checked": "2026-07-22T08:21:36.311Z",
+        "last_checked": "2026-07-22T20:57:46.991Z"
+      },
+      {
+        "week": "2026-W30",
+        "platform": "google-ai",
+        "checked": 20,
+        "mentioned": 0,
+        "cited": 0,
+        "first_checked": "2026-07-22T08:18:22.549Z",
+        "last_checked": "2026-07-22T20:56:27.268Z"
+      },
+      {
+        "week": "2026-W30",
+        "platform": "perplexity",
+        "checked": 20,
+        "mentioned": 0,
+        "cited": 0,
+        "first_checked": "2026-07-22T08:18:08.346Z",
+        "last_checked": "2026-07-22T20:56:56.686Z"
+      }
+    ],
+    "citations": [
+      {
+        "week": "2026-W30",
+        "promptKey": "agency-halle-small-business",
+        "platform": "chatgpt",
+        "citationUrl": null,
+        "competitor": null
+      },
+      {
+        "week": "2026-W30",
+        "promptKey": "modern-website-halle",
+        "platform": "chatgpt",
+        "citationUrl": null,
+        "competitor": null
+      },
+      {
+        "week": "2026-W30",
+        "promptKey": "modern-website-halle",
+        "platform": "copilot",
+        "citationUrl": null,
+        "competitor": null
+      },
+      {
+        "week": "2026-W30",
+        "promptKey": "seo-agency-halle",
+        "platform": "chatgpt",
+        "citationUrl": null,
+        "competitor": null
+      }
+    ],
+    "snapshots": [
+      {
+        "day": "2026-08-17",
+        "score": 71,
+        "sitemapUrls": 234,
+        "lighthouseMobile": 91,
+        "lighthouseDesktop": 94,
+        "lighthouseSeo": 100,
+        "lighthouseAccessibility": 97,
+        "coreWebVitalsPassed": null,
+        "lighthouseMeasuredAt": "2026-08-17T13:54:55.424Z"
+      },
+      {
+        "day": "2026-08-14",
+        "score": 68,
+        "sitemapUrls": 234,
+        "lighthouseMobile": 88,
+        "lighthouseDesktop": 97,
+        "lighthouseSeo": 100,
+        "lighthouseAccessibility": 97,
+        "coreWebVitalsPassed": null,
+        "lighthouseMeasuredAt": "2026-08-13T20:16:00.269Z"
+      },
+      {
+        "day": "2026-07-31",
+        "score": 75,
+        "sitemapUrls": 243,
+        "lighthouseMobile": null,
+        "lighthouseDesktop": null,
+        "lighthouseSeo": null,
+        "lighthouseAccessibility": null,
+        "coreWebVitalsPassed": null,
+        "lighthouseMeasuredAt": null
+      },
+      {
+        "day": "2026-07-20",
+        "score": 79,
+        "sitemapUrls": 243,
+        "lighthouseMobile": null,
+        "lighthouseDesktop": null,
+        "lighthouseSeo": null,
+        "lighthouseAccessibility": null,
+        "coreWebVitalsPassed": null,
+        "lighthouseMeasuredAt": null
+      },
+      {
+        "day": "2026-07-19",
+        "score": 78,
+        "sitemapUrls": 243,
+        "lighthouseMobile": null,
+        "lighthouseDesktop": null,
+        "lighthouseSeo": null,
+        "lighthouseAccessibility": null,
+        "coreWebVitalsPassed": null,
+        "lighthouseMeasuredAt": null
+      },
+      {
+        "day": "2026-07-17",
+        "score": 79,
+        "sitemapUrls": 243,
+        "lighthouseMobile": null,
+        "lighthouseDesktop": null,
+        "lighthouseSeo": null,
+        "lighthouseAccessibility": null,
+        "coreWebVitalsPassed": null,
+        "lighthouseMeasuredAt": null
+      },
+      {
+        "day": "2026-07-16",
+        "score": 82,
+        "sitemapUrls": 243,
+        "lighthouseMobile": null,
+        "lighthouseDesktop": null,
+        "lighthouseSeo": null,
+        "lighthouseAccessibility": null,
+        "coreWebVitalsPassed": null,
+        "lighthouseMeasuredAt": null
+      },
+      {
+        "day": "2026-07-15",
+        "score": 81,
+        "sitemapUrls": 243,
+        "lighthouseMobile": null,
+        "lighthouseDesktop": null,
+        "lighthouseSeo": null,
+        "lighthouseAccessibility": null,
+        "coreWebVitalsPassed": null,
+        "lighthouseMeasuredAt": null
+      },
+      {
+        "day": "2026-07-14",
+        "score": 91,
+        "sitemapUrls": 243,
+        "lighthouseMobile": null,
+        "lighthouseDesktop": null,
+        "lighthouseSeo": null,
+        "lighthouseAccessibility": null,
+        "coreWebVitalsPassed": null,
+        "lighthouseMeasuredAt": null
+      }
+    ],
+    "current28": {
+      "traffic": [
+        {
+          "views": 159,
+          "daily_visitor_hashes": 72
+        }
+      ],
+      "referrers": [
+        {
+          "host": null,
+          "views": 83,
+          "daily_visitor_hashes": 44
+        },
+        {
+          "host": "chatgpt.com",
+          "views": 29,
+          "daily_visitor_hashes": 7
+        },
+        {
+          "host": "www.google.com",
+          "views": 23,
+          "daily_visitor_hashes": 18
+        },
+        {
+          "host": "saaleweb.de",
+          "views": 8,
+          "daily_visitor_hashes": 5
+        },
+        {
+          "host": "www.werbeagentur.de",
+          "views": 7,
+          "daily_visitor_hashes": 2
+        },
+        {
+          "host": "werbeagentur.de",
+          "views": 5,
+          "daily_visitor_hashes": 1
+        },
+        {
+          "host": "www.google.de",
+          "views": 2,
+          "daily_visitor_hashes": 1
+        },
+        {
+          "host": "www.webdig.asia",
+          "views": 1,
+          "daily_visitor_hashes": 1
+        },
+        {
+          "host": "duckduckgo.com",
+          "views": 1,
+          "daily_visitor_hashes": 1
+        }
+      ],
+      "aiBots": [],
+      "leads": [
+        {
+          "source": "contact_page",
+          "status": "NEW",
+          "total": 1,
+          "firstChannel": "Organic Search",
+          "lastChannel": "Organic Search",
+          "captureMode": "persistent"
+        }
+      ]
+    },
+    "previous28": {
+      "traffic": [
+        {
+          "views": 265,
+          "daily_visitor_hashes": 89
+        }
+      ],
+      "referrers": [
+        {
+          "host": null,
+          "views": 133,
+          "daily_visitor_hashes": 63
+        },
+        {
+          "host": "saaleweb.de",
+          "views": 42,
+          "daily_visitor_hashes": 15
+        },
+        {
+          "host": "www.google.com",
+          "views": 42,
+          "daily_visitor_hashes": 16
+        },
+        {
+          "host": "chatgpt.com",
+          "views": 16,
+          "daily_visitor_hashes": 5
+        },
+        {
+          "host": "search.brave.com",
+          "views": 8,
+          "daily_visitor_hashes": 1
+        },
+        {
+          "host": "www.werbeagentur.de",
+          "views": 7,
+          "daily_visitor_hashes": 3
+        },
+        {
+          "host": "www.google.de",
+          "views": 6,
+          "daily_visitor_hashes": 2
+        },
+        {
+          "host": "localhost",
+          "views": 4,
+          "daily_visitor_hashes": 1
+        },
+        {
+          "host": "saaleweb-app.vercel.app",
+          "views": 2,
+          "daily_visitor_hashes": 1
+        },
+        {
+          "host": "www.tiktok.com",
+          "views": 2,
+          "daily_visitor_hashes": 1
+        },
+        {
+          "host": "hpanel.hostinger.com",
+          "views": 1,
+          "daily_visitor_hashes": 1
+        },
+        {
+          "host": "salon-elen.de",
+          "views": 1,
+          "daily_visitor_hashes": 1
+        },
+        {
+          "host": "search.google.com",
+          "views": 1,
+          "daily_visitor_hashes": 1
+        }
+      ],
+      "aiBots": [],
+      "leads": [
+        {
+          "source": "contact_page",
+          "status": "NEW",
+          "total": 1,
+          "firstChannel": "Organic Search",
+          "lastChannel": "Organic Search",
+          "captureMode": "persistent"
+        }
+      ]
+    }
+  },
+  "ga4": {
+    "current28": {
+      "channels": {
+        "dimensionHeaders": [
+          {
+            "name": "sessionDefaultChannelGroup"
+          }
+        ],
+        "metricHeaders": [
+          {
+            "name": "sessions",
+            "type": "TYPE_INTEGER"
+          },
+          {
+            "name": "activeUsers",
+            "type": "TYPE_INTEGER"
+          },
+          {
+            "name": "engagedSessions",
+            "type": "TYPE_INTEGER"
+          },
+          {
+            "name": "screenPageViews",
+            "type": "TYPE_INTEGER"
+          }
+        ],
+        "metadata": {
+          "currencyCode": "EUR",
+          "timeZone": "Europe/Berlin"
+        },
+        "kind": "analyticsData#runReport"
+      },
+      "organicLanding": {
+        "dimensionHeaders": [
+          {
+            "name": "landingPagePlusQueryString"
+          }
+        ],
+        "metricHeaders": [
+          {
+            "name": "sessions",
+            "type": "TYPE_INTEGER"
+          },
+          {
+            "name": "engagedSessions",
+            "type": "TYPE_INTEGER"
+          },
+          {
+            "name": "keyEvents",
+            "type": "TYPE_FLOAT"
+          }
+        ],
+        "metadata": {
+          "currencyCode": "EUR",
+          "timeZone": "Europe/Berlin"
+        },
+        "kind": "analyticsData#runReport"
+      },
+      "organicEvents": {
+        "dimensionHeaders": [
+          {
+            "name": "eventName"
+          }
+        ],
+        "metricHeaders": [
+          {
+            "name": "eventCount",
+            "type": "TYPE_INTEGER"
+          }
+        ],
+        "metadata": {
+          "currencyCode": "EUR",
+          "timeZone": "Europe/Berlin"
+        },
+        "kind": "analyticsData#runReport"
+      }
+    },
+    "previous28": {
+      "channels": {
+        "dimensionHeaders": [
+          {
+            "name": "sessionDefaultChannelGroup"
+          }
+        ],
+        "metricHeaders": [
+          {
+            "name": "sessions",
+            "type": "TYPE_INTEGER"
+          },
+          {
+            "name": "activeUsers",
+            "type": "TYPE_INTEGER"
+          },
+          {
+            "name": "engagedSessions",
+            "type": "TYPE_INTEGER"
+          },
+          {
+            "name": "screenPageViews",
+            "type": "TYPE_INTEGER"
+          }
+        ],
+        "metadata": {
+          "currencyCode": "EUR",
+          "timeZone": "Europe/Berlin"
+        },
+        "kind": "analyticsData#runReport"
+      },
+      "organicLanding": {
+        "dimensionHeaders": [
+          {
+            "name": "landingPagePlusQueryString"
+          }
+        ],
+        "metricHeaders": [
+          {
+            "name": "sessions",
+            "type": "TYPE_INTEGER"
+          },
+          {
+            "name": "engagedSessions",
+            "type": "TYPE_INTEGER"
+          },
+          {
+            "name": "keyEvents",
+            "type": "TYPE_FLOAT"
+          }
+        ],
+        "metadata": {
+          "currencyCode": "EUR",
+          "timeZone": "Europe/Berlin"
+        },
+        "kind": "analyticsData#runReport"
+      },
+      "organicEvents": {
+        "dimensionHeaders": [
+          {
+            "name": "eventName"
+          }
+        ],
+        "metricHeaders": [
+          {
+            "name": "eventCount",
+            "type": "TYPE_INTEGER"
+          }
+        ],
+        "metadata": {
+          "currencyCode": "EUR",
+          "timeZone": "Europe/Berlin"
+        },
+        "kind": "analyticsData#runReport"
+      }
+    }
+  }
+}

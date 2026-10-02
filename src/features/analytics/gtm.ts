@@ -53,6 +53,15 @@ export function ensureGtmDataLayer() {
   return window.dataLayer;
 }
 
+/** Google distinguishes gtag Arguments commands from plain dataLayer arrays. */
+export function ensureGoogleTag(): NonNullable<Window["gtag"]> {
+  window.gtag = window.gtag || function gtag() {
+    // eslint-disable-next-line prefer-rest-params -- The gtag queue protocol requires Arguments.
+    ensureGtmDataLayer().push(arguments);
+  };
+  return window.gtag;
+}
+
 export function isAdminTrackingPath(pathname: string): boolean {
   return pathname === "/admin" || pathname.startsWith("/admin/");
 }
@@ -103,13 +112,7 @@ export function trackCurrentPageView(locale?: string): GtmPageViewPayload | null
 export function updateAnalyticsConsent(consent: AnalyticsConsent): void {
   if (!isGtmConfigured() || typeof window === "undefined") return;
 
-  ensureGtmDataLayer();
-  window.gtag =
-    window.gtag ||
-    ((...args: unknown[]) => {
-      ensureGtmDataLayer().push(args);
-    });
-  window.gtag("consent", "update", {
+  ensureGoogleTag()("consent", "update", {
     analytics_storage: consent,
     ad_storage: "denied",
     ad_user_data: "denied",
