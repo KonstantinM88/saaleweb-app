@@ -60,9 +60,9 @@ event.
 The supported browser connection still reports `No browser is available`, so
 the owner uses signed-in Tag Assistant screenshots for the runtime verification.
 Page-view, consent, AI-assistant, scroll-depth, email-click and persisted-lead
-observations are recorded below. Separate GA4 DebugView UI and a normal browser
-session after GTM publication still need verification. Realtime confirms event
-receipt during Preview; GTM API separately confirms the published live version.
+observations are recorded below. GA4 Realtime also confirmed events in an owner
+reported normal browser session after publication. The separate DebugView UI
+remains unverified.
 
 ### Consent queue regression found in owner Preview
 
@@ -128,9 +128,12 @@ five triggers and twelve data-layer variables, with no merge conflicts. A fresh
 views and business events`, was created and published through the GTM API. GET
 readback of `versions:live` confirmed version `2` with all six expected tags.
 The production site continued serving the deployed consent-fix bundle and HTTP
-200. The prior live version `1` was the empty container. Recheck collection in
-a normal browser session without GTM Preview; publication is verified by API,
-while normal-session event receipt is a separate check.
+200. The prior live version `1` was the empty container. After publication, the
+owner opened the site without GTM Preview. GA4 Realtime reported a new
+`page_view` and four `scroll_depth` events at about 00:39 Europe/Berlin, then
+`ai_assistant_open: 1` in the current minute immediately after the owner opened
+the assistant at 00:42. The minute-level API result links the latter event to
+the owner's post-publication action. The live version still read back as `2`.
 
 ### GTM draft prepared on 2026-10-02
 
@@ -278,8 +281,9 @@ reviewing the consent UI and privacy policy again.
 For this launch, Preview and GA4 Realtime verified `page_view`,
 `ai_assistant_open`, `scroll_depth`, `email_click` and `form_submit`. Consent
 denial, analytics-only grant and revocation were observed in Preview. The
-owner still needs to confirm collection outside Preview and inspect the same
-events in the GA4 DebugView UI when access is available.
+owner confirmed `page_view`, `scroll_depth` and `ai_assistant_open` collection
+outside Preview after version `2` went live. The separate GA4 DebugView UI
+remains unverified.
 
 GTM/GA4 is an additional consent-aware layer. The existing SaaleWeb first-party
 cookieless analytics remains active and independent.
