@@ -496,20 +496,34 @@ function ga4UnavailableText(snapshot: Ga4Snapshot): string {
   return "Google Analytics временно недоступен; собственная аналитика продолжает работать.";
 }
 
+function ga4EventCount(snapshot: Ga4Snapshot, eventName: string): number {
+  return snapshot.events.find((event) => event.eventName === eventName)?.eventCount ?? 0;
+}
+
 function ga4DailyLines(snapshot: Ga4Snapshot): string[] {
   if (!snapshot.available) {
-    return ["📈 GA4 — завершённый календарный день", `• ${ga4UnavailableText(snapshot)}`];
+    return ["📈 GA4 — вчера (завершённый календарный день)", `• ${ga4UnavailableText(snapshot)}`];
   }
 
   const leader = snapshot.channels[0];
+  const contactClicks = ["phone_click", "email_click", "telegram_click", "whatsapp_click"]
+    .reduce((total, eventName) => total + ga4EventCount(snapshot, eventName), 0);
+  const eventLines = snapshot.eventsAvailable
+    ? [
+        `• Заявки GA4 (form_submit): ${formatInteger(ga4EventCount(snapshot, "form_submit"))}`,
+        `• Клики по каналам связи GA4: ${formatInteger(contactClicks)}`,
+        `• Открытия AI-ассистента GA4: ${formatInteger(ga4EventCount(snapshot, "ai_assistant_open"))}`,
+      ]
+    : ["• События GA4 временно недоступны."];
   return [
-    "📈 GA4 — завершённый календарный день",
+    "📈 GA4 — вчера (завершённый календарный день)",
     "• Данные с учётом Consent Mode; не равны first-party статистике.",
     `• Активные пользователи GA4: ${formatInteger(snapshot.totals.activeUsers)} (${formatGa4Delta(snapshot.totals.activeUsers, snapshot.previousTotals.activeUsers)})`,
     `• Сессии: ${formatInteger(snapshot.totals.sessions)} (${formatGa4Delta(snapshot.totals.sessions, snapshot.previousTotals.sessions)})`,
     `• Вовлечённость: ${formatRate(snapshot.totals.engagementRate)}`,
     `• Среднее время сессии: ${formatDuration(snapshot.totals.averageSessionDuration)}`,
     `• Главный канал: ${leader ? `${trimText(leader.channel, 60)} — ${formatInteger(leader.sessions)}` : "данных пока нет"}`,
+    ...eventLines,
   ];
 }
 
@@ -578,9 +592,9 @@ export async function buildGa4Report(now = new Date()): Promise<string> {
             `• ${row.country} — ${formatInteger(row.activeUsers)} пользователей / ${formatInteger(row.sessions)} сессий`,
         )
       : ["• Данных по странам пока нет."];
-  const eventLines = snapshot.events.map(
-    (row) => `• ${row.eventName} — ${formatInteger(row.eventCount)}`,
-  );
+  const eventLines = snapshot.eventsAvailable
+    ? snapshot.events.map((row) => `• ${row.eventName} — ${formatInteger(row.eventCount)}`)
+    : ["• События GA4 временно недоступны."];
 
   return [
     "📈 SaaleWeb — GA4",
@@ -1114,7 +1128,9 @@ export async function sendDailySiteReport(): Promise<boolean> {
   return (await sendDailySiteReportDetailed()).ok;
 }
 
-export async function sendDailySiteReportDetailed(): Promise<TelegramAdminDeliverySummary> {
+export async function sendDailySiteReportDetailed(
+  options: { test?: boolean } = {},
+): Promise<TelegramAdminDeliverySummary> {
   const report = await buildDailySiteReport();
-  return sendTelegramAdminMessageDetailed(report);
+  return sendTelegramAdminMessageDetailed(options.test ? `[TEST] Ручная проверка\n\n${report}` : report);
 }

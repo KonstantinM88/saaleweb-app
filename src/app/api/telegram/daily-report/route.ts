@@ -42,12 +42,14 @@ async function handle(req: Request) {
   }
 
   try {
-    const delivery = await sendDailySiteReportDetailed();
+    const test = new URL(req.url).searchParams.get("test") === "1";
+    const delivery = await sendDailySiteReportDetailed({ test });
     return NextResponse.json(
       {
         ok: delivery.ok,
         sent: delivery.ok,
         partial: delivery.partial,
+        test,
         delivery,
         telegram: telegramDiagnostics(),
       },

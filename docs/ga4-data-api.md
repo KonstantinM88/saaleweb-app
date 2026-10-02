@@ -83,11 +83,32 @@ in PostgreSQL.
 ## 5. Telegram reports and periods
 
 - `/report`: first-party rolling 24 hours plus a compact GA4 block for
-  **yesterday**, compared with `2daysAgo`.
+  **yesterday**, compared with `2daysAgo`. The GA4 block also shows yesterday's
+  `form_submit` events, contact-channel clicks (`phone_click`, `email_click`,
+  `telegram_click`, `whatsapp_click`), and `ai_assistant_open` events. These are
+  separate GA4 event counts, not additions to the first-party lead total.
 - `/week`: first-party rolling 7 days plus a compact GA4 block for
   `7daysAgo -> yesterday`, compared with `14daysAgo -> 8daysAgo`.
 - `/ga4` or the `📈 GA4` button: detailed audience, channel, landing-page,
-  device, country, and business-event data for the last seven completed days.
+  device, country, and business-event data (including `scroll_depth`) for the
+  last seven completed days.
+
+The daily cron endpoint `/api/telegram/daily-report` uses the same `/report`
+content. A cron-job.org job at `08:00` in `Europe/Berlin` was verified from
+the 2026-10-02 execution history: HTTP 200, `delivery.attempted: 2`,
+`delivery.sent: 2`, `delivery.failed: 0`, `partial: false`. A future HTTP 200
+alone proves only that at least one recipient received the report; inspect the
+response body for all recipient counts. The endpoint does not have a per-day
+send lock, so manually repeating the cron request sends another report.
+An authenticated manual request with `?test=1` sends the full report with a
+`[TEST]` prefix; leave this parameter off the scheduled job.
+
+Use `Authorization: Bearer <TELEGRAM_REPORT_SECRET>` as a custom cron-job.org
+request header and keep the URL free of `?secret=`. [cron-job.org supports
+custom headers](https://cron-job.org/en/faq/). If the secret was displayed in a screenshot or shared URL,
+replace it in Hostinger and the cron job, then run a controlled test and
+confirm `sent: 2`, `failed: 0`. Do not place the new secret in screenshots,
+commits, or chat messages.
 
 GA4 failures never block `/report`, `/week`, the daily cron report, Search
 Console, PageSpeed, AI monitoring, or first-party analytics.

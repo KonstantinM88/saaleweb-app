@@ -20,6 +20,7 @@ export const GA4_BUSINESS_EVENTS = [
   "audit_request",
   "outbound_link",
   "ai_assistant_open",
+  "scroll_depth",
   "click",
   "scroll",
 ] as const;
@@ -75,6 +76,7 @@ export type Ga4Snapshot = {
   devices: Ga4DeviceRow[];
   countries: Ga4CountryRow[];
   events: Ga4EventRow[];
+  eventsAvailable: boolean;
   errorCode?: string;
   errorMessage?: string;
 };
@@ -324,6 +326,7 @@ function emptySnapshot(
     devices: [],
     countries: [],
     events: GA4_BUSINESS_EVENTS.map((eventName) => ({ eventName, eventCount: 0 })),
+    eventsAvailable: false,
     errorCode,
     errorMessage,
   };
@@ -492,6 +495,7 @@ export async function fetchGa4Snapshot(period: Ga4Period = "weekly"): Promise<Ga
       eventName,
       eventCount: eventCounts.get(eventName) ?? 0,
     })),
+    eventsAvailable: Boolean(fulfilled(results[6])),
     ...(partial
       ? {
           errorCode: "ga4_partial_data",
