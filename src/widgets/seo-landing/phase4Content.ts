@@ -486,7 +486,7 @@ const coreSeoServicePages: Record<string, Phase4Landing> = {
     ],
     solutionTitle: "WordPress-Betreuung mit klarer Verantwortung",
     solution: [
-      "Am Anfang steht eine Bestandsaufnahme: Zugänge, Hosting, Theme, Plugins, Performance, Sicherheit und SEO-Zustand werden dokumentiert. Erst danach entsteht ein Plan mit Prioritäten.",
+      "Nach dem kostenlosen Erstgespräch klären wir die vorhandenen Zugänge und vereinbaren den Umfang der Bestandsaufnahme. Hosting, Theme, Plugins, Performance, Sicherheit und SEO-Zustand werden danach dokumentiert; daraus entsteht ein Plan mit Prioritäten und einem Angebot für die Umsetzung.",
       "Danach entscheidet der Nutzen, nicht die Technik: Manche Websites brauchen nur saubere Updates und Performance-Arbeit, andere einen Relaunch. Beides ist möglich — inklusive Wechsel zu React/Next.js, wenn das nachweislich sinnvoll ist.",
     ],
     featuresTitle: "Leistungen einer WordPress-Agentur in Halle",
@@ -497,22 +497,23 @@ const coreSeoServicePages: Record<string, Phase4Landing> = {
       { title: "Sicherheit", text: "Backups, Login-Absicherung, Formularschutz und regelmäßige Kontrolle statt einmaliger Einrichtung." },
       { title: "SEO-Grundlagen", text: "Meta-Daten, Überschriftenstruktur, interne Links, Indexierbarkeit und strukturierte Daten werden sauber gesetzt." },
       { title: "Local SEO für Halle", text: "Standortsignale, Google-Unternehmensprofil und regionale Inhalte werden mit der Website verbunden." },
-      { title: "Relaunch ohne Sichtbarkeitsverlust", text: "Redirects, URL-Struktur und bestehende Rankings werden vor dem Umzug abgesichert." },
+      { title: "SEO-bewusster Relaunch", text: "Bestehende URLs und Suchdaten werden erfasst, passende Weiterleitungen geplant und die neue Website nach dem Start geprüft. Rankings können dennoch schwanken." },
       { title: "Fester Ansprechpartner", text: "Sie sprechen direkt mit dem Entwickler, der Ihre Installation kennt — kein Ticketsystem." },
     ],
     technologyTitle: "WordPress oder etwas anderes?",
     technologyText,
     processTitle: "Von der Bestandsaufnahme zur betreuten Website",
     process: serviceProcess,
-    casesTitle: "Projektbeispiele aus der Region",
+    casesTitle: "Projektbeispiele für klare Nutzerführung",
     cases: serviceCases.local,
     relatedTitle: "Passende weiterführende Seiten",
     relatedLinks: [
       { label: "WordPress Website modernisieren", href: "/leistungen/wordpress-website-modernisieren", description: "Bestehende WordPress-Website gezielt verbessern statt neu bauen." },
       { label: "Website Wartung", href: "/leistungen/website-wartung", description: "Laufende Pflege, Updates, Backups und technische Kontrolle." },
-      { label: "Website Relaunch", href: "/leistungen/website-relaunch", description: "Relaunch mit gesicherter SEO, Redirects und sauberer Basis." },
+      { label: "Website Relaunch", href: "/leistungen/website-relaunch", description: "URL-Inventar, passende Weiterleitungen und SEO-Prüfung nach dem Start." },
       { label: "Webdesign Halle", href: "/leistungen/webdesign-halle", description: "Regionales Webdesign für Unternehmen in Halle (Saale)." },
-      { label: "Kontakt", href: "/kontakt", description: "Bestehende WordPress-Website kostenlos einschätzen lassen." },
+      { label: "Preise und Pakete", href: "/preise", description: "Einstiegspreise für neue Websites; Betreuung und Relaunch nach Bestandsaufnahme kalkulieren." },
+      { label: "Kontakt", href: "/kontakt", description: "Bedarf für Ihre bestehende WordPress-Website im kostenlosen Erstgespräch klären." },
     ],
     faq: serviceFaq("Eine WordPress-Agentur in Halle", [
       {
@@ -521,7 +522,7 @@ const coreSeoServicePages: Record<string, Phase4Landing> = {
       },
       {
         q: "Was kostet die Betreuung einer WordPress-Website?",
-        a: "Die Bestandsaufnahme und das Erstgespräch sind kostenlos. Der Aufwand für laufende Betreuung hängt von Umfang, Plugin-Anzahl, Hosting und gewünschter Reaktionszeit ab und wird nach der Analyse als transparentes Angebot kalkuliert. Eine neue Website startet bei 600 € für einen WordPress-Onepager.",
+        a: "Das Erstgespräch ist kostenlos. Umfang und Kosten einer technischen Bestandsaufnahme oder laufenden Betreuung hängen von Installation, Plugin-Anzahl, Hosting und gewünschter Reaktionszeit ab und werden vorab vereinbart. Der Einstiegspreis von 600 € gilt für einen neuen WordPress-Onepager, nicht für die Übernahme eines bestehenden Systems.",
       },
       {
         q: "Muss ich von WordPress zu Next.js wechseln?",
@@ -529,11 +530,11 @@ const coreSeoServicePages: Record<string, Phase4Landing> = {
       },
       {
         q: "Kann ein Relaunch die bestehenden Google-Rankings gefährden?",
-        a: "Ja, wenn Redirects, URL-Struktur und Inhalte nicht vorbereitet werden. Deshalb wird vor dem Umzug die bestehende URL- und Ranking-Situation erfasst und ein vollständiger Redirect-Plan erstellt. Kurzfristige Schwankungen sind normal; dauerhafter Sichtbarkeitsverlust ist vermeidbar.",
+        a: "Ja. Vor einem Relaunch erfassen wir wichtige URLs, Inhalte und Suchdaten, ordnen alten Seiten passende neue Ziele zu und prüfen Weiterleitungen, interne Links und Indexierung nach dem Start. Das reduziert vermeidbare Fehler; eine unveränderte Position kann niemand garantieren.",
       },
       {
-        q: "Arbeitet SaaleWeb auch mit WooCommerce?",
-        a: "Ja. WooCommerce-Shops werden betreut, erweitert und bei Bedarf an Warenwirtschaft, Zahlungsanbieter oder Produktimporte angebunden. Ob WooCommerce oder eine andere Lösung sinnvoll ist, hängt von Sortiment, Prozessen und Pflegeaufwand ab.",
+        q: "Wann reicht Wartung, und wann ist ein Relaunch sinnvoll?",
+        a: "Wenn Struktur und Technik tragfähig sind, beginnen wir mit Updates, Backups, Sicherheit und gezielten Performance-Verbesserungen. Ein Relaunch kommt infrage, wenn Theme, Page Builder oder Inhaltsstruktur die Ziele dauerhaft begrenzen. Die Entscheidung folgt der Bestandsaufnahme und einem vergleichbaren Aufwand-Nutzen-Plan.",
       },
     ]),
     ...defaultFinal,
@@ -719,10 +720,10 @@ const coreSeoServicePages: Record<string, Phase4Landing> = {
   "website-relaunch": {
     slug: "website-relaunch",
     eyebrow: "Leistung",
-    title: "Website Relaunch – modernisieren, ohne Sichtbarkeit zu verlieren",
+    title: "Website Relaunch – modernisieren und SEO-Risiken gezielt reduzieren",
     metaTitle: "Website Relaunch | SaaleWeb",
     metaDescription:
-      "Website Relaunch mit SaaleWeb: Strategie, SEO-Sicherung, Redirects, moderne UX, Performance und klare Conversion-Struktur für Unternehmen.",
+      "Website Relaunch mit SaaleWeb: Strategie, SEO-Migrationsplanung, Redirects, moderne UX, Performance und klare Conversion-Struktur für Unternehmen.",
     lead: [
       "Ein Relaunch ist mehr als ein neues Design. Wenn Struktur, URLs, Inhalte und SEO nicht sauber geplant sind, kann eine neue Website wertvolle Sichtbarkeit verlieren.",
       "SaaleWeb plant Relaunches so, dass Technik, Nutzerführung, Inhalte und Suchmaschinen von Anfang an zusammenspielen.",
@@ -736,7 +737,7 @@ const coreSeoServicePages: Record<string, Phase4Landing> = {
       "Alte Inhalte werden gelöscht, obwohl sie organischen Wert haben.",
       "Es fehlt ein klarer Plan für Messung und Nachoptimierung.",
     ],
-    solutionTitle: "Relaunch mit Strategie und SEO-Sicherung",
+    solutionTitle: "Relaunch mit Strategie und SEO-Migrationsplan",
     solution: [
       "Wir analysieren zuerst Ihre bestehende Website: wichtige Seiten, Suchbegriffe, Inhalte, technische Schwächen und Nutzerwege.",
       "Danach entsteht ein Relaunch-Konzept mit neuer Struktur, Redirect-Plan, SEO-Basis, Performance-Zielen und klarer Kommunikation für Besucher.",
@@ -766,7 +767,7 @@ const coreSeoServicePages: Record<string, Phase4Landing> = {
     faq: serviceFaq("einen Website Relaunch", [
       {
         q: "Verliert meine Website beim Relaunch SEO-Rankings?",
-        a: "Das Risiko besteht, wenn URLs, Inhalte und Weiterleitungen nicht sauber geplant werden. Deshalb gehört SEO-Sicherung bei SaaleWeb von Anfang an zum Relaunch.",
+        a: "Ranking-Schwankungen sind auch bei einem gut geplanten Relaunch möglich. Wir erfassen wichtige URLs und Suchdaten, ordnen alte Seiten passenden neuen Zielen zu und prüfen Weiterleitungen, interne Links und Indexierung nach dem Start, um vermeidbare Fehler zu reduzieren.",
       },
       {
         q: "Kann ein Relaunch auch schrittweise erfolgen?",
@@ -1185,7 +1186,7 @@ const EN_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
       "SEO basics are missing, or were delegated to a plugin nobody configured.",
     ],
     solution: [
-      "It starts with an inventory: access credentials, hosting, theme, plugins, performance, security and SEO status are documented. Only then does a prioritised plan follow.",
+      "After a free first conversation, we establish which access credentials are available and agree on the scope of the technical inventory. Hosting, theme, plugins, performance, security and SEO status are then documented before a prioritised implementation proposal is prepared.",
       "After that, value decides — not technology. Some sites only need clean updates and performance work; others need a relaunch. Both are possible, including a move to React/Next.js where that is demonstrably the better option.",
     ],
     features: [
@@ -1195,14 +1196,16 @@ const EN_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
       { title: "Security", text: "Backups, login hardening and form protection as an ongoing routine, not a one-off setup." },
       { title: "SEO foundations", text: "Metadata, heading structure, internal links, indexability and structured data are set up properly." },
       { title: "Local SEO for Halle", text: "Location signals, Google Business Profile and regional content are connected to the website." },
-      { title: "Relaunch without losing visibility", text: "Redirects, URL structure and existing rankings are secured before the move." },
+      { title: "SEO-aware relaunch", text: "Existing URLs and search data are recorded, suitable redirects are planned and the new site is checked after launch. Rankings may still fluctuate." },
       { title: "One named contact", text: "You speak directly to the developer who knows your installation — no ticket queue." },
     ],
     related: [
       { label: "Modernize WordPress website", href: "/en/services/wordpress-website-modernization", description: "Improve an existing WordPress site instead of rebuilding blindly." },
       { label: "Website maintenance", href: "/en/services/website-maintenance", description: "Ongoing care, updates, backups and technical monitoring." },
+      { label: "Website relaunch", href: "/en/services/website-relaunch", description: "Plan URL mapping, redirects and search checks before and after a move." },
       { label: "Web design Halle", href: "/en/services/web-design-halle", description: "Regional web design for businesses in Halle (Saale)." },
-      { label: "Contact", href: "/en/contact", description: "Get your existing WordPress site reviewed at no cost." },
+      { label: "Prices and packages", href: "/en/pricing", description: "Starting prices for new sites; maintenance and relaunch scope are quoted after review." },
+      { label: "Contact", href: "/en/contact", description: "Discuss your existing WordPress site's needs in a free first conversation." },
     ],
     extraFaq: [
       {
@@ -1211,11 +1214,19 @@ const EN_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
       },
       {
         q: "What does WordPress maintenance cost?",
-        a: "The inventory and the first consultation are free. Ongoing maintenance depends on scope, plugin count, hosting and the response time you need, and is quoted transparently after the analysis. A new site starts at €600 for a WordPress one-pager.",
+        a: "The first conversation is free. The scope and cost of a technical inventory or ongoing maintenance depend on the installation, plugin count, hosting and required response time, and are agreed before work begins. The €600 starting price applies to a new WordPress one-pager, not to taking over an existing system.",
       },
       {
         q: "Do I have to migrate from WordPress to Next.js?",
         a: "No. WordPress is a good fit if you edit content often and want a proven, widely supported system. A migration is only recommended when speed, custom functionality or scale genuinely require it — never as a matter of principle.",
+      },
+      {
+        q: "When is maintenance enough, and when is a relaunch useful?",
+        a: "If the structure and technology still support the business goal, we start with updates, backups, security and targeted performance work. A relaunch becomes relevant when the theme, page builder or content structure keeps blocking the goal. We compare effort and benefit after the inventory.",
+      },
+      {
+        q: "Can a WordPress relaunch affect Google rankings?",
+        a: "Yes. Before a move we inventory important URLs, content and search data, map old pages to relevant new destinations, and check redirects, internal links and indexing after launch. This reduces avoidable errors but cannot guarantee unchanged rankings.",
       },
     ],
   },
@@ -1456,7 +1467,7 @@ const EN_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
   },
   "website-relaunch": {
     navLabel: "Website relaunch",
-    title: "Website relaunch – modernize without losing important visibility",
+    title: "Website relaunch – modernize with a clear SEO migration plan",
     metaTitle: "Website relaunch | SaaleWeb",
     metaDescription:
       "Website relaunch with SaaleWeb: strategy, SEO migration, redirects, modern UX, performance and conversion structure.",
@@ -1489,6 +1500,12 @@ const EN_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
       { label: "Modernize WordPress", href: "/en/services/wordpress-website-modernization", description: "When existing WordPress structures should remain." },
       { label: "Performance optimization", href: "/en/services/performance-optimization", description: "Improve technical quality." },
       { label: "Projects", href: "/en/projects", description: "See examples from practice." },
+    ],
+    extraFaq: [
+      {
+        q: "Can a website relaunch change existing Google rankings?",
+        a: "Yes. Rankings can fluctuate even after a carefully planned relaunch. We inventory important URLs and search data, map old pages to suitable new destinations, and check redirects, internal links and indexing after launch to reduce avoidable errors.",
+      },
     ],
   },
   "performance-optimierung": {
@@ -1624,7 +1641,7 @@ const RU_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
       "Базового SEO нет, либо оно отдано плагину, который никто не настроил.",
     ],
     solution: [
-      "Всё начинается с инвентаризации: доступы, хостинг, тема, плагины, производительность, безопасность и состояние SEO документируются. Только после этого появляется план с приоритетами.",
+      "После бесплатного первого разговора уточняем, какие доступы есть, и согласуем объём технической инвентаризации. Затем документируем хостинг, тему, плагины, производительность, безопасность и состояние SEO, после чего готовим приоритетный план и предложение на реализацию.",
       "Дальше решает польза, а не технология. Одним сайтам нужны только аккуратные обновления и работа над скоростью, другим — релонч. Возможно и то и другое, включая переход на React/Next.js, если это действительно оправдано.",
     ],
     features: [
@@ -1634,14 +1651,16 @@ const RU_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
       { title: "Безопасность", text: "Бэкапы, защита входа и защита форм как постоянная практика, а не разовая настройка." },
       { title: "База SEO", text: "Мета-данные, структура заголовков, внутренние ссылки, индексируемость и структурированные данные настраиваются корректно." },
       { title: "Локальное SEO для Halle", text: "Сигналы местоположения, профиль Google и региональный контент связываются с сайтом." },
-      { title: "Релонч без потери видимости", text: "Редиректы, структура URL и текущие позиции фиксируются до переезда." },
+      { title: "Релонч с учётом SEO", text: "Сначала фиксируем текущие URL и поисковые данные, планируем подходящие перенаправления и проверяем новый сайт после запуска. Позиции всё равно могут колебаться." },
       { title: "Один ответственный контакт", text: "Вы общаетесь напрямую с разработчиком, который знает вашу установку, — без тикет-системы." },
     ],
     related: [
       { label: "Модернизация WordPress-сайта", href: "/ru/uslugi/modernizaciya-wordpress-sajta", description: "Улучшить существующий сайт вместо слепой переделки." },
-      { label: "Поддержка сайта", href: "/ru/uslugi/podderzhka-sajta", description: "Регулярный уход, обновления, бэкапы и технический контроль." },
+      { label: "Поддержка сайта", href: "/ru/uslugi/podderzhka-saytov", description: "Регулярный уход, обновления, бэкапы и технический контроль." },
+      { label: "Релонч сайта", href: "/ru/uslugi/relonch-sajta", description: "Спланировать соответствие URL, перенаправления и проверки поиска до и после запуска." },
       { label: "Веб-дизайн Halle", href: "/ru/uslugi/webdesign-halle", description: "Региональный веб-дизайн для бизнеса в Halle (Saale)." },
-      { label: "Контакт", href: "/ru/kontakt", description: "Бесплатно оценить текущий сайт на WordPress." },
+      { label: "Цены и пакеты", href: "/ru/ceny", description: "Стартовые цены новых сайтов; поддержку и релонч рассчитываем после изучения задачи." },
+      { label: "Контакт", href: "/ru/kontakt", description: "Обсудить задачи существующего WordPress-сайта на бесплатном первом разговоре." },
     ],
     extraFaq: [
       {
@@ -1650,11 +1669,19 @@ const RU_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
       },
       {
         q: "Сколько стоит поддержка сайта на WordPress?",
-        a: "Инвентаризация и первая консультация бесплатны. Стоимость регулярной поддержки зависит от объёма, количества плагинов, хостинга и нужного времени реакции; расчёт даётся прозрачно после анализа. Новый сайт начинается от 600 € за одностраничник на WordPress.",
+        a: "Первый разговор бесплатный. Объём и стоимость технической инвентаризации или регулярной поддержки зависят от установки, количества плагинов, хостинга и нужного времени реакции и согласуются до начала работ. Цена от 600 € относится к новому одностраничному сайту на WordPress, а не к приёму существующей системы.",
       },
       {
         q: "Нужно ли переходить с WordPress на Next.js?",
         a: "Нет. WordPress хорош, если вы часто правите контент сами и хотите проверенную распространённую систему. Переход рекомендуется только тогда, когда этого действительно требуют скорость, нестандартные функции или масштаб, — а не из принципа.",
+      },
+      {
+        q: "Когда достаточно поддержки, а когда нужен релонч?",
+        a: "Если структура и технология ещё отвечают целям бизнеса, начинаем с обновлений, бэкапов, безопасности и точечных улучшений скорости. Релонч рассматриваем, когда тема, конструктор или структура контента постоянно ограничивают развитие. После инвентаризации сравниваем затраты и пользу.",
+      },
+      {
+        q: "Может ли релонч WordPress повлиять на позиции в Google?",
+        a: "Да. До переноса фиксируем важные URL, контент и поисковые данные, сопоставляем старые страницы с подходящими новыми, а после запуска проверяем перенаправления, внутренние ссылки и индексацию. Это снижает предотвратимые ошибки, но не гарантирует неизменность позиций.",
       },
     ],
   },
@@ -1895,7 +1922,7 @@ const RU_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
   },
   "website-relaunch": {
     navLabel: "Релонч сайта",
-    title: "Релонч сайта – обновить без потери важной видимости",
+    title: "Релонч сайта — обновление с планом SEO-миграции",
     metaTitle: "Релонч сайта | SaaleWeb",
     metaDescription:
       "Релонч сайта с SaaleWeb: стратегия, SEO-миграция, редиректы, современный UX, производительность и структура под заявки.",
@@ -1928,6 +1955,12 @@ const RU_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
       { label: "Модернизация WordPress", href: "/ru/uslugi/modernizaciya-wordpress-sayta", description: "Если WordPress-структуру стоит сохранить." },
       { label: "Производительность", href: "/ru/uslugi/optimizaciya-proizvoditelnosti", description: "Улучшить техническое качество." },
       { label: "Проекты", href: "/ru/proekty", description: "Посмотреть практические примеры." },
+    ],
+    extraFaq: [
+      {
+        q: "Могут ли позиции Google измениться после релонча?",
+        a: "Да. Колебания возможны даже при аккуратном переносе. Мы фиксируем важные URL и поисковые данные, сопоставляем старые страницы с подходящими новыми и после запуска проверяем перенаправления, внутренние ссылки и индексацию, чтобы уменьшить предотвратимые ошибки.",
+      },
     ],
   },
   "performance-optimierung": {
