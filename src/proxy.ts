@@ -20,11 +20,11 @@ const RSC_VARY_HEADERS = [
 
 function protectAppRouterResponse(req: NextRequest, response: NextResponse) {
   // next-intl can only substitute a dynamic [slug] literally across locales
-  // in its Link header. Service slugs are translated separately, so that
-  // header can disagree with the accurate alternates in page metadata.
+  // in its Link header. Service and project slugs are translated separately,
+  // so that header can disagree with the accurate alternates in page metadata.
   // Keep the HTML and sitemap hreflang signals as the source of truth.
   if (
-    /^\/(?:leistungen|en\/services|ru\/uslugi)\//.test(req.nextUrl.pathname) &&
+    /^\/(?:leistungen|projekte|en\/(?:services|projects)|ru\/(?:uslugi|proekty))\//.test(req.nextUrl.pathname) &&
     response.headers.get("Link")?.includes('hreflang=')
   ) {
     response.headers.delete("Link");

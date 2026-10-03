@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { prisma } from "@/lib/prisma";
 import { getProjectFocusBySlug } from "@/features/projects/projectFocus";
+import { getProjectFaq } from "@/features/projects/projectFaq";
 import { routing, type AppLocale } from "@/i18n/routing";
 import { getPathname, Link } from "@/i18n/navigation";
 import { Navbar } from "@/widgets/navbar/Navbar";
@@ -214,6 +215,7 @@ export default async function ProjectPage({
     result: data.results || t("resultsText"),
     performance: t("performanceNotesText"),
   };
+  const projectFaq = getProjectFaq(locale, data.slugs.de);
   const nextProject = await getNextProject(locale, slug);
   const path = getPathname({
     locale,
@@ -558,6 +560,30 @@ export default async function ProjectPage({
                     />
                   </Reveal>
                 ))}
+              </div>
+            </Container>
+          </section>
+        )}
+
+        {projectFaq && (
+          <section className="border-y border-line bg-surface py-16 md:py-20" aria-labelledby="project-faq-title">
+            <Container>
+              <div className="mx-auto max-w-3xl">
+                <h2 id="project-faq-title" className="text-[clamp(24px,3.2vw,38px)] font-bold tracking-tight text-dark">
+                  {projectFaq.title}
+                </h2>
+                <p className="mt-3 text-[16px] leading-relaxed text-muted">{projectFaq.intro}</p>
+                <div className="mt-8 space-y-3">
+                  {projectFaq.items.map(({ q, a }) => (
+                    <details key={q} className="group rounded-[18px] border border-line bg-white px-5 py-4 open:border-brand-purple/30">
+                      <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-[16px] font-semibold text-dark [&::-webkit-details-marker]:hidden">
+                        <span>{q}</span>
+                        <span aria-hidden className="grid h-7 w-7 shrink-0 place-items-center rounded-lg bg-brand-soft text-brand-purple transition-transform group-open:rotate-45">+</span>
+                      </summary>
+                      <p className="mt-4 border-t border-line pt-4 text-[15px] leading-relaxed text-ink">{a}</p>
+                    </details>
+                  ))}
+                </div>
               </div>
             </Container>
           </section>
