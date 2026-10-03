@@ -62,4 +62,6 @@ URL Inspection API для двух DE-страниц вернул `PASS`, «Subm
 
 После деплоя `3732632` URL вида `https://www.saaleweb.de/<путь>?<параметры>` возвращают 308 на тот же путь и параметры хоста `https://saaleweb.de`. Проверены главная и услуги DE/EN/RU; конечные страницы вернули 200 без цикла. Содержание и адреса канонических страниц не менялись, sitemap уже содержит версии без www. **Новых отдельных канонических URL для ручного запроса индексирования нет.** Следить за обнаружением редиректа в GSC можно при следующей плановой проверке индексации.
 
+После `8991bae` уменьшен только сериализованный payload переводов. Проверены production `/`, `/leistungen/webdesign-halle`, `/leistungen/website-erstellen-lassen`, `/en`, `/ru`: HTTP 200, те же canonical и hreflang. Видимый SEO-текст и URL не изменены; новых индивидуальных запросов индексирования для этого изменения не требуется.
+
 Документация Google: [повторный обход и лимиты](https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl), [URL Inspection API](https://developers.google.com/webmaster-tools/v1/urlInspection.index/inspect), [Indexing API](https://developers.google.com/search/apis/indexing-api/v3/using-api).

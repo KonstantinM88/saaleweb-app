@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-03",
+  "changeCommit": "8991bae",
+  "method": "HTTPS HTML GET with Accept-Encoding br,gzip; byte counts on canonical production URLs before and after deploy",
+  "pages": [
+    { "path": "/", "before": { "rawBytes": 1179280, "wireBytes": 312928, "rscInlineBytes": 649672 }, "after": { "rawBytes": 1121525, "wireBytes": 287899, "rscInlineBytes": 591917 } },
+    { "path": "/leistungen/webdesign-halle", "before": { "rawBytes": 665866, "wireBytes": 183745, "rscInlineBytes": 390230 }, "after": { "rawBytes": 607534, "wireBytes": 157115, "rscInlineBytes": 331898 } },
+    { "path": "/leistungen/website-erstellen-lassen", "before": { "rawBytes": 675129, "wireBytes": 185526, "rscInlineBytes": 395531 }, "after": { "rawBytes": 616797, "wireBytes": 158541, "rscInlineBytes": 337199 } },
+    { "path": "/en", "before": { "rawBytes": 1168849, "wireBytes": 304032, "rscInlineBytes": 641769 }, "after": { "rawBytes": 1114635, "wireBytes": 279738, "rscInlineBytes": 587555 } },
+    { "path": "/ru", "before": { "rawBytes": 1266624, "wireBytes": 354824, "rscInlineBytes": 711672 }, "after": { "rawBytes": 1181184, "wireBytes": 318445, "rscInlineBytes": 626232 } }
+  ],
+  "spotPageSpeedAfter": [
+    { "path": "/", "strategy": "mobile", "fetchTime": "2026-10-03T13:18:51.024Z", "score": 86, "lcpMs": 2452, "mainThreadMs": 2840, "unusedJsBytes": 198272 },
+    { "path": "/leistungen/webdesign-halle", "strategy": "mobile", "fetchTime": "2026-10-03T13:19:10.922Z", "score": 99, "lcpMs": 1685, "mainThreadMs": 854, "unusedJsBytes": 200609 },
+    { "path": "/leistungen/website-erstellen-lassen", "strategy": "mobile", "fetchTime": "2026-10-03T13:19:22.239Z", "score": 62, "lcpMs": 7386, "mainThreadMs": 971, "unusedJsBytes": 197872 },
+    { "path": "/", "strategy": "desktop", "fetchTime": "2026-10-03T13:19:35.957Z", "score": 96, "lcpMs": 723, "mainThreadMs": 1664, "unusedJsBytes": 197597, "unusedCssBytes": 31872 }
+  ],
+  "interpretation": "Payload byte reduction is verified. PageSpeed spot checks are single lab runs and do not establish a score or main-thread improvement. Field CrUX data was unavailable."
+}
