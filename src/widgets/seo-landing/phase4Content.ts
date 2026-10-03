@@ -367,6 +367,7 @@ const coreSeoServicePages: Record<string, Phase4Landing> = {
     cases: [...serviceCases.restaurant, ...serviceCases.local],
     relatedTitle: "Sinnvolle nächste Seiten",
     relatedLinks: [
+      { label: "Preise und Pakete", href: "/preise", description: "Einstiegspreise und enthaltene Leistungen für Onepager, Landingpage und Firmenwebsite vergleichen." },
       { label: "Webdesign Halle", href: "/leistungen/webdesign-halle", description: "Regionale Website-Lösungen für Unternehmen in Halle." },
       { label: "SEO Halle", href: "/leistungen/seo-halle", description: "Sichtbarkeit für lokale und kommerzielle Suchanfragen." },
       { label: "WordPress Website modernisieren", href: "/leistungen/wordpress-website-modernisieren", description: "Bestehende WordPress-Seiten verbessern statt blind ersetzen." },
@@ -381,6 +382,18 @@ const coreSeoServicePages: Record<string, Phase4Landing> = {
       {
         q: "Wie lange dauert eine neue Website?",
         a: "Kleinere Websites können oft in wenigen Wochen umgesetzt werden. Größere Projekte mit Strategie, Texten, SEO und Sonderfunktionen benötigen entsprechend mehr Planung.",
+      },
+      {
+        q: "Was gehört zu einer Firmenwebsite für ein kleines Unternehmen?",
+        a: "Ein möglicher Umfang umfasst Startseite, Leistungsseiten, Informationen zum Unternehmen, Referenzen und einen klaren Kontakt- oder Anfrageweg. Seitenzahl, Formulare, Texte und zusätzliche Funktionen legen wir nach der Zielklärung im Angebot fest.",
+      },
+      {
+        q: "Welche Inhalte muss ich für die Website bereitstellen?",
+        a: "Hilfreich sind Logo, vorhandene Fotos, Fakten zu Leistungen und Zielgruppen sowie die nötigen Domain- und Hostingzugänge. Wenn Texte, Bilder oder Übersetzungen fehlen, klären wir deren Erstellung und Kosten vorab einzeln.",
+      },
+      {
+        q: "Kann ich die Website später selbst pflegen?",
+        a: "Das hängt von der gewählten Lösung ab. Bei WordPress kann die eigenständige Inhaltspflege Teil des Projekts sein; bei individuellen Websites planen wir Bearbeitungsoberflächen oder laufende Betreuung passend zum Bedarf. Zuständigkeiten, Zugänge und Wartung werden im Angebot und bei der Übergabe festgehalten.",
       },
     ]),
     ...defaultFinal,
@@ -1239,6 +1252,7 @@ const EN_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
       { title: "Multilingual architecture", text: "German, English and Russian can use dedicated URLs, navigation and metadata; further languages can be added on request." },
     ],
     related: [
+      { label: "Prices and packages", href: "/en/pricing", description: "Compare starting prices and included work for one-pagers, landing pages and business websites." },
       { label: "Web design Halle", href: "/en/services/web-design-halle", description: "Regional web design for businesses in Halle." },
       { label: "SEO Halle", href: "/en/services/seo-halle", description: "Search visibility for local and commercial queries." },
       { label: "Modernize WordPress website", href: "/en/services/wordpress-website-modernization", description: "Improve existing WordPress sites without replacing them blindly." },
@@ -1256,6 +1270,18 @@ const EN_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
       {
         q: "What does it cost to have a landing page or company website built?",
         a: "A compact WordPress one-pager starts at €600, a custom landing page at €990 and a complete business website at €1,990. Online booking, multiple languages, e-commerce or special integrations add scope. After the initial consultation, SaaleWeb provides a transparent fixed-price proposal.",
+      },
+      {
+        q: "What does a small business website include?",
+        a: "A possible starting scope includes a home page, service pages, company information, references and a clear contact or inquiry path. We define the page count, forms, copy and additional features in the proposal after discussing your goals.",
+      },
+      {
+        q: "What do I need to provide for the website?",
+        a: "Existing logos, photos, service details, target audience information and the necessary domain or hosting access are helpful. If copy, imagery or translations are missing, we scope and price their creation separately before work begins.",
+      },
+      {
+        q: "Can I update the website myself later?",
+        a: "That depends on the chosen solution. Self-service editing can be part of a WordPress project; for a custom website, we can scope an editing interface or ongoing support. Responsibilities, access and maintenance are documented in the proposal and handover.",
       },
     ],
   },
@@ -1665,6 +1691,7 @@ const RU_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
       { title: "Многоязычная архитектура", text: "Немецкий, английский и русский получают собственные URL, навигацию и метаданные; другие языки можно добавить по запросу." },
     ],
     related: [
+      { label: "Цены и пакеты", href: "/ru/ceny", description: "Сравнить стартовые цены и состав одностраничного, посадочного и корпоративного сайта." },
       { label: "Веб-дизайн Halle", href: "/ru/uslugi/webdesign-halle", description: "Региональные сайты для компаний в Halle." },
       { label: "SEO Halle", href: "/ru/uslugi/seo-halle", description: "Видимость по локальным и коммерческим запросам." },
       { label: "Модернизация WordPress", href: "/ru/uslugi/modernizaciya-wordpress-sayta", description: "Улучшить текущий WordPress без слепой замены." },
@@ -1682,6 +1709,18 @@ const RU_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
       {
         q: "Сколько стоит заказать лендинг или корпоративный сайт?",
         a: "Компактный WordPress one-pager начинается от 600 €, индивидуальный лендинг — от 990 €, полноценный бизнес- или корпоративный сайт — от 1 990 €. Онлайн-запись, несколько языков, магазин и специальные интеграции увеличивают объём. После консультации SaaleWeb предоставляет прозрачное предложение с фиксированной ценой.",
+      },
+      {
+        q: "Что входит в сайт для небольшой компании?",
+        a: "Возможный стартовый состав: главная, страницы услуг, информация о компании, примеры работ и понятный способ связи или отправки заявки. Количество страниц, формы, тексты и дополнительные функции фиксируем в предложении после обсуждения целей.",
+      },
+      {
+        q: "Какие материалы нужно предоставить для сайта?",
+        a: "Помогут логотип, имеющиеся фотографии, сведения об услугах и аудитории, а также необходимые доступы к домену и хостингу. Если нужны тексты, изображения или переводы, их подготовку и стоимость согласуем отдельно до начала работы.",
+      },
+      {
+        q: "Смогу ли я самостоятельно обновлять сайт?",
+        a: "Это зависит от выбранного решения. В проекте на WordPress можно предусмотреть самостоятельное редактирование; для индивидуального сайта — интерфейс управления или регулярную поддержку. Ответственность, доступы и обслуживание фиксируем в предложении и при передаче проекта.",
       },
     ],
   },
