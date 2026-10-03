@@ -58,4 +58,8 @@ URL Inspection API для двух DE-страниц вернул `PASS`, «Subm
 | `https://saaleweb.de/leistungen/wordpress-agentur-halle` | `https://saaleweb.de/en/services/wordpress-agency-halle` | `https://saaleweb.de/ru/uslugi/wordpress-agentstvo-halle` |
 | `https://saaleweb.de/leistungen/website-relaunch` | `https://saaleweb.de/en/services/website-relaunch` | `https://saaleweb.de/ru/uslugi/relonch-sajta` |
 
+## T1: нормализация www
+
+После деплоя `3732632` URL вида `https://www.saaleweb.de/<путь>?<параметры>` возвращают 308 на тот же путь и параметры хоста `https://saaleweb.de`. Проверены главная и услуги DE/EN/RU; конечные страницы вернули 200 без цикла. Содержание и адреса канонических страниц не менялись, sitemap уже содержит версии без www. **Новых отдельных канонических URL для ручного запроса индексирования нет.** Следить за обнаружением редиректа в GSC можно при следующей плановой проверке индексации.
+
 Документация Google: [повторный обход и лимиты](https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl), [URL Inspection API](https://developers.google.com/webmaster-tools/v1/urlInspection.index/inspect), [Indexing API](https://developers.google.com/search/apis/indexing-api/v3/using-api).
