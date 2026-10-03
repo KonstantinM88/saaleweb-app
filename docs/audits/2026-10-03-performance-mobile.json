@@ -1,0 +1,358 @@
+{
+  "date": "2026-10-03",
+  "tool": "PageSpeed Insights API v5",
+  "strategy": "mobile",
+  "category": "performance",
+  "source": "live canonical production URLs",
+  "note": "Repeated Lighthouse fetchTime responses were excluded from the 3-run medians.",
+  "groups": [
+    {
+      "page": "home",
+      "url": "https://saaleweb.de/",
+      "requests": 4,
+      "uniqueRuns": 3,
+      "median": {
+        "score": 75,
+        "fcpMs": 2466,
+        "lcpMs": 3766,
+        "tbtMs": 321,
+        "totalByteWeight": 1331344
+      },
+      "fieldAvailable": false,
+      "samples": [
+        {
+          "startedAt": "2026-10-03T12:41:08.523Z",
+          "fetchTime": "2026-10-03T12:41:20.781Z",
+          "lighthouseVersion": "13.5.0",
+          "score": 70,
+          "metrics": {
+            "fcpMs": 2525.5,
+            "lcpMs": 3759.5,
+            "speedIndexMs": 5194.0427251792635,
+            "tbtMs": 452,
+            "cls": 0,
+            "serverResponseMs": 361,
+            "totalByteWeight": 1331634
+          },
+          "diagnostics": [
+            {
+              "id": "server-response-time",
+              "title": "Initial server response time was short",
+              "savingsMs": 261,
+              "savingsBytes": null
+            },
+            {
+              "id": "unused-css-rules",
+              "title": "Reduce unused CSS",
+              "savingsMs": 0,
+              "savingsBytes": 35586
+            },
+            {
+              "id": "unused-javascript",
+              "title": "Reduce unused JavaScript",
+              "savingsMs": 0,
+              "savingsBytes": 198478
+            }
+          ],
+          "lcpElement": null
+        },
+        {
+          "startedAt": "2026-10-03T12:42:03.544Z",
+          "fetchTime": "2026-10-03T12:42:14.880Z",
+          "lighthouseVersion": "13.5.0",
+          "score": 76,
+          "metrics": {
+            "fcpMs": 2389.0159334400482,
+            "lcpMs": 4204.0318668800965,
+            "speedIndexMs": 4223.148002688182,
+            "tbtMs": 249,
+            "cls": 0,
+            "serverResponseMs": 408,
+            "totalByteWeight": 1331344
+          },
+          "diagnostics": [
+            {
+              "id": "server-response-time",
+              "title": "Initial server response time was short",
+              "savingsMs": 308,
+              "savingsBytes": null
+            },
+            {
+              "id": "unused-javascript",
+              "title": "Reduce unused JavaScript",
+              "savingsMs": 150,
+              "savingsBytes": 198464
+            },
+            {
+              "id": "unused-css-rules",
+              "title": "Reduce unused CSS",
+              "savingsMs": 0,
+              "savingsBytes": 35588
+            }
+          ],
+          "lcpElement": null
+        },
+        {
+          "startedAt": "2026-10-03T12:52:58.714Z",
+          "fetchTime": "2026-10-03T12:53:10.644Z",
+          "lighthouseVersion": "13.5.0",
+          "score": 75,
+          "metrics": {
+            "fcpMs": 2466.0009072964517,
+            "lcpMs": 3766.0016052167985,
+            "speedIndexMs": 4712.224763837625,
+            "tbtMs": 321,
+            "cls": 0,
+            "serverResponseMs": 362,
+            "totalByteWeight": 1330883
+          },
+          "diagnostics": [
+            {
+              "id": "server-response-time",
+              "title": "Initial server response time was short",
+              "savingsMs": 262,
+              "savingsBytes": null
+            },
+            {
+              "id": "unused-javascript",
+              "title": "Reduce unused JavaScript",
+              "savingsMs": 0,
+              "savingsBytes": 195280
+            },
+            {
+              "id": "unused-css-rules",
+              "title": "Reduce unused CSS",
+              "savingsMs": 0,
+              "savingsBytes": 35586
+            }
+          ],
+          "lcpElement": null
+        }
+      ]
+    },
+    {
+      "page": "webdesign-halle",
+      "url": "https://saaleweb.de/leistungen/webdesign-halle",
+      "requests": 3,
+      "uniqueRuns": 3,
+      "median": {
+        "score": 62,
+        "fcpMs": 4832,
+        "lcpMs": 7691,
+        "tbtMs": 167,
+        "totalByteWeight": 1116806
+      },
+      "fieldAvailable": false,
+      "samples": [
+        {
+          "startedAt": "2026-10-03T12:41:33.469Z",
+          "fetchTime": "2026-10-03T12:41:45.281Z",
+          "lighthouseVersion": "13.5.0",
+          "score": 60,
+          "metrics": {
+            "fcpMs": 4907.507892575097,
+            "lcpMs": 7766.207417429633,
+            "speedIndexMs": 5409.616873010091,
+            "tbtMs": 167,
+            "cls": 0,
+            "serverResponseMs": 57,
+            "totalByteWeight": 1116806
+          },
+          "diagnostics": [
+            {
+              "id": "unused-javascript",
+              "title": "Reduce unused JavaScript",
+              "savingsMs": 1300,
+              "savingsBytes": 199913
+            },
+            {
+              "id": "unused-css-rules",
+              "title": "Reduce unused CSS",
+              "savingsMs": 0,
+              "savingsBytes": 46703
+            }
+          ],
+          "lcpElement": null
+        },
+        {
+          "startedAt": "2026-10-03T12:42:21.732Z",
+          "fetchTime": "2026-10-03T12:42:33.771Z",
+          "lighthouseVersion": "13.5.0",
+          "score": 88,
+          "metrics": {
+            "fcpMs": 1755.5,
+            "lcpMs": 1838.5,
+            "speedIndexMs": 2916.717614341552,
+            "tbtMs": 411.5,
+            "cls": 0.001222946867239963,
+            "serverResponseMs": 402,
+            "totalByteWeight": 1116214
+          },
+          "diagnostics": [
+            {
+              "id": "server-response-time",
+              "title": "Initial server response time was short",
+              "savingsMs": 302,
+              "savingsBytes": null
+            },
+            {
+              "id": "unused-css-rules",
+              "title": "Reduce unused CSS",
+              "savingsMs": 0,
+              "savingsBytes": 46699
+            },
+            {
+              "id": "unused-javascript",
+              "title": "Reduce unused JavaScript",
+              "savingsMs": 0,
+              "savingsBytes": 200128
+            }
+          ],
+          "lcpElement": null
+        },
+        {
+          "startedAt": "2026-10-03T12:42:51.549Z",
+          "fetchTime": "2026-10-03T12:43:02.935Z",
+          "lighthouseVersion": "13.5.0",
+          "score": 62,
+          "metrics": {
+            "fcpMs": 4832.010767679126,
+            "lcpMs": 7690.7120309002485,
+            "speedIndexMs": 5354.432027078593,
+            "tbtMs": 96.00327711973387,
+            "cls": 0,
+            "serverResponseMs": 44,
+            "totalByteWeight": 1116891
+          },
+          "diagnostics": [
+            {
+              "id": "unused-javascript",
+              "title": "Reduce unused JavaScript",
+              "savingsMs": 1230,
+              "savingsBytes": 199546
+            },
+            {
+              "id": "unused-css-rules",
+              "title": "Reduce unused CSS",
+              "savingsMs": 0,
+              "savingsBytes": 46703
+            }
+          ],
+          "lcpElement": null
+        }
+      ]
+    },
+    {
+      "page": "website-erstellen-lassen",
+      "url": "https://saaleweb.de/leistungen/website-erstellen-lassen",
+      "requests": 4,
+      "uniqueRuns": 3,
+      "median": {
+        "score": 62,
+        "fcpMs": 4824,
+        "lcpMs": 7592,
+        "tbtMs": 142,
+        "totalByteWeight": 1118355
+      },
+      "fieldAvailable": false,
+      "samples": [
+        {
+          "startedAt": "2026-10-03T12:41:48.474Z",
+          "fetchTime": "2026-10-03T12:41:59.852Z",
+          "lighthouseVersion": "13.5.0",
+          "score": 97,
+          "metrics": {
+            "fcpMs": 1750.0020069112288,
+            "lcpMs": 1837.0022299013654,
+            "speedIndexMs": 2621.012818631446,
+            "tbtMs": 143,
+            "cls": 0.01978726060288753,
+            "serverResponseMs": 280,
+            "totalByteWeight": 1118369
+          },
+          "diagnostics": [
+            {
+              "id": "server-response-time",
+              "title": "Initial server response time was short",
+              "savingsMs": 180,
+              "savingsBytes": null
+            },
+            {
+              "id": "unused-css-rules",
+              "title": "Reduce unused CSS",
+              "savingsMs": 0,
+              "savingsBytes": 46319
+            },
+            {
+              "id": "unused-javascript",
+              "title": "Reduce unused JavaScript",
+              "savingsMs": 0,
+              "savingsBytes": 200890
+            }
+          ],
+          "lcpElement": null
+        },
+        {
+          "startedAt": "2026-10-03T12:42:36.798Z",
+          "fetchTime": "2026-10-03T12:42:48.837Z",
+          "lighthouseVersion": "13.5.0",
+          "score": 61,
+          "metrics": {
+            "fcpMs": 4848.000619171238,
+            "lcpMs": 7591.699532913447,
+            "speedIndexMs": 5402.6044855410955,
+            "tbtMs": 142,
+            "cls": 0,
+            "serverResponseMs": 54,
+            "totalByteWeight": 1117533
+          },
+          "diagnostics": [
+            {
+              "id": "unused-javascript",
+              "title": "Reduce unused JavaScript",
+              "savingsMs": 1130,
+              "savingsBytes": 199434
+            },
+            {
+              "id": "unused-css-rules",
+              "title": "Reduce unused CSS",
+              "savingsMs": 0,
+              "savingsBytes": 46322
+            }
+          ],
+          "lcpElement": null
+        },
+        {
+          "startedAt": "2026-10-03T12:53:19.535Z",
+          "fetchTime": "2026-10-03T12:53:30.720Z",
+          "lighthouseVersion": "13.5.0",
+          "score": 62,
+          "metrics": {
+            "fcpMs": 4824.003212176173,
+            "lcpMs": 7612.702176275021,
+            "speedIndexMs": 5311.386236870312,
+            "tbtMs": 66.00097761883444,
+            "cls": 0,
+            "serverResponseMs": 31,
+            "totalByteWeight": 1118355
+          },
+          "diagnostics": [
+            {
+              "id": "unused-javascript",
+              "title": "Reduce unused JavaScript",
+              "savingsMs": 1150,
+              "savingsBytes": 200428
+            },
+            {
+              "id": "unused-css-rules",
+              "title": "Reduce unused CSS",
+              "savingsMs": 0,
+              "savingsBytes": 46508
+            }
+          ],
+          "lcpElement": null
+        }
+      ]
+    }
+  ]
+}

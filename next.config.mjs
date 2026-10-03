@@ -155,10 +155,20 @@ const nextConfig = {
   async redirects() {
     // Keep duplicate legacy URLs out of the index while transferring their
     // signals to exactly one localized canonical page.
-    return permanentCompatibilityRedirects.map((redirect) => ({
-      ...redirect,
-      permanent: true,
-    }));
+    return [
+      // Both hosts have a valid certificate, but www currently serves a 200
+      // copy of each page. Preserve the complete path and original query.
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.saaleweb.de" }],
+        destination: "https://saaleweb.de/:path*",
+        permanent: true,
+      },
+      ...permanentCompatibilityRedirects.map((redirect) => ({
+        ...redirect,
+        permanent: true,
+      })),
+    ];
   },
   async headers() {
     return [
