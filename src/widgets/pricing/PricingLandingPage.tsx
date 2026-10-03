@@ -67,6 +67,7 @@ type PricingLandingCopy = {
   linkLabels: Record<
     | "services"
     | "website"
+    | "webdesignHalle"
     | "wordpress"
     | "shop"
     | "seo"
@@ -338,6 +339,7 @@ const copy = {
     linkLabels: {
       services: "Leistungen",
       website: "Website erstellen lassen",
+      webdesignHalle: "Webdesign für Unternehmen in Halle",
       wordpress: "WordPress Website modernisieren",
       shop: "Online-Shop erstellen",
       seo: "SEO Halle",
@@ -606,6 +608,7 @@ const copy = {
     linkLabels: {
       services: "Services",
       website: "Website development",
+      webdesignHalle: "Web design for Halle businesses",
       wordpress: "Modernize WordPress website",
       shop: "Online shop development",
       seo: "SEO Halle",
@@ -874,6 +877,7 @@ const copy = {
     linkLabels: {
       services: "Услуги",
       website: "Разработка сайтов",
+      webdesignHalle: "Веб-дизайн для бизнеса в Галле",
       wordpress: "Модернизация WordPress",
       shop: "Создание интернет-магазина",
       seo: "SEO Halle",
@@ -943,6 +947,7 @@ const packageOrder: PackageKey[] = ["lightStart", "starter", "business", "indivi
 
 const serviceSlugs = {
   website: { de: "website-erstellen-lassen", en: "website-development", ru: "razrabotka-saytov" },
+  webdesignHalle: { de: "webdesign-halle", en: "web-design-halle", ru: "webdesign-halle" },
   wordpress: {
     de: "wordpress-website-modernisieren",
     en: "wordpress-website-modernization",
@@ -987,6 +992,7 @@ function buildInternalLinks(locale: AppLocale, labels: PricingLandingCopy["linkL
   return [
     { label: labels.services, href: getLocalizedHref(locale, "services") },
     { label: labels.website, href: getLocalizedSlugHref(locale, "services", serviceSlugs.website[locale]) },
+    { label: labels.webdesignHalle, href: getLocalizedSlugHref(locale, "services", serviceSlugs.webdesignHalle[locale]) },
     { label: labels.wordpress, href: getLocalizedSlugHref(locale, "services", serviceSlugs.wordpress[locale]) },
     { label: labels.shop, href: getLocalizedSlugHref(locale, "services", serviceSlugs.shop[locale]) },
     { label: labels.seo, href: getLocalizedSlugHref(locale, "services", serviceSlugs.seo[locale]) },

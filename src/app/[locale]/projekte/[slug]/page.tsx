@@ -223,6 +223,13 @@ export default async function ProjectPage({
   const homePath = getHomeHref(locale);
   const contactHref = getContactHref(locale);
   const auditHref = getAuditHref(locale);
+  const relatedWebdesign = ["online-buchungen-verdreifacht", "qualifizierte-bauanfragen"].includes(data.slugs.de)
+    ? {
+        de: { prompt: "Sie planen eine ähnliche Firmenwebsite in Halle?", link: "Webdesign Halle ansehen" },
+        en: { prompt: "Planning a similar business website in Halle?", link: "Explore web design in Halle" },
+        ru: { prompt: "Планируете похожий сайт для бизнеса в Галле?", link: "Веб-дизайн в Галле" },
+      }[locale]
+    : null;
   const hexCover = data.coverColor?.startsWith("#");
   const externalLinkLabel = data.externalUrl && isPreviewUrl(data.externalUrl)
     ? t("projectPreview")
@@ -485,6 +492,21 @@ export default async function ProjectPage({
                       {t("auditButton")}
                       <ArrowRight size={16} aria-hidden />
                     </a>
+
+                    {relatedWebdesign && (
+                      <p className="mt-4 text-[13.5px] leading-relaxed text-muted">
+                        {relatedWebdesign.prompt}{" "}
+                        <Link
+                          href={{
+                            pathname: "/leistungen/[slug]",
+                            params: { slug: locale === "en" ? "web-design-halle" : "webdesign-halle" },
+                          }}
+                          className="font-semibold text-brand-purple underline underline-offset-2 hover:text-brand-pink"
+                        >
+                          {relatedWebdesign.link}
+                        </Link>
+                      </p>
+                    )}
 
                     {nextProject && (
                       <Link
