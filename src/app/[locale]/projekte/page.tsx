@@ -20,6 +20,7 @@ import { JsonLd } from "@/shared/seo/JsonLd";
 import { breadcrumbSchema, collectionPageSchema, itemListSchema } from "@/shared/seo/schema";
 import { buildMetadata } from "@/shared/seo/metadata";
 import { getContactHref } from "@/shared/lib/contactHref";
+import { getProjectFocusBySlug } from "@/features/projects/projectFocus";
 
 export const revalidate = 300;
 
@@ -27,6 +28,7 @@ type Params = { locale: string };
 
 async function getItems(locale: AppLocale): Promise<ProjectCard[]> {
   try {
+    const focusBySlug = await getProjectFocusBySlug(locale);
     const rows = await prisma.project.findMany({
       where: { published: true },
       orderBy: [{ featured: "desc" }, { order: "asc" }],
@@ -46,7 +48,7 @@ async function getItems(locale: AppLocale): Promise<ProjectCard[]> {
           slug: translation.slug,
           title: translation.title,
           tag: row.category?.translations?.[0]?.name ?? "",
-          result: row.resultValue ?? "",
+          result: focusBySlug.get(translation.slug) ?? row.resultValue ?? "",
           cover: {
             image: row.media?.[0]?.url ?? null,
             color: row.coverColor ?? null,

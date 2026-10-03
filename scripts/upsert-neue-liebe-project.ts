@@ -28,7 +28,7 @@ const translations: Record<
     solution:
       "SaaleWeb entwickelte eine schnelle, responsive Website für https://www.neueliebe-nebra.de/ mit klarer Navigation, Speisekarte, Reservierungsfokus, hochwertiger Bildsprache und technischer SEO-Basis für lokale Suchanfragen rund um Nebra und die Region.",
     results:
-      "Mehr Direktbuchungen, eine professionellere mobile Nutzerführung und ein Auftritt, der Restaurant, Speisekarte, Events und Kontaktwege deutlich vertrauensvoller präsentiert.",
+      "Ein professioneller mobiler Restaurantauftritt, der Speisekarte, Events, Reservierung und Kontaktwege klar präsentiert.",
   },
   en: {
     title: "Neue Liebe Nebra: restaurant website with reservations",
@@ -38,7 +38,7 @@ const translations: Record<
     solution:
       "SaaleWeb built a fast, responsive website for https://www.neueliebe-nebra.de/ with clear navigation, menu presentation, reservation focus, premium imagery and a technical SEO foundation for local searches around Nebra and the region.",
     results:
-      "More direct reservations, a stronger mobile user journey and a website that presents restaurant, menu, events and contact paths with more trust and clarity.",
+      "A mobile-friendly restaurant website that presents the menu, events, reservations and contact paths clearly.",
   },
   ru: {
     title: "Neue Liebe Nebra: сайт ресторана с бронированиями",
@@ -48,7 +48,7 @@ const translations: Record<
     solution:
       "SaaleWeb разработал быстрый адаптивный сайт для https://www.neueliebe-nebra.de/ с понятной навигацией, меню, акцентом на бронирование, премиальной визуальной подачей и технической SEO-базой для локального поиска вокруг Nebra и региона.",
     results:
-      "Больше прямых бронирований, сильнее мобильный путь пользователя и сайт, который уверенно показывает ресторан, меню, события и контактные действия.",
+      "Удобный для мобильных устройств сайт ресторана с понятной подачей меню, событий, бронирования и способов связи.",
   },
 };
 
@@ -76,7 +76,7 @@ async function main() {
     categoryId: category.id,
     coverColor: "#F8F1E4",
     technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Local SEO", "Performance"],
-    resultValue: "+176%",
+    resultValue: "Reservierungsfokus",
     year: 2026,
     featured: true,
     published: true,

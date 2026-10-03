@@ -103,37 +103,6 @@ async function seedService() {
   });
 }
 
-async function seedTestimonial() {
-  await prisma.testimonial.create({
-    data: {
-      rating: 5,
-      order: 1,
-      translations: {
-        create: [
-          {
-            locale: "de",
-            quote: "Unsere Buchungen haben sich verdreifacht.",
-            clientName: "Elena L.",
-            company: "Salon Elen",
-          },
-          {
-            locale: "en",
-            quote: "Our bookings tripled.",
-            clientName: "Elena L.",
-            company: "Salon Elen",
-          },
-          {
-            locale: "ru",
-            quote: "Наши записи выросли втрое.",
-            clientName: "Елена Л.",
-            company: "Salon Elen",
-          },
-        ],
-      },
-    },
-  });
-}
-
 async function seedFaq() {
   await prisma.faq.create({
     data: {
@@ -307,7 +276,6 @@ async function main() {
   await seedUser();
   await resetSeededContent();
   await seedService();
-  await seedTestimonial();
   await seedFaq();
 
   const author = await seedBlogAuthor();

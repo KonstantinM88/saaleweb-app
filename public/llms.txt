@@ -97,7 +97,7 @@ KI-Suchsystemen wie ChatGPT, Gemini, Claude, Perplexity und Google AI Overview.
 ## Projekte
 
 - [Neue Liebe Nebra](https://saaleweb.de/projekte/neue-liebe-nebra): Restaurant-Website mit Reservierungsfokus, Speisekarte, Local SEO und responsiver Darstellung.
-- [Online-Buchungen verdreifacht](https://saaleweb.de/projekte/online-buchungen-verdreifacht): Projektbeispiel für Terminbuchungen und lokale Sichtbarkeit.
+- [Salon Elen: digitale Terminbuchung](https://saaleweb.de/projekte/online-buchungen-verdreifacht): Projektbeispiel für Terminbuchungen und lokale Sichtbarkeit.
 - [Direktbuchungen ohne Portale](https://saaleweb.de/projekte/direktbuchungen-ohne-portale): Projektbeispiel für Hotels, direkte Anfragen und weniger Plattformabhängigkeit.
 - [Qualifizierte Bauanfragen](https://saaleweb.de/projekte/qualifizierte-bauanfragen): Projektbeispiel für regionale Bau- und Handwerksanfragen.
 - [Glaserei Schubert](https://saaleweb.de/projekte/glaserei-schubert): Projektbeispiel für lokale Fachkompetenz, klare Struktur und digitale Vertrauensbildung.

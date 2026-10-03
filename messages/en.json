@@ -753,7 +753,7 @@
           "More trust with guests"
         ],
         "badge": "Restaurant · SEO · Mobile First",
-        "result": "Restaurant visibility"
+        "result": "Restaurant website"
       },
       {
         "slug": "direct-bookings-without-portals",
@@ -781,7 +781,7 @@
           "More qualified inquiries"
         ],
         "badge": "Construction · Trust · Inquiries",
-        "result": "Qualified inquiries"
+        "result": "Services & contact paths"
       },
       {
         "slug": "glaserei-schubert",
@@ -802,23 +802,23 @@
       {
         "name": "Salon Elen",
         "tag": "Beauty studio",
-        "title": "More online appointments.",
-        "desc": "A clear digital presence that builds trust and increases direct appointment bookings.",
-        "result": "+212%"
+        "title": "Book appointments online.",
+        "desc": "A clear beauty website with online booking and an easy-to-follow service structure.",
+        "result": "Online booking"
       },
       {
         "name": "Waldschlösschen",
         "tag": "Hotel",
-        "title": "More direct bookings.",
-        "desc": "Guests find the hotel directly, understand the offer faster and book more often without portal detours.",
-        "result": "+148%"
+        "title": "Hotel and restaurant presented clearly.",
+        "desc": "An interactive project preview with offers and direct booking and contact paths.",
+        "result": "Project preview"
       },
       {
         "name": "SorgfaltBau",
         "tag": "Trades & construction",
-        "title": "More qualified inquiries.",
-        "desc": "More regional visibility and better inquiries for profitable projects.",
-        "result": "#1"
+        "title": "Construction services explained clearly.",
+        "desc": "A company website with a clear service structure and simple contact paths.",
+        "result": "Clear services"
       }
     ],
     "impacts": {
@@ -895,7 +895,7 @@
     "nextProject": "Next project",
     "challengeText": "The starting point and the goal: what should the new website achieve for the business?",
     "solutionText": "Our approach: a fast, modern system optimised for Google and AI — delivered clearly.",
-    "resultsText": "The measurable result: more visibility, more enquiries and a presence that builds trust.",
+    "resultsText": "The project focus: clear services, simple contact paths and a presence that builds trust.",
     "all": "All projects",
     "empty": "No projects published yet.",
     "caseDetails": {

@@ -14,6 +14,7 @@ import {
   TrendingUp,
 } from "lucide-react";
 import { prisma } from "@/lib/prisma";
+import { getProjectFocusBySlug } from "@/features/projects/projectFocus";
 import { routing, type AppLocale } from "@/i18n/routing";
 import { getPathname, Link } from "@/i18n/navigation";
 import { Navbar } from "@/widgets/navbar/Navbar";
@@ -91,6 +92,7 @@ export async function generateStaticParams() {
 
 async function getProjectData(locale: AppLocale, slug: string) {
   try {
+    const focusBySlug = await getProjectFocusBySlug(locale);
     const translation = await prisma.projectTranslation.findFirst({
       where: { locale, slug, project: { published: true } },
       include: {
@@ -130,7 +132,7 @@ async function getProjectData(locale: AppLocale, slug: string) {
         translation.challenge,
       ]),
       tag: translation.project.category?.translations?.[0]?.name ?? "",
-      result: translation.project.resultValue,
+      result: focusBySlug.get(translation.slug) ?? translation.project.resultValue,
       year: translation.project.year,
       technologies: translation.project.technologies,
       coverColor: translation.project.coverColor,

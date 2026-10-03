@@ -310,7 +310,7 @@ const serviceCases = {
   ],
   booking: [
     {
-      label: "Online-Buchungen verdreifacht",
+      label: "Salon Elen: digitale Terminbuchung",
       href: "/projekte/online-buchungen-verdreifacht",
       description: "Projektbeispiel für digitale Terminbuchung, lokale Sichtbarkeit und bessere Nutzerführung.",
     },
@@ -391,10 +391,10 @@ const coreSeoServicePages: Record<string, Phase4Landing> = {
     title: "Webdesign Halle (Saale) – Websites, die Kunden bringen",
     metaTitle: "Webdesign Halle (Saale) & Webagentur | SaaleWeb",
     metaDescription:
-      "Webdesigner und Webagentur in Halle (Saale): moderne Firmenwebsites mit Local SEO, klarer Nutzerführung, Festpreis und persönlichem Support.",
+      "Webdesign in Halle (Saale) für Unternehmen: klare Leistungsseiten, mobile Anfragewege, lokale SEO-Basis und ein transparentes Angebot mit persönlicher Betreuung.",
     lead: [
-      "Unternehmen in Halle konkurrieren heute nicht nur über Empfehlungen, sondern auch über Google, mobile Suche und den ersten digitalen Eindruck.",
-      "Als Webdesigner und Webagentur aus Halle entwickelt SaaleWeb Firmenwebsites, die Leistungen verständlich verkaufen, lokale Sichtbarkeit stärken und qualifizierte Anfragen erleichtern.",
+      "Wer in Halle nach einem Webdesigner sucht, braucht meist mehr als ein neues Layout: Kunden müssen Leistungen, Einzugsgebiet, Referenzen und den nächsten Schritt schnell verstehen.",
+      "SaaleWeb plant und entwickelt Firmenwebsites für Unternehmen in Halle (Saale). Wir verbinden Seitenstruktur, Texte, mobiles Design und eine lokale SEO-Basis mit klaren Kontaktwegen. Umfang, Technologie und Betreuung werden vor dem Angebot besprochen.",
     ],
     problemTitle: "Warum lokales Webdesign oft zu wenig Wirkung hat",
     problems: [
@@ -407,18 +407,18 @@ const coreSeoServicePages: Record<string, Phase4Landing> = {
     ],
     solutionTitle: "Webdesign, das zu Halle und Ihrem Markt passt",
     solution: [
-      "Wir entwickeln Websites mit klarer lokaler Relevanz: Leistungen, Einzugsgebiet, Vertrauen, Referenzen und Kontaktpunkte werden so aufgebaut, dass Nutzer schnell entscheiden können.",
-      "Das Ziel ist nicht nur eine schöne Oberfläche, sondern eine Website, die Ihr Unternehmen in Halle professionell positioniert und Anfragen messbar erleichtert.",
+      "Zuerst klären wir, welche Leistungen Ihre Kunden suchen und welche Informationen sie vor einer Anfrage benötigen. Daraus entsteht ein Seitenplan mit verständlichen Leistungsseiten, passenden Projektbeispielen und gut erreichbaren Kontaktwegen.",
+      "Anschließend setzen wir Design, mobile Darstellung, technische SEO-Grundlagen und Formulare um. Vor dem Launch prüfen wir Inhalte, Darstellung und Anfragewege; nach dem Start können Sie die Website gezielt weiterentwickeln.",
     ],
     featuresTitle: "Bausteine für starkes Webdesign in Halle",
     features: [
-      { title: "Lokale SEO-Struktur", text: "Standortbezug, relevante Suchbegriffe und interne Links werden sauber eingebunden." },
-      { title: "Vertrauensaufbau", text: "Leistungen, Ablauf, Projektbeispiele und Kontaktpunkte werden nachvollziehbar präsentiert." },
-      { title: "Schnelle Technik", text: "Kurze Ladezeiten und stabile Darstellung helfen Nutzern und Suchmaschinen." },
-      { title: "Mobile Führung", text: "Gerade lokale Kunden suchen mobil. Die wichtigsten Wege bleiben schnell erreichbar." },
-      { title: "Business-Copy", text: "Texte erklären Nutzen, nicht nur technische Features." },
-      { title: "Festpreis & direkter Support", text: "Nach der Analyse sind Umfang und Preis klar; nach dem Launch bleibt ein persönlicher Ansprechpartner erreichbar." },
-      { title: "Wachstumsbasis", text: "Die Website kann später mit SEO, Blog, Landingpages oder Buchungssystemen erweitert werden." },
+      { title: "Seitenplan & Inhalte", text: "Leistungen, Zielgruppen und typische Kundenfragen werden in eine nachvollziehbare Seitenstruktur übersetzt." },
+      { title: "Lokale SEO-Basis", text: "Halle, das tatsächliche Einzugsgebiet, Seitentitel und interne Links werden passend zur Leistung eingebunden." },
+      { title: "Projektbeispiele", text: "Passende Arbeiten zeigen konkret, welche Funktionen und Anfragewege bereits umgesetzt wurden." },
+      { title: "Mobile Anfragewege", text: "Telefon, Kontaktseite und Formulare bleiben auch auf kleinen Bildschirmen gut erreichbar." },
+      { title: "Technische Umsetzung", text: "Darstellung, Ladeverhalten, Indexierbarkeit und Formulare werden vor dem Launch geprüft." },
+      { title: "Klares Angebot", text: "Sie erhalten nach der Analyse einen beschriebenen Umfang und einen Preis für das vereinbarte Projekt." },
+      { title: "Weiterentwicklung", text: "Texte, Leistungsseiten oder Buchungsabläufe können später anhand echter Kundenfragen ergänzt werden." },
     ],
     technologyTitle: "Die passende Technologie für Ihr Ziel",
     technologyText,
@@ -428,9 +428,10 @@ const coreSeoServicePages: Record<string, Phase4Landing> = {
     cases: serviceCases.local,
     relatedTitle: "Intern verknüpfte Themen",
     relatedLinks: [
+      { label: "Preise und Pakete", href: "/preise", description: "Einstiegspreise, Leistungsumfang und zusätzliche Bausteine vergleichen." },
       { label: "SEO Halle", href: "/leistungen/seo-halle", description: "Mehr Sichtbarkeit in der lokalen Suche." },
       { label: "Website erstellen lassen", href: "/leistungen/website-erstellen-lassen", description: "Neue Website mit Strategie, Technik und SEO." },
-      { label: "Webdesign Leipzig", href: "/standorte/leipzig", description: "Digitale Sichtbarkeit im größeren regionalen Umfeld." },
+      { label: "Saalekreis", href: "/standorte/saalekreis", description: "Website-Projekte für Unternehmen im Umland von Halle." },
       { label: "Projekte", href: "/projekte", description: "Fallstudien und reale Projektbeispiele." },
       { label: "Kontakt", href: "/kontakt", description: "Kostenloses Erstgespräch anfragen." },
     ],
@@ -442,6 +443,10 @@ const coreSeoServicePages: Record<string, Phase4Landing> = {
       {
         q: "Warum ist lokaler Bezug im Webdesign wichtig?",
         a: "Viele Kunden suchen gezielt nach Anbietern in ihrer Nähe. Eine Website sollte deshalb Standort, Einzugsgebiet, Leistungen und Vertrauen klar sichtbar machen.",
+      },
+      {
+        q: "Was gehört zu einer Firmenwebsite von SaaleWeb?",
+        a: "Der konkrete Umfang richtet sich nach Ihrem Angebot. Typisch sind ein Seitenplan, mobil nutzbares Design, verständliche Leistungsseiten, Kontaktwege, technische SEO-Grundlagen und eine Prüfung vor dem Launch. Texte, Bilder, Mehrsprachigkeit, Buchung oder Integrationen klären wir im Angebot einzeln.",
       },
     ]),
     ...defaultFinal,

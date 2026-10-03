@@ -41,7 +41,7 @@ const projects: ProjectConfig[] = [
     },
     coverColor: "bg-brand",
     technologies: ["Next.js", "Booking UX", "Local SEO", "Mehrsprachigkeit", "Performance"],
-    resultValue: "+212%",
+    resultValue: "Online-Terminbuchung",
     year: 2026,
     order: 0,
     translations: {
@@ -86,7 +86,7 @@ const projects: ProjectConfig[] = [
     },
     coverColor: "#F8F1E4",
     technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Local SEO", "Performance"],
-    resultValue: "+176%",
+    resultValue: "Reservierungsfokus",
     year: 2026,
     order: 1,
     translations: {
@@ -131,7 +131,7 @@ const projects: ProjectConfig[] = [
     },
     coverColor: "bg-gradient-to-br from-sky-500 to-brand-purple",
     technologies: ["Next.js", "SEO", "Performance", "Content-Struktur", "Mobile UX"],
-    resultValue: "+148%",
+    resultValue: "Projektvorschau",
     year: 2026,
     order: 2,
     translations: {
@@ -176,7 +176,7 @@ const projects: ProjectConfig[] = [
     },
     coverColor: "bg-gradient-to-br from-amber-500 to-brand-pink",
     technologies: ["Local SEO", "Content-Struktur", "Performance", "Conversion UX"],
-    resultValue: "Platz 1",
+    resultValue: "Klare Leistungen",
     year: 2026,
     order: 3,
     translations: {

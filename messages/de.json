@@ -753,7 +753,7 @@
           "Mehr Vertrauen bei Gästen"
         ],
         "badge": "Restaurant · SEO · Mobile First",
-        "result": "Restaurant-Sichtbarkeit"
+        "result": "Restaurant-Auftritt"
       },
       {
         "slug": "direktbuchungen-ohne-portale",
@@ -781,7 +781,7 @@
           "Mehr qualifizierte Anfragen"
         ],
         "badge": "Bau · Vertrauen · Anfragen",
-        "result": "Qualifizierte Anfragen"
+        "result": "Leistungen & Kontaktwege"
       },
       {
         "slug": "glaserei-schubert",
@@ -802,23 +802,23 @@
       {
         "name": "Salon Elen",
         "tag": "Beauty Studio",
-        "title": "Mehr Online-Termine.",
-        "desc": "Ein klarer digitaler Auftritt, der Vertrauen schafft und Terminbuchungen direkt auf der Website erhöht.",
-        "result": "+212%"
+        "title": "Termine direkt online buchen.",
+        "desc": "Ein klarer Beauty-Auftritt mit digitaler Terminbuchung und verständlicher Leistungsstruktur.",
+        "result": "Online-Terminbuchung"
       },
       {
         "name": "Waldschlösschen",
         "tag": "Hotel",
-        "title": "Mehr Direktbuchungen.",
-        "desc": "Gäste finden das Hotel direkt, verstehen das Angebot schneller und buchen häufiger ohne Portalumwege.",
-        "result": "+148%"
+        "title": "Hotel und Restaurant klar präsentiert.",
+        "desc": "Eine interaktive Projektvorschau mit Angeboten und direkten Buchungs- und Kontaktwegen.",
+        "result": "Projektvorschau"
       },
       {
         "name": "SorgfaltBau",
         "tag": "Handwerk & Bau",
-        "title": "Mehr qualifizierte Anfragen.",
-        "desc": "Mehr regionale Sichtbarkeit und bessere Anfragen für profitable Projekte.",
-        "result": "Platz 1"
+        "title": "Bauleistungen verständlich erklärt.",
+        "desc": "Ein Unternehmensauftritt mit klarer Leistungsstruktur und einfachen Kontaktwegen.",
+        "result": "Klare Leistungen"
       }
     ],
     "impacts": {
@@ -895,7 +895,7 @@
     "nextProject": "Nächstes Projekt",
     "challengeText": "Die Ausgangslage und das Ziel: Was sollte die neue Website für das Unternehmen leisten?",
     "solutionText": "Unser Ansatz: ein schnelles, modernes und für Google sowie KI optimiertes System — verständlich umgesetzt.",
-    "resultsText": "Das messbare Ergebnis: mehr Sichtbarkeit, mehr Anfragen und ein Auftritt, der Vertrauen schafft.",
+    "resultsText": "Der Projektfokus: klare Leistungen, einfache Kontaktwege und ein Auftritt, der Vertrauen schafft.",
     "all": "Alle Projekte",
     "empty": "Noch keine Projekte veröffentlicht.",
     "caseDetails": {
