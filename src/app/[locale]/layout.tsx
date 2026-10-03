@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { GoogleTagManager } from "@next/third-parties/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import brandIcon from "@/assets/brand/favicon.svg";
@@ -105,6 +105,19 @@ export default async function LocaleLayout({
     notFound();
   }
   setRequestLocale(locale);
+  const allMessages = await getMessages({ locale });
+  // Server Components keep the full request messages. The client provider only
+  // needs namespaces read by Client Components, avoiding a full message file
+  // in every page's Flight payload.
+  const clientMessages = {
+    Nav: allMessages.Nav,
+    Testimonials: allMessages.Testimonials,
+    WebsiteAudit: allMessages.WebsiteAudit,
+    ContactPage: allMessages.ContactPage,
+    Hero: allMessages.Hero,
+    Captcha: allMessages.Captcha,
+    Newsletter: allMessages.Newsletter,
+  };
   const assistant = await getTranslations({ locale, namespace: "AssistantWidget" });
   const consent = await getTranslations({ locale, namespace: "AnalyticsConsent" });
   const assistantLabels = {
@@ -163,8 +176,7 @@ export default async function LocaleLayout({
           </>
         ) : null}
         <CustomCursor />
-        {/* next-intl 4: provider auto-inherits messages from i18n/request.ts */}
-        <NextIntlClientProvider>
+        <NextIntlClientProvider messages={clientMessages}>
           {children}
           <AiAssistantLauncher locale={locale} labels={assistantLabels} contactHref={contactHref} />
         </NextIntlClientProvider>
