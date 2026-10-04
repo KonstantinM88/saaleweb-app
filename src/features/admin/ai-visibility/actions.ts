@@ -66,7 +66,7 @@ export async function saveAiVisibilityCheck(formData: FormData) {
   const rawCitationUrl = cleanText(formData.get("citationUrl"));
   const citationUrl = cited ? normalizeCitationUrl(formData.get("citationUrl")) : undefined;
 
-  if (cited && rawCitationUrl && !citationUrl) {
+  if (cited && (!rawCitationUrl || !citationUrl)) {
     redirect(selectionUrl(
       cleanText(formData.get("week")) ?? "",
       cleanText(formData.get("promptKey")),

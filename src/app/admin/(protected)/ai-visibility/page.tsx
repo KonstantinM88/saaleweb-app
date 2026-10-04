@@ -75,6 +75,7 @@ export default async function AiVisibilityPage({ searchParams }: { searchParams:
   const checked = checks.length;
   const mentioned = checks.filter((item) => item.mentioned).length;
   const cited = checks.filter((item) => item.cited).length;
+  const citedWithUrl = checks.filter((item) => item.cited && item.citationUrl).length;
   const total = AI_VISIBILITY_PROMPTS.length * AI_VISIBILITY_PLATFORMS.length;
   const selectedCheck = selectedPrompt && selectedPlatform
     ? byKey.get(`${selectedPrompt.key}:${selectedPlatform.key}`)
@@ -101,7 +102,7 @@ export default async function AiVisibilityPage({ searchParams }: { searchParams:
         }`}>
           {status === "saved" && t("Prüfergebnis gespeichert.", "Результат проверки сохранён.")}
           {status === "deleted" && t("Prüfergebnis gelöscht.", "Результат проверки удалён.")}
-          {status === "invalid" && t("Ungültige Daten. Bitte Felder und URL prüfen.", "Некорректные данные. Проверьте поля и URL.")}
+          {status === "invalid" && t("Ungültige Daten. Für ein Zitat ist die verlinkte SaaleWeb-URL Pflicht.", "Некорректные данные. Для цитирования обязателен URL страницы SaaleWeb.")}
           {status === "indexnow-missing" && t("IndexNow ist noch nicht konfiguriert: INDEXNOW_KEY fehlt oder ist ungültig.", "IndexNow ещё не настроен: INDEXNOW_KEY отсутствует или некорректен.")}
           {status.startsWith("indexnow-sent") && t(`${status.split("-").at(-1)} Prioritätsseiten wurden an IndexNow gesendet.`, `${status.split("-").at(-1)} приоритетных страниц отправлено в IndexNow.`)}
           {status.startsWith("indexnow-failed") && t("IndexNow hat die Anfrage nicht akzeptiert. Bitte Hosting-Status und Logs prüfen.", "IndexNow не принял запрос. Проверьте статус и логи хостинга.")}
@@ -127,6 +128,15 @@ export default async function AiVisibilityPage({ searchParams }: { searchParams:
           </div>
         ))}
       </div>
+
+      {cited > citedWithUrl ? (
+        <p className="mb-6 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
+          {t(
+            `${cited - citedWithUrl} als Zitat markierte Prüfungen haben keine gespeicherte SaaleWeb-URL. Bitte anhand der ursprünglichen Antworten nachprüfen; die alten Status wurden nicht automatisch geändert.`,
+            `У ${cited - citedWithUrl} проверок, отмеченных как цитирование, не сохранён URL SaaleWeb. Сверьте их с исходными ответами; старые статусы не изменены автоматически.`,
+          )}
+        </p>
+      ) : null}
 
       <div className={`${adminCard} mb-6 p-5`}>
         <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
@@ -234,7 +244,7 @@ export default async function AiVisibilityPage({ searchParams }: { searchParams:
               <input name="mentionOrder" type="number" min={1} max={20} defaultValue={selectedCheck?.mentionOrder ?? ""} className={adminInput} />
             </label>
             <label className={adminLabel}>
-              {t("URL der zitierten SaaleWeb-Seite (optional)", "URL процитированной страницы SaaleWeb (необязательно)")}
+              {t("URL der zitierten SaaleWeb-Seite (Pflicht bei Zitat)", "URL процитированной страницы SaaleWeb (обязателен при цитировании)")}
               <input name="citationUrl" type="url" placeholder="https://saaleweb.de/..." defaultValue={selectedCheck?.citationUrl ?? ""} className={adminInput} />
             </label>
             <label className={adminLabel}>

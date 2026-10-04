@@ -304,6 +304,22 @@ export function Phase4LandingPage({ page, locale, path, parent, schemaKind, area
                       </dd>
                     </div>
                   ) : null}
+                  {page.ownDemo ? (
+                    <div className="rounded-2xl border border-brand-purple/15 bg-white p-4 sm:col-span-2">
+                      <dt className="font-mono text-[11px] font-bold uppercase tracking-[0.14em] text-brand-purple">
+                        {page.ownDemo.label}
+                      </dt>
+                      <dd className="mt-3 text-sm leading-relaxed text-muted">
+                        <BrandText text={page.ownDemo.text} />
+                      </dd>
+                      <dd className="mt-3">
+                        <a href={page.ownDemo.href} className="inline-flex items-center gap-2 text-sm font-bold text-brand-purple hover:underline">
+                          {page.ownDemo.linkLabel}
+                          <ArrowRight className="h-4 w-4" aria-hidden />
+                        </a>
+                      </dd>
+                    </div>
+                  ) : null}
                 </dl>
               </div>
             </Reveal>

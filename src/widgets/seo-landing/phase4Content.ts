@@ -34,6 +34,7 @@ export type Phase4Landing = {
   process?: Phase4Card[];
   casesTitle?: string;
   cases?: Phase4Link[];
+  ownDemo?: { label: string; text: string; href: string; linkLabel: string };
   relatedTitle: string;
   relatedLinks: Phase4Link[];
   faq: Phase4Faq[];
@@ -2153,6 +2154,7 @@ type Phase5ServiceInput = {
   features: Phase4Card[];
   related: Phase4Link[];
   cases?: Phase4Link[];
+  ownDemo?: Phase4Landing["ownDemo"];
   extraFaq?: Phase4Faq[];
 };
 
@@ -2305,7 +2307,13 @@ const PHASE5_SERVICE_CONTENT: Record<Phase4Locale, Record<string, Phase5ServiceI
         { label: "Datenanalyse", href: "/leistungen/datenanalyse", description: "Daten strukturiert auswerten und nutzbar machen." },
         { label: "Kontakt", href: "/kontakt", description: "KI-Einsatz realistisch prüfen." },
       ],
-      cases: serviceCases.local,
+      cases: [],
+      ownDemo: {
+        label: "Live-Beispiel auf saaleweb.de",
+        text: "Der SaaleWeb-Assistent auf dieser Website beantwortet Fragen zu unseren Leistungen in Deutsch, Englisch und Russisch, grenzt fremde Aufgaben ab und kann eine Kontaktanfrage an unser Team übergeben. Er ist ein eigenes, öffentlich testbares Beispiel — keine veröffentlichte KI-Referenz eines Kunden und kein Nachweis für Enterprise-RAG oder eine CRM-Integration.",
+        href: "/",
+        linkLabel: "Eigenen Assistenten auf der Startseite testen",
+      },
     },
     automatisierung: {
       topic: "Automatisierung",
@@ -2552,7 +2560,13 @@ const PHASE5_SERVICE_CONTENT: Record<Phase4Locale, Record<string, Phase5ServiceI
         { label: "Data analytics", href: "/en/services/data-analytics", description: "Make data structured and useful." },
         { label: "Contact", href: "/en/contact", description: "Check a realistic AI use case." },
       ],
-      cases: SERVICE_CASES_BY_LOCALE.en,
+      cases: [],
+      ownDemo: {
+        label: "Live example on saaleweb.de",
+        text: "The SaaleWeb assistant on this website answers questions about our services in German, English and Russian, limits unrelated requests, and can hand a contact inquiry to our team. It is our own publicly testable example, not a published client AI project or proof of enterprise RAG or CRM integration.",
+        href: "/en",
+        linkLabel: "Try our assistant on the home page",
+      },
       extraFaq: [
         {
           q: "What is the difference between an AI assistant and an AI chatbot for a business?",
@@ -2805,7 +2819,13 @@ const PHASE5_SERVICE_CONTENT: Record<Phase4Locale, Record<string, Phase5ServiceI
         { label: "Аналитика данных", href: "/ru/uslugi/analitika-dannyh", description: "Сделать данные структурированными и полезными." },
         { label: "Контакты", href: "/ru/kontakt", description: "Проверить реалистичный сценарий ИИ." },
       ],
-      cases: SERVICE_CASES_BY_LOCALE.ru,
+      cases: [],
+      ownDemo: {
+        label: "Рабочий пример на saaleweb.de",
+        text: "Ассистент SaaleWeb на этом сайте отвечает на вопросы о наших услугах на немецком, английском и русском, ограничивает посторонние запросы и может передать заявку нашей команде. Это собственный публичный пример, а не опубликованный клиентский проект и не доказательство внедрения корпоративного RAG или CRM.",
+        href: "/ru",
+        linkLabel: "Проверить нашего ассистента на главной",
+      },
       extraFaq: [
         {
           q: "Чем ИИ-ассистент отличается от ИИ-чатбота для компании?",
@@ -3587,6 +3607,7 @@ function buildPhase5ServicePage(canonicalSlug: string, locale: Phase4Locale): Ph
     process: labels.process,
     casesTitle: labels.casesTitle,
     cases: data.cases ?? SERVICE_CASES_BY_LOCALE[locale],
+    ownDemo: data.ownDemo,
     relatedTitle: labels.relatedTitle,
     relatedLinks: data.related,
     faq: phase5Faq(locale, data.topic, data.extraFaq),
