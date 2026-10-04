@@ -176,6 +176,10 @@ const nextConfig = {
         source: "/llms.txt",
         headers: [{ key: "Content-Type", value: "text/markdown; charset=utf-8" }],
       },
+      {
+        source: "/llms-full.txt",
+        headers: [{ key: "Content-Type", value: "text/markdown; charset=utf-8" }],
+      },
     ];
   },
   // sharp must stay external (native binaries) for the image-upload route.

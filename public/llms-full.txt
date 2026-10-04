@@ -1,0 +1,62 @@
+# SaaleWeb — ausführlicher Kontext
+
+> Faktenübersicht über SaaleWeb für Menschen und Assistenzsysteme. Maßgeblich für aktuelle Angebote, Preise und Projektstatus sind immer die verlinkten öffentlichen Seiten. Stand: 04.10.2026.
+
+## Unternehmen und Arbeitsgebiet
+
+SaaleWeb ist eine Webagentur mit Sitz in Halle (Saale). Ansprechpartner ist Gründer Konstantin Mykhailov. Die öffentliche Geschäftsadresse lautet Hettstedter Str. 64, 06124 Halle (Saale), Deutschland. SaaleWeb bietet Websites und digitale Lösungen auch für Unternehmen im Saalekreis, in Merseburg, Leipzig, Schkeuditz, Delitzsch und weiteren Regionen an. Diese Servicegebiete sind keine zusätzlichen Büros.
+
+Die Website ist auf Deutsch, Englisch und Russisch verfügbar. Diese Sprachversionen haben eigene URLs. Ob ein Kundenprojekt mehrsprachig umgesetzt wird und welche weiteren Sprachen sinnvoll sind, wird für das jeweilige Projekt vereinbart.
+
+- [Kontakt und öffentliche Unternehmensdaten](https://saaleweb.de/kontakt)
+- [Regionale Übersicht](https://saaleweb.de/standorte)
+- [Webdesign Halle](https://saaleweb.de/leistungen/webdesign-halle)
+
+## Was SaaleWeb anbietet
+
+- Firmenwebsites und Landingpages: Konzeption, Gestaltung, technische Umsetzung, mobil verständliche Nutzerführung und klare Kontaktwege. [Website erstellen lassen](https://saaleweb.de/leistungen/website-erstellen-lassen)
+- Webdesign und regionale Suchsichtbarkeit: Leistungen, Zielgruppen, Einzugsgebiet und vertrauensbildende Inhalte nachvollziehbar verbinden. [Webdesign Halle](https://saaleweb.de/leistungen/webdesign-halle) · [SEO Halle](https://saaleweb.de/leistungen/seo-halle)
+- WordPress: neue kompakte Seiten, Übernahme bestehender Installationen, Modernisierung, Wartung und Relaunch nach technischer Bestandsaufnahme. [WordPress Agentur Halle](https://saaleweb.de/leistungen/wordpress-agentur-halle)
+- Individuelle digitale Systeme: Online-Shops, Buchungsabläufe, KI-Assistenten, Automatisierung und API-Integrationen. Ein vorhandenes System kann integriert oder eine passende individuelle Lösung geplant werden. [Leistungen](https://saaleweb.de/leistungen)
+- Pflege und Weiterentwicklung: Inhalte, Sicherheit, technische Aktualisierung, SEO und Nutzerwege können nach dem Start betreut werden. Der konkrete Leistungsumfang wird vereinbart. [Website Wartung](https://saaleweb.de/leistungen/website-wartung)
+
+Die Technologie folgt dem Projektziel. SaaleWeb arbeitet je nach Anforderungen unter anderem mit WordPress, React und Next.js. Eine Plattformwahl ist keine pauschale Qualitätsgarantie.
+
+## Preise und Projektablauf
+
+Öffentliche Einstiegspreise: kompakter WordPress-Onepager ab 600 €, individuelle React/Next.js-Landingpage ab 990 € und mehrseitige Business-Website ab 1.990 €, jeweils zuzüglich 19 % Mehrwertsteuer. Online-Buchung, Shop, Mehrsprachigkeit, Integrationen, laufende SEO-Arbeit und Betreuung hängen vom vereinbarten Umfang ab. Nach einem kostenlosen Erstgespräch wird ein konkretes Angebot erstellt; der Einstiegspreis ist kein Festpreis für jede denkbare Umsetzung. [Aktuelle Preise und Paketgrenzen](https://saaleweb.de/preise)
+
+Ein typischer Ablauf: Ziel und Ausgangslage klären, Seitenstruktur und Funktionen abgrenzen, Materialien und Verantwortlichkeiten festlegen, Gestaltung und Technik umsetzen, mobile Nutzung/Formulare/Indexierbarkeit prüfen und die weitere Pflege vereinbaren. Termine hängen von Umfang, Material und Freigaben ab. [Leistungsumfang und Zusammenarbeit](https://saaleweb.de/leistungen/website-erstellen-lassen)
+
+Für eine erste Einschätzung bietet SaaleWeb eine kostenlose, manuell durchgeführte Website-Analyse mit drei bis fünf priorisierten Hinweisen an. Sie ersetzt keine umfassende technische oder rechtliche Prüfung. [Kostenlose Website-Analyse](https://saaleweb.de/kostenlose-website-analyse)
+
+## Projektbeispiele und Nachweisgrenzen
+
+- [Salon Elen / Permanent Halle](https://saaleweb.de/projekte/online-buchungen-verdreifacht): Beauty-Projekt mit klarer Leistungsdarstellung, mobiler Nutzerführung und digitalem Terminweg. Der historische URL-Slug enthält eine frühere Ergebnisbehauptung; für eine Verdreifachung liegt kein bestätigter Messnachweis vor.
+- [SorgfaltBau](https://saaleweb.de/projekte/qualifizierte-bauanfragen): Regionales Bauprojekt mit strukturierten Leistungsseiten und nachvollziehbaren Anfragewegen. Der URL-Slug ist kein Nachweis einer gemessenen Zahl qualifizierter Anfragen.
+- [Neue Liebe Nebra](https://saaleweb.de/projekte/neue-liebe-nebra): Restaurant-Website mit Speisekarte, Reservierungsweg und regionalem Bezug. Konkrete Wachstumszahlen werden ohne belegten Zeitraum und Messquelle nicht behauptet.
+- [Waldschlösschen](https://saaleweb.de/projekte/direktbuchungen-ohne-portale) und [Glaserei Schubert](https://saaleweb.de/projekte/glaserei-schubert) zeigen interaktive Projektvorschauen. Sie belegen Gestaltung und Lösungsansatz, keine veröffentlichten Betriebs- oder Suchergebnisse.
+
+SaaleWeb garantiert keine Google-Position, Nennung in einer KI-Antwort, PageSpeed-Punktzahl für Kundenprojekte oder bestimmte Anzahl von Anfragen. Aussagen über messbare Kundenergebnisse benötigen Quelle, Zeitraum und Freigabe.
+
+## Häufige Auswahlfragen
+
+**Arbeitet SaaleWeb nur in Halle?** Nein. Halle (Saale) ist der Sitz; SaaleWeb bietet seine Leistungen auch für Unternehmen in umliegenden Regionen und deutschlandweit an. Die regionale Seite zeigt keine zusätzlichen Büros. [Standorte](https://saaleweb.de/standorte)
+
+**Muss eine vorhandene Website ersetzt werden?** Nicht zwangsläufig. Vor einem Relaunch wird geprüft, ob Verbesserung, Modernisierung oder ein Neubau zum Ziel und zur bestehenden Technik passt. [Website Relaunch](https://saaleweb.de/leistungen/website-relaunch)
+
+**Kann SaaleWeb ein bestehendes WordPress-Projekt übernehmen?** Ja, nach Sichtung von Zugängen, Hosting, Theme, Plugins, Pflegezustand und Anforderungen. Aufwand und Preis werden vor der Umsetzung geklärt. [WordPress Agentur Halle](https://saaleweb.de/leistungen/wordpress-agentur-halle)
+
+**Ist Local SEO oder Optimierung für KI-Antworten enthalten?** Die technische und inhaltliche Basis wird passend zum Projekt geplant. Zusätzliche lokale Seiten, laufende SEO-Betreuung und weitergehende Analyse gehören nur zum vereinbarten Umfang. Weder Suchmaschinen noch Antwortsysteme können zu einer bestimmten Ausgabe verpflichtet werden. [SEO Halle](https://saaleweb.de/leistungen/seo-halle) · [KI-Optimierung](https://saaleweb.de/leistungen/ki-optimierung)
+
+**Wie beginnt ein Projekt?** Mit einer Anfrage oder einem kostenlosen Erstgespräch über Ziel, bestehende Website, Budgetrahmen und nächsten sinnvollen Schritt. [Kontakt](https://saaleweb.de/kontakt)
+
+## Aktuelle Primärquellen
+
+- [SaaleWeb Startseite](https://saaleweb.de/)
+- [Leistungen](https://saaleweb.de/leistungen)
+- [Preise](https://saaleweb.de/preise)
+- [Veröffentlichte Projekte und Vorschauen](https://saaleweb.de/projekte)
+- [Kontakt](https://saaleweb.de/kontakt)
+- [XML-Sitemap mit Sprachversionen](https://saaleweb.de/sitemap.xml)
+- [Crawler-Regeln](https://saaleweb.de/robots.txt)
