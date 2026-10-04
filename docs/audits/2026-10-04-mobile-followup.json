@@ -1,0 +1,403 @@
+{
+  "date": "2026-10-04",
+  "baselineCommit": "e77245c",
+  "ownerScreenshots": [
+    {
+      "score": 55,
+      "tbt": 1410,
+      "mainThreadApprox": 6000
+    },
+    {
+      "score": 75,
+      "tbt": 310,
+      "mainThreadApprox": 2800
+    },
+    {
+      "score": 69,
+      "mainThreadApprox": 3200
+    }
+  ],
+  "psiBaseline": [
+    {
+      "fetchTime": "2026-10-04T11:41:07.158Z",
+      "score": 71,
+      "lcp": 3927.0091799512124,
+      "fcp": 2483.0049724735736,
+      "tbt": 433.5,
+      "speedIndex": 4818.546530191126,
+      "mainThread": 3159.5399999999927,
+      "transfer": 1050176,
+      "mainThreadItems": [
+        {
+          "groupLabel": "Script Evaluation",
+          "group": "scriptEvaluation",
+          "duration": 936.9035999999899
+        },
+        {
+          "groupLabel": "Other",
+          "duration": 796.5683999999967,
+          "group": "other"
+        },
+        {
+          "group": "styleLayout",
+          "duration": 678.0000000000006,
+          "groupLabel": "Style & Layout"
+        },
+        {
+          "groupLabel": "Rendering",
+          "group": "paintCompositeRender",
+          "duration": 354.07320000000584
+        },
+        {
+          "group": "scriptParseCompile",
+          "groupLabel": "Script Parsing & Compilation",
+          "duration": 260.57160000000005
+        },
+        {
+          "group": "parseHTML",
+          "duration": 103.14719999999998,
+          "groupLabel": "Parse HTML & CSS"
+        },
+        {
+          "group": "garbageCollection",
+          "duration": 30.276,
+          "groupLabel": "Garbage Collection"
+        }
+      ],
+      "bootupTop": [
+        {
+          "url": "https://saaleweb.de/",
+          "total": 1080.076800000001,
+          "scripting": 5.956799999999995,
+          "scriptParseCompile": 44.432399999999994
+        },
+        {
+          "url": "https://saaleweb.de/_next/static/chunks/4bd1b696-93bf506b236d6248.js",
+          "total": 582.1428000000003,
+          "scripting": 179.0916,
+          "scriptParseCompile": 26.174400000000002
+        },
+        {
+          "url": "https://saaleweb.de/_next/static/chunks/3794-3e759ba6f5728ed8.js",
+          "total": 534.2771999999983,
+          "scripting": 472.98119999999824,
+          "scriptParseCompile": 28.0344
+        },
+        {
+          "url": "https://saaleweb.de/_next/static/chunks/app/%5Blocale%5D/page-5de6f91177a70094.js",
+          "total": 348.4512000000004,
+          "scripting": 16.738799999999987,
+          "scriptParseCompile": 3.676799999999999
+        },
+        {
+          "url": "Unattributable",
+          "total": 192.3396000000006,
+          "scripting": 4.638,
+          "scriptParseCompile": 0
+        },
+        {
+          "url": "https://www.googletagmanager.com/gtag/js",
+          "total": 190.9991999999997,
+          "scripting": 113.02919999999969,
+          "scriptParseCompile": 77.3724
+        },
+        {
+          "url": "https://www.googletagmanager.com/gtm.js",
+          "total": 186.39480000000026,
+          "scripting": 127.27080000000026,
+          "scriptParseCompile": 57.583200000000005
+        }
+      ]
+    },
+    {
+      "fetchTime": "2026-10-04T11:41:45.224Z",
+      "score": 75,
+      "lcp": 4055.0091673020506,
+      "fcp": 2407.0047669970663,
+      "tbt": 317.5,
+      "speedIndex": 4134.300912942004,
+      "mainThread": 2774.261999999994,
+      "transfer": 1049847,
+      "mainThreadItems": [
+        {
+          "group": "scriptEvaluation",
+          "groupLabel": "Script Evaluation",
+          "duration": 954.0575999999924
+        },
+        {
+          "group": "other",
+          "duration": 672.4235999999972,
+          "groupLabel": "Other"
+        },
+        {
+          "groupLabel": "Style & Layout",
+          "duration": 527.2187999999996,
+          "group": "styleLayout"
+        },
+        {
+          "groupLabel": "Rendering",
+          "duration": 322.4112000000046,
+          "group": "paintCompositeRender"
+        },
+        {
+          "groupLabel": "Script Parsing & Compilation",
+          "duration": 246.1380000000001,
+          "group": "scriptParseCompile"
+        },
+        {
+          "groupLabel": "Parse HTML & CSS",
+          "group": "parseHTML",
+          "duration": 52.0128
+        }
+      ],
+      "bootupTop": [
+        {
+          "url": "https://saaleweb.de/",
+          "total": 807.0192,
+          "scripting": 4.6295999999999955,
+          "scriptParseCompile": 25.968000000000014
+        },
+        {
+          "url": "https://saaleweb.de/_next/static/chunks/3794-3e759ba6f5728ed8.js",
+          "total": 498.1739999999983,
+          "scripting": 452.0339999999983,
+          "scriptParseCompile": 26.302799999999994
+        },
+        {
+          "url": "https://saaleweb.de/_next/static/chunks/4bd1b696-93bf506b236d6248.js",
+          "total": 416.5584000000004,
+          "scripting": 30.950399999999963,
+          "scriptParseCompile": 28.733999999999995
+        },
+        {
+          "url": "https://saaleweb.de/_next/static/chunks/app/%5Blocale%5D/page-5de6f91177a70094.js",
+          "total": 313.47360000000026,
+          "scripting": 14.961599999999974,
+          "scriptParseCompile": 3.1007999999999996
+        },
+        {
+          "url": "https://www.googletagmanager.com/gtm.js",
+          "total": 235.02839999999964,
+          "scripting": 173.15159999999966,
+          "scriptParseCompile": 60.34439999999999
+        },
+        {
+          "url": "https://www.googletagmanager.com/gtag/js",
+          "total": 188.79479999999978,
+          "scripting": 109.30919999999976,
+          "scriptParseCompile": 78.912
+        },
+        {
+          "url": "https://saaleweb.de/_next/static/chunks/webpack-9d932b9f673ac6a1.js",
+          "total": 127.44000000000004,
+          "scripting": 122.39160000000004,
+          "scriptParseCompile": 1.1784
+        },
+        {
+          "url": "Unattributable",
+          "total": 118.71360000000051,
+          "scripting": 2.714399999999999,
+          "scriptParseCompile": 0
+        }
+      ]
+    },
+    {
+      "fetchTime": "2026-10-04T11:42:21.754Z",
+      "score": 73,
+      "lcp": 3531.5046744101564,
+      "fcp": 2610.502826387536,
+      "tbt": 426.5,
+      "speedIndex": 5065.2795917957465,
+      "mainThread": 3143.315999999992,
+      "transfer": 1050523,
+      "mainThreadItems": [
+        {
+          "groupLabel": "Style & Layout",
+          "group": "styleLayout",
+          "duration": 920.8188000000006
+        },
+        {
+          "groupLabel": "Script Evaluation",
+          "duration": 843.1547999999921,
+          "group": "scriptEvaluation"
+        },
+        {
+          "group": "other",
+          "duration": 676.3655999999955,
+          "groupLabel": "Other"
+        },
+        {
+          "group": "scriptParseCompile",
+          "groupLabel": "Script Parsing & Compilation",
+          "duration": 309.7691999999999
+        },
+        {
+          "group": "paintCompositeRender",
+          "groupLabel": "Rendering",
+          "duration": 286.4304000000038
+        },
+        {
+          "group": "parseHTML",
+          "duration": 84.00600000000001,
+          "groupLabel": "Parse HTML & CSS"
+        },
+        {
+          "duration": 22.771200000000007,
+          "groupLabel": "Garbage Collection",
+          "group": "garbageCollection"
+        }
+      ],
+      "bootupTop": [
+        {
+          "url": "https://saaleweb.de/",
+          "total": 1314.1704000000009,
+          "scripting": 7.486799999999992,
+          "scriptParseCompile": 57.15479999999998
+        },
+        {
+          "url": "https://saaleweb.de/_next/static/chunks/4bd1b696-93bf506b236d6248.js",
+          "total": 479.30640000000017,
+          "scripting": 160.83239999999998,
+          "scriptParseCompile": 37.7088
+        },
+        {
+          "url": "https://saaleweb.de/_next/static/chunks/3794-3e759ba6f5728ed8.js",
+          "total": 465.52919999999773,
+          "scripting": 409.0955999999978,
+          "scriptParseCompile": 34.702799999999996
+        },
+        {
+          "url": "https://saaleweb.de/_next/static/chunks/app/%5Blocale%5D/page-5de6f91177a70094.js",
+          "total": 237.7752,
+          "scripting": 12.613199999999994,
+          "scriptParseCompile": 4.2588
+        },
+        {
+          "url": "Unattributable",
+          "total": 204.58439999999874,
+          "scripting": 3.7595999999999994,
+          "scriptParseCompile": 0
+        },
+        {
+          "url": "https://www.googletagmanager.com/gtm.js",
+          "total": 182.71680000000026,
+          "scripting": 123.60480000000025,
+          "scriptParseCompile": 57.63
+        },
+        {
+          "url": "https://www.googletagmanager.com/gtag/js",
+          "total": 182.15279999999984,
+          "scripting": 102.02999999999983,
+          "scriptParseCompile": 78.6468
+        }
+      ]
+    }
+  ],
+  "local": {
+    "t2-baseline": [
+      {
+        "score": 0.53,
+        "lcp": 3618.8357499999997,
+        "fcp": 1599.8905,
+        "tbt": 5651,
+        "mainThread": 17920.35199999997,
+        "bytes": 894712
+      },
+      {
+        "score": 0.51,
+        "lcp": 3681.357449999999,
+        "fcp": 2461.2311999999997,
+        "tbt": 4609.222700000001,
+        "mainThread": 15421.195999999973,
+        "bytes": 893764
+      },
+      {
+        "score": 0.51,
+        "lcp": 3666.4625249999995,
+        "fcp": 2442.9406000000004,
+        "tbt": 4497.603149999999,
+        "mainThread": 14946.275999999973,
+        "bytes": 893762
+      }
+    ],
+    "t2-visible-only": [
+      {
+        "score": 0.51,
+        "lcp": 3672.7395249999995,
+        "fcp": 2463.6527,
+        "tbt": 4450.173649999999,
+        "mainThread": 14859.803999999975,
+        "bytes": 895057
+      },
+      {
+        "score": 0.5,
+        "lcp": 3884.0363499999994,
+        "fcp": 2453.6014,
+        "tbt": 4374.2714,
+        "mainThread": 15738.915999999152,
+        "bytes": 894390
+      },
+      {
+        "score": 0.57,
+        "lcp": 3196.6958999999993,
+        "fcp": 1538.9065,
+        "tbt": 5161.499999999999,
+        "mainThread": 14299.415999999983,
+        "bytes": 894377
+      }
+    ],
+    "t2-deferred": [
+      {
+        "score": 0.49,
+        "lcp": 4161.297999999999,
+        "fcp": 2715.149,
+        "tbt": 3689.4999999999995,
+        "mainThread": 13824.683999999983,
+        "bytes": 895138
+      },
+      {
+        "score": 0.48,
+        "lcp": 4505.301600000001,
+        "fcp": 2574.8683000000005,
+        "tbt": 2902.9999999999995,
+        "mainThread": 11043.103999999976,
+        "bytes": 894249
+      },
+      {
+        "score": 0.59,
+        "lcp": 2871.9782000000005,
+        "fcp": 1546.7391,
+        "tbt": 6932,
+        "mainThread": 16813.93199999999,
+        "bytes": 894194
+      }
+    ],
+    "t2-css-split": [
+      {
+        "score": 0.55,
+        "lcp": 3493.8567500000004,
+        "fcp": 1552.9045,
+        "tbt": 5482,
+        "mainThread": 15289.203999999983,
+        "bytes": 890055
+      },
+      {
+        "score": 0.48,
+        "lcp": 4235.043999999999,
+        "fcp": 2464.3791999999994,
+        "tbt": 4360.444149999999,
+        "mainThread": 15356.295999999898,
+        "bytes": 889113
+      },
+      {
+        "score": 0.56,
+        "lcp": 3278.7715499999995,
+        "fcp": 1550.9272999999998,
+        "tbt": 5314.000000000002,
+        "mainThread": 15913.103999999967,
+        "bytes": 889049
+      }
+    ]
+  },
+  "productionAfter": []
+}

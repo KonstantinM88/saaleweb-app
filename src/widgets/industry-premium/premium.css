@@ -1,0 +1,794 @@
+/* ──────────────────────────────────────────────────────────────
+   Delta 34 — premium industry landing (hotel).
+
+   Page-scoped hospitality accents keep the premium hotel template
+   recognisable without changing the shared SaaleWeb design system.
+   ────────────────────────────────────────────────────────────── */
+.hotel-page {
+  --hotel-night: #0c1424;
+  --hotel-night-2: #16223a;
+  --hotel-brass: #d9a441;
+  --hotel-brass-light: #e8c071;
+  --hotel-brass-ink: #241906;
+}
+
+.hotel-night {
+  background: linear-gradient(160deg, #0c1424 0%, #16223a 100%);
+}
+
+.hotel-figure {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+/* Background underline supports wrapped phrases on narrow RU/EN screens. */
+.hotel-underline {
+  background-image: linear-gradient(90deg, #d9a441 0%, rgba(217, 164, 65, 0.35) 100%);
+  background-position: 0 94%;
+  background-repeat: no-repeat;
+  background-size: 100% 0.14em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.hotel-brass-card {
+  background: linear-gradient(135deg, #e8c071 0%, #d9a441 100%);
+  border: 1px solid rgba(36, 25, 6, 0.16);
+}
+
+.hotel-marker {
+  display: grid;
+  height: 1.75rem;
+  width: 1.75rem;
+  place-items: center;
+  border-radius: 0.625rem;
+  border: 1px solid rgba(217, 164, 65, 0.4);
+  background: rgba(217, 164, 65, 0.12);
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 12px;
+  font-weight: 700;
+  color: #8a6316;
+}
+
+.hotel-prompt {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: 0.875rem;
+  border: 1px solid #e5e7eb;
+  background: #f8fafc;
+  padding: 0.7rem 0.9rem;
+  font-size: 14.5px;
+  line-height: 1.45;
+  color: #1f2937;
+}
+
+.hotel-rail {
+  border-top: 1px solid #e5e7eb;
+}
+
+.hotel-rail:last-child {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.hotel-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.hotel-faq summary:focus-visible {
+  outline: 2px solid #8b5cf6;
+  outline-offset: 2px;
+  border-radius: 18px;
+}
+
+.hotel-range {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 0.5rem;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    #ffffff calc(var(--fill, 50%) - 1px),
+    rgba(255, 255, 255, 0.14) var(--fill, 50%)
+  );
+  cursor: pointer;
+}
+
+.hotel-range--accent {
+  background: linear-gradient(
+    90deg,
+    #e8c071 calc(var(--fill, 50%) - 1px),
+    rgba(255, 255, 255, 0.14) var(--fill, 50%)
+  );
+}
+
+.hotel-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 1.375rem;
+  width: 1.375rem;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 4px solid #16223a;
+  box-shadow: 0 6px 18px -6px rgba(0, 0, 0, 0.8);
+}
+
+.hotel-range--accent::-webkit-slider-thumb {
+  background: #e8c071;
+}
+
+.hotel-range::-moz-range-thumb {
+  height: 1.375rem;
+  width: 1.375rem;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 4px solid #16223a;
+}
+
+.hotel-range--accent::-moz-range-thumb {
+  background: #e8c071;
+}
+
+.hotel-range:focus-visible {
+  outline: 2px solid #e8c071;
+  outline-offset: 4px;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   Delta 35 — premium industry landing (restaurant).
+
+   Sibling of the hotel accent, but with its own vocabulary: a warm
+   near-black and a Saale-Unstrut wine red. Used only for the signature
+   moments (dish card, digital menu, final CTA); everything else stays
+   on the regular brand palette.
+   ────────────────────────────────────────────────────────────── */
+.rest-page {
+  --rest-night: #16100f;
+  --rest-night-2: #241716;
+  --rest-wine: #8e2f43;
+  --rest-wine-light: #c25a6e;
+  --rest-wine-pale: #e8b4bf;
+}
+
+.rest-night {
+  background: linear-gradient(160deg, #16100f 0%, #241716 100%);
+}
+
+.rest-figure {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+/* Wine rule under the key phrase of the H1. */
+.rest-underline {
+  position: relative;
+}
+
+.rest-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.04em;
+  height: 0.13em;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #8e2f43 0%, rgba(194, 90, 110, 0.32) 100%);
+}
+
+/* Search-style rows for the example queries in the GEO/AIO block. */
+.rest-prompt {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: 0.875rem;
+  border: 1px solid #e5e7eb;
+  background: #f8fafc;
+  padding: 0.7rem 0.9rem;
+  font-size: 14.5px;
+  line-height: 1.45;
+  color: #1f2937;
+}
+
+/* Journey rail: the hairline that carries the 01–05 sequence. */
+.rest-rail {
+  border-top: 1px solid #e5e7eb;
+}
+
+.rest-rail:last-child {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.rest-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.rest-faq summary:focus-visible {
+  outline: 2px solid #8b5cf6;
+  outline-offset: 2px;
+  border-radius: 18px;
+}
+
+/* ── Digital menu showcase ────────────────────────────────── */
+.rest-menu {
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+}
+
+.rest-tab {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.rest-tab:hover {
+  border-color: rgba(194, 90, 110, 0.45);
+  color: #fff;
+}
+
+.rest-tab--active {
+  border-color: transparent;
+  background: linear-gradient(135deg, #8e2f43 0%, #b04156 100%);
+  color: #fff;
+}
+
+.rest-tab:focus-visible {
+  outline: 2px solid #e3909f;
+  outline-offset: 3px;
+}
+
+.rest-dish {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  transition: border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.rest-dish:hover {
+  border-color: rgba(194, 90, 110, 0.32);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Image slot of a dish: stands in for the photo plus the short clip that
+   sits behind it in the real projects. */
+.rest-dish-media {
+  position: relative;
+  display: grid;
+  height: 4.5rem;
+  width: 4.5rem;
+  flex-shrink: 0;
+  place-items: center;
+  border-radius: 1rem;
+  border: 1px dashed rgba(255, 255, 255, 0.16);
+  background: linear-gradient(135deg, rgba(194, 90, 110, 0.16), rgba(139, 92, 246, 0.14));
+}
+
+.rest-dish-play {
+  position: absolute;
+  right: 0.35rem;
+  bottom: 0.35rem;
+  height: 1.65rem;
+  width: 1.65rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: rgba(142, 47, 67, 0.92);
+  box-shadow: 0 6px 16px rgba(23, 11, 15, 0.35);
+  padding: 0.38rem;
+  color: #fff;
+}
+
+.rest-badge {
+  border-radius: 999px;
+  border: 1px solid rgba(194, 90, 110, 0.3);
+  background: rgba(194, 90, 110, 0.12);
+  padding: 0.2rem 0.6rem;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #e8b4bf;
+}
+
+/* Dish slot with a real photo: same footprint, no dashed placeholder. */
+.rest-dish-media--photo {
+  overflow: visible;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.14);
+  background: #241716;
+}
+
+.rest-dish-media--photo > img {
+  border-radius: 0.94rem;
+}
+
+.rest-dish-media--interactive {
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.rest-dish-media--interactive:hover {
+  border-color: rgba(227, 144, 159, 0.75);
+  box-shadow: 0 10px 24px rgba(23, 11, 15, 0.3);
+  transform: translateY(-1px);
+}
+
+.rest-dish-media--interactive:focus-visible {
+  outline: 2px solid #e3909f;
+  outline-offset: 3px;
+}
+
+.rest-video-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: grid;
+  place-items: center;
+  padding: 0.75rem;
+  background: rgba(12, 8, 13, 0.82);
+  backdrop-filter: blur(10px);
+}
+
+.rest-video-dialog {
+  width: min(100%, 48rem);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 1.5rem;
+  background: #171115;
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.5);
+}
+
+.rest-video-close {
+  display: grid;
+  height: 2.75rem;
+  width: 2.75rem;
+  flex-shrink: 0;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.82);
+  transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.rest-video-close:hover {
+  border-color: rgba(227, 144, 159, 0.55);
+  background: rgba(194, 90, 110, 0.16);
+  color: #fff;
+}
+
+.rest-video-close:focus-visible {
+  outline: 2px solid #e3909f;
+  outline-offset: 3px;
+}
+
+@media (min-width: 640px) {
+  .rest-dish-media {
+    height: 5.25rem;
+    width: 5.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rest-dish-media--interactive {
+    transition: none;
+  }
+
+  .rest-dish-media--interactive:hover {
+    transform: none;
+  }
+}
+
+/* ──────────────────────────────────────────────────────────────
+   Delta 36 — premium industry landing (construction).
+
+   Where the hotel page uses midnight and brass, and the restaurant page
+   warm black and wine, this one borrows from a technical drawing:
+   a light blueprint sheet with a fine grid, drawing-blue rules and a
+   single graphite band for the reference block and the final CTA.
+   The signature section is deliberately light — the page rhythm differs
+   from its siblings, not just the hue.
+   ────────────────────────────────────────────────────────────── */
+.bau-page {
+  --bau-ink: #0c2e4e;
+  --bau-ink-soft: #40607f;
+  --bau-blue: #2d6ca3;
+  --bau-blue-light: #7fb6e4;
+  --bau-sheet: #eef4fa;
+  --bau-graphite: #14181d;
+}
+
+/* Blueprint grid, drawn with two hairline gradients. */
+.bau-grid-bg {
+  background-image:
+    linear-gradient(rgba(45, 108, 163, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(45, 108, 163, 0.07) 1px, transparent 1px);
+  background-size: 34px 34px;
+}
+
+.bau-blueprint {
+  background-color: #eef4fa;
+}
+
+.bau-graphite {
+  background: linear-gradient(160deg, #14181d 0%, #212932 100%);
+}
+
+.bau-figure {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+/* Technical rule under the key phrase of the H1. */
+.bau-underline {
+  position: relative;
+}
+.bau-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.04em;
+  height: 0.12em;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #2d6ca3 0%, rgba(45, 108, 163, 0.3) 100%);
+}
+
+/* Sheet surface used by the inquiry assistant. */
+.bau-sheet {
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(45, 108, 163, 0.18);
+  backdrop-filter: blur(4px);
+}
+
+/* The assembled inquiry — the artifact the whole page is about. */
+.bau-inquiry {
+  background: #ffffff;
+  border: 1px solid rgba(45, 108, 163, 0.28);
+  box-shadow: 0 24px 70px -60px rgba(12, 46, 78, 0.7);
+}
+
+/* Selectable option chips of the inquiry assistant. */
+.bau-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 2.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(45, 108, 163, 0.24);
+  background: #ffffff;
+  padding: 0.5rem 0.85rem;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #123a5e;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+.bau-chip:hover {
+  border-color: rgba(45, 108, 163, 0.6);
+}
+.bau-chip--active {
+  border-color: transparent;
+  background: linear-gradient(135deg, #1b4e7a 0%, #2d6ca3 100%);
+  color: #ffffff;
+}
+.bau-chip:focus-visible {
+  outline: 2px solid #2d6ca3;
+  outline-offset: 3px;
+}
+
+/* URL rows in the service-page structure block. */
+.bau-url {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 0.6rem;
+  border-radius: 0.7rem;
+  border: 1px solid rgba(45, 108, 163, 0.16);
+  background: rgba(45, 108, 163, 0.04);
+  padding: 0.6rem 0.8rem;
+}
+
+/* Search-style rows for the example queries in the GEO/AIO block. */
+.bau-prompt {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: 0.875rem;
+  border: 1px solid #e5e7eb;
+  background: #f8fafc;
+  padding: 0.7rem 0.9rem;
+  font-size: 14.5px;
+  line-height: 1.45;
+  color: #1f2937;
+}
+
+/* Journey rail: the hairline that carries the 01–05 sequence. */
+.bau-rail {
+  border-top: 1px solid #e5e7eb;
+}
+.bau-rail:last-child {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.bau-faq summary::-webkit-details-marker {
+  display: none;
+}
+.bau-faq summary:focus-visible {
+  outline: 2px solid #8b5cf6;
+  outline-offset: 2px;
+  border-radius: 18px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bau-chip {
+    transition: none;
+  }
+}
+
+/* ──────────────────────────────────────────────────────────────
+   Delta 37 — premium industry landing (beauty studio).
+
+   The brand palette is already pink, so a rose-on-white beauty page
+   would read as no decision at all. This one goes the other way: a deep
+   aubergine night with a muted rose accent, restrained rather than
+   sweet — the register of an evening appointment, which is exactly when
+   these bookings happen.
+   ────────────────────────────────────────────────────────────── */
+.bty-page {
+  --bty-night: #1a0f1e;
+  --bty-night-2: #2e1b33;
+  --bty-rose: #b5527a;
+  --bty-rose-light: #f0bfcf;
+  --bty-ink: #3a1b2a;
+}
+
+.bty-night {
+  background: linear-gradient(160deg, #1a0f1e 0%, #2e1b33 100%);
+}
+
+.bty-figure {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+/* Rose rule under the key phrase of the H1. */
+.bty-underline {
+  position: relative;
+}
+.bty-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.04em;
+  height: 0.12em;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #b5527a 0%, rgba(181, 82, 122, 0.3) 100%);
+}
+
+/* Lettered markers tying the annotated service card to its callouts. */
+.bty-marker {
+  display: grid;
+  height: 1.75rem;
+  width: 1.75rem;
+  place-items: center;
+  border-radius: 0.625rem;
+  border: 1px solid rgba(181, 82, 122, 0.4);
+  background: rgba(181, 82, 122, 0.1);
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 12px;
+  font-weight: 700;
+  color: #a2416a;
+}
+
+.bty-url {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 0.6rem;
+  border-radius: 0.7rem;
+  border: 1px solid rgba(181, 82, 122, 0.16);
+  background: rgba(181, 82, 122, 0.04);
+  padding: 0.6rem 0.8rem;
+}
+
+.bty-prompt {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: 0.875rem;
+  border: 1px solid #e5e7eb;
+  background: #f8fafc;
+  padding: 0.7rem 0.9rem;
+  font-size: 14.5px;
+  line-height: 1.45;
+  color: #1f2937;
+}
+
+.bty-rail {
+  border-top: 1px solid #e5e7eb;
+}
+.bty-rail:last-child {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.bty-faq summary::-webkit-details-marker {
+  display: none;
+}
+.bty-faq summary:focus-visible {
+  outline: 2px solid #8b5cf6;
+  outline-offset: 2px;
+  border-radius: 18px;
+}
+
+/* ── Booking flow demo ────────────────────────────────────── */
+.bty-panel {
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+}
+
+.bty-demo-badge {
+  border-radius: 999px;
+  border: 1px solid rgba(181, 82, 122, 0.4);
+  background: rgba(181, 82, 122, 0.14);
+  padding: 0.35rem 0.75rem;
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #f0bfcf;
+}
+
+.bty-step {
+  display: grid;
+  height: 1.4rem;
+  width: 1.4rem;
+  place-items: center;
+  border-radius: 999px;
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 700;
+}
+.bty-step--todo {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.4);
+}
+.bty-step--current {
+  border: 1px solid #b5527a;
+  background: #b5527a;
+  color: #ffffff;
+}
+.bty-step--done {
+  border: 1px solid rgba(240, 191, 207, 0.5);
+  background: rgba(240, 191, 207, 0.18);
+  color: #f0bfcf;
+}
+
+.bty-option {
+  width: 100%;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+  padding: 0.9rem 1rem;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+.bty-option:hover {
+  border-color: rgba(181, 82, 122, 0.55);
+  background: rgba(255, 255, 255, 0.055);
+  transform: translateY(-1px);
+}
+.bty-option:focus-visible {
+  outline: 2px solid #f0bfcf;
+  outline-offset: 3px;
+}
+
+.bty-avatar {
+  display: grid;
+  height: 2.75rem;
+  width: 2.75rem;
+  flex-shrink: 0;
+  place-items: center;
+  border-radius: 999px;
+  border: 1px solid rgba(240, 191, 207, 0.35);
+  background: linear-gradient(135deg, rgba(181, 82, 122, 0.55), rgba(46, 27, 51, 0.9));
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #f8e7ee;
+}
+
+.bty-slot {
+  border-radius: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 0.7rem 0.5rem;
+  color: #ffffff;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+.bty-slot:hover:not(:disabled) {
+  border-color: rgba(181, 82, 122, 0.6);
+  background: rgba(181, 82, 122, 0.18);
+  transform: translateY(-1px);
+}
+.bty-slot:focus-visible {
+  outline: 2px solid #f0bfcf;
+  outline-offset: 3px;
+}
+.bty-slot--taken {
+  cursor: not-allowed;
+  border-style: dashed;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.bty-done {
+  display: grid;
+  height: 4rem;
+  width: 4rem;
+  place-items: center;
+  border-radius: 999px;
+  border: 1px solid rgba(240, 191, 207, 0.45);
+  background: rgba(181, 82, 122, 0.22);
+  color: #f0bfcf;
+}
+
+.bty-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 2.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.45rem 0.9rem;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+.bty-ghost:hover {
+  border-color: rgba(240, 191, 207, 0.5);
+  color: #ffffff;
+}
+.bty-ghost:focus-visible {
+  outline: 2px solid #f0bfcf;
+  outline-offset: 3px;
+}
+
+/* The assembled appointment — light card against the dark panel. */
+.bty-card {
+  background: #fdf6f9;
+  border: 1px solid rgba(181, 82, 122, 0.28);
+  box-shadow: 0 24px 70px -60px rgba(26, 15, 30, 0.8);
+}
+
+.bty-chip-done {
+  border-radius: 999px;
+  border: 1px solid rgba(181, 82, 122, 0.35);
+  background: rgba(181, 82, 122, 0.12);
+  padding: 0.25rem 0.65rem;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #a2416a;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bty-option,
+  .bty-slot,
+  .bty-ghost {
+    transition: none;
+  }
+  .bty-option:hover,
+  .bty-slot:hover:not(:disabled) {
+    transform: none;
+  }
+}

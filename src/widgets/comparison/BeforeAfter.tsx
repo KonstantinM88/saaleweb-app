@@ -13,15 +13,35 @@ export function BeforeAfter({ beforeLabel, afterLabel }: { beforeLabel: string; 
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     let raf = 0;
-    const start = performance.now();
+    let visible = false;
+    let start = 0;
     const loop = (now: number) => {
-      if (interacted.current) return;
+      if (!visible || interacted.current || document.hidden) return;
       setPos(50 + Math.sin((now - start) / 1400) * 12);
       raf = requestAnimationFrame(loop);
     };
 
-    raf = requestAnimationFrame(loop);
-    return () => cancelAnimationFrame(raf);
+    const syncAnimation = () => {
+      cancelAnimationFrame(raf);
+      if (visible && !interacted.current && !document.hidden) {
+        start = performance.now();
+        raf = requestAnimationFrame(loop);
+      }
+    };
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        visible = entry.isIntersecting;
+        syncAnimation();
+      },
+      { threshold: 0.1 },
+    );
+    if (ref.current) observer.observe(ref.current);
+    document.addEventListener("visibilitychange", syncAnimation);
+    return () => {
+      cancelAnimationFrame(raf);
+      observer.disconnect();
+      document.removeEventListener("visibilitychange", syncAnimation);
+    };
   }, []);
 
   const setFromClientX = (clientX: number) => {

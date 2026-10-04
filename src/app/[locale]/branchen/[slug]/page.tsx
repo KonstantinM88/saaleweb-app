@@ -26,6 +26,7 @@ import { RestaurantLandingPage } from "@/widgets/industry-premium/RestaurantLand
 import { ConstructionLandingPage } from "@/widgets/industry-premium/ConstructionLandingPage";
 import { BeautyLandingPage } from "@/widgets/industry-premium/BeautyLandingPage";
 import { getPremiumIndustry } from "@/widgets/industry-premium/registry";
+import "@/widgets/industry-premium/premium.css";
 import { isMergedIndustrySlug } from "@/widgets/seo-landing/industryMerges";
 import {
   getSeoIndustryPage,

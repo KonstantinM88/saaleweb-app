@@ -69,3 +69,17 @@ URL Inspection API для двух DE-страниц вернул `PASS`, «Subm
 ## T1: ранние загрузки mobile, 04.10
 
 Техническое изменение главных `https://saaleweb.de/`, `https://saaleweb.de/en`, `https://saaleweb.de/ru`: prefetch Hero-кнопок и отложенная загрузка нижних иллюстраций. Видимые тексты, ссылки и canonical/hreflang прежние; новых отдельных запросов индексирования не требуется. Проверка и статус публикации: [отчёт](./performance-mobile-2026-10-04.md).
+
+## T1: скрытая анимация и CSS отраслевых страниц, 04.10
+
+На главных `/`, `/en`, `/ru` ползунок далёкого нижнего блока перестаёт перерисовываться до появления на экране. Стили отельного, ресторанного, строительного и beauty-шаблонов вынесены из общей таблицы стилей на маршрут отраслевых деталей. Затронутые канонические адреса:
+
+| DE | EN | RU |
+|---|---|---|
+| `https://saaleweb.de/` | `https://saaleweb.de/en` | `https://saaleweb.de/ru` |
+| `https://saaleweb.de/branchen/hotel-website` | `https://saaleweb.de/en/industries/hotel-website` | `https://saaleweb.de/ru/otrasli/sayt-dlya-otelya` |
+| `https://saaleweb.de/branchen/restaurant-website` | `https://saaleweb.de/en/industries/restaurant-website` | `https://saaleweb.de/ru/otrasli/sayt-dlya-restorana` |
+| `https://saaleweb.de/branchen/bauunternehmen-website` | `https://saaleweb.de/en/industries/construction-company-website` | `https://saaleweb.de/ru/otrasli/sayt-dlya-stroitelnoy-kompanii` |
+| `https://saaleweb.de/branchen/beauty-studio-website` | `https://saaleweb.de/en/industries/beauty-studio-website` | `https://saaleweb.de/ru/otrasli/sayt-dlya-salona-krasoty` |
+
+Изменены только загрузка CSS и поведение анимации, а не видимый SEO-текст, URL, canonical или hreflang. **Отдельные запросы индексирования в GSC для этих адресов не нужны.** Статус и замеры: [повторный отчёт T1](./performance-mobile-followup-2026-10-04.md).
