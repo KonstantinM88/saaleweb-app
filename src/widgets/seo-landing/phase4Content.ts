@@ -5197,8 +5197,8 @@ export const locationPages: Record<string, Phase4Landing & { cityName: string; n
     technologyText,
     processTitle: "So entsteht regionale Sichtbarkeit",
     process: serviceProcess,
-    casesTitle: "Projektbeispiele aus passenden Branchen",
-    cases: [...serviceCases.restaurant, ...serviceCases.local],
+    casesTitle: "Projektbeispiele aus Halle",
+    cases: serviceCases.local,
     relatedTitle: "Nahe Standorte und nächste Themen",
     nearby: [
       { label: "Leipzig", href: "/standorte/leipzig", description: "Webdesign und SEO im größeren regionalen Markt." },
@@ -5270,8 +5270,8 @@ export const locationPages: Record<string, Phase4Landing & { cityName: string; n
     metaDescription:
       "Webdesign und SEO für Merseburg: moderne Websites, Local SEO, klare Leistungsseiten und digitale Kundengewinnung für regionale Unternehmen.",
     lead: [
-      "In Merseburg suchen Kunden häufig gezielt nach regionalen Anbietern, die schnell erreichbar und vertrauenswürdig wirken.",
-      "SaaleWeb hilft Unternehmen, ihre Leistungen klarer zu präsentieren und in der lokalen Suche besser verstanden zu werden.",
+      "Merseburg ist Teil des Saalekreises. Für Unternehmen hier sollte die Website zeigen, welche Leistungen sie in Merseburg und im Umland tatsächlich anbieten und wie Kunden sie erreichen.",
+      "SaaleWeb bietet seine Leistungen von Halle (Saale) aus auch für Unternehmen in Merseburg an. Wir ordnen Leistungen, Einzugsgebiet und Kontaktwege so, dass Besucher schnell prüfen können, ob ein Angebot zu ihnen passt.",
     ],
     problemTitle: "Lokale Sichtbarkeit in Merseburg",
     problems: [
@@ -5293,7 +5293,7 @@ export const locationPages: Record<string, Phase4Landing & { cityName: string; n
     technologyText,
     processTitle: "Von lokaler Analyse zur Website",
     process: serviceProcess,
-    casesTitle: "Passende Projektbeispiele",
+    casesTitle: "Projektbeispiele aus dem regionalen Umfeld",
     cases: serviceCases.local,
     relatedTitle: "Nahe Standorte und nächste Themen",
     nearby: [
@@ -5414,8 +5414,8 @@ export const locationPages: Record<string, Phase4Landing & { cityName: string; n
     metaDescription:
       "Webdesign und SEO im Saalekreis: moderne Websites, Local SEO, regionale Landingpages und klare digitale Systeme für Unternehmen.",
     lead: [
-      "Im Saalekreis suchen Kunden nicht immer nur nach einem einzelnen Ort. Viele Entscheidungen entstehen über regionale Nähe, Vertrauen und passende Spezialisierung.",
-      "SaaleWeb entwickelt Websites, die Einzugsgebiet, Leistungen und lokale Relevanz verständlich verbinden.",
+      "Zum Saalekreis gehören unterschiedliche Orte mit eigenen Suchanfragen. Eine regionale Website sollte das tatsächliche Einzugsgebiet und die angebotenen Leistungen verständlich nennen, statt für jeden Ort denselben Text zu wiederholen.",
+      "SaaleWeb bietet seine Leistungen von Halle (Saale) aus auch für Unternehmen im Saalekreis an. Wir verbinden Leistungsseiten, Kontaktwege und belegbare Referenzen aus der Region zu einer klaren Website-Struktur.",
     ],
     problemTitle: "Regionale Sichtbarkeit im Saalekreis",
     problems: [
@@ -5437,7 +5437,7 @@ export const locationPages: Record<string, Phase4Landing & { cityName: string; n
     technologyText,
     processTitle: "Von Region zu Themenstruktur",
     process: serviceProcess,
-    casesTitle: "Passende Projektbeispiele",
+    casesTitle: "Projektbeispiele aus dem regionalen Umfeld",
     cases: serviceCases.local,
     relatedTitle: "Nahe Standorte und nächste Themen",
     nearby: [
@@ -5466,6 +5466,45 @@ function localizedLocationPage(slug: string, locale: Phase4Locale) {
   const city = base.cityName;
   const locationPath = (targetSlug: string) =>
     locale === "en" ? `/en/locations/${targetSlug}` : `/ru/goroda/${targetSlug}`;
+  const regionalLead: Record<string, string[]> = en
+    ? {
+        halle: [
+          "Halle (Saale) is SaaleWeb's home base. We build websites for businesses here with clear services, mobile contact paths and a sound foundation for local search.",
+          "The projects below show work for two Halle businesses. Their pages describe the actual solution without unverified ranking or growth claims.",
+        ],
+        merseburg: [
+          "Merseburg is part of Saalekreis. A useful business website should show which services are actually offered in Merseburg and the surrounding area and how customers can get in touch.",
+          "SaaleWeb offers its services to Merseburg businesses from Halle (Saale). We connect services, real service areas and contact paths so visitors can judge whether an offer fits.",
+        ],
+        saalekreis: [
+          "Saalekreis contains different towns with distinct customer questions. A regional website should state its real service area instead of repeating the same copy for every town.",
+          "SaaleWeb offers its services across Saalekreis from Halle (Saale). We connect service pages, contact paths and relevant regional project examples.",
+        ],
+      }
+    : {
+        halle: [
+          "Halle (Saale) — основной город SaaleWeb. Мы создаём для местных компаний сайты с понятными услугами, удобным мобильным контактом и базой для локального поиска.",
+          "Ниже показаны два проекта для компаний из Halle. Их страницы описывают выполненную работу без неподтверждённых заявлений о росте и позициях.",
+        ],
+        merseburg: [
+          "Merseburg входит в Saalekreis. Сайт компании должен показывать, какие услуги она действительно оказывает в Merseburg и окрестностях и как с ней связаться.",
+          "SaaleWeb предлагает услуги компаниям Merseburg из Halle (Saale). Мы связываем услуги, реальную зону работы и контактные пути, чтобы клиент мог оценить предложение.",
+        ],
+        saalekreis: [
+          "Saalekreis объединяет разные города со своими запросами клиентов. Региональному сайту нужна честная зона работы, а не одинаковый текст для каждого города.",
+          "SaaleWeb предлагает услуги компаниям Saalekreis из Halle (Saale). Мы связываем страницы услуг, контакты и подходящие региональные примеры проектов.",
+        ],
+      };
+  const regionalCases: Phase4Link[] = en
+    ? [
+        { label: "Salon Elen / Permanent Halle", href: "/en/projects/online-bookings-tripled", description: "Halle beauty project with clear services, mobile guidance and online appointments." },
+        { label: "SorgfaltBau", href: "/en/projects/qualified-construction-leads", description: "Regional construction website with structured service pages and clear inquiry paths." },
+      ]
+    : [
+        { label: "Salon Elen / Permanent Halle", href: "/ru/proekty/onlajn-zapisi-vyrosli-vtroe", description: "Проект для салона в Halle: понятные услуги, мобильный путь и онлайн-запись." },
+        { label: "SorgfaltBau", href: "/ru/proekty/kvalificirovannye-zayavki", description: "Региональный строительный сайт с разделами услуг и понятным путём к заявке." },
+      ];
+  const priorityRegion = slug === "halle" || slug === "merseburg" || slug === "saalekreis";
 
   return {
     ...base,
@@ -5479,7 +5518,7 @@ function localizedLocationPage(slug: string, locale: Phase4Locale) {
     metaDescription: en
       ? `Web design, SEO and modern websites for businesses in ${city}: SaaleWeb builds digital systems for visibility, trust and qualified inquiries.`
       : `Веб-дизайн, SEO и современные сайты для компаний в ${city}: SaaleWeb создаёт цифровые системы для видимости, доверия и заявок.`,
-    lead: en
+    lead: regionalLead[slug] ?? (en
       ? [
           `Many customers in ${city} search online first, even when they want to work with a local business nearby.`,
           "SaaleWeb builds websites, SEO structures and content that help local customers understand your offer faster and help search systems classify it more clearly.",
@@ -5487,7 +5526,7 @@ function localizedLocationPage(slug: string, locale: Phase4Locale) {
       : [
           `Многие клиенты в ${city} сначала ищут онлайн, даже если хотят обратиться к локальной компании рядом.`,
           "SaaleWeb создаёт сайты, SEO-структуры и контент, которые помогают клиентам быстрее понять предложение, а поисковым системам — лучше его классифицировать.",
-        ],
+        ]),
     problemTitle: en ? `Local digital challenges in ${city}` : `Локальные цифровые задачи в ${city}`,
     problems: en
       ? [
@@ -5554,8 +5593,12 @@ function localizedLocationPage(slug: string, locale: Phase4Locale) {
           { title: "Запуск", text: "До запуска проверяем скорость, мобильность, формы и индексацию." },
           { title: "Улучшение", text: "Региональный контент и пути заявки можно расширять после запуска." },
         ],
-    casesTitle: en ? "Relevant project examples" : "Подходящие примеры проектов",
-    cases: SERVICE_CASES_BY_LOCALE[locale],
+    casesTitle: priorityRegion
+      ? slug === "halle"
+        ? en ? "Project examples from Halle" : "Проекты из Halle"
+        : en ? "Project examples from the surrounding region" : "Проекты из соседних городов"
+      : en ? "Relevant project examples" : "Подходящие примеры проектов",
+    cases: priorityRegion ? regionalCases : SERVICE_CASES_BY_LOCALE[locale],
     relatedTitle: en ? "Nearby locations and next topics" : "Ближайшие локации и следующие темы",
     nearby: base.nearby.map((link) => {
       const targetSlug = link.href.split("/").pop() ?? "";

@@ -77,9 +77,9 @@ Hero не обращается к Google во время рендера. Он ч
 npx prisma migrate deploy
 ```
 
-## Ежедневный cron
+## Необязательный ежедневный SEO Score
 
-Добавьте отдельное ежедневное задание в cron-job.org на **07:00 Europe/Berlin**, метод `GET`:
+Основной Telegram-отчёт `/api/telegram/daily-report` уже отправляется в 08:00 Europe/Berlin и не зависит от этого задания. SEO Score доступен вручную через `/seo` и `/seo new`. Если нужны новые снимки `SeoDailySnapshot` каждый день, добавьте отдельное задание в cron-job.org на **07:00 Europe/Berlin**, метод `GET`:
 
 ```text
 https://saaleweb.de/api/telegram/seo-score

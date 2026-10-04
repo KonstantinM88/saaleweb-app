@@ -91,3 +91,13 @@ URL Inspection API для двух DE-страниц вернул `PASS`, «Subm
 | DE | EN | RU |
 |---|---|---|
 | `https://saaleweb.de/leistungen/webdesign-halle` | `https://saaleweb.de/en/services/web-design-halle` | `https://saaleweb.de/ru/uslugi/webdesign-halle` |
+
+## L1: региональные страницы, 04.10
+
+На этих страницах уточнены зона работы и связь кейсов с регионом. Локальный production build: все девять URL ответили HTTP 200 с self-canonical, четырьмя hreflang и нужными кейсами в серверном HTML. После деплоя повторить проверку на production, затем отправить существующий sitemap через GSC. Sitemap не заменяет ручной запрос индексирования. Приоритет для ручного URL Inspection — три DE-адреса.
+
+| DE | EN | RU |
+|---|---|---|
+| `https://saaleweb.de/standorte/halle` | `https://saaleweb.de/en/locations/halle` | `https://saaleweb.de/ru/goroda/halle` |
+| `https://saaleweb.de/standorte/merseburg` | `https://saaleweb.de/en/locations/merseburg` | `https://saaleweb.de/ru/goroda/merseburg` |
+| `https://saaleweb.de/standorte/saalekreis` | `https://saaleweb.de/en/locations/saalekreis` | `https://saaleweb.de/ru/goroda/saalekreis` |
