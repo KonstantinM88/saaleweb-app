@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import premiumSaasPoster from "@/assets/sections/premium-saas-technology.webp";
 import { cn } from "@/shared/lib/cn";
 
@@ -89,6 +90,16 @@ export function GrowthMediaWindow({
       onPointerEnter={handlePointerEnter}
       onPointerLeave={handlePointerLeave}
     >
+      {/* A video poster downloads eagerly even with preload="none". Keep the
+          same artwork as a native lazy image until the video is requested. */}
+      <Image
+        src={premiumSaasPoster}
+        alt=""
+        fill
+        unoptimized
+        sizes="(max-width: 767px) 100vw, 1200px"
+        className="object-cover object-center"
+      />
       <video
         ref={videoRef}
         className={cn(
@@ -101,7 +112,7 @@ export function GrowthMediaWindow({
         loop
         playsInline
         preload="none"
-        poster={premiumSaasPoster.src}
+        poster={shouldLoadVideo ? premiumSaasPoster.src : undefined}
       >
         {shouldLoadVideo ? <source src={videoSrc} type="video/webm" /> : null}
       </video>

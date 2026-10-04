@@ -1,0 +1,1159 @@
+{
+  "date": "2026-10-04",
+  "method": "Local Lighthouse 12.8.2 mobile; sequential three-run groups. Hardware load varied; do not compare directly with PSI 13.",
+  "baseline": [
+    {
+      "label": "before",
+      "fetchTime": "2026-10-03T20:49:56.116Z",
+      "version": "12.8.2",
+      "score": 0.51,
+      "lcp": 3626.4575000000004,
+      "fcp": 1636.583,
+      "tbt": 6452,
+      "cls": 0,
+      "mainThread": 26047.360000004526,
+      "bytes": 1090225,
+      "lcpElement": {
+        "type": "list",
+        "items": [
+          {
+            "type": "table",
+            "headings": [
+              {
+                "key": "node",
+                "valueType": "node",
+                "label": "Element"
+              }
+            ],
+            "items": [
+              {
+                "node": {
+                  "type": "node",
+                  "lhId": "page-0-P",
+                  "path": "1,HTML,1,BODY,9,MAIN,0,SECTION,1,DIV,0,DIV,2,P",
+                  "selector": "section#top > div.mx-auto > div > p.mb-8",
+                  "boundingRect": {
+                    "top": 281,
+                    "bottom": 473,
+                    "left": 24,
+                    "right": 388,
+                    "width": 364,
+                    "height": 192
+                  },
+                  "snippet": "<p class=\"mb-8 max-w-[560px] text-[clamp(16px,1.6vw,19px)] text-muted\">",
+                  "nodeLabel": "Wir entwickeln digitale Systeme, die Unternehmen sichtbar machen, Vertrauen sch…"
+                }
+              }
+            ]
+          },
+          {
+            "type": "table",
+            "headings": [
+              {
+                "key": "phase",
+                "valueType": "text",
+                "label": "Phase"
+              },
+              {
+                "key": "percent",
+                "valueType": "text",
+                "label": "% of LCP"
+              },
+              {
+                "key": "timing",
+                "valueType": "ms",
+                "label": "Timing"
+              }
+            ],
+            "items": [
+              {
+                "phase": "TTFB",
+                "timing": 568.583,
+                "percent": "16%"
+              },
+              {
+                "phase": "Load Delay",
+                "timing": 0,
+                "percent": "0%"
+              },
+              {
+                "phase": "Load Time",
+                "timing": 0,
+                "percent": "0%"
+              },
+              {
+                "phase": "Render Delay",
+                "timing": 3057.8745000000004,
+                "percent": "84%"
+              }
+            ]
+          }
+        ]
+      },
+      "requests": [
+        {
+          "url": "http://localhost:3193/",
+          "bytes": 171099,
+          "start": 0,
+          "end": 598.5400000810623
+        },
+        {
+          "url": "http://localhost:3193/_next/static/media/0b78ff376f6b9734-s.p.woff2",
+          "bytes": 69953,
+          "start": 614.7250000238419,
+          "end": 4328.623000025749
+        },
+        {
+          "url": "http://localhost:3193/_next/static/media/723e11e5093b8e80.p.woff2",
+          "bytes": 71669,
+          "start": 615.3420000076294,
+          "end": 4329.78100001812
+        }
+      ]
+    },
+    {
+      "label": "before",
+      "fetchTime": "2026-10-03T20:51:01.649Z",
+      "version": "12.8.2",
+      "score": 0.48,
+      "lcp": 4001.1859999999997,
+      "fcp": 2473.622,
+      "tbt": 4715.598000000001,
+      "cls": 0,
+      "mainThread": 19572.07199999995,
+      "bytes": 1089275,
+      "lcpElement": {
+        "type": "list",
+        "items": [
+          {
+            "type": "table",
+            "headings": [
+              {
+                "key": "node",
+                "valueType": "node",
+                "label": "Element"
+              }
+            ],
+            "items": [
+              {
+                "node": {
+                  "type": "node",
+                  "lhId": "page-0-P",
+                  "path": "1,HTML,1,BODY,9,MAIN,0,SECTION,1,DIV,0,DIV,2,P",
+                  "selector": "section#top > div.mx-auto > div > p.mb-8",
+                  "boundingRect": {
+                    "top": 281,
+                    "bottom": 473,
+                    "left": 24,
+                    "right": 388,
+                    "width": 364,
+                    "height": 192
+                  },
+                  "snippet": "<p class=\"mb-8 max-w-[560px] text-[clamp(16px,1.6vw,19px)] text-muted\">",
+                  "nodeLabel": "Wir entwickeln digitale Systeme, die Unternehmen sichtbar machen, Vertrauen sch…"
+                }
+              }
+            ]
+          },
+          {
+            "type": "table",
+            "headings": [
+              {
+                "key": "phase",
+                "valueType": "text",
+                "label": "Phase"
+              },
+              {
+                "key": "percent",
+                "valueType": "text",
+                "label": "% of LCP"
+              },
+              {
+                "key": "timing",
+                "valueType": "ms",
+                "label": "Timing"
+              }
+            ],
+            "items": [
+              {
+                "phase": "TTFB",
+                "timing": 476.948,
+                "percent": "12%"
+              },
+              {
+                "phase": "Load Delay",
+                "timing": 0,
+                "percent": "0%"
+              },
+              {
+                "phase": "Load Time",
+                "timing": 0,
+                "percent": "0%"
+              },
+              {
+                "phase": "Render Delay",
+                "timing": 3524.238,
+                "percent": "88%"
+              }
+            ]
+          }
+        ]
+      },
+      "requests": [
+        {
+          "url": "http://localhost:3193/",
+          "bytes": 171049,
+          "start": 0,
+          "end": 171.95999991893768
+        },
+        {
+          "url": "http://localhost:3193/_next/static/media/0b78ff376f6b9734-s.p.woff2",
+          "bytes": 69953,
+          "start": 156.87399995326996,
+          "end": 1139.1840000152588
+        },
+        {
+          "url": "http://localhost:3193/_next/static/media/723e11e5093b8e80.p.woff2",
+          "bytes": 71669,
+          "start": 157.76799988746643,
+          "end": 1139.579999923706
+        }
+      ]
+    },
+    {
+      "label": "before",
+      "fetchTime": "2026-10-03T20:51:39.086Z",
+      "version": "12.8.2",
+      "score": 0.51,
+      "lcp": 3698.6153499999987,
+      "fcp": 2446.3625999999995,
+      "tbt": 4613.631099999998,
+      "cls": 0,
+      "mainThread": 16729.443999999978,
+      "bytes": 1089201,
+      "lcpElement": {
+        "type": "list",
+        "items": [
+          {
+            "type": "table",
+            "headings": [
+              {
+                "key": "node",
+                "valueType": "node",
+                "label": "Element"
+              }
+            ],
+            "items": [
+              {
+                "node": {
+                  "type": "node",
+                  "lhId": "page-0-P",
+                  "path": "1,HTML,1,BODY,9,MAIN,0,SECTION,1,DIV,0,DIV,2,P",
+                  "selector": "section#top > div.mx-auto > div > p.mb-8",
+                  "boundingRect": {
+                    "top": 281,
+                    "bottom": 473,
+                    "left": 24,
+                    "right": 388,
+                    "width": 364,
+                    "height": 192
+                  },
+                  "snippet": "<p class=\"mb-8 max-w-[560px] text-[clamp(16px,1.6vw,19px)] text-muted\">",
+                  "nodeLabel": "Wir entwickeln digitale Systeme, die Unternehmen sichtbar machen, Vertrauen sch…"
+                }
+              }
+            ]
+          },
+          {
+            "type": "table",
+            "headings": [
+              {
+                "key": "phase",
+                "valueType": "text",
+                "label": "Phase"
+              },
+              {
+                "key": "percent",
+                "valueType": "text",
+                "label": "% of LCP"
+              },
+              {
+                "key": "timing",
+                "valueType": "ms",
+                "label": "Timing"
+              }
+            ],
+            "items": [
+              {
+                "phase": "TTFB",
+                "timing": 467.4945,
+                "percent": "13%"
+              },
+              {
+                "phase": "Load Delay",
+                "timing": 0,
+                "percent": "0%"
+              },
+              {
+                "phase": "Load Time",
+                "timing": 0,
+                "percent": "0%"
+              },
+              {
+                "phase": "Render Delay",
+                "timing": 3231.1208499999984,
+                "percent": "87%"
+              }
+            ]
+          }
+        ]
+      },
+      "requests": [
+        {
+          "url": "http://localhost:3193/",
+          "bytes": 171049,
+          "start": 0,
+          "end": 141.6269998550415
+        },
+        {
+          "url": "http://localhost:3193/_next/static/media/0b78ff376f6b9734-s.p.woff2",
+          "bytes": 69953,
+          "start": 157.32699990272522,
+          "end": 990.037999868393
+        },
+        {
+          "url": "http://localhost:3193/_next/static/media/723e11e5093b8e80.p.woff2",
+          "bytes": 71669,
+          "start": 157.97499990463257,
+          "end": 990.4059998989105
+        }
+      ]
+    }
+  ],
+  "rejectedExternalCss": [
+    {
+      "label": "external-css",
+      "fetchTime": "2026-10-03T20:59:19.692Z",
+      "version": "12.8.2",
+      "score": 0.39,
+      "lcp": 4784.643,
+      "fcp": 4164.643,
+      "tbt": 2525.1785,
+      "cls": 0,
+      "mainThread": 16662.31999999996,
+      "bytes": 1028171,
+      "lcpElement": {
+        "type": "list",
+        "items": [
+          {
+            "type": "table",
+            "headings": [
+              {
+                "key": "node",
+                "valueType": "node",
+                "label": "Element"
+              }
+            ],
+            "items": [
+              {
+                "node": {
+                  "type": "node",
+                  "lhId": "page-0-P",
+                  "path": "1,HTML,1,BODY,9,MAIN,0,SECTION,1,DIV,0,DIV,2,P",
+                  "selector": "section#top > div.mx-auto > div > p.mb-8",
+                  "boundingRect": {
+                    "top": 281,
+                    "bottom": 473,
+                    "left": 24,
+                    "right": 388,
+                    "width": 364,
+                    "height": 192
+                  },
+                  "snippet": "<p class=\"mb-8 max-w-[560px] text-[clamp(16px,1.6vw,19px)] text-muted\">",
+                  "nodeLabel": "Wir entwickeln digitale Systeme, die Unternehmen sichtbar machen, Vertrauen sch…"
+                }
+              }
+            ]
+          },
+          {
+            "type": "table",
+            "headings": [
+              {
+                "key": "phase",
+                "valueType": "text",
+                "label": "Phase"
+              },
+              {
+                "key": "percent",
+                "valueType": "text",
+                "label": "% of LCP"
+              },
+              {
+                "key": "timing",
+                "valueType": "ms",
+                "label": "Timing"
+              }
+            ],
+            "items": [
+              {
+                "phase": "TTFB",
+                "timing": 571.643,
+                "percent": "12%"
+              },
+              {
+                "phase": "Load Delay",
+                "timing": 0,
+                "percent": "0%"
+              },
+              {
+                "phase": "Load Time",
+                "timing": 0,
+                "percent": "0%"
+              },
+              {
+                "phase": "Render Delay",
+                "timing": 4213,
+                "percent": "88%"
+              }
+            ]
+          }
+        ]
+      },
+      "requests": [
+        {
+          "url": "http://localhost:3193/",
+          "bytes": 107481,
+          "start": 0,
+          "end": 503.5620000362396
+        },
+        {
+          "url": "http://localhost:3193/_next/static/css/a437bd00b9686b7b.css",
+          "bytes": 759,
+          "start": 441.72000002861023,
+          "end": 535.2870000600815
+        },
+        {
+          "url": "http://localhost:3193/_next/static/css/986bd5f2eeff3cf7.css",
+          "bytes": 781,
+          "start": 442.5260000228882,
+          "end": 546.4400000572205
+        },
+        {
+          "url": "http://localhost:3193/_next/static/css/9026734d12f150a5.css",
+          "bytes": 31156,
+          "start": 442.8440001010895,
+          "end": 646.5590000152588
+        },
+        {
+          "url": "http://localhost:3193/_next/static/media/0b78ff376f6b9734-s.p.woff2",
+          "bytes": 69953,
+          "start": 768.8790000677109,
+          "end": 2810.0490000247955
+        },
+        {
+          "url": "http://localhost:3193/_next/static/media/723e11e5093b8e80.p.woff2",
+          "bytes": 71669,
+          "start": 769.430999994278,
+          "end": 2810.3940000534058
+        }
+      ]
+    },
+    {
+      "label": "external-css",
+      "fetchTime": "2026-10-03T20:59:58.901Z",
+      "version": "12.8.2",
+      "score": 0.38,
+      "lcp": 4925.3318,
+      "fcp": 4149.8318,
+      "tbt": 2907.999999999999,
+      "cls": 0,
+      "mainThread": 36588.70799999943,
+      "bytes": 1027127,
+      "lcpElement": {
+        "type": "list",
+        "items": [
+          {
+            "type": "table",
+            "headings": [
+              {
+                "key": "node",
+                "valueType": "node",
+                "label": "Element"
+              }
+            ],
+            "items": [
+              {
+                "node": {
+                  "type": "node",
+                  "lhId": "page-0-P",
+                  "path": "1,HTML,1,BODY,9,MAIN,0,SECTION,1,DIV,0,DIV,2,P",
+                  "selector": "section#top > div.mx-auto > div > p.mb-8",
+                  "boundingRect": {
+                    "top": 281,
+                    "bottom": 473,
+                    "left": 24,
+                    "right": 388,
+                    "width": 364,
+                    "height": 192
+                  },
+                  "snippet": "<p class=\"mb-8 max-w-[560px] text-[clamp(16px,1.6vw,19px)] text-muted\">",
+                  "nodeLabel": "Wir entwickeln digitale Systeme, die Unternehmen sichtbar machen, Vertrauen sch…"
+                }
+              }
+            ]
+          },
+          {
+            "type": "table",
+            "headings": [
+              {
+                "key": "phase",
+                "valueType": "text",
+                "label": "Phase"
+              },
+              {
+                "key": "percent",
+                "valueType": "text",
+                "label": "% of LCP"
+              },
+              {
+                "key": "timing",
+                "valueType": "ms",
+                "label": "Timing"
+              }
+            ],
+            "items": [
+              {
+                "phase": "TTFB",
+                "timing": 488.665,
+                "percent": "10%"
+              },
+              {
+                "phase": "Load Delay",
+                "timing": 0,
+                "percent": "0%"
+              },
+              {
+                "phase": "Load Time",
+                "timing": 0,
+                "percent": "0%"
+              },
+              {
+                "phase": "Render Delay",
+                "timing": 4436.6668,
+                "percent": "90%"
+              }
+            ]
+          }
+        ]
+      },
+      "requests": [
+        {
+          "url": "http://localhost:3193/",
+          "bytes": 107431,
+          "start": 0,
+          "end": 126.8160001039505
+        },
+        {
+          "url": "http://localhost:3193/_next/static/css/a437bd00b9686b7b.css",
+          "bytes": 759,
+          "start": 63.50700008869171,
+          "end": 127.3420000076294
+        },
+        {
+          "url": "http://localhost:3193/_next/static/css/986bd5f2eeff3cf7.css",
+          "bytes": 781,
+          "start": 64.30900001525879,
+          "end": 127.6710000038147
+        },
+        {
+          "url": "http://localhost:3193/_next/static/css/9026734d12f150a5.css",
+          "bytes": 31156,
+          "start": 64.72900009155273,
+          "end": 177.625
+        },
+        {
+          "url": "http://localhost:3193/_next/static/media/0b78ff376f6b9734-s.p.woff2",
+          "bytes": 69953,
+          "start": 321.13899993896484,
+          "end": 1790.7170000076294
+        },
+        {
+          "url": "http://localhost:3193/_next/static/media/723e11e5093b8e80.p.woff2",
+          "bytes": 71669,
+          "start": 321.6670000553131,
+          "end": 1791.0210000276566
+        }
+      ]
+    },
+    {
+      "label": "external-css",
+      "fetchTime": "2026-10-03T21:00:39.384Z",
+      "version": "12.8.2",
+      "score": 0.38,
+      "lcp": 5177.4220000000005,
+      "fcp": 4004.765,
+      "tbt": 2430.0000000000014,
+      "cls": 0,
+      "mainThread": 14494.907999999981,
+      "bytes": 1027213,
+      "lcpElement": {
+        "type": "list",
+        "items": [
+          {
+            "type": "table",
+            "headings": [
+              {
+                "key": "node",
+                "valueType": "node",
+                "label": "Element"
+              }
+            ],
+            "items": [
+              {
+                "node": {
+                  "type": "node",
+                  "lhId": "page-0-P",
+                  "path": "1,HTML,1,BODY,9,MAIN,0,SECTION,1,DIV,0,DIV,2,P",
+                  "selector": "section#top > div.mx-auto > div > p.mb-8",
+                  "boundingRect": {
+                    "top": 281,
+                    "bottom": 473,
+                    "left": 24,
+                    "right": 388,
+                    "width": 364,
+                    "height": 192
+                  },
+                  "snippet": "<p class=\"mb-8 max-w-[560px] text-[clamp(16px,1.6vw,19px)] text-muted\">",
+                  "nodeLabel": "Wir entwickeln digitale Systeme, die Unternehmen sichtbar machen, Vertrauen sch…"
+                }
+              }
+            ]
+          },
+          {
+            "type": "table",
+            "headings": [
+              {
+                "key": "phase",
+                "valueType": "text",
+                "label": "Phase"
+              },
+              {
+                "key": "percent",
+                "valueType": "text",
+                "label": "% of LCP"
+              },
+              {
+                "key": "timing",
+                "valueType": "ms",
+                "label": "Timing"
+              }
+            ],
+            "items": [
+              {
+                "phase": "TTFB",
+                "timing": 483.177,
+                "percent": "9%"
+              },
+              {
+                "phase": "Load Delay",
+                "timing": 0,
+                "percent": "0%"
+              },
+              {
+                "phase": "Load Time",
+                "timing": 0,
+                "percent": "0%"
+              },
+              {
+                "phase": "Render Delay",
+                "timing": 4694.245000000001,
+                "percent": "91%"
+              }
+            ]
+          }
+        ]
+      },
+      "requests": [
+        {
+          "url": "http://localhost:3193/",
+          "bytes": 107431,
+          "start": 0,
+          "end": 137.20299994945526
+        },
+        {
+          "url": "http://localhost:3193/_next/static/css/a437bd00b9686b7b.css",
+          "bytes": 759,
+          "start": 53.34600007534027,
+          "end": 139.76599991321564
+        },
+        {
+          "url": "http://localhost:3193/_next/static/css/986bd5f2eeff3cf7.css",
+          "bytes": 781,
+          "start": 54.12699997425079,
+          "end": 139.40700006484985
+        },
+        {
+          "url": "http://localhost:3193/_next/static/css/9026734d12f150a5.css",
+          "bytes": 31156,
+          "start": 54.36099994182587,
+          "end": 142.52799999713898
+        },
+        {
+          "url": "http://localhost:3193/_next/static/media/0b78ff376f6b9734-s.p.woff2",
+          "bytes": 69953,
+          "start": 380.7540000677109,
+          "end": 1587.6619999408722
+        },
+        {
+          "url": "http://localhost:3193/_next/static/media/723e11e5093b8e80.p.woff2",
+          "bytes": 71669,
+          "start": 381.40199995040894,
+          "end": 1588.1729999780655
+        }
+      ]
+    }
+  ],
+  "final": [
+    {
+      "label": "final",
+      "fetchTime": "2026-10-04T01:57:56.474Z",
+      "version": "12.8.2",
+      "score": 0.47,
+      "lcp": 4270.420875000002,
+      "fcp": 2449.8945000000003,
+      "tbt": 4881.552750000003,
+      "cls": 0,
+      "mainThread": 31975.931999999964,
+      "bytes": 888279,
+      "lcpElement": {
+        "type": "list",
+        "items": [
+          {
+            "type": "table",
+            "headings": [
+              {
+                "key": "node",
+                "valueType": "node",
+                "label": "Element"
+              }
+            ],
+            "items": [
+              {
+                "node": {
+                  "type": "node",
+                  "lhId": "page-0-P",
+                  "path": "1,HTML,1,BODY,9,MAIN,0,SECTION,1,DIV,0,DIV,2,P",
+                  "selector": "section#top > div.mx-auto > div > p.mb-8",
+                  "boundingRect": {
+                    "top": 281,
+                    "bottom": 473,
+                    "left": 24,
+                    "right": 388,
+                    "width": 364,
+                    "height": 192
+                  },
+                  "snippet": "<p class=\"mb-8 max-w-[560px] text-[clamp(16px,1.6vw,19px)] text-muted\">",
+                  "nodeLabel": "Wir entwickeln digitale Systeme, die Unternehmen sichtbar machen, Vertrauen sch…"
+                }
+              }
+            ]
+          },
+          {
+            "type": "table",
+            "headings": [
+              {
+                "key": "phase",
+                "valueType": "text",
+                "label": "Phase"
+              },
+              {
+                "key": "percent",
+                "valueType": "text",
+                "label": "% of LCP"
+              },
+              {
+                "key": "timing",
+                "valueType": "ms",
+                "label": "Timing"
+              }
+            ],
+            "items": [
+              {
+                "phase": "TTFB",
+                "timing": 474.94725,
+                "percent": "11%"
+              },
+              {
+                "phase": "Load Delay",
+                "timing": 0,
+                "percent": "0%"
+              },
+              {
+                "phase": "Load Time",
+                "timing": 0,
+                "percent": "0%"
+              },
+              {
+                "phase": "Render Delay",
+                "timing": 3795.4736250000014,
+                "percent": "89%"
+              }
+            ]
+          }
+        ]
+      },
+      "earlyRequests": [],
+      "requests": [
+        {
+          "url": "http://localhost:3193/",
+          "bytes": 171386,
+          "start": 0,
+          "end": 188.85199999809265
+        },
+        {
+          "url": "http://localhost:3193/_next/static/media/0b78ff376f6b9734-s.p.woff2",
+          "bytes": 69953,
+          "start": 180.41699981689453,
+          "end": 1081.6559998989105
+        },
+        {
+          "url": "http://localhost:3193/_next/static/media/723e11e5093b8e80.p.woff2",
+          "bytes": 71669,
+          "start": 180.94799995422363,
+          "end": 1092.3349999189377
+        }
+      ]
+    },
+    {
+      "label": "final",
+      "fetchTime": "2026-10-04T01:58:49.311Z",
+      "version": "12.8.2",
+      "score": 0.5,
+      "lcp": 3916.0602500000005,
+      "fcp": 2468.377,
+      "tbt": 4455.743,
+      "cls": 0,
+      "mainThread": 16489.567999999897,
+      "bytes": 893785,
+      "lcpElement": {
+        "type": "list",
+        "items": [
+          {
+            "type": "table",
+            "headings": [
+              {
+                "key": "node",
+                "valueType": "node",
+                "label": "Element"
+              }
+            ],
+            "items": [
+              {
+                "node": {
+                  "type": "node",
+                  "lhId": "page-0-P",
+                  "path": "1,HTML,1,BODY,9,MAIN,0,SECTION,1,DIV,0,DIV,2,P",
+                  "selector": "section#top > div.mx-auto > div > p.mb-8",
+                  "boundingRect": {
+                    "top": 281,
+                    "bottom": 473,
+                    "left": 24,
+                    "right": 388,
+                    "width": 364,
+                    "height": 192
+                  },
+                  "snippet": "<p class=\"mb-8 max-w-[560px] text-[clamp(16px,1.6vw,19px)] text-muted\">",
+                  "nodeLabel": "Wir entwickeln digitale Systeme, die Unternehmen sichtbar machen, Vertrauen sch…"
+                }
+              }
+            ]
+          },
+          {
+            "type": "table",
+            "headings": [
+              {
+                "key": "phase",
+                "valueType": "text",
+                "label": "Phase"
+              },
+              {
+                "key": "percent",
+                "valueType": "text",
+                "label": "% of LCP"
+              },
+              {
+                "key": "timing",
+                "valueType": "ms",
+                "label": "Timing"
+              }
+            ],
+            "items": [
+              {
+                "phase": "TTFB",
+                "timing": 477.668,
+                "percent": "12%"
+              },
+              {
+                "phase": "Load Delay",
+                "timing": 0,
+                "percent": "0%"
+              },
+              {
+                "phase": "Load Time",
+                "timing": 0,
+                "percent": "0%"
+              },
+              {
+                "phase": "Render Delay",
+                "timing": 3438.3922500000003,
+                "percent": "88%"
+              }
+            ]
+          }
+        ]
+      },
+      "earlyRequests": [],
+      "requests": [
+        {
+          "url": "http://localhost:3193/",
+          "bytes": 171336,
+          "start": 0,
+          "end": 116.73000013828278
+        },
+        {
+          "url": "http://localhost:3193/_next/static/media/0b78ff376f6b9734-s.p.woff2",
+          "bytes": 69953,
+          "start": 142.52100002765656,
+          "end": 888.5810000896454
+        },
+        {
+          "url": "http://localhost:3193/_next/static/media/723e11e5093b8e80.p.woff2",
+          "bytes": 71669,
+          "start": 143.08500015735626,
+          "end": 888.9120000600815
+        }
+      ]
+    },
+    {
+      "label": "final",
+      "fetchTime": "2026-10-04T01:59:23.548Z",
+      "version": "12.8.2",
+      "score": 0.52,
+      "lcp": 3616.32645,
+      "fcp": 2488.3992,
+      "tbt": 4271.690699999999,
+      "cls": 0,
+      "mainThread": 15916.57199999994,
+      "bytes": 893754,
+      "lcpElement": {
+        "type": "list",
+        "items": [
+          {
+            "type": "table",
+            "headings": [
+              {
+                "key": "node",
+                "valueType": "node",
+                "label": "Element"
+              }
+            ],
+            "items": [
+              {
+                "node": {
+                  "type": "node",
+                  "lhId": "page-0-P",
+                  "path": "1,HTML,1,BODY,9,MAIN,0,SECTION,1,DIV,0,DIV,2,P",
+                  "selector": "section#top > div.mx-auto > div > p.mb-8",
+                  "boundingRect": {
+                    "top": 281,
+                    "bottom": 473,
+                    "left": 24,
+                    "right": 388,
+                    "width": 364,
+                    "height": 192
+                  },
+                  "snippet": "<p class=\"mb-8 max-w-[560px] text-[clamp(16px,1.6vw,19px)] text-muted\">",
+                  "nodeLabel": "Wir entwickeln digitale Systeme, die Unternehmen sichtbar machen, Vertrauen sch…"
+                }
+              }
+            ]
+          },
+          {
+            "type": "table",
+            "headings": [
+              {
+                "key": "phase",
+                "valueType": "text",
+                "label": "Phase"
+              },
+              {
+                "key": "percent",
+                "valueType": "text",
+                "label": "% of LCP"
+              },
+              {
+                "key": "timing",
+                "valueType": "ms",
+                "label": "Timing"
+              }
+            ],
+            "items": [
+              {
+                "phase": "TTFB",
+                "timing": 491.4675,
+                "percent": "14%"
+              },
+              {
+                "phase": "Load Delay",
+                "timing": 0,
+                "percent": "0%"
+              },
+              {
+                "phase": "Load Time",
+                "timing": 0,
+                "percent": "0%"
+              },
+              {
+                "phase": "Render Delay",
+                "timing": 3124.85895,
+                "percent": "86%"
+              }
+            ]
+          }
+        ]
+      },
+      "earlyRequests": [],
+      "requests": [
+        {
+          "url": "http://localhost:3193/",
+          "bytes": 171336,
+          "start": 0,
+          "end": 85.6379998922348
+        },
+        {
+          "url": "http://localhost:3193/_next/static/media/0b78ff376f6b9734-s.p.woff2",
+          "bytes": 69953,
+          "start": 185.84099996089935,
+          "end": 1017.2969999313354
+        },
+        {
+          "url": "http://localhost:3193/_next/static/media/723e11e5093b8e80.p.woff2",
+          "bytes": 71669,
+          "start": 186.3049999475479,
+          "end": 1018.1249998807907
+        }
+      ]
+    }
+  ],
+  "runtime": {
+    "rows": [
+      {
+        "path": "/",
+        "width": 390,
+        "status": 200,
+        "lang": "de",
+        "h1": "Websites, die Kunden bringen.",
+        "canonical": "https://saaleweb.de/",
+        "overflow": false,
+        "inlineStyles": 1,
+        "h1Size": "38px",
+        "gtm": 1,
+        "consentDefaults": [
+          {
+            "analytics_storage": "denied",
+            "ad_storage": "denied",
+            "ad_user_data": "denied",
+            "ad_personalization": "denied",
+            "wait_for_update": 500
+          }
+        ],
+        "pageViews": 1,
+        "earlyMedia": [],
+        "earlyRoutes": []
+      },
+      {
+        "path": "/en",
+        "width": 390,
+        "status": 200,
+        "lang": "en",
+        "h1": "Websites that win customers.",
+        "canonical": "https://saaleweb.de/en",
+        "overflow": false,
+        "inlineStyles": 1,
+        "h1Size": "38px",
+        "gtm": 1,
+        "consentDefaults": [
+          {
+            "analytics_storage": "denied",
+            "ad_storage": "denied",
+            "ad_user_data": "denied",
+            "ad_personalization": "denied",
+            "wait_for_update": 500
+          }
+        ],
+        "pageViews": 1,
+        "earlyMedia": [],
+        "earlyRoutes": []
+      },
+      {
+        "path": "/ru",
+        "width": 390,
+        "status": 200,
+        "lang": "ru",
+        "h1": "Сайты, которые приводят клиентов.",
+        "canonical": "https://saaleweb.de/ru",
+        "overflow": false,
+        "inlineStyles": 1,
+        "h1Size": "38px",
+        "gtm": 1,
+        "consentDefaults": [
+          {
+            "analytics_storage": "denied",
+            "ad_storage": "denied",
+            "ad_user_data": "denied",
+            "ad_personalization": "denied",
+            "wait_for_update": 500
+          }
+        ],
+        "pageViews": 1,
+        "earlyMedia": [],
+        "earlyRoutes": []
+      },
+      {
+        "path": "/",
+        "width": 1440,
+        "status": 200,
+        "lang": "de",
+        "h1": "Websites, die Kunden bringen.",
+        "canonical": "https://saaleweb.de/",
+        "overflow": false,
+        "inlineStyles": 1,
+        "h1Size": "64px",
+        "gtm": 1,
+        "consentDefaults": [
+          {
+            "analytics_storage": "denied",
+            "ad_storage": "denied",
+            "ad_user_data": "denied",
+            "ad_personalization": "denied",
+            "wait_for_update": 500
+          }
+        ],
+        "pageViews": 1,
+        "earlyMedia": [
+          "http://localhost:3193/_next/static/media/ai-search-ecosystem.c5dfb2cf.webp"
+        ],
+        "earlyRoutes": []
+      }
+    ],
+    "navigation": {
+      "path": "/projekte",
+      "h1": "Projekte, die Kunden bringen"
+    },
+    "reducedMotion": {
+      "posterLoaded": true,
+      "videoSource": null
+    },
+    "errors": []
+  }
+}

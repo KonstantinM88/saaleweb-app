@@ -202,9 +202,21 @@ export function AiSearchWindow({
         <div
           role="img"
           aria-label={label}
-          className="relative min-h-[500px] overflow-hidden rounded-[22px] bg-cover bg-center transition-transform duration-[1400ms] ease-out group-hover:scale-[1.015] sm:min-h-[560px] md:min-h-[560px] md:bg-fixed"
-          style={{ backgroundImage: `url(${aiSearchEcosystem.src})` }}
+          className="relative min-h-[500px] overflow-hidden rounded-[22px] transition-transform duration-[1400ms] ease-out group-hover:scale-[1.015] sm:min-h-[560px] md:min-h-[560px]"
         >
+          <Image
+            src={aiSearchEcosystem}
+            alt=""
+            fill
+            unoptimized
+            sizes="100vw"
+            className="object-cover object-center md:hidden"
+          />
+          <div
+            aria-hidden
+            className="absolute inset-0 hidden bg-cover bg-fixed bg-center md:block"
+            style={{ backgroundImage: `url(${aiSearchEcosystem.src})` }}
+          />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_44%,rgba(255,79,163,0.05),transparent_36%),linear-gradient(180deg,rgba(17,24,39,0.00)_0%,rgba(17,24,39,0.03)_48%,rgba(17,24,39,0.22)_100%)]" />
 
           <div className="absolute left-3 right-3 top-3 flex items-center justify-between gap-3 rounded-full border border-white/30 bg-white/[0.38] px-3 py-2.5 text-dark shadow-[inset_0_1px_0_rgba(255,255,255,0.48)] backdrop-blur-xl sm:left-4 sm:right-4 md:left-6 md:right-6 md:top-6 md:px-4 md:py-3">

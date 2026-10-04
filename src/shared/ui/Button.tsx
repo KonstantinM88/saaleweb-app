@@ -17,6 +17,7 @@ const variants: Record<Variant, string> = {
 
 type Props = {
   href?: string;
+  prefetch?: boolean;
   variant?: Variant;
   className?: string;
   children: React.ReactNode;
@@ -24,6 +25,7 @@ type Props = {
 
 export function Button({
   href,
+  prefetch,
   variant = "primary",
   className,
   children,
@@ -35,7 +37,7 @@ export function Button({
   if (href) {
     return (
       <Magnetic className={wrapperClassName}>
-        <Link href={href} className={classes}>
+        <Link href={href} prefetch={prefetch} className={classes}>
           {children}
         </Link>
       </Magnetic>

@@ -54,7 +54,7 @@ export function Hero() {
           </p>
 
           <div className="hero-reveal hero-reveal-2 flex flex-wrap items-center gap-3.5">
-            <Button href={getContactHref(locale)}>
+            <Button href={getContactHref(locale)} prefetch={false}>
               {t("ctaPrimary")}
               <span
                 aria-hidden
@@ -63,7 +63,7 @@ export function Hero() {
                 →
               </span>
             </Button>
-            <Button href={projectsHref} variant="ghost">
+            <Button href={projectsHref} prefetch={false} variant="ghost">
               {t("ctaSecondary")}
             </Button>
           </div>
