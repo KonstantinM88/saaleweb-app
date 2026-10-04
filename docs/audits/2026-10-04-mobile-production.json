@@ -271,5 +271,188 @@
       "fieldCategory": null
     }
   ],
-  "after": []
+  "after": [
+    {
+      "fetchTime": "2026-10-04T11:23:18.002Z",
+      "score": 0.91,
+      "lcp": 2866.5015331760123,
+      "fcp": 2374.501172428715,
+      "tbt": 100.5,
+      "cls": 0,
+      "mainThread": 2536.4387999999863,
+      "bytes": 1049470,
+      "lcpElement": {
+        "type": "list",
+        "items": [
+          {
+            "type": "table",
+            "items": [
+              {
+                "label": "Time to first byte",
+                "duration": 377.198,
+                "subpart": "timeToFirstByte"
+              },
+              {
+                "duration": 687.165,
+                "subpart": "elementRenderDelay",
+                "label": "Element render delay"
+              }
+            ],
+            "headings": [
+              {
+                "valueType": "text",
+                "key": "label",
+                "label": "Subpart"
+              },
+              {
+                "valueType": "ms",
+                "key": "duration",
+                "label": "Duration"
+              }
+            ]
+          },
+          {
+            "snippet": "<p class=\"mb-8 max-w-[560px] text-[clamp(16px,1.6vw,19px)] text-muted\">",
+            "type": "node",
+            "path": "1,HTML,1,BODY,9,MAIN,0,SECTION,1,DIV,0,DIV,2,P",
+            "nodeLabel": "Wir entwickeln digitale Systeme, die Unternehmen sichtbar machen, Vertrauen sch…",
+            "selector": "section#top > div.mx-auto > div > p.mb-8",
+            "boundingRect": {
+              "width": 364,
+              "top": 281,
+              "height": 192,
+              "right": 388,
+              "bottom": 473,
+              "left": 24
+            },
+            "lhId": "page-0-P"
+          }
+        ]
+      },
+      "earlyRequests": [],
+      "fieldCategory": null
+    },
+    {
+      "fetchTime": "2026-10-04T11:23:35.388Z",
+      "score": 0.61,
+      "lcp": 7462.7032463242585,
+      "fcp": 5576.5020721303235,
+      "tbt": 66,
+      "cls": 0,
+      "mainThread": 1916.3183999999949,
+      "bytes": 1049235,
+      "lcpElement": {
+        "items": [
+          {
+            "type": "table",
+            "headings": [
+              {
+                "valueType": "text",
+                "key": "label",
+                "label": "Subpart"
+              },
+              {
+                "key": "duration",
+                "label": "Duration",
+                "valueType": "ms"
+              }
+            ],
+            "items": [
+              {
+                "subpart": "timeToFirstByte",
+                "duration": 56.144,
+                "label": "Time to first byte"
+              },
+              {
+                "label": "Element render delay",
+                "duration": 2310.212,
+                "subpart": "elementRenderDelay"
+              }
+            ]
+          },
+          {
+            "snippet": "<p class=\"mb-8 max-w-[560px] text-[clamp(16px,1.6vw,19px)] text-muted\">",
+            "type": "node",
+            "path": "1,HTML,1,BODY,9,MAIN,0,SECTION,1,DIV,0,DIV,2,P",
+            "selector": "section#top > div.mx-auto > div > p.mb-8",
+            "boundingRect": {
+              "height": 192,
+              "right": 388,
+              "left": 24,
+              "bottom": 473,
+              "top": 281,
+              "width": 364
+            },
+            "lhId": "page-0-P",
+            "nodeLabel": "Wir entwickeln digitale Systeme, die Unternehmen sichtbar machen, Vertrauen sch…"
+          }
+        ],
+        "type": "list"
+      },
+      "earlyRequests": [],
+      "fieldCategory": null
+    },
+    {
+      "fetchTime": "2026-10-04T11:24:30.645Z",
+      "score": 0.86,
+      "lcp": 3194.5,
+      "fcp": 2411.5,
+      "tbt": 183,
+      "cls": 0,
+      "mainThread": 2485.033199999994,
+      "bytes": 1049607,
+      "lcpElement": {
+        "items": [
+          {
+            "items": [
+              {
+                "subpart": "timeToFirstByte",
+                "duration": 378.192,
+                "label": "Time to first byte"
+              },
+              {
+                "subpart": "elementRenderDelay",
+                "duration": 781.135,
+                "label": "Element render delay"
+              }
+            ],
+            "headings": [
+              {
+                "key": "label",
+                "label": "Subpart",
+                "valueType": "text"
+              },
+              {
+                "key": "duration",
+                "valueType": "ms",
+                "label": "Duration"
+              }
+            ],
+            "type": "table"
+          },
+          {
+            "selector": "section#top > div.mx-auto > div > p.mb-8",
+            "snippet": "<p class=\"mb-8 max-w-[560px] text-[clamp(16px,1.6vw,19px)] text-muted\">",
+            "boundingRect": {
+              "bottom": 473,
+              "height": 192,
+              "width": 364,
+              "right": 388,
+              "left": 24,
+              "top": 281
+            },
+            "lhId": "page-0-P",
+            "nodeLabel": "Wir entwickeln digitale Systeme, die Unternehmen sichtbar machen, Vertrauen sch…",
+            "type": "node",
+            "path": "1,HTML,1,BODY,9,MAIN,0,SECTION,1,DIV,0,DIV,2,P"
+          }
+        ],
+        "type": "list"
+      },
+      "earlyRequests": [],
+      "fieldCategory": null
+    }
+  ],
+  "afterCommit": "348dca6",
+  "limitations": "Three unique PSI mobile runs per version, sampled 02:00 vs 11:23 UTC; no CrUX field data. Small median shifts do not establish causality."
 }
