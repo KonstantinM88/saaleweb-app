@@ -399,5 +399,264 @@
       }
     ]
   },
-  "productionAfter": []
+  "productionAfter": [
+    {
+      "fetchTime": "2026-10-04T12:26:15.202Z",
+      "score": 86,
+      "fcp": 2292,
+      "lcp": 2860,
+      "tbt": 281.5,
+      "speedIndex": 3743.1453542415943,
+      "mainThread": 2471.7803999999956,
+      "transfer": 1040974,
+      "mainThreadItems": [
+        {
+          "groupLabel": "Other",
+          "group": "other",
+          "duration": 678.0503999999968
+        },
+        {
+          "duration": 642.7980000000001,
+          "group": "styleLayout",
+          "groupLabel": "Style & Layout"
+        },
+        {
+          "group": "scriptEvaluation",
+          "groupLabel": "Script Evaluation",
+          "duration": 520.5107999999973
+        },
+        {
+          "group": "paintCompositeRender",
+          "groupLabel": "Rendering",
+          "duration": 359.5212000000013
+        },
+        {
+          "group": "scriptParseCompile",
+          "duration": 209.08439999999993,
+          "groupLabel": "Script Parsing & Compilation"
+        },
+        {
+          "groupLabel": "Parse HTML & CSS",
+          "group": "parseHTML",
+          "duration": 47.31239999999998
+        },
+        {
+          "duration": 14.5032,
+          "group": "garbageCollection",
+          "groupLabel": "Garbage Collection"
+        }
+      ],
+      "bootupTop": [
+        {
+          "url": "https://saaleweb.de/",
+          "total": 1359.4440000000036,
+          "scripting": 5.455199999999998,
+          "scriptParseCompile": 26.4744
+        },
+        {
+          "url": "https://saaleweb.de/_next/static/chunks/4bd1b696-93bf506b236d6248.js",
+          "total": 303.4631999999999,
+          "scripting": 18.098399999999966,
+          "scriptParseCompile": 21.8784
+        },
+        {
+          "url": "https://saaleweb.de/_next/static/chunks/3794-3e759ba6f5728ed8.js",
+          "total": 228.0143999999987,
+          "scripting": 190.76039999999873,
+          "scriptParseCompile": 28.4268
+        },
+        {
+          "url": "https://www.googletagmanager.com/gtm.js",
+          "total": 160.49520000000004,
+          "scripting": 98.08080000000005,
+          "scriptParseCompile": 46.7964
+        },
+        {
+          "url": "https://www.googletagmanager.com/gtag/js",
+          "total": 141.7692000000002,
+          "scripting": 79.40880000000021,
+          "scriptParseCompile": 60.3852
+        },
+        {
+          "url": "Unattributable",
+          "total": 108.96840000000068,
+          "scripting": 2.5403999999999995,
+          "scriptParseCompile": 0
+        },
+        {
+          "url": "https://saaleweb.de/_next/static/chunks/main-app-ed98bbe6ec8c4f36.js",
+          "total": 92.72040000000004,
+          "scripting": 89.45160000000004,
+          "scriptParseCompile": 0.396
+        }
+      ]
+    },
+    {
+      "fetchTime": "2026-10-04T12:26:50.085Z",
+      "score": 80,
+      "fcp": 2273.0025487079124,
+      "lcp": 3303.0042478465207,
+      "tbt": 353,
+      "speedIndex": 3693.72991995273,
+      "mainThread": 2412.741599999995,
+      "transfer": 1040943,
+      "mainThreadItems": [
+        {
+          "group": "scriptEvaluation",
+          "groupLabel": "Script Evaluation",
+          "duration": 693.5879999999944
+        },
+        {
+          "duration": 561.365999999997,
+          "groupLabel": "Other",
+          "group": "other"
+        },
+        {
+          "group": "styleLayout",
+          "duration": 546.2928,
+          "groupLabel": "Style & Layout"
+        },
+        {
+          "duration": 264.91200000000293,
+          "group": "paintCompositeRender",
+          "groupLabel": "Rendering"
+        },
+        {
+          "duration": 257.11560000000003,
+          "groupLabel": "Script Parsing & Compilation",
+          "group": "scriptParseCompile"
+        },
+        {
+          "group": "parseHTML",
+          "duration": 50.1996,
+          "groupLabel": "Parse HTML & CSS"
+        },
+        {
+          "groupLabel": "Garbage Collection",
+          "duration": 39.267599999999995,
+          "group": "garbageCollection"
+        }
+      ],
+      "bootupTop": [
+        {
+          "url": "https://saaleweb.de/",
+          "total": 1084.3440000000012,
+          "scripting": 5.259599999999996,
+          "scriptParseCompile": 28.762800000000006
+        },
+        {
+          "url": "https://saaleweb.de/_next/static/chunks/3794-3e759ba6f5728ed8.js",
+          "total": 433.5491999999994,
+          "scripting": 395.36879999999945,
+          "scriptParseCompile": 27.4704
+        },
+        {
+          "url": "https://saaleweb.de/_next/static/chunks/4bd1b696-93bf506b236d6248.js",
+          "total": 267.42119999999994,
+          "scripting": 16.651199999999985,
+          "scriptParseCompile": 24.808799999999998
+        },
+        {
+          "url": "https://www.googletagmanager.com/gtm.js",
+          "total": 201.61919999999992,
+          "scripting": 140.73959999999994,
+          "scriptParseCompile": 59.3148
+        },
+        {
+          "url": "https://www.googletagmanager.com/gtag/js",
+          "total": 192.17759999999987,
+          "scripting": 110.82959999999987,
+          "scriptParseCompile": 78.7932
+        },
+        {
+          "url": "Unattributable",
+          "total": 146.06040000000058,
+          "scripting": 2.7215999999999996,
+          "scriptParseCompile": 0
+        }
+      ]
+    },
+    {
+      "fetchTime": "2026-10-04T12:27:23.009Z",
+      "score": 82,
+      "fcp": 2288,
+      "lcp": 3313,
+      "tbt": 289,
+      "speedIndex": 3803.4902099199426,
+      "mainThread": 2445.547199999995,
+      "transfer": 1041035,
+      "mainThreadItems": [
+        {
+          "groupLabel": "Other",
+          "duration": 690.736799999994,
+          "group": "other"
+        },
+        {
+          "duration": 613.3908000000001,
+          "groupLabel": "Style & Layout",
+          "group": "styleLayout"
+        },
+        {
+          "groupLabel": "Script Evaluation",
+          "duration": 540.3731999999965,
+          "group": "scriptEvaluation"
+        },
+        {
+          "duration": 337.9608000000043,
+          "group": "paintCompositeRender",
+          "groupLabel": "Rendering"
+        },
+        {
+          "groupLabel": "Script Parsing & Compilation",
+          "duration": 208.962,
+          "group": "scriptParseCompile"
+        },
+        {
+          "groupLabel": "Parse HTML & CSS",
+          "group": "parseHTML",
+          "duration": 54.12360000000001
+        }
+      ],
+      "bootupTop": [
+        {
+          "url": "https://saaleweb.de/",
+          "total": 1342.1592000000037,
+          "scripting": 6.481199999999995,
+          "scriptParseCompile": 27.438
+        },
+        {
+          "url": "https://saaleweb.de/_next/static/chunks/3794-3e759ba6f5728ed8.js",
+          "total": 349.7316,
+          "scripting": 318.12960000000004,
+          "scriptParseCompile": 22.273199999999996
+        },
+        {
+          "url": "https://saaleweb.de/_next/static/chunks/4bd1b696-93bf506b236d6248.js",
+          "total": 290.6771999999999,
+          "scripting": 15.058799999999994,
+          "scriptParseCompile": 25.5936
+        },
+        {
+          "url": "https://www.googletagmanager.com/gtm.js",
+          "total": 152.09040000000013,
+          "scripting": 103.37280000000013,
+          "scriptParseCompile": 47.413199999999996
+        },
+        {
+          "url": "https://www.googletagmanager.com/gtag/js",
+          "total": 144.9096000000002,
+          "scripting": 78.89040000000018,
+          "scriptParseCompile": 62.843999999999994
+        },
+        {
+          "url": "Unattributable",
+          "total": 120.62280000000031,
+          "scripting": 2.6195999999999997,
+          "scriptParseCompile": 0
+        }
+      ]
+    }
+  ],
+  "afterCommit": "e9653db",
+  "limitations": "Three unique PSI mobile runs per version, sampled about 45 minutes apart; no field CrUX. Scores remain variable."
 }
