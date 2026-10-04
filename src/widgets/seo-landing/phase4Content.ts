@@ -422,6 +422,7 @@ const coreSeoServicePages: Record<string, Phase4Landing> = {
     solution: [
       "Zuerst klären wir, welche Leistungen Ihre Kunden suchen und welche Informationen sie vor einer Anfrage benötigen. Daraus entsteht ein Seitenplan mit verständlichen Leistungsseiten, passenden Projektbeispielen und gut erreichbaren Kontaktwegen.",
       "Anschließend setzen wir Design, mobile Darstellung, technische SEO-Grundlagen und Formulare um. Vor dem Launch prüfen wir Inhalte, Darstellung und Anfragewege; nach dem Start können Sie die Website gezielt weiterentwickeln.",
+      "Für die Planung unterscheiden wir einen kompakten Onepager, eine individuelle Landingpage und eine mehrseitige Firmenwebsite. Einstiegspreise und enthaltene Leistungen stehen auf der Preisseite; einen Terminplan und den konkreten Festpreis vereinbaren wir erst nach Klärung von Inhalten, Zugängen und Zusatzfunktionen.",
     ],
     featuresTitle: "Bausteine für starkes Webdesign in Halle",
     features: [
@@ -460,6 +461,14 @@ const coreSeoServicePages: Record<string, Phase4Landing> = {
       {
         q: "Was gehört zu einer Firmenwebsite von SaaleWeb?",
         a: "Der konkrete Umfang richtet sich nach Ihrem Angebot. Typisch sind ein Seitenplan, mobil nutzbares Design, verständliche Leistungsseiten, Kontaktwege, technische SEO-Grundlagen und eine Prüfung vor dem Launch. Texte, Bilder, Mehrsprachigkeit, Buchung oder Integrationen klären wir im Angebot einzeln.",
+      },
+      {
+        q: "Wie lange dauert ein Webdesign-Projekt in Halle?",
+        a: "Ein kompakter Auftritt kann oft in wenigen Wochen entstehen, wenn Texte, Bilder und Zugänge vorliegen. Bei mehreren Leistungsseiten, neuen Inhalten, Sprachen oder Integrationen planen wir mehr Zeit ein. Meilensteine und Übergabezeitpunkt stehen im individuellen Angebot.",
+      },
+      {
+        q: "Was passiert nach dem Start der Website?",
+        a: "Wir prüfen den veröffentlichten Auftritt und die Anfragewege. Inhaltspflege, technische Wartung und spätere SEO-Arbeit können wir passend zum gewählten System übernehmen oder mit einer vereinbarten Redaktionsoberfläche an Ihr Team übergeben. Zuständigkeiten und laufende Kosten werden vorab festgelegt.",
       },
     ]),
     ...defaultFinal,
@@ -1317,6 +1326,7 @@ const EN_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
     solution: [
       "We build websites with clear local relevance: services, service area, trust, project examples and contact paths are structured logically.",
       "The goal is not just a better-looking website, but a system that positions your business in Halle and makes inquiries easier.",
+      "Planning starts with the right scope: a compact one-pager, a custom landing page or a multi-page business website. Starting prices and included work are on the pricing page; the schedule and fixed-price proposal follow a review of content, access and extra features.",
     ],
     features: [
       { title: "Local SEO structure", text: "Location, search intent and internal links are connected cleanly." },
@@ -1327,7 +1337,12 @@ const EN_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
       { title: "Fixed-price clarity and support", text: "Scope and price are clarified before implementation, with personal support available after launch." },
       { title: "Growth foundation", text: "The site can later be expanded with SEO, landing pages, booking systems or content." },
     ],
+    cases: [
+      { label: "Salon Elen / Permanent Halle", href: "/en/projects/online-bookings-tripled", description: "Halle beauty project with clear services, mobile guidance and online appointments." },
+      { label: "SorgfaltBau", href: "/en/projects/qualified-construction-leads", description: "Regional construction website with structured service pages and clear inquiry paths." },
+    ],
     related: [
+      { label: "Prices and packages", href: "/en/pricing", description: "Compare starting prices and the scope of each website package." },
       { label: "SEO Halle", href: "/en/services/seo-halle", description: "Improve visibility in local search." },
       { label: "Get a website", href: "/en/services/website-development", description: "Plan a new website with strategy and SEO." },
       { label: "Leipzig", href: "/en/locations/leipzig", description: "Visibility in the wider regional market." },
@@ -1341,6 +1356,14 @@ const EN_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
       {
         q: "Who builds modern websites in Halle (Saale)?",
         a: "SaaleWeb builds modern, mobile-optimized websites in Halle with clear user guidance, a technical SEO foundation, Local SEO and structured content for Google and AI search. Before any proposal, we clarify whether optimization, a relaunch or a new website is the sensible route.",
+      },
+      {
+        q: "How long does a web design project take?",
+        a: "A compact website can often be completed within a few weeks when copy, images and access are ready. Several service pages, new content, languages or integrations need more time. We agree milestones and a handover date in the individual proposal.",
+      },
+      {
+        q: "What happens after the website goes live?",
+        a: "We check the published pages and inquiry paths. Content editing, maintenance and ongoing SEO can be handled by SaaleWeb or assigned to your team through an agreed editing interface. Responsibilities and recurring costs are defined before work begins.",
       },
     ],
   },
@@ -1772,6 +1795,7 @@ const RU_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
     solution: [
       "Мы строим сайты с понятной локальной релевантностью: услуги, регион, доверие, примеры и контактные пути работают вместе.",
       "Цель — не просто красивый сайт, а система, которая позиционирует бизнес в Halle и упрощает путь к заявке.",
+      "Для планирования различаем компактный одностраничный сайт, индивидуальный лендинг и многостраничный сайт компании. Начальные цены и состав пакетов приведены на странице цен; сроки и фиксированную стоимость согласуем после оценки материалов, доступов и дополнительных функций.",
     ],
     features: [
       { title: "Local SEO структура", text: "Локация, поисковый интент и внутренние ссылки связаны аккуратно." },
@@ -1782,7 +1806,12 @@ const RU_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
       { title: "Фикс-цена и поддержка", text: "Объём и цена определяются до реализации, а после запуска доступна личная техническая поддержка." },
       { title: "Основа для роста", text: "Сайт можно расширять SEO-страницами, контентом и системами бронирования." },
     ],
+    cases: [
+      { label: "Salon Elen / Permanent Halle", href: "/ru/proekty/onlajn-zapisi-vyrosli-vtroe", description: "Проект для салона в Halle: понятные услуги, мобильный путь и онлайн-запись." },
+      { label: "SorgfaltBau", href: "/ru/proekty/kvalificirovannye-zayavki", description: "Региональный строительный сайт с разделами услуг и понятным путём к заявке." },
+    ],
     related: [
+      { label: "Цены и пакеты", href: "/ru/ceny", description: "Сравнить начальные цены и состав пакетов для сайта." },
       { label: "SEO Halle", href: "/ru/uslugi/seo-halle", description: "Улучшить видимость в локальном поиске." },
       { label: "Заказать сайт", href: "/ru/uslugi/razrabotka-saytov", description: "Новый сайт со стратегией и SEO." },
       { label: "Leipzig", href: "/ru/goroda/leipzig", description: "Видимость в более широком региональном рынке." },
@@ -1796,6 +1825,14 @@ const RU_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
       {
         q: "Кто создаёт современные сайты в Halle (Saale)?",
         a: "SaaleWeb создаёт в Halle современные мобильные сайты с понятным пользовательским путём, технической SEO-базой, Local SEO и структурированным контентом для Google и ИИ-поиска. До предложения мы бесплатно уточняем, что разумнее: оптимизация, релонч или новый сайт.",
+      },
+      {
+        q: "Сколько времени занимает создание сайта?",
+        a: "Компактный сайт часто можно подготовить за несколько недель, когда готовы тексты, изображения и доступы. Несколько страниц услуг, новый контент, языковые версии или интеграции требуют больше времени. Этапы и дату передачи фиксируем в индивидуальном предложении.",
+      },
+      {
+        q: "Что происходит после запуска сайта?",
+        a: "Проверяем опубликованные страницы и пути к заявке. Редактирование контента, техническую поддержку и дальнейшее SEO может вести SaaleWeb или ваша команда через согласованный интерфейс. Ответственность и регулярные расходы определяем до начала работ.",
       },
     ],
   },

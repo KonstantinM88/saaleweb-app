@@ -83,3 +83,11 @@ URL Inspection API для двух DE-страниц вернул `PASS`, «Subm
 | `https://saaleweb.de/branchen/beauty-studio-website` | `https://saaleweb.de/en/industries/beauty-studio-website` | `https://saaleweb.de/ru/otrasli/sayt-dlya-salona-krasoty` |
 
 После `e9653db` три главные проверены браузером, а все 12 отраслевых URL — прямым HTTP: 200, self-canonical и CSS шаблонов. Изменены только загрузка CSS и поведение анимации, а не видимый SEO-текст, URL, canonical или hreflang. **Отдельные запросы индексирования в GSC для этих адресов не нужны.** Статус и замеры: [повторный отчёт T1](./performance-mobile-followup-2026-10-04.md).
+
+## C1: Webdesign Halle, 04.10
+
+Изменены видимые тексты о планировании объёма, сроках и сопровождении на трёх языковых версиях. EN/RU страницы теперь также ссылаются на релевантные кейсы Salon Elen и SorgfaltBau и на свои цены. Локальная production-сборка проверена: все три маршрута ответили HTTP 200, показали новый текст в HTML, self-canonical и четыре HTML hreflang без конфликтующего HTTP `Link`. После деплоя повторить HTTP-проверку и отправить sitemap через GSC API. Индивидуальный запрос переобхода DE-адреса через GSC UI возможен после публикации; API URL Inspection его не отправляет.
+
+| DE | EN | RU |
+|---|---|---|
+| `https://saaleweb.de/leistungen/webdesign-halle` | `https://saaleweb.de/en/services/web-design-halle` | `https://saaleweb.de/ru/uslugi/webdesign-halle` |
