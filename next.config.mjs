@@ -7,6 +7,18 @@ const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 const permanentCompatibilityRedirects = [
   // Earlier compatibility aliases that may still exist in external indexes.
   { source: "/en/services/webdesign-halle", destination: "/en/services/web-design-halle" },
+  { source: "/en/services/get-a-website", destination: "/en/services/website-development" },
+  {
+    source: "/en/services/modernize-wordpress-website",
+    destination: "/en/services/wordpress-website-modernization",
+  },
+  { source: "/ru/uslugi/zakazat-sajt", destination: "/ru/uslugi/razrabotka-saytov" },
+  { source: "/ru/uslugi/veb-dizajn-halle", destination: "/ru/uslugi/webdesign-halle" },
+  {
+    source: "/ru/uslugi/modernizaciya-wordpress-sajta",
+    destination: "/ru/uslugi/modernizaciya-wordpress-sayta",
+  },
+  { source: "/ru/uslugi/podderzhka-sajta", destination: "/ru/uslugi/podderzhka-saytov" },
   { source: "/ru/blog/sichtbarkeit-in-ki-suche", destination: "/ru/blog/vidimost-v-ai-poiske" },
   { source: "/ru/uslugi/ai-optimization", destination: "/ru/uslugi/optimizaciya-pod-ii" },
   { source: "/leistungen/ai-optimization", destination: "/leistungen/ki-optimierung" },

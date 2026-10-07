@@ -76,6 +76,10 @@ URL Inspection API для двух DE-страниц вернул `PASS`, «Subm
 
 Документация Google: [повторный обход и лимиты](https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl), [URL Inspection API](https://developers.google.com/webmaster-tools/v1/urlInspection.index/inspect), [Indexing API](https://developers.google.com/search/apis/indexing-api/v3/using-api).
 
+## Canonical mismatch WordPress RU, 07.10
+
+URL Inspection подтвердил, что для `https://saaleweb.de/ru/uslugi/modernizaciya-wordpress-sayta` Google выбрал старый alias с `sajta`. Старый alias после деплоя перенаправляется `308` на canonical, а внутренняя ссылка исправлена. Sitemap содержит только canonical. После production-проверки повторно отправить sitemap; в интерфейсе GSC один раз проверить canonical URL, запросить индексирование и запустить «Проверить исправление» для группы несовпадающих canonical. Подробности: [аудит](./search-console-canonical-audit-2026-10-07.md).
+
 ## T1: ранние загрузки mobile, 04.10
 
 Техническое изменение главных `https://saaleweb.de/`, `https://saaleweb.de/en`, `https://saaleweb.de/ru`: prefetch Hero-кнопок и отложенная загрузка нижних иллюстраций. Видимые тексты, ссылки и canonical/hreflang прежние; новых отдельных запросов индексирования не требуется. Проверка и статус публикации: [отчёт](./performance-mobile-2026-10-04.md).

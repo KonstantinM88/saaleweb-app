@@ -1679,7 +1679,7 @@ const RU_SERVICE_SEEDS: Record<string, LocalizedServiceSeed> = {
       { title: "Один ответственный контакт", text: "Вы общаетесь напрямую с разработчиком, который знает вашу установку, — без тикет-системы." },
     ],
     related: [
-      { label: "Модернизация WordPress-сайта", href: "/ru/uslugi/modernizaciya-wordpress-sajta", description: "Улучшить существующий сайт вместо слепой переделки." },
+      { label: "Модернизация WordPress-сайта", href: "/ru/uslugi/modernizaciya-wordpress-sayta", description: "Улучшить существующий сайт вместо слепой переделки." },
       { label: "Поддержка сайта", href: "/ru/uslugi/podderzhka-saytov", description: "Регулярный уход, обновления, бэкапы и технический контроль." },
       { label: "Релонч сайта", href: "/ru/uslugi/relonch-sajta", description: "Спланировать соответствие URL, перенаправления и проверки поиска до и после запуска." },
       { label: "Веб-дизайн Halle", href: "/ru/uslugi/webdesign-halle", description: "Региональный веб-дизайн для бизнеса в Halle (Saale)." },
