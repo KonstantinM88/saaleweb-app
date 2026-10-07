@@ -147,6 +147,136 @@ const permanentCompatibilityRedirects = [
   { source: "/ru/otrasli/remeslenniki", destination: "/ru/otrasli/sayt-dlya-masterov" },
 ];
 
+const localizedRouteBases = /** @type {const} */ ({
+  industry: {
+    de: "/branchen",
+    en: "/en/industries",
+    ru: "/ru/otrasli",
+  },
+  blog: {
+    de: "/blog",
+    en: "/en/blog",
+    ru: "/ru/blog",
+  },
+  category: {
+    de: "/blog/kategorie",
+    en: "/en/blog/category",
+    ru: "/ru/blog/kategoriya",
+  },
+});
+
+/**
+ * Historical cross-locale URLs emitted by next-intl's HTTP Link header before
+ * the middleware suppressed translated dynamic slugs. Keep these groups as a
+ * finite compatibility layer so Google reaches the matching canonical page.
+ *
+ * @type {Record<keyof typeof localizedRouteBases, Array<Record<"de" | "en" | "ru", string>>>}
+ */
+const historicalLocalizedSlugGroups = {
+  industry: [
+    { de: "restaurant-website", en: "restaurant-website", ru: "sayt-dlya-restorana" },
+    { de: "hotel-website", en: "hotel-website", ru: "sayt-dlya-otelya" },
+    { de: "beauty-studio-website", en: "beauty-studio-website", ru: "sayt-dlya-salona-krasoty" },
+    {
+      de: "bauunternehmen-website",
+      en: "construction-company-website",
+      ru: "sayt-dlya-stroitelnoy-kompanii",
+    },
+    { de: "handwerker-website", en: "craftsmen-website", ru: "sayt-dlya-masterov" },
+    {
+      de: "glaserei-website",
+      en: "glazier-website",
+      ru: "sayt-dlya-stekolnoy-masterskoy",
+    },
+    {
+      de: "dienstleister-website",
+      en: "service-provider-website",
+      ru: "sayt-dlya-sfery-uslug",
+    },
+    { de: "arztpraxen", en: "medical-practices", ru: "medcentry" },
+    { de: "immobilien", en: "real-estate", ru: "nedvizhimost" },
+    { de: "kanzleien", en: "law-firms", ru: "yuristy" },
+  ],
+  blog: [
+    { de: "lokales-seo-halle", en: "local-seo-halle", ru: "lokalnoe-seo-halle" },
+    { de: "sichtbarkeit-in-ki-suche", en: "ai-search-visibility", ru: "vidimost-v-ai-poiske" },
+    {
+      de: "was-kostet-eine-website-in-halle",
+      en: "website-cost-in-halle",
+      ru: "skolko-stoit-sajt-v-halle",
+    },
+    {
+      de: "restaurant-website-mehr-reservierungen",
+      en: "restaurant-website-more-reservations",
+      ru: "sajt-restorana-bolshe-bronirovanij",
+    },
+    {
+      de: "website-relaunch-checkliste",
+      en: "website-relaunch-checklist",
+      ru: "relonch-sajta-checklist",
+    },
+    {
+      de: "google-unternehmensprofil-optimieren",
+      en: "optimize-google-business-profile",
+      ru: "optimizaciya-google-biznes-profilya",
+    },
+    { de: "nextjs-vs-wordpress", en: "nextjs-vs-wordpress", ru: "nextjs-vs-wordpress" },
+  ],
+  category: [
+    { de: "seo", en: "seo", ru: "seo" },
+    { de: "webdesign", en: "web-design", ru: "veb-dizajn" },
+    { de: "ki-suche", en: "ai-search", ru: "ii-i-poisk" },
+    { de: "praxis", en: "business-growth", ru: "rost-biznesa" },
+  ],
+};
+
+const appLocales = /** @type {const} */ (["de", "en", "ru"]);
+
+/** @returns {Array<{ source: string; destination: string }>} */
+function buildHistoricalCrossLocaleRedirects() {
+  /** @type {Array<{ source: string; destination: string }>} */
+  const redirects = [];
+
+  for (const routeKind of /** @type {(keyof typeof localizedRouteBases)[]} */ (
+    Object.keys(localizedRouteBases)
+  )) {
+    const bases = localizedRouteBases[routeKind];
+    for (const slugs of historicalLocalizedSlugGroups[routeKind]) {
+      const discoveredSlugs = [...new Set(Object.values(slugs))];
+      for (const locale of appLocales) {
+        for (const discoveredSlug of discoveredSlugs) {
+          if (discoveredSlug === slugs[locale]) continue;
+          redirects.push({
+            source: `${bases[locale]}/${discoveredSlug}`,
+            destination: `${bases[locale]}/${slugs[locale]}`,
+          });
+        }
+      }
+    }
+  }
+
+  return redirects;
+}
+
+/**
+ * @param {Array<{ source: string; destination: string }>} redirects
+ * @returns {Array<{ source: string; destination: string }>}
+ */
+function dedupeRedirects(redirects) {
+  /** @type {Map<string, { source: string; destination: string }>} */
+  const bySource = new Map();
+  for (const redirect of redirects) {
+    const existing = bySource.get(redirect.source);
+    if (existing && existing.destination !== redirect.destination) {
+      throw new Error(
+        `Conflicting permanent redirects for ${redirect.source}: ${existing.destination} vs ${redirect.destination}`,
+      );
+    }
+    if (!existing) bySource.set(redirect.source, redirect);
+  }
+  return [...bySource.values()];
+}
+
 /** @type {import("next").NextConfig} */
 const nextConfig = {
   images: {
@@ -164,7 +294,10 @@ const nextConfig = {
         destination: "https://saaleweb.de/:path*",
         permanent: true,
       },
-      ...permanentCompatibilityRedirects.map((redirect) => ({
+      ...dedupeRedirects([
+        ...permanentCompatibilityRedirects,
+        ...buildHistoricalCrossLocaleRedirects(),
+      ]).map((redirect) => ({
         ...redirect,
         permanent: true,
       })),

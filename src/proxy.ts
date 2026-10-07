@@ -18,13 +18,24 @@ const RSC_VARY_HEADERS = [
   "Accept-Encoding",
 ] as const;
 
+const TRANSLATED_DYNAMIC_SLUG_PATHS = [
+  /^\/(?:leistungen|branchen|projekte)\/[^/]+\/?$/,
+  /^\/(?:en\/(?:services|industries|projects)|ru\/(?:uslugi|otrasli|proekty))\/[^/]+\/?$/,
+  /^\/(?:blog|en\/blog|ru\/blog)\/[^/]+\/?$/,
+  /^\/(?:blog\/kategorie|en\/blog\/category|ru\/blog\/kategoriya)\/[^/]+\/?$/,
+] as const;
+
+function hasTranslatedDynamicSlug(pathname: string): boolean {
+  return TRANSLATED_DYNAMIC_SLUG_PATHS.some((pattern) => pattern.test(pathname));
+}
+
 function protectAppRouterResponse(req: NextRequest, response: NextResponse) {
   // next-intl can only substitute a dynamic [slug] literally across locales
-  // in its Link header. Service and project slugs are translated separately,
-  // so that header can disagree with the accurate alternates in page metadata.
+  // in its Link header. Service, industry, project, article, and category slugs
+  // are translated separately, so that header can point crawlers to 404 URLs.
   // Keep the HTML and sitemap hreflang signals as the source of truth.
   if (
-    /^\/(?:leistungen|projekte|en\/(?:services|projects)|ru\/(?:uslugi|proekty))\//.test(req.nextUrl.pathname) &&
+    hasTranslatedDynamicSlug(req.nextUrl.pathname) &&
     response.headers.get("Link")?.includes('hreflang=')
   ) {
     response.headers.delete("Link");
