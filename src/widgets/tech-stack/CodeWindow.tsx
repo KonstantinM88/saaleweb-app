@@ -67,7 +67,7 @@ export function CodeWindow() {
 
       <div className="flex items-center justify-between border-t border-white/10 px-4 py-2.5 font-mono text-[11px]">
         <span className="flex items-center gap-2 font-semibold text-success">
-          <span className="h-1.5 w-1.5 rounded-full bg-success [animation:pulse-dot_2.2s_ease-out_infinite]" />
+          <span className="h-1.5 w-1.5 rounded-full bg-success animate-[pulse-dot_2.2s_ease-out_infinite]" />
           Build - 0.4 s
         </span>
         <span className="text-gray-400">PageSpeed 100 / 100</span>

@@ -50,7 +50,7 @@ export function PricingPlans({
             )}
             <div
               className={cn(
-                "font-mono text-[13px] font-semibold uppercase tracking-[0.1em]",
+                "font-mono text-[13px] font-semibold uppercase tracking-widest",
                 featured ? "text-brand-pink" : "text-brand-purple",
               )}
             >
@@ -65,9 +65,9 @@ export function PricingPlans({
               className={cn(
                 "mt-5 max-w-full font-extrabold tracking-tight",
                 isQuotePrice
-                  ? "rounded-2xl border border-brand-purple/[0.14] bg-brand-soft px-4 py-3 text-[clamp(16px,4vw,20px)] leading-snug text-dark shadow-sm [overflow-wrap:anywhere] [text-wrap:balance] hyphens-auto"
+                  ? "rounded-2xl border border-brand-purple/[0.14] bg-brand-soft px-4 py-3 text-[clamp(16px,4vw,20px)] leading-snug text-dark shadow-xs wrap-anywhere text-balance hyphens-auto"
                   : "text-[clamp(34px,8vw,40px)] leading-none",
-                featured && isQuotePrice && "border-white/[0.14] bg-white/[0.08] text-white",
+                featured && isQuotePrice && "border-white/[0.14] bg-white/8 text-white",
               )}
             >
               <span className="block min-w-0 max-w-full">{pkg.price}</span>
@@ -87,7 +87,7 @@ export function PricingPlans({
                 className={cn(
                   "mb-5 rounded-2xl border p-3.5",
                   featured
-                    ? "border-white/[0.14] bg-white/[0.08]"
+                    ? "border-white/[0.14] bg-white/8"
                     : "border-brand-purple/[0.14] bg-brand-soft",
                 )}
               >
@@ -108,8 +108,8 @@ export function PricingPlans({
                       className={cn(
                         "rounded-full border px-2.5 py-1 text-[12px] font-bold leading-tight",
                         featured
-                          ? "border-white/[0.14] bg-white/[0.08] text-gray-100"
-                          : "border-white bg-white/[0.85] text-dark shadow-sm",
+                          ? "border-white/[0.14] bg-white/8 text-gray-100"
+                          : "border-white bg-white/85 text-dark shadow-xs",
                       )}
                     >
                       {item}

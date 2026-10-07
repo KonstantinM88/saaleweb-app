@@ -28,6 +28,6 @@
 
 ## Оставшиеся сообщения полного audit
 
-Полный `npm audit` показывает 7 high только в инструментах разработки: цепочки Tailwind CSS 3 и `eslint-config-next` через `chokidar`, `fast-glob`, `micromatch` и `braces`. Production audit чистый. Реестр предлагает breaking-переход Tailwind 3 → 4 и некорректный downgrade `eslint-config-next` до ветки 14. Эти изменения не применены в security-релизе, потому что требуют отдельной миграции CSS/lint и визуальной регрессии всего сайта.
+08.10 выполнена отдельная миграция Tailwind CSS 3.4.19 → 4.3.3. После неё полный `npm audit` показывает 5 high только в цепочке актуального `eslint-config-next` через `@next/eslint-plugin-next`, `fast-glob`, `micromatch` и `braces`. Production audit остаётся чистым. Реестр предлагает downgrade `eslint-config-next` до ветки 14, что несовместимо с Next.js 16.4 и не применяется.
 
-Следующий отдельный этап обновления стека: миграция Tailwind 4 с визуальной проверкой ключевых страниц и повторный аудит после появления совместимого исправления в актуальной ветке `eslint-config-next`.
+Следующий security-шаг — повторно проверить эту dev-цепочку после выхода совместимого исправления в актуальной ветке `eslint-config-next`. Подробности миграции: [Tailwind CSS 4](./tailwind-4-migration-2026-10-08.md).

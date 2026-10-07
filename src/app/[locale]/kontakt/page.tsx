@@ -201,7 +201,7 @@ export default async function ContactPage({ params }: { params: Promise<Params> 
                   <Magnetic>
                     <Link
                       href="/projekte"
-                      className="inline-flex items-center justify-center gap-2 rounded-2xl border border-line bg-white px-6 py-3.5 text-[15px] font-semibold text-dark shadow-sm transition-all hover:-translate-y-0.5 hover:border-brand-purple hover:text-brand-purple"
+                      className="inline-flex items-center justify-center gap-2 rounded-2xl border border-line bg-white px-6 py-3.5 text-[15px] font-semibold text-dark shadow-xs transition-all hover:-translate-y-0.5 hover:border-brand-purple hover:text-brand-purple"
                     >
                       {t("secondaryCta")}
                     </Link>
@@ -236,7 +236,7 @@ export default async function ContactPage({ params }: { params: Promise<Params> 
             <div className="relative">
               <div
                 aria-hidden
-                className="absolute left-[8%] right-[8%] top-[41px] hidden h-px bg-gradient-to-r from-brand-pink/30 via-brand-purple/70 to-brand-pink/30 lg:block"
+                className="absolute left-[8%] right-[8%] top-[41px] hidden h-px bg-linear-to-r from-brand-pink/30 via-brand-purple/70 to-brand-pink/30 lg:block"
               />
               <ol className="relative grid gap-5 md:grid-cols-2 lg:grid-cols-6">
                 {timeline.map((item, index) => {
@@ -309,7 +309,7 @@ export default async function ContactPage({ params }: { params: Promise<Params> 
                     const Icon = expectationIcons[index] ?? CheckCircle2;
                     return (
                       <div key={item} className="flex items-center gap-3 rounded-2xl border border-line bg-surface px-4 py-3">
-                        <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-white text-emerald-700 shadow-sm">
+                        <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-white text-emerald-700 shadow-xs">
                           <Icon size={18} aria-hidden />
                         </span>
                         <span className="text-sm font-semibold text-ink">{item}</span>
@@ -438,7 +438,7 @@ export default async function ContactPage({ params }: { params: Promise<Params> 
                     <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[#6D28D9]">{t("logosTitle")}</p>
                     <div className="mt-4 flex flex-wrap gap-2.5">
                       {logos.map((logo) => (
-                        <span key={logo} className="rounded-full border border-line bg-white px-4 py-2 text-sm font-semibold text-ink shadow-sm">
+                        <span key={logo} className="rounded-full border border-line bg-white px-4 py-2 text-sm font-semibold text-ink shadow-xs">
                           {logo}
                         </span>
                       ))}
@@ -512,7 +512,7 @@ export default async function ContactPage({ params }: { params: Promise<Params> 
 
               <Reveal delay={90} direction="zoom">
                 <div className="rounded-[30px] border border-line bg-dark p-5 text-white shadow-[0_30px_80px_-48px_rgba(17,24,39,0.9)] md:p-7">
-                  <div className="rounded-[24px] border border-white/10 bg-white/[0.06] p-5">
+                  <div className="rounded-[24px] border border-white/10 bg-white/6 p-5">
                     <div className="mb-5 flex items-center justify-between">
                       <div className="flex items-center gap-3">
                         <span className="grid h-11 w-11 place-items-center rounded-2xl bg-white text-[#6D28D9]">
@@ -563,12 +563,12 @@ export default async function ContactPage({ params }: { params: Promise<Params> 
 
 const directContactTones = {
   email: {
-    card: "hover:border-[#FF4FA3]/55",
-    icon: "bg-[#FF4FA3]/12 text-[#FF4FA3] group-hover:bg-[#FF4FA3] group-hover:text-white group-hover:shadow-[0_0_24px_rgba(255,79,163,0.28)]",
+    card: "hover:border-brand-pink/55",
+    icon: "bg-brand-pink/12 text-brand-pink group-hover:bg-brand-pink group-hover:text-white group-hover:shadow-[0_0_24px_rgba(255,79,163,0.28)]",
   },
   phone: {
-    card: "hover:border-[#8B5CF6]/55",
-    icon: "bg-[#8B5CF6]/12 text-[#8B5CF6] group-hover:bg-[#8B5CF6] group-hover:text-white group-hover:shadow-[0_0_24px_rgba(139,92,246,0.28)]",
+    card: "hover:border-brand-purple/55",
+    icon: "bg-brand-purple/12 text-brand-purple group-hover:bg-brand-purple group-hover:text-white group-hover:shadow-[0_0_24px_rgba(139,92,246,0.28)]",
   },
   whatsapp: {
     card: "hover:border-[#25D366]/55",
@@ -603,7 +603,7 @@ function DirectContactLink({
 
   return (
     <a
-      className={`group flex min-w-0 items-start gap-3 rounded-2xl border border-white/10 bg-white/[0.06] p-3 text-white transition hover:-translate-y-0.5 hover:bg-white/[0.1] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-pink ${toneClasses.card}`}
+      className={`group flex min-w-0 items-start gap-3 rounded-2xl border border-white/10 bg-white/6 p-3 text-white transition hover:-translate-y-0.5 hover:bg-white/10 focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-pink ${toneClasses.card}`}
       href={href}
       target={external ? "_blank" : undefined}
       rel={external ? "noreferrer" : undefined}
@@ -613,7 +613,7 @@ function DirectContactLink({
       </span>
       <span className="min-w-0">
         <span className="block text-xs font-semibold uppercase tracking-[0.14em] text-white/55">{label}</span>
-        <span className="mt-1 block break-words text-sm font-semibold leading-snug text-white">{value}</span>
+        <span className="mt-1 block wrap-break-word text-sm font-semibold leading-snug text-white">{value}</span>
         {hint ? <span className="mt-1 block text-xs leading-snug text-white/55">{hint}</span> : null}
       </span>
     </a>
@@ -660,8 +660,8 @@ function TelegramIcon() {
 function ContactWorkspaceVisual({ labels }: { labels: VisualLabels }) {
   return (
     <div className="relative" role="img" aria-label={labels.alt}>
-      <div aria-hidden className="absolute -inset-6 rounded-[40px] bg-gradient-to-br from-brand-pink/20 via-brand-purple/15 to-transparent blur-2xl" />
-      <div aria-hidden className="relative overflow-hidden rounded-[34px] border border-white bg-white/80 p-4 shadow-[0_34px_90px_-50px_rgba(17,24,39,0.55)] backdrop-blur md:p-6">
+      <div aria-hidden className="absolute -inset-6 rounded-[40px] bg-linear-to-br from-brand-pink/20 via-brand-purple/15 to-transparent blur-2xl" />
+      <div aria-hidden className="relative overflow-hidden rounded-[34px] border border-white bg-white/80 p-4 shadow-[0_34px_90px_-50px_rgba(17,24,39,0.55)] backdrop-blur-sm md:p-6">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_16%,rgba(139,92,246,0.15),transparent_34%),radial-gradient(circle_at_12%_12%,rgba(255,79,163,0.12),transparent_30%)]" />
         <div className="relative rounded-[28px] border border-line bg-surface p-4 md:p-6">
           <div className="mb-5 flex items-center justify-between">
@@ -702,7 +702,7 @@ function ContactWorkspaceVisual({ labels }: { labels: VisualLabels }) {
                       {[36, 54, 42, 78, 66].map((height) => (
                         <span
                           key={height}
-                          className="flex-1 rounded-t-lg bg-gradient-to-t from-brand-pink to-brand-purple"
+                          className="flex-1 rounded-t-lg bg-linear-to-t from-brand-pink to-brand-purple"
                           style={{ height: `${height}%` }}
                         />
                       ))}
@@ -713,7 +713,7 @@ function ContactWorkspaceVisual({ labels }: { labels: VisualLabels }) {
               <div className="mx-auto h-5 w-1/2 rounded-b-2xl bg-gray-900" />
             </div>
 
-            <div className="absolute bottom-8 left-5 w-[34%] min-w-[132px] rounded-[28px] border-[8px] border-dark bg-white p-3 shadow-[0_24px_58px_-36px_rgba(17,24,39,0.85)] motion-safe:animate-bob">
+            <div className="absolute bottom-8 left-5 w-[34%] min-w-[132px] rounded-[28px] border-8 border-dark bg-white p-3 shadow-[0_24px_58px_-36px_rgba(17,24,39,0.85)] motion-safe:animate-bob">
               <div className="mb-3 mx-auto h-1.5 w-10 rounded-full bg-gray-200" />
               <div className="rounded-2xl bg-surface p-3">
                 <Smartphone className="mb-3 h-5 w-5 text-[#6D28D9]" />

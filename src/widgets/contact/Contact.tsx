@@ -58,7 +58,7 @@ export async function Contact({ locale }: { locale: AppLocale }) {
               </ul>
             </div>
 
-            <div className="rounded-[24px] border border-white/12 bg-white/[0.075] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-sm sm:p-5">
+            <div className="rounded-[24px] border border-white/12 bg-white/7.5 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-xs sm:p-5">
               <div className="px-2 pb-4">
                 <p className="text-sm font-bold text-white">{t("choiceTitle")}</p>
                 <p className="mt-1 text-sm leading-relaxed text-slate-400">{t("choiceText")}</p>
@@ -86,7 +86,7 @@ export async function Contact({ locale }: { locale: AppLocale }) {
                   href={siteConfig.phone.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex min-h-20 items-center gap-3 rounded-[18px] border border-emerald-300/15 bg-emerald-300/[0.08] px-4 py-3.5 text-white transition duration-300 hover:-translate-y-0.5 hover:border-emerald-300/30 hover:bg-emerald-300/[0.12]"
+                  className="group flex min-h-20 items-center gap-3 rounded-[18px] border border-emerald-300/15 bg-emerald-300/8 px-4 py-3.5 text-white transition duration-300 hover:-translate-y-0.5 hover:border-emerald-300/30 hover:bg-emerald-300/12"
                 >
                   <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-emerald-400/15 text-emerald-300">
                     <MessageCircle className="h-5 w-5" aria-hidden />
@@ -99,7 +99,7 @@ export async function Contact({ locale }: { locale: AppLocale }) {
 
                 <a
                   href={siteConfig.phone.href}
-                  className="group flex min-h-20 items-center gap-3 rounded-[18px] border border-violet-300/15 bg-violet-300/[0.08] px-4 py-3.5 text-white transition duration-300 hover:-translate-y-0.5 hover:border-violet-300/30 hover:bg-violet-300/[0.12]"
+                  className="group flex min-h-20 items-center gap-3 rounded-[18px] border border-violet-300/15 bg-violet-300/8 px-4 py-3.5 text-white transition duration-300 hover:-translate-y-0.5 hover:border-violet-300/30 hover:bg-violet-300/12"
                 >
                   <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-violet-300/15 text-violet-200">
                     <Phone className="h-5 w-5" aria-hidden />

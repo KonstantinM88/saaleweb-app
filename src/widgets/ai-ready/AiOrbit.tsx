@@ -99,8 +99,8 @@ function AiIcon({ label }: { label: AiName }) {
 
 function Pill({ label }: { label: AiName }) {
   return (
-    <span className="flex items-center gap-2 whitespace-nowrap rounded-full border border-white/15 bg-white/[0.08] py-1.5 pl-1.5 pr-3 text-[11px] font-semibold text-white shadow-[0_6px_18px_rgba(0,0,0,0.35)] backdrop-blur-sm">
-      <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full border border-white/15 bg-gradient-to-br from-white/20 to-white/5 text-brand-pink shadow-[inset_0_1px_0_rgba(255,255,255,0.22),0_0_18px_rgba(255,79,163,0.26)]">
+    <span className="flex items-center gap-2 whitespace-nowrap rounded-full border border-white/15 bg-white/8 py-1.5 pl-1.5 pr-3 text-[11px] font-semibold text-white shadow-[0_6px_18px_rgba(0,0,0,0.35)] backdrop-blur-xs">
+      <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full border border-white/15 bg-linear-to-br from-white/20 to-white/5 text-brand-pink shadow-[inset_0_1px_0_rgba(255,255,255,0.22),0_0_18px_rgba(255,79,163,0.26)]">
         <AiIcon label={label} />
       </span>
       {label}

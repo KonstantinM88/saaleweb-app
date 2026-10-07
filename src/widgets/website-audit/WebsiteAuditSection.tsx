@@ -27,7 +27,7 @@ export function WebsiteAuditSection() {
   useTrackFormSuccess(state, "website_audit");
 
   const inputCls =
-    "w-full rounded-xl border border-line bg-white/[0.9] px-4 py-3 text-[15px] text-ink outline-none transition focus:border-brand-purple focus:ring-2 focus:ring-brand-purple/20";
+    "w-full rounded-xl border border-line bg-white/90 px-4 py-3 text-[15px] text-ink outline-hidden transition focus:border-brand-purple focus:ring-2 focus:ring-brand-purple/20";
 
   return (
     <section
@@ -36,7 +36,7 @@ export function WebsiteAuditSection() {
       aria-labelledby="website-audit-title"
     >
       <Container>
-        <div className="relative overflow-hidden rounded-[30px] border border-white/80 bg-white/[0.82] p-5 shadow-[0_34px_100px_-66px_rgba(139,92,246,0.72)] backdrop-blur md:p-8 lg:p-10">
+        <div className="relative overflow-hidden rounded-[30px] border border-white/80 bg-white/82 p-5 shadow-[0_34px_100px_-66px_rgba(139,92,246,0.72)] backdrop-blur-sm md:p-8 lg:p-10">
           <div
             aria-hidden
             className="pointer-events-none absolute inset-0"
@@ -64,7 +64,7 @@ export function WebsiteAuditSection() {
                   return (
                     <article
                       key={point.title}
-                      className="rounded-[18px] border border-line bg-white/[0.86] p-5 transition-all duration-300 hover:-translate-y-1 hover:border-brand-purple/25 hover:shadow-[0_22px_62px_-48px_rgba(139,92,246,0.58)]"
+                      className="rounded-[18px] border border-line bg-white/86 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-brand-purple/25 hover:shadow-[0_22px_62px_-48px_rgba(139,92,246,0.58)]"
                     >
                       <div className="mb-4 grid h-10 w-10 place-items-center rounded-2xl bg-brand-soft text-brand-purple">
                         <Icon className="h-5 w-5" aria-hidden />

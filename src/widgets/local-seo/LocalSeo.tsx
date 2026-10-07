@@ -75,8 +75,8 @@ function CityDot({ city, mapHeight }: { city: City; mapHeight: number }) {
         <span
           className={
             city.major
-              ? `absolute ${labelPositionClass(position)} whitespace-nowrap rounded-full border border-white/15 bg-white/10 px-2.5 py-1 text-[10px] font-bold text-white shadow-card backdrop-blur-sm md:text-[11px]`
-              : `absolute ${labelPositionClass(position)} whitespace-nowrap rounded-full border border-white/10 bg-dark/40 px-1.5 py-0.5 text-[9px] font-semibold text-white/75 backdrop-blur-sm md:bg-white/5 md:px-2 md:text-[10px]`
+              ? `absolute ${labelPositionClass(position)} whitespace-nowrap rounded-full border border-white/15 bg-white/10 px-2.5 py-1 text-[10px] font-bold text-white shadow-card backdrop-blur-xs md:text-[11px]`
+              : `absolute ${labelPositionClass(position)} whitespace-nowrap rounded-full border border-white/10 bg-dark/40 px-1.5 py-0.5 text-[9px] font-semibold text-white/75 backdrop-blur-xs md:bg-white/5 md:px-2 md:text-[10px]`
           }
         >
           {city.name}
@@ -104,7 +104,7 @@ function HubMarker({ hub, mapHeight, compact = false }: { hub: City; mapHeight: 
         <span className="absolute inset-[-17px] rounded-[28px] border border-brand-purple/25" />
         <span className="relative tracking-[0.08em]">SEO</span>
       </div>
-      <span className="whitespace-nowrap rounded-full border border-white/20 bg-white/15 px-2.5 py-1 text-[10px] font-extrabold text-white shadow-card backdrop-blur-sm md:px-3 md:text-[11px]">
+      <span className="whitespace-nowrap rounded-full border border-white/20 bg-white/15 px-2.5 py-1 text-[10px] font-extrabold text-white shadow-card backdrop-blur-xs md:px-3 md:text-[11px]">
         Halle (Saale)
       </span>
     </div>
@@ -199,11 +199,11 @@ function MapScene({
         <CityDot key={city.name} city={city} mapHeight={mapHeight} />
       ))}
 
-      <div className="absolute right-3 top-3 flex animate-bob items-center gap-2 rounded-xl border border-white/15 bg-dark/40 px-2.5 py-2 text-[11px] font-semibold text-white shadow-card backdrop-blur-sm md:right-4 md:top-4 md:bg-white/10 md:px-3 md:text-[12px]">
+      <div className="absolute right-3 top-3 flex animate-bob items-center gap-2 rounded-xl border border-white/15 bg-dark/40 px-2.5 py-2 text-[11px] font-semibold text-white shadow-card backdrop-blur-xs md:right-4 md:top-4 md:bg-white/10 md:px-3 md:text-[12px]">
         <span className="grid h-6 w-6 place-items-center rounded-lg bg-brand text-[10px]">SEO</span>
         <span className="max-w-[150px] leading-tight md:max-w-none">{floatA}</span>
       </div>
-      <div className="absolute bottom-3 left-3 flex animate-bob items-center gap-2 rounded-xl border border-white/15 bg-dark/40 px-2.5 py-2 text-[11px] font-semibold text-white shadow-card backdrop-blur-sm [animation-delay:0.5s] md:bottom-4 md:left-4 md:bg-white/10 md:px-3 md:text-[12px]">
+      <div className="absolute bottom-3 left-3 flex animate-bob items-center gap-2 rounded-xl border border-white/15 bg-dark/40 px-2.5 py-2 text-[11px] font-semibold text-white shadow-card backdrop-blur-xs [animation-delay:0.5s] md:bottom-4 md:left-4 md:bg-white/10 md:px-3 md:text-[12px]">
         <span className="grid h-6 w-6 place-items-center rounded-lg bg-brand text-[10px]">50</span>
         <span className="leading-tight">{floatB}</span>
       </div>
@@ -251,7 +251,7 @@ export function LocalSeo() {
               cities={DESKTOP_CITIES}
               hub={DESKTOP_HALLE}
               mapHeight={70}
-              className="relative hidden aspect-[10/7] w-full md:block"
+              className="relative hidden aspect-10/7 w-full md:block"
               floatA={t("floatA")}
               floatB={t("floatB")}
             />

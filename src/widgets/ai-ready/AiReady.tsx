@@ -46,7 +46,7 @@ export function AiReady() {
                     return (
                       <div
                         key={i}
-                        className="flex items-center gap-3.5 rounded-2xl border border-white/10 bg-white/[0.05] px-[18px] py-4 transition-colors hover:border-brand-pink/40"
+                        className="flex items-center gap-3.5 rounded-2xl border border-white/10 bg-white/5 px-[18px] py-4 transition-colors hover:border-brand-pink/40"
                       >
                         <Icon size={22} className="shrink-0 text-brand-pink" />
                         <div>

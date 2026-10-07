@@ -37,13 +37,13 @@ export function CaseStudyCard({
   const hex = item.cover.color?.startsWith("#");
   const isLocalImage = item.cover.image?.startsWith("/");
   const cardClass =
-    "card-border-glow group/case relative flex h-full flex-col overflow-hidden rounded-[18px] border border-line bg-white transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-purple/20 hover:shadow-[0_30px_82px_-48px_rgba(139,92,246,0.6)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-4";
+    "card-border-glow group/case relative flex h-full flex-col overflow-hidden rounded-[18px] border border-line bg-white transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-purple/20 hover:shadow-[0_30px_82px_-48px_rgba(139,92,246,0.6)] focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-4";
 
   const inner = (
     <>
       <div
         className={cn(
-          "relative aspect-[3/2] overflow-hidden",
+          "relative aspect-3/2 overflow-hidden",
           item.cover.image ? "bg-[#fbf7fc]" : !hex ? item.cover.color ?? "bg-brand" : undefined,
         )}
         style={!item.cover.image && hex ? { background: item.cover.color ?? undefined } : undefined}
@@ -84,19 +84,19 @@ export function CaseStudyCard({
 
         <dl className="mt-4 grid gap-3 text-[13.5px]">
           <div>
-            <dt className="font-mono text-[10px] font-bold uppercase tracking-[0.1em] text-muted">
+            <dt className="font-mono text-[10px] font-bold uppercase tracking-widest text-muted">
               {labels.industry}
             </dt>
             <dd className="mt-1 font-semibold text-ink">{item.industry}</dd>
           </div>
           <div>
-            <dt className="font-mono text-[10px] font-bold uppercase tracking-[0.1em] text-muted">
+            <dt className="font-mono text-[10px] font-bold uppercase tracking-widest text-muted">
               {labels.goal}
             </dt>
             <dd className="mt-1 text-muted">{item.goal}</dd>
           </div>
           <div>
-            <dt className="font-mono text-[10px] font-bold uppercase tracking-[0.1em] text-muted">
+            <dt className="font-mono text-[10px] font-bold uppercase tracking-widest text-muted">
               {labels.solution}
             </dt>
             <dd className="mt-1 text-muted">{item.solution}</dd>
@@ -126,7 +126,7 @@ export function CaseStudyCard({
 
         <div className="mt-auto border-t border-line pt-4">
           <div className="min-w-0">
-            <span className="block font-mono text-[10px] font-bold uppercase tracking-[0.1em] text-muted">
+            <span className="block font-mono text-[10px] font-bold uppercase tracking-widest text-muted">
               {labels.result}
             </span>
             <b className="mt-1 block text-[15px] leading-tight text-emerald-700">{item.result}</b>

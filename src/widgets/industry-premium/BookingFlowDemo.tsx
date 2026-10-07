@@ -81,8 +81,8 @@ export function BookingFlowDemo({ copy, ctaHref }: Props) {
                     className="bty-option group flex min-w-0 items-center gap-4 text-left"
                   >
                     <span className="min-w-0 flex-1">
-                      <span className="block break-words text-[15px] font-bold text-white">{item.name}</span>
-                      <span className="mt-0.5 block break-words text-[12.5px] text-white/50">{item.note}</span>
+                      <span className="block wrap-break-word text-[15px] font-bold text-white">{item.name}</span>
+                      <span className="mt-0.5 block wrap-break-word text-[12.5px] text-white/50">{item.note}</span>
                     </span>
                     <span className="shrink-0 text-right">
                       <span className="bty-figure block text-[15px] font-extrabold text-[#F0BFCF]">
@@ -117,8 +117,8 @@ export function BookingFlowDemo({ copy, ctaHref }: Props) {
                       {item.initials}
                     </span>
                     <span className="min-w-0 flex-1">
-                      <span className="block break-words text-[15px] font-bold text-white">{item.name}</span>
-                      <span className="mt-0.5 block break-words text-[12.5px] text-white/50">{item.role}</span>
+                      <span className="block wrap-break-word text-[15px] font-bold text-white">{item.name}</span>
+                      <span className="mt-0.5 block wrap-break-word text-[12.5px] text-white/50">{item.role}</span>
                     </span>
                     <ArrowRight size={16} className="shrink-0 text-white/35" aria-hidden />
                   </button>
@@ -165,7 +165,7 @@ export function BookingFlowDemo({ copy, ctaHref }: Props) {
         </div>
 
         {step > 0 ? (
-          <div className="mt-7 flex flex-wrap gap-3 border-t border-white/[0.10] pt-5">
+          <div className="mt-7 flex flex-wrap gap-3 border-t border-white/10 pt-5">
             {!confirmed ? (
               <button type="button" onClick={() => setStep(step - 1)} className="bty-ghost">
                 <ArrowLeft size={14} aria-hidden />
@@ -210,7 +210,7 @@ export function BookingFlowDemo({ copy, ctaHref }: Props) {
           </p>
           <ul className="mt-4 grid gap-2.5">
             {copy.outcomes.map((outcome) => (
-              <li key={outcome} className="flex gap-2.5 break-words text-[14.5px] leading-relaxed text-[#3A1B2A]">
+              <li key={outcome} className="flex gap-2.5 wrap-break-word text-[14.5px] leading-relaxed text-[#3A1B2A]">
                 <Check size={16} className="mt-0.5 shrink-0 text-[#B5527A]" aria-hidden />
                 {outcome}
               </li>
@@ -218,7 +218,7 @@ export function BookingFlowDemo({ copy, ctaHref }: Props) {
           </ul>
           <a
             href={ctaHref}
-            className="group mt-6 inline-flex min-h-11 items-center gap-2 rounded-xl bg-[#3A1B2A] px-5 py-3 text-[14.5px] font-semibold text-[#F8E7EE] transition-all hover:-translate-y-0.5 hover:bg-[#57283E] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B5527A] motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+            className="group mt-6 inline-flex min-h-11 items-center gap-2 rounded-xl bg-[#3A1B2A] px-5 py-3 text-[14.5px] font-semibold text-[#F8E7EE] transition-all hover:-translate-y-0.5 hover:bg-[#57283E] focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B5527A] motion-reduce:transition-none motion-reduce:hover:translate-y-0"
           >
             {copy.cta}
             <ArrowRight
@@ -229,7 +229,7 @@ export function BookingFlowDemo({ copy, ctaHref }: Props) {
           </a>
         </div>
 
-        <p className="break-words text-[12.5px] leading-relaxed text-white/45">{copy.disclaimer}</p>
+        <p className="wrap-break-word text-[12.5px] leading-relaxed text-white/45">{copy.disclaimer}</p>
       </div>
     </div>
   );
@@ -240,7 +240,7 @@ function Row({ label, value, accent = false }: { label: string; value?: string; 
     <div className="grid gap-1 border-t border-[#B5527A]/20 py-3 sm:grid-cols-[112px_1fr] sm:gap-4">
       <dt className="font-mono text-[10.5px] font-bold uppercase tracking-[0.14em] text-[#A2416A]">{label}</dt>
       <dd
-        className={`break-words text-[14.5px] font-semibold leading-snug ${
+        className={`wrap-break-word text-[14.5px] font-semibold leading-snug ${
           value ? (accent ? "bty-figure text-[#B5527A]" : "text-[#3A1B2A]") : "text-[#6B4356]/40"
         }`}
       >

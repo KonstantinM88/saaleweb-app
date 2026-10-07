@@ -112,7 +112,7 @@ export default async function AdminDashboard({
             <Link
               key={metric.label}
               href={metric.href}
-              className={`${adminCard} p-5 transition hover:-translate-y-0.5 hover:shadow-sm`}
+              className={`${adminCard} p-5 transition hover:-translate-y-0.5 hover:shadow-xs`}
             >
               {inner}
             </Link>

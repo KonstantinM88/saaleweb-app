@@ -191,7 +191,7 @@ export function TurnstileField({
         {t("label")}
       </legend>
 
-      <p className="mb-3 break-words text-[12.5px] leading-relaxed text-muted">{t("hint")}</p>
+      <p className="mb-3 wrap-break-word text-[12.5px] leading-relaxed text-muted">{t("hint")}</p>
       <div
         ref={containerRef}
         className={`flex w-full min-w-0 max-w-full justify-center overflow-hidden rounded-xl ${
@@ -200,7 +200,7 @@ export function TurnstileField({
       />
 
       <div
-        className="mt-2 flex min-w-0 items-start gap-2 break-words text-[12.5px] leading-relaxed"
+        className="mt-2 flex min-w-0 items-start gap-2 wrap-break-word text-[12.5px] leading-relaxed"
         aria-live="polite"
       >
         {hasError ? (

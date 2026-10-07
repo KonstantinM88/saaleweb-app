@@ -42,13 +42,13 @@ export function Founder() {
                       "linear-gradient(180deg, rgba(17,24,39,0.00) 52%, rgba(17,24,39,0.22) 100%), radial-gradient(circle at 70% 20%, rgba(255,255,255,0.22), transparent 55%)",
                   }}
                 />
-                <div className="absolute right-3 top-3 flex animate-bob items-center gap-1 rounded-lg bg-white/[0.95] px-2 py-1 text-[11px] font-bold text-dark shadow-card">
+                <div className="absolute right-3 top-3 flex animate-bob items-center gap-1 rounded-lg bg-white/95 px-2 py-1 text-[11px] font-bold text-dark shadow-card">
                   5.0
                 </div>
               </div>
             </div>
             <div>
-              <div className="font-mono text-xs uppercase tracking-[0.1em] text-brand-purple">
+              <div className="font-mono text-xs uppercase tracking-widest text-brand-purple">
                 <BrandText text={t("role")} />
               </div>
               <h2 className="mb-3.5 mt-2 text-2xl font-bold text-dark">

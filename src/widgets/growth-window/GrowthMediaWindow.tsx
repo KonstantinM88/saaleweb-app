@@ -103,7 +103,7 @@ export function GrowthMediaWindow({
       <video
         ref={videoRef}
         className={cn(
-          "absolute inset-0 h-full w-full object-cover object-center transition-transform duration-[1400ms] ease-out",
+          "absolute inset-0 h-full w-full object-cover object-center transition-transform duration-1400 ease-out",
           isVisible ? "scale-[1.025]" : "scale-100",
           isHovered && "scale-[1.055]",
         )}

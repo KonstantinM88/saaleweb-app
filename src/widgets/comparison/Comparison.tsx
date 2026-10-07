@@ -33,7 +33,7 @@ export function Comparison() {
                 }`}
               >
                 <div className="px-5 py-4 font-semibold text-ink">{row.feature}</div>
-                <div className="flex items-center gap-2 border-l border-line bg-brand-pink/[0.04] px-5 py-4">
+                <div className="flex items-center gap-2 border-l border-line bg-brand-pink/4 px-5 py-4">
                   <span className="text-success">●</span>
                   <span className="font-medium text-ink">{row.us}</span>
                 </div>

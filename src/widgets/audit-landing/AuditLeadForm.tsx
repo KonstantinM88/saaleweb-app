@@ -20,7 +20,7 @@ export function AuditLeadForm({ copy, locale }: { copy: AuditLandingCopy["form"]
   };
 
   const inputCls =
-    "w-full min-w-0 rounded-xl border border-line bg-white px-4 py-3 text-[15px] text-ink outline-none transition focus:border-brand-purple focus:ring-2 focus:ring-brand-purple/20";
+    "w-full min-w-0 rounded-xl border border-line bg-white px-4 py-3 text-[15px] text-ink outline-hidden transition focus:border-brand-purple focus:ring-2 focus:ring-brand-purple/20";
 
   if (state.status === "success") {
     return (

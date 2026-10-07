@@ -31,7 +31,7 @@ export function Toc({ items, title }: { items: TocItem[]; title: string }) {
 
   return (
     <nav aria-label={title} className="text-sm">
-      <p className="mb-3 font-mono text-xs uppercase tracking-[0.1em] text-muted">{title}</p>
+      <p className="mb-3 font-mono text-xs uppercase tracking-widest text-muted">{title}</p>
       <ul className="space-y-2 border-l border-line">
         {items.map((item) => (
           <li key={item.id} className={item.depth === 3 ? "pl-7" : "pl-4"}>

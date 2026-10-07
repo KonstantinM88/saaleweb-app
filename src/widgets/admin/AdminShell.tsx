@@ -25,7 +25,7 @@ export function AdminShell({ children, email }: { children: React.ReactNode; ema
 
   return (
     <div className="min-h-dvh lg:flex">
-      <header className="sticky top-0 z-40 flex h-16 items-center justify-between border-b border-line bg-white/95 px-4 shadow-sm backdrop-blur lg:hidden">
+      <header className="sticky top-0 z-40 flex h-16 items-center justify-between border-b border-line bg-white/95 px-4 shadow-xs backdrop-blur-sm lg:hidden">
         <div className="flex items-center gap-2.5">
           <BrandLogo variant="icon" size="sm" />
           <span className="font-bold text-dark">Admin</span>
@@ -53,7 +53,7 @@ export function AdminShell({ children, email }: { children: React.ReactNode; ema
       >
         <button
           type="button"
-          className={`absolute inset-0 bg-dark/40 backdrop-blur-sm transition-opacity ${menuOpen ? "opacity-100" : "opacity-0"}`}
+          className={`absolute inset-0 bg-dark/40 backdrop-blur-xs transition-opacity ${menuOpen ? "opacity-100" : "opacity-0"}`}
           aria-label="Close menu"
           tabIndex={menuOpen ? 0 : -1}
           onClick={() => setMenuOpen(false)}

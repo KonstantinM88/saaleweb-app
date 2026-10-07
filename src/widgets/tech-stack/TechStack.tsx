@@ -29,7 +29,7 @@ export function TechStack() {
                 key={s}
                 className="flex items-center gap-2.5 rounded-xl border border-line bg-white px-[18px] py-3 text-[15px] font-semibold transition-colors hover:border-brand-purple"
               >
-                <i className="h-2 w-2 rounded-sm bg-brand" />
+                <i className="h-2 w-2 rounded-xs bg-brand" />
                 {s}
               </div>
             ))}

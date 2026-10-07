@@ -44,7 +44,7 @@ export function Phase4LinkCluster({
                 <a
                   key={`${link.href}-${link.label}`}
                   href={link.href}
-                  className="group rounded-[18px] border border-line bg-white/[0.82] p-4 transition-all duration-300 hover:-translate-y-1 hover:border-brand-purple/[0.32] hover:shadow-[0_22px_72px_-58px_rgba(139,92,246,0.78)] focus:outline-none focus:ring-2 focus:ring-brand-purple/20"
+                  className="group rounded-[18px] border border-line bg-white/82 p-4 transition-all duration-300 hover:-translate-y-1 hover:border-brand-purple/32 hover:shadow-[0_22px_72px_-58px_rgba(139,92,246,0.78)] focus:outline-hidden focus:ring-2 focus:ring-brand-purple/20"
                 >
                   <div className="flex items-start justify-between gap-3">
                     <div>

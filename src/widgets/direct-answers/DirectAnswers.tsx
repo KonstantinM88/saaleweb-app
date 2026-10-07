@@ -38,7 +38,7 @@ export async function DirectAnswers({
                 className="direct-answer group min-w-0 rounded-2xl border border-line bg-white p-5 transition-colors open:border-brand-purple md:p-6"
                 open={index === 0}
               >
-                <summary className="flex cursor-pointer list-none items-start justify-between gap-4 break-words text-[16.5px] font-bold leading-snug text-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-purple">
+                <summary className="flex cursor-pointer list-none items-start justify-between gap-4 wrap-break-word text-[16.5px] font-bold leading-snug text-dark focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-purple">
                   {item.q}
                   <span
                     aria-hidden
@@ -47,13 +47,13 @@ export async function DirectAnswers({
                     +
                   </span>
                 </summary>
-                <p className="mt-3 max-w-3xl break-words text-[15.5px] leading-relaxed text-muted">
+                <p className="mt-3 max-w-3xl wrap-break-word text-[15.5px] leading-relaxed text-muted">
                   {item.a}
                 </p>
                 {item.href && item.linkLabel && (
                   <Link
                     href={item.href}
-                    className="mt-3 inline-flex items-center gap-1.5 break-words text-[14px] font-extrabold text-[#6D28D9] underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#6D28D9]"
+                    className="mt-3 inline-flex items-center gap-1.5 wrap-break-word text-[14px] font-extrabold text-[#6D28D9] underline-offset-4 hover:underline focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#6D28D9]"
                   >
                     {item.linkLabel}
                     <ArrowUpRight size={15} aria-hidden />
@@ -64,7 +64,7 @@ export async function DirectAnswers({
           ))}
         </div>
 
-        <p className="mt-6 max-w-3xl break-words text-[13.5px] leading-relaxed text-muted">
+        <p className="mt-6 max-w-3xl wrap-break-word text-[13.5px] leading-relaxed text-muted">
           {t("note")}
         </p>
       </Container>

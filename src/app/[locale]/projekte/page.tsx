@@ -198,7 +198,7 @@ export default async function ProjectsIndexPage({
         <section className="border-y border-line bg-white py-12 md:py-16" aria-labelledby="project-proof-title">
           <Container>
             <Reveal>
-              <div className="grid gap-7 rounded-[26px] border border-line bg-surface/70 p-6 shadow-sm md:p-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+              <div className="grid gap-7 rounded-[26px] border border-line bg-surface/70 p-6 shadow-xs md:p-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
                 <div>
                   <span className="eyebrow">{t("proofEyebrow")}</span>
                   <h2 id="project-proof-title" className="mt-4 text-[clamp(26px,3.5vw,40px)] font-extrabold leading-tight tracking-tight text-dark">

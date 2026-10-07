@@ -49,7 +49,7 @@ export async function Services() {
         </div>
 
         <Reveal delay={120} className="mt-8">
-          <div className="rounded-[22px] border border-brand-purple/[0.15] bg-white p-5 shadow-[0_22px_70px_-52px_rgba(139,92,246,0.58)] md:p-6">
+          <div className="rounded-[22px] border border-brand-purple/15 bg-white p-5 shadow-[0_22px_70px_-52px_rgba(139,92,246,0.58)] md:p-6">
             <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
               <div className="max-w-3xl">
                 <h3 className="text-xl font-extrabold tracking-tight text-dark">{techNote.title}</h3>
@@ -115,7 +115,7 @@ function ServiceClusterCard({
       <a
         href={fallbackHref}
         aria-label={item.cta || fallbackCta}
-        className="group block h-full rounded-[20px] outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-4"
+        className="group block h-full rounded-[20px] outline-hidden focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-4"
       >
         {content}
       </a>
@@ -126,7 +126,7 @@ function ServiceClusterCard({
     <Link
       href={{ pathname: "/leistungen/[slug]", params: { slug: item.slug } }}
       aria-label={item.cta || fallbackCta}
-      className="group block h-full rounded-[20px] outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-4"
+      className="group block h-full rounded-[20px] outline-hidden focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-4"
     >
       {content}
     </Link>

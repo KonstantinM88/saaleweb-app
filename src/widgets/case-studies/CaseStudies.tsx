@@ -27,8 +27,8 @@ type Card = {
 
 const covers = [
   "bg-brand",
-  "bg-gradient-to-br from-sky-500 to-brand-purple",
-  "bg-gradient-to-br from-amber-500 to-brand-pink",
+  "bg-linear-to-br from-sky-500 to-brand-purple",
+  "bg-linear-to-br from-amber-500 to-brand-pink",
 ];
 
 const readCachedDbCases = unstable_cache(

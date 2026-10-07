@@ -237,7 +237,7 @@ export function Phase4LandingPage({ page, locale, path, parent, schemaKind, area
                   <Magnetic>
                     <a
                       href={auditHref}
-                      className="inline-flex items-center justify-center gap-2 rounded-xl border border-line bg-white px-6 py-3.5 text-[15px] font-semibold text-dark shadow-sm transition-all hover:-translate-y-0.5 hover:border-brand-purple hover:text-brand-purple"
+                      className="inline-flex items-center justify-center gap-2 rounded-xl border border-line bg-white px-6 py-3.5 text-[15px] font-semibold text-dark shadow-xs transition-all hover:-translate-y-0.5 hover:border-brand-purple hover:text-brand-purple"
                     >
                       {labels.auditCta}
                     </a>
@@ -255,7 +255,7 @@ export function Phase4LandingPage({ page, locale, path, parent, schemaKind, area
         <section className="border-y border-line bg-white py-10 md:py-14" aria-labelledby="phase4-direct-answer">
           <Container>
             <Reveal>
-              <div className="grid gap-7 rounded-[26px] border border-line bg-surface/70 p-6 shadow-sm md:p-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+              <div className="grid gap-7 rounded-[26px] border border-line bg-surface/70 p-6 shadow-xs md:p-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
                 <div>
                   <span className="eyebrow">{labels.answerEyebrow}</span>
                   <h2 id="phase4-direct-answer" className="mt-4 text-[clamp(25px,3.2vw,38px)] font-extrabold tracking-tight text-dark">
@@ -357,7 +357,7 @@ export function Phase4LandingPage({ page, locale, path, parent, schemaKind, area
                     className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_90%_0%,rgba(255,79,163,0.26),transparent_34%),radial-gradient(circle_at_0%_100%,rgba(139,92,246,0.25),transparent_34%)]"
                   />
                   <div className="relative">
-                    <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-white/[0.10] text-brand-pink ring-1 ring-white/[0.14]">
+                    <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-white/10 text-brand-pink ring-1 ring-white/[0.14]">
                       <Sparkles size={21} aria-hidden />
                     </span>
                     <h2 className="mt-5 text-[clamp(24px,3vw,34px)] font-extrabold tracking-tight">
@@ -442,7 +442,7 @@ export function Phase4LandingPage({ page, locale, path, parent, schemaKind, area
               <div className="grid gap-4 md:grid-cols-5">
                 {page.process.map((step, index) => (
                   <Reveal key={step.title} delay={index * 65} className="h-full">
-                    <article className="relative h-full rounded-[22px] border border-line bg-white p-5 shadow-sm">
+                    <article className="relative h-full rounded-[22px] border border-line bg-white p-5 shadow-xs">
                       <span className="mb-5 inline-grid h-11 w-11 place-items-center rounded-2xl bg-brand text-sm font-extrabold text-white">
                         {String(index + 1).padStart(2, "0")}
                       </span>
@@ -470,7 +470,7 @@ export function Phase4LandingPage({ page, locale, path, parent, schemaKind, area
               <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
                 {extraCards.cards.map((card, index) => (
                   <Reveal key={card.title} delay={(index % 4) * 60} className="h-full">
-                    <article className="h-full rounded-[22px] border border-line bg-white p-6 shadow-sm">
+                    <article className="h-full rounded-[22px] border border-line bg-white p-6 shadow-xs">
                       <h3 className="font-extrabold text-dark">{card.title}</h3>
                       <p className="mt-2 text-[14.5px] leading-relaxed text-muted">
                         <BrandText text={card.text} />
@@ -617,7 +617,7 @@ export function Phase4LandingPage({ page, locale, path, parent, schemaKind, area
                     </a>
                     <a
                       href={auditHref}
-                      className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/[0.16] bg-white/[0.08] px-6 py-3.5 text-[15px] font-semibold text-white transition-all hover:-translate-y-0.5 hover:border-white/[0.3] hover:bg-white/[0.12]"
+                      className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/16 bg-white/8 px-6 py-3.5 text-[15px] font-semibold text-white transition-all hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/12"
                     >
                       {labels.auditCta}
                     </a>
@@ -659,7 +659,7 @@ function HeroInsightCard({
   const Icon = schemaKind === "location" ? MapPin : schemaKind === "industry" ? Layers3 : Gauge;
 
   return (
-    <div className="relative overflow-hidden rounded-[30px] border border-white bg-white/[0.86] p-5 shadow-[0_34px_100px_-62px_rgba(139,92,246,0.75)] backdrop-blur md:p-6">
+    <div className="relative overflow-hidden rounded-[30px] border border-white bg-white/86 p-5 shadow-[0_34px_100px_-62px_rgba(139,92,246,0.75)] backdrop-blur-sm md:p-6">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_12%_0%,rgba(255,79,163,0.13),transparent_34%),radial-gradient(circle_at_100%_100%,rgba(139,92,246,0.16),transparent_35%)]"
@@ -676,7 +676,7 @@ function HeroInsightCard({
           </span>
         </div>
         <div className="grid gap-4">
-          <div className="rounded-[22px] border border-line bg-white p-5 shadow-sm">
+          <div className="rounded-[22px] border border-line bg-white p-5 shadow-xs">
             <div className="flex items-center gap-3">
               <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand text-white">
                 <Icon size={23} aria-hidden />
@@ -710,7 +710,7 @@ function HeroInsightCard({
               ["Mobile", labels.fast],
               ["Links", labels.internal],
             ].map(([label, value]) => (
-              <div key={label} className="rounded-[18px] border border-line bg-white/[0.82] p-4">
+              <div key={label} className="rounded-[18px] border border-line bg-white/82 p-4">
                 <p className="font-mono text-xs font-bold uppercase tracking-[0.14em] text-brand-purple">{label}</p>
                 <p className="mt-1 text-[16px] font-extrabold text-dark">{value}</p>
               </div>
@@ -739,7 +739,7 @@ function LinkGrid({
         <Reveal key={`${link.href}-${link.label}`} delay={(index % 2) * 70} className="h-full">
           <a
             href={link.href}
-            className="group block h-full rounded-[20px] border border-line bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-brand-purple/[0.3] hover:shadow-[0_22px_70px_-54px_rgba(139,92,246,0.74)] focus:outline-none focus:ring-2 focus:ring-brand-purple/20"
+            className="group block h-full rounded-[20px] border border-line bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-brand-purple/30 hover:shadow-[0_22px_70px_-54px_rgba(139,92,246,0.74)] focus:outline-hidden focus:ring-2 focus:ring-brand-purple/20"
           >
             <div className="flex items-start justify-between gap-3">
               <div>

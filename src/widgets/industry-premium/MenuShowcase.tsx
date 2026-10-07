@@ -82,7 +82,7 @@ export function MenuShowcase({
 
   return (
     <div className="rest-menu overflow-hidden rounded-[28px]">
-      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/[0.08] p-5 md:px-7 md:py-6">
+      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/8 p-5 md:px-7 md:py-6">
         <p className="font-mono text-[10.5px] font-bold uppercase tracking-[0.18em] text-white/45">
           {categoriesLabel}
         </p>
@@ -91,7 +91,7 @@ export function MenuShowcase({
         </span>
       </div>
 
-      <div className="border-b border-white/[0.08] px-5 py-4 md:px-7">
+      <div className="border-b border-white/8 px-5 py-4 md:px-7">
         <div role="tablist" aria-label={categoriesLabel} className="flex flex-wrap gap-2">
           {categories.map((category, index) => {
             const selected = index === active;
@@ -236,7 +236,7 @@ export function MenuShowcase({
                 </div>
                 <video
                   key={activeVideo.video}
-                  className="aspect-[45/34] w-full bg-black object-cover"
+                  className="aspect-45/34 w-full bg-black object-cover"
                   controls
                   autoPlay
                   playsInline

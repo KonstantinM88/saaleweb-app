@@ -112,7 +112,7 @@ export async function Industries() {
               <Link
                 href={{ pathname: "/branchen/[slug]", params: { slug: item.slug } }}
                 aria-label={item.name}
-                className="group block h-full rounded-2xl outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-4"
+                className="group block h-full rounded-2xl outline-hidden focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-4"
               >
                 <div
                   className="industry-card h-full rounded-2xl border border-line bg-white p-4 text-center transition-all group-hover:-translate-y-1 group-hover:bg-dark sm:p-5"

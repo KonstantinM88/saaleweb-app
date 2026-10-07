@@ -148,7 +148,7 @@ export function LocalContactSection({ locale }: { locale: AppLocale }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={copy.aria.directions}
-                className="font-bold text-brand-purple underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-purple"
+                className="font-bold text-brand-purple underline-offset-4 hover:underline focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-purple"
               >
                 {copy.map.textLink} →
               </a>

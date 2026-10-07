@@ -23,7 +23,7 @@ export function TrackedAction({
   children: ReactNode;
 }) {
   const base =
-    "inline-flex min-h-11 items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-[14px] font-bold transition hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-purple";
+    "inline-flex min-h-11 items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-[14px] font-bold transition hover:-translate-y-0.5 focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-purple";
   const style = primary
     ? "btn-shine bg-brand text-white shadow-[0_18px_38px_-18px_rgba(139,92,246,0.85)]"
     : "border border-line bg-white text-dark hover:border-brand-purple/40";
@@ -62,7 +62,7 @@ export function ConsentMap({
   const embedSrc = `https://www.google.com/maps?q=${gb.latitude},${gb.longitude}&z=16&hl=${locale}&output=embed`;
 
   return (
-    <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[22px] border border-line bg-surface sm:aspect-[16/9]">
+    <div className="relative aspect-4/3 w-full overflow-hidden rounded-[22px] border border-line bg-surface sm:aspect-video">
       {loaded ? (
         <iframe
           src={embedSrc}
@@ -94,7 +94,7 @@ export function ConsentMap({
                 setLoaded(true);
                 trackEvent("load_google_maps", locale);
               }}
-              className="btn-shine mt-5 inline-flex min-h-11 items-center justify-center rounded-xl bg-brand px-5 py-2.5 text-[14px] font-bold text-white shadow-[0_18px_38px_-18px_rgba(139,92,246,0.85)] transition hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-purple"
+              className="btn-shine mt-5 inline-flex min-h-11 items-center justify-center rounded-xl bg-brand px-5 py-2.5 text-[14px] font-bold text-white shadow-[0_18px_38px_-18px_rgba(139,92,246,0.85)] transition hover:-translate-y-0.5 focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-purple"
             >
               {loadLabel}
             </button>

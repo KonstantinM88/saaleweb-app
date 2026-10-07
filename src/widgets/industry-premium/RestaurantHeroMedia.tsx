@@ -39,7 +39,7 @@ export function RestaurantHeroMedia({
   }
 
   return (
-    <div className="relative mt-5 aspect-[45/34] overflow-hidden rounded-[20px] border border-white/[0.14] bg-[#120d0d]">
+    <div className="relative mt-5 aspect-45/34 overflow-hidden rounded-[20px] border border-white/[0.14] bg-[#120d0d]">
       {isPlaying ? (
         <>
           <video
@@ -57,7 +57,7 @@ export function RestaurantHeroMedia({
           <button
             type="button"
             onClick={closeVideo}
-            className="absolute right-3 top-3 grid h-10 w-10 place-items-center rounded-full border border-white/25 bg-black/65 text-white shadow-lg backdrop-blur-md transition-colors hover:border-[#E3909F] hover:bg-[#8E2F43]/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#E3909F]"
+            className="absolute right-3 top-3 grid h-10 w-10 place-items-center rounded-full border border-white/25 bg-black/65 text-white shadow-lg backdrop-blur-md transition-colors hover:border-[#E3909F] hover:bg-[#8E2F43]/90 focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#E3909F]"
             aria-label={closeVideoLabel}
           >
             <X size={18} aria-hidden />
@@ -68,7 +68,7 @@ export function RestaurantHeroMedia({
           ref={triggerRef}
           type="button"
           onClick={() => setIsPlaying(true)}
-          className="group relative block h-full w-full overflow-hidden text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-3px] focus-visible:outline-[#E3909F]"
+          className="group relative block h-full w-full overflow-hidden text-left focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-[-3px] focus-visible:outline-[#E3909F]"
           aria-label={`${videoLabel}: ${title}`}
         >
           <Image

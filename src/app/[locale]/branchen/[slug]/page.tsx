@@ -267,7 +267,7 @@ export default async function IndustryPage({ params }: { params: Promise<Params>
           </div>
           <Container>
             <div className="hero-stagger max-w-3xl">
-              <span className="inline-flex items-center gap-2 rounded-full border border-line bg-white/70 px-3.5 py-1.5 text-[13px] font-medium text-brand-purple backdrop-blur-sm">
+              <span className="inline-flex items-center gap-2 rounded-full border border-line bg-white/70 px-3.5 py-1.5 text-[13px] font-medium text-brand-purple backdrop-blur-xs">
                 <IndustryGlyph slug={canonicalSlug} name={data.name} size={15} />
                 {td("eyebrow")}
               </span>
@@ -296,7 +296,7 @@ export default async function IndustryPage({ params }: { params: Promise<Params>
                 <img
                   src={data.coverImage}
                   alt={data.name}
-                  className="mt-10 aspect-[16/8] w-full rounded-[20px] border border-line object-cover"
+                  className="mt-10 aspect-16/8 w-full rounded-[20px] border border-line object-cover"
                 />
               </Reveal>
             )}

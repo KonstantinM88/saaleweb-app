@@ -1033,7 +1033,7 @@ export function PricingLandingPage({
       <section className="relative overflow-hidden pb-14 pt-8 md:pb-20 md:pt-12">
         <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_14%_8%,rgba(255,79,163,0.10),transparent_34%),radial-gradient(circle_at_86%_0%,rgba(139,92,246,0.14),transparent_32%),linear-gradient(180deg,#fff_0%,#f7f8fb_100%)]" />
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(17,24,39,0.045)_1px,transparent_1px),linear-gradient(to_bottom,rgba(17,24,39,0.045)_1px,transparent_1px)] bg-[size:56px_56px] opacity-60 [mask-image:radial-gradient(ellipse_82%_58%_at_50%_0%,#000_22%,transparent_76%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(17,24,39,0.045)_1px,transparent_1px),linear-gradient(to_bottom,rgba(17,24,39,0.045)_1px,transparent_1px)] bg-size-[56px_56px] opacity-60 mask-[radial-gradient(ellipse_82%_58%_at_50%_0%,#000_22%,transparent_76%)]" />
         </div>
 
         <Container>
@@ -1062,7 +1062,7 @@ export function PricingLandingPage({
             </div>
 
             <Reveal direction="zoom" delay={80}>
-              <div className="relative overflow-hidden rounded-[30px] border border-white bg-white/[0.90] p-5 shadow-[0_34px_100px_-62px_rgba(139,92,246,0.75)] backdrop-blur md:p-6">
+              <div className="relative overflow-hidden rounded-[30px] border border-white bg-white/90 p-5 shadow-[0_34px_100px_-62px_rgba(139,92,246,0.75)] backdrop-blur-sm md:p-6">
                 <div aria-hidden className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_0%,rgba(255,79,163,0.14),transparent_34%),radial-gradient(circle_at_100%_100%,rgba(139,92,246,0.16),transparent_36%)]" />
                 <div className="relative">
                   <div className="mb-5 flex items-center justify-between">
@@ -1076,7 +1076,7 @@ export function PricingLandingPage({
                     </span>
                   </div>
 
-                  <div className="rounded-[24px] border border-line bg-white p-5 shadow-sm">
+                  <div className="rounded-[24px] border border-line bg-white p-5 shadow-xs">
                     <div className="flex items-center gap-3">
                       <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand text-white">
                         <Compass size={23} aria-hidden />
@@ -1110,7 +1110,7 @@ export function PricingLandingPage({
                               className={cn(
                                 "min-w-0 font-extrabold text-brand-purple",
                                 isQuotePrice
-                                  ? "w-fit max-w-full rounded-full bg-white px-3 py-1.5 text-left text-[12px] leading-tight shadow-sm ring-1 ring-brand-purple/10 [overflow-wrap:anywhere] [text-wrap:balance] sm:max-w-[160px] sm:text-right"
+                                  ? "w-fit max-w-full rounded-full bg-white px-3 py-1.5 text-left text-[12px] leading-tight shadow-xs ring-1 ring-brand-purple/10 wrap-anywhere text-balance sm:max-w-[160px] sm:text-right"
                                   : "shrink-0 text-right text-[14px]",
                               )}
                             >
@@ -1133,7 +1133,7 @@ export function PricingLandingPage({
         <section className="border-y border-line bg-white py-10 md:py-14" aria-labelledby="pricing-direct-answer-title">
           <Container>
             <Reveal>
-              <div className="grid gap-7 rounded-[26px] border border-line bg-surface/70 p-6 shadow-sm md:p-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+              <div className="grid gap-7 rounded-[26px] border border-line bg-surface/70 p-6 shadow-xs md:p-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
                 <div>
                   <span className="eyebrow">{c.eyebrow}</span>
                   <h2
@@ -1158,7 +1158,7 @@ export function PricingLandingPage({
                   {packageOrder.map((key) => (
                     <div key={key} className="min-w-0 rounded-2xl border border-line bg-white p-4">
                       <dt className="text-[13px] font-extrabold leading-snug text-dark">{c.packageCopies[key].name}</dt>
-                      <dd className="mt-2 break-words text-[15px] font-extrabold leading-tight text-brand-purple">
+                      <dd className="mt-2 wrap-break-word text-[15px] font-extrabold leading-tight text-brand-purple">
                         {prices[key]}
                       </dd>
                     </div>
@@ -1216,7 +1216,7 @@ export function PricingLandingPage({
           <div className="grid gap-5 md:grid-cols-3">
             {c.seoCards.map((card, index) => (
               <Reveal key={card.label} delay={index * 70} className="h-full">
-                <article className="h-full rounded-[22px] border border-line bg-white p-6 shadow-sm">
+                <article className="h-full rounded-[22px] border border-line bg-white p-6 shadow-xs">
                   <div className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-soft text-brand-purple">
                     {index === 0 ? <Gauge size={21} aria-hidden /> : index === 1 ? <Sparkles size={21} aria-hidden /> : <FileText size={21} aria-hidden />}
                   </div>
@@ -1294,7 +1294,7 @@ export function PricingLandingPage({
           <div className="grid gap-5 md:grid-cols-3">
             {c.trustCards.map((card, index) => (
               <Reveal key={card.title} delay={index * 70} className="h-full">
-                <article className="card-border-glow h-full rounded-[22px] border border-line bg-white p-6 shadow-sm">
+                <article className="card-border-glow h-full rounded-[22px] border border-line bg-white p-6 shadow-xs">
                   <span className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-soft text-brand-purple">
                     <Check size={21} aria-hidden />
                   </span>
@@ -1325,7 +1325,7 @@ export function PricingLandingPage({
               <Reveal key={link.href} delay={(index % 4) * 45}>
                 <a
                   href={link.href}
-                  className="group flex h-full items-center justify-between gap-4 rounded-2xl border border-line bg-white px-4 py-3.5 text-[14px] font-extrabold text-dark transition-all hover:-translate-y-0.5 hover:border-brand-purple/20 hover:text-brand-purple hover:shadow-sm"
+                  className="group flex h-full items-center justify-between gap-4 rounded-2xl border border-line bg-white px-4 py-3.5 text-[14px] font-extrabold text-dark transition-all hover:-translate-y-0.5 hover:border-brand-purple/20 hover:text-brand-purple hover:shadow-xs"
                 >
                   <span>{link.label}</span>
                   <LinkIcon size={15} className="shrink-0 text-brand-purple" aria-hidden />
@@ -1396,14 +1396,14 @@ function PricingPackageCard({
   const isBusiness = packageKey === "business";
   const isQuotePrice = packageKey === "individual" || !/\d/.test(price);
   const priceSizeClass = isQuotePrice
-    ? "text-[clamp(16px,3.7vw,19px)] leading-snug break-words [overflow-wrap:anywhere] [text-wrap:balance] hyphens-auto"
+    ? "text-[clamp(16px,3.7vw,19px)] leading-snug wrap-break-word wrap-anywhere text-balance hyphens-auto"
     : "text-[clamp(34px,4vw,46px)] leading-none";
 
   return (
     <Reveal delay={delay} className="h-full">
       <article
         className={cn(
-          "relative flex h-full min-w-0 flex-col overflow-hidden rounded-[24px] p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 sm:p-6",
+          "relative flex h-full min-w-0 flex-col overflow-hidden rounded-[24px] p-5 shadow-xs transition-all duration-300 hover:-translate-y-1 sm:p-6",
           featured
             ? "bg-dark text-white shadow-[0_30px_90px_-62px_rgba(15,23,42,0.95)]"
             : isBusiness
@@ -1420,17 +1420,17 @@ function PricingPackageCard({
         <div className="relative flex h-full min-w-0 flex-col">
           <span
             className={cn(
-              "inline-flex max-w-full rounded-full px-3 py-1.5 text-left text-[12px] font-extrabold uppercase leading-tight tracking-[0.14em] [overflow-wrap:anywhere]",
+              "inline-flex max-w-full rounded-full px-3 py-1.5 text-left text-[12px] font-extrabold uppercase leading-tight tracking-[0.14em] wrap-anywhere",
               featured
-                ? "bg-white/[0.10] text-brand-pink ring-1 ring-white/[0.14]"
+                ? "bg-white/10 text-brand-pink ring-1 ring-white/[0.14]"
                 : isBusiness
-                  ? "bg-white text-brand-purple shadow-sm ring-1 ring-brand-purple/20"
+                  ? "bg-white text-brand-purple shadow-xs ring-1 ring-brand-purple/20"
                   : "bg-brand-soft text-brand-purple",
             )}
           >
             {pkg.badge}
           </span>
-          <h3 className={cn("mt-5 min-w-0 break-words text-[clamp(21px,5.7vw,24px)] font-extrabold leading-tight tracking-tight lg:min-h-[58px]", isBusiness && "text-[clamp(22px,5.7vw,25px)]")}>
+          <h3 className={cn("mt-5 min-w-0 wrap-break-word text-[clamp(21px,5.7vw,24px)] font-extrabold leading-tight tracking-tight lg:min-h-[58px]", isBusiness && "text-[clamp(22px,5.7vw,25px)]")}>
             {pkg.name}
           </h3>
           <p className={cn("mt-2 text-[14.5px] leading-relaxed lg:min-h-[86px]", featured ? "text-gray-300" : "text-muted")}>
@@ -1440,7 +1440,7 @@ function PricingPackageCard({
             className={cn(
               "mt-5 flex w-full max-w-full min-w-0 font-extrabold tracking-tight",
               isQuotePrice
-                ? "min-h-0 items-center rounded-2xl border border-brand-purple/[0.14] bg-brand-soft px-4 py-3 text-dark shadow-sm"
+                ? "min-h-0 items-center rounded-2xl border border-brand-purple/[0.14] bg-brand-soft px-4 py-3 text-dark shadow-xs"
                 : "min-h-[64px] items-end",
               priceSizeClass,
               isBusiness && !featured && "bg-brand bg-clip-text text-transparent",
@@ -1455,9 +1455,9 @@ function PricingPackageCard({
             className={cn(
               "mt-5 rounded-2xl p-4 text-[14px] leading-relaxed",
               featured
-                ? "bg-white/[0.08] text-gray-200"
+                ? "bg-white/8 text-gray-200"
                 : isBusiness
-                  ? "bg-white/[0.84] text-ink shadow-sm ring-1 ring-brand-purple/10"
+                  ? "bg-white/84 text-ink shadow-xs ring-1 ring-brand-purple/10"
                   : "bg-surface text-ink",
             )}
           >
@@ -1482,7 +1482,7 @@ function PricingPackageCard({
           </div>
 
           {pkg.seoText && (
-            <div className={cn("mt-6 rounded-2xl p-4 text-[13.5px] leading-relaxed", featured ? "bg-white/[0.08] text-gray-300" : "bg-brand-soft text-ink")}>
+            <div className={cn("mt-6 rounded-2xl p-4 text-[13.5px] leading-relaxed", featured ? "bg-white/8 text-gray-300" : "bg-brand-soft text-ink")}>
               <p className={cn("mb-2 font-extrabold", featured ? "text-white" : "text-dark")}>{pkg.seoTitle}</p>
               <BrandText text={pkg.seoText} />
             </div>
@@ -1508,7 +1508,7 @@ function PricingPackageCard({
               </p>
               <div className="mt-3 flex flex-wrap gap-2">
                 {pkg.examples.map((item) => (
-                  <span key={item} className={cn("rounded-full border px-3 py-1.5 text-[12.5px] font-bold", featured ? "border-white/[0.14] bg-white/[0.08] text-gray-100" : "border-line bg-surface text-dark")}>
+                  <span key={item} className={cn("rounded-full border px-3 py-1.5 text-[12.5px] font-bold", featured ? "border-white/[0.14] bg-white/8 text-gray-100" : "border-line bg-surface text-dark")}>
                     {item}
                   </span>
                 ))}
@@ -1594,7 +1594,7 @@ function ComparisonSection({
 
       <div className="grid gap-4 lg:hidden">
         {packageOrder.map((key) => (
-          <article key={key} className="rounded-[22px] border border-line bg-white p-5 shadow-sm">
+          <article key={key} className="rounded-[22px] border border-line bg-white p-5 shadow-xs">
             <h3 className="text-[19px] font-extrabold text-dark">{copy.packageCopies[key].name}</h3>
             <p className="mt-1 text-[14px] font-extrabold text-brand-purple">{prices[key]}</p>
             <div className="mt-4 grid gap-3">

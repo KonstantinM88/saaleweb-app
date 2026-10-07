@@ -36,7 +36,7 @@ export function CtaBanner() {
               </Link>
               <Link
                 href="/kontakt"
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/[0.15] bg-white/[0.08] px-6 py-3.5 text-[15px] font-semibold text-white transition hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/[0.12]"
+                className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/8 px-6 py-3.5 text-[15px] font-semibold text-white transition hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/12"
               >
                 {t("ctaSecondary")}
                 <ArrowRight className="h-4 w-4" aria-hidden />

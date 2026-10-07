@@ -55,7 +55,7 @@ export async function PerformanceProof() {
           <div className="relative mx-auto max-w-6xl">
             <div
               aria-hidden
-              className="absolute -inset-4 rounded-[32px] bg-gradient-to-br from-brand-pink/[0.18] via-brand-purple/[0.14] to-transparent blur-2xl"
+              className="absolute -inset-4 rounded-[32px] bg-linear-to-br from-brand-pink/18 via-brand-purple/[0.14] to-transparent blur-2xl"
             />
             <div className="relative overflow-hidden rounded-[28px] border border-white/80 bg-white p-3 shadow-[0_36px_100px_-58px_rgba(15,23,42,0.65)] md:p-4">
               <Image
@@ -99,7 +99,7 @@ export async function PerformanceProof() {
         </div>
 
         <Reveal delay={120} className="mt-8">
-          <div className="rounded-[28px] border border-line bg-white/[0.9] p-6 shadow-[0_28px_80px_-56px_rgba(15,23,42,0.5)] backdrop-blur md:p-8 xl:p-9">
+          <div className="rounded-[28px] border border-line bg-white/90 p-6 shadow-[0_28px_80px_-56px_rgba(15,23,42,0.5)] backdrop-blur-sm md:p-8 xl:p-9">
             <div className="grid gap-8 lg:grid-cols-[0.66fr_1.34fr] lg:items-center xl:grid-cols-[0.6fr_1.4fr] xl:gap-10">
               <div className="lg:max-w-[390px]">
                 <p className="eyebrow">{t("flow.title")}</p>
@@ -114,13 +114,13 @@ export async function PerformanceProof() {
               <div className="relative">
                 <div
                   aria-hidden
-                  className="absolute left-[8%] right-[8%] top-1/2 hidden h-px -translate-y-1/2 bg-gradient-to-r from-brand-pink/[0.35] via-brand-purple/[0.45] to-brand-pink/20 lg:block"
+                  className="absolute left-[8%] right-[8%] top-1/2 hidden h-px -translate-y-1/2 bg-linear-to-r from-brand-pink/35 via-brand-purple/45 to-brand-pink/20 lg:block"
                 />
                 <ol className="relative grid gap-3 sm:grid-cols-2 lg:grid-cols-5 xl:gap-4">
                   {flow.map((item, index) => (
                     <li
                       key={item}
-                      className="group relative z-10 flex min-h-[112px] flex-col justify-between hyphens-auto rounded-[22px] border border-line bg-white/[0.96] px-4 py-4 text-sm font-extrabold leading-snug text-dark shadow-[0_18px_48px_-36px_rgba(15,23,42,0.55)] transition-all duration-300 hover:-translate-y-1 hover:border-brand-purple/30 hover:shadow-[0_24px_64px_-38px_rgba(139,92,246,0.45)] lg:min-h-[124px] xl:min-h-[132px]"
+                      className="group relative z-10 flex min-h-[112px] flex-col justify-between hyphens-auto rounded-[22px] border border-line bg-white/96 px-4 py-4 text-sm font-extrabold leading-snug text-dark shadow-[0_18px_48px_-36px_rgba(15,23,42,0.55)] transition-all duration-300 hover:-translate-y-1 hover:border-brand-purple/30 hover:shadow-[0_24px_64px_-38px_rgba(139,92,246,0.45)] lg:min-h-[124px] xl:min-h-[132px]"
                     >
                       <span className="mb-4 inline-flex h-7 w-7 items-center justify-center rounded-full bg-brand-soft font-mono text-[11px] font-black text-brand-purple ring-1 ring-brand-purple/10 transition-colors group-hover:bg-brand group-hover:text-white">
                         {String(index + 1).padStart(2, "0")}
@@ -129,7 +129,7 @@ export async function PerformanceProof() {
                       {index < flow.length - 1 && (
                         <span
                           aria-hidden
-                          className="absolute -right-[18px] top-1/2 z-20 hidden h-8 w-8 -translate-y-1/2 place-items-center rounded-full border border-brand-purple/[0.15] bg-white text-brand-purple shadow-[0_12px_30px_-18px_rgba(139,92,246,0.65)] lg:grid"
+                          className="absolute right-[-18px] top-1/2 z-20 hidden h-8 w-8 -translate-y-1/2 place-items-center rounded-full border border-brand-purple/15 bg-white text-brand-purple shadow-[0_12px_30px_-18px_rgba(139,92,246,0.65)] lg:grid"
                         >
                           <ArrowRight className="h-3.5 w-3.5" />
                         </span>
@@ -150,7 +150,7 @@ export async function PerformanceProof() {
               </a>
               <Link
                 href="/projekte"
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-2xl border border-line bg-white px-5 py-3 text-center text-sm font-bold text-dark transition-all hover:-translate-y-0.5 hover:border-brand-purple/[0.35] hover:text-brand-purple"
+                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-2xl border border-line bg-white px-5 py-3 text-center text-sm font-bold text-dark transition-all hover:-translate-y-0.5 hover:border-brand-purple/35 hover:text-brand-purple"
               >
                 {t("cta.secondary")}
                 <ArrowRight className="h-4 w-4" aria-hidden />

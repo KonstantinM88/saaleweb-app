@@ -275,14 +275,14 @@ export default async function ServicesIndexPage({ params }: { params: Promise<Pa
                     {slug ? (
                       <a
                         href={getPathname({ locale, href: { pathname: "/leistungen/[slug]", params: { slug } } })}
-                        className="group block h-full rounded-[22px] outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-4"
+                        className="group block h-full rounded-[22px] outline-hidden focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-4"
                       >
                         {card}
                       </a>
                     ) : (
                       <a
                         href={contactHref}
-                        className="group block h-full rounded-[22px] outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-4"
+                        className="group block h-full rounded-[22px] outline-hidden focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-4"
                       >
                         {card}
                       </a>
@@ -304,7 +304,7 @@ export default async function ServicesIndexPage({ params }: { params: Promise<Pa
                 const Icon = clusterIcons[i % clusterIcons.length];
                 return (
                   <Reveal key={cluster.title} delay={(i % 2) * 80} className="h-full">
-                    <article className="h-full rounded-[24px] border border-line bg-white p-6 shadow-sm md:p-8">
+                    <article className="h-full rounded-[24px] border border-line bg-white p-6 shadow-xs md:p-8">
                       <div className="flex items-start gap-4">
                         <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-brand text-white">
                           <Icon size={22} aria-hidden />
@@ -395,7 +395,7 @@ export default async function ServicesIndexPage({ params }: { params: Promise<Pa
                 <Reveal key={i} delay={i * 80}>
                   <div className="relative">
                     {i < steps.length - 1 && (
-                      <span className="absolute left-[58px] top-[26px] hidden h-px w-[calc(100%_-_40px)] bg-gradient-to-r from-brand-pink/40 to-brand-purple/40 lg:block" />
+                      <span className="absolute left-[58px] top-[26px] hidden h-px w-[calc(100%-40px)] bg-linear-to-r from-brand-pink/40 to-brand-purple/40 lg:block" />
                     )}
                     <div className="relative z-10 mb-5 grid h-[52px] w-[52px] place-items-center rounded-[15px] border border-line bg-white font-mono text-lg font-semibold text-brand-purple shadow-card">
                       {String(i + 1).padStart(2, "0")}

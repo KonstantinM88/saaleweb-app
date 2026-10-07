@@ -307,12 +307,12 @@ export function AiAssistantWidget({
   return (
     <div
       className={`pointer-events-none fixed bottom-[calc(0.25rem+env(safe-area-inset-bottom))] left-1 right-1 flex max-w-none flex-col items-stretch sm:bottom-[calc(0.75rem+env(safe-area-inset-bottom))] sm:left-auto sm:right-5 sm:max-w-[calc(100vw-2rem)] sm:items-end md:bottom-[calc(1.25rem+env(safe-area-inset-bottom))] md:right-7 ${
-        open ? "z-[80]" : "z-40"
+        open ? "z-80" : "z-40"
       }`}
       aria-live="polite"
     >
       <div
-        className={`pointer-events-auto mb-0 flex h-[calc(100dvh-1.25rem)] max-h-[760px] min-h-0 w-full flex-col overflow-hidden rounded-[22px] border border-white/75 bg-white/[0.96] shadow-[0_34px_100px_-42px_rgba(17,24,39,0.72)] backdrop-blur-2xl transition duration-300 motion-reduce:transition-none max-[380px]:h-[calc(100dvh-0.85rem)] sm:h-[min(680px,calc(100dvh-1.5rem))] sm:w-[min(500px,calc(100vw-2rem))] sm:rounded-[30px] sm:min-h-[520px] lg:h-[min(720px,calc(100dvh-2rem))] xl:w-[min(560px,calc(100vw-2rem))] ${
+        className={`pointer-events-auto mb-0 flex h-[calc(100dvh-1.25rem)] max-h-[760px] min-h-0 w-full flex-col overflow-hidden rounded-[22px] border border-white/75 bg-white/96 shadow-[0_34px_100px_-42px_rgba(17,24,39,0.72)] backdrop-blur-2xl transition duration-300 motion-reduce:transition-none max-[380px]:h-[calc(100dvh-0.85rem)] sm:h-[min(680px,calc(100dvh-1.5rem))] sm:w-[min(500px,calc(100vw-2rem))] sm:rounded-[30px] sm:min-h-[520px] lg:h-[min(720px,calc(100dvh-2rem))] xl:w-[min(560px,calc(100vw-2rem))] ${
           open
             ? "visible translate-y-0 scale-100 opacity-100"
             : "invisible pointer-events-none translate-y-3 scale-95 opacity-0"
@@ -325,18 +325,18 @@ export function AiAssistantWidget({
           <div className="relative flex items-start justify-between gap-3">
             <div className="min-w-0 pr-1">
               <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.14em] text-white/80 sm:px-3 sm:text-[10px]">
-                <AssistantLogoMark className="grid h-3.5 w-3.5 shrink-0 place-items-center overflow-hidden rounded-full bg-white shadow-sm sm:h-4 sm:w-4" />
+                <AssistantLogoMark className="grid h-3.5 w-3.5 shrink-0 place-items-center overflow-hidden rounded-full bg-white shadow-xs sm:h-4 sm:w-4" />
                 {labels.badge}
               </span>
               <h2 className="mt-2 text-[21px] font-black leading-[1.1] sm:text-lg">{labels.title}</h2>
-              <p className="mt-1.5 max-h-[3.1em] max-w-[34rem] overflow-hidden text-[12px] leading-[1.55] text-white/[0.76] sm:max-h-none sm:text-xs sm:leading-5">
+              <p className="mt-1.5 max-h-[3.1em] max-w-136 overflow-hidden text-[12px] leading-[1.55] text-white/76 sm:max-h-none sm:text-xs sm:leading-5">
                 {labels.subtitle}
               </p>
             </div>
             <button
               type="button"
               onClick={() => setOpen(false)}
-              className="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-white/15 bg-white/10 text-xs font-bold text-white/80 transition hover:bg-white/15 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:h-auto sm:w-auto sm:px-3 sm:py-1.5"
+              className="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-white/15 bg-white/10 text-xs font-bold text-white/80 transition hover:bg-white/15 focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:h-auto sm:w-auto sm:px-3 sm:py-1.5"
               aria-label={labels.close}
             >
               <span aria-hidden>{"\u00d7"}</span>
@@ -346,7 +346,7 @@ export function AiAssistantWidget({
 
         <div
           ref={scrollRef}
-          className="min-h-0 flex-1 space-y-2.5 overflow-y-auto bg-gradient-to-b from-white via-white to-surface/70 px-3 py-3 sm:space-y-3 sm:px-5 sm:py-4"
+          className="min-h-0 flex-1 space-y-2.5 overflow-y-auto bg-linear-to-b from-white via-white to-surface/70 px-3 py-3 sm:space-y-3 sm:px-5 sm:py-4"
         >
           {messages.map((message, index) => (
             <div
@@ -354,9 +354,9 @@ export function AiAssistantWidget({
               className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}
             >
               <div
-                className={`whitespace-pre-line rounded-2xl px-3.5 py-3 text-[15px] leading-7 shadow-sm sm:px-4 sm:py-3.5 sm:text-[15px] sm:leading-7 ${
+                className={`whitespace-pre-line rounded-2xl px-3.5 py-3 text-[15px] leading-7 shadow-xs sm:px-4 sm:py-3.5 sm:text-[15px] sm:leading-7 ${
                   message.role === "user"
-                    ? "max-w-[90%] bg-gradient-to-r from-brand-pink to-brand-purple text-white shadow-[0_14px_28px_-18px_rgba(139,92,246,0.8)] sm:max-w-[82%]"
+                    ? "max-w-[90%] bg-linear-to-r from-brand-pink to-brand-purple text-white shadow-[0_14px_28px_-18px_rgba(139,92,246,0.8)] sm:max-w-[82%]"
                     : "w-full border border-line bg-white text-slate-700 sm:max-w-[94%]"
                 }`}
               >
@@ -365,7 +365,7 @@ export function AiAssistantWidget({
             </div>
           ))}
           {loading ? (
-            <div className="inline-flex items-center gap-2 rounded-2xl border border-line bg-white px-4 py-3 text-sm font-semibold text-slate-600 shadow-sm">
+            <div className="inline-flex items-center gap-2 rounded-2xl border border-line bg-white px-4 py-3 text-sm font-semibold text-slate-600 shadow-xs">
               <span className="h-2 w-2 animate-pulse rounded-full bg-brand-pink" />
               {labels.loading}
             </div>
@@ -374,7 +374,7 @@ export function AiAssistantWidget({
 
         <div className="shrink-0 border-t border-line bg-white px-3.5 py-3 sm:px-5 sm:py-3">
           {showQuickPrompts ? (
-            <div className="mb-2.5 flex gap-2 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] sm:mb-3 sm:grid sm:grid-cols-3 sm:overflow-visible sm:pb-0 [&::-webkit-scrollbar]:hidden">
+            <div className="mb-2.5 flex gap-2 overflow-x-auto pb-1 [-ms-overflow-style:none] scrollbar-none sm:mb-3 sm:grid sm:grid-cols-3 sm:overflow-visible sm:pb-0 [&::-webkit-scrollbar]:hidden">
               {labels.quickPrompts.slice(0, 3).map((prompt) => (
                 <button
                   key={prompt}
@@ -406,12 +406,12 @@ export function AiAssistantWidget({
               placeholder={labels.placeholder}
               rows={1}
               maxLength={1200}
-              className="min-h-[54px] flex-1 resize-none rounded-2xl border border-line bg-white px-4 py-3.5 text-[16px] leading-6 text-dark outline-none transition placeholder:text-muted/70 focus:border-brand-purple/60 focus:ring-4 focus:ring-brand-purple/10 sm:min-h-[52px] sm:py-3 sm:text-sm"
+              className="min-h-[54px] flex-1 resize-none rounded-2xl border border-line bg-white px-4 py-3.5 text-[16px] leading-6 text-dark outline-hidden transition placeholder:text-muted/70 focus:border-brand-purple/60 focus:ring-4 focus:ring-brand-purple/10 sm:min-h-[52px] sm:py-3 sm:text-sm"
             />
             <button
               type="submit"
               disabled={loading || input.trim().length === 0}
-              className="grid h-[54px] w-[54px] shrink-0 place-items-center rounded-2xl bg-gradient-to-r from-brand-pink to-brand-purple text-lg font-black text-white shadow-[0_18px_38px_-20px_rgba(139,92,246,0.9)] transition hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-50 sm:h-[52px] sm:w-[52px]"
+              className="grid h-[54px] w-[54px] shrink-0 place-items-center rounded-2xl bg-linear-to-r from-brand-pink to-brand-purple text-lg font-black text-white shadow-[0_18px_38px_-20px_rgba(139,92,246,0.9)] transition hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-50 sm:h-[52px] sm:w-[52px]"
               aria-label={labels.send}
             >
               <span aria-hidden>{"\u2192"}</span>

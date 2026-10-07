@@ -12,7 +12,7 @@ export default function AdminLoginPage() {
             <BrandWord /> Admin
           </span>
         </div>
-        <div className="rounded-2xl border border-line bg-white p-7 shadow-sm">
+        <div className="rounded-2xl border border-line bg-white p-7 shadow-xs">
           <h1 className="text-lg font-bold text-dark">Anmelden</h1>
           <p className="mt-1 text-sm text-muted">Bitte mit Admin-Zugangsdaten anmelden.</p>
           <LoginForm />

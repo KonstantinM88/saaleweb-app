@@ -52,7 +52,7 @@ export function AuditLandingPage({ copy, locale }: { copy: AuditLandingCopy; loc
               />
               <a
                 href="#audit-form"
-                className="absolute left-[26.35%] top-[84.4%] z-10 flex h-[10.7%] w-[46.65%] items-center justify-center gap-[clamp(4px,0.8vw,12px)] rounded-[clamp(6px,1.25vw,18px)] bg-gradient-to-r from-[#eb3fad] via-[#bd45d5] to-[#6331e7] px-2 text-[clamp(9px,3vw,40px)] font-extrabold leading-none text-white shadow-[0_8px_28px_-10px_rgba(101,49,231,0.9)] transition duration-300 hover:brightness-110 hover:shadow-[0_12px_34px_-8px_rgba(101,49,231,0.95)] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/90 motion-reduce:transition-none"
+                className="absolute left-[26.35%] top-[84.4%] z-10 flex h-[10.7%] w-[46.65%] items-center justify-center gap-[clamp(4px,0.8vw,12px)] rounded-[clamp(6px,1.25vw,18px)] bg-linear-to-r from-[#eb3fad] via-[#bd45d5] to-[#6331e7] px-2 text-[clamp(9px,3vw,40px)] font-extrabold leading-none text-white shadow-[0_8px_28px_-10px_rgba(101,49,231,0.9)] transition duration-300 hover:brightness-110 hover:shadow-[0_12px_34px_-8px_rgba(101,49,231,0.95)] focus-visible:outline-hidden focus-visible:ring-4 focus-visible:ring-white/90 motion-reduce:transition-none"
               >
                 <Send className="h-[0.95em] w-[0.95em] shrink-0" aria-hidden />
                 <span>{copy.heroImage.buttonLabel}</span>
@@ -99,7 +99,7 @@ export function AuditLandingPage({ copy, locale }: { copy: AuditLandingCopy; loc
       {directAnswer ? (
         <section className="border-y border-line bg-white py-10 md:py-14" aria-labelledby="audit-direct-answer-title">
           <Container>
-            <div className="grid gap-7 rounded-[26px] border border-line bg-surface/70 p-6 shadow-sm md:p-8 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
+            <div className="grid gap-7 rounded-[26px] border border-line bg-surface/70 p-6 shadow-xs md:p-8 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
               <div>
                 <span className="eyebrow">{copy.eyebrow}</span>
                 <h2
@@ -305,7 +305,7 @@ export function AuditLandingPage({ copy, locale }: { copy: AuditLandingCopy; loc
       {/* ---------------- Final CTA ---------------- */}
       <section className="py-14 md:py-20" aria-labelledby="audit-final-title">
         <Container>
-          <div className="relative overflow-hidden rounded-[30px] border border-white/80 bg-white/[0.86] p-8 text-center shadow-[0_34px_100px_-66px_rgba(139,92,246,0.72)] md:p-12">
+          <div className="relative overflow-hidden rounded-[30px] border border-white/80 bg-white/86 p-8 text-center shadow-[0_34px_100px_-66px_rgba(139,92,246,0.72)] md:p-12">
             <div
               aria-hidden
               className="pointer-events-none absolute inset-0"

@@ -137,7 +137,7 @@ export function ConstructionLandingPage({
             <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-10">
               <div className="hero-stagger">
                 <span className="eyebrow">{content.eyebrow}</span>
-                <h1 className="mt-4 text-[clamp(32px,5.2vw,58px)] font-extrabold leading-[1.05] tracking-[-0.025em] text-dark">
+                <h1 className="mt-4 text-[clamp(32px,5.2vw,58px)] font-extrabold leading-[1.05] tracking-tight text-dark">
                   <Accented text={content.h1} accent={content.h1Accent} />
                 </h1>
                 <p className="mt-6 max-w-xl text-[clamp(16.5px,1.7vw,19px)] leading-relaxed text-muted">
@@ -170,7 +170,7 @@ export function ConstructionLandingPage({
                   <Magnetic>
                     <a
                       href={auditHref}
-                      className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-line bg-white px-6 py-3.5 text-[15px] font-semibold text-dark shadow-sm transition-all hover:-translate-y-0.5 hover:border-brand-purple hover:text-brand-purple motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+                      className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-line bg-white px-6 py-3.5 text-[15px] font-semibold text-dark shadow-xs transition-all hover:-translate-y-0.5 hover:border-brand-purple hover:text-brand-purple motion-reduce:transition-none motion-reduce:hover:translate-y-0"
                     >
                       {content.ctaSecondary}
                     </a>
@@ -224,7 +224,7 @@ export function ConstructionLandingPage({
           <Container>
             <Reveal className="max-w-3xl">
               <span className="eyebrow">{content.problem.eyebrow}</span>
-              <h2 className="mt-4 text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-[-0.025em] text-dark">
+              <h2 className="mt-4 text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-tight text-dark">
                 {content.problem.title}
               </h2>
               <p className="mt-5 text-[16.5px] leading-relaxed text-muted">{content.problem.intro}</p>
@@ -256,7 +256,7 @@ export function ConstructionLandingPage({
               <span className="font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-[#2D6CA3]">
                 {content.inquiry.eyebrow}
               </span>
-              <h2 className="mt-4 text-[clamp(28px,4vw,46px)] font-extrabold leading-[1.06] tracking-[-0.025em] text-[#0C2E4E]">
+              <h2 className="mt-4 text-[clamp(28px,4vw,46px)] font-extrabold leading-[1.06] tracking-tight text-[#0C2E4E]">
                 {content.inquiry.title}
               </h2>
               <p className="mt-5 text-[16px] leading-relaxed text-[#40607F]">{content.inquiry.intro}</p>
@@ -273,7 +273,7 @@ export function ConstructionLandingPage({
           <Container>
             <Reveal className="max-w-3xl">
               <span className="eyebrow">{content.structure.eyebrow}</span>
-              <h2 className="mt-4 text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-[-0.025em] text-dark">
+              <h2 className="mt-4 text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-tight text-dark">
                 {content.structure.title}
               </h2>
               <p className="mt-5 text-[16.5px] leading-relaxed text-muted">{content.structure.intro}</p>
@@ -330,7 +330,7 @@ export function ConstructionLandingPage({
           <Container>
             <Reveal className="max-w-3xl">
               <span className="eyebrow">{content.trust.eyebrow}</span>
-              <h2 className="mt-4 text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-[-0.025em] text-dark">
+              <h2 className="mt-4 text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-tight text-dark">
                 {content.trust.title}
               </h2>
               <p className="mt-5 text-[16.5px] leading-relaxed text-muted">{content.trust.intro}</p>
@@ -348,7 +348,7 @@ export function ConstructionLandingPage({
             </div>
 
             <Reveal delay={90}>
-              <div className="mt-8 flex gap-4 rounded-[20px] border border-[#2D6CA3]/25 bg-[#2D6CA3]/[0.06] p-5 md:p-6">
+              <div className="mt-8 flex gap-4 rounded-[20px] border border-[#2D6CA3]/25 bg-[#2D6CA3]/6 p-5 md:p-6">
                 <ShieldCheck size={20} className="mt-0.5 shrink-0 text-[#2D6CA3]" aria-hidden />
                 <p className="text-[15px] leading-relaxed text-ink">{content.trust.note}</p>
               </div>
@@ -373,11 +373,11 @@ export function ConstructionLandingPage({
               </span>
               <h2
                 id="construction-references-title"
-                className="mt-4 break-words text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.08] tracking-[-0.025em] text-white"
+                className="mt-4 wrap-break-word text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.08] tracking-tight text-white"
               >
                 {content.proofs.title}
               </h2>
-              <p className="mt-5 break-words text-[16px] leading-relaxed text-white/60">
+              <p className="mt-5 wrap-break-word text-[16px] leading-relaxed text-white/60">
                 {content.proofs.intro}
               </p>
             </div>
@@ -386,22 +386,22 @@ export function ConstructionLandingPage({
               {content.proofs.items.map((proof) => (
                 <article
                   key={proof.name}
-                  className="flex h-full min-w-0 flex-col rounded-[24px] border border-white/[0.10] bg-white/[0.04] p-6 md:p-8"
+                  className="flex h-full min-w-0 flex-col rounded-[24px] border border-white/10 bg-white/4 p-6 md:p-8"
                 >
                   {proof.media ? <ConstructionProofGallery media={proof.media} /> : null}
 
-                  <h3 className="break-words text-[clamp(19px,2.2vw,24px)] font-extrabold tracking-[-0.02em] text-white">
+                  <h3 className="wrap-break-word text-[clamp(19px,2.2vw,24px)] font-extrabold tracking-[-0.02em] text-white">
                     {proof.name}
                   </h3>
-                  <p className="mt-3 break-words text-[15px] leading-relaxed text-white/65">
+                  <p className="mt-3 wrap-break-word text-[15px] leading-relaxed text-white/65">
                     {proof.text}
                   </p>
 
-                  <ul className="mt-5 grid gap-2.5 border-t border-white/[0.10] pt-5">
+                  <ul className="mt-5 grid gap-2.5 border-t border-white/10 pt-5">
                     {proof.stats.map((stat) => (
                       <li
                         key={stat}
-                        className="flex min-w-0 gap-2.5 break-words text-[14.5px] leading-relaxed text-white/80"
+                        className="flex min-w-0 gap-2.5 wrap-break-word text-[14.5px] leading-relaxed text-white/80"
                       >
                         <Check size={16} className="mt-0.5 shrink-0 text-[#7FB6E4]" aria-hidden />
                         {stat}
@@ -414,7 +414,7 @@ export function ConstructionLandingPage({
                       href={proof.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group inline-flex min-h-11 items-center gap-2 rounded-xl bg-[#2D6CA3] px-5 py-3 text-[14.5px] font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-[#3B82C4] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7FB6E4] motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+                      className="group inline-flex min-h-11 items-center gap-2 rounded-xl bg-[#2D6CA3] px-5 py-3 text-[14.5px] font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-[#3B82C4] focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7FB6E4] motion-reduce:transition-none motion-reduce:hover:translate-y-0"
                     >
                       {content.proofs.live}
                       <ArrowUpRight
@@ -426,7 +426,7 @@ export function ConstructionLandingPage({
                     {proof.projectHref ? (
                       <a
                         href={proof.projectHref}
-                        className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-white/[0.18] bg-white/[0.06] px-5 py-3 text-[14.5px] font-semibold text-white transition-all hover:-translate-y-0.5 hover:border-white/[0.32] motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+                        className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-white/18 bg-white/6 px-5 py-3 text-[14.5px] font-semibold text-white transition-all hover:-translate-y-0.5 hover:border-white/32 motion-reduce:transition-none motion-reduce:hover:translate-y-0"
                       >
                         {content.proofs.caseLabel}
                       </a>
@@ -443,7 +443,7 @@ export function ConstructionLandingPage({
           <Container>
             <Reveal className="max-w-3xl">
               <span className="eyebrow">{content.journey.eyebrow}</span>
-              <h2 className="mt-4 text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-[-0.025em] text-dark">
+              <h2 className="mt-4 text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-tight text-dark">
                 {content.journey.title}
               </h2>
               <p className="mt-5 text-[16.5px] leading-relaxed text-muted">{content.journey.intro}</p>
@@ -457,7 +457,7 @@ export function ConstructionLandingPage({
                     className="bau-rail grid gap-5 py-7 md:grid-cols-[auto_1fr] md:gap-8"
                   >
                     <div className="flex items-center gap-4 md:flex-col md:items-start md:gap-3">
-                      <span className="bau-figure grid h-12 w-12 shrink-0 place-items-center rounded-2xl border border-[#2D6CA3]/30 bg-[#2D6CA3]/[0.08] text-[15px] font-extrabold text-[#1B4E7A]">
+                      <span className="bau-figure grid h-12 w-12 shrink-0 place-items-center rounded-2xl border border-[#2D6CA3]/30 bg-[#2D6CA3]/8 text-[15px] font-extrabold text-[#1B4E7A]">
                         {String(index + 1).padStart(2, "0")}
                       </span>
                       <p className="text-[17px] font-extrabold tracking-[-0.01em] text-dark md:w-[128px]">
@@ -490,7 +490,7 @@ export function ConstructionLandingPage({
           <Container>
             <Reveal className="max-w-3xl">
               <span className="eyebrow">{content.build.eyebrow}</span>
-              <h2 className="mt-4 text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-[-0.025em] text-dark">
+              <h2 className="mt-4 text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-tight text-dark">
                 {content.build.title}
               </h2>
               <p className="mt-5 text-[16.5px] leading-relaxed text-muted">{content.build.intro}</p>
@@ -517,7 +517,7 @@ export function ConstructionLandingPage({
           <Container>
             <Reveal className="max-w-3xl">
               <span className="eyebrow">{content.visibility.eyebrow}</span>
-              <h2 className="mt-4 text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-[-0.025em] text-dark">
+              <h2 className="mt-4 text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-tight text-dark">
                 {content.visibility.title}
               </h2>
               <p className="mt-5 text-[16.5px] leading-relaxed text-muted">{content.visibility.intro}</p>
@@ -562,7 +562,7 @@ export function ConstructionLandingPage({
           <Container>
             <Reveal className="max-w-3xl">
               <span className="eyebrow">{content.reachability.eyebrow}</span>
-              <h2 className="mt-4 text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-[-0.025em] text-dark">
+              <h2 className="mt-4 text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-tight text-dark">
                 {content.reachability.title}
               </h2>
               <p className="mt-5 text-[16.5px] leading-relaxed text-muted">{content.reachability.intro}</p>
@@ -593,7 +593,7 @@ export function ConstructionLandingPage({
           <Container>
             <Reveal className="max-w-3xl">
               <span className="eyebrow">{content.legal.eyebrow}</span>
-              <h2 className="mt-4 text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-[-0.025em] text-dark">
+              <h2 className="mt-4 text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-tight text-dark">
                 {content.legal.title}
               </h2>
             </Reveal>
@@ -619,7 +619,7 @@ export function ConstructionLandingPage({
           <Container>
             <Reveal className="max-w-3xl">
               <span className="eyebrow">{content.packages.eyebrow}</span>
-              <h2 className="mt-4 text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-[-0.025em] text-dark">
+              <h2 className="mt-4 text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-tight text-dark">
                 {content.packages.title}
               </h2>
               <p className="mt-5 text-[16.5px] leading-relaxed text-muted">{content.packages.intro}</p>
@@ -675,7 +675,7 @@ export function ConstructionLandingPage({
           <Container>
             <Reveal className="mx-auto max-w-3xl text-center">
               <span className="eyebrow">{content.faq.eyebrow}</span>
-              <h2 className="mt-4 text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-[-0.025em] text-dark">
+              <h2 className="mt-4 text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-tight text-dark">
                 {content.faq.title}
               </h2>
             </Reveal>
@@ -710,7 +710,7 @@ export function ConstructionLandingPage({
           <Container>
             <Reveal className="max-w-3xl">
               <span className="eyebrow">{content.related.eyebrow}</span>
-              <h2 className="mt-4 text-[clamp(24px,3.2vw,36px)] font-extrabold leading-[1.1] tracking-[-0.025em] text-dark">
+              <h2 className="mt-4 text-[clamp(24px,3.2vw,36px)] font-extrabold leading-[1.1] tracking-tight text-dark">
                 {content.related.title}
               </h2>
             </Reveal>
@@ -745,7 +745,7 @@ export function ConstructionLandingPage({
                   className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(45,108,163,0.30),transparent_40%),radial-gradient(circle_at_88%_100%,rgba(255,79,163,0.18),transparent_38%)]"
                 />
                 <div className="relative mx-auto max-w-2xl">
-                  <h2 className="text-[clamp(24px,3.4vw,42px)] font-extrabold leading-[1.08] tracking-[-0.025em] text-white">
+                  <h2 className="text-[clamp(24px,3.4vw,42px)] font-extrabold leading-[1.08] tracking-tight text-white">
                     {content.final.title}
                   </h2>
                   <p className="mx-auto mt-5 text-[16px] leading-relaxed text-white/60">{content.final.text}</p>
@@ -759,7 +759,7 @@ export function ConstructionLandingPage({
                     </a>
                     <a
                       href={auditHref}
-                      className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-white/[0.16] bg-white/[0.08] px-6 py-3.5 text-[15px] font-semibold text-white transition-all hover:-translate-y-0.5 hover:border-white/[0.32] motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+                      className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-white/16 bg-white/8 px-6 py-3.5 text-[15px] font-semibold text-white transition-all hover:-translate-y-0.5 hover:border-white/32 motion-reduce:transition-none motion-reduce:hover:translate-y-0"
                     >
                       {content.final.secondary}
                     </a>
@@ -782,7 +782,7 @@ function ConstructionProofGallery({ media }: { media: NonNullable<ConstructionPr
   const assets = constructionProofAssets[media.key];
 
   return (
-    <figure className="group mb-6 min-w-0 overflow-hidden rounded-[18px] border border-white/[0.12] bg-[#091A2B]">
+    <figure className="group mb-6 min-w-0 overflow-hidden rounded-[18px] border border-white/12 bg-[#091A2B]">
       <div className="grid h-52 grid-cols-[0.9fr_1.1fr] gap-1.5 sm:h-60">
         <div className="relative min-w-0 overflow-hidden">
           <Image
@@ -803,7 +803,7 @@ function ConstructionProofGallery({ media }: { media: NonNullable<ConstructionPr
           />
         </div>
       </div>
-      <figcaption className="break-words border-t border-white/[0.10] px-4 py-3 text-[12.5px] leading-relaxed text-white/60">
+      <figcaption className="wrap-break-word border-t border-white/10 px-4 py-3 text-[12.5px] leading-relaxed text-white/60">
         {media.caption}
       </figcaption>
     </figure>
@@ -831,7 +831,7 @@ function InquiryCardMock({ card }: { card: ConstructionLandingContent["heroCard"
   return (
     <div className="bau-inquiry relative overflow-hidden rounded-[28px] p-5 shadow-[0_40px_110px_-64px_rgba(12,46,78,0.55)] md:p-7">
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <span className="inline-flex items-center gap-2 rounded-full border border-[#2D6CA3]/30 bg-[#2D6CA3]/[0.09] px-3 py-1.5 font-mono text-[10.5px] font-bold uppercase tracking-[0.16em] text-[#1B4E7A]">
+        <span className="inline-flex items-center gap-2 rounded-full border border-[#2D6CA3]/30 bg-[#2D6CA3]/9 px-3 py-1.5 font-mono text-[10.5px] font-bold uppercase tracking-[0.16em] text-[#1B4E7A]">
           {card.badge}
         </span>
         <span className="font-mono text-[11px] text-[#40607F]/60">{card.time}</span>

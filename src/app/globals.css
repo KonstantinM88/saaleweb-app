@@ -1,33 +1,92 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-:root {
-  --brand-grad: linear-gradient(110deg, #ff4fa3 0%, #8b5cf6 100%);
+@theme {
+  --color-brand-pink: #ff4fa3;
+  --color-brand-purple: #8b5cf6;
+
+  --color-dark: #111827;
+  --color-ink: #1f2937;
+  --color-muted: #6b7280;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-surface: #f8fafc;
+  --color-line: #e5e7eb;
+
+  --font-sans:
+    var(--font-geist-sans), Inter, system-ui, -apple-system, Segoe UI, Roboto,
+    sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  --background-image-brand: linear-gradient(110deg, #ff4fa3 0%, #8b5cf6 100%);
+  --background-image-brand-soft: linear-gradient(
+    110deg,
+    rgba(255, 79, 163, 0.12),
+    rgba(139, 92, 246, 0.12)
+  );
+
+  --container-container: 1180px;
+
+  --shadow-card: 0 10px 30px -12px rgba(17, 24, 39, 0.18);
+  --shadow-lift: 0 30px 60px -20px rgba(17, 24, 39, 0.28);
+
+  --animate-bob: bob 4s ease-in-out infinite;
+
+  @keyframes bob {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-9px);
+    }
+  }
 }
 
-html {
-  scroll-behavior: smooth;
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
 }
 
-body {
-  @apply bg-white text-ink antialiased;
-  font-feature-settings: "cv11", "ss01";
+@utility text-gradient {
+  background: var(--brand-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility eyebrow {
+  @apply inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-[0.14em] text-[#6D28D9];
+  &::before {
+    content: '';
+    @apply h-px w-4 bg-[#6D28D9]/70;
+  }
 }
 
 @layer utilities {
-  .text-gradient {
-    background: var(--brand-grad);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+  :root {
+    --brand-grad: linear-gradient(110deg, #ff4fa3 0%, #8b5cf6 100%);
   }
-  .eyebrow {
-    @apply inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-[0.14em] text-[#6D28D9];
+
+  html {
+    scroll-behavior: smooth;
   }
-  .eyebrow::before {
-    content: "";
-    @apply h-px w-4 bg-[#6D28D9]/70;
+
+  body {
+    @apply bg-white text-ink antialiased;
+    font-feature-settings: 'cv11', 'ss01';
   }
 }
 

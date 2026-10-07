@@ -53,7 +53,7 @@ export function BeforeAfter({ beforeLabel, afterLabel }: { beforeLabel: string; 
   return (
     <div
       ref={ref}
-      className="relative aspect-[16/10] w-full cursor-ew-resize select-none overflow-hidden rounded-[20px] border border-line bg-white shadow-card sm:aspect-[16/9]"
+      className="relative aspect-16/10 w-full cursor-ew-resize select-none overflow-hidden rounded-[20px] border border-line bg-white shadow-card sm:aspect-video"
       style={{ touchAction: "none" }}
       onPointerDown={(event) => {
         interacted.current = true;
@@ -94,7 +94,7 @@ export function BeforeAfter({ beforeLabel, afterLabel }: { beforeLabel: string; 
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.18),transparent_32%),linear-gradient(180deg,rgba(17,24,39,0.08),rgba(17,24,39,0.18))]"
       />
 
-      <span className="pointer-events-none absolute left-3 top-3 rounded-md bg-dark/70 px-2.5 py-1 font-mono text-[11px] font-semibold text-white backdrop-blur-sm">
+      <span className="pointer-events-none absolute left-3 top-3 rounded-md bg-dark/70 px-2.5 py-1 font-mono text-[11px] font-semibold text-white backdrop-blur-xs">
         {beforeLabel}
       </span>
       <span className="pointer-events-none absolute right-3 top-3 rounded-md bg-brand px-2.5 py-1 font-mono text-[11px] font-semibold text-white">
@@ -119,7 +119,7 @@ export function BeforeAfter({ beforeLabel, afterLabel }: { beforeLabel: string; 
               setPos((current) => Math.min(96, Math.max(4, current + (event.key === "ArrowLeft" ? -4 : 4))));
             }
           }}
-          className="absolute left-1/2 top-1/2 grid h-11 w-11 -translate-x-1/2 -translate-y-1/2 cursor-ew-resize place-items-center rounded-full bg-brand text-[13px] font-bold text-white shadow-lift outline-none ring-white/60 focus-visible:ring-4"
+          className="absolute left-1/2 top-1/2 grid h-11 w-11 -translate-x-1/2 -translate-y-1/2 cursor-ew-resize place-items-center rounded-full bg-brand text-[13px] font-bold text-white shadow-lift outline-hidden ring-white/60 focus-visible:ring-4"
         >
           &lt;&gt;
         </button>

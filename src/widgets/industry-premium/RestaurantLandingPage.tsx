@@ -101,7 +101,7 @@ export function RestaurantLandingPage({
             <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-10">
               <div className="hero-stagger">
                 <span className="eyebrow">{content.eyebrow}</span>
-                <h1 className="mt-4 text-[clamp(32px,5.2vw,58px)] font-extrabold leading-[1.05] tracking-[-0.025em] text-dark">
+                <h1 className="mt-4 text-[clamp(32px,5.2vw,58px)] font-extrabold leading-[1.05] tracking-tight text-dark">
                   <Accented text={content.h1} accent={content.h1Accent} />
                 </h1>
                 <p className="mt-6 max-w-xl text-[clamp(16.5px,1.7vw,19px)] leading-relaxed text-muted">
@@ -130,7 +130,7 @@ export function RestaurantLandingPage({
                   <Magnetic>
                     <a
                       href={auditHref}
-                      className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-line bg-white px-6 py-3.5 text-[15px] font-semibold text-dark shadow-sm transition-all hover:-translate-y-0.5 hover:border-brand-purple hover:text-brand-purple"
+                      className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-line bg-white px-6 py-3.5 text-[15px] font-semibold text-dark shadow-xs transition-all hover:-translate-y-0.5 hover:border-brand-purple hover:text-brand-purple"
                     >
                       {content.ctaSecondary}
                     </a>
@@ -189,7 +189,7 @@ export function RestaurantLandingPage({
           <Container>
             <Reveal className="max-w-3xl">
               <span className="eyebrow">{content.pdfProblem.eyebrow}</span>
-              <h2 className="mt-4 text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-[-0.025em] text-dark">
+              <h2 className="mt-4 text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-tight text-dark">
                 {content.pdfProblem.title}
               </h2>
               <p className="mt-5 text-[16.5px] leading-relaxed text-muted">{content.pdfProblem.intro}</p>
@@ -228,7 +228,7 @@ export function RestaurantLandingPage({
               <span className="font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-[#E3909F]">
                 {content.menu.eyebrow}
               </span>
-              <h2 className="mt-4 text-[clamp(28px,4vw,46px)] font-extrabold leading-[1.06] tracking-[-0.025em] text-white">
+              <h2 className="mt-4 text-[clamp(28px,4vw,46px)] font-extrabold leading-[1.06] tracking-tight text-white">
                 {content.menu.title}
               </h2>
               <p className="mt-5 text-[16px] leading-relaxed text-white/60">{content.menu.intro}</p>
@@ -252,7 +252,7 @@ export function RestaurantLandingPage({
               </h3>
               <div className="mt-7 grid gap-x-8 gap-y-1 md:grid-cols-2 lg:grid-cols-4">
                 {content.menu.features.map((feature) => (
-                  <article key={feature.title} className="border-t border-white/[0.12] py-5">
+                  <article key={feature.title} className="border-t border-white/12 py-5">
                     <h4 className="flex items-start gap-2.5 text-[15.5px] font-extrabold text-white">
                       <span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#C25A6E]" />
                       {feature.title}
@@ -269,7 +269,7 @@ export function RestaurantLandingPage({
         <section className="bg-surface py-16 md:py-24">
           <Container>
             <Reveal className="max-w-3xl">
-              <h2 className="text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-[-0.025em] text-dark">
+              <h2 className="text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-tight text-dark">
                 {content.menu.proofTitle}
               </h2>
               <p className="mt-5 text-[16.5px] leading-relaxed text-muted">{content.menu.proofIntro}</p>
@@ -322,7 +322,7 @@ export function RestaurantLandingPage({
           <Container>
             <Reveal className="max-w-3xl">
               <span className="eyebrow">{content.reservation.eyebrow}</span>
-              <h2 className="mt-4 text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-[-0.025em] text-dark">
+              <h2 className="mt-4 text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-tight text-dark">
                 {content.reservation.title}
               </h2>
               <p className="mt-5 text-[16.5px] leading-relaxed text-muted">{content.reservation.intro}</p>
@@ -340,7 +340,7 @@ export function RestaurantLandingPage({
             </div>
 
             <Reveal delay={80}>
-              <div className="mt-8 flex gap-4 rounded-[20px] border border-[#A33B4E]/25 bg-[#A33B4E]/[0.06] p-5 md:p-6">
+              <div className="mt-8 flex gap-4 rounded-[20px] border border-[#A33B4E]/25 bg-[#A33B4E]/6 p-5 md:p-6">
                 <ShieldCheck size={20} className="mt-0.5 shrink-0 text-[#A33B4E]" aria-hidden />
                 <p className="text-[15px] leading-relaxed text-ink">{content.reservation.honesty}</p>
               </div>
@@ -353,7 +353,7 @@ export function RestaurantLandingPage({
           <Container>
             <Reveal className="max-w-3xl">
               <span className="eyebrow">{content.journey.eyebrow}</span>
-              <h2 className="mt-4 text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-[-0.025em] text-dark">
+              <h2 className="mt-4 text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-tight text-dark">
                 {content.journey.title}
               </h2>
               <p className="mt-5 text-[16.5px] leading-relaxed text-muted">{content.journey.intro}</p>
@@ -367,7 +367,7 @@ export function RestaurantLandingPage({
                     className="rest-rail grid gap-5 py-7 md:grid-cols-[auto_1fr] md:gap-8"
                   >
                     <div className="flex items-center gap-4 md:flex-col md:items-start md:gap-3">
-                      <span className="rest-figure grid h-12 w-12 shrink-0 place-items-center rounded-2xl border border-[#A33B4E]/30 bg-[#A33B4E]/[0.08] text-[15px] font-extrabold text-[#8E2F43]">
+                      <span className="rest-figure grid h-12 w-12 shrink-0 place-items-center rounded-2xl border border-[#A33B4E]/30 bg-[#A33B4E]/8 text-[15px] font-extrabold text-[#8E2F43]">
                         {String(index + 1).padStart(2, "0")}
                       </span>
                       <p className="text-[17px] font-extrabold tracking-[-0.01em] text-dark md:w-[128px]">
@@ -400,7 +400,7 @@ export function RestaurantLandingPage({
           <Container>
             <Reveal className="max-w-3xl">
               <span className="eyebrow">{content.build.eyebrow}</span>
-              <h2 className="mt-4 text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-[-0.025em] text-dark">
+              <h2 className="mt-4 text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-tight text-dark">
                 {content.build.title}
               </h2>
               <p className="mt-5 text-[16.5px] leading-relaxed text-muted">{content.build.intro}</p>
@@ -427,7 +427,7 @@ export function RestaurantLandingPage({
           <Container>
             <Reveal className="max-w-3xl">
               <span className="eyebrow">{content.visibility.eyebrow}</span>
-              <h2 className="mt-4 text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-[-0.025em] text-dark">
+              <h2 className="mt-4 text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-tight text-dark">
                 {content.visibility.title}
               </h2>
               <p className="mt-5 text-[16.5px] leading-relaxed text-muted">{content.visibility.intro}</p>
@@ -472,7 +472,7 @@ export function RestaurantLandingPage({
           <Container>
             <Reveal className="max-w-3xl">
               <span className="eyebrow">{content.events.eyebrow}</span>
-              <h2 className="mt-4 text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-[-0.025em] text-dark">
+              <h2 className="mt-4 text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-tight text-dark">
                 {content.events.title}
               </h2>
               <p className="mt-5 text-[16.5px] leading-relaxed text-muted">{content.events.intro}</p>
@@ -481,7 +481,7 @@ export function RestaurantLandingPage({
             <div className="mt-9 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
               {content.events.items.map((item, index) => (
                 <Reveal key={item.title} delay={(index % 3) * 60} className="h-full">
-                  <article className="h-full rounded-[20px] border border-line bg-white p-6 shadow-sm">
+                  <article className="h-full rounded-[20px] border border-line bg-white p-6 shadow-xs">
                     <h3 className="text-[16px] font-extrabold text-dark">{item.title}</h3>
                     <p className="mt-2 text-[14.5px] leading-relaxed text-muted">{item.text}</p>
                   </article>
@@ -496,7 +496,7 @@ export function RestaurantLandingPage({
           <Container>
             <Reveal className="max-w-3xl">
               <span className="eyebrow">{content.legal.eyebrow}</span>
-              <h2 className="mt-4 text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-[-0.025em] text-dark">
+              <h2 className="mt-4 text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-tight text-dark">
                 {content.legal.title}
               </h2>
             </Reveal>
@@ -522,7 +522,7 @@ export function RestaurantLandingPage({
           <Container>
             <Reveal className="max-w-3xl">
               <span className="eyebrow">{content.packages.eyebrow}</span>
-              <h2 className="mt-4 text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-[-0.025em] text-dark">
+              <h2 className="mt-4 text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-tight text-dark">
                 {content.packages.title}
               </h2>
               <p className="mt-5 text-[16.5px] leading-relaxed text-muted">{content.packages.intro}</p>
@@ -578,7 +578,7 @@ export function RestaurantLandingPage({
           <Container>
             <Reveal className="mx-auto max-w-3xl text-center">
               <span className="eyebrow">{content.faq.eyebrow}</span>
-              <h2 className="mt-4 text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-[-0.025em] text-dark">
+              <h2 className="mt-4 text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-tight text-dark">
                 {content.faq.title}
               </h2>
             </Reveal>
@@ -613,7 +613,7 @@ export function RestaurantLandingPage({
           <Container>
             <Reveal className="max-w-3xl">
               <span className="eyebrow">{content.related.eyebrow}</span>
-              <h2 className="mt-4 text-[clamp(24px,3.2vw,36px)] font-extrabold leading-[1.1] tracking-[-0.025em] text-dark">
+              <h2 className="mt-4 text-[clamp(24px,3.2vw,36px)] font-extrabold leading-[1.1] tracking-tight text-dark">
                 {content.related.title}
               </h2>
             </Reveal>
@@ -648,7 +648,7 @@ export function RestaurantLandingPage({
                   className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(194,90,110,0.26),transparent_40%),radial-gradient(circle_at_88%_100%,rgba(139,92,246,0.24),transparent_38%)]"
                 />
                 <div className="relative mx-auto max-w-2xl">
-                  <h2 className="text-[clamp(24px,3.4vw,42px)] font-extrabold leading-[1.08] tracking-[-0.025em] text-white">
+                  <h2 className="text-[clamp(24px,3.4vw,42px)] font-extrabold leading-[1.08] tracking-tight text-white">
                     {content.final.title}
                   </h2>
                   <p className="mx-auto mt-5 text-[16px] leading-relaxed text-white/60">{content.final.text}</p>
@@ -662,7 +662,7 @@ export function RestaurantLandingPage({
                     </a>
                     <a
                       href={auditHref}
-                      className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-white/[0.16] bg-white/[0.08] px-6 py-3.5 text-[15px] font-semibold text-white transition-all hover:-translate-y-0.5 hover:border-white/[0.32]"
+                      className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-white/16 bg-white/8 px-6 py-3.5 text-[15px] font-semibold text-white transition-all hover:-translate-y-0.5 hover:border-white/32"
                     >
                       {content.final.secondary}
                     </a>
@@ -753,7 +753,7 @@ function DishCardMock({
           </span>
         </div>
 
-        <p className="mt-5 flex gap-2.5 rounded-2xl bg-white/[0.05] p-4 text-[12.5px] leading-relaxed text-white/55">
+        <p className="mt-5 flex gap-2.5 rounded-2xl bg-white/5 p-4 text-[12.5px] leading-relaxed text-white/55">
           <Sparkles size={15} className="mt-0.5 shrink-0 text-[#E3909F]" aria-hidden />
           {card.footnote}
         </p>

@@ -20,7 +20,7 @@ export function PageHeader({
   return (
     <div className="mb-7 flex flex-col items-start gap-4 sm:flex-row sm:items-end sm:justify-between">
       <div className="min-w-0">
-        <h1 className="break-words text-2xl font-bold tracking-tight text-dark">{t(title)}</h1>
+        <h1 className="wrap-break-word text-2xl font-bold tracking-tight text-dark">{t(title)}</h1>
         {subtitle && <p className="mt-1 max-w-3xl text-sm text-muted">{t(subtitle)}</p>}
       </div>
       {actionHref && actionLabel && (

@@ -115,11 +115,11 @@ export default async function LocationsHubPage({ params }: { params: Promise<Par
                 <MapPin size={14} aria-hidden className="text-brand-purple" />
                 {t("eyebrow")}
               </span>
-              <h1 className="mt-5 break-words text-[clamp(32px,4.4vw,50px)] font-bold leading-[1.1] tracking-tight text-dark">
+              <h1 className="mt-5 wrap-break-word text-[clamp(32px,4.4vw,50px)] font-bold leading-[1.1] tracking-tight text-dark">
                 {t("title")}
               </h1>
               {(t.raw("lead") as string[]).map((paragraph, index) => (
-                <p key={index} className="mt-4 max-w-2xl break-words text-[16.5px] text-muted">
+                <p key={index} className="mt-4 max-w-2xl wrap-break-word text-[16.5px] text-muted">
                   {paragraph}
                 </p>
               ))}
@@ -129,7 +129,7 @@ export default async function LocationsHubPage({ params }: { params: Promise<Par
 
         <section className="py-14 md:py-20">
           <Container>
-            <h2 className="mb-8 break-words text-[clamp(24px,3vw,34px)] font-bold tracking-tight text-dark">
+            <h2 className="mb-8 wrap-break-word text-[clamp(24px,3vw,34px)] font-bold tracking-tight text-dark">
               {t("citiesTitle")}
             </h2>
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -141,15 +141,15 @@ export default async function LocationsHubPage({ params }: { params: Promise<Par
                   <Reveal key={city.slug} delay={index * 50} className="h-full">
                     <Link
                       href={{ pathname: "/standorte/[slug]", params: { slug: city.slug } }}
-                      className="group flex h-full min-w-0 flex-col rounded-2xl border border-line bg-white p-6 transition-all hover:-translate-y-1 hover:border-brand-purple focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-purple"
+                      className="group flex h-full min-w-0 flex-col rounded-2xl border border-line bg-white p-6 transition-all hover:-translate-y-1 hover:border-brand-purple focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-purple"
                     >
                       <span className="grid h-11 w-11 place-items-center rounded-2xl bg-brand-soft text-brand-purple">
                         <MapPin size={20} aria-hidden />
                       </span>
-                      <h3 className="mt-5 break-words text-[19px] font-bold text-dark">
+                      <h3 className="mt-5 wrap-break-word text-[19px] font-bold text-dark">
                         {link.label}
                       </h3>
-                      <p className="mt-2 min-w-0 flex-1 break-words text-[14.5px] leading-relaxed text-muted">
+                      <p className="mt-2 min-w-0 flex-1 wrap-break-word text-[14.5px] leading-relaxed text-muted">
                         {link.description}
                       </p>
                       <span className="mt-5 inline-flex items-center gap-2 text-[14px] font-extrabold text-brand-purple">
@@ -172,10 +172,10 @@ export default async function LocationsHubPage({ params }: { params: Promise<Par
           <Container>
             <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
               <div className="min-w-0">
-                <h2 className="break-words text-[clamp(24px,3vw,34px)] font-bold tracking-tight text-dark">
+                <h2 className="wrap-break-word text-[clamp(24px,3vw,34px)] font-bold tracking-tight text-dark">
                   {t("areaTitle")}
                 </h2>
-                <p className="mt-4 break-words text-[16px] leading-relaxed text-muted">
+                <p className="mt-4 wrap-break-word text-[16px] leading-relaxed text-muted">
                   {t("areaText")}
                 </p>
               </div>
@@ -185,8 +185,8 @@ export default async function LocationsHubPage({ params }: { params: Promise<Par
                     key={index}
                     className="min-w-0 rounded-2xl border border-line bg-white p-5"
                   >
-                    <h3 className="break-words text-[15.5px] font-bold text-dark">{point.title}</h3>
-                    <p className="mt-2 break-words text-[14px] leading-relaxed text-muted">
+                    <h3 className="wrap-break-word text-[15.5px] font-bold text-dark">{point.title}</h3>
+                    <p className="mt-2 wrap-break-word text-[14px] leading-relaxed text-muted">
                       {point.text}
                     </p>
                   </div>
@@ -198,7 +198,7 @@ export default async function LocationsHubPage({ params }: { params: Promise<Par
 
         <section className="py-14 md:py-20">
           <Container>
-            <h2 className="mb-8 break-words text-[clamp(24px,3vw,34px)] font-bold tracking-tight text-dark">
+            <h2 className="mb-8 wrap-break-word text-[clamp(24px,3vw,34px)] font-bold tracking-tight text-dark">
               {t("faqTitle")}
             </h2>
             <div className="grid gap-3">
@@ -207,7 +207,7 @@ export default async function LocationsHubPage({ params }: { params: Promise<Par
                   key={index}
                   className="group min-w-0 rounded-2xl border border-line bg-white p-5 open:border-brand-purple"
                 >
-                  <summary className="flex cursor-pointer list-none items-start justify-between gap-4 break-words text-[16px] font-bold text-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-purple">
+                  <summary className="flex cursor-pointer list-none items-start justify-between gap-4 wrap-break-word text-[16px] font-bold text-dark focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-purple">
                     {item.q}
                     <span
                       aria-hidden
@@ -216,7 +216,7 @@ export default async function LocationsHubPage({ params }: { params: Promise<Par
                       +
                     </span>
                   </summary>
-                  <p className="mt-3 break-words text-[15px] leading-relaxed text-muted">{item.a}</p>
+                  <p className="mt-3 wrap-break-word text-[15px] leading-relaxed text-muted">{item.a}</p>
                 </details>
               ))}
             </div>

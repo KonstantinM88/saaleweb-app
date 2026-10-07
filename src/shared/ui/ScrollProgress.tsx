@@ -29,7 +29,7 @@ export function ScrollProgress() {
   return (
     <span
       aria-hidden
-      className="absolute bottom-[-1px] left-0 z-10 block h-[2px] rounded-r-full bg-brand"
+      className="absolute -bottom-px left-0 z-10 block h-[2px] rounded-r-full bg-brand"
       style={{ width: `${p * 100}%` }}
     />
   );

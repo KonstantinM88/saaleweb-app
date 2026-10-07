@@ -305,12 +305,12 @@ export default async function ProjectPage({
           <Container>
             <div className="hero-stagger max-w-3xl">
               <div className="flex flex-wrap gap-2">
-                <span className="inline-flex items-center gap-2 rounded-full border border-brand-purple/20 bg-brand-soft px-3.5 py-1.5 text-[13px] font-bold uppercase tracking-[0.08em] text-[#6D28D9] backdrop-blur-sm">
+                <span className="inline-flex items-center gap-2 rounded-full border border-brand-purple/20 bg-brand-soft px-3.5 py-1.5 text-[13px] font-bold uppercase tracking-[0.08em] text-[#6D28D9] backdrop-blur-xs">
                   <Sparkles size={14} aria-hidden />
                   {t("caseBadge")}
                 </span>
                 {data.tag && (
-                  <span className="inline-flex items-center gap-2 rounded-full border border-line bg-white/70 px-3.5 py-1.5 text-[13px] font-medium text-brand-purple backdrop-blur-sm">
+                  <span className="inline-flex items-center gap-2 rounded-full border border-line bg-white/70 px-3.5 py-1.5 text-[13px] font-medium text-brand-purple backdrop-blur-xs">
                     <Tag size={14} aria-hidden />
                     {data.tag}
                   </span>
@@ -337,7 +337,7 @@ export default async function ProjectPage({
                 priority
                 fit="cover"
                 imagePosition="object-top"
-                className="aspect-[16/10] rounded-[20px] sm:aspect-[16/9]"
+                className="aspect-16/10 rounded-[20px] sm:aspect-video"
               />
             </Reveal>
 
@@ -384,7 +384,7 @@ export default async function ProjectPage({
                 <div className="mt-4 grid gap-3 md:grid-cols-3">
                   {overviewItems.map((item) => (
                     <article key={item.label} className="rounded-2xl border border-line bg-surface p-4">
-                      <h2 className="font-mono text-[11px] font-bold uppercase tracking-[0.1em] text-brand-purple">
+                      <h2 className="font-mono text-[11px] font-bold uppercase tracking-widest text-brand-purple">
                         {item.label}
                       </h2>
                       <p className="mt-2 text-[14.5px] leading-relaxed text-ink">{item.value}</p>
@@ -466,7 +466,7 @@ export default async function ProjectPage({
                         href={data.externalUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-line bg-white px-5 py-3 text-[15px] font-semibold text-dark transition-all hover:-translate-y-0.5 hover:border-brand-purple/50 hover:text-brand-purple hover:shadow-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2"
+                        className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-line bg-white px-5 py-3 text-[15px] font-semibold text-dark transition-all hover:-translate-y-0.5 hover:border-brand-purple/50 hover:text-brand-purple hover:shadow-card focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2"
                       >
                         {externalLinkLabel}
                         <ExternalLink size={16} aria-hidden />
@@ -489,7 +489,7 @@ export default async function ProjectPage({
                     </div>
                     <a
                       href={auditHref}
-                      className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-line bg-white px-5 py-3 text-[15px] font-semibold text-dark transition-all hover:-translate-y-0.5 hover:border-brand-purple/50 hover:text-brand-purple hover:shadow-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2"
+                      className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-line bg-white px-5 py-3 text-[15px] font-semibold text-dark transition-all hover:-translate-y-0.5 hover:border-brand-purple/50 hover:text-brand-purple hover:shadow-card focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2"
                     >
                       {t("auditButton")}
                       <ArrowRight size={16} aria-hidden />
@@ -556,7 +556,7 @@ export default async function ProjectPage({
                       title={item.alt ?? data.title}
                       color={null}
                       hexColor={false}
-                      className="aspect-[16/10] rounded-[16px]"
+                      className="aspect-16/10 rounded-[16px]"
                     />
                   </Reveal>
                 ))}
@@ -624,7 +624,7 @@ export default async function ProjectPage({
                     </Magnetic>
                     <a
                       href={auditHref}
-                      className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/[0.15] bg-white/[0.08] px-7 py-3.5 text-[15px] font-semibold text-white transition-all hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/[0.12]"
+                      className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/8 px-7 py-3.5 text-[15px] font-semibold text-white transition-all hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/12"
                     >
                       {t("auditButton")}
                       <ArrowRight size={17} aria-hidden />
@@ -679,7 +679,7 @@ function ProjectRichText({
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 rounded-full border border-brand-purple/20 bg-brand-soft px-2.5 py-1 align-baseline text-[0.95em] font-semibold text-[#6D28D9] transition hover:-translate-y-0.5 hover:border-brand-purple/50 hover:bg-white hover:shadow-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2"
+              className="inline-flex items-center gap-1 rounded-full border border-brand-purple/20 bg-brand-soft px-2.5 py-1 align-baseline text-[0.95em] font-semibold text-[#6D28D9] transition hover:-translate-y-0.5 hover:border-brand-purple/50 hover:bg-white hover:shadow-card focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2"
             >
               {label}
               <ExternalLink size={14} aria-hidden />
@@ -745,7 +745,7 @@ function ProjectMedia({
               : "grid h-full w-full place-items-center bg-brand"
           }
         >
-          <span className="px-6 text-center text-2xl font-bold text-white/[0.85]">{title}</span>
+          <span className="px-6 text-center text-2xl font-bold text-white/85">{title}</span>
         </div>
       )}
     </div>

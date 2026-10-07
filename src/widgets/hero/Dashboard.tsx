@@ -127,9 +127,9 @@ export function Dashboard({ metrics }: { metrics: HeroMetrics }) {
     <div ref={ref} className="dash-enter relative">
       <div
         ref={tiltRef}
-        className="relative transition-transform duration-300 ease-out will-change-transform [transform-style:preserve-3d]"
+        className="relative transition-transform duration-300 ease-out will-change-transform transform-3d"
       >
-        <div className="absolute -top-4 right-0 z-10 [transform:translateZ(46px)] sm:-right-4 sm:-top-5">
+        <div className="absolute -top-4 right-0 z-10 transform-[translateZ(46px)] sm:-right-4 sm:-top-5">
           <div className="flex animate-bob items-center gap-2.5 rounded-xl border border-line bg-white px-3.5 py-2.5 text-[13px] font-semibold shadow-card motion-reduce:animate-none">
             <span aria-hidden className="grid h-7 w-7 place-items-center rounded-lg bg-brand text-white">
               ⚡
@@ -137,7 +137,7 @@ export function Dashboard({ metrics }: { metrics: HeroMetrics }) {
             {tf("a", { score: metrics.pageSpeed })}
           </div>
         </div>
-        <div className="absolute -bottom-4 left-0 z-10 [transform:translateZ(46px)] sm:-bottom-5 sm:-left-5">
+        <div className="absolute -bottom-4 left-0 z-10 transform-[translateZ(46px)] sm:-bottom-5 sm:-left-5">
           <div className="flex animate-bob items-center gap-2.5 rounded-xl border border-line bg-white px-3.5 py-2.5 text-[13px] font-semibold shadow-card [animation-delay:0.4s] motion-reduce:animate-none">
             <span aria-hidden className="grid h-7 w-7 place-items-center rounded-lg bg-brand text-white">
               ✓
@@ -190,7 +190,7 @@ export function Dashboard({ metrics }: { metrics: HeroMetrics }) {
               />
             </div>
 
-            <p className="mt-3.5 break-words text-[11px] leading-relaxed text-muted">
+            <p className="mt-3.5 wrap-break-word text-[11px] leading-relaxed text-muted">
               {t("source")} · {measuredAt}
             </p>
           </div>
@@ -220,18 +220,18 @@ function Metric({
   return (
     <div className="relative min-w-0 overflow-hidden rounded-[14px] border border-line bg-white p-4">
       {ring}
-      <div className="mb-2 break-words text-xs font-medium text-muted">{label}</div>
+      <div className="mb-2 wrap-break-word text-xs font-medium text-muted">{label}</div>
       <div
-        className={`break-words font-bold leading-tight tracking-tight text-dark ${
+        className={`wrap-break-word font-bold leading-tight tracking-tight text-dark ${
           text ? "text-[22px]" : "text-[30px] leading-none"
         }`}
       >
         {text ?? value}
         {suffix && <small className="text-[15px] font-semibold text-muted">{suffix}</small>}
       </div>
-      {trend && <div className="mt-1.5 break-words text-xs font-semibold text-emerald-700">{trend}</div>}
+      {trend && <div className="mt-1.5 wrap-break-word text-xs font-semibold text-emerald-700">{trend}</div>}
       {pill && (
-        <div className="mt-3 inline-flex max-w-full items-center break-words rounded-md bg-brand-soft px-2.5 py-1 font-mono text-[11px] font-semibold text-brand-purple">
+        <div className="mt-3 inline-flex max-w-full items-center wrap-break-word rounded-md bg-brand-soft px-2.5 py-1 font-mono text-[11px] font-semibold text-brand-purple">
           {pill}
         </div>
       )}

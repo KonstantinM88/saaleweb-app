@@ -37,8 +37,8 @@ export function Hero() {
 
       <Container className="grid items-center gap-10 md:grid-cols-[1.02fr_0.98fr] md:gap-14">
         <div>
-          <span className="hero-reveal hero-reveal-1 mb-6 inline-flex items-center gap-2 rounded-full border border-line bg-white/70 px-3.5 py-1.5 text-[13px] font-medium text-gray-700 backdrop-blur-sm">
-            <span className="h-[7px] w-[7px] rounded-full bg-success [animation:pulse-dot_2.4s_ease-out_infinite]" />
+          <span className="hero-reveal hero-reveal-1 mb-6 inline-flex items-center gap-2 rounded-full border border-line bg-white/70 px-3.5 py-1.5 text-[13px] font-medium text-gray-700 backdrop-blur-xs">
+            <span className="h-[7px] w-[7px] rounded-full bg-success animate-[pulse-dot_2.4s_ease-out_infinite]" />
             {t("badge")}
           </span>
 

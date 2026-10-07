@@ -35,7 +35,7 @@ export async function GrowthWindow() {
                 badges={badges}
               />
 
-              <div className="mx-auto mt-5 flex max-w-4xl flex-col gap-3 rounded-3xl border border-line bg-white/90 p-5 text-center shadow-card backdrop-blur md:flex-row md:items-center md:justify-between md:text-left">
+              <div className="mx-auto mt-5 flex max-w-4xl flex-col gap-3 rounded-3xl border border-line bg-white/90 p-5 text-center shadow-card backdrop-blur-sm md:flex-row md:items-center md:justify-between md:text-left">
                 <p className="text-sm leading-6 text-muted md:text-base">{t("caption")}</p>
                 <span className="mx-auto inline-flex shrink-0 rounded-full bg-brand-soft px-4 py-2 text-sm font-bold text-brand-purple md:mx-0">
                   {t("metric")}

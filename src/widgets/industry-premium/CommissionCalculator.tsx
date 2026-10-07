@@ -63,7 +63,7 @@ export function CommissionCalculator({ copy, locale, ctaHref }: Props) {
 
   return (
     <div className="hotel-calc grid gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8">
-      <div className="grid gap-6 rounded-[24px] border border-white/[0.10] bg-white/[0.04] p-6 md:p-7">
+      <div className="grid gap-6 rounded-[24px] border border-white/10 bg-white/4 p-6 md:p-7">
         <Slider
           id={`${id}-rate`}
           label={copy.rateLabel}
@@ -110,7 +110,7 @@ export function CommissionCalculator({ copy, locale, ctaHref }: Props) {
       <div className="grid content-start gap-4">
         <div
           aria-live="polite"
-          className="rounded-[24px] border border-white/[0.10] bg-white/[0.04] p-6 md:p-7"
+          className="rounded-[24px] border border-white/10 bg-white/4 p-6 md:p-7"
         >
           <p className="font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-white/55">
             {copy.commissionResult}
@@ -121,11 +121,11 @@ export function CommissionCalculator({ copy, locale, ctaHref }: Props) {
           <p className="mt-2 text-[13px] text-white/55">
             {copy.perYear} · {formatMoney(commissionMonth)} {copy.perMonth}
           </p>
-          <p className="mt-3 rounded-xl border border-white/[0.08] bg-black/10 px-3 py-2 font-mono text-[11.5px] leading-relaxed text-white/60">
+          <p className="mt-3 rounded-xl border border-white/8 bg-black/10 px-3 py-2 font-mono text-[11.5px] leading-relaxed text-white/60">
             <span className="font-bold text-white/75">{copy.calculationLabel}:</span>{" "}
             {formatMoney(rate)} × {bookings} {copy.perMonth} × 12 × {commission} %
           </p>
-          <p className="mt-4 border-t border-white/[0.08] pt-4 text-[13.5px] leading-relaxed text-white/65">
+          <p className="mt-4 border-t border-white/8 pt-4 text-[13.5px] leading-relaxed text-white/65">
             {copy.commissionHint}
           </p>
         </div>
@@ -138,7 +138,7 @@ export function CommissionCalculator({ copy, locale, ctaHref }: Props) {
             {formatMoney(shiftYear)}
           </p>
           <p className="mt-2 text-[13px] font-medium text-[#3A2A08]/75">{copy.perYear}</p>
-          <p className="mt-3 rounded-xl border border-[#241906]/[0.12] bg-white/20 px-3 py-2 font-mono text-[11.5px] leading-relaxed text-[#3A2A08]/75">
+          <p className="mt-3 rounded-xl border border-[#241906]/12 bg-white/20 px-3 py-2 font-mono text-[11.5px] leading-relaxed text-[#3A2A08]/75">
             <span className="font-bold text-[#241906]/85">{copy.calculationLabel}:</span>{" "}
             {formatMoney(commissionYear)} × {shift} % = {formatMoney(shiftYear)}
           </p>

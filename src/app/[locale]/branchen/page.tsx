@@ -586,7 +586,7 @@ export default async function IndustriesIndexPage({ params }: { params: Promise<
         <section className="relative overflow-hidden pb-12 pt-6 md:pb-20 md:pt-10">
           <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_12%_6%,rgba(255,79,163,0.10),transparent_34%),radial-gradient(circle_at_88%_0%,rgba(139,92,246,0.13),transparent_32%),linear-gradient(180deg,#fff_0%,#f7f8fb_100%)]" />
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(17,24,39,0.045)_1px,transparent_1px),linear-gradient(to_bottom,rgba(17,24,39,0.045)_1px,transparent_1px)] bg-[size:56px_56px] opacity-60 [mask-image:radial-gradient(ellipse_82%_58%_at_50%_0%,#000_22%,transparent_76%)]" />
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(17,24,39,0.045)_1px,transparent_1px),linear-gradient(to_bottom,rgba(17,24,39,0.045)_1px,transparent_1px)] bg-size-[56px_56px] opacity-60 mask-[radial-gradient(ellipse_82%_58%_at_50%_0%,#000_22%,transparent_76%)]" />
           </div>
           <Container>
             <div className="grid gap-10 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
@@ -615,7 +615,7 @@ export default async function IndustriesIndexPage({ params }: { params: Promise<
                   <Magnetic>
                     <a
                       href={auditHref}
-                      className="inline-flex items-center justify-center gap-2 rounded-xl border border-line bg-white px-6 py-3.5 text-[15px] font-semibold text-dark shadow-sm transition-all hover:-translate-y-0.5 hover:border-brand-purple hover:text-brand-purple"
+                      className="inline-flex items-center justify-center gap-2 rounded-xl border border-line bg-white px-6 py-3.5 text-[15px] font-semibold text-dark shadow-xs transition-all hover:-translate-y-0.5 hover:border-brand-purple hover:text-brand-purple"
                     >
                       {copy.secondaryCta}
                     </a>
@@ -624,10 +624,10 @@ export default async function IndustriesIndexPage({ params }: { params: Promise<
               </div>
 
               <Reveal direction="zoom" delay={80}>
-                <div className="relative overflow-hidden rounded-[30px] border border-white bg-white/[0.86] p-5 shadow-[0_34px_100px_-62px_rgba(139,92,246,0.75)] backdrop-blur md:p-6">
+                <div className="relative overflow-hidden rounded-[30px] border border-white bg-white/86 p-5 shadow-[0_34px_100px_-62px_rgba(139,92,246,0.75)] backdrop-blur-sm md:p-6">
                   <div aria-hidden className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_0%,rgba(255,79,163,0.14),transparent_34%),radial-gradient(circle_at_100%_100%,rgba(139,92,246,0.16),transparent_36%)]" />
                   <div className="relative grid gap-4">
-                    <div className="rounded-[24px] border border-line bg-white p-5 shadow-sm">
+                    <div className="rounded-[24px] border border-line bg-white p-5 shadow-xs">
                       <div className="flex items-center gap-3">
                         <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand text-white">
                           <Layers3 size={23} aria-hidden />
@@ -680,7 +680,7 @@ export default async function IndustriesIndexPage({ params }: { params: Promise<
                 <Reveal key={card.key} delay={(index % 3) * 70} className="h-full">
                   <a
                     href={industryHref(appLocale, card.key)}
-                    className="group card-border-glow block h-full rounded-[24px] border border-line bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-purple/20 hover:shadow-[0_26px_80px_-58px_rgba(139,92,246,0.78)] focus:outline-none focus:ring-2 focus:ring-brand-purple/20"
+                    className="group card-border-glow block h-full rounded-[24px] border border-line bg-white p-6 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-brand-purple/20 hover:shadow-[0_26px_80px_-58px_rgba(139,92,246,0.78)] focus:outline-hidden focus:ring-2 focus:ring-brand-purple/20"
                   >
                     <div className="flex items-start justify-between gap-4">
                       <span className="grid h-12 w-12 place-items-center rounded-2xl bg-brand-soft text-2xl">
@@ -734,7 +734,7 @@ export default async function IndustriesIndexPage({ params }: { params: Promise<
               <div className="grid gap-5 md:grid-cols-2">
                 {copy.optimizations.map((item, index) => (
                   <Reveal key={item.title} delay={(index % 2) * 70} className="h-full">
-                    <article className="h-full rounded-[22px] border border-line bg-white p-6 shadow-sm">
+                    <article className="h-full rounded-[22px] border border-line bg-white p-6 shadow-xs">
                       <div className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-soft text-brand-purple">
                         <Check size={20} aria-hidden />
                       </div>
@@ -763,7 +763,7 @@ export default async function IndustriesIndexPage({ params }: { params: Promise<
                 <Reveal key={project.key} delay={(index % 5) * 55} className="h-full">
                   <a
                     href={projectHref(appLocale, project.key)}
-                    className="group block h-full rounded-[22px] border border-line bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-purple/20 hover:shadow-[0_22px_70px_-54px_rgba(139,92,246,0.72)] focus:outline-none focus:ring-2 focus:ring-brand-purple/20"
+                    className="group block h-full rounded-[22px] border border-line bg-white p-5 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-brand-purple/20 hover:shadow-[0_22px_70px_-54px_rgba(139,92,246,0.72)] focus:outline-hidden focus:ring-2 focus:ring-brand-purple/20"
                   >
                     <p className="text-[12px] font-extrabold uppercase tracking-[0.18em] text-brand-purple">
                       {ui.project}
@@ -825,7 +825,7 @@ export default async function IndustriesIndexPage({ params }: { params: Promise<
             <div className="mx-auto grid max-w-4xl gap-4">
               {copy.faq.map((item, index) => (
                 <Reveal key={item.q} delay={(index % 3) * 60}>
-                  <article className="rounded-[20px] border border-line bg-white p-5 shadow-sm md:p-6">
+                  <article className="rounded-[20px] border border-line bg-white p-5 shadow-xs md:p-6">
                     <h3 className="text-[17px] font-extrabold text-dark">{item.q}</h3>
                     <p className="mt-2 text-[15px] leading-relaxed text-muted">
                       <BrandText text={item.a} />
@@ -843,7 +843,7 @@ export default async function IndustriesIndexPage({ params }: { params: Promise<
               <div className="relative overflow-hidden rounded-[28px] bg-dark p-8 text-center md:p-14">
                 <div aria-hidden className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,79,163,0.30),transparent_36%),radial-gradient(circle_at_90%_100%,rgba(139,92,246,0.26),transparent_36%)]" />
                 <div className="relative mx-auto max-w-3xl">
-                  <span className="mx-auto inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white/[0.10] text-brand-pink ring-1 ring-white/[0.14]">
+                  <span className="mx-auto inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-brand-pink ring-1 ring-white/[0.14]">
                     <Sparkles size={22} aria-hidden />
                   </span>
                   <h2 className="mt-5 text-[clamp(26px,3.8vw,46px)] font-extrabold tracking-tight text-white">
@@ -862,7 +862,7 @@ export default async function IndustriesIndexPage({ params }: { params: Promise<
                     </a>
                     <a
                       href={auditHref}
-                      className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/[0.16] bg-white/[0.08] px-6 py-3.5 text-[15px] font-semibold text-white transition-all hover:-translate-y-0.5 hover:border-white/[0.3] hover:bg-white/[0.12]"
+                      className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/16 bg-white/8 px-6 py-3.5 text-[15px] font-semibold text-white transition-all hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/12"
                     >
                       {copy.secondaryCta}
                     </a>

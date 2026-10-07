@@ -40,12 +40,12 @@ export function NewsletterForm({ variant = "footer" }: { variant?: "footer" | "b
               required
               autoComplete="email"
               placeholder={t("placeholder")}
-              className="h-11 w-full rounded-xl border border-line bg-white px-4 text-[14.5px] text-dark outline-none transition-colors placeholder:text-muted focus:border-brand-purple"
+              className="h-11 w-full rounded-xl border border-line bg-white px-4 text-[14.5px] text-dark outline-hidden transition-colors placeholder:text-muted focus:border-brand-purple"
             />
             <button
               type="submit"
               disabled={pending}
-              className="h-11 shrink-0 rounded-xl bg-gradient-to-r from-brand-pink to-brand-purple px-5 text-[14.5px] font-semibold text-white transition-opacity hover:opacity-90 disabled:opacity-60"
+              className="h-11 shrink-0 rounded-xl bg-linear-to-r from-brand-pink to-brand-purple px-5 text-[14.5px] font-semibold text-white transition-opacity hover:opacity-90 disabled:opacity-60"
             >
               {pending ? t("submitting") : t("button")}
             </button>

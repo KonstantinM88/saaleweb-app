@@ -231,7 +231,7 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
                 <img
                   src={data.coverImage}
                   alt={data.name}
-                  className="mt-10 aspect-[16/8] w-full rounded-[20px] border border-line object-cover"
+                  className="mt-10 aspect-16/8 w-full rounded-[20px] border border-line object-cover"
                 />
               </Reveal>
             )}

@@ -103,7 +103,7 @@ export function HotelLandingPage({ content, locale, path, parent, homeLabel, loc
             <div className="grid gap-12 lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:gap-10">
               <div className="hero-stagger">
                 <span className="eyebrow">{content.eyebrow}</span>
-                <h1 className="mt-4 text-[clamp(34px,5.6vw,62px)] font-extrabold leading-[1.04] tracking-[-0.025em] text-dark">
+                <h1 className="mt-4 text-[clamp(34px,5.6vw,62px)] font-extrabold leading-[1.04] tracking-tight text-dark">
                   <Accented text={content.h1} accent={content.h1Accent} />
                 </h1>
                 <p className="mt-6 max-w-xl text-[clamp(16.5px,1.7vw,19px)] leading-relaxed text-muted">
@@ -132,7 +132,7 @@ export function HotelLandingPage({ content, locale, path, parent, homeLabel, loc
                   <Magnetic>
                     <a
                       href={auditHref}
-                      className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-line bg-white px-6 py-3.5 text-[15px] font-semibold text-dark shadow-sm transition-all hover:-translate-y-0.5 hover:border-brand-purple hover:text-brand-purple"
+                      className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-line bg-white px-6 py-3.5 text-[15px] font-semibold text-dark shadow-xs transition-all hover:-translate-y-0.5 hover:border-brand-purple hover:text-brand-purple"
                     >
                       {content.ctaSecondary}
                     </a>
@@ -186,7 +186,7 @@ export function HotelLandingPage({ content, locale, path, parent, homeLabel, loc
           <Container>
             <Reveal className="max-w-3xl">
               <span className="eyebrow">{content.channels.eyebrow}</span>
-              <h2 className="mt-4 text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-[-0.025em] text-dark">
+              <h2 className="mt-4 text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-tight text-dark">
                 {content.channels.title}
               </h2>
               <p className="mt-5 text-[16.5px] leading-relaxed text-muted">{content.channels.intro}</p>
@@ -263,7 +263,7 @@ export function HotelLandingPage({ content, locale, path, parent, homeLabel, loc
               <span className="font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-[#E8C071]">
                 {content.calculator.eyebrow}
               </span>
-              <h2 className="mt-4 text-[clamp(27px,3.8vw,44px)] font-extrabold leading-[1.08] tracking-[-0.025em] text-white">
+              <h2 className="mt-4 text-[clamp(27px,3.8vw,44px)] font-extrabold leading-[1.08] tracking-tight text-white">
                 {content.calculator.title}
               </h2>
               <p className="mt-5 text-[16px] leading-relaxed text-white/65">{content.calculator.intro}</p>
@@ -283,7 +283,7 @@ export function HotelLandingPage({ content, locale, path, parent, homeLabel, loc
           <Container>
             <Reveal className="max-w-3xl">
               <span className="eyebrow">{content.journey.eyebrow}</span>
-              <h2 className="mt-4 text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-[-0.025em] text-dark">
+              <h2 className="mt-4 text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-tight text-dark">
                 {content.journey.title}
               </h2>
               <p className="mt-5 text-[16.5px] leading-relaxed text-muted">{content.journey.intro}</p>
@@ -330,7 +330,7 @@ export function HotelLandingPage({ content, locale, path, parent, homeLabel, loc
           <Container>
             <Reveal className="max-w-3xl">
               <span className="eyebrow">{content.roomPage.eyebrow}</span>
-              <h2 className="mt-4 text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-[-0.025em] text-dark">
+              <h2 className="mt-4 text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-tight text-dark">
                 {content.roomPage.title}
               </h2>
               <p className="mt-5 text-[16.5px] leading-relaxed text-muted">{content.roomPage.intro}</p>
@@ -365,7 +365,7 @@ export function HotelLandingPage({ content, locale, path, parent, homeLabel, loc
           <Container>
             <Reveal className="max-w-3xl">
               <span className="eyebrow">{content.build.eyebrow}</span>
-              <h2 className="mt-4 text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-[-0.025em] text-dark">
+              <h2 className="mt-4 text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-tight text-dark">
                 {content.build.title}
               </h2>
               <p className="mt-5 text-[16.5px] leading-relaxed text-muted">{content.build.intro}</p>
@@ -392,7 +392,7 @@ export function HotelLandingPage({ content, locale, path, parent, homeLabel, loc
           <Container>
             <Reveal className="max-w-3xl">
               <span className="eyebrow">{content.visibility.eyebrow}</span>
-              <h2 className="mt-4 text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-[-0.025em] text-dark">
+              <h2 className="mt-4 text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-tight text-dark">
                 {content.visibility.title}
               </h2>
               <p className="mt-5 text-[16.5px] leading-relaxed text-muted">{content.visibility.intro}</p>
@@ -437,7 +437,7 @@ export function HotelLandingPage({ content, locale, path, parent, homeLabel, loc
           <Container>
             <Reveal className="max-w-3xl">
               <span className="eyebrow">{content.tech.eyebrow}</span>
-              <h2 className="mt-4 text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-[-0.025em] text-dark">
+              <h2 className="mt-4 text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-tight text-dark">
                 {content.tech.title}
               </h2>
               <p className="mt-5 text-[16.5px] leading-relaxed text-muted">{content.tech.intro}</p>
@@ -478,7 +478,7 @@ export function HotelLandingPage({ content, locale, path, parent, homeLabel, loc
           <Container>
             <Reveal className="max-w-3xl">
               <span className="eyebrow">{content.legal.eyebrow}</span>
-              <h2 className="mt-4 text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-[-0.025em] text-dark">
+              <h2 className="mt-4 text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-tight text-dark">
                 {content.legal.title}
               </h2>
             </Reveal>
@@ -533,7 +533,7 @@ export function HotelLandingPage({ content, locale, path, parent, homeLabel, loc
                       </a>
                       <a
                         href={content.reference.linkHref}
-                        className="group inline-flex min-h-11 items-center gap-2 rounded-xl border border-white/[0.18] bg-white/[0.08] px-5 py-3 text-[14.5px] font-semibold text-white transition-all hover:-translate-y-0.5 hover:border-white/[0.32]"
+                        className="group inline-flex min-h-11 items-center gap-2 rounded-xl border border-white/18 bg-white/8 px-5 py-3 text-[14.5px] font-semibold text-white transition-all hover:-translate-y-0.5 hover:border-white/32"
                       >
                         {content.reference.linkLabel}
                         <ArrowRight
@@ -548,7 +548,7 @@ export function HotelLandingPage({ content, locale, path, parent, homeLabel, loc
                     {content.reference.bullets.map((bullet) => (
                       <li
                         key={bullet}
-                        className="flex gap-3 rounded-[18px] border border-white/[0.10] bg-white/[0.05] p-4 text-[14.5px] leading-relaxed text-white/80"
+                        className="flex gap-3 rounded-[18px] border border-white/10 bg-white/5 p-4 text-[14.5px] leading-relaxed text-white/80"
                       >
                         <Sparkles size={16} className="mt-0.5 shrink-0 text-[#E8C071]" aria-hidden />
                         {bullet}
@@ -566,7 +566,7 @@ export function HotelLandingPage({ content, locale, path, parent, homeLabel, loc
           <Container>
             <Reveal className="max-w-3xl">
               <span className="eyebrow">{content.packages.eyebrow}</span>
-              <h2 className="mt-4 text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-[-0.025em] text-dark">
+              <h2 className="mt-4 text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-tight text-dark">
                 {content.packages.title}
               </h2>
               <p className="mt-5 text-[16.5px] leading-relaxed text-muted">{content.packages.intro}</p>
@@ -622,7 +622,7 @@ export function HotelLandingPage({ content, locale, path, parent, homeLabel, loc
           <Container>
             <Reveal className="mx-auto max-w-3xl text-center">
               <span className="eyebrow">{content.faq.eyebrow}</span>
-              <h2 className="mt-4 text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-[-0.025em] text-dark">
+              <h2 className="mt-4 text-[clamp(27px,3.8vw,42px)] font-extrabold leading-[1.1] tracking-tight text-dark">
                 {content.faq.title}
               </h2>
             </Reveal>
@@ -657,7 +657,7 @@ export function HotelLandingPage({ content, locale, path, parent, homeLabel, loc
           <Container>
             <Reveal className="max-w-3xl">
               <span className="eyebrow">{content.related.eyebrow}</span>
-              <h2 className="mt-4 text-[clamp(24px,3.2vw,36px)] font-extrabold leading-[1.1] tracking-[-0.025em] text-dark">
+              <h2 className="mt-4 text-[clamp(24px,3.2vw,36px)] font-extrabold leading-[1.1] tracking-tight text-dark">
                 {content.related.title}
               </h2>
             </Reveal>
@@ -692,7 +692,7 @@ export function HotelLandingPage({ content, locale, path, parent, homeLabel, loc
                   className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(217,164,65,0.22),transparent_40%),radial-gradient(circle_at_88%_100%,rgba(139,92,246,0.26),transparent_38%)]"
                 />
                 <div className="relative mx-auto max-w-2xl">
-                  <h2 className="text-[clamp(25px,3.6vw,44px)] font-extrabold leading-[1.08] tracking-[-0.025em] text-white">
+                  <h2 className="text-[clamp(25px,3.6vw,44px)] font-extrabold leading-[1.08] tracking-tight text-white">
                     {content.final.title}
                   </h2>
                   <p className="mx-auto mt-5 text-[16px] leading-relaxed text-white/65">{content.final.text}</p>
@@ -706,7 +706,7 @@ export function HotelLandingPage({ content, locale, path, parent, homeLabel, loc
                     </a>
                     <a
                       href={auditHref}
-                      className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-white/[0.16] bg-white/[0.08] px-6 py-3.5 text-[15px] font-semibold text-white transition-all hover:-translate-y-0.5 hover:border-white/[0.32]"
+                      className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-white/16 bg-white/8 px-6 py-3.5 text-[15px] font-semibold text-white transition-all hover:-translate-y-0.5 hover:border-white/32"
                     >
                       {content.final.secondary}
                     </a>
@@ -767,7 +767,7 @@ function BookingBarMock({ bar }: { bar: HotelLandingContent["bookingBar"] }) {
           {fields.map(({ label, value, Icon }) => (
             <div
               key={label}
-              className="flex items-center gap-3 rounded-2xl border border-white/[0.10] bg-white/[0.05] px-4 py-3"
+              className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3"
             >
               <Icon size={17} className="shrink-0 text-[#E8C071]" />
               <div>
@@ -780,7 +780,7 @@ function BookingBarMock({ bar }: { bar: HotelLandingContent["bookingBar"] }) {
             href={HOTEL_BOOKING_PREVIEW_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="hotel-brass-card group mt-1 flex min-h-[58px] items-center justify-between gap-4 rounded-2xl px-4 py-3 text-[#241906] outline-none transition-transform hover:-translate-y-0.5 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#101827]"
+            className="hotel-brass-card group mt-1 flex min-h-[58px] items-center justify-between gap-4 rounded-2xl px-4 py-3 text-[#241906] outline-hidden transition-transform hover:-translate-y-0.5 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#101827]"
           >
             <span className="min-w-0">
               <span className="block text-[15px] font-bold">{bar.submit}</span>
@@ -796,7 +796,7 @@ function BookingBarMock({ bar }: { bar: HotelLandingContent["bookingBar"] }) {
           </a>
         </div>
 
-        <div className="mt-5 flex items-end justify-between gap-4 border-t border-white/[0.10] pt-5">
+        <div className="mt-5 flex items-end justify-between gap-4 border-t border-white/10 pt-5">
           <div>
             <p className="text-[13.5px] text-white/55">{bar.rateLabel}</p>
             <p className="hotel-figure mt-1 text-[26px] font-extrabold text-white">{bar.rateValue}</p>
@@ -804,7 +804,7 @@ function BookingBarMock({ bar }: { bar: HotelLandingContent["bookingBar"] }) {
           <p className="max-w-[190px] text-right text-[11.5px] leading-relaxed text-white/35">{bar.rateHint}</p>
         </div>
 
-        <p className="mt-5 flex gap-2.5 rounded-2xl bg-white/[0.05] p-4 text-[13.5px] leading-relaxed text-white/70">
+        <p className="mt-5 flex gap-2.5 rounded-2xl bg-white/5 p-4 text-[13.5px] leading-relaxed text-white/70">
           <ShieldCheck size={16} className="mt-0.5 shrink-0 text-[#E8C071]" aria-hidden />
           {bar.note}
         </p>
@@ -830,7 +830,7 @@ function RoomPageMock({ mock }: { mock: HotelLandingContent["roomPage"]["mock"] 
       </div>
 
       <div className="relative mt-5">
-        <div className="relative aspect-[16/9] overflow-hidden rounded-[18px] border border-line bg-surface">
+        <div className="relative aspect-video overflow-hidden rounded-[18px] border border-line bg-surface">
           <Image
             src="/images/industries/hotel-comfort-room.webp"
             alt={mock.imageAlt}

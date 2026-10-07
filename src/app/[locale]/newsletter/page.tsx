@@ -72,7 +72,7 @@ export default async function NewsletterStatusPage({
                   <div className="mt-8">
                     <Link
                       href="/"
-                      className="inline-flex h-11 items-center rounded-xl bg-gradient-to-r from-brand-pink to-brand-purple px-6 text-[14.5px] font-semibold text-white transition-opacity hover:opacity-90"
+                      className="inline-flex h-11 items-center rounded-xl bg-linear-to-r from-brand-pink to-brand-purple px-6 text-[14.5px] font-semibold text-white transition-opacity hover:opacity-90"
                     >
                       {t("backHome")}
                     </Link>

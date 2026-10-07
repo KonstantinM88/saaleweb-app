@@ -39,7 +39,7 @@ export function AdminLanguageSwitch({
             "rounded-lg font-bold transition-colors disabled:opacity-60",
             compact ? "px-2 py-1 text-[11px]" : "px-2.5 py-1.5 text-xs",
             locale === option.value
-              ? "bg-white text-brand-purple shadow-sm"
+              ? "bg-white text-brand-purple shadow-xs"
               : "text-muted hover:text-dark",
           )}
         >

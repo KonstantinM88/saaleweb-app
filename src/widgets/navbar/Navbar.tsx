@@ -116,7 +116,7 @@ export function Navbar() {
             <a
               href={getContactHref(locale)}
               onClick={() => setOpen(false)}
-              className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand px-5 py-3 !text-white"
+              className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand px-5 py-3 text-white!"
             >
               {t("cta")}
             </a>

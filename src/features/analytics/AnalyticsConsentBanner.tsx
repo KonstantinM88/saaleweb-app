@@ -59,7 +59,7 @@ export function AnalyticsConsentBanner({
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="fixed bottom-3 left-3 z-[75] rounded-full border border-line bg-white/90 px-3 py-2 text-[11px] font-bold text-slate-600 shadow-lg backdrop-blur transition hover:border-brand-purple/40 hover:text-brand-purple focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-purple"
+        className="fixed bottom-3 left-3 z-75 rounded-full border border-line bg-white/90 px-3 py-2 text-[11px] font-bold text-slate-600 shadow-lg backdrop-blur-sm transition hover:border-brand-purple/40 hover:text-brand-purple focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-purple"
       >
         {labels.settings}
       </button>
@@ -70,7 +70,7 @@ export function AnalyticsConsentBanner({
     <aside
       aria-live="polite"
       aria-label={labels.title}
-      className="fixed inset-x-3 bottom-3 z-[100] mx-auto max-w-2xl rounded-[22px] border border-white/70 bg-slate-950/[0.96] p-5 text-white shadow-[0_28px_90px_-34px_rgba(15,23,42,0.92)] backdrop-blur-xl sm:bottom-5 sm:p-6"
+      className="fixed inset-x-3 bottom-3 z-100 mx-auto max-w-2xl rounded-[22px] border border-white/70 bg-slate-950/96 p-5 text-white shadow-[0_28px_90px_-34px_rgba(15,23,42,0.92)] backdrop-blur-xl sm:bottom-5 sm:p-6"
     >
       <p className="text-base font-extrabold">{labels.title}</p>
       <p className="mt-2 text-[13px] leading-relaxed text-slate-300">{labels.text}</p>

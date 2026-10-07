@@ -141,7 +141,7 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
           <Container>
             <header className="mx-auto max-w-3xl">
               {post.category && (
-                <span className="font-mono text-xs font-semibold uppercase tracking-[0.1em] text-brand-purple">
+                <span className="font-mono text-xs font-semibold uppercase tracking-widest text-brand-purple">
                   {post.category.name}
                 </span>
               )}

@@ -109,7 +109,7 @@ export function InquiryQualityDemo({ copy, ctaHref }: Props) {
             </span>
           </div>
 
-          <p className="mt-4 rounded-[16px] bg-[#123A5E]/[0.05] p-4 text-[15px] italic leading-relaxed text-[#40607F]">
+          <p className="mt-4 rounded-[16px] bg-[#123A5E]/5 p-4 text-[15px] italic leading-relaxed text-[#40607F]">
             {copy.badMessage}
           </p>
 
@@ -153,7 +153,7 @@ export function InquiryQualityDemo({ copy, ctaHref }: Props) {
           </p>
         </article>
 
-        <div className="rounded-[24px] border border-[#2D6CA3]/25 bg-[#2D6CA3]/[0.06] p-6 md:p-7">
+        <div className="rounded-[24px] border border-[#2D6CA3]/25 bg-[#2D6CA3]/6 p-6 md:p-7">
           <p className="font-mono text-[10.5px] font-bold uppercase tracking-[0.16em] text-[#2D6CA3]">
             {copy.outcomeTitle}
           </p>
@@ -167,7 +167,7 @@ export function InquiryQualityDemo({ copy, ctaHref }: Props) {
           </ul>
           <a
             href={ctaHref}
-            className="group mt-6 inline-flex min-h-11 items-center gap-2 rounded-xl bg-[#123A5E] px-5 py-3 text-[14.5px] font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-[#1B4E7A] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2D6CA3] motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+            className="group mt-6 inline-flex min-h-11 items-center gap-2 rounded-xl bg-[#123A5E] px-5 py-3 text-[14.5px] font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-[#1B4E7A] focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2D6CA3] motion-reduce:transition-none motion-reduce:hover:translate-y-0"
           >
             {copy.cta}
             <ArrowRight

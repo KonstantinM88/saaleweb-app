@@ -128,7 +128,7 @@ function GoogleReviewCard({
             href={review.authorUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 rounded-xl transition hover:text-brand-purple focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple/45"
+            className="inline-flex items-center gap-3 rounded-xl transition hover:text-brand-purple focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-brand-purple/45"
           >
             {author}
           </a>
@@ -223,7 +223,7 @@ function GoogleReviewSummary({
             href={siteConfig.googleBusiness.reviewUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-pink to-brand-purple px-4 text-sm font-bold text-white shadow-[0_10px_24px_rgba(139,92,246,0.2)] transition hover:-translate-y-0.5"
+            className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-linear-to-r from-brand-pink to-brand-purple px-4 text-sm font-bold text-white shadow-[0_10px_24px_rgba(139,92,246,0.2)] transition hover:-translate-y-0.5"
           >
             {t("leaveReview")}
             <ExternalLink size={15} aria-hidden="true" />

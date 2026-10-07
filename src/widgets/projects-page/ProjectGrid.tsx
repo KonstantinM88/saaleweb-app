@@ -16,9 +16,9 @@ export type ProjectCard = {
 
 const fallbackCovers = [
   "bg-brand",
-  "bg-gradient-to-br from-sky-500 to-brand-purple",
-  "bg-gradient-to-br from-amber-500 to-brand-pink",
-  "bg-gradient-to-br from-emerald-500 to-brand-purple",
+  "bg-linear-to-br from-sky-500 to-brand-purple",
+  "bg-linear-to-br from-amber-500 to-brand-pink",
+  "bg-linear-to-br from-emerald-500 to-brand-purple",
 ];
 
 function fallbackCover(slug: string) {
@@ -34,7 +34,7 @@ function ProjectCover({ item }: { item: ProjectCard }) {
   return (
     <div
       className={cn(
-        "relative aspect-[3/2] overflow-hidden",
+        "relative aspect-3/2 overflow-hidden",
         item.cover.image ? "bg-[#fbf7fc]" : colorClass,
       )}
       style={!item.cover.image && hex ? { background: item.cover.color ?? undefined } : undefined}
@@ -62,7 +62,7 @@ function ProjectCover({ item }: { item: ProjectCard }) {
         </span>
       )}
 
-      <span className="absolute right-3 top-3 grid h-9 w-9 place-items-center rounded-full bg-white/[0.92] text-dark opacity-0 shadow-card transition-all duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+      <span className="absolute right-3 top-3 grid h-9 w-9 place-items-center rounded-full bg-white/92 text-dark opacity-0 shadow-card transition-all duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
         <ArrowUpRight size={17} aria-hidden />
       </span>
     </div>
@@ -118,7 +118,7 @@ export function ProjectGrid({
           <Link
             key={item.slug}
             href={{ pathname: "/projekte/[slug]", params: { slug: item.slug } }}
-            className="group flex h-full flex-col overflow-hidden rounded-[18px] border border-line bg-white transition-all duration-300 hover:-translate-y-1.5 hover:border-transparent hover:shadow-lift focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2"
+            className="group flex h-full flex-col overflow-hidden rounded-[18px] border border-line bg-white transition-all duration-300 hover:-translate-y-1.5 hover:border-transparent hover:shadow-lift focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2"
           >
             <ProjectCover item={item} />
             <div className="flex flex-1 flex-col p-[18px]">
@@ -164,7 +164,7 @@ function FilterChip({
       aria-pressed={active}
       onClick={onClick}
       className={cn(
-        "rounded-full border px-4 py-2 text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2",
+        "rounded-full border px-4 py-2 text-sm font-medium transition-all focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2",
         active
           ? "border-transparent bg-dark text-white"
           : "border-line bg-white text-ink hover:border-brand-purple hover:text-brand-purple",

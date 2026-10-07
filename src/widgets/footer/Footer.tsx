@@ -80,7 +80,7 @@ export function Footer() {
                 href={siteConfig.googleBusiness.directionsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-1.5 inline-block font-semibold text-[#6D28D9] underline-offset-4 transition hover:underline focus-visible:rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#6D28D9]"
+                className="mt-1.5 inline-block font-semibold text-[#6D28D9] underline-offset-4 transition hover:underline focus-visible:rounded-xs focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#6D28D9]"
               >
                 {t("route")}
               </a>
@@ -123,7 +123,7 @@ export function Footer() {
             <Link href="/preise">{tn("pricing")}</Link>
             <Link
               href="/audit"
-              className="btn-shine mt-1 inline-flex w-fit items-center justify-center rounded-xl bg-brand px-4 py-2.5 text-[13.5px] font-extrabold !text-white shadow-[0_16px_34px_-22px_rgba(139,92,246,0.85)] transition hover:-translate-y-0.5 hover:!text-white"
+              className="btn-shine mt-1 inline-flex w-fit items-center justify-center rounded-xl bg-brand px-4 py-2.5 text-[13.5px] font-extrabold text-white! shadow-[0_16px_34px_-22px_rgba(139,92,246,0.85)] transition hover:-translate-y-0.5 hover:text-white!"
             >
               {tn("audit")}
             </Link>

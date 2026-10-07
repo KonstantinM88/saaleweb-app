@@ -54,7 +54,7 @@ export function WhatsAppFloatingCta({ labels }: { labels: WhatsAppFloatingCtaLab
   return (
     <a
       aria-label={labels.aria}
-      className={`group fixed bottom-[calc(1rem+env(safe-area-inset-bottom))] right-4 z-[70] flex items-center gap-3 rounded-full border border-white/35 bg-white/90 p-2 pr-2 text-dark shadow-[0_22px_60px_-26px_rgba(17,24,39,0.55)] backdrop-blur-xl transition duration-500 ease-out hover:-translate-y-1 hover:border-[#25D366]/60 hover:shadow-[0_24px_64px_-24px_rgba(37,211,102,0.45)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#25D366] motion-reduce:transition-none sm:right-6 sm:p-2.5 sm:pr-4 md:bottom-[calc(1.5rem+env(safe-area-inset-bottom))] md:right-7 ${
+      className={`group fixed bottom-[calc(1rem+env(safe-area-inset-bottom))] right-4 z-70 flex items-center gap-3 rounded-full border border-white/35 bg-white/90 p-2 pr-2 text-dark shadow-[0_22px_60px_-26px_rgba(17,24,39,0.55)] backdrop-blur-xl transition duration-500 ease-out hover:-translate-y-1 hover:border-[#25D366]/60 hover:shadow-[0_24px_64px_-24px_rgba(37,211,102,0.45)] focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#25D366] motion-reduce:transition-none sm:right-6 sm:p-2.5 sm:pr-4 md:bottom-[calc(1.5rem+env(safe-area-inset-bottom))] md:right-7 ${
         visible ? "translate-y-0 scale-100 opacity-100" : "translate-y-4 scale-95 opacity-0"
       }`}
       href={href}

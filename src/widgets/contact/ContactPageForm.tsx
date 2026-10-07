@@ -33,7 +33,7 @@ export function ContactPageForm() {
   const budgetOptions = t.raw("budgetOptions") as SelectOption[];
 
   const baseFieldClass =
-    "w-full rounded-2xl border border-line bg-white px-4 py-3.5 text-[15px] text-ink outline-none transition placeholder:text-muted/70 focus:border-brand-purple focus:ring-4 focus:ring-brand-purple/15";
+    "w-full rounded-2xl border border-line bg-white px-4 py-3.5 text-[15px] text-ink outline-hidden transition placeholder:text-muted/70 focus:border-brand-purple focus:ring-4 focus:ring-brand-purple/15";
   const labelClass = "mb-2 block text-sm font-semibold text-dark";
   const fieldClass = (field: FieldName | "default" = "default") =>
     `${baseFieldClass} ${
@@ -267,7 +267,7 @@ export function ContactPageForm() {
           type="checkbox"
           name="privacy"
           value="accepted"
-          className="mt-1 h-4 w-4 rounded border-line text-brand-purple focus:ring-brand-purple"
+          className="mt-1 h-4 w-4 rounded-sm border-line text-brand-purple focus:ring-brand-purple"
           aria-invalid={Boolean(fieldErrors.privacy)}
           aria-describedby={fieldErrors.privacy ? "contact-privacy-error" : undefined}
           onChange={() => clearFieldError("privacy")}
