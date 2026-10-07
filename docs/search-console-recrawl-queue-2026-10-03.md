@@ -78,7 +78,7 @@ URL Inspection API для двух DE-страниц вернул `PASS`, «Subm
 
 ## Canonical mismatch WordPress RU, 07.10
 
-URL Inspection подтвердил, что для `https://saaleweb.de/ru/uslugi/modernizaciya-wordpress-sayta` Google выбрал старый alias с `sajta`. Старый alias после деплоя перенаправляется `308` на canonical, а внутренняя ссылка исправлена. Sitemap содержит только canonical. После production-проверки повторно отправить sitemap; в интерфейсе GSC один раз проверить canonical URL, запросить индексирование и запустить «Проверить исправление» для группы несовпадающих canonical. Подробности: [аудит](./search-console-canonical-audit-2026-10-07.md).
+URL Inspection подтвердил, что для `https://saaleweb.de/ru/uslugi/modernizaciya-wordpress-sayta` Google выбрал старый alias с `sajta`. После деплоя `217377b` старый alias перенаправляется `308` на canonical, внутренняя ссылка исправлена, а sitemap содержит только canonical. Sitemap повторно отправлен через GSC API 07.10 в **17:57 UTC**: HTTP 204, `isPending=true`, 0 ошибок и предупреждений. В интерфейсе GSC один раз проверить canonical URL, запросить индексирование и запустить «Проверить исправление» для группы несовпадающих canonical. Подробности: [аудит](./search-console-canonical-audit-2026-10-07.md).
 
 ## T1: ранние загрузки mobile, 04.10
 

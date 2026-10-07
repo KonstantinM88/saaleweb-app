@@ -27,9 +27,19 @@ URL Inspection API подтвердил состояние индексиров�
   - `/ru/uslugi/modernizaciya-wordpress-sajta` → `/ru/uslugi/modernizaciya-wordpress-sayta`
   - `/ru/uslugi/podderzhka-sajta` → `/ru/uslugi/podderzhka-saytov`
 
-## После деплоя
+## Проверка после деплоя
 
-Проверить production-ответы, повторно отправить sitemap и один раз выполнить в GSC:
+Коммит `217377b` опубликован в обоих репозиториях. На production проверено:
+
+- все шесть alias возвращают `308` на соответствующий canonical;
+- DE/EN/RU WordPress-страницы возвращают `200` и self-canonical;
+- каждая страница содержит четыре HTML alternate: `de`, `en`, `ru`, `x-default`;
+- конфликтующий HTTP `Link` на динамических страницах отсутствует;
+- sitemap содержит canonical `sayta` и `wordpress-website-modernization`, а старые alias `sajta` и `modernize-wordpress-website` отсутствуют.
+
+Sitemap повторно отправлен через Search Console API `2026-10-07T17:57:56.969Z`: HTTP `204`. Сразу после отправки: `isPending=true`, `errors=0`, `warnings=0`.
+
+## Действия в интерфейсе GSC
 
 1. Проверить URL `https://saaleweb.de/ru/uslugi/modernizaciya-wordpress-sayta`.
 2. Запросить индексирование canonical URL.
