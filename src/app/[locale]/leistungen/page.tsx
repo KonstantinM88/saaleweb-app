@@ -36,6 +36,7 @@ import type { ServiceCardData } from "@/widgets/services-page/ServiceCard";
 import { FaqAccordion, type QA } from "@/widgets/faq/FaqAccordion";
 import { Phase4LinkCluster, type Phase4HubCopy } from "@/widgets/seo-landing/Phase4LinkCluster";
 import { getPhase4LocationLinks, getPhase4ServiceLinks } from "@/widgets/seo-landing/phase4Content";
+import { isMergedServiceSlug } from "@/widgets/seo-landing/serviceMerges";
 
 export const revalidate = 300;
 
@@ -89,13 +90,15 @@ async function getItems(locale: AppLocale): Promise<ServiceCardData[]> {
         translations: { slug: string }[];
       };
     }[];
-    return rows.map((row) => ({
-      name: row.name,
-      slug: row.slug,
-      metaSlug: row.service.translations[0]?.slug ?? row.slug,
-      excerpt: row.excerpt,
-      coverImage: row.service.coverImage,
-    }));
+    return rows
+      .filter((row) => !isMergedServiceSlug(locale, row.slug))
+      .map((row) => ({
+        name: row.name,
+        slug: row.slug,
+        metaSlug: row.service.translations[0]?.slug ?? row.slug,
+        excerpt: row.excerpt,
+        coverImage: row.service.coverImage,
+      }));
   } catch {
     return [];
   }

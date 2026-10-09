@@ -8,6 +8,7 @@ import { prisma } from "@/lib/prisma";
 import { isSitemapIndexablePath } from "@/shared/seo/crawl";
 import { getSeoIndustrySlugGroups, getSeoServiceSlugGroups } from "@/widgets/seo-landing/phase4Content";
 import { isMergedIndustrySlug } from "@/widgets/seo-landing/industryMerges";
+import { isMergedServiceSlug } from "@/widgets/seo-landing/serviceMerges";
 
 const BASE = siteConfig.url;
 const abs = (p: string) => `${BASE}${p}`;
@@ -131,7 +132,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       where: { service: { published: true } },
       select: { locale: true, slug: true, serviceId: true },
     })) as { locale: string; slug: string; serviceId: string }[];
-    entries.push(...groupDbEntries(services, (r) => r.serviceId, "/leistungen/[slug]"));
+    entries.push(
+      ...groupDbEntries(
+        services.filter((row) => !isMergedServiceSlug(row.locale, row.slug)),
+        (r) => r.serviceId,
+        "/leistungen/[slug]",
+      ),
+    );
 
     const industries = (
       (await prisma.industryTranslation.findMany({

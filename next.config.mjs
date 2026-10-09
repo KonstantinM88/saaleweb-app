@@ -19,6 +19,16 @@ const permanentCompatibilityRedirects = [
     destination: "/ru/uslugi/modernizaciya-wordpress-sayta",
   },
   { source: "/ru/uslugi/podderzhka-sajta", destination: "/ru/uslugi/podderzhka-saytov" },
+
+  // Service consolidation, 2026-10-09. Mirrors
+  // src/widgets/seo-landing/serviceMerges.ts. The CMS-backed Performance page
+  // duplicates the richer performance-optimization landing page.
+  { source: "/leistungen/performance", destination: "/leistungen/performance-optimierung" },
+  { source: "/en/services/performance", destination: "/en/services/performance-optimization" },
+  {
+    source: "/ru/uslugi/proizvoditelnost",
+    destination: "/ru/uslugi/optimizaciya-proizvoditelnosti",
+  },
   {
     source: "/leistungen/modernizaciya-wordpress-sajta",
     destination: "/leistungen/wordpress-website-modernisieren",

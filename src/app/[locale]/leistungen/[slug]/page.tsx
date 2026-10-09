@@ -25,6 +25,7 @@ import {
   getSeoServiceSlugMapByLocalizedSlug,
   getSeoServiceStaticParams,
 } from "@/widgets/seo-landing/phase4Content";
+import { isMergedServiceSlug } from "@/widgets/seo-landing/serviceMerges";
 
 type Params = { locale: string; slug: string };
 
@@ -35,7 +36,12 @@ export async function generateStaticParams() {
       where: { service: { published: true } },
       select: { locale: true, slug: true },
     })) as { locale: string; slug: string }[];
-    const params = [...rows.map((r) => ({ locale: r.locale, slug: r.slug })), ...staticParams];
+    const params = [
+      ...rows
+        .filter((r) => !isMergedServiceSlug(r.locale, r.slug))
+        .map((r) => ({ locale: r.locale, slug: r.slug })),
+      ...staticParams,
+    ];
     const seen = new Set<string>();
     return params.filter((p) => {
       const key = `${p.locale}:${p.slug}`;

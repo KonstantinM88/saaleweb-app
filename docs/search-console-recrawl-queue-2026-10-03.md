@@ -1,5 +1,25 @@
 # Search Console: очередь изменённых страниц
 
+## Crawled — currently not indexed, 09.10.2026
+
+Проверен экспорт из 13 URL: 11 HTML-страниц технически доступны для индексации, `favicon.ico` и `manifest.webmanifest` являются служебными ресурсами. Найден один доказанный кластер дублей: старые CMS-страницы Performance объединены с более полными страницами оптимизации через постоянные редиректы и удалены из sitemap/JSON-LD.
+
+После деплоя повторно отправить sitemap. Для ручного URL Inspection приоритетны существующие канонические страницы, которые Google давно не переобходил:
+
+1. `https://saaleweb.de/en/services/web-design-halle`
+2. `https://saaleweb.de/en/industries/medical-practices`
+3. `https://saaleweb.de/en/pricing`
+4. `https://saaleweb.de/ru/ceny`
+5. `https://saaleweb.de/ru/uslugi/razrabotka-saytov`
+
+Канонические Performance URL после объединения:
+
+| DE | EN | RU |
+|---|---|---|
+| `https://saaleweb.de/leistungen/performance-optimierung` | `https://saaleweb.de/en/services/performance-optimization` | `https://saaleweb.de/ru/uslugi/optimizaciya-proizvoditelnosti` |
+
+Подробности и данные URL Inspection: [search-console-crawled-not-indexed-audit-2026-10-09.md](./search-console-crawled-not-indexed-audit-2026-10-09.md).
+
 ## Исправление источника 404 — 07.10.2026
 
 Технический аудит отчёта с 157 URL `Не найдено (404)` выявил активный источник на сайте: next-intl создавал ошибочные HTTP hreflang для отраслей, статей и категорий с разными DE/EN/RU slug. Из 219 уникальных адресов в таких заголовках 81 отвечал 404, а 24 уже перенаправлялись. URL Inspection подтвердил один характерный 404 и указал источниками две канонические страницы с конфликтующим заголовком.
