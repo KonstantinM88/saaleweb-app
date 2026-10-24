@@ -31,7 +31,11 @@ export async function generateMetadata({
     title: t("title"),
     description: t("subtitle"),
     alternates: {
-      languages,
+      canonical: getPathname({ locale, href: "/blog" }),
+      languages: {
+        ...languages,
+        "x-default": languages[routing.defaultLocale],
+      },
       types: {
         "application/rss+xml": rssHref,
       },

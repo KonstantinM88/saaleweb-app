@@ -1,0 +1,528 @@
+{
+  "date": "2026-10-24",
+  "site": "https://saaleweb.de/",
+  "inspections": [
+    {
+      "url": "https://saaleweb.de/ru/uslugi/modernizaciya-wordpress-sayta",
+      "verdict": "NEUTRAL",
+      "coverageState": "Duplicate, Google chose different canonical than user",
+      "robotsTxtState": "ALLOWED",
+      "indexingState": "INDEXING_ALLOWED",
+      "lastCrawlTime": "2026-10-07T18:04:05Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://saaleweb.de/ru/uslugi/modernizaciya-wordpress-sajta",
+      "userCanonical": "https://saaleweb.de/ru/uslugi/modernizaciya-wordpress-sayta",
+      "sitemap": [
+        "https://saaleweb.de/sitemap.xml"
+      ],
+      "referringUrls": [
+        "https://saaleweb.de/en/services/wordpress-website-modernization",
+        "https://saaleweb.de/leistungen/wordpress-website-modernisieren",
+        "https://saaleweb.de/ru/uslugi/razrabotka-saytov"
+      ],
+      "crawledAs": "MOBILE"
+    },
+    {
+      "url": "https://saaleweb.de/ru/uslugi/modernizaciya-wordpress-sajta",
+      "verdict": "PASS",
+      "coverageState": "Submitted and indexed",
+      "robotsTxtState": "ALLOWED",
+      "indexingState": "INDEXING_ALLOWED",
+      "lastCrawlTime": "2026-08-21T08:33:56Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://saaleweb.de/ru/uslugi/modernizaciya-wordpress-sajta",
+      "userCanonical": "https://saaleweb.de/ru/uslugi/modernizaciya-wordpress-sajta",
+      "referringUrls": [
+        "https://saaleweb.de/ru/uslugi/wordpress-agentstvo-halle"
+      ],
+      "crawledAs": "MOBILE"
+    },
+    {
+      "url": "https://saaleweb.de/leistungen/ai-optimization",
+      "verdict": "NEUTRAL",
+      "coverageState": "Redirect error",
+      "robotsTxtState": "ALLOWED",
+      "indexingState": "INDEXING_STATE_UNSPECIFIED",
+      "lastCrawlTime": "2026-07-14T18:48:45Z",
+      "pageFetchState": "REDIRECT_ERROR",
+      "referringUrls": [
+        "https://saaleweb.de/en/services/ai-optimization"
+      ],
+      "crawledAs": "MOBILE"
+    },
+    {
+      "url": "https://saaleweb.de/ru/uslugi/ai-optimization",
+      "verdict": "NEUTRAL",
+      "coverageState": "Redirect error",
+      "robotsTxtState": "ALLOWED",
+      "indexingState": "INDEXING_STATE_UNSPECIFIED",
+      "lastCrawlTime": "2026-07-14T18:48:45Z",
+      "pageFetchState": "REDIRECT_ERROR",
+      "referringUrls": [
+        "https://saaleweb.de/en/services/ai-optimization"
+      ],
+      "crawledAs": "MOBILE"
+    },
+    {
+      "url": "https://saaleweb.de/en/blog/category/web-design",
+      "verdict": "NEUTRAL",
+      "coverageState": "Duplicate without user-selected canonical",
+      "robotsTxtState": "ALLOWED",
+      "indexingState": "INDEXING_ALLOWED",
+      "lastCrawlTime": "2026-08-01T12:40:02Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://www.saaleweb.de/en/blog/category/web-design",
+      "referringUrls": [
+        "https://saaleweb.de/ru/blog/kategoriya/veb-dizajn",
+        "https://www.saaleweb.de/en/blog/category/web-design",
+        "https://saaleweb.de/en/blog/category/business-growth"
+      ],
+      "crawledAs": "MOBILE"
+    },
+    {
+      "url": "https://saaleweb.de/en/blog/category/seo",
+      "verdict": "NEUTRAL",
+      "coverageState": "Duplicate without user-selected canonical",
+      "robotsTxtState": "ALLOWED",
+      "indexingState": "INDEXING_ALLOWED",
+      "lastCrawlTime": "2026-07-23T16:46:13Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://www.saaleweb.de/en/blog/category/seo",
+      "sitemap": [
+        "https://saaleweb.de/sitemap.xml"
+      ],
+      "referringUrls": [
+        "https://www.saaleweb.de/en/blog/category/seo"
+      ],
+      "crawledAs": "MOBILE"
+    }
+  ],
+  "http": [
+    {
+      "url": "https://saaleweb.de/ru/uslugi/modernizaciya-wordpress-sayta",
+      "userAgent": "Mozilla/5.0",
+      "chain": [
+        {
+          "url": "https://saaleweb.de/ru/uslugi/modernizaciya-wordpress-sayta",
+          "status": 200,
+          "location": null
+        }
+      ],
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://saaleweb.de/ru/uslugi/modernizaciya-wordpress-sayta",
+      "hreflang": [
+        {
+          "language": "de",
+          "url": "https://saaleweb.de/leistungen/wordpress-website-modernisieren"
+        },
+        {
+          "language": "en",
+          "url": "https://saaleweb.de/en/services/wordpress-website-modernization"
+        },
+        {
+          "language": "ru",
+          "url": "https://saaleweb.de/ru/uslugi/modernizaciya-wordpress-sayta"
+        },
+        {
+          "language": "x-default",
+          "url": "https://saaleweb.de/leistungen/wordpress-website-modernisieren"
+        }
+      ],
+      "title": "Модернизация WordPress-сайта | SaaleWeb",
+      "h1": "Модернизация WordPress-сайта – быстрее, понятнее и удобнее в поддержке",
+      "noindex": false
+    },
+    {
+      "url": "https://saaleweb.de/ru/uslugi/modernizaciya-wordpress-sayta",
+      "userAgent": "Googlebot",
+      "chain": [
+        {
+          "url": "https://saaleweb.de/ru/uslugi/modernizaciya-wordpress-sayta",
+          "status": 200,
+          "location": null
+        }
+      ],
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://saaleweb.de/ru/uslugi/modernizaciya-wordpress-sayta",
+      "hreflang": [
+        {
+          "language": "de",
+          "url": "https://saaleweb.de/leistungen/wordpress-website-modernisieren"
+        },
+        {
+          "language": "en",
+          "url": "https://saaleweb.de/en/services/wordpress-website-modernization"
+        },
+        {
+          "language": "ru",
+          "url": "https://saaleweb.de/ru/uslugi/modernizaciya-wordpress-sayta"
+        },
+        {
+          "language": "x-default",
+          "url": "https://saaleweb.de/leistungen/wordpress-website-modernisieren"
+        }
+      ],
+      "title": "Модернизация WordPress-сайта | SaaleWeb",
+      "h1": "Модернизация WordPress-сайта – быстрее, понятнее и удобнее в поддержке",
+      "noindex": false
+    },
+    {
+      "url": "https://saaleweb.de/ru/uslugi/modernizaciya-wordpress-sajta",
+      "userAgent": "Mozilla/5.0",
+      "chain": [
+        {
+          "url": "https://saaleweb.de/ru/uslugi/modernizaciya-wordpress-sajta",
+          "status": 308,
+          "location": "/ru/uslugi/modernizaciya-wordpress-sayta"
+        },
+        {
+          "url": "https://saaleweb.de/ru/uslugi/modernizaciya-wordpress-sayta",
+          "status": 200,
+          "location": null
+        }
+      ],
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://saaleweb.de/ru/uslugi/modernizaciya-wordpress-sayta",
+      "hreflang": [
+        {
+          "language": "de",
+          "url": "https://saaleweb.de/leistungen/wordpress-website-modernisieren"
+        },
+        {
+          "language": "en",
+          "url": "https://saaleweb.de/en/services/wordpress-website-modernization"
+        },
+        {
+          "language": "ru",
+          "url": "https://saaleweb.de/ru/uslugi/modernizaciya-wordpress-sayta"
+        },
+        {
+          "language": "x-default",
+          "url": "https://saaleweb.de/leistungen/wordpress-website-modernisieren"
+        }
+      ],
+      "title": "Модернизация WordPress-сайта | SaaleWeb",
+      "h1": "Модернизация WordPress-сайта – быстрее, понятнее и удобнее в поддержке",
+      "noindex": false
+    },
+    {
+      "url": "https://saaleweb.de/ru/uslugi/modernizaciya-wordpress-sajta",
+      "userAgent": "Googlebot",
+      "chain": [
+        {
+          "url": "https://saaleweb.de/ru/uslugi/modernizaciya-wordpress-sajta",
+          "status": 308,
+          "location": "/ru/uslugi/modernizaciya-wordpress-sayta"
+        },
+        {
+          "url": "https://saaleweb.de/ru/uslugi/modernizaciya-wordpress-sayta",
+          "status": 200,
+          "location": null
+        }
+      ],
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://saaleweb.de/ru/uslugi/modernizaciya-wordpress-sayta",
+      "hreflang": [
+        {
+          "language": "de",
+          "url": "https://saaleweb.de/leistungen/wordpress-website-modernisieren"
+        },
+        {
+          "language": "en",
+          "url": "https://saaleweb.de/en/services/wordpress-website-modernization"
+        },
+        {
+          "language": "ru",
+          "url": "https://saaleweb.de/ru/uslugi/modernizaciya-wordpress-sayta"
+        },
+        {
+          "language": "x-default",
+          "url": "https://saaleweb.de/leistungen/wordpress-website-modernisieren"
+        }
+      ],
+      "title": "Модернизация WordPress-сайта | SaaleWeb",
+      "h1": "Модернизация WordPress-сайта – быстрее, понятнее и удобнее в поддержке",
+      "noindex": false
+    },
+    {
+      "url": "https://saaleweb.de/leistungen/ai-optimization",
+      "userAgent": "Mozilla/5.0",
+      "chain": [
+        {
+          "url": "https://saaleweb.de/leistungen/ai-optimization",
+          "status": 308,
+          "location": "/leistungen/ki-optimierung"
+        },
+        {
+          "url": "https://saaleweb.de/leistungen/ki-optimierung",
+          "status": 200,
+          "location": null
+        }
+      ],
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://saaleweb.de/leistungen/ki-optimierung",
+      "hreflang": [
+        {
+          "language": "de",
+          "url": "https://saaleweb.de/leistungen/ki-optimierung"
+        },
+        {
+          "language": "en",
+          "url": "https://saaleweb.de/en/services/ai-optimization"
+        },
+        {
+          "language": "ru",
+          "url": "https://saaleweb.de/ru/uslugi/optimizaciya-pod-ii"
+        },
+        {
+          "language": "x-default",
+          "url": "https://saaleweb.de/leistungen/ki-optimierung"
+        }
+      ],
+      "title": "KI-Optimierung für Unternehmen | SaaleWeb",
+      "h1": "KI-Optimierung für Unternehmen – Inhalte, die auch moderne Suchsysteme verstehen",
+      "noindex": false
+    },
+    {
+      "url": "https://saaleweb.de/leistungen/ai-optimization",
+      "userAgent": "Googlebot",
+      "chain": [
+        {
+          "url": "https://saaleweb.de/leistungen/ai-optimization",
+          "status": 308,
+          "location": "/leistungen/ki-optimierung"
+        },
+        {
+          "url": "https://saaleweb.de/leistungen/ki-optimierung",
+          "status": 200,
+          "location": null
+        }
+      ],
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://saaleweb.de/leistungen/ki-optimierung",
+      "hreflang": [
+        {
+          "language": "de",
+          "url": "https://saaleweb.de/leistungen/ki-optimierung"
+        },
+        {
+          "language": "en",
+          "url": "https://saaleweb.de/en/services/ai-optimization"
+        },
+        {
+          "language": "ru",
+          "url": "https://saaleweb.de/ru/uslugi/optimizaciya-pod-ii"
+        },
+        {
+          "language": "x-default",
+          "url": "https://saaleweb.de/leistungen/ki-optimierung"
+        }
+      ],
+      "title": "KI-Optimierung für Unternehmen | SaaleWeb",
+      "h1": "KI-Optimierung für Unternehmen – Inhalte, die auch moderne Suchsysteme verstehen",
+      "noindex": false
+    },
+    {
+      "url": "https://saaleweb.de/ru/uslugi/ai-optimization",
+      "userAgent": "Mozilla/5.0",
+      "chain": [
+        {
+          "url": "https://saaleweb.de/ru/uslugi/ai-optimization",
+          "status": 308,
+          "location": "/ru/uslugi/optimizaciya-pod-ii"
+        },
+        {
+          "url": "https://saaleweb.de/ru/uslugi/optimizaciya-pod-ii",
+          "status": 200,
+          "location": null
+        }
+      ],
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://saaleweb.de/ru/uslugi/optimizaciya-pod-ii",
+      "hreflang": [
+        {
+          "language": "de",
+          "url": "https://saaleweb.de/leistungen/ki-optimierung"
+        },
+        {
+          "language": "en",
+          "url": "https://saaleweb.de/en/services/ai-optimization"
+        },
+        {
+          "language": "ru",
+          "url": "https://saaleweb.de/ru/uslugi/optimizaciya-pod-ii"
+        },
+        {
+          "language": "x-default",
+          "url": "https://saaleweb.de/leistungen/ki-optimierung"
+        }
+      ],
+      "title": "Оптимизация под ИИ для бизнеса | SaaleWeb",
+      "h1": "Оптимизация под ИИ для компаний – контент, который понимают современные поисковые системы",
+      "noindex": false
+    },
+    {
+      "url": "https://saaleweb.de/ru/uslugi/ai-optimization",
+      "userAgent": "Googlebot",
+      "chain": [
+        {
+          "url": "https://saaleweb.de/ru/uslugi/ai-optimization",
+          "status": 308,
+          "location": "/ru/uslugi/optimizaciya-pod-ii"
+        },
+        {
+          "url": "https://saaleweb.de/ru/uslugi/optimizaciya-pod-ii",
+          "status": 200,
+          "location": null
+        }
+      ],
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://saaleweb.de/ru/uslugi/optimizaciya-pod-ii",
+      "hreflang": [
+        {
+          "language": "de",
+          "url": "https://saaleweb.de/leistungen/ki-optimierung"
+        },
+        {
+          "language": "en",
+          "url": "https://saaleweb.de/en/services/ai-optimization"
+        },
+        {
+          "language": "ru",
+          "url": "https://saaleweb.de/ru/uslugi/optimizaciya-pod-ii"
+        },
+        {
+          "language": "x-default",
+          "url": "https://saaleweb.de/leistungen/ki-optimierung"
+        }
+      ],
+      "title": "Оптимизация под ИИ для бизнеса | SaaleWeb",
+      "h1": "Оптимизация под ИИ для компаний – контент, который понимают современные поисковые системы",
+      "noindex": false
+    },
+    {
+      "url": "https://saaleweb.de/en/blog/category/web-design",
+      "userAgent": "Mozilla/5.0",
+      "chain": [
+        {
+          "url": "https://saaleweb.de/en/blog/category/web-design",
+          "status": 200,
+          "location": null
+        }
+      ],
+      "contentType": "text/html; charset=utf-8",
+      "canonical": null,
+      "hreflang": [
+        {
+          "language": "de",
+          "url": "https://saaleweb.de/blog/kategorie/webdesign"
+        },
+        {
+          "language": "en",
+          "url": "https://saaleweb.de/en/blog/category/web-design"
+        },
+        {
+          "language": "ru",
+          "url": "https://saaleweb.de/ru/blog/kategoriya/veb-dizajn"
+        }
+      ],
+      "title": "Web Design — Blog · SaaleWeb",
+      "h1": "Web Design",
+      "noindex": false
+    },
+    {
+      "url": "https://saaleweb.de/en/blog/category/web-design",
+      "userAgent": "Googlebot",
+      "chain": [
+        {
+          "url": "https://saaleweb.de/en/blog/category/web-design",
+          "status": 200,
+          "location": null
+        }
+      ],
+      "contentType": "text/html; charset=utf-8",
+      "canonical": null,
+      "hreflang": [
+        {
+          "language": "de",
+          "url": "https://saaleweb.de/blog/kategorie/webdesign"
+        },
+        {
+          "language": "en",
+          "url": "https://saaleweb.de/en/blog/category/web-design"
+        },
+        {
+          "language": "ru",
+          "url": "https://saaleweb.de/ru/blog/kategoriya/veb-dizajn"
+        }
+      ],
+      "title": "Web Design — Blog · SaaleWeb",
+      "h1": "Web Design",
+      "noindex": false
+    },
+    {
+      "url": "https://saaleweb.de/en/blog/category/seo",
+      "userAgent": "Mozilla/5.0",
+      "chain": [
+        {
+          "url": "https://saaleweb.de/en/blog/category/seo",
+          "status": 200,
+          "location": null
+        }
+      ],
+      "contentType": "text/html; charset=utf-8",
+      "canonical": null,
+      "hreflang": [
+        {
+          "language": "de",
+          "url": "https://saaleweb.de/blog/kategorie/seo"
+        },
+        {
+          "language": "en",
+          "url": "https://saaleweb.de/en/blog/category/seo"
+        },
+        {
+          "language": "ru",
+          "url": "https://saaleweb.de/ru/blog/kategoriya/seo"
+        }
+      ],
+      "title": "SEO — Blog · SaaleWeb",
+      "h1": "SEO",
+      "noindex": false
+    },
+    {
+      "url": "https://saaleweb.de/en/blog/category/seo",
+      "userAgent": "Googlebot",
+      "chain": [
+        {
+          "url": "https://saaleweb.de/en/blog/category/seo",
+          "status": 200,
+          "location": null
+        }
+      ],
+      "contentType": "text/html; charset=utf-8",
+      "canonical": null,
+      "hreflang": [
+        {
+          "language": "de",
+          "url": "https://saaleweb.de/blog/kategorie/seo"
+        },
+        {
+          "language": "en",
+          "url": "https://saaleweb.de/en/blog/category/seo"
+        },
+        {
+          "language": "ru",
+          "url": "https://saaleweb.de/ru/blog/kategoriya/seo"
+        }
+      ],
+      "title": "SEO — Blog · SaaleWeb",
+      "h1": "SEO",
+      "noindex": false
+    }
+  ],
+  "robots": {
+    "status": 200,
+    "body": "User-Agent: OAI-SearchBot\nUser-Agent: ChatGPT-User\nUser-Agent: GPTBot\nUser-Agent: ClaudeBot\nUser-Agent: Claude-User\nUser-Agent: Claude-SearchBot\nUser-Agent: PerplexityBot\nUser-Agent: Perplexity-User\nUser-Agent: Google-Extended\nUser-Agent: Applebot\nUser-Agent: Applebot-Extended\nUser-Agent: Bytespider\nAllow: /\nDisallow: /api/\nDisallow: /admin/\n\nUser-Agent: *\nAllow: /\nDisallow: /api/\nDisallow: /admin/\n\nSitemap: https://saaleweb.de/sitemap.xml\n"
+  }
+}

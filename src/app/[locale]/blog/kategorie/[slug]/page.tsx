@@ -50,7 +50,16 @@ export async function generateMetadata({
   return {
     title: `${current.name} — ${t("title")}`,
     description: t("subtitle"),
-    alternates: { languages },
+    alternates: {
+      canonical: getPathname({
+        locale,
+        href: { pathname: "/blog/kategorie/[slug]", params: { slug } },
+      }),
+      languages: {
+        ...languages,
+        "x-default": languages[routing.defaultLocale] ?? languages[locale],
+      },
+    },
   };
 }
 

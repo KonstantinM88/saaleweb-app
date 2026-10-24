@@ -1,5 +1,25 @@
 # Search Console: очередь изменённых страниц
 
+## Canonical блога и повторная проверка скриншотов, 24.10.2026
+
+В работе: добавлены self-canonical и `x-default` для всех списков/категорий блога. После подтверждения production приоритетные ручные проверки — два EN URL из отчёта и RU WordPress canonical:
+
+- `https://saaleweb.de/en/blog/category/web-design`
+- `https://saaleweb.de/en/blog/category/seo`
+- `https://saaleweb.de/ru/uslugi/modernizaciya-wordpress-sayta`
+
+Полный список изменённых canonical URL (15):
+
+| DE | EN | RU |
+|---|---|---|
+| `https://saaleweb.de/blog` | `https://saaleweb.de/en/blog` | `https://saaleweb.de/ru/blog` |
+| `https://saaleweb.de/blog/kategorie/seo` | `https://saaleweb.de/en/blog/category/seo` | `https://saaleweb.de/ru/blog/kategoriya/seo` |
+| `https://saaleweb.de/blog/kategorie/webdesign` | `https://saaleweb.de/en/blog/category/web-design` | `https://saaleweb.de/ru/blog/kategoriya/veb-dizajn` |
+| `https://saaleweb.de/blog/kategorie/ki-suche` | `https://saaleweb.de/en/blog/category/ai-search` | `https://saaleweb.de/ru/blog/kategoriya/ii-i-poisk` |
+| `https://saaleweb.de/blog/kategorie/praxis` | `https://saaleweb.de/en/blog/category/business-growth` | `https://saaleweb.de/ru/blog/kategoriya/rost-biznesa` |
+
+Старые AI alias и WordPress `sajta` сейчас дают один `308 → 200`; их не добавлять в sitemap. В отчётах по дубликатам и ошибке переадресации после проверки production повторно запустить «Проверить исправление» через UI. Исключение `/api/og` оставить как намеренное ограничение служебной картинки. Публикация, HTTP-проверка и отправка sitemap будут отмечены после завершения. [Подробный аудит](./search-console-issues-and-stack-2026-10-24.md).
+
 ## Crawled — currently not indexed, 09.10.2026
 
 Проверен экспорт из 13 URL: 11 HTML-страниц технически доступны для индексации, `favicon.ico` и `manifest.webmanifest` являются служебными ресурсами. Найден один доказанный кластер дублей: старые CMS-страницы Performance объединены с более полными страницами оптимизации через постоянные редиректы и удалены из sitemap/JSON-LD. Исправление `a6b9b9b` опубликовано: три цепочки production отвечают `308 → 200`, все 231 URL sitemap отвечают прямым 200. Sitemap повторно отправлен через GSC API 09.10 в **10:37 UTC**: HTTP 204, `isPending=true`, ошибок и предупреждений нет.

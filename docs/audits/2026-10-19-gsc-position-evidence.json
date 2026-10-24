@@ -1,0 +1,3089 @@
+{
+  "date": "2026-10-19",
+  "site": "https://saaleweb.de/",
+  "queries": [
+    "werbeagentur halle",
+    "webdesigner halle",
+    "webdesigner halle saale",
+    "webdesign halle"
+  ],
+  "periods": {
+    "final28": {
+      "period": {
+        "startDate": "2026-09-20",
+        "endDate": "2026-10-17",
+        "dataState": "final"
+      },
+      "query": {
+        "rows": [
+          {
+            "keys": [
+              "webdesign halle"
+            ],
+            "clicks": 0,
+            "impressions": 45,
+            "ctr": 0,
+            "position": 11.066666666666666
+          },
+          {
+            "keys": [
+              "webdesigner halle"
+            ],
+            "clicks": 0,
+            "impressions": 11,
+            "ctr": 0,
+            "position": 11.090909090909092
+          },
+          {
+            "keys": [
+              "webdesigner halle saale"
+            ],
+            "clicks": 0,
+            "impressions": 51,
+            "ctr": 0,
+            "position": 3.823529411764706
+          },
+          {
+            "keys": [
+              "werbeagentur halle"
+            ],
+            "clicks": 0,
+            "impressions": 27,
+            "ctr": 0,
+            "position": 76.03703703703704
+          }
+        ],
+        "responseAggregationType": "byProperty"
+      },
+      "date_query": {
+        "rows": [
+          {
+            "keys": [
+              "2026-09-20",
+              "webdesign halle"
+            ],
+            "clicks": 0,
+            "impressions": 7,
+            "ctr": 0,
+            "position": 17.571428571428573
+          },
+          {
+            "keys": [
+              "2026-09-20",
+              "webdesigner halle saale"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 15
+          },
+          {
+            "keys": [
+              "2026-09-21",
+              "webdesign halle"
+            ],
+            "clicks": 0,
+            "impressions": 5,
+            "ctr": 0,
+            "position": 16.4
+          },
+          {
+            "keys": [
+              "2026-09-21",
+              "webdesigner halle"
+            ],
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 14.5
+          },
+          {
+            "keys": [
+              "2026-09-21",
+              "webdesigner halle saale"
+            ],
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 14
+          },
+          {
+            "keys": [
+              "2026-09-22",
+              "webdesign halle"
+            ],
+            "clicks": 0,
+            "impressions": 5,
+            "ctr": 0,
+            "position": 16.8
+          },
+          {
+            "keys": [
+              "2026-09-22",
+              "webdesigner halle"
+            ],
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 25
+          },
+          {
+            "keys": [
+              "2026-09-22",
+              "webdesigner halle saale"
+            ],
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 16.333333333333336
+          },
+          {
+            "keys": [
+              "2026-09-23",
+              "webdesign halle"
+            ],
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 17.333333333333332
+          },
+          {
+            "keys": [
+              "2026-09-23",
+              "webdesigner halle saale"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 21
+          },
+          {
+            "keys": [
+              "2026-09-23",
+              "werbeagentur halle"
+            ],
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 67
+          },
+          {
+            "keys": [
+              "2026-09-24",
+              "webdesign halle"
+            ],
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 16.666666666666664
+          },
+          {
+            "keys": [
+              "2026-09-25",
+              "webdesign halle"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 18
+          },
+          {
+            "keys": [
+              "2026-09-26",
+              "webdesigner halle saale"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 17
+          },
+          {
+            "keys": [
+              "2026-09-27",
+              "webdesign halle"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 21
+          },
+          {
+            "keys": [
+              "2026-09-28",
+              "webdesigner halle"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 21
+          },
+          {
+            "keys": [
+              "2026-09-29",
+              "webdesign halle"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 17
+          },
+          {
+            "keys": [
+              "2026-09-30",
+              "webdesign halle"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-09-30",
+              "webdesigner halle saale"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 2
+          },
+          {
+            "keys": [
+              "2026-10-01",
+              "webdesign halle"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 2
+          },
+          {
+            "keys": [
+              "2026-10-03",
+              "webdesign halle"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 14
+          },
+          {
+            "keys": [
+              "2026-10-03",
+              "webdesigner halle"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 14
+          },
+          {
+            "keys": [
+              "2026-10-04",
+              "webdesign halle"
+            ],
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 7
+          },
+          {
+            "keys": [
+              "2026-10-04",
+              "webdesigner halle saale"
+            ],
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 1.5
+          },
+          {
+            "keys": [
+              "2026-10-04",
+              "werbeagentur halle"
+            ],
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 70
+          },
+          {
+            "keys": [
+              "2026-10-05",
+              "werbeagentur halle"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 77
+          },
+          {
+            "keys": [
+              "2026-10-06",
+              "webdesigner halle"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-06",
+              "webdesigner halle saale"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 2
+          },
+          {
+            "keys": [
+              "2026-10-07",
+              "webdesign halle"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-07",
+              "webdesigner halle"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 2
+          },
+          {
+            "keys": [
+              "2026-10-07",
+              "webdesigner halle saale"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-07",
+              "werbeagentur halle"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 63
+          },
+          {
+            "keys": [
+              "2026-10-11",
+              "webdesign halle"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-11",
+              "werbeagentur halle"
+            ],
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 88
+          },
+          {
+            "keys": [
+              "2026-10-12",
+              "webdesign halle"
+            ],
+            "clicks": 0,
+            "impressions": 5,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-12",
+              "webdesigner halle"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-12",
+              "webdesigner halle saale"
+            ],
+            "clicks": 0,
+            "impressions": 32,
+            "ctr": 0,
+            "position": 1.5
+          },
+          {
+            "keys": [
+              "2026-10-12",
+              "werbeagentur halle"
+            ],
+            "clicks": 0,
+            "impressions": 8,
+            "ctr": 0,
+            "position": 80.25
+          },
+          {
+            "keys": [
+              "2026-10-13",
+              "webdesign halle"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-13",
+              "werbeagentur halle"
+            ],
+            "clicks": 0,
+            "impressions": 4,
+            "ctr": 0,
+            "position": 71.5
+          },
+          {
+            "keys": [
+              "2026-10-14",
+              "webdesign halle"
+            ],
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-14",
+              "webdesigner halle"
+            ],
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 2
+          },
+          {
+            "keys": [
+              "2026-10-14",
+              "webdesigner halle saale"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-14",
+              "werbeagentur halle"
+            ],
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 83
+          },
+          {
+            "keys": [
+              "2026-10-15",
+              "webdesign halle"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-15",
+              "webdesigner halle saale"
+            ],
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 2
+          },
+          {
+            "keys": [
+              "2026-10-16",
+              "webdesigner halle saale"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-16",
+              "werbeagentur halle"
+            ],
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 73.5
+          },
+          {
+            "keys": [
+              "2026-10-17",
+              "webdesign halle"
+            ],
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-17",
+              "webdesigner halle saale"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-17",
+              "werbeagentur halle"
+            ],
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 69.5
+          }
+        ],
+        "responseAggregationType": "byProperty"
+      },
+      "query_country_device": {
+        "rows": [
+          {
+            "keys": [
+              "webdesign halle",
+              "aut",
+              "DESKTOP"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 21
+          },
+          {
+            "keys": [
+              "webdesign halle",
+              "bra",
+              "DESKTOP"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 16
+          },
+          {
+            "keys": [
+              "webdesign halle",
+              "deu",
+              "DESKTOP"
+            ],
+            "clicks": 0,
+            "impressions": 28,
+            "ctr": 0,
+            "position": 10.821428571428571
+          },
+          {
+            "keys": [
+              "webdesign halle",
+              "deu",
+              "MOBILE"
+            ],
+            "clicks": 0,
+            "impressions": 10,
+            "ctr": 0,
+            "position": 10.4
+          },
+          {
+            "keys": [
+              "webdesign halle",
+              "esp",
+              "DESKTOP"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 21
+          },
+          {
+            "keys": [
+              "webdesign halle",
+              "ind",
+              "DESKTOP"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 14
+          },
+          {
+            "keys": [
+              "webdesign halle",
+              "mmr",
+              "MOBILE"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 17
+          },
+          {
+            "keys": [
+              "webdesign halle",
+              "usa",
+              "DESKTOP"
+            ],
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "webdesigner halle",
+              "deu",
+              "DESKTOP"
+            ],
+            "clicks": 0,
+            "impressions": 9,
+            "ctr": 0,
+            "position": 11.777777777777779
+          },
+          {
+            "keys": [
+              "webdesigner halle",
+              "deu",
+              "MOBILE"
+            ],
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 8
+          },
+          {
+            "keys": [
+              "webdesigner halle saale",
+              "bwa",
+              "MOBILE"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 7
+          },
+          {
+            "keys": [
+              "webdesigner halle saale",
+              "deu",
+              "DESKTOP"
+            ],
+            "clicks": 0,
+            "impressions": 11,
+            "ctr": 0,
+            "position": 11.818181818181818
+          },
+          {
+            "keys": [
+              "webdesigner halle saale",
+              "deu",
+              "MOBILE"
+            ],
+            "clicks": 0,
+            "impressions": 38,
+            "ctr": 0,
+            "position": 1.5
+          },
+          {
+            "keys": [
+              "webdesigner halle saale",
+              "fra",
+              "DESKTOP"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "werbeagentur halle",
+              "deu",
+              "DESKTOP"
+            ],
+            "clicks": 0,
+            "impressions": 17,
+            "ctr": 0,
+            "position": 74.82352941176471
+          },
+          {
+            "keys": [
+              "werbeagentur halle",
+              "deu",
+              "MOBILE"
+            ],
+            "clicks": 0,
+            "impressions": 10,
+            "ctr": 0,
+            "position": 78.1
+          }
+        ],
+        "responseAggregationType": "byProperty"
+      },
+      "query_page": {
+        "rows": [
+          {
+            "keys": [
+              "webdesign halle",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 45,
+            "ctr": 0,
+            "position": 11.066666666666666
+          },
+          {
+            "keys": [
+              "webdesigner halle",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 11,
+            "ctr": 0,
+            "position": 11.090909090909092
+          },
+          {
+            "keys": [
+              "webdesigner halle saale",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 51,
+            "ctr": 0,
+            "position": 3.823529411764706
+          },
+          {
+            "keys": [
+              "werbeagentur halle",
+              "https://saaleweb.de/leistungen/webdesign-halle"
+            ],
+            "clicks": 0,
+            "impressions": 12,
+            "ctr": 0,
+            "position": 78.58333333333333
+          },
+          {
+            "keys": [
+              "werbeagentur halle",
+              "https://saaleweb.de/standorte/halle"
+            ],
+            "clicks": 0,
+            "impressions": 19,
+            "ctr": 0,
+            "position": 74.89473684210526
+          }
+        ],
+        "responseAggregationType": "byPage"
+      },
+      "date_query_country_device_page": {
+        "rows": [
+          {
+            "keys": [
+              "2026-09-20",
+              "webdesign halle",
+              "aut",
+              "DESKTOP",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 21
+          },
+          {
+            "keys": [
+              "2026-09-20",
+              "webdesign halle",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 17
+          },
+          {
+            "keys": [
+              "2026-09-20",
+              "webdesign halle",
+              "deu",
+              "MOBILE",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 17
+          },
+          {
+            "keys": [
+              "2026-09-20",
+              "webdesigner halle saale",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 15
+          },
+          {
+            "keys": [
+              "2026-09-21",
+              "webdesign halle",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 15.333333333333334
+          },
+          {
+            "keys": [
+              "2026-09-21",
+              "webdesign halle",
+              "deu",
+              "MOBILE",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 15
+          },
+          {
+            "keys": [
+              "2026-09-21",
+              "webdesign halle",
+              "esp",
+              "DESKTOP",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 21
+          },
+          {
+            "keys": [
+              "2026-09-21",
+              "webdesigner halle",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 14
+          },
+          {
+            "keys": [
+              "2026-09-21",
+              "webdesigner halle",
+              "deu",
+              "MOBILE",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 15
+          },
+          {
+            "keys": [
+              "2026-09-21",
+              "webdesigner halle saale",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 13
+          },
+          {
+            "keys": [
+              "2026-09-21",
+              "webdesigner halle saale",
+              "deu",
+              "MOBILE",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 15
+          },
+          {
+            "keys": [
+              "2026-09-22",
+              "webdesign halle",
+              "bra",
+              "DESKTOP",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 16
+          },
+          {
+            "keys": [
+              "2026-09-22",
+              "webdesign halle",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 17.666666666666668
+          },
+          {
+            "keys": [
+              "2026-09-22",
+              "webdesign halle",
+              "deu",
+              "MOBILE",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 15
+          },
+          {
+            "keys": [
+              "2026-09-22",
+              "webdesigner halle",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 25
+          },
+          {
+            "keys": [
+              "2026-09-22",
+              "webdesigner halle saale",
+              "bwa",
+              "MOBILE",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 7
+          },
+          {
+            "keys": [
+              "2026-09-22",
+              "webdesigner halle saale",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 21
+          },
+          {
+            "keys": [
+              "2026-09-23",
+              "webdesign halle",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 17.5
+          },
+          {
+            "keys": [
+              "2026-09-23",
+              "webdesign halle",
+              "mmr",
+              "MOBILE",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 17
+          },
+          {
+            "keys": [
+              "2026-09-23",
+              "webdesigner halle saale",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 21
+          },
+          {
+            "keys": [
+              "2026-09-23",
+              "werbeagentur halle",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/standorte/halle"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 56
+          },
+          {
+            "keys": [
+              "2026-09-23",
+              "werbeagentur halle",
+              "deu",
+              "MOBILE",
+              "https://saaleweb.de/leistungen/webdesign-halle"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 78
+          },
+          {
+            "keys": [
+              "2026-09-24",
+              "webdesign halle",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 15.5
+          },
+          {
+            "keys": [
+              "2026-09-24",
+              "webdesign halle",
+              "deu",
+              "MOBILE",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 19
+          },
+          {
+            "keys": [
+              "2026-09-25",
+              "webdesign halle",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 18
+          },
+          {
+            "keys": [
+              "2026-09-26",
+              "webdesigner halle saale",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 17
+          },
+          {
+            "keys": [
+              "2026-09-27",
+              "webdesign halle",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 21
+          },
+          {
+            "keys": [
+              "2026-09-28",
+              "webdesigner halle",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 21
+          },
+          {
+            "keys": [
+              "2026-09-29",
+              "webdesign halle",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 17
+          },
+          {
+            "keys": [
+              "2026-09-30",
+              "webdesign halle",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-09-30",
+              "webdesigner halle saale",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 2
+          },
+          {
+            "keys": [
+              "2026-10-01",
+              "webdesign halle",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 2
+          },
+          {
+            "keys": [
+              "2026-10-03",
+              "webdesign halle",
+              "ind",
+              "DESKTOP",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 14
+          },
+          {
+            "keys": [
+              "2026-10-03",
+              "webdesigner halle",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 14
+          },
+          {
+            "keys": [
+              "2026-10-04",
+              "webdesign halle",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 7
+          },
+          {
+            "keys": [
+              "2026-10-04",
+              "webdesigner halle saale",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-04",
+              "webdesigner halle saale",
+              "deu",
+              "MOBILE",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 2
+          },
+          {
+            "keys": [
+              "2026-10-04",
+              "werbeagentur halle",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/standorte/halle"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 62
+          },
+          {
+            "keys": [
+              "2026-10-04",
+              "werbeagentur halle",
+              "deu",
+              "MOBILE",
+              "https://saaleweb.de/leistungen/webdesign-halle"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 78
+          },
+          {
+            "keys": [
+              "2026-10-05",
+              "werbeagentur halle",
+              "deu",
+              "MOBILE",
+              "https://saaleweb.de/leistungen/webdesign-halle"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 77
+          },
+          {
+            "keys": [
+              "2026-10-06",
+              "webdesigner halle",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-06",
+              "webdesigner halle saale",
+              "deu",
+              "MOBILE",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 2
+          },
+          {
+            "keys": [
+              "2026-10-07",
+              "webdesign halle",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-07",
+              "webdesigner halle",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 2
+          },
+          {
+            "keys": [
+              "2026-10-07",
+              "webdesigner halle saale",
+              "fra",
+              "DESKTOP",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-07",
+              "werbeagentur halle",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/standorte/halle"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 63
+          },
+          {
+            "keys": [
+              "2026-10-11",
+              "webdesign halle",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-11",
+              "werbeagentur halle",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/standorte/halle"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 90
+          },
+          {
+            "keys": [
+              "2026-10-11",
+              "werbeagentur halle",
+              "deu",
+              "MOBILE",
+              "https://saaleweb.de/standorte/halle"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 86
+          },
+          {
+            "keys": [
+              "2026-10-12",
+              "webdesign halle",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-12",
+              "webdesign halle",
+              "deu",
+              "MOBILE",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-12",
+              "webdesign halle",
+              "usa",
+              "DESKTOP",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-12",
+              "webdesigner halle",
+              "deu",
+              "MOBILE",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-12",
+              "webdesigner halle saale",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 17
+          },
+          {
+            "keys": [
+              "2026-10-12",
+              "webdesigner halle saale",
+              "deu",
+              "MOBILE",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 31,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-12",
+              "werbeagentur halle",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/standorte/halle"
+            ],
+            "clicks": 0,
+            "impressions": 4,
+            "ctr": 0,
+            "position": 87.25
+          },
+          {
+            "keys": [
+              "2026-10-12",
+              "werbeagentur halle",
+              "deu",
+              "MOBILE",
+              "https://saaleweb.de/leistungen/webdesign-halle"
+            ],
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 78.5
+          },
+          {
+            "keys": [
+              "2026-10-12",
+              "werbeagentur halle",
+              "deu",
+              "MOBILE",
+              "https://saaleweb.de/standorte/halle"
+            ],
+            "clicks": 0,
+            "impressions": 4,
+            "ctr": 0,
+            "position": 73.25
+          },
+          {
+            "keys": [
+              "2026-10-13",
+              "webdesign halle",
+              "deu",
+              "MOBILE",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-13",
+              "werbeagentur halle",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/leistungen/webdesign-halle"
+            ],
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 79.5
+          },
+          {
+            "keys": [
+              "2026-10-13",
+              "werbeagentur halle",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/standorte/halle"
+            ],
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 63.5
+          },
+          {
+            "keys": [
+              "2026-10-13",
+              "werbeagentur halle",
+              "deu",
+              "MOBILE",
+              "https://saaleweb.de/leistungen/webdesign-halle"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 80
+          },
+          {
+            "keys": [
+              "2026-10-14",
+              "webdesign halle",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-14",
+              "webdesigner halle",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 2
+          },
+          {
+            "keys": [
+              "2026-10-14",
+              "webdesigner halle saale",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-14",
+              "werbeagentur halle",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/leistungen/webdesign-halle"
+            ],
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 79.5
+          },
+          {
+            "keys": [
+              "2026-10-14",
+              "werbeagentur halle",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/standorte/halle"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 90
+          },
+          {
+            "keys": [
+              "2026-10-15",
+              "webdesign halle",
+              "deu",
+              "MOBILE",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-15",
+              "webdesigner halle saale",
+              "deu",
+              "MOBILE",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 2
+          },
+          {
+            "keys": [
+              "2026-10-16",
+              "webdesigner halle saale",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-16",
+              "werbeagentur halle",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/leistungen/webdesign-halle"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 76
+          },
+          {
+            "keys": [
+              "2026-10-16",
+              "werbeagentur halle",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/standorte/halle"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 58
+          },
+          {
+            "keys": [
+              "2026-10-16",
+              "werbeagentur halle",
+              "deu",
+              "MOBILE",
+              "https://saaleweb.de/standorte/halle"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 89
+          },
+          {
+            "keys": [
+              "2026-10-17",
+              "webdesign halle",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-17",
+              "webdesigner halle saale",
+              "deu",
+              "MOBILE",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-17",
+              "werbeagentur halle",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/leistungen/webdesign-halle"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 79
+          },
+          {
+            "keys": [
+              "2026-10-17",
+              "werbeagentur halle",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/standorte/halle"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 60
+          }
+        ],
+        "responseAggregationType": "byPage"
+      },
+      "searchAppearance": {
+        "responseAggregationType": "byPage"
+      }
+    },
+    "final7": {
+      "period": {
+        "startDate": "2026-10-11",
+        "endDate": "2026-10-17",
+        "dataState": "final"
+      },
+      "query": {
+        "rows": [
+          {
+            "keys": [
+              "webdesign halle"
+            ],
+            "clicks": 0,
+            "impressions": 12,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "webdesigner halle"
+            ],
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 1.6666666666666665
+          },
+          {
+            "keys": [
+              "webdesigner halle saale"
+            ],
+            "clicks": 0,
+            "impressions": 38,
+            "ctr": 0,
+            "position": 1.5
+          },
+          {
+            "keys": [
+              "werbeagentur halle"
+            ],
+            "clicks": 0,
+            "impressions": 21,
+            "ctr": 0,
+            "position": 78.04761904761905
+          }
+        ],
+        "responseAggregationType": "byProperty"
+      },
+      "date_query": {
+        "rows": [
+          {
+            "keys": [
+              "2026-10-11",
+              "webdesign halle"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-11",
+              "werbeagentur halle"
+            ],
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 88
+          },
+          {
+            "keys": [
+              "2026-10-12",
+              "webdesign halle"
+            ],
+            "clicks": 0,
+            "impressions": 5,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-12",
+              "webdesigner halle"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-12",
+              "webdesigner halle saale"
+            ],
+            "clicks": 0,
+            "impressions": 32,
+            "ctr": 0,
+            "position": 1.5
+          },
+          {
+            "keys": [
+              "2026-10-12",
+              "werbeagentur halle"
+            ],
+            "clicks": 0,
+            "impressions": 8,
+            "ctr": 0,
+            "position": 80.25
+          },
+          {
+            "keys": [
+              "2026-10-13",
+              "webdesign halle"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-13",
+              "werbeagentur halle"
+            ],
+            "clicks": 0,
+            "impressions": 4,
+            "ctr": 0,
+            "position": 71.5
+          },
+          {
+            "keys": [
+              "2026-10-14",
+              "webdesign halle"
+            ],
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-14",
+              "webdesigner halle"
+            ],
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 2
+          },
+          {
+            "keys": [
+              "2026-10-14",
+              "webdesigner halle saale"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-14",
+              "werbeagentur halle"
+            ],
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 83
+          },
+          {
+            "keys": [
+              "2026-10-15",
+              "webdesign halle"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-15",
+              "webdesigner halle saale"
+            ],
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 2
+          },
+          {
+            "keys": [
+              "2026-10-16",
+              "webdesigner halle saale"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-16",
+              "werbeagentur halle"
+            ],
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 73.5
+          },
+          {
+            "keys": [
+              "2026-10-17",
+              "webdesign halle"
+            ],
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-17",
+              "webdesigner halle saale"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-17",
+              "werbeagentur halle"
+            ],
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 69.5
+          }
+        ],
+        "responseAggregationType": "byProperty"
+      },
+      "query_country_device": {
+        "rows": [
+          {
+            "keys": [
+              "webdesign halle",
+              "deu",
+              "DESKTOP"
+            ],
+            "clicks": 0,
+            "impressions": 6,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "webdesign halle",
+              "deu",
+              "MOBILE"
+            ],
+            "clicks": 0,
+            "impressions": 4,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "webdesign halle",
+              "usa",
+              "DESKTOP"
+            ],
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "webdesigner halle",
+              "deu",
+              "DESKTOP"
+            ],
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 2
+          },
+          {
+            "keys": [
+              "webdesigner halle",
+              "deu",
+              "MOBILE"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "webdesigner halle saale",
+              "deu",
+              "DESKTOP"
+            ],
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 6.333333333333333
+          },
+          {
+            "keys": [
+              "webdesigner halle saale",
+              "deu",
+              "MOBILE"
+            ],
+            "clicks": 0,
+            "impressions": 35,
+            "ctr": 0,
+            "position": 1.0857142857142856
+          },
+          {
+            "keys": [
+              "werbeagentur halle",
+              "deu",
+              "DESKTOP"
+            ],
+            "clicks": 0,
+            "impressions": 14,
+            "ctr": 0,
+            "position": 77.92857142857143
+          },
+          {
+            "keys": [
+              "werbeagentur halle",
+              "deu",
+              "MOBILE"
+            ],
+            "clicks": 0,
+            "impressions": 7,
+            "ctr": 0,
+            "position": 78.28571428571429
+          }
+        ],
+        "responseAggregationType": "byProperty"
+      },
+      "query_page": {
+        "rows": [
+          {
+            "keys": [
+              "webdesign halle",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 12,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "webdesigner halle",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 1.6666666666666665
+          },
+          {
+            "keys": [
+              "webdesigner halle saale",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 38,
+            "ctr": 0,
+            "position": 1.5
+          },
+          {
+            "keys": [
+              "werbeagentur halle",
+              "https://saaleweb.de/leistungen/webdesign-halle"
+            ],
+            "clicks": 0,
+            "impressions": 9,
+            "ctr": 0,
+            "position": 78.88888888888889
+          },
+          {
+            "keys": [
+              "werbeagentur halle",
+              "https://saaleweb.de/standorte/halle"
+            ],
+            "clicks": 0,
+            "impressions": 16,
+            "ctr": 0,
+            "position": 77.625
+          }
+        ],
+        "responseAggregationType": "byPage"
+      },
+      "date_query_country_device_page": {
+        "rows": [
+          {
+            "keys": [
+              "2026-10-11",
+              "webdesign halle",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-11",
+              "werbeagentur halle",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/standorte/halle"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 90
+          },
+          {
+            "keys": [
+              "2026-10-11",
+              "werbeagentur halle",
+              "deu",
+              "MOBILE",
+              "https://saaleweb.de/standorte/halle"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 86
+          },
+          {
+            "keys": [
+              "2026-10-12",
+              "webdesign halle",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-12",
+              "webdesign halle",
+              "deu",
+              "MOBILE",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-12",
+              "webdesign halle",
+              "usa",
+              "DESKTOP",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-12",
+              "webdesigner halle",
+              "deu",
+              "MOBILE",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-12",
+              "webdesigner halle saale",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 17
+          },
+          {
+            "keys": [
+              "2026-10-12",
+              "webdesigner halle saale",
+              "deu",
+              "MOBILE",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 31,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-12",
+              "werbeagentur halle",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/standorte/halle"
+            ],
+            "clicks": 0,
+            "impressions": 4,
+            "ctr": 0,
+            "position": 87.25
+          },
+          {
+            "keys": [
+              "2026-10-12",
+              "werbeagentur halle",
+              "deu",
+              "MOBILE",
+              "https://saaleweb.de/leistungen/webdesign-halle"
+            ],
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 78.5
+          },
+          {
+            "keys": [
+              "2026-10-12",
+              "werbeagentur halle",
+              "deu",
+              "MOBILE",
+              "https://saaleweb.de/standorte/halle"
+            ],
+            "clicks": 0,
+            "impressions": 4,
+            "ctr": 0,
+            "position": 73.25
+          },
+          {
+            "keys": [
+              "2026-10-13",
+              "webdesign halle",
+              "deu",
+              "MOBILE",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-13",
+              "werbeagentur halle",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/leistungen/webdesign-halle"
+            ],
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 79.5
+          },
+          {
+            "keys": [
+              "2026-10-13",
+              "werbeagentur halle",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/standorte/halle"
+            ],
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 63.5
+          },
+          {
+            "keys": [
+              "2026-10-13",
+              "werbeagentur halle",
+              "deu",
+              "MOBILE",
+              "https://saaleweb.de/leistungen/webdesign-halle"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 80
+          },
+          {
+            "keys": [
+              "2026-10-14",
+              "webdesign halle",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-14",
+              "webdesigner halle",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 2
+          },
+          {
+            "keys": [
+              "2026-10-14",
+              "webdesigner halle saale",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-14",
+              "werbeagentur halle",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/leistungen/webdesign-halle"
+            ],
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 79.5
+          },
+          {
+            "keys": [
+              "2026-10-14",
+              "werbeagentur halle",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/standorte/halle"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 90
+          },
+          {
+            "keys": [
+              "2026-10-15",
+              "webdesign halle",
+              "deu",
+              "MOBILE",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-15",
+              "webdesigner halle saale",
+              "deu",
+              "MOBILE",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 2
+          },
+          {
+            "keys": [
+              "2026-10-16",
+              "webdesigner halle saale",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-16",
+              "werbeagentur halle",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/leistungen/webdesign-halle"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 76
+          },
+          {
+            "keys": [
+              "2026-10-16",
+              "werbeagentur halle",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/standorte/halle"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 58
+          },
+          {
+            "keys": [
+              "2026-10-16",
+              "werbeagentur halle",
+              "deu",
+              "MOBILE",
+              "https://saaleweb.de/standorte/halle"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 89
+          },
+          {
+            "keys": [
+              "2026-10-17",
+              "webdesign halle",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-17",
+              "webdesigner halle saale",
+              "deu",
+              "MOBILE",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-17",
+              "werbeagentur halle",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/leistungen/webdesign-halle"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 79
+          },
+          {
+            "keys": [
+              "2026-10-17",
+              "werbeagentur halle",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/standorte/halle"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 60
+          }
+        ],
+        "responseAggregationType": "byPage"
+      }
+    },
+    "partial": {
+      "period": {
+        "startDate": "2026-10-18",
+        "endDate": "2026-10-19",
+        "dataState": "all"
+      },
+      "query": {
+        "rows": [
+          {
+            "keys": [
+              "webdesign halle"
+            ],
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "webdesigner halle"
+            ],
+            "clicks": 0,
+            "impressions": 5,
+            "ctr": 0,
+            "position": 1.2
+          },
+          {
+            "keys": [
+              "webdesigner halle saale"
+            ],
+            "clicks": 0,
+            "impressions": 5,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "werbeagentur halle"
+            ],
+            "clicks": 0,
+            "impressions": 8,
+            "ctr": 0,
+            "position": 81.875
+          }
+        ],
+        "responseAggregationType": "byProperty"
+      },
+      "date_query": {
+        "rows": [
+          {
+            "keys": [
+              "2026-10-18",
+              "webdesign halle"
+            ],
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-18",
+              "webdesigner halle"
+            ],
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 1.3333333333333333
+          },
+          {
+            "keys": [
+              "2026-10-18",
+              "webdesigner halle saale"
+            ],
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-18",
+              "werbeagentur halle"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 93
+          },
+          {
+            "keys": [
+              "2026-10-19",
+              "webdesigner halle"
+            ],
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-19",
+              "webdesigner halle saale"
+            ],
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-19",
+              "werbeagentur halle"
+            ],
+            "clicks": 0,
+            "impressions": 7,
+            "ctr": 0,
+            "position": 80.28571428571429
+          }
+        ],
+        "responseAggregationType": "byProperty",
+        "metadata": {
+          "firstIncompleteDate": "2026-10-18"
+        }
+      },
+      "query_country_device": {
+        "rows": [
+          {
+            "keys": [
+              "webdesign halle",
+              "deu",
+              "DESKTOP"
+            ],
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "webdesigner halle",
+              "deu",
+              "DESKTOP"
+            ],
+            "clicks": 0,
+            "impressions": 4,
+            "ctr": 0,
+            "position": 1.25
+          },
+          {
+            "keys": [
+              "webdesigner halle",
+              "deu",
+              "MOBILE"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "webdesigner halle saale",
+              "deu",
+              "DESKTOP"
+            ],
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "webdesigner halle saale",
+              "deu",
+              "MOBILE"
+            ],
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "werbeagentur halle",
+              "deu",
+              "DESKTOP"
+            ],
+            "clicks": 0,
+            "impressions": 5,
+            "ctr": 0,
+            "position": 85.2
+          },
+          {
+            "keys": [
+              "werbeagentur halle",
+              "deu",
+              "MOBILE"
+            ],
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 76.33333333333333
+          }
+        ],
+        "responseAggregationType": "byProperty"
+      },
+      "query_page": {
+        "rows": [
+          {
+            "keys": [
+              "webdesign halle",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "webdesigner halle",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 5,
+            "ctr": 0,
+            "position": 1.2
+          },
+          {
+            "keys": [
+              "webdesigner halle saale",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 5,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "werbeagentur halle",
+              "https://saaleweb.de/leistungen/webdesign-halle"
+            ],
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 76.5
+          },
+          {
+            "keys": [
+              "werbeagentur halle",
+              "https://saaleweb.de/standorte/halle"
+            ],
+            "clicks": 0,
+            "impressions": 7,
+            "ctr": 0,
+            "position": 82.71428571428571
+          }
+        ],
+        "responseAggregationType": "byPage"
+      },
+      "date_query_country_device_page": {
+        "rows": [
+          {
+            "keys": [
+              "2026-10-18",
+              "webdesign halle",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-18",
+              "webdesigner halle",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 1.3333333333333333
+          },
+          {
+            "keys": [
+              "2026-10-18",
+              "webdesigner halle saale",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-18",
+              "webdesigner halle saale",
+              "deu",
+              "MOBILE",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-18",
+              "werbeagentur halle",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/standorte/halle"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 93
+          },
+          {
+            "keys": [
+              "2026-10-19",
+              "webdesigner halle",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-19",
+              "webdesigner halle",
+              "deu",
+              "MOBILE",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-19",
+              "webdesigner halle saale",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-19",
+              "webdesigner halle saale",
+              "deu",
+              "MOBILE",
+              "https://saaleweb.de/"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "keys": [
+              "2026-10-19",
+              "werbeagentur halle",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/leistungen/webdesign-halle"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 76
+          },
+          {
+            "keys": [
+              "2026-10-19",
+              "werbeagentur halle",
+              "deu",
+              "DESKTOP",
+              "https://saaleweb.de/standorte/halle"
+            ],
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 85.66666666666667
+          },
+          {
+            "keys": [
+              "2026-10-19",
+              "werbeagentur halle",
+              "deu",
+              "MOBILE",
+              "https://saaleweb.de/leistungen/webdesign-halle"
+            ],
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 77
+          },
+          {
+            "keys": [
+              "2026-10-19",
+              "werbeagentur halle",
+              "deu",
+              "MOBILE",
+              "https://saaleweb.de/standorte/halle"
+            ],
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 76.33333333333333
+          }
+        ],
+        "responseAggregationType": "byPage",
+        "metadata": {
+          "firstIncompleteDate": "2026-10-18"
+        }
+      },
+      "searchAppearance": {
+        "responseAggregationType": "byPage"
+      }
+    }
+  },
+  "livePageMetadata": [
+    {
+      "url": "https://saaleweb.de/",
+      "status": 200,
+      "finalUrl": "https://saaleweb.de/",
+      "title": "Webdesign Halle (Saale) &amp; SEO — Webagentur | SaaleWeb",
+      "canonical": "https://saaleweb.de"
+    },
+    {
+      "url": "https://saaleweb.de/standorte/halle",
+      "status": 200,
+      "finalUrl": "https://saaleweb.de/standorte/halle",
+      "title": "Webagentur &amp; Webdesign Halle (Saale) | SaaleWeb",
+      "canonical": "https://saaleweb.de/standorte/halle"
+    }
+  ]
+}
