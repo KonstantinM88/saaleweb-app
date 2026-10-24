@@ -2,7 +2,7 @@
 
 ## Canonical блога и повторная проверка скриншотов, 24.10.2026
 
-В коммите `1dc21af`, отправленном в оба репозитория, добавлены self-canonical и `x-default` для всех списков/категорий блога. Локальная HTTP-проверка всех 15 URL пройдена. Публикацию проверяет владелец: последний публичный ответ всё ещё содержал Next.js 16.4.0 без нового canonical. После подтверждения production приоритетные ручные проверки — два EN URL из отчёта и RU WordPress canonical:
+В коммите `1dc21af`, отправленном в оба репозитория, добавлены self-canonical и `x-default` для всех списков/категорий блога. Локальная и повторная production HTTP-проверка всех 15 URL пройдены; публичный JS подтверждает Next.js 16.4.3. Sitemap принят через API с HTTP 204, `lastSubmitted=2026-10-24T03:49:16.673Z` (05:49 Europe/Berlin), ожидает обработки без ошибок/предупреждений. Приоритетные ручные проверки — два EN URL из отчёта и RU WordPress canonical:
 
 - `https://saaleweb.de/en/blog/category/web-design`
 - `https://saaleweb.de/en/blog/category/seo`
@@ -18,7 +18,7 @@
 | `https://saaleweb.de/blog/kategorie/ki-suche` | `https://saaleweb.de/en/blog/category/ai-search` | `https://saaleweb.de/ru/blog/kategoriya/ii-i-poisk` |
 | `https://saaleweb.de/blog/kategorie/praxis` | `https://saaleweb.de/en/blog/category/business-growth` | `https://saaleweb.de/ru/blog/kategoriya/rost-biznesa` |
 
-Старые AI alias и WordPress `sajta` сейчас дают один `308 → 200`; их не добавлять в sitemap. В отчётах по дубликатам и ошибке переадресации после проверки production повторно запустить «Проверить исправление» через UI. Исключение `/api/og` оставить как намеренное ограничение служебной картинки. Production-верификация canonical, новая отправка sitemap и индивидуальные запросы индексирования **не выполнены**; следующий шаг — ручная проверка деплоя владельцем. [Подробный аудит](./search-console-issues-and-stack-2026-10-24.md).
+Старые AI alias и WordPress `sajta` сейчас дают один `308 → 200`; их не добавлять в sitemap. В отчётах по дубликатам и ошибке переадресации повторно запустить «Проверить исправление» через UI. Исключение `/api/og` оставить как намеренное ограничение служебной картинки. Production-верификация canonical и отправка sitemap **выполнены**. Индивидуальные запросы индексирования и Validate fix **не выполнены**: API их не поддерживает. Повторный URL Inspection всё ещё показывает старые даты обхода; не считать группы GSC уже закрытыми. [Подробный аудит](./search-console-issues-and-stack-2026-10-24.md).
 
 ## Crawled — currently not indexed, 09.10.2026
 

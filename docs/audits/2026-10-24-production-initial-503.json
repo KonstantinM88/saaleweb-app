@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-24",
+  "checkedAt": "2026-10-24T03:48:27.855Z",
+  "blogPages": [],
+  "redirects": [],
+  "www": [],
+  "publicSmoke": [],
+  "framework": [],
+  "checksPassed": false,
+  "error": "AssertionError [ERR_ASSERTION]: https://saaleweb.de/blog\n\n503 !== 200\n"
+}

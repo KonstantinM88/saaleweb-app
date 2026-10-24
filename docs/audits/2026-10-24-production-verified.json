@@ -1,0 +1,671 @@
+{
+  "date": "2026-10-24",
+  "checkedAt": "2026-10-24T03:48:47.577Z",
+  "blogPages": [
+    {
+      "url": "https://saaleweb.de/blog",
+      "status": 200,
+      "canonicals": [
+        "https://saaleweb.de/blog"
+      ],
+      "languages": {
+        "de": "https://saaleweb.de/blog",
+        "en": "https://saaleweb.de/en/blog",
+        "ru": "https://saaleweb.de/ru/blog",
+        "x-default": "https://saaleweb.de/blog"
+      },
+      "assets": [
+        "/_next/static/chunks/4bd1b696-e199e788e58acf79.js",
+        "/_next/static/chunks/3794-57fd6028c525a3b2.js",
+        "/_next/static/chunks/main-app-ed98bbe6ec8c4f36.js",
+        "/_next/static/chunks/app/global-error-54c62a4c0a99d4e7.js",
+        "/_next/static/chunks/8500-107859ed31978aa3.js",
+        "/_next/static/chunks/8409-d1fa1f7fac2cd826.js",
+        "/_next/static/chunks/8437-f247c3c76d03ac75.js",
+        "/_next/static/chunks/1930-4a409f42dc372f2a.js",
+        "/_next/static/chunks/1414-526bc2abc254c5d4.js",
+        "/_next/static/chunks/9398-738f0953aa8dae0f.js",
+        "/_next/static/chunks/app/%5Blocale%5D/layout-2a15f70422a0d10c.js",
+        "/_next/static/chunks/9861-fd9988d7ad22244d.js",
+        "/_next/static/chunks/app/%5Blocale%5D/blog/page-441f91c6576c9497.js",
+        "/_next/static/chunks/5098-b791a9c431f40cb4.js",
+        "/_next/static/chunks/app/%5Blocale%5D/page-342195c3b32679ea.js",
+        "/_next/static/chunks/polyfills-42372ed130431b0a.js",
+        "/_next/static/chunks/webpack-b1fa82f35d79a375.js"
+      ]
+    },
+    {
+      "url": "https://saaleweb.de/en/blog",
+      "status": 200,
+      "canonicals": [
+        "https://saaleweb.de/en/blog"
+      ],
+      "languages": {
+        "de": "https://saaleweb.de/blog",
+        "en": "https://saaleweb.de/en/blog",
+        "ru": "https://saaleweb.de/ru/blog",
+        "x-default": "https://saaleweb.de/blog"
+      },
+      "assets": [
+        "/_next/static/chunks/4bd1b696-e199e788e58acf79.js",
+        "/_next/static/chunks/3794-57fd6028c525a3b2.js",
+        "/_next/static/chunks/main-app-ed98bbe6ec8c4f36.js",
+        "/_next/static/chunks/app/global-error-54c62a4c0a99d4e7.js",
+        "/_next/static/chunks/8500-107859ed31978aa3.js",
+        "/_next/static/chunks/8409-d1fa1f7fac2cd826.js",
+        "/_next/static/chunks/8437-f247c3c76d03ac75.js",
+        "/_next/static/chunks/1930-4a409f42dc372f2a.js",
+        "/_next/static/chunks/1414-526bc2abc254c5d4.js",
+        "/_next/static/chunks/9398-738f0953aa8dae0f.js",
+        "/_next/static/chunks/app/%5Blocale%5D/layout-2a15f70422a0d10c.js",
+        "/_next/static/chunks/9861-fd9988d7ad22244d.js",
+        "/_next/static/chunks/app/%5Blocale%5D/blog/page-441f91c6576c9497.js",
+        "/_next/static/chunks/5098-b791a9c431f40cb4.js",
+        "/_next/static/chunks/app/%5Blocale%5D/page-342195c3b32679ea.js",
+        "/_next/static/chunks/polyfills-42372ed130431b0a.js",
+        "/_next/static/chunks/webpack-b1fa82f35d79a375.js"
+      ]
+    },
+    {
+      "url": "https://saaleweb.de/ru/blog",
+      "status": 200,
+      "canonicals": [
+        "https://saaleweb.de/ru/blog"
+      ],
+      "languages": {
+        "de": "https://saaleweb.de/blog",
+        "en": "https://saaleweb.de/en/blog",
+        "ru": "https://saaleweb.de/ru/blog",
+        "x-default": "https://saaleweb.de/blog"
+      },
+      "assets": [
+        "/_next/static/chunks/4bd1b696-e199e788e58acf79.js",
+        "/_next/static/chunks/3794-57fd6028c525a3b2.js",
+        "/_next/static/chunks/main-app-ed98bbe6ec8c4f36.js",
+        "/_next/static/chunks/app/global-error-54c62a4c0a99d4e7.js",
+        "/_next/static/chunks/8500-107859ed31978aa3.js",
+        "/_next/static/chunks/8409-d1fa1f7fac2cd826.js",
+        "/_next/static/chunks/8437-f247c3c76d03ac75.js",
+        "/_next/static/chunks/1930-4a409f42dc372f2a.js",
+        "/_next/static/chunks/1414-526bc2abc254c5d4.js",
+        "/_next/static/chunks/9398-738f0953aa8dae0f.js",
+        "/_next/static/chunks/app/%5Blocale%5D/layout-2a15f70422a0d10c.js",
+        "/_next/static/chunks/9861-fd9988d7ad22244d.js",
+        "/_next/static/chunks/app/%5Blocale%5D/blog/page-441f91c6576c9497.js",
+        "/_next/static/chunks/5098-b791a9c431f40cb4.js",
+        "/_next/static/chunks/app/%5Blocale%5D/page-342195c3b32679ea.js",
+        "/_next/static/chunks/polyfills-42372ed130431b0a.js",
+        "/_next/static/chunks/webpack-b1fa82f35d79a375.js"
+      ]
+    },
+    {
+      "url": "https://saaleweb.de/blog/kategorie/seo",
+      "status": 200,
+      "canonicals": [
+        "https://saaleweb.de/blog/kategorie/seo"
+      ],
+      "languages": {
+        "de": "https://saaleweb.de/blog/kategorie/seo",
+        "en": "https://saaleweb.de/en/blog/category/seo",
+        "ru": "https://saaleweb.de/ru/blog/kategoriya/seo",
+        "x-default": "https://saaleweb.de/blog/kategorie/seo"
+      },
+      "assets": [
+        "/_next/static/chunks/4bd1b696-e199e788e58acf79.js",
+        "/_next/static/chunks/3794-57fd6028c525a3b2.js",
+        "/_next/static/chunks/main-app-ed98bbe6ec8c4f36.js",
+        "/_next/static/chunks/app/global-error-54c62a4c0a99d4e7.js",
+        "/_next/static/chunks/8500-107859ed31978aa3.js",
+        "/_next/static/chunks/8409-d1fa1f7fac2cd826.js",
+        "/_next/static/chunks/8437-f247c3c76d03ac75.js",
+        "/_next/static/chunks/1930-4a409f42dc372f2a.js",
+        "/_next/static/chunks/1414-526bc2abc254c5d4.js",
+        "/_next/static/chunks/9398-738f0953aa8dae0f.js",
+        "/_next/static/chunks/app/%5Blocale%5D/layout-2a15f70422a0d10c.js",
+        "/_next/static/chunks/9861-fd9988d7ad22244d.js",
+        "/_next/static/chunks/app/%5Blocale%5D/blog/kategorie/%5Bslug%5D/page-45df1137ff226f53.js",
+        "/_next/static/chunks/5098-b791a9c431f40cb4.js",
+        "/_next/static/chunks/app/%5Blocale%5D/page-342195c3b32679ea.js",
+        "/_next/static/chunks/polyfills-42372ed130431b0a.js",
+        "/_next/static/chunks/webpack-b1fa82f35d79a375.js"
+      ]
+    },
+    {
+      "url": "https://saaleweb.de/en/blog/category/seo",
+      "status": 200,
+      "canonicals": [
+        "https://saaleweb.de/en/blog/category/seo"
+      ],
+      "languages": {
+        "de": "https://saaleweb.de/blog/kategorie/seo",
+        "en": "https://saaleweb.de/en/blog/category/seo",
+        "ru": "https://saaleweb.de/ru/blog/kategoriya/seo",
+        "x-default": "https://saaleweb.de/blog/kategorie/seo"
+      },
+      "assets": [
+        "/_next/static/chunks/4bd1b696-e199e788e58acf79.js",
+        "/_next/static/chunks/3794-57fd6028c525a3b2.js",
+        "/_next/static/chunks/main-app-ed98bbe6ec8c4f36.js",
+        "/_next/static/chunks/app/global-error-54c62a4c0a99d4e7.js",
+        "/_next/static/chunks/8500-107859ed31978aa3.js",
+        "/_next/static/chunks/8409-d1fa1f7fac2cd826.js",
+        "/_next/static/chunks/8437-f247c3c76d03ac75.js",
+        "/_next/static/chunks/1930-4a409f42dc372f2a.js",
+        "/_next/static/chunks/1414-526bc2abc254c5d4.js",
+        "/_next/static/chunks/9398-738f0953aa8dae0f.js",
+        "/_next/static/chunks/app/%5Blocale%5D/layout-2a15f70422a0d10c.js",
+        "/_next/static/chunks/9861-fd9988d7ad22244d.js",
+        "/_next/static/chunks/app/%5Blocale%5D/blog/kategorie/%5Bslug%5D/page-45df1137ff226f53.js",
+        "/_next/static/chunks/5098-b791a9c431f40cb4.js",
+        "/_next/static/chunks/app/%5Blocale%5D/page-342195c3b32679ea.js",
+        "/_next/static/chunks/polyfills-42372ed130431b0a.js",
+        "/_next/static/chunks/webpack-b1fa82f35d79a375.js"
+      ]
+    },
+    {
+      "url": "https://saaleweb.de/ru/blog/kategoriya/seo",
+      "status": 200,
+      "canonicals": [
+        "https://saaleweb.de/ru/blog/kategoriya/seo"
+      ],
+      "languages": {
+        "de": "https://saaleweb.de/blog/kategorie/seo",
+        "en": "https://saaleweb.de/en/blog/category/seo",
+        "ru": "https://saaleweb.de/ru/blog/kategoriya/seo",
+        "x-default": "https://saaleweb.de/blog/kategorie/seo"
+      },
+      "assets": [
+        "/_next/static/chunks/4bd1b696-e199e788e58acf79.js",
+        "/_next/static/chunks/3794-57fd6028c525a3b2.js",
+        "/_next/static/chunks/main-app-ed98bbe6ec8c4f36.js",
+        "/_next/static/chunks/app/global-error-54c62a4c0a99d4e7.js",
+        "/_next/static/chunks/8500-107859ed31978aa3.js",
+        "/_next/static/chunks/8409-d1fa1f7fac2cd826.js",
+        "/_next/static/chunks/8437-f247c3c76d03ac75.js",
+        "/_next/static/chunks/1930-4a409f42dc372f2a.js",
+        "/_next/static/chunks/1414-526bc2abc254c5d4.js",
+        "/_next/static/chunks/9398-738f0953aa8dae0f.js",
+        "/_next/static/chunks/app/%5Blocale%5D/layout-2a15f70422a0d10c.js",
+        "/_next/static/chunks/9861-fd9988d7ad22244d.js",
+        "/_next/static/chunks/app/%5Blocale%5D/blog/kategorie/%5Bslug%5D/page-45df1137ff226f53.js",
+        "/_next/static/chunks/5098-b791a9c431f40cb4.js",
+        "/_next/static/chunks/app/%5Blocale%5D/page-342195c3b32679ea.js",
+        "/_next/static/chunks/polyfills-42372ed130431b0a.js",
+        "/_next/static/chunks/webpack-b1fa82f35d79a375.js"
+      ]
+    },
+    {
+      "url": "https://saaleweb.de/blog/kategorie/webdesign",
+      "status": 200,
+      "canonicals": [
+        "https://saaleweb.de/blog/kategorie/webdesign"
+      ],
+      "languages": {
+        "de": "https://saaleweb.de/blog/kategorie/webdesign",
+        "en": "https://saaleweb.de/en/blog/category/web-design",
+        "ru": "https://saaleweb.de/ru/blog/kategoriya/veb-dizajn",
+        "x-default": "https://saaleweb.de/blog/kategorie/webdesign"
+      },
+      "assets": [
+        "/_next/static/chunks/4bd1b696-e199e788e58acf79.js",
+        "/_next/static/chunks/3794-57fd6028c525a3b2.js",
+        "/_next/static/chunks/main-app-ed98bbe6ec8c4f36.js",
+        "/_next/static/chunks/app/global-error-54c62a4c0a99d4e7.js",
+        "/_next/static/chunks/8500-107859ed31978aa3.js",
+        "/_next/static/chunks/8409-d1fa1f7fac2cd826.js",
+        "/_next/static/chunks/8437-f247c3c76d03ac75.js",
+        "/_next/static/chunks/1930-4a409f42dc372f2a.js",
+        "/_next/static/chunks/1414-526bc2abc254c5d4.js",
+        "/_next/static/chunks/9398-738f0953aa8dae0f.js",
+        "/_next/static/chunks/app/%5Blocale%5D/layout-2a15f70422a0d10c.js",
+        "/_next/static/chunks/9861-fd9988d7ad22244d.js",
+        "/_next/static/chunks/app/%5Blocale%5D/blog/kategorie/%5Bslug%5D/page-45df1137ff226f53.js",
+        "/_next/static/chunks/5098-b791a9c431f40cb4.js",
+        "/_next/static/chunks/app/%5Blocale%5D/page-342195c3b32679ea.js",
+        "/_next/static/chunks/polyfills-42372ed130431b0a.js",
+        "/_next/static/chunks/webpack-b1fa82f35d79a375.js"
+      ]
+    },
+    {
+      "url": "https://saaleweb.de/en/blog/category/web-design",
+      "status": 200,
+      "canonicals": [
+        "https://saaleweb.de/en/blog/category/web-design"
+      ],
+      "languages": {
+        "de": "https://saaleweb.de/blog/kategorie/webdesign",
+        "en": "https://saaleweb.de/en/blog/category/web-design",
+        "ru": "https://saaleweb.de/ru/blog/kategoriya/veb-dizajn",
+        "x-default": "https://saaleweb.de/blog/kategorie/webdesign"
+      },
+      "assets": [
+        "/_next/static/chunks/4bd1b696-e199e788e58acf79.js",
+        "/_next/static/chunks/3794-57fd6028c525a3b2.js",
+        "/_next/static/chunks/main-app-ed98bbe6ec8c4f36.js",
+        "/_next/static/chunks/app/global-error-54c62a4c0a99d4e7.js",
+        "/_next/static/chunks/8500-107859ed31978aa3.js",
+        "/_next/static/chunks/8409-d1fa1f7fac2cd826.js",
+        "/_next/static/chunks/8437-f247c3c76d03ac75.js",
+        "/_next/static/chunks/1930-4a409f42dc372f2a.js",
+        "/_next/static/chunks/1414-526bc2abc254c5d4.js",
+        "/_next/static/chunks/9398-738f0953aa8dae0f.js",
+        "/_next/static/chunks/app/%5Blocale%5D/layout-2a15f70422a0d10c.js",
+        "/_next/static/chunks/9861-fd9988d7ad22244d.js",
+        "/_next/static/chunks/app/%5Blocale%5D/blog/kategorie/%5Bslug%5D/page-45df1137ff226f53.js",
+        "/_next/static/chunks/5098-b791a9c431f40cb4.js",
+        "/_next/static/chunks/app/%5Blocale%5D/page-342195c3b32679ea.js",
+        "/_next/static/chunks/polyfills-42372ed130431b0a.js",
+        "/_next/static/chunks/webpack-b1fa82f35d79a375.js"
+      ]
+    },
+    {
+      "url": "https://saaleweb.de/ru/blog/kategoriya/veb-dizajn",
+      "status": 200,
+      "canonicals": [
+        "https://saaleweb.de/ru/blog/kategoriya/veb-dizajn"
+      ],
+      "languages": {
+        "de": "https://saaleweb.de/blog/kategorie/webdesign",
+        "en": "https://saaleweb.de/en/blog/category/web-design",
+        "ru": "https://saaleweb.de/ru/blog/kategoriya/veb-dizajn",
+        "x-default": "https://saaleweb.de/blog/kategorie/webdesign"
+      },
+      "assets": [
+        "/_next/static/chunks/4bd1b696-e199e788e58acf79.js",
+        "/_next/static/chunks/3794-57fd6028c525a3b2.js",
+        "/_next/static/chunks/main-app-ed98bbe6ec8c4f36.js",
+        "/_next/static/chunks/app/global-error-54c62a4c0a99d4e7.js",
+        "/_next/static/chunks/8500-107859ed31978aa3.js",
+        "/_next/static/chunks/8409-d1fa1f7fac2cd826.js",
+        "/_next/static/chunks/8437-f247c3c76d03ac75.js",
+        "/_next/static/chunks/1930-4a409f42dc372f2a.js",
+        "/_next/static/chunks/1414-526bc2abc254c5d4.js",
+        "/_next/static/chunks/9398-738f0953aa8dae0f.js",
+        "/_next/static/chunks/app/%5Blocale%5D/layout-2a15f70422a0d10c.js",
+        "/_next/static/chunks/9861-fd9988d7ad22244d.js",
+        "/_next/static/chunks/app/%5Blocale%5D/blog/kategorie/%5Bslug%5D/page-45df1137ff226f53.js",
+        "/_next/static/chunks/5098-b791a9c431f40cb4.js",
+        "/_next/static/chunks/app/%5Blocale%5D/page-342195c3b32679ea.js",
+        "/_next/static/chunks/polyfills-42372ed130431b0a.js",
+        "/_next/static/chunks/webpack-b1fa82f35d79a375.js"
+      ]
+    },
+    {
+      "url": "https://saaleweb.de/blog/kategorie/ki-suche",
+      "status": 200,
+      "canonicals": [
+        "https://saaleweb.de/blog/kategorie/ki-suche"
+      ],
+      "languages": {
+        "de": "https://saaleweb.de/blog/kategorie/ki-suche",
+        "en": "https://saaleweb.de/en/blog/category/ai-search",
+        "ru": "https://saaleweb.de/ru/blog/kategoriya/ii-i-poisk",
+        "x-default": "https://saaleweb.de/blog/kategorie/ki-suche"
+      },
+      "assets": [
+        "/_next/static/chunks/4bd1b696-e199e788e58acf79.js",
+        "/_next/static/chunks/3794-57fd6028c525a3b2.js",
+        "/_next/static/chunks/main-app-ed98bbe6ec8c4f36.js",
+        "/_next/static/chunks/app/global-error-54c62a4c0a99d4e7.js",
+        "/_next/static/chunks/8500-107859ed31978aa3.js",
+        "/_next/static/chunks/8409-d1fa1f7fac2cd826.js",
+        "/_next/static/chunks/8437-f247c3c76d03ac75.js",
+        "/_next/static/chunks/1930-4a409f42dc372f2a.js",
+        "/_next/static/chunks/1414-526bc2abc254c5d4.js",
+        "/_next/static/chunks/9398-738f0953aa8dae0f.js",
+        "/_next/static/chunks/app/%5Blocale%5D/layout-2a15f70422a0d10c.js",
+        "/_next/static/chunks/9861-fd9988d7ad22244d.js",
+        "/_next/static/chunks/app/%5Blocale%5D/blog/kategorie/%5Bslug%5D/page-45df1137ff226f53.js",
+        "/_next/static/chunks/5098-b791a9c431f40cb4.js",
+        "/_next/static/chunks/app/%5Blocale%5D/page-342195c3b32679ea.js",
+        "/_next/static/chunks/polyfills-42372ed130431b0a.js",
+        "/_next/static/chunks/webpack-b1fa82f35d79a375.js"
+      ]
+    },
+    {
+      "url": "https://saaleweb.de/en/blog/category/ai-search",
+      "status": 200,
+      "canonicals": [
+        "https://saaleweb.de/en/blog/category/ai-search"
+      ],
+      "languages": {
+        "de": "https://saaleweb.de/blog/kategorie/ki-suche",
+        "en": "https://saaleweb.de/en/blog/category/ai-search",
+        "ru": "https://saaleweb.de/ru/blog/kategoriya/ii-i-poisk",
+        "x-default": "https://saaleweb.de/blog/kategorie/ki-suche"
+      },
+      "assets": [
+        "/_next/static/chunks/4bd1b696-e199e788e58acf79.js",
+        "/_next/static/chunks/3794-57fd6028c525a3b2.js",
+        "/_next/static/chunks/main-app-ed98bbe6ec8c4f36.js",
+        "/_next/static/chunks/app/global-error-54c62a4c0a99d4e7.js",
+        "/_next/static/chunks/8500-107859ed31978aa3.js",
+        "/_next/static/chunks/8409-d1fa1f7fac2cd826.js",
+        "/_next/static/chunks/8437-f247c3c76d03ac75.js",
+        "/_next/static/chunks/1930-4a409f42dc372f2a.js",
+        "/_next/static/chunks/1414-526bc2abc254c5d4.js",
+        "/_next/static/chunks/9398-738f0953aa8dae0f.js",
+        "/_next/static/chunks/app/%5Blocale%5D/layout-2a15f70422a0d10c.js",
+        "/_next/static/chunks/9861-fd9988d7ad22244d.js",
+        "/_next/static/chunks/app/%5Blocale%5D/blog/kategorie/%5Bslug%5D/page-45df1137ff226f53.js",
+        "/_next/static/chunks/5098-b791a9c431f40cb4.js",
+        "/_next/static/chunks/app/%5Blocale%5D/page-342195c3b32679ea.js",
+        "/_next/static/chunks/polyfills-42372ed130431b0a.js",
+        "/_next/static/chunks/webpack-b1fa82f35d79a375.js"
+      ]
+    },
+    {
+      "url": "https://saaleweb.de/ru/blog/kategoriya/ii-i-poisk",
+      "status": 200,
+      "canonicals": [
+        "https://saaleweb.de/ru/blog/kategoriya/ii-i-poisk"
+      ],
+      "languages": {
+        "de": "https://saaleweb.de/blog/kategorie/ki-suche",
+        "en": "https://saaleweb.de/en/blog/category/ai-search",
+        "ru": "https://saaleweb.de/ru/blog/kategoriya/ii-i-poisk",
+        "x-default": "https://saaleweb.de/blog/kategorie/ki-suche"
+      },
+      "assets": [
+        "/_next/static/chunks/4bd1b696-e199e788e58acf79.js",
+        "/_next/static/chunks/3794-57fd6028c525a3b2.js",
+        "/_next/static/chunks/main-app-ed98bbe6ec8c4f36.js",
+        "/_next/static/chunks/app/global-error-54c62a4c0a99d4e7.js",
+        "/_next/static/chunks/8500-107859ed31978aa3.js",
+        "/_next/static/chunks/8409-d1fa1f7fac2cd826.js",
+        "/_next/static/chunks/8437-f247c3c76d03ac75.js",
+        "/_next/static/chunks/1930-4a409f42dc372f2a.js",
+        "/_next/static/chunks/1414-526bc2abc254c5d4.js",
+        "/_next/static/chunks/9398-738f0953aa8dae0f.js",
+        "/_next/static/chunks/app/%5Blocale%5D/layout-2a15f70422a0d10c.js",
+        "/_next/static/chunks/9861-fd9988d7ad22244d.js",
+        "/_next/static/chunks/app/%5Blocale%5D/blog/kategorie/%5Bslug%5D/page-45df1137ff226f53.js",
+        "/_next/static/chunks/5098-b791a9c431f40cb4.js",
+        "/_next/static/chunks/app/%5Blocale%5D/page-342195c3b32679ea.js",
+        "/_next/static/chunks/polyfills-42372ed130431b0a.js",
+        "/_next/static/chunks/webpack-b1fa82f35d79a375.js"
+      ]
+    },
+    {
+      "url": "https://saaleweb.de/blog/kategorie/praxis",
+      "status": 200,
+      "canonicals": [
+        "https://saaleweb.de/blog/kategorie/praxis"
+      ],
+      "languages": {
+        "de": "https://saaleweb.de/blog/kategorie/praxis",
+        "en": "https://saaleweb.de/en/blog/category/business-growth",
+        "ru": "https://saaleweb.de/ru/blog/kategoriya/rost-biznesa",
+        "x-default": "https://saaleweb.de/blog/kategorie/praxis"
+      },
+      "assets": [
+        "/_next/static/chunks/4bd1b696-e199e788e58acf79.js",
+        "/_next/static/chunks/3794-57fd6028c525a3b2.js",
+        "/_next/static/chunks/main-app-ed98bbe6ec8c4f36.js",
+        "/_next/static/chunks/app/global-error-54c62a4c0a99d4e7.js",
+        "/_next/static/chunks/8500-107859ed31978aa3.js",
+        "/_next/static/chunks/8409-d1fa1f7fac2cd826.js",
+        "/_next/static/chunks/8437-f247c3c76d03ac75.js",
+        "/_next/static/chunks/1930-4a409f42dc372f2a.js",
+        "/_next/static/chunks/1414-526bc2abc254c5d4.js",
+        "/_next/static/chunks/9398-738f0953aa8dae0f.js",
+        "/_next/static/chunks/app/%5Blocale%5D/layout-2a15f70422a0d10c.js",
+        "/_next/static/chunks/9861-fd9988d7ad22244d.js",
+        "/_next/static/chunks/app/%5Blocale%5D/blog/kategorie/%5Bslug%5D/page-45df1137ff226f53.js",
+        "/_next/static/chunks/5098-b791a9c431f40cb4.js",
+        "/_next/static/chunks/app/%5Blocale%5D/page-342195c3b32679ea.js",
+        "/_next/static/chunks/polyfills-42372ed130431b0a.js",
+        "/_next/static/chunks/webpack-b1fa82f35d79a375.js"
+      ]
+    },
+    {
+      "url": "https://saaleweb.de/en/blog/category/business-growth",
+      "status": 200,
+      "canonicals": [
+        "https://saaleweb.de/en/blog/category/business-growth"
+      ],
+      "languages": {
+        "de": "https://saaleweb.de/blog/kategorie/praxis",
+        "en": "https://saaleweb.de/en/blog/category/business-growth",
+        "ru": "https://saaleweb.de/ru/blog/kategoriya/rost-biznesa",
+        "x-default": "https://saaleweb.de/blog/kategorie/praxis"
+      },
+      "assets": [
+        "/_next/static/chunks/4bd1b696-e199e788e58acf79.js",
+        "/_next/static/chunks/3794-57fd6028c525a3b2.js",
+        "/_next/static/chunks/main-app-ed98bbe6ec8c4f36.js",
+        "/_next/static/chunks/app/global-error-54c62a4c0a99d4e7.js",
+        "/_next/static/chunks/8500-107859ed31978aa3.js",
+        "/_next/static/chunks/8409-d1fa1f7fac2cd826.js",
+        "/_next/static/chunks/8437-f247c3c76d03ac75.js",
+        "/_next/static/chunks/1930-4a409f42dc372f2a.js",
+        "/_next/static/chunks/1414-526bc2abc254c5d4.js",
+        "/_next/static/chunks/9398-738f0953aa8dae0f.js",
+        "/_next/static/chunks/app/%5Blocale%5D/layout-2a15f70422a0d10c.js",
+        "/_next/static/chunks/9861-fd9988d7ad22244d.js",
+        "/_next/static/chunks/app/%5Blocale%5D/blog/kategorie/%5Bslug%5D/page-45df1137ff226f53.js",
+        "/_next/static/chunks/5098-b791a9c431f40cb4.js",
+        "/_next/static/chunks/app/%5Blocale%5D/page-342195c3b32679ea.js",
+        "/_next/static/chunks/polyfills-42372ed130431b0a.js",
+        "/_next/static/chunks/webpack-b1fa82f35d79a375.js"
+      ]
+    },
+    {
+      "url": "https://saaleweb.de/ru/blog/kategoriya/rost-biznesa",
+      "status": 200,
+      "canonicals": [
+        "https://saaleweb.de/ru/blog/kategoriya/rost-biznesa"
+      ],
+      "languages": {
+        "de": "https://saaleweb.de/blog/kategorie/praxis",
+        "en": "https://saaleweb.de/en/blog/category/business-growth",
+        "ru": "https://saaleweb.de/ru/blog/kategoriya/rost-biznesa",
+        "x-default": "https://saaleweb.de/blog/kategorie/praxis"
+      },
+      "assets": [
+        "/_next/static/chunks/4bd1b696-e199e788e58acf79.js",
+        "/_next/static/chunks/3794-57fd6028c525a3b2.js",
+        "/_next/static/chunks/main-app-ed98bbe6ec8c4f36.js",
+        "/_next/static/chunks/app/global-error-54c62a4c0a99d4e7.js",
+        "/_next/static/chunks/8500-107859ed31978aa3.js",
+        "/_next/static/chunks/8409-d1fa1f7fac2cd826.js",
+        "/_next/static/chunks/8437-f247c3c76d03ac75.js",
+        "/_next/static/chunks/1930-4a409f42dc372f2a.js",
+        "/_next/static/chunks/1414-526bc2abc254c5d4.js",
+        "/_next/static/chunks/9398-738f0953aa8dae0f.js",
+        "/_next/static/chunks/app/%5Blocale%5D/layout-2a15f70422a0d10c.js",
+        "/_next/static/chunks/9861-fd9988d7ad22244d.js",
+        "/_next/static/chunks/app/%5Blocale%5D/blog/kategorie/%5Bslug%5D/page-45df1137ff226f53.js",
+        "/_next/static/chunks/5098-b791a9c431f40cb4.js",
+        "/_next/static/chunks/app/%5Blocale%5D/page-342195c3b32679ea.js",
+        "/_next/static/chunks/polyfills-42372ed130431b0a.js",
+        "/_next/static/chunks/webpack-b1fa82f35d79a375.js"
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "path": "/leistungen/ai-optimization",
+      "ua": "Mozilla/5.0",
+      "status": 308,
+      "destination": "/leistungen/ki-optimierung",
+      "finalStatus": 200,
+      "queryPreserved": true,
+      "checked": true
+    },
+    {
+      "path": "/leistungen/ai-optimization",
+      "ua": "Googlebot",
+      "status": 308,
+      "destination": "/leistungen/ki-optimierung",
+      "finalStatus": 200,
+      "queryPreserved": true,
+      "checked": true
+    },
+    {
+      "path": "/ru/uslugi/ai-optimization",
+      "ua": "Mozilla/5.0",
+      "status": 308,
+      "destination": "/ru/uslugi/optimizaciya-pod-ii",
+      "finalStatus": 200,
+      "queryPreserved": true,
+      "checked": true
+    },
+    {
+      "path": "/ru/uslugi/ai-optimization",
+      "ua": "Googlebot",
+      "status": 308,
+      "destination": "/ru/uslugi/optimizaciya-pod-ii",
+      "finalStatus": 200,
+      "queryPreserved": true,
+      "checked": true
+    },
+    {
+      "path": "/ru/uslugi/modernizaciya-wordpress-sajta",
+      "ua": "Mozilla/5.0",
+      "status": 308,
+      "destination": "/ru/uslugi/modernizaciya-wordpress-sayta",
+      "finalStatus": 200,
+      "queryPreserved": true,
+      "checked": true
+    },
+    {
+      "path": "/ru/uslugi/modernizaciya-wordpress-sajta",
+      "ua": "Googlebot",
+      "status": 308,
+      "destination": "/ru/uslugi/modernizaciya-wordpress-sayta",
+      "finalStatus": 200,
+      "queryPreserved": true,
+      "checked": true
+    }
+  ],
+  "www": [
+    {
+      "path": "/en/blog/category/web-design",
+      "status": 308
+    },
+    {
+      "path": "/en/blog/category/seo",
+      "status": 308
+    }
+  ],
+  "publicSmoke": [
+    {
+      "url": "https://saaleweb.de/",
+      "status": 200,
+      "canonical": "https://saaleweb.de"
+    },
+    {
+      "url": "https://saaleweb.de/en",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en"
+    },
+    {
+      "url": "https://saaleweb.de/ru",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru"
+    },
+    {
+      "url": "https://saaleweb.de/kontakt",
+      "status": 200,
+      "canonical": "https://saaleweb.de/kontakt"
+    },
+    {
+      "url": "https://saaleweb.de/projekte",
+      "status": 200,
+      "canonical": "https://saaleweb.de/projekte"
+    },
+    {
+      "url": "https://saaleweb.de/leistungen/webdesign-halle",
+      "status": 200,
+      "canonical": "https://saaleweb.de/leistungen/webdesign-halle"
+    },
+    {
+      "url": "https://saaleweb.de/en/services/wordpress-agency-halle",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/services/wordpress-agency-halle"
+    },
+    {
+      "url": "https://saaleweb.de/ru/uslugi/seo-halle",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/uslugi/seo-halle"
+    }
+  ],
+  "framework": [
+    {
+      "asset": "/_next/static/chunks/3794-57fd6028c525a3b2.js",
+      "version": "16.4.3"
+    }
+  ],
+  "transientResponses": [],
+  "checksPassed": true,
+  "adminProtected": true,
+  "rsc": {
+    "status": 200,
+    "contentType": "text/x-component",
+    "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch, Accept-Encoding"
+  },
+  "robots": {
+    "status": 200,
+    "bytes": 444,
+    "apiExcluded": true
+  },
+  "og": {
+    "status": 200,
+    "contentType": "image/png"
+  },
+  "sitemapCount": 231,
+  "inspections": [
+    {
+      "url": "https://saaleweb.de/en/blog/category/web-design",
+      "verdict": "NEUTRAL",
+      "coverageState": "Duplicate without user-selected canonical",
+      "lastCrawlTime": "2026-08-01T12:40:02Z",
+      "robotsTxtState": "ALLOWED",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://www.saaleweb.de/en/blog/category/web-design"
+    },
+    {
+      "url": "https://saaleweb.de/en/blog/category/seo",
+      "verdict": "NEUTRAL",
+      "coverageState": "Duplicate without user-selected canonical",
+      "lastCrawlTime": "2026-07-23T16:46:13Z",
+      "robotsTxtState": "ALLOWED",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://www.saaleweb.de/en/blog/category/seo"
+    },
+    {
+      "url": "https://saaleweb.de/ru/uslugi/modernizaciya-wordpress-sayta",
+      "verdict": "NEUTRAL",
+      "coverageState": "Duplicate, Google chose different canonical than user",
+      "lastCrawlTime": "2026-10-07T18:04:05Z",
+      "robotsTxtState": "ALLOWED",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://saaleweb.de/ru/uslugi/modernizaciya-wordpress-sajta",
+      "userCanonical": "https://saaleweb.de/ru/uslugi/modernizaciya-wordpress-sayta"
+    }
+  ],
+  "sitemapSubmission": {
+    "status": 204,
+    "submittedAt": "2026-10-24T03:49:14.468Z",
+    "state": {
+      "path": "https://saaleweb.de/sitemap.xml",
+      "lastSubmitted": "2026-10-24T03:49:16.673Z",
+      "isPending": true,
+      "isSitemapsIndex": false,
+      "type": "sitemap",
+      "lastDownloaded": "2026-10-18T23:30:28.929Z",
+      "warnings": "0",
+      "errors": "0",
+      "contents": [
+        {
+          "type": "web",
+          "submitted": "231",
+          "indexed": "0"
+        }
+      ]
+    }
+  },
+  "individualIndexingRequestsSent": false,
+  "issueValidationStarted": false
+}
