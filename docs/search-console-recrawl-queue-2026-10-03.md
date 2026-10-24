@@ -2,7 +2,7 @@
 
 ## Canonical блога и повторная проверка скриншотов, 24.10.2026
 
-В работе: добавлены self-canonical и `x-default` для всех списков/категорий блога. После подтверждения production приоритетные ручные проверки — два EN URL из отчёта и RU WordPress canonical:
+В коммите `1dc21af`, отправленном в оба репозитория, добавлены self-canonical и `x-default` для всех списков/категорий блога. Локальная HTTP-проверка всех 15 URL пройдена. Публикацию проверяет владелец: последний публичный ответ всё ещё содержал Next.js 16.4.0 без нового canonical. После подтверждения production приоритетные ручные проверки — два EN URL из отчёта и RU WordPress canonical:
 
 - `https://saaleweb.de/en/blog/category/web-design`
 - `https://saaleweb.de/en/blog/category/seo`
@@ -18,7 +18,7 @@
 | `https://saaleweb.de/blog/kategorie/ki-suche` | `https://saaleweb.de/en/blog/category/ai-search` | `https://saaleweb.de/ru/blog/kategoriya/ii-i-poisk` |
 | `https://saaleweb.de/blog/kategorie/praxis` | `https://saaleweb.de/en/blog/category/business-growth` | `https://saaleweb.de/ru/blog/kategoriya/rost-biznesa` |
 
-Старые AI alias и WordPress `sajta` сейчас дают один `308 → 200`; их не добавлять в sitemap. В отчётах по дубликатам и ошибке переадресации после проверки production повторно запустить «Проверить исправление» через UI. Исключение `/api/og` оставить как намеренное ограничение служебной картинки. Публикация, HTTP-проверка и отправка sitemap будут отмечены после завершения. [Подробный аудит](./search-console-issues-and-stack-2026-10-24.md).
+Старые AI alias и WordPress `sajta` сейчас дают один `308 → 200`; их не добавлять в sitemap. В отчётах по дубликатам и ошибке переадресации после проверки production повторно запустить «Проверить исправление» через UI. Исключение `/api/og` оставить как намеренное ограничение служебной картинки. Production-верификация canonical, новая отправка sitemap и индивидуальные запросы индексирования **не выполнены**; следующий шаг — ручная проверка деплоя владельцем. [Подробный аудит](./search-console-issues-and-stack-2026-10-24.md).
 
 ## Crawled — currently not indexed, 09.10.2026
 

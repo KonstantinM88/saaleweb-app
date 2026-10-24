@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-24",
+  "checkedAt": "2026-10-24T03:31:00.067Z",
+  "responses": [
+    {
+      "url": "https://saaleweb.de/en/blog/category/web-design",
+      "status": 200,
+      "canonical": null,
+      "headers": {
+        "cache-control": "s-maxage=86400, stale-while-revalidate=31449600",
+        "age": null,
+        "server": "hcdn",
+        "x-hcdn-cache-status": "DYNAMIC",
+        "x-hcdn-request-id": "53aefa1a7d0c9dd253604f0adae89c4e-fra-edge10",
+        "x-nextjs-cache": "HIT"
+      },
+      "versions": [
+        {
+          "asset": "/_next/static/chunks/3794-c50728bc153f5988.js",
+          "version": "16.4.0"
+        }
+      ]
+    },
+    {
+      "url": "https://saaleweb.de/en/blog/category/web-design?deployment-audit=20261024",
+      "status": 200,
+      "canonical": null,
+      "headers": {
+        "cache-control": "s-maxage=86400, stale-while-revalidate=31449600",
+        "age": null,
+        "server": "hcdn",
+        "x-hcdn-cache-status": "DYNAMIC",
+        "x-hcdn-request-id": "0855ea47407e10572431bbd7f7e8a5ae-fra-edge10",
+        "x-nextjs-cache": "HIT"
+      },
+      "versions": [
+        {
+          "asset": "/_next/static/chunks/3794-c50728bc153f5988.js",
+          "version": "16.4.0"
+        }
+      ]
+    }
+  ]
+}
