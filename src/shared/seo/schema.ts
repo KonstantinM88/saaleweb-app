@@ -3,6 +3,42 @@ import { siteConfig } from "@/shared/config/site";
 const URL = siteConfig.url;
 const ORG_ID = `${URL}/#organization`;
 const PERSON_ID = `${URL}/#founder`;
+const LOGO_URL = `${URL}/icons/icon-512.png`;
+const FOUNDER_IMAGE_URL = `${URL}/images/sections/founder-avatar.webp`;
+
+/** Services SaaleWeb publicly offers; mirrors the commercial landing pages. */
+const KNOWS_ABOUT = [
+  "Webdesign",
+  "Webentwicklung",
+  "Suchmaschinenoptimierung",
+  "Local SEO",
+  "WordPress",
+  "Next.js",
+  "Online-Buchungssysteme",
+  "KI-Integration",
+];
+
+function postalAddress() {
+  return {
+    "@type": "PostalAddress",
+    streetAddress: siteConfig.address.street,
+    postalCode: siteConfig.address.postalCode,
+    addressLocality: siteConfig.address.locality,
+    addressRegion: siteConfig.address.region,
+    addressCountry: siteConfig.address.countryCode,
+  };
+}
+
+function salesContactPoint() {
+  return {
+    "@type": "ContactPoint",
+    email: siteConfig.email,
+    telephone: siteConfig.phone.e164,
+    contactType: "sales",
+    areaServed: "DE",
+    availableLanguage: ["German", "English", "Russian"],
+  };
+}
 
 /** Organization — emitted once globally. */
 export function organizationSchema() {
@@ -12,10 +48,17 @@ export function organizationSchema() {
     "@id": ORG_ID,
     name: siteConfig.name,
     url: URL,
+    logo: { "@type": "ImageObject", url: LOGO_URL, width: 512, height: 512 },
+    image: LOGO_URL,
+    description:
+      "Webagentur in Halle (Saale) für Websites, Local SEO, WordPress und individuelle digitale Lösungen für Unternehmen.",
     email: siteConfig.email,
     telephone: siteConfig.phone.e164,
+    address: postalAddress(),
+    contactPoint: salesContactPoint(),
     founder: { "@id": PERSON_ID },
     areaServed: siteConfig.locations,
+    knowsAbout: KNOWS_ABOUT,
     slogan: "Websites, SEO & KI für Unternehmen",
     sameAs: [siteConfig.googleBusiness.profileUrl, siteConfig.googleBusiness.placeUrl].filter(
       Boolean,
@@ -49,18 +92,13 @@ export function localBusinessSchema(opts?: { areaServed?: string }) {
     url: URL,
     email: siteConfig.email,
     telephone: siteConfig.phone.e164,
-    image: `${URL}/icons/icon-512.png`,
+    image: LOGO_URL,
+    logo: LOGO_URL,
     priceRange: "€€",
     areaServed: opts?.areaServed ?? siteConfig.locations,
     founder: { "@id": PERSON_ID },
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: siteConfig.address.street,
-      postalCode: siteConfig.address.postalCode,
-      addressLocality: siteConfig.address.locality,
-      addressRegion: siteConfig.address.region,
-      addressCountry: siteConfig.address.countryCode,
-    },
+    parentOrganization: { "@id": ORG_ID },
+    address: postalAddress(),
     ...(gb.latitude && gb.longitude
       ? {
           geo: {
@@ -94,14 +132,7 @@ export function contactPageSchema(input: {
     url: `${URL}${input.path}`,
     inLanguage: input.locale,
     about: { "@id": ORG_ID },
-    mainEntity: {
-      "@type": "ContactPoint",
-      email: siteConfig.email,
-      telephone: siteConfig.phone.e164,
-      contactType: "sales",
-      areaServed: "DE",
-      availableLanguage: ["German", "English", "Russian"],
-    },
+    mainEntity: salesContactPoint(),
   };
 }
 
@@ -112,7 +143,9 @@ export function personSchema() {
     "@id": PERSON_ID,
     name: siteConfig.founder,
     jobTitle: "Webentwickler & Gründer",
+    image: FOUNDER_IMAGE_URL,
     worksFor: { "@id": ORG_ID },
+    knowsAbout: KNOWS_ABOUT,
     url: URL,
   };
 }

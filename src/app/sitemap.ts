@@ -22,7 +22,7 @@ function entriesForLocalizedUrls(
 ): MetadataRoute.Sitemap {
   const alternates = {
     ...languages,
-    "x-default": languages[routing.defaultLocale] ?? Object.values(languages)[0],
+    "x-default": languages[routing.defaultLocale] ?? languages.en ?? languages.ru ?? Object.values(languages)[0],
   };
 
   return Object.values(languages)

@@ -1,3 +1,5 @@
+import { getRetainedServiceLink } from "./retainedLinks";
+
 export type Phase4Link = {
   label: string;
   href: string;
@@ -3796,7 +3798,64 @@ export function getSeoServiceSlugMapByLocalizedSlug(locale: string, slug: string
 export function getSeoServicePage(slug: string, locale: string = "de") {
   if (!isPhase4Locale(locale)) return null;
   const canonical = serviceCanonicalFromSlug(locale, slug) ?? slug;
-  return localizedServicePage(canonical, locale);
+  const page = localizedServicePage(canonical, locale);
+  return page ? withRelatedSupplements(page, canonical, locale) : null;
+}
+
+/**
+ * Contextual links to commercial pages that the 2026-10-30 production crawl
+ * found under-linked (WordPress agency, beauty and construction landings had
+ * only two internal links each). Labels and descriptions come from the target
+ * page itself, so no extra copy has to be kept in sync per locale.
+ */
+type RelatedTarget = { kind: "service" | "industry" | "retainedService"; canonical: string };
+
+const RELATED_LINK_SUPPLEMENTS: Record<string, RelatedTarget[]> = {
+  "seo-halle": [{ kind: "retainedService", canonical: "seo-optimierung" }],
+  "webdesign-halle": [{ kind: "service", canonical: "wordpress-agentur-halle" }],
+  "website-relaunch": [
+    { kind: "service", canonical: "wordpress-agentur-halle" },
+    { kind: "retainedService", canonical: "digitalberatung" },
+  ],
+  "wordpress-website-modernisieren": [{ kind: "service", canonical: "wordpress-agentur-halle" }],
+  "website-wartung": [
+    { kind: "service", canonical: "wordpress-agentur-halle" },
+    { kind: "retainedService", canonical: "hosting" },
+  ],
+  "website-sicherheit": [{ kind: "retainedService", canonical: "hosting" }],
+  automatisierung: [
+    { kind: "retainedService", canonical: "ki-integration" },
+    { kind: "retainedService", canonical: "digitalberatung" },
+  ],
+  "api-integrationen": [{ kind: "retainedService", canonical: "ki-integration" }],
+  buchungssysteme: [{ kind: "industry", canonical: "beauty-studio-website" }],
+  "handwerker-website": [{ kind: "industry", canonical: "bauunternehmen-website" }],
+  "glaserei-website": [{ kind: "industry", canonical: "bauunternehmen-website" }],
+};
+
+function relatedTargetLink(target: RelatedTarget, locale: Phase4Locale): Phase4Link | null {
+  if (target.kind === "retainedService") return getRetainedServiceLink(target.canonical, locale);
+  const page =
+    target.kind === "service"
+      ? localizedServicePage(target.canonical, locale)
+      : localizedIndustryPage(target.canonical, locale);
+  if (!page) return null;
+  return {
+    label: page.navLabel ?? page.title.split(" – ")[0],
+    href: target.kind === "service" ? serviceHref(locale, page.slug) : industryHref(locale, page.slug),
+    description: page.metaDescription,
+  };
+}
+
+function withRelatedSupplements(page: Phase4Landing, canonical: string, locale: Phase4Locale): Phase4Landing {
+  const targets = RELATED_LINK_SUPPLEMENTS[canonical];
+  if (!targets) return page;
+  const existing = new Set(page.relatedLinks.map((link) => link.href));
+  const extra = targets.flatMap((target) => {
+    const link = relatedTargetLink(target, locale);
+    return link && !existing.has(link.href) ? [link] : [];
+  });
+  return extra.length > 0 ? { ...page, relatedLinks: [...page.relatedLinks, ...extra] } : page;
 }
 
 function industryFaq(industry: string, extra: Phase4Faq[] = []): Phase4Faq[] {
@@ -5116,7 +5175,8 @@ export function getSeoIndustrySlugMapByLocalizedSlug(locale: string, slug: strin
 export function getSeoIndustryPage(slug: string, locale: string = "de") {
   if (!isPhase4Locale(locale)) return null;
   const canonical = industryCanonicalFromSlug(locale, slug) ?? slug;
-  return localizedIndustryPage(canonical, locale);
+  const page = localizedIndustryPage(canonical, locale);
+  return page ? withRelatedSupplements(page, canonical, locale) : null;
 }
 
 function cityFaq(city: string): Phase4Faq[] {

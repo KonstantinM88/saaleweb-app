@@ -3,8 +3,9 @@ import { unstable_cache } from "next/cache";
 import { prisma } from "@/lib/prisma";
 import { isAppLocale } from "@/i18n/routing";
 import type { AppLocale } from "@/i18n/routing";
+import { siteConfig } from "@/shared/config/site";
 import { SEO_OVERRIDE_CACHE_SECONDS, SEO_OVERRIDE_CACHE_TAG } from "./cache";
-import { ogImageUrl } from "./og";
+import { ogAlternateLocales, ogImageUrl, ogLocale } from "./og";
 
 type SeoOverride = { title: string | null; description: string | null; ogImage: string | null };
 
@@ -79,17 +80,49 @@ export async function buildMetadata(opts: {
     title: metadataTitle,
     description,
     alternates: languages || canonical ? { canonical, languages } : undefined,
-    openGraph: {
+    ...socialMetadata({
       title,
       description,
+      locale: opts.locale,
+      canonical,
+      image: ogImage,
+      ogType: opts.ogType,
+    }),
+  };
+}
+
+/**
+ * Open Graph and Twitter fields for a page. Next.js replaces the layout's
+ * `openGraph` object instead of merging it, so every page that defines its
+ * own must repeat url, site name and locale or they disappear from the HTML.
+ * A relative `canonical` is resolved against the layout's `metadataBase`.
+ */
+export function socialMetadata(opts: {
+  title: string;
+  description?: string;
+  locale: string;
+  canonical: string;
+  image?: string;
+  ogType?: "website" | "article";
+}): Pick<Metadata, "openGraph" | "twitter"> {
+  const image = opts.image ?? ogImageUrl({ title: opts.title });
+
+  return {
+    openGraph: {
+      title: opts.title,
+      description: opts.description,
+      url: opts.canonical,
+      siteName: siteConfig.name,
+      locale: ogLocale(opts.locale),
+      alternateLocale: ogAlternateLocales(opts.locale),
       type: opts.ogType ?? "website",
-      images: [{ url: ogImage, width: 1200, height: 630 }],
+      images: [{ url: image, width: 1200, height: 630 }],
     },
     twitter: {
       card: "summary_large_image",
-      title,
-      description,
-      images: [ogImage],
+      title: opts.title,
+      description: opts.description,
+      images: [image],
     },
   };
 }

@@ -1,0 +1,4508 @@
+{
+ "checkedAt": "2026-10-30",
+ "source": "Production crawl of all sitemap URLs (UA SaaleWebAudit/1.0, no JS). Text bodies not stored.",
+ "sitemap": {
+  "urls": 231,
+  "unique": 231,
+  "lastmod": false,
+  "hreflangAlternates": 924
+ },
+ "summary": {
+  "status200": 231,
+  "canonicalMismatch": 0,
+  "hreflangUnder4": 0,
+  "noindex": 0,
+  "h1NotOne": 0,
+  "ldParseErrors": 0,
+  "imgWithoutAlt": 0,
+  "ogUrlMissing": 213,
+  "ogUrlNotCanonical": 15,
+  "ogSiteNameMissing": 213,
+  "titleOver65": 58,
+  "titleUnder30": 33,
+  "descOver160": 51,
+  "descUnder100": 47,
+  "orphanSitemapUrls": [
+   "https://saaleweb.de/ru/uslugi/razrabotka-sajtov",
+   "https://saaleweb.de/en/services/web-development",
+   "https://saaleweb.de/leistungen/website-entwicklung",
+   "https://saaleweb.de/ru/uslugi/seo-optimizaciya",
+   "https://saaleweb.de/en/services/seo-optimization",
+   "https://saaleweb.de/leistungen/seo-optimierung",
+   "https://saaleweb.de/ru/uslugi/integraciya-ii",
+   "https://saaleweb.de/en/services/ai-integration",
+   "https://saaleweb.de/leistungen/ki-integration",
+   "https://saaleweb.de/ru/uslugi/hosting",
+   "https://saaleweb.de/en/services/hosting",
+   "https://saaleweb.de/leistungen/hosting",
+   "https://saaleweb.de/ru/uslugi/podderzhka",
+   "https://saaleweb.de/en/services/maintenance",
+   "https://saaleweb.de/leistungen/wartung",
+   "https://saaleweb.de/ru/uslugi/cifrovoj-konsalting",
+   "https://saaleweb.de/en/services/digital-consulting",
+   "https://saaleweb.de/leistungen/digitalberatung"
+  ]
+ },
+ "other": {
+  "/de/leistungen": "307 -> /leistungen",
+  "/leistungen/performance": "308 -> /leistungen/performance-optimierung",
+  "unknownPath": "404",
+  "wwwWithQuery": "308 to apex, query preserved",
+  "homepageCompressedBytes": 287765,
+  "webdesignHalleCompressedBytes": 104706,
+  "homepageInlineScriptKB": 603,
+  "homepageInlineStyleKB": 208
+ },
+ "botUaChecks": {
+  "note": "Spoofed UAs from a cloud IP through hcdn; results alternate between runs, so they show CDN bot filtering, not proof that verified crawlers are blocked.",
+  "Googlebot": "200",
+  "bingbot": "403/200 alternating",
+  "GPTBot": "200/429 alternating (429 also on robots.txt)",
+  "OAI-SearchBot": "200",
+  "ClaudeBot": "200",
+  "PerplexityBot": "200",
+  "HeadlessChrome": "200"
+ },
+ "pages": [
+  {
+   "url": "https://saaleweb.de/",
+   "titleLen": 53,
+   "descLen": 165,
+   "words": 3143,
+   "inlinks": 76,
+   "ogUrl": "https://saaleweb.de",
+   "h2": 20,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "ProfessionalService+LocalBusiness",
+    "FAQPage"
+   ],
+   "bytes": 1153461,
+   "ms": 45
+  },
+  {
+   "url": "https://saaleweb.de/en/blog",
+   "titleLen": 15,
+   "descLen": 67,
+   "words": 318,
+   "inlinks": 76,
+   "ogUrl": "https://saaleweb.de/en",
+   "h2": 2,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite"
+   ],
+   "bytes": 526189,
+   "ms": 153
+  },
+  {
+   "url": "https://saaleweb.de/en",
+   "titleLen": 54,
+   "descLen": 165,
+   "words": 3508,
+   "inlinks": 76,
+   "ogUrl": "https://saaleweb.de/en",
+   "h2": 20,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "ProfessionalService+LocalBusiness",
+    "FAQPage"
+   ],
+   "bytes": 1147558,
+   "ms": 951
+  },
+  {
+   "url": "https://saaleweb.de/ru",
+   "titleLen": 57,
+   "descLen": 167,
+   "words": 3119,
+   "inlinks": 76,
+   "ogUrl": "https://saaleweb.de/ru",
+   "h2": 20,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "ProfessionalService+LocalBusiness",
+    "FAQPage"
+   ],
+   "bytes": 1148222,
+   "ms": 939
+  },
+  {
+   "url": "https://saaleweb.de/ru/blog",
+   "titleLen": 15,
+   "descLen": 72,
+   "words": 302,
+   "inlinks": 76,
+   "ogUrl": "https://saaleweb.de/ru",
+   "h2": 2,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite"
+   ],
+   "bytes": 526685,
+   "ms": 243
+  },
+  {
+   "url": "https://saaleweb.de/blog",
+   "titleLen": 15,
+   "descLen": 62,
+   "words": 296,
+   "inlinks": 76,
+   "ogUrl": "https://saaleweb.de",
+   "h2": 2,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite"
+   ],
+   "bytes": 527761,
+   "ms": 1397
+  },
+  {
+   "url": "https://saaleweb.de/leistungen",
+   "titleLen": 77,
+   "descLen": 149,
+   "words": 1503,
+   "inlinks": 76,
+   "ogUrl": null,
+   "h2": 13,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "BreadcrumbList",
+    "FAQPage",
+    "Service"
+   ],
+   "bytes": 767194,
+   "ms": 227
+  },
+  {
+   "url": "https://saaleweb.de/branchen",
+   "titleLen": 93,
+   "descLen": 179,
+   "words": 611,
+   "inlinks": 76,
+   "ogUrl": null,
+   "h2": 7,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "CollectionPage",
+    "ItemList",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 616093,
+   "ms": 200
+  },
+  {
+   "url": "https://saaleweb.de/en/services",
+   "titleLen": 65,
+   "descLen": 148,
+   "words": 1654,
+   "inlinks": 76,
+   "ogUrl": null,
+   "h2": 13,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "BreadcrumbList",
+    "FAQPage",
+    "Service"
+   ],
+   "bytes": 762184,
+   "ms": 347
+  },
+  {
+   "url": "https://saaleweb.de/ru/uslugi",
+   "titleLen": 63,
+   "descLen": 141,
+   "words": 1475,
+   "inlinks": 76,
+   "ogUrl": null,
+   "h2": 13,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "BreadcrumbList",
+    "FAQPage",
+    "Service"
+   ],
+   "bytes": 763397,
+   "ms": 280
+  },
+  {
+   "url": "https://saaleweb.de/standorte",
+   "titleLen": 69,
+   "descLen": 174,
+   "words": 455,
+   "inlinks": 76,
+   "ogUrl": null,
+   "h2": 5,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "CollectionPage",
+    "ItemList",
+    "ProfessionalService+LocalBusiness",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 558369,
+   "ms": 257
+  },
+  {
+   "url": "https://saaleweb.de/ru/otrasli",
+   "titleLen": 88,
+   "descLen": 187,
+   "words": 576,
+   "inlinks": 76,
+   "ogUrl": null,
+   "h2": 7,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "CollectionPage",
+    "ItemList",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 613911,
+   "ms": 218
+  },
+  {
+   "url": "https://saaleweb.de/en/industries",
+   "titleLen": 102,
+   "descLen": 192,
+   "words": 672,
+   "inlinks": 76,
+   "ogUrl": null,
+   "h2": 7,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "CollectionPage",
+    "ItemList",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 613784,
+   "ms": 451
+  },
+  {
+   "url": "https://saaleweb.de/en/locations",
+   "titleLen": 72,
+   "descLen": 193,
+   "words": 532,
+   "inlinks": 76,
+   "ogUrl": null,
+   "h2": 5,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "CollectionPage",
+    "ItemList",
+    "ProfessionalService+LocalBusiness",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 556932,
+   "ms": 657
+  },
+  {
+   "url": "https://saaleweb.de/kontakt",
+   "titleLen": 63,
+   "descLen": 174,
+   "words": 1077,
+   "inlinks": 76,
+   "ogUrl": null,
+   "h2": 11,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "ProfessionalService+LocalBusiness",
+    "ContactPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 695082,
+   "ms": 198
+  },
+  {
+   "url": "https://saaleweb.de/ru/goroda",
+   "titleLen": 63,
+   "descLen": 191,
+   "words": 453,
+   "inlinks": 76,
+   "ogUrl": null,
+   "h2": 5,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "CollectionPage",
+    "ItemList",
+    "ProfessionalService+LocalBusiness",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 556794,
+   "ms": 516
+  },
+  {
+   "url": "https://saaleweb.de/en/contact",
+   "titleLen": 63,
+   "descLen": 184,
+   "words": 1153,
+   "inlinks": 76,
+   "ogUrl": null,
+   "h2": 11,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "ProfessionalService+LocalBusiness",
+    "ContactPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 691937,
+   "ms": 300
+  },
+  {
+   "url": "https://saaleweb.de/ru/kontakt",
+   "titleLen": 56,
+   "descLen": 156,
+   "words": 1027,
+   "inlinks": 76,
+   "ogUrl": null,
+   "h2": 11,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "ProfessionalService+LocalBusiness",
+    "ContactPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 693483,
+   "ms": 202
+  },
+  {
+   "url": "https://saaleweb.de/preise",
+   "titleLen": 55,
+   "descLen": 150,
+   "words": 1201,
+   "inlinks": 76,
+   "ogUrl": null,
+   "h2": 10,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage",
+    "OfferCatalog"
+   ],
+   "bytes": 724376,
+   "ms": 219
+  },
+  {
+   "url": "https://saaleweb.de/en/pricing",
+   "titleLen": 56,
+   "descLen": 160,
+   "words": 1320,
+   "inlinks": 76,
+   "ogUrl": null,
+   "h2": 10,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage",
+    "OfferCatalog"
+   ],
+   "bytes": 719977,
+   "ms": 200
+  },
+  {
+   "url": "https://saaleweb.de/projekte",
+   "titleLen": 39,
+   "descLen": 105,
+   "words": 220,
+   "inlinks": 76,
+   "ogUrl": null,
+   "h2": 8,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "BreadcrumbList",
+    "CollectionPage",
+    "ItemList"
+   ],
+   "bytes": 545479,
+   "ms": 156
+  },
+  {
+   "url": "https://saaleweb.de/ru/ceny",
+   "titleLen": 47,
+   "descLen": 132,
+   "words": 1158,
+   "inlinks": 76,
+   "ogUrl": null,
+   "h2": 10,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage",
+    "OfferCatalog"
+   ],
+   "bytes": 720986,
+   "ms": 289
+  },
+  {
+   "url": "https://saaleweb.de/en/projects",
+   "titleLen": 38,
+   "descLen": 92,
+   "words": 236,
+   "inlinks": 76,
+   "ogUrl": null,
+   "h2": 8,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "BreadcrumbList",
+    "CollectionPage",
+    "ItemList"
+   ],
+   "bytes": 544053,
+   "ms": 245
+  },
+  {
+   "url": "https://saaleweb.de/kostenlose-website-analyse",
+   "titleLen": 68,
+   "descLen": 165,
+   "words": 586,
+   "inlinks": 76,
+   "ogUrl": null,
+   "h2": 10,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 586383,
+   "ms": 191
+  },
+  {
+   "url": "https://saaleweb.de/ru/proekty",
+   "titleLen": 45,
+   "descLen": 98,
+   "words": 226,
+   "inlinks": 76,
+   "ogUrl": null,
+   "h2": 8,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "BreadcrumbList",
+    "CollectionPage",
+    "ItemList"
+   ],
+   "bytes": 544975,
+   "ms": 248
+  },
+  {
+   "url": "https://saaleweb.de/en/free-website-audit",
+   "titleLen": 55,
+   "descLen": 158,
+   "words": 644,
+   "inlinks": 76,
+   "ogUrl": null,
+   "h2": 10,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 583421,
+   "ms": 243
+  },
+  {
+   "url": "https://saaleweb.de/ru/besplatnyy-audit-sayta",
+   "titleLen": 56,
+   "descLen": 121,
+   "words": 555,
+   "inlinks": 76,
+   "ogUrl": null,
+   "h2": 10,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 584018,
+   "ms": 166
+  },
+  {
+   "url": "https://saaleweb.de/en/imprint",
+   "titleLen": 66,
+   "descLen": 135,
+   "words": 364,
+   "inlinks": 76,
+   "ogUrl": null,
+   "h2": 9,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "BreadcrumbList"
+   ],
+   "bytes": 509021,
+   "ms": 168
+  },
+  {
+   "url": "https://saaleweb.de/impressum",
+   "titleLen": 66,
+   "descLen": 134,
+   "words": 310,
+   "inlinks": 76,
+   "ogUrl": null,
+   "h2": 9,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "BreadcrumbList"
+   ],
+   "bytes": 510258,
+   "ms": 205
+  },
+  {
+   "url": "https://saaleweb.de/ru/impressum",
+   "titleLen": 66,
+   "descLen": 168,
+   "words": 309,
+   "inlinks": 76,
+   "ogUrl": null,
+   "h2": 9,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "BreadcrumbList"
+   ],
+   "bytes": 510306,
+   "ms": 208
+  },
+  {
+   "url": "https://saaleweb.de/datenschutz",
+   "titleLen": 77,
+   "descLen": 138,
+   "words": 1605,
+   "inlinks": 76,
+   "ogUrl": null,
+   "h2": 15,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "BreadcrumbList"
+   ],
+   "bytes": 537561,
+   "ms": 143
+  },
+  {
+   "url": "https://saaleweb.de/en/privacy-policy",
+   "titleLen": 73,
+   "descLen": 124,
+   "words": 1742,
+   "inlinks": 76,
+   "ogUrl": null,
+   "h2": 15,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "BreadcrumbList"
+   ],
+   "bytes": 533821,
+   "ms": 169
+  },
+  {
+   "url": "https://saaleweb.de/ru/datenschutz",
+   "titleLen": 84,
+   "descLen": 132,
+   "words": 1543,
+   "inlinks": 76,
+   "ogUrl": null,
+   "h2": 15,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "BreadcrumbList"
+   ],
+   "bytes": 536001,
+   "ms": 243
+  },
+  {
+   "url": "https://saaleweb.de/standorte/halle",
+   "titleLen": 47,
+   "descLen": 138,
+   "words": 873,
+   "inlinks": 76,
+   "ogUrl": null,
+   "h2": 15,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "ProfessionalService+LocalBusiness",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 639804,
+   "ms": 174
+  },
+  {
+   "url": "https://saaleweb.de/en/locations/halle",
+   "titleLen": 41,
+   "descLen": 147,
+   "words": 868,
+   "inlinks": 76,
+   "ogUrl": null,
+   "h2": 15,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "ProfessionalService+LocalBusiness",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 631506,
+   "ms": 186
+  },
+  {
+   "url": "https://saaleweb.de/ru/goroda/halle",
+   "titleLen": 41,
+   "descLen": 132,
+   "words": 755,
+   "inlinks": 76,
+   "ogUrl": null,
+   "h2": 15,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "ProfessionalService+LocalBusiness",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 631095,
+   "ms": 189
+  },
+  {
+   "url": "https://saaleweb.de/standorte/leipzig",
+   "titleLen": 42,
+   "descLen": 143,
+   "words": 791,
+   "inlinks": 76,
+   "ogUrl": null,
+   "h2": 15,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "ProfessionalService+LocalBusiness",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 639990,
+   "ms": 209
+  },
+  {
+   "url": "https://saaleweb.de/en/locations/leipzig",
+   "titleLen": 35,
+   "descLen": 141,
+   "words": 857,
+   "inlinks": 76,
+   "ogUrl": null,
+   "h2": 15,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "ProfessionalService+LocalBusiness",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 630954,
+   "ms": 255
+  },
+  {
+   "url": "https://saaleweb.de/standorte/merseburg",
+   "titleLen": 36,
+   "descLen": 139,
+   "words": 790,
+   "inlinks": 76,
+   "ogUrl": null,
+   "h2": 15,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "ProfessionalService+LocalBusiness",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 633760,
+   "ms": 207
+  },
+  {
+   "url": "https://saaleweb.de/ru/goroda/leipzig",
+   "titleLen": 35,
+   "descLen": 126,
+   "words": 740,
+   "inlinks": 76,
+   "ogUrl": null,
+   "h2": 15,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "ProfessionalService+LocalBusiness",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 630614,
+   "ms": 281
+  },
+  {
+   "url": "https://saaleweb.de/en/locations/merseburg",
+   "titleLen": 37,
+   "descLen": 143,
+   "words": 868,
+   "inlinks": 76,
+   "ogUrl": null,
+   "h2": 15,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "ProfessionalService+LocalBusiness",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 631506,
+   "ms": 228
+  },
+  {
+   "url": "https://saaleweb.de/ru/goroda/merseburg",
+   "titleLen": 37,
+   "descLen": 128,
+   "words": 745,
+   "inlinks": 76,
+   "ogUrl": null,
+   "h2": 15,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "ProfessionalService+LocalBusiness",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 630988,
+   "ms": 185
+  },
+  {
+   "url": "https://saaleweb.de/standorte/schkeuditz",
+   "titleLen": 37,
+   "descLen": 128,
+   "words": 764,
+   "inlinks": 76,
+   "ogUrl": null,
+   "h2": 15,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "ProfessionalService+LocalBusiness",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 633575,
+   "ms": 192
+  },
+  {
+   "url": "https://saaleweb.de/en/locations/schkeuditz",
+   "titleLen": 38,
+   "descLen": 144,
+   "words": 857,
+   "inlinks": 76,
+   "ogUrl": null,
+   "h2": 15,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "ProfessionalService+LocalBusiness",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 631206,
+   "ms": 193
+  },
+  {
+   "url": "https://saaleweb.de/ru/goroda/schkeuditz",
+   "titleLen": 38,
+   "descLen": 129,
+   "words": 740,
+   "inlinks": 76,
+   "ogUrl": null,
+   "h2": 15,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "ProfessionalService+LocalBusiness",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 630814,
+   "ms": 182
+  },
+  {
+   "url": "https://saaleweb.de/standorte/delitzsch",
+   "titleLen": 36,
+   "descLen": 129,
+   "words": 757,
+   "inlinks": 76,
+   "ogUrl": null,
+   "h2": 15,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "ProfessionalService+LocalBusiness",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 633416,
+   "ms": 174
+  },
+  {
+   "url": "https://saaleweb.de/en/locations/delitzsch",
+   "titleLen": 37,
+   "descLen": 143,
+   "words": 857,
+   "inlinks": 76,
+   "ogUrl": null,
+   "h2": 15,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "ProfessionalService+LocalBusiness",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 631122,
+   "ms": 231
+  },
+  {
+   "url": "https://saaleweb.de/ru/goroda/delitzsch",
+   "titleLen": 37,
+   "descLen": 128,
+   "words": 740,
+   "inlinks": 76,
+   "ogUrl": null,
+   "h2": 15,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "ProfessionalService+LocalBusiness",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 630782,
+   "ms": 143
+  },
+  {
+   "url": "https://saaleweb.de/en/locations/saalekreis",
+   "titleLen": 38,
+   "descLen": 144,
+   "words": 858,
+   "inlinks": 76,
+   "ogUrl": null,
+   "h2": 15,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "ProfessionalService+LocalBusiness",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 631354,
+   "ms": 176
+  },
+  {
+   "url": "https://saaleweb.de/standorte/saalekreis",
+   "titleLen": 37,
+   "descLen": 128,
+   "words": 791,
+   "inlinks": 76,
+   "ogUrl": null,
+   "h2": 15,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "ProfessionalService+LocalBusiness",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 633941,
+   "ms": 245
+  },
+  {
+   "url": "https://saaleweb.de/leistungen/website-erstellen-lassen",
+   "titleLen": 51,
+   "descLen": 151,
+   "words": 1041,
+   "inlinks": 76,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 651984,
+   "ms": 205
+  },
+  {
+   "url": "https://saaleweb.de/ru/goroda/saalekreis",
+   "titleLen": 38,
+   "descLen": 129,
+   "words": 740,
+   "inlinks": 76,
+   "ogUrl": null,
+   "h2": 15,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "ProfessionalService+LocalBusiness",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 630940,
+   "ms": 287
+  },
+  {
+   "url": "https://saaleweb.de/en/services/website-development",
+   "titleLen": 56,
+   "descLen": 131,
+   "words": 1172,
+   "inlinks": 76,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 642653,
+   "ms": 245
+  },
+  {
+   "url": "https://saaleweb.de/leistungen/webdesign-halle",
+   "titleLen": 47,
+   "descLen": 161,
+   "words": 1053,
+   "inlinks": 76,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 643900,
+   "ms": 150
+  },
+  {
+   "url": "https://saaleweb.de/ru/uslugi/razrabotka-saytov",
+   "titleLen": 51,
+   "descLen": 122,
+   "words": 992,
+   "inlinks": 76,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 642398,
+   "ms": 256
+  },
+  {
+   "url": "https://saaleweb.de/en/services/web-design-halle",
+   "titleLen": 51,
+   "descLen": 138,
+   "words": 1068,
+   "inlinks": 76,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 635108,
+   "ms": 208
+  },
+  {
+   "url": "https://saaleweb.de/ru/uslugi/webdesign-halle",
+   "titleLen": 45,
+   "descLen": 119,
+   "words": 902,
+   "inlinks": 76,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 634720,
+   "ms": 218
+  },
+  {
+   "url": "https://saaleweb.de/leistungen/seo-halle",
+   "titleLen": 20,
+   "descLen": 152,
+   "words": 868,
+   "inlinks": 76,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 633840,
+   "ms": 152
+  },
+  {
+   "url": "https://saaleweb.de/en/services/seo-halle",
+   "titleLen": 20,
+   "descLen": 147,
+   "words": 898,
+   "inlinks": 76,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 623777,
+   "ms": 227
+  },
+  {
+   "url": "https://saaleweb.de/ru/uslugi/seo-halle",
+   "titleLen": 20,
+   "descLen": 131,
+   "words": 772,
+   "inlinks": 76,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 623068,
+   "ms": 230
+  },
+  {
+   "url": "https://saaleweb.de/leistungen/wordpress-agentur-halle",
+   "titleLen": 42,
+   "descLen": 192,
+   "words": 1135,
+   "inlinks": 2,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 648478,
+   "ms": 249
+  },
+  {
+   "url": "https://saaleweb.de/en/services/wordpress-agency-halle",
+   "titleLen": 44,
+   "descLen": 166,
+   "words": 1246,
+   "inlinks": 2,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 643889,
+   "ms": 182
+  },
+  {
+   "url": "https://saaleweb.de/leistungen/webdesign-leipzig",
+   "titleLen": 55,
+   "descLen": 138,
+   "words": 831,
+   "inlinks": 3,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 626124,
+   "ms": 221
+  },
+  {
+   "url": "https://saaleweb.de/ru/uslugi/wordpress-agentstvo-halle",
+   "titleLen": 46,
+   "descLen": 206,
+   "words": 1069,
+   "inlinks": 2,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 644076,
+   "ms": 230
+  },
+  {
+   "url": "https://saaleweb.de/en/services/web-design-leipzig",
+   "titleLen": 51,
+   "descLen": 140,
+   "words": 900,
+   "inlinks": 3,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 625275,
+   "ms": 150
+  },
+  {
+   "url": "https://saaleweb.de/leistungen/seo-leipzig",
+   "titleLen": 51,
+   "descLen": 147,
+   "words": 806,
+   "inlinks": 3,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 625528,
+   "ms": 176
+  },
+  {
+   "url": "https://saaleweb.de/ru/uslugi/webdesign-leipzig",
+   "titleLen": 46,
+   "descLen": 137,
+   "words": 782,
+   "inlinks": 3,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 625728,
+   "ms": 306
+  },
+  {
+   "url": "https://saaleweb.de/en/services/seo-leipzig",
+   "titleLen": 51,
+   "descLen": 123,
+   "words": 871,
+   "inlinks": 3,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 624672,
+   "ms": 172
+  },
+  {
+   "url": "https://saaleweb.de/ru/uslugi/seo-leipzig",
+   "titleLen": 51,
+   "descLen": 130,
+   "words": 766,
+   "inlinks": 3,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 624935,
+   "ms": 206
+  },
+  {
+   "url": "https://saaleweb.de/leistungen/webdesign-merseburg",
+   "titleLen": 57,
+   "descLen": 142,
+   "words": 835,
+   "inlinks": 2,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 626364,
+   "ms": 236
+  },
+  {
+   "url": "https://saaleweb.de/en/services/web-design-merseburg",
+   "titleLen": 53,
+   "descLen": 144,
+   "words": 903,
+   "inlinks": 2,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 625443,
+   "ms": 151
+  },
+  {
+   "url": "https://saaleweb.de/ru/uslugi/webdesign-merseburg",
+   "titleLen": 48,
+   "descLen": 141,
+   "words": 784,
+   "inlinks": 2,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 625940,
+   "ms": 221
+  },
+  {
+   "url": "https://saaleweb.de/en/services/seo-merseburg",
+   "titleLen": 53,
+   "descLen": 127,
+   "words": 871,
+   "inlinks": 2,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 624880,
+   "ms": 167
+  },
+  {
+   "url": "https://saaleweb.de/leistungen/seo-merseburg",
+   "titleLen": 53,
+   "descLen": 151,
+   "words": 806,
+   "inlinks": 2,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 625748,
+   "ms": 255
+  },
+  {
+   "url": "https://saaleweb.de/ru/uslugi/seo-merseburg",
+   "titleLen": 53,
+   "descLen": 134,
+   "words": 766,
+   "inlinks": 2,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 625130,
+   "ms": 194
+  },
+  {
+   "url": "https://saaleweb.de/leistungen/webdesign-schkeuditz",
+   "titleLen": 58,
+   "descLen": 144,
+   "words": 834,
+   "inlinks": 2,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 626434,
+   "ms": 265
+  },
+  {
+   "url": "https://saaleweb.de/en/services/web-design-schkeuditz",
+   "titleLen": 54,
+   "descLen": 146,
+   "words": 901,
+   "inlinks": 2,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 625494,
+   "ms": 225
+  },
+  {
+   "url": "https://saaleweb.de/leistungen/seo-schkeuditz",
+   "titleLen": 54,
+   "descLen": 153,
+   "words": 806,
+   "inlinks": 2,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 625858,
+   "ms": 209
+  },
+  {
+   "url": "https://saaleweb.de/ru/uslugi/webdesign-schkeuditz",
+   "titleLen": 49,
+   "descLen": 143,
+   "words": 782,
+   "inlinks": 2,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 626020,
+   "ms": 282
+  },
+  {
+   "url": "https://saaleweb.de/en/services/seo-schkeuditz",
+   "titleLen": 54,
+   "descLen": 129,
+   "words": 871,
+   "inlinks": 2,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 624984,
+   "ms": 246
+  },
+  {
+   "url": "https://saaleweb.de/ru/uslugi/seo-schkeuditz",
+   "titleLen": 54,
+   "descLen": 136,
+   "words": 766,
+   "inlinks": 2,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 625234,
+   "ms": 255
+  },
+  {
+   "url": "https://saaleweb.de/leistungen/webdesign-delitzsch",
+   "titleLen": 57,
+   "descLen": 142,
+   "words": 834,
+   "inlinks": 2,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 626436,
+   "ms": 162
+  },
+  {
+   "url": "https://saaleweb.de/en/services/web-design-delitzsch",
+   "titleLen": 53,
+   "descLen": 144,
+   "words": 903,
+   "inlinks": 2,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 625626,
+   "ms": 259
+  },
+  {
+   "url": "https://saaleweb.de/ru/uslugi/webdesign-delitzsch",
+   "titleLen": 48,
+   "descLen": 141,
+   "words": 784,
+   "inlinks": 2,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 625936,
+   "ms": 206
+  },
+  {
+   "url": "https://saaleweb.de/leistungen/seo-delitzsch",
+   "titleLen": 53,
+   "descLen": 151,
+   "words": 806,
+   "inlinks": 2,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 625748,
+   "ms": 182
+  },
+  {
+   "url": "https://saaleweb.de/en/services/seo-delitzsch",
+   "titleLen": 53,
+   "descLen": 127,
+   "words": 871,
+   "inlinks": 2,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 624880,
+   "ms": 240
+  },
+  {
+   "url": "https://saaleweb.de/leistungen/webdesign-saalekreis",
+   "titleLen": 58,
+   "descLen": 144,
+   "words": 830,
+   "inlinks": 2,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 626362,
+   "ms": 162
+  },
+  {
+   "url": "https://saaleweb.de/ru/uslugi/seo-delitzsch",
+   "titleLen": 53,
+   "descLen": 134,
+   "words": 766,
+   "inlinks": 2,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 625057,
+   "ms": 232
+  },
+  {
+   "url": "https://saaleweb.de/en/services/web-design-saalekreis",
+   "titleLen": 54,
+   "descLen": 146,
+   "words": 898,
+   "inlinks": 2,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 625487,
+   "ms": 226
+  },
+  {
+   "url": "https://saaleweb.de/leistungen/seo-saalekreis",
+   "titleLen": 54,
+   "descLen": 153,
+   "words": 806,
+   "inlinks": 2,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 625858,
+   "ms": 154
+  },
+  {
+   "url": "https://saaleweb.de/ru/uslugi/webdesign-saalekreis",
+   "titleLen": 49,
+   "descLen": 151,
+   "words": 785,
+   "inlinks": 2,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 626123,
+   "ms": 289
+  },
+  {
+   "url": "https://saaleweb.de/en/services/seo-saalekreis",
+   "titleLen": 54,
+   "descLen": 129,
+   "words": 871,
+   "inlinks": 2,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 624911,
+   "ms": 258
+  },
+  {
+   "url": "https://saaleweb.de/ru/uslugi/seo-saalekreis",
+   "titleLen": 54,
+   "descLen": 144,
+   "words": 769,
+   "inlinks": 2,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 625394,
+   "ms": 177
+  },
+  {
+   "url": "https://saaleweb.de/leistungen/ki-optimierung",
+   "titleLen": 41,
+   "descLen": 164,
+   "words": 899,
+   "inlinks": 76,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 631937,
+   "ms": 179
+  },
+  {
+   "url": "https://saaleweb.de/en/services/ai-optimization",
+   "titleLen": 41,
+   "descLen": 144,
+   "words": 812,
+   "inlinks": 76,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 618672,
+   "ms": 250
+  },
+  {
+   "url": "https://saaleweb.de/leistungen/wordpress-website-modernisieren",
+   "titleLen": 42,
+   "descLen": 144,
+   "words": 830,
+   "inlinks": 9,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 628920,
+   "ms": 171
+  },
+  {
+   "url": "https://saaleweb.de/ru/uslugi/optimizaciya-pod-ii",
+   "titleLen": 41,
+   "descLen": 130,
+   "words": 695,
+   "inlinks": 76,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 618770,
+   "ms": 238
+  },
+  {
+   "url": "https://saaleweb.de/en/services/wordpress-website-modernization",
+   "titleLen": 38,
+   "descLen": 117,
+   "words": 790,
+   "inlinks": 9,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 618313,
+   "ms": 181
+  },
+  {
+   "url": "https://saaleweb.de/leistungen/website-relaunch",
+   "titleLen": 27,
+   "descLen": 146,
+   "words": 870,
+   "inlinks": 7,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 635089,
+   "ms": 153
+  },
+  {
+   "url": "https://saaleweb.de/ru/uslugi/modernizaciya-wordpress-sayta",
+   "titleLen": 39,
+   "descLen": 107,
+   "words": 669,
+   "inlinks": 9,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 618206,
+   "ms": 259
+  },
+  {
+   "url": "https://saaleweb.de/ru/uslugi/relonch-sajta",
+   "titleLen": 23,
+   "descLen": 119,
+   "words": 716,
+   "inlinks": 7,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 619925,
+   "ms": 185
+  },
+  {
+   "url": "https://saaleweb.de/leistungen/performance-optimierung",
+   "titleLen": 42,
+   "descLen": 126,
+   "words": 755,
+   "inlinks": 7,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 624697,
+   "ms": 150
+  },
+  {
+   "url": "https://saaleweb.de/en/services/website-relaunch",
+   "titleLen": 27,
+   "descLen": 116,
+   "words": 833,
+   "inlinks": 7,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 620096,
+   "ms": 382
+  },
+  {
+   "url": "https://saaleweb.de/en/services/performance-optimization",
+   "titleLen": 43,
+   "descLen": 116,
+   "words": 780,
+   "inlinks": 11,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 618044,
+   "ms": 251
+  },
+  {
+   "url": "https://saaleweb.de/ru/uslugi/optimizaciya-proizvoditelnosti",
+   "titleLen": 47,
+   "descLen": 101,
+   "words": 673,
+   "inlinks": 11,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 618602,
+   "ms": 183
+  },
+  {
+   "url": "https://saaleweb.de/leistungen/website-wartung",
+   "titleLen": 38,
+   "descLen": 153,
+   "words": 779,
+   "inlinks": 7,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 625558,
+   "ms": 149
+  },
+  {
+   "url": "https://saaleweb.de/en/services/website-maintenance",
+   "titleLen": 40,
+   "descLen": 122,
+   "words": 793,
+   "inlinks": 7,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 618400,
+   "ms": 172
+  },
+  {
+   "url": "https://saaleweb.de/ru/uslugi/podderzhka-saytov",
+   "titleLen": 26,
+   "descLen": 108,
+   "words": 670,
+   "inlinks": 7,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 617994,
+   "ms": 197
+  },
+  {
+   "url": "https://saaleweb.de/leistungen/buchungssysteme",
+   "titleLen": 40,
+   "descLen": 159,
+   "words": 769,
+   "inlinks": 5,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 625392,
+   "ms": 189
+  },
+  {
+   "url": "https://saaleweb.de/ru/uslugi/sistemy-bronirovaniya",
+   "titleLen": 48,
+   "descLen": 133,
+   "words": 687,
+   "inlinks": 5,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 618661,
+   "ms": 177
+  },
+  {
+   "url": "https://saaleweb.de/leistungen/online-shop-erstellen",
+   "titleLen": 39,
+   "descLen": 150,
+   "words": 638,
+   "inlinks": 4,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 614201,
+   "ms": 198
+  },
+  {
+   "url": "https://saaleweb.de/en/services/booking-systems",
+   "titleLen": 40,
+   "descLen": 145,
+   "words": 795,
+   "inlinks": 5,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 618351,
+   "ms": 344
+  },
+  {
+   "url": "https://saaleweb.de/en/services/online-shop-development",
+   "titleLen": 34,
+   "descLen": 136,
+   "words": 732,
+   "inlinks": 4,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 611527,
+   "ms": 211
+  },
+  {
+   "url": "https://saaleweb.de/ru/uslugi/sozdanie-internet-magazina",
+   "titleLen": 37,
+   "descLen": 133,
+   "words": 644,
+   "inlinks": 4,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 612414,
+   "ms": 228
+  },
+  {
+   "url": "https://saaleweb.de/leistungen/ki-assistent",
+   "titleLen": 52,
+   "descLen": 145,
+   "words": 752,
+   "inlinks": 3,
+   "ogUrl": null,
+   "h2": 13,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 612981,
+   "ms": 220
+  },
+  {
+   "url": "https://saaleweb.de/en/services/ai-assistant",
+   "titleLen": 51,
+   "descLen": 147,
+   "words": 794,
+   "inlinks": 3,
+   "ogUrl": null,
+   "h2": 13,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 606641,
+   "ms": 151
+  },
+  {
+   "url": "https://saaleweb.de/ru/uslugi/ai-assistent",
+   "titleLen": 47,
+   "descLen": 124,
+   "words": 682,
+   "inlinks": 3,
+   "ogUrl": null,
+   "h2": 13,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 607328,
+   "ms": 253
+  },
+  {
+   "url": "https://saaleweb.de/leistungen/automatisierung",
+   "titleLen": 42,
+   "descLen": 141,
+   "words": 640,
+   "inlinks": 5,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 616141,
+   "ms": 167
+  },
+  {
+   "url": "https://saaleweb.de/en/services/automation",
+   "titleLen": 36,
+   "descLen": 133,
+   "words": 685,
+   "inlinks": 5,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 610492,
+   "ms": 184
+  },
+  {
+   "url": "https://saaleweb.de/ru/uslugi/avtomatizaciya",
+   "titleLen": 36,
+   "descLen": 124,
+   "words": 596,
+   "inlinks": 5,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 611196,
+   "ms": 254
+  },
+  {
+   "url": "https://saaleweb.de/leistungen/api-integrationen",
+   "titleLen": 28,
+   "descLen": 129,
+   "words": 608,
+   "inlinks": 7,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 613074,
+   "ms": 250
+  },
+  {
+   "url": "https://saaleweb.de/ru/uslugi/api-integracii",
+   "titleLen": 25,
+   "descLen": 139,
+   "words": 611,
+   "inlinks": 7,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 610983,
+   "ms": 231
+  },
+  {
+   "url": "https://saaleweb.de/leistungen/website-sicherheit",
+   "titleLen": 29,
+   "descLen": 150,
+   "words": 633,
+   "inlinks": 3,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 614253,
+   "ms": 229
+  },
+  {
+   "url": "https://saaleweb.de/en/services/api-integrations",
+   "titleLen": 27,
+   "descLen": 134,
+   "words": 697,
+   "inlinks": 7,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 610710,
+   "ms": 377
+  },
+  {
+   "url": "https://saaleweb.de/en/services/website-security",
+   "titleLen": 27,
+   "descLen": 154,
+   "words": 702,
+   "inlinks": 3,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 611140,
+   "ms": 254
+  },
+  {
+   "url": "https://saaleweb.de/ru/uslugi/bezopasnost-sayta",
+   "titleLen": 29,
+   "descLen": 149,
+   "words": 614,
+   "inlinks": 3,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 611709,
+   "ms": 245
+  },
+  {
+   "url": "https://saaleweb.de/leistungen/datenanalyse",
+   "titleLen": 43,
+   "descLen": 133,
+   "words": 605,
+   "inlinks": 4,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 613143,
+   "ms": 219
+  },
+  {
+   "url": "https://saaleweb.de/en/services/data-analytics",
+   "titleLen": 45,
+   "descLen": 122,
+   "words": 689,
+   "inlinks": 4,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 610530,
+   "ms": 217
+  },
+  {
+   "url": "https://saaleweb.de/ru/uslugi/analitika-dannyh",
+   "titleLen": 43,
+   "descLen": 117,
+   "words": 609,
+   "inlinks": 4,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 611265,
+   "ms": 265
+  },
+  {
+   "url": "https://saaleweb.de/leistungen/shop-produktimport",
+   "titleLen": 29,
+   "descLen": 132,
+   "words": 602,
+   "inlinks": 3,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 613181,
+   "ms": 189
+  },
+  {
+   "url": "https://saaleweb.de/en/services/shop-product-import",
+   "titleLen": 30,
+   "descLen": 132,
+   "words": 709,
+   "inlinks": 3,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 610805,
+   "ms": 245
+  },
+  {
+   "url": "https://saaleweb.de/ru/uslugi/import-tovarov",
+   "titleLen": 44,
+   "descLen": 115,
+   "words": 620,
+   "inlinks": 3,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 611769,
+   "ms": 240
+  },
+  {
+   "url": "https://saaleweb.de/en/industries/restaurant-website",
+   "titleLen": 49,
+   "descLen": 232,
+   "words": 3459,
+   "inlinks": 5,
+   "ogUrl": null,
+   "h2": 17,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "OfferCatalog",
+    "FAQPage"
+   ],
+   "bytes": 826435,
+   "ms": 187
+  },
+  {
+   "url": "https://saaleweb.de/branchen/restaurant-website",
+   "titleLen": 72,
+   "descLen": 224,
+   "words": 3025,
+   "inlinks": 5,
+   "ogUrl": null,
+   "h2": 17,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "OfferCatalog",
+    "FAQPage"
+   ],
+   "bytes": 831995,
+   "ms": 268
+  },
+  {
+   "url": "https://saaleweb.de/ru/otrasli/sayt-dlya-restorana",
+   "titleLen": 45,
+   "descLen": 215,
+   "words": 2920,
+   "inlinks": 5,
+   "ogUrl": null,
+   "h2": 17,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "OfferCatalog",
+    "FAQPage"
+   ],
+   "bytes": 824869,
+   "ms": 287
+  },
+  {
+   "url": "https://saaleweb.de/branchen/hotel-website",
+   "titleLen": 70,
+   "descLen": 230,
+   "words": 2770,
+   "inlinks": 4,
+   "ogUrl": null,
+   "h2": 16,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "OfferCatalog",
+    "FAQPage"
+   ],
+   "bytes": 788875,
+   "ms": 217
+  },
+  {
+   "url": "https://saaleweb.de/en/industries/hotel-website",
+   "titleLen": 74,
+   "descLen": 244,
+   "words": 3193,
+   "inlinks": 4,
+   "ogUrl": null,
+   "h2": 16,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "OfferCatalog",
+    "FAQPage"
+   ],
+   "bytes": 784431,
+   "ms": 193
+  },
+  {
+   "url": "https://saaleweb.de/branchen/beauty-studio-website",
+   "titleLen": 74,
+   "descLen": 234,
+   "words": 3145,
+   "inlinks": 2,
+   "ogUrl": null,
+   "h2": 18,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "OfferCatalog",
+    "FAQPage"
+   ],
+   "bytes": 856575,
+   "ms": 183
+  },
+  {
+   "url": "https://saaleweb.de/ru/otrasli/sayt-dlya-otelya",
+   "titleLen": 69,
+   "descLen": 235,
+   "words": 2818,
+   "inlinks": 4,
+   "ogUrl": null,
+   "h2": 16,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "OfferCatalog",
+    "FAQPage"
+   ],
+   "bytes": 785086,
+   "ms": 270
+  },
+  {
+   "url": "https://saaleweb.de/en/industries/beauty-studio-website",
+   "titleLen": 52,
+   "descLen": 234,
+   "words": 3569,
+   "inlinks": 2,
+   "ogUrl": null,
+   "h2": 18,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "OfferCatalog",
+    "FAQPage"
+   ],
+   "bytes": 851630,
+   "ms": 228
+  },
+  {
+   "url": "https://saaleweb.de/ru/otrasli/sayt-dlya-salona-krasoty",
+   "titleLen": 51,
+   "descLen": 213,
+   "words": 3096,
+   "inlinks": 2,
+   "ogUrl": null,
+   "h2": 18,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "OfferCatalog",
+    "FAQPage"
+   ],
+   "bytes": 851358,
+   "ms": 249
+  },
+  {
+   "url": "https://saaleweb.de/branchen/bauunternehmen-website",
+   "titleLen": 80,
+   "descLen": 219,
+   "words": 3077,
+   "inlinks": 2,
+   "ogUrl": null,
+   "h2": 17,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "OfferCatalog",
+    "FAQPage"
+   ],
+   "bytes": 812757,
+   "ms": 229
+  },
+  {
+   "url": "https://saaleweb.de/en/industries/construction-company-website",
+   "titleLen": 78,
+   "descLen": 243,
+   "words": 3524,
+   "inlinks": 2,
+   "ogUrl": null,
+   "h2": 17,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "OfferCatalog",
+    "FAQPage"
+   ],
+   "bytes": 809739,
+   "ms": 248
+  },
+  {
+   "url": "https://saaleweb.de/ru/otrasli/sayt-dlya-stroitelnoy-kompanii",
+   "titleLen": 68,
+   "descLen": 207,
+   "words": 3019,
+   "inlinks": 2,
+   "ogUrl": null,
+   "h2": 17,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "OfferCatalog",
+    "FAQPage"
+   ],
+   "bytes": 807825,
+   "ms": 213
+  },
+  {
+   "url": "https://saaleweb.de/branchen/handwerker-website",
+   "titleLen": 33,
+   "descLen": 120,
+   "words": 762,
+   "inlinks": 6,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 652728,
+   "ms": 216
+  },
+  {
+   "url": "https://saaleweb.de/en/industries/craftsmen-website",
+   "titleLen": 28,
+   "descLen": 119,
+   "words": 796,
+   "inlinks": 4,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 646397,
+   "ms": 207
+  },
+  {
+   "url": "https://saaleweb.de/ru/otrasli/sayt-dlya-masterov",
+   "titleLen": 28,
+   "descLen": 111,
+   "words": 685,
+   "inlinks": 4,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 646647,
+   "ms": 197
+  },
+  {
+   "url": "https://saaleweb.de/branchen/glaserei-website",
+   "titleLen": 31,
+   "descLen": 124,
+   "words": 729,
+   "inlinks": 3,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 646051,
+   "ms": 179
+  },
+  {
+   "url": "https://saaleweb.de/en/industries/glazier-website",
+   "titleLen": 26,
+   "descLen": 127,
+   "words": 766,
+   "inlinks": 3,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 639697,
+   "ms": 215
+  },
+  {
+   "url": "https://saaleweb.de/ru/otrasli/sayt-dlya-stekolnoy-masterskoy",
+   "titleLen": 24,
+   "descLen": 110,
+   "words": 639,
+   "inlinks": 3,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 639465,
+   "ms": 205
+  },
+  {
+   "url": "https://saaleweb.de/branchen/dienstleister-website",
+   "titleLen": 78,
+   "descLen": 150,
+   "words": 817,
+   "inlinks": 3,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 655793,
+   "ms": 215
+  },
+  {
+   "url": "https://saaleweb.de/ru/otrasli/sayt-dlya-sfery-uslug",
+   "titleLen": 67,
+   "descLen": 154,
+   "words": 729,
+   "inlinks": 3,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 649821,
+   "ms": 175
+  },
+  {
+   "url": "https://saaleweb.de/blog/lokales-seo-halle",
+   "titleLen": 75,
+   "descLen": 157,
+   "words": 900,
+   "inlinks": 6,
+   "ogUrl": null,
+   "h2": 12,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "BlogPosting",
+    "BreadcrumbList"
+   ],
+   "bytes": 550025,
+   "ms": 205
+  },
+  {
+   "url": "https://saaleweb.de/en/industries/service-provider-website",
+   "titleLen": 73,
+   "descLen": 144,
+   "words": 843,
+   "inlinks": 3,
+   "ogUrl": null,
+   "h2": 14,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "WebPage",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 648921,
+   "ms": 253
+  },
+  {
+   "url": "https://saaleweb.de/en/blog/local-seo-halle",
+   "titleLen": 64,
+   "descLen": 158,
+   "words": 983,
+   "inlinks": 6,
+   "ogUrl": null,
+   "h2": 12,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "BlogPosting",
+    "BreadcrumbList"
+   ],
+   "bytes": 547446,
+   "ms": 148
+  },
+  {
+   "url": "https://saaleweb.de/blog/sichtbarkeit-in-ki-suche",
+   "titleLen": 91,
+   "descLen": 166,
+   "words": 691,
+   "inlinks": 2,
+   "ogUrl": null,
+   "h2": 11,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "BlogPosting",
+    "BreadcrumbList"
+   ],
+   "bytes": 542888,
+   "ms": 165
+  },
+  {
+   "url": "https://saaleweb.de/ru/blog/lokalnoe-seo-halle",
+   "titleLen": 74,
+   "descLen": 145,
+   "words": 861,
+   "inlinks": 6,
+   "ogUrl": null,
+   "h2": 12,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "BlogPosting",
+    "BreadcrumbList"
+   ],
+   "bytes": 547476,
+   "ms": 219
+  },
+  {
+   "url": "https://saaleweb.de/en/blog/ai-search-visibility",
+   "titleLen": 88,
+   "descLen": 162,
+   "words": 757,
+   "inlinks": 2,
+   "ogUrl": null,
+   "h2": 11,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "BlogPosting",
+    "BreadcrumbList"
+   ],
+   "bytes": 540738,
+   "ms": 248
+  },
+  {
+   "url": "https://saaleweb.de/blog/was-kostet-eine-website-in-halle",
+   "titleLen": 73,
+   "descLen": 153,
+   "words": 671,
+   "inlinks": 4,
+   "ogUrl": null,
+   "h2": 10,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "BlogPosting",
+    "BreadcrumbList"
+   ],
+   "bytes": 545576,
+   "ms": 177
+  },
+  {
+   "url": "https://saaleweb.de/ru/blog/vidimost-v-ai-poiske",
+   "titleLen": 93,
+   "descLen": 152,
+   "words": 701,
+   "inlinks": 2,
+   "ogUrl": null,
+   "h2": 11,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "BlogPosting",
+    "BreadcrumbList"
+   ],
+   "bytes": 541149,
+   "ms": 274
+  },
+  {
+   "url": "https://saaleweb.de/en/blog/website-cost-in-halle",
+   "titleLen": 72,
+   "descLen": 149,
+   "words": 739,
+   "inlinks": 4,
+   "ogUrl": null,
+   "h2": 10,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "BlogPosting",
+    "BreadcrumbList"
+   ],
+   "bytes": 543540,
+   "ms": 180
+  },
+  {
+   "url": "https://saaleweb.de/blog/restaurant-website-mehr-reservierungen",
+   "titleLen": 79,
+   "descLen": 151,
+   "words": 704,
+   "inlinks": 3,
+   "ogUrl": null,
+   "h2": 9,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "BlogPosting",
+    "BreadcrumbList"
+   ],
+   "bytes": 545367,
+   "ms": 173
+  },
+  {
+   "url": "https://saaleweb.de/ru/blog/skolko-stoit-sajt-v-halle",
+   "titleLen": 64,
+   "descLen": 165,
+   "words": 658,
+   "inlinks": 4,
+   "ogUrl": null,
+   "h2": 10,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "BlogPosting",
+    "BreadcrumbList"
+   ],
+   "bytes": 543714,
+   "ms": 177
+  },
+  {
+   "url": "https://saaleweb.de/ru/blog/sajt-restorana-bolshe-bronirovanij",
+   "titleLen": 75,
+   "descLen": 138,
+   "words": 696,
+   "inlinks": 3,
+   "ogUrl": null,
+   "h2": 9,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "BlogPosting",
+    "BreadcrumbList"
+   ],
+   "bytes": 543562,
+   "ms": 167
+  },
+  {
+   "url": "https://saaleweb.de/en/blog/restaurant-website-more-reservations",
+   "titleLen": 80,
+   "descLen": 128,
+   "words": 807,
+   "inlinks": 3,
+   "ogUrl": null,
+   "h2": 9,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "BlogPosting",
+    "BreadcrumbList"
+   ],
+   "bytes": 543255,
+   "ms": 277
+  },
+  {
+   "url": "https://saaleweb.de/blog/website-relaunch-checkliste",
+   "titleLen": 87,
+   "descLen": 164,
+   "words": 646,
+   "inlinks": 3,
+   "ogUrl": null,
+   "h2": 9,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "BlogPosting",
+    "BreadcrumbList"
+   ],
+   "bytes": 544844,
+   "ms": 163
+  },
+  {
+   "url": "https://saaleweb.de/en/blog/website-relaunch-checklist",
+   "titleLen": 80,
+   "descLen": 139,
+   "words": 703,
+   "inlinks": 3,
+   "ogUrl": null,
+   "h2": 9,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "BlogPosting",
+    "BreadcrumbList"
+   ],
+   "bytes": 542551,
+   "ms": 227
+  },
+  {
+   "url": "https://saaleweb.de/ru/blog/relonch-sajta-checklist",
+   "titleLen": 83,
+   "descLen": 146,
+   "words": 611,
+   "inlinks": 3,
+   "ogUrl": null,
+   "h2": 9,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "BlogPosting",
+    "BreadcrumbList"
+   ],
+   "bytes": 542716,
+   "ms": 183
+  },
+  {
+   "url": "https://saaleweb.de/blog/google-unternehmensprofil-optimieren",
+   "titleLen": 85,
+   "descLen": 161,
+   "words": 753,
+   "inlinks": 3,
+   "ogUrl": null,
+   "h2": 13,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "BlogPosting",
+    "BreadcrumbList"
+   ],
+   "bytes": 547111,
+   "ms": 199
+  },
+  {
+   "url": "https://saaleweb.de/ru/blog/optimizaciya-google-biznes-profilya",
+   "titleLen": 79,
+   "descLen": 142,
+   "words": 753,
+   "inlinks": 3,
+   "ogUrl": null,
+   "h2": 13,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "BlogPosting",
+    "BreadcrumbList"
+   ],
+   "bytes": 544792,
+   "ms": 180
+  },
+  {
+   "url": "https://saaleweb.de/blog/nextjs-vs-wordpress",
+   "titleLen": 80,
+   "descLen": 153,
+   "words": 686,
+   "inlinks": 3,
+   "ogUrl": null,
+   "h2": 11,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "BlogPosting",
+    "BreadcrumbList"
+   ],
+   "bytes": 547021,
+   "ms": 183
+  },
+  {
+   "url": "https://saaleweb.de/en/blog/optimize-google-business-profile",
+   "titleLen": 82,
+   "descLen": 166,
+   "words": 820,
+   "inlinks": 3,
+   "ogUrl": null,
+   "h2": 13,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "BlogPosting",
+    "BreadcrumbList"
+   ],
+   "bytes": 544525,
+   "ms": 257
+  },
+  {
+   "url": "https://saaleweb.de/en/blog/nextjs-vs-wordpress",
+   "titleLen": 68,
+   "descLen": 139,
+   "words": 756,
+   "inlinks": 3,
+   "ogUrl": null,
+   "h2": 11,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "BlogPosting",
+    "BreadcrumbList"
+   ],
+   "bytes": 544906,
+   "ms": 192
+  },
+  {
+   "url": "https://saaleweb.de/ru/blog/nextjs-vs-wordpress",
+   "titleLen": 74,
+   "descLen": 132,
+   "words": 681,
+   "inlinks": 3,
+   "ogUrl": null,
+   "h2": 11,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "BlogPosting",
+    "BreadcrumbList"
+   ],
+   "bytes": 544837,
+   "ms": 194
+  },
+  {
+   "url": "https://saaleweb.de/blog/kategorie/seo",
+   "titleLen": 21,
+   "descLen": 62,
+   "words": 74,
+   "inlinks": 4,
+   "ogUrl": "https://saaleweb.de",
+   "h2": 1,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite"
+   ],
+   "bytes": 510839,
+   "ms": 195
+  },
+  {
+   "url": "https://saaleweb.de/en/blog/category/seo",
+   "titleLen": 21,
+   "descLen": 67,
+   "words": 84,
+   "inlinks": 4,
+   "ogUrl": "https://saaleweb.de/en",
+   "h2": 1,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite"
+   ],
+   "bytes": 509563,
+   "ms": 143
+  },
+  {
+   "url": "https://saaleweb.de/blog/kategorie/webdesign",
+   "titleLen": 27,
+   "descLen": 62,
+   "words": 72,
+   "inlinks": 4,
+   "ogUrl": "https://saaleweb.de",
+   "h2": 1,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite"
+   ],
+   "bytes": 510897,
+   "ms": 165
+  },
+  {
+   "url": "https://saaleweb.de/en/blog/category/web-design",
+   "titleLen": 28,
+   "descLen": 67,
+   "words": 74,
+   "inlinks": 4,
+   "ogUrl": "https://saaleweb.de/en",
+   "h2": 1,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite"
+   ],
+   "bytes": 509545,
+   "ms": 203
+  },
+  {
+   "url": "https://saaleweb.de/ru/blog/kategoriya/seo",
+   "titleLen": 21,
+   "descLen": 72,
+   "words": 70,
+   "inlinks": 4,
+   "ogUrl": "https://saaleweb.de/ru",
+   "h2": 1,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite"
+   ],
+   "bytes": 510088,
+   "ms": 298
+  },
+  {
+   "url": "https://saaleweb.de/ru/blog/kategoriya/veb-dizajn",
+   "titleLen": 28,
+   "descLen": 72,
+   "words": 71,
+   "inlinks": 4,
+   "ogUrl": "https://saaleweb.de/ru",
+   "h2": 1,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite"
+   ],
+   "bytes": 510134,
+   "ms": 142
+  },
+  {
+   "url": "https://saaleweb.de/blog/kategorie/ki-suche",
+   "titleLen": 40,
+   "descLen": 62,
+   "words": 52,
+   "inlinks": 4,
+   "ogUrl": "https://saaleweb.de",
+   "h2": 1,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite"
+   ],
+   "bytes": 507944,
+   "ms": 169
+  },
+  {
+   "url": "https://saaleweb.de/en/blog/category/ai-search",
+   "titleLen": 29,
+   "descLen": 67,
+   "words": 52,
+   "inlinks": 4,
+   "ogUrl": "https://saaleweb.de/en",
+   "h2": 1,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite"
+   ],
+   "bytes": 506610,
+   "ms": 185
+  },
+  {
+   "url": "https://saaleweb.de/ru/blog/kategoriya/ii-i-poisk",
+   "titleLen": 28,
+   "descLen": 72,
+   "words": 48,
+   "inlinks": 4,
+   "ogUrl": "https://saaleweb.de/ru",
+   "h2": 1,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite"
+   ],
+   "bytes": 507113,
+   "ms": 142
+  },
+  {
+   "url": "https://saaleweb.de/en/blog/category/business-growth",
+   "titleLen": 33,
+   "descLen": 67,
+   "words": 76,
+   "inlinks": 4,
+   "ogUrl": "https://saaleweb.de/en",
+   "h2": 1,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite"
+   ],
+   "bytes": 509789,
+   "ms": 164
+  },
+  {
+   "url": "https://saaleweb.de/blog/kategorie/praxis",
+   "titleLen": 35,
+   "descLen": 62,
+   "words": 79,
+   "inlinks": 4,
+   "ogUrl": "https://saaleweb.de",
+   "h2": 1,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite"
+   ],
+   "bytes": 511134,
+   "ms": 283
+  },
+  {
+   "url": "https://saaleweb.de/ru/blog/kategoriya/rost-biznesa",
+   "titleLen": 30,
+   "descLen": 72,
+   "words": 78,
+   "inlinks": 4,
+   "ogUrl": "https://saaleweb.de/ru",
+   "h2": 1,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite"
+   ],
+   "bytes": 510322,
+   "ms": 210
+  },
+  {
+   "url": "https://saaleweb.de/ru/uslugi/razrabotka-sajtov",
+   "titleLen": 37,
+   "descLen": 71,
+   "words": 288,
+   "inlinks": 0,
+   "ogUrl": null,
+   "h2": 7,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 545493,
+   "ms": 167
+  },
+  {
+   "url": "https://saaleweb.de/en/services/web-development",
+   "titleLen": 37,
+   "descLen": 69,
+   "words": 351,
+   "inlinks": 0,
+   "ogUrl": null,
+   "h2": 7,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 544930,
+   "ms": 174
+  },
+  {
+   "url": "https://saaleweb.de/ru/uslugi/seo-optimizaciya",
+   "titleLen": 35,
+   "descLen": 68,
+   "words": 294,
+   "inlinks": 0,
+   "ogUrl": null,
+   "h2": 7,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 545793,
+   "ms": 145
+  },
+  {
+   "url": "https://saaleweb.de/leistungen/website-entwicklung",
+   "titleLen": 43,
+   "descLen": 76,
+   "words": 337,
+   "inlinks": 0,
+   "ogUrl": null,
+   "h2": 7,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 547050,
+   "ms": 269
+  },
+  {
+   "url": "https://saaleweb.de/en/services/seo-optimization",
+   "titleLen": 38,
+   "descLen": 56,
+   "words": 357,
+   "inlinks": 0,
+   "ogUrl": null,
+   "h2": 7,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 545419,
+   "ms": 223
+  },
+  {
+   "url": "https://saaleweb.de/leistungen/seo-optimierung",
+   "titleLen": 39,
+   "descLen": 70,
+   "words": 341,
+   "inlinks": 0,
+   "ogUrl": null,
+   "h2": 7,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 547443,
+   "ms": 173
+  },
+  {
+   "url": "https://saaleweb.de/ru/uslugi/lokalnoe-seo",
+   "titleLen": 33,
+   "descLen": 70,
+   "words": 275,
+   "inlinks": 8,
+   "ogUrl": null,
+   "h2": 7,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 544862,
+   "ms": 188
+  },
+  {
+   "url": "https://saaleweb.de/leistungen/local-seo",
+   "titleLen": 33,
+   "descLen": 72,
+   "words": 309,
+   "inlinks": 10,
+   "ogUrl": null,
+   "h2": 7,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 546243,
+   "ms": 165
+  },
+  {
+   "url": "https://saaleweb.de/en/services/local-seo",
+   "titleLen": 31,
+   "descLen": 66,
+   "words": 323,
+   "inlinks": 8,
+   "ogUrl": null,
+   "h2": 7,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 544393,
+   "ms": 244
+  },
+  {
+   "url": "https://saaleweb.de/ru/uslugi/integraciya-ii",
+   "titleLen": 33,
+   "descLen": 73,
+   "words": 265,
+   "inlinks": 0,
+   "ogUrl": null,
+   "h2": 7,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 545276,
+   "ms": 179
+  },
+  {
+   "url": "https://saaleweb.de/en/services/ai-integration",
+   "titleLen": 36,
+   "descLen": 68,
+   "words": 325,
+   "inlinks": 0,
+   "ogUrl": null,
+   "h2": 7,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 544771,
+   "ms": 170
+  },
+  {
+   "url": "https://saaleweb.de/leistungen/ki-integration",
+   "titleLen": 38,
+   "descLen": 71,
+   "words": 317,
+   "inlinks": 0,
+   "ogUrl": null,
+   "h2": 7,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 546768,
+   "ms": 210
+  },
+  {
+   "url": "https://saaleweb.de/en/services/hosting",
+   "titleLen": 29,
+   "descLen": 63,
+   "words": 291,
+   "inlinks": 0,
+   "ogUrl": null,
+   "h2": 7,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 543590,
+   "ms": 162
+  },
+  {
+   "url": "https://saaleweb.de/ru/uslugi/hosting",
+   "titleLen": 27,
+   "descLen": 58,
+   "words": 242,
+   "inlinks": 0,
+   "ogUrl": null,
+   "h2": 7,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 543855,
+   "ms": 290
+  },
+  {
+   "url": "https://saaleweb.de/leistungen/hosting",
+   "titleLen": 31,
+   "descLen": 68,
+   "words": 277,
+   "inlinks": 0,
+   "ogUrl": null,
+   "h2": 7,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 545581,
+   "ms": 227
+  },
+  {
+   "url": "https://saaleweb.de/ru/uslugi/podderzhka",
+   "titleLen": 29,
+   "descLen": 65,
+   "words": 247,
+   "inlinks": 0,
+   "ogUrl": null,
+   "h2": 7,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 544384,
+   "ms": 182
+  },
+  {
+   "url": "https://saaleweb.de/en/services/maintenance",
+   "titleLen": 33,
+   "descLen": 60,
+   "words": 301,
+   "inlinks": 0,
+   "ogUrl": null,
+   "h2": 7,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 543781,
+   "ms": 178
+  },
+  {
+   "url": "https://saaleweb.de/ru/uslugi/cifrovoj-konsalting",
+   "titleLen": 39,
+   "descLen": 51,
+   "words": 264,
+   "inlinks": 0,
+   "ogUrl": null,
+   "h2": 7,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 544872,
+   "ms": 167
+  },
+  {
+   "url": "https://saaleweb.de/leistungen/wartung",
+   "titleLen": 31,
+   "descLen": 61,
+   "words": 282,
+   "inlinks": 0,
+   "ogUrl": null,
+   "h2": 7,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 545428,
+   "ms": 248
+  },
+  {
+   "url": "https://saaleweb.de/en/services/digital-consulting",
+   "titleLen": 40,
+   "descLen": 60,
+   "words": 318,
+   "inlinks": 0,
+   "ogUrl": null,
+   "h2": 7,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 544454,
+   "ms": 198
+  },
+  {
+   "url": "https://saaleweb.de/leistungen/digitalberatung",
+   "titleLen": 39,
+   "descLen": 66,
+   "words": 304,
+   "inlinks": 0,
+   "ogUrl": null,
+   "h2": 7,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 546220,
+   "ms": 192
+  },
+  {
+   "url": "https://saaleweb.de/branchen/arztpraxen",
+   "titleLen": 32,
+   "descLen": 14,
+   "words": 284,
+   "inlinks": 1,
+   "ogUrl": null,
+   "h2": 7,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 576367,
+   "ms": 197
+  },
+  {
+   "url": "https://saaleweb.de/en/industries/medical-practices",
+   "titleLen": 41,
+   "descLen": 12,
+   "words": 316,
+   "inlinks": 1,
+   "ogUrl": null,
+   "h2": 7,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 575241,
+   "ms": 181
+  },
+  {
+   "url": "https://saaleweb.de/ru/otrasli/medcentry",
+   "titleLen": 30,
+   "descLen": 14,
+   "words": 275,
+   "inlinks": 1,
+   "ogUrl": null,
+   "h2": 7,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 575014,
+   "ms": 174
+  },
+  {
+   "url": "https://saaleweb.de/en/industries/real-estate",
+   "titleLen": 35,
+   "descLen": 10,
+   "words": 310,
+   "inlinks": 1,
+   "ogUrl": null,
+   "h2": 7,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 574496,
+   "ms": 183
+  },
+  {
+   "url": "https://saaleweb.de/branchen/immobilien",
+   "titleLen": 32,
+   "descLen": 10,
+   "words": 280,
+   "inlinks": 1,
+   "ogUrl": null,
+   "h2": 7,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 576172,
+   "ms": 310
+  },
+  {
+   "url": "https://saaleweb.de/ru/otrasli/nedvizhimost",
+   "titleLen": 33,
+   "descLen": 12,
+   "words": 264,
+   "inlinks": 1,
+   "ogUrl": null,
+   "h2": 7,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 575118,
+   "ms": 185
+  },
+  {
+   "url": "https://saaleweb.de/branchen/kanzleien",
+   "titleLen": 31,
+   "descLen": 18,
+   "words": 297,
+   "inlinks": 1,
+   "ogUrl": null,
+   "h2": 7,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 576371,
+   "ms": 141
+  },
+  {
+   "url": "https://saaleweb.de/en/industries/law-firms",
+   "titleLen": 33,
+   "descLen": 11,
+   "words": 322,
+   "inlinks": 1,
+   "ogUrl": null,
+   "h2": 7,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 574843,
+   "ms": 253
+  },
+  {
+   "url": "https://saaleweb.de/ru/otrasli/yuristy",
+   "titleLen": 27,
+   "descLen": 20,
+   "words": 278,
+   "inlinks": 1,
+   "ogUrl": null,
+   "h2": 7,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "Service",
+    "BreadcrumbList",
+    "FAQPage"
+   ],
+   "bytes": 575109,
+   "ms": 178
+  },
+  {
+   "url": "https://saaleweb.de/ru/proekty/neue-liebe-nebra",
+   "titleLen": 66,
+   "descLen": 223,
+   "words": 305,
+   "inlinks": 33,
+   "ogUrl": null,
+   "h2": 12,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "CreativeWork",
+    "BreadcrumbList"
+   ],
+   "bytes": 553999,
+   "ms": 191
+  },
+  {
+   "url": "https://saaleweb.de/projekte/neue-liebe-nebra",
+   "titleLen": 66,
+   "descLen": 257,
+   "words": 331,
+   "inlinks": 13,
+   "ogUrl": null,
+   "h2": 12,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "CreativeWork",
+    "BreadcrumbList"
+   ],
+   "bytes": 556178,
+   "ms": 183
+  },
+  {
+   "url": "https://saaleweb.de/en/projects/neue-liebe-nebra",
+   "titleLen": 66,
+   "descLen": 231,
+   "words": 357,
+   "inlinks": 33,
+   "ogUrl": null,
+   "h2": 12,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "CreativeWork",
+    "BreadcrumbList"
+   ],
+   "bytes": 554087,
+   "ms": 248
+  },
+  {
+   "url": "https://saaleweb.de/ru/proekty/pryamye-broni-bez-agregatorov",
+   "titleLen": 77,
+   "descLen": 225,
+   "words": 316,
+   "inlinks": 6,
+   "ogUrl": null,
+   "h2": 12,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "CreativeWork",
+    "BreadcrumbList"
+   ],
+   "bytes": 554415,
+   "ms": 194
+  },
+  {
+   "url": "https://saaleweb.de/en/projects/direct-bookings-without-portals",
+   "titleLen": 79,
+   "descLen": 225,
+   "words": 379,
+   "inlinks": 6,
+   "ogUrl": null,
+   "h2": 12,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "CreativeWork",
+    "BreadcrumbList"
+   ],
+   "bytes": 554563,
+   "ms": 209
+  },
+  {
+   "url": "https://saaleweb.de/projekte/direktbuchungen-ohne-portale",
+   "titleLen": 78,
+   "descLen": 243,
+   "words": 338,
+   "inlinks": 11,
+   "ogUrl": null,
+   "h2": 12,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "CreativeWork",
+    "BreadcrumbList"
+   ],
+   "bytes": 556435,
+   "ms": 214
+  },
+  {
+   "url": "https://saaleweb.de/ru/proekty/kvalificirovannye-zayavki",
+   "titleLen": 77,
+   "descLen": 210,
+   "words": 306,
+   "inlinks": 11,
+   "ogUrl": null,
+   "h2": 12,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "CreativeWork",
+    "BreadcrumbList"
+   ],
+   "bytes": 554413,
+   "ms": 152
+  },
+  {
+   "url": "https://saaleweb.de/projekte/qualifizierte-bauanfragen",
+   "titleLen": 70,
+   "descLen": 241,
+   "words": 329,
+   "inlinks": 34,
+   "ogUrl": null,
+   "h2": 12,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "CreativeWork",
+    "BreadcrumbList"
+   ],
+   "bytes": 556406,
+   "ms": 179
+  },
+  {
+   "url": "https://saaleweb.de/en/projects/glaserei-schubert",
+   "titleLen": 79,
+   "descLen": 190,
+   "words": 370,
+   "inlinks": 6,
+   "ogUrl": null,
+   "h2": 12,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "CreativeWork",
+    "BreadcrumbList"
+   ],
+   "bytes": 553708,
+   "ms": 142
+  },
+  {
+   "url": "https://saaleweb.de/en/projects/qualified-construction-leads",
+   "titleLen": 79,
+   "descLen": 205,
+   "words": 363,
+   "inlinks": 11,
+   "ogUrl": null,
+   "h2": 12,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "CreativeWork",
+    "BreadcrumbList"
+   ],
+   "bytes": 554386,
+   "ms": 275
+  },
+  {
+   "url": "https://saaleweb.de/projekte/glaserei-schubert",
+   "titleLen": 81,
+   "descLen": 209,
+   "words": 335,
+   "inlinks": 6,
+   "ogUrl": null,
+   "h2": 12,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "CreativeWork",
+    "BreadcrumbList"
+   ],
+   "bytes": 555676,
+   "ms": 167
+  },
+  {
+   "url": "https://saaleweb.de/ru/proekty/onlajn-zapisi-vyrosli-vtroe",
+   "titleLen": 86,
+   "descLen": 241,
+   "words": 339,
+   "inlinks": 38,
+   "ogUrl": null,
+   "h2": 12,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "CreativeWork",
+    "BreadcrumbList"
+   ],
+   "bytes": 555523,
+   "ms": 163
+  },
+  {
+   "url": "https://saaleweb.de/ru/proekty/glaserei-schubert",
+   "titleLen": 88,
+   "descLen": 172,
+   "words": 322,
+   "inlinks": 6,
+   "ogUrl": null,
+   "h2": 12,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "CreativeWork",
+    "BreadcrumbList"
+   ],
+   "bytes": 553835,
+   "ms": 365
+  },
+  {
+   "url": "https://saaleweb.de/en/projects/online-bookings-tripled",
+   "titleLen": 89,
+   "descLen": 257,
+   "words": 403,
+   "inlinks": 38,
+   "ogUrl": null,
+   "h2": 12,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "CreativeWork",
+    "BreadcrumbList"
+   ],
+   "bytes": 555750,
+   "ms": 166
+  },
+  {
+   "url": "https://saaleweb.de/projekte/online-buchungen-verdreifacht",
+   "titleLen": 86,
+   "descLen": 280,
+   "words": 371,
+   "inlinks": 36,
+   "ogUrl": null,
+   "h2": 12,
+   "ld": [
+    "Organization",
+    "Person",
+    "WebSite",
+    "CreativeWork",
+    "BreadcrumbList"
+   ],
+   "bytes": 557750,
+   "ms": 243
+  }
+ ]
+}

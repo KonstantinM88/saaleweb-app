@@ -37,6 +37,7 @@ import { FaqAccordion, type QA } from "@/widgets/faq/FaqAccordion";
 import { Phase4LinkCluster, type Phase4HubCopy } from "@/widgets/seo-landing/Phase4LinkCluster";
 import { getPhase4LocationLinks, getPhase4ServiceLinks } from "@/widgets/seo-landing/phase4Content";
 import { isMergedServiceSlug } from "@/widgets/seo-landing/serviceMerges";
+import { getRetainedServiceLinks } from "@/widgets/seo-landing/retainedLinks";
 
 export const revalidate = 300;
 
@@ -136,7 +137,11 @@ export default async function ServicesIndexPage({ params }: { params: Promise<Pa
   const clusters = t.raw("clusters") as ServiceCluster[];
   const audit = t.raw("audit") as AuditCta;
   const seoHub = t.raw("seoHub") as Phase4HubCopy;
-  const seoLinks = [...getPhase4ServiceLinks(locale), ...getPhase4LocationLinks(locale).slice(0, 3)];
+  const seoLinks = [
+    ...getPhase4ServiceLinks(locale),
+    ...getRetainedServiceLinks(locale),
+    ...getPhase4LocationLinks(locale).slice(0, 3),
+  ];
 
   const homePath = getHomeHref(locale);
   const auditHref = getAuditHref(locale);

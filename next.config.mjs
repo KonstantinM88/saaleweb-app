@@ -24,6 +24,9 @@ const permanentCompatibilityRedirects = [
   // src/widgets/seo-landing/serviceMerges.ts. The CMS-backed Performance page
   // duplicates the richer performance-optimization landing page.
   { source: "/leistungen/performance", destination: "/leistungen/performance-optimierung" },
+  // Reviewed DE-only pilot, 2026-10-30; mirrors serviceMerges.ts.
+  { source: "/leistungen/website-entwicklung", destination: "/leistungen/website-erstellen-lassen" },
+  { source: "/leistungen/wartung", destination: "/leistungen/website-wartung" },
   { source: "/en/services/performance", destination: "/en/services/performance-optimization" },
   {
     source: "/ru/uslugi/proizvoditelnost",
@@ -87,7 +90,7 @@ const permanentCompatibilityRedirects = [
   },
   { source: "/en/services/website-erstellen-lassen", destination: "/en/services/website-development" },
   { source: "/leistungen/lokalnoe-seo", destination: "/leistungen/local-seo" },
-  { source: "/leistungen/podderzhka", destination: "/leistungen/wartung" },
+  { source: "/leistungen/podderzhka", destination: "/leistungen/website-wartung" },
   { source: "/en/services/online-shop-erstellen", destination: "/en/services/online-shop-development" },
   { source: "/leistungen/website-security", destination: "/leistungen/website-sicherheit" },
   { source: "/en/services/buchungssysteme", destination: "/en/services/booking-systems" },
@@ -447,13 +450,22 @@ function dedupeRedirects(redirects) {
   /** @type {Map<string, { source: string; destination: string }>} */
   const bySource = new Map();
   for (const redirect of redirects) {
+    // Historical cross-language aliases may still target a retired DE slug.
+    // Resolve only the two reviewed pilot destinations to avoid a new chain.
+    const destination =
+      redirect.destination === "/leistungen/website-entwicklung"
+        ? "/leistungen/website-erstellen-lassen"
+        : redirect.destination === "/leistungen/wartung"
+          ? "/leistungen/website-wartung"
+          : redirect.destination;
+    const normalized = { ...redirect, destination };
     const existing = bySource.get(redirect.source);
-    if (existing && existing.destination !== redirect.destination) {
+    if (existing && existing.destination !== normalized.destination) {
       throw new Error(
         `Conflicting permanent redirects for ${redirect.source}: ${existing.destination} vs ${redirect.destination}`,
       );
     }
-    if (!existing) bySource.set(redirect.source, redirect);
+    if (!existing) bySource.set(redirect.source, normalized);
   }
   return [...bySource.values()];
 }

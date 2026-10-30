@@ -1,0 +1,473 @@
+{
+  "checkedAt": "2026-10-30T01:39:15.097Z",
+  "scope": "local production build only",
+  "pages": [
+    {
+      "path": "/",
+      "status": 200,
+      "canonical": "https://saaleweb.de",
+      "locale": "de",
+      "schema": true
+    },
+    {
+      "path": "/en",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en",
+      "locale": "en",
+      "schema": true
+    },
+    {
+      "path": "/ru",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru",
+      "locale": "ru",
+      "schema": true
+    },
+    {
+      "path": "/kontakt",
+      "status": 200,
+      "canonical": "https://saaleweb.de/kontakt",
+      "locale": "de",
+      "schema": true
+    },
+    {
+      "path": "/en/contact",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/contact",
+      "locale": "en",
+      "schema": true
+    },
+    {
+      "path": "/ru/kontakt",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/kontakt",
+      "locale": "ru",
+      "schema": true
+    },
+    {
+      "path": "/leistungen/webdesign-halle",
+      "status": 200,
+      "canonical": "https://saaleweb.de/leistungen/webdesign-halle",
+      "locale": "de",
+      "schema": true
+    },
+    {
+      "path": "/leistungen/wordpress-agentur-halle",
+      "status": 200,
+      "canonical": "https://saaleweb.de/leistungen/wordpress-agentur-halle",
+      "locale": "de",
+      "schema": true
+    },
+    {
+      "path": "/leistungen/website-relaunch",
+      "status": 200,
+      "canonical": "https://saaleweb.de/leistungen/website-relaunch",
+      "locale": "de",
+      "schema": true
+    },
+    {
+      "path": "/leistungen/wordpress-website-modernisieren",
+      "status": 200,
+      "canonical": "https://saaleweb.de/leistungen/wordpress-website-modernisieren",
+      "locale": "de",
+      "schema": true
+    },
+    {
+      "path": "/leistungen/website-wartung",
+      "status": 200,
+      "canonical": "https://saaleweb.de/leistungen/website-wartung",
+      "locale": "de",
+      "schema": true
+    },
+    {
+      "path": "/leistungen/buchungssysteme",
+      "status": 200,
+      "canonical": "https://saaleweb.de/leistungen/buchungssysteme",
+      "locale": "de",
+      "schema": true
+    },
+    {
+      "path": "/branchen/beauty-studio-website",
+      "status": 200,
+      "canonical": "https://saaleweb.de/branchen/beauty-studio-website",
+      "locale": "de",
+      "schema": true
+    },
+    {
+      "path": "/branchen/handwerker-website",
+      "status": 200,
+      "canonical": "https://saaleweb.de/branchen/handwerker-website",
+      "locale": "de",
+      "schema": true
+    },
+    {
+      "path": "/branchen/bauunternehmen-website",
+      "status": 200,
+      "canonical": "https://saaleweb.de/branchen/bauunternehmen-website",
+      "locale": "de",
+      "schema": true
+    },
+    {
+      "path": "/branchen/glaserei-website",
+      "status": 200,
+      "canonical": "https://saaleweb.de/branchen/glaserei-website",
+      "locale": "de",
+      "schema": true
+    },
+    {
+      "path": "/en/services/web-design-halle",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/services/web-design-halle",
+      "locale": "en",
+      "schema": true
+    },
+    {
+      "path": "/en/services/wordpress-agency-halle",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/services/wordpress-agency-halle",
+      "locale": "en",
+      "schema": true
+    },
+    {
+      "path": "/en/services/website-relaunch",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/services/website-relaunch",
+      "locale": "en",
+      "schema": true
+    },
+    {
+      "path": "/en/services/wordpress-website-modernization",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/services/wordpress-website-modernization",
+      "locale": "en",
+      "schema": true
+    },
+    {
+      "path": "/en/services/website-maintenance",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/services/website-maintenance",
+      "locale": "en",
+      "schema": true
+    },
+    {
+      "path": "/en/services/booking-systems",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/services/booking-systems",
+      "locale": "en",
+      "schema": true
+    },
+    {
+      "path": "/en/industries/beauty-studio-website",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/industries/beauty-studio-website",
+      "locale": "en",
+      "schema": true
+    },
+    {
+      "path": "/en/industries/craftsmen-website",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/industries/craftsmen-website",
+      "locale": "en",
+      "schema": true
+    },
+    {
+      "path": "/en/industries/construction-company-website",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/industries/construction-company-website",
+      "locale": "en",
+      "schema": true
+    },
+    {
+      "path": "/en/industries/glazier-website",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/industries/glazier-website",
+      "locale": "en",
+      "schema": true
+    },
+    {
+      "path": "/ru/uslugi/webdesign-halle",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/uslugi/webdesign-halle",
+      "locale": "ru",
+      "schema": true
+    },
+    {
+      "path": "/ru/uslugi/wordpress-agentstvo-halle",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/uslugi/wordpress-agentstvo-halle",
+      "locale": "ru",
+      "schema": true
+    },
+    {
+      "path": "/ru/uslugi/relonch-sajta",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/uslugi/relonch-sajta",
+      "locale": "ru",
+      "schema": true
+    },
+    {
+      "path": "/ru/uslugi/modernizaciya-wordpress-sayta",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/uslugi/modernizaciya-wordpress-sayta",
+      "locale": "ru",
+      "schema": true
+    },
+    {
+      "path": "/ru/uslugi/podderzhka-saytov",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/uslugi/podderzhka-saytov",
+      "locale": "ru",
+      "schema": true
+    },
+    {
+      "path": "/ru/uslugi/sistemy-bronirovaniya",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/uslugi/sistemy-bronirovaniya",
+      "locale": "ru",
+      "schema": true
+    },
+    {
+      "path": "/ru/otrasli/sayt-dlya-salona-krasoty",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/otrasli/sayt-dlya-salona-krasoty",
+      "locale": "ru",
+      "schema": true
+    },
+    {
+      "path": "/ru/otrasli/sayt-dlya-masterov",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/otrasli/sayt-dlya-masterov",
+      "locale": "ru",
+      "schema": true
+    },
+    {
+      "path": "/ru/otrasli/sayt-dlya-stroitelnoy-kompanii",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/otrasli/sayt-dlya-stroitelnoy-kompanii",
+      "locale": "ru",
+      "schema": true
+    },
+    {
+      "path": "/ru/otrasli/sayt-dlya-stekolnoy-masterskoy",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/otrasli/sayt-dlya-stekolnoy-masterskoy",
+      "locale": "ru",
+      "schema": true
+    },
+    {
+      "path": "/en/blog",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/blog",
+      "locale": "en",
+      "schema": true
+    },
+    {
+      "path": "/ru/blog",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/blog",
+      "locale": "ru",
+      "schema": true
+    },
+    {
+      "path": "/blog",
+      "status": 200,
+      "canonical": "https://saaleweb.de/blog",
+      "locale": "de",
+      "schema": true
+    },
+    {
+      "path": "/blog/kategorie/seo",
+      "status": 200,
+      "canonical": "https://saaleweb.de/blog/kategorie/seo",
+      "locale": "de",
+      "schema": true
+    },
+    {
+      "path": "/en/blog/category/seo",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/blog/category/seo",
+      "locale": "en",
+      "schema": true
+    },
+    {
+      "path": "/blog/kategorie/webdesign",
+      "status": 200,
+      "canonical": "https://saaleweb.de/blog/kategorie/webdesign",
+      "locale": "de",
+      "schema": true
+    },
+    {
+      "path": "/en/blog/category/web-design",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/blog/category/web-design",
+      "locale": "en",
+      "schema": true
+    },
+    {
+      "path": "/ru/blog/kategoriya/seo",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/blog/kategoriya/seo",
+      "locale": "ru",
+      "schema": true
+    },
+    {
+      "path": "/ru/blog/kategoriya/veb-dizajn",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/blog/kategoriya/veb-dizajn",
+      "locale": "ru",
+      "schema": true
+    },
+    {
+      "path": "/blog/kategorie/ki-suche",
+      "status": 200,
+      "canonical": "https://saaleweb.de/blog/kategorie/ki-suche",
+      "locale": "de",
+      "schema": true
+    },
+    {
+      "path": "/en/blog/category/ai-search",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/blog/category/ai-search",
+      "locale": "en",
+      "schema": true
+    },
+    {
+      "path": "/ru/blog/kategoriya/ii-i-poisk",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/blog/kategoriya/ii-i-poisk",
+      "locale": "ru",
+      "schema": true
+    },
+    {
+      "path": "/en/blog/category/business-growth",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/blog/category/business-growth",
+      "locale": "en",
+      "schema": true
+    },
+    {
+      "path": "/blog/kategorie/praxis",
+      "status": 200,
+      "canonical": "https://saaleweb.de/blog/kategorie/praxis",
+      "locale": "de",
+      "schema": true
+    },
+    {
+      "path": "/ru/blog/kategoriya/rost-biznesa",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/blog/kategoriya/rost-biznesa",
+      "locale": "ru",
+      "schema": true
+    },
+    {
+      "path": "/blog/lokales-seo-halle",
+      "status": 200,
+      "canonical": "https://saaleweb.de/blog/lokales-seo-halle",
+      "locale": "de",
+      "schema": true
+    },
+    {
+      "path": "/en/blog/local-seo-halle",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/blog/local-seo-halle",
+      "locale": "en",
+      "schema": true
+    },
+    {
+      "path": "/ru/blog/lokalnoe-seo-halle",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/blog/lokalnoe-seo-halle",
+      "locale": "ru",
+      "schema": true
+    }
+  ],
+  "contextualLinks": [
+    {
+      "source": "/leistungen/webdesign-halle",
+      "target": "/leistungen/wordpress-agentur-halle"
+    },
+    {
+      "source": "/leistungen/website-relaunch",
+      "target": "/leistungen/wordpress-agentur-halle"
+    },
+    {
+      "source": "/leistungen/wordpress-website-modernisieren",
+      "target": "/leistungen/wordpress-agentur-halle"
+    },
+    {
+      "source": "/leistungen/website-wartung",
+      "target": "/leistungen/wordpress-agentur-halle"
+    },
+    {
+      "source": "/leistungen/buchungssysteme",
+      "target": "/branchen/beauty-studio-website"
+    },
+    {
+      "source": "/branchen/handwerker-website",
+      "target": "/branchen/bauunternehmen-website"
+    },
+    {
+      "source": "/branchen/glaserei-website",
+      "target": "/branchen/bauunternehmen-website"
+    },
+    {
+      "source": "/en/services/web-design-halle",
+      "target": "/en/services/wordpress-agency-halle"
+    },
+    {
+      "source": "/en/services/website-relaunch",
+      "target": "/en/services/wordpress-agency-halle"
+    },
+    {
+      "source": "/en/services/wordpress-website-modernization",
+      "target": "/en/services/wordpress-agency-halle"
+    },
+    {
+      "source": "/en/services/website-maintenance",
+      "target": "/en/services/wordpress-agency-halle"
+    },
+    {
+      "source": "/en/services/booking-systems",
+      "target": "/en/industries/beauty-studio-website"
+    },
+    {
+      "source": "/en/industries/craftsmen-website",
+      "target": "/en/industries/construction-company-website"
+    },
+    {
+      "source": "/en/industries/glazier-website",
+      "target": "/en/industries/construction-company-website"
+    },
+    {
+      "source": "/ru/uslugi/webdesign-halle",
+      "target": "/ru/uslugi/wordpress-agentstvo-halle"
+    },
+    {
+      "source": "/ru/uslugi/relonch-sajta",
+      "target": "/ru/uslugi/wordpress-agentstvo-halle"
+    },
+    {
+      "source": "/ru/uslugi/modernizaciya-wordpress-sayta",
+      "target": "/ru/uslugi/wordpress-agentstvo-halle"
+    },
+    {
+      "source": "/ru/uslugi/podderzhka-saytov",
+      "target": "/ru/uslugi/wordpress-agentstvo-halle"
+    },
+    {
+      "source": "/ru/uslugi/sistemy-bronirovaniya",
+      "target": "/ru/otrasli/sayt-dlya-salona-krasoty"
+    },
+    {
+      "source": "/ru/otrasli/sayt-dlya-masterov",
+      "target": "/ru/otrasli/sayt-dlya-stroitelnoy-kompanii"
+    },
+    {
+      "source": "/ru/otrasli/sayt-dlya-stekolnoy-masterskoy",
+      "target": "/ru/otrasli/sayt-dlya-stroitelnoy-kompanii"
+    }
+  ],
+  "sitemapUrls": 231,
+  "sitemapUnchanged": true,
+  "assets": 2
+}

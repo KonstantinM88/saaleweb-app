@@ -17,6 +17,7 @@ import { Breadcrumbs } from "@/shared/ui/Breadcrumbs";
 import { Link, getPathname } from "@/i18n/navigation";
 import { PostCard } from "@/widgets/blog/PostCard";
 import { cn } from "@/shared/lib/cn";
+import { socialMetadata } from "@/shared/seo/metadata";
 
 type Params = { locale: string; slug: string };
 
@@ -47,14 +48,17 @@ export async function generateMetadata({
         }),
       ]),
   );
+  const title = `${current.name} — ${t("title")}`;
+  const canonical = getPathname({
+    locale,
+    href: { pathname: "/blog/kategorie/[slug]", params: { slug } },
+  });
   return {
-    title: `${current.name} — ${t("title")}`,
+    title,
     description: t("subtitle"),
+    ...socialMetadata({ title, description: t("subtitle"), locale, canonical }),
     alternates: {
-      canonical: getPathname({
-        locale,
-        href: { pathname: "/blog/kategorie/[slug]", params: { slug } },
-      }),
+      canonical,
       languages: {
         ...languages,
         "x-default": languages[routing.defaultLocale] ?? languages[locale],

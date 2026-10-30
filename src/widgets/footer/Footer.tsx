@@ -17,6 +17,7 @@ const footerServiceSlugs = [
   "website-erstellen-lassen",
   "webdesign-halle",
   "seo-halle",
+  "wordpress-agentur-halle",
   "ki-optimierung",
 ] as const;
 

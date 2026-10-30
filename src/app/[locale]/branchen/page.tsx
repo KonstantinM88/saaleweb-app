@@ -18,6 +18,8 @@ import { breadcrumbSchema, collectionPageSchema, faqPageSchema, itemListSchema }
 import { buildMetadata } from "@/shared/seo/metadata";
 import { getContactHref } from "@/shared/lib/contactHref";
 import { getAuditHref, getHomeHref, getLocalizedSlugHref } from "@/shared/lib/localizedPath";
+import { Phase4LinkCluster } from "@/widgets/seo-landing/Phase4LinkCluster";
+import { getRetainedIndustryLinks, retainedIndustryHubCopy } from "@/widgets/seo-landing/retainedLinks";
 
 export const revalidate = 300;
 
@@ -717,6 +719,9 @@ export default async function IndustriesIndexPage({ params }: { params: Promise<
 
         <section className="bg-surface py-16 md:py-24">
           <Container>
+            <div className="mb-10">
+              <Phase4LinkCluster copy={retainedIndustryHubCopy[appLocale]} links={getRetainedIndustryLinks(appLocale)} />
+            </div>
             <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
               <Reveal>
                 <div className="sticky top-24 rounded-[26px] border border-line bg-white p-6 shadow-card md:p-8">

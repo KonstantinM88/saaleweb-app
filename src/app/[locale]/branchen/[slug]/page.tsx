@@ -28,6 +28,7 @@ import { BeautyLandingPage } from "@/widgets/industry-premium/BeautyLandingPage"
 import { getPremiumIndustry } from "@/widgets/industry-premium/registry";
 import "@/widgets/industry-premium/premium.css";
 import { isMergedIndustrySlug } from "@/widgets/seo-landing/industryMerges";
+import { RetainedPageScope } from "@/widgets/seo-landing/RetainedPageScope";
 import {
   getSeoIndustryPage,
   getSeoIndustrySlugMapByLocalizedSlug,
@@ -340,6 +341,7 @@ export default async function IndustryPage({ params }: { params: Promise<Params>
         </section>
 
         {/* FEATURES */}
+        <RetainedPageScope canonical={canonicalSlug} locale={locale} />
         <section className="bg-surface py-16 md:py-24">
           <Container>
             <Reveal className="mx-auto mb-10 max-w-[680px] text-center md:mb-14">

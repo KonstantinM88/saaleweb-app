@@ -12,7 +12,7 @@ import { siteConfig } from "@/shared/config/site";
 import { JsonLd } from "@/shared/seo/JsonLd";
 import { organizationSchema, personSchema, websiteSchema } from "@/shared/seo/schema";
 import { getSeoOverride } from "@/shared/seo/metadata";
-import { ogImageUrl } from "@/shared/seo/og";
+import { ogAlternateLocales, ogImageUrl, ogLocale } from "@/shared/seo/og";
 import { PageViewTracker } from "@/features/analytics/PageViewTracker";
 import { AnalyticsConsentBanner } from "@/features/analytics/AnalyticsConsentBanner";
 import { GtmInteractionTracker } from "@/features/analytics/GtmInteractionTracker";
@@ -80,7 +80,8 @@ export async function generateMetadata({
       description,
       url: canonical === "/" ? siteConfig.url : `${siteConfig.url}${canonical}`,
       siteName: siteConfig.name,
-      locale,
+      locale: ogLocale(locale),
+      alternateLocale: ogAlternateLocales(locale),
       type: "website",
       images: [{ url: ogImage, width: 1200, height: 630 }],
     },

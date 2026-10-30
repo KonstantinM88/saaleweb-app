@@ -1,5 +1,39 @@
 # Search Console: очередь изменённых страниц
 
+## Рекомендации по 49 исключённым URL — 30.10.2026
+
+**Реализовано локально, ожидает публикации.** Два DE-источника объединяются через 308; карта сокращается с 231 до 229 URL. Все исходные 49 уже были в опубликованной карте, поэтому добавление дубликатов не требуется. Из них `/leistungen/wartung` намеренно перестаёт быть самостоятельной страницей; остаются 48 кандидатов. [Полный отчёт и инструкция отправки карты](./gsc-indexation-plan-2026-10-30.md), [49 исходных URL](./audits/2026-10-30-excluded-49.md).
+
+После подтверждения деплоя отправить `https://saaleweb.de/sitemap.xml` через `scripts/submit-reviewed-sitemap.ts --submit` (проверки и флаги запуска указаны в отчёте). Приоритет ручного запроса URL Inspection — **целевые/улучшенные страницы**, а не источники редиректов:
+
+- `https://saaleweb.de/leistungen/website-erstellen-lassen`
+- `https://saaleweb.de/leistungen/website-wartung`
+- `https://saaleweb.de/leistungen/seo-optimierung`
+- `https://saaleweb.de/en/services/hosting`
+- `https://saaleweb.de/ru/uslugi/hosting`
+- `https://saaleweb.de/en/services/ai-integration`
+
+[Все 50 изменённых канонических URL этого этапа](./audits/2026-10-30-indexation-changed-urls.txt). Для языковых копий Website/Wartung приоритетны новые `/en/services/website-development`, `/en/services/website-maintenance`, `/ru/uslugi/podderzhka-saytov`; старые EN/RU группы пока сохраняются, не требуют массовой подачи. На локальной сборке все 229 URL проверены, но публичный сайт в 02:27 UTC ещё отдавал старые источники 200. Отправка обновлённой карты и индивидуальные запросы **не выполнены**. Перечень из 49 относится к выборке, не ко всему ресурсу GSC.
+
+## SEO-патч: Open Graph, сущность и ссылки — 30.10.2026
+
+**Применён только локально; ожидает публикации.** После деплоя проверить публичные метаданные. Общие Organization и футер затрагивают публичные страницы сайта; sitemap сохраняет 231 URL. Массовый ручной запрос индексации всех страниц не требуется. Приоритет — целевые коммерческие страницы и источники новых контекстных ссылок:
+
+| DE | EN | RU |
+|---|---|---|
+| `https://saaleweb.de/leistungen/wordpress-agentur-halle` | `https://saaleweb.de/en/services/wordpress-agency-halle` | `https://saaleweb.de/ru/uslugi/wordpress-agentstvo-halle` |
+| `https://saaleweb.de/branchen/beauty-studio-website` | `https://saaleweb.de/en/industries/beauty-studio-website` | `https://saaleweb.de/ru/otrasli/sayt-dlya-salona-krasoty` |
+| `https://saaleweb.de/branchen/bauunternehmen-website` | `https://saaleweb.de/en/industries/construction-company-website` | `https://saaleweb.de/ru/otrasli/sayt-dlya-stroitelnoy-kompanii` |
+| `https://saaleweb.de/leistungen/webdesign-halle` | `https://saaleweb.de/en/services/web-design-halle` | `https://saaleweb.de/ru/uslugi/webdesign-halle` |
+| `https://saaleweb.de/leistungen/website-relaunch` | `https://saaleweb.de/en/services/website-relaunch` | `https://saaleweb.de/ru/uslugi/relonch-sajta` |
+| `https://saaleweb.de/leistungen/wordpress-website-modernisieren` | `https://saaleweb.de/en/services/wordpress-website-modernization` | `https://saaleweb.de/ru/uslugi/modernizaciya-wordpress-sayta` |
+| `https://saaleweb.de/leistungen/website-wartung` | `https://saaleweb.de/en/services/website-maintenance` | `https://saaleweb.de/ru/uslugi/podderzhka-saytov` |
+| `https://saaleweb.de/leistungen/buchungssysteme` | `https://saaleweb.de/en/services/booking-systems` | `https://saaleweb.de/ru/uslugi/sistemy-bronirovaniya` |
+| `https://saaleweb.de/branchen/handwerker-website` | `https://saaleweb.de/en/industries/craftsmen-website` | `https://saaleweb.de/ru/otrasli/sayt-dlya-masterov` |
+| `https://saaleweb.de/branchen/glaserei-website` | `https://saaleweb.de/en/industries/glazier-website` | `https://saaleweb.de/ru/otrasli/sayt-dlya-stekolnoy-masterskoy` |
+
+Также изменены Open Graph у `/`, `/en`, `/ru`, всех страниц через `buildMetadata()` и всех 15 списков/категорий блога (точные URL перечислены в разделе от 24.10 ниже). Это изменения метаданных, без замены canonical или адресов. Проверены локально 54 страницы; [полный список проверенных URL](./audits/2026-10-30-patch-local-verification.json), [отчёт о применении](./seo-patch-application-2026-10-30.md). Запросы переобхода и отправка sitemap пока не выполнены.
+
 ## Canonical блога и повторная проверка скриншотов, 24.10.2026
 
 В коммите `1dc21af`, отправленном в оба репозитория, добавлены self-canonical и `x-default` для всех списков/категорий блога. Локальная и повторная production HTTP-проверка всех 15 URL пройдены; публичный JS подтверждает Next.js 16.4.3. Sitemap принят через API с HTTP 204, `lastSubmitted=2026-10-24T03:49:16.673Z` (05:49 Europe/Berlin), ожидает обработки без ошибок/предупреждений. Приоритетные ручные проверки — два EN URL из отчёта и RU WordPress canonical:

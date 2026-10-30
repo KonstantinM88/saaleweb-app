@@ -25,7 +25,8 @@ import {
   getSeoServiceSlugMapByLocalizedSlug,
   getSeoServiceStaticParams,
 } from "@/widgets/seo-landing/phase4Content";
-import { isMergedServiceSlug } from "@/widgets/seo-landing/serviceMerges";
+import { isMergedServiceSlug, resolveServiceSlug } from "@/widgets/seo-landing/serviceMerges";
+import { RetainedPageScope } from "@/widgets/seo-landing/RetainedPageScope";
 
 type Params = { locale: string; slug: string };
 
@@ -63,12 +64,21 @@ async function getServiceData(locale: AppLocale, slug: string) {
     if (!tr) return null;
     const languages: Record<string, string> = {};
     const slugs: Record<string, string> = {};
+    const languageSlugs: Record<string, string> = {};
     for (const sib of tr.service.translations) {
-      languages[sib.locale] = getPathname({
-        locale: sib.locale as AppLocale,
-        href: { pathname: "/leistungen/[slug]", params: { slug: sib.slug } },
-      });
       slugs[sib.locale] = sib.slug;
+      languageSlugs[sib.locale] = resolveServiceSlug(sib.locale, sib.slug);
+      // A DE-only merge must not leave EN/RU metadata pointing to a redirect
+      // or to a DE page belonging to a different, non-reciprocal hreflang set.
+      if (!isMergedServiceSlug(sib.locale, sib.slug)) {
+        languages[sib.locale] = getPathname({
+          locale: sib.locale as AppLocale,
+          href: { pathname: "/leistungen/[slug]", params: { slug: sib.slug } },
+        });
+      }
+    }
+    if (!languages.de) {
+      languages["x-default"] = languages.en ?? languages.ru ?? languages[locale];
     }
     return {
       name: tr.name as string,
@@ -77,6 +87,7 @@ async function getServiceData(locale: AppLocale, slug: string) {
       coverImage: tr.service.coverImage as string | null,
       languages,
       slugs,
+      languageSlugs,
     };
   } catch {
     return null;
@@ -175,7 +186,7 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
   );
 
   return (
-    <LocaleSlugsProvider slugs={data.slugs}>
+    <LocaleSlugsProvider slugs={data.languageSlugs}>
       <Navbar />
       <JsonLd
         data={[
@@ -245,6 +256,7 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
         </section>
 
         {/* ---------------- PROBLEM → SOLUTION ---------------- */}
+        <RetainedPageScope canonical={data.slugs.de ?? slug} locale={locale} />
         <section className="py-14 md:py-20">
           <Container>
             <div className="grid gap-5 md:grid-cols-2 md:gap-6">

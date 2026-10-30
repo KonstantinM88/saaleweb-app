@@ -1,0 +1,2945 @@
+{
+  "checkedAt": "2026-10-30T02:27:05.166Z",
+  "scope": "local production build",
+  "pages": [
+    {
+      "path": "/",
+      "status": 200,
+      "canonical": "https://saaleweb.de",
+      "alternates": {
+        "de": "https://saaleweb.de/",
+        "en": "https://saaleweb.de/en",
+        "ru": "https://saaleweb.de/ru",
+        "x-default": "https://saaleweb.de/"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en",
+      "alternates": {
+        "de": "https://saaleweb.de/",
+        "en": "https://saaleweb.de/en",
+        "ru": "https://saaleweb.de/ru",
+        "x-default": "https://saaleweb.de/"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru",
+      "alternates": {
+        "de": "https://saaleweb.de/",
+        "en": "https://saaleweb.de/en",
+        "ru": "https://saaleweb.de/ru",
+        "x-default": "https://saaleweb.de/"
+      },
+      "scope": false
+    },
+    {
+      "path": "/blog",
+      "status": 200,
+      "canonical": "https://saaleweb.de/blog",
+      "alternates": {
+        "de": "https://saaleweb.de/blog",
+        "en": "https://saaleweb.de/en/blog",
+        "ru": "https://saaleweb.de/ru/blog",
+        "x-default": "https://saaleweb.de/blog"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/blog",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/blog",
+      "alternates": {
+        "de": "https://saaleweb.de/blog",
+        "en": "https://saaleweb.de/en/blog",
+        "ru": "https://saaleweb.de/ru/blog",
+        "x-default": "https://saaleweb.de/blog"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/blog",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/blog",
+      "alternates": {
+        "de": "https://saaleweb.de/blog",
+        "en": "https://saaleweb.de/en/blog",
+        "ru": "https://saaleweb.de/ru/blog",
+        "x-default": "https://saaleweb.de/blog"
+      },
+      "scope": false
+    },
+    {
+      "path": "/leistungen",
+      "status": 200,
+      "canonical": "https://saaleweb.de/leistungen",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen",
+        "en": "https://saaleweb.de/en/services",
+        "ru": "https://saaleweb.de/ru/uslugi",
+        "x-default": "https://saaleweb.de/leistungen"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/services",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/services",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen",
+        "en": "https://saaleweb.de/en/services",
+        "ru": "https://saaleweb.de/ru/uslugi",
+        "x-default": "https://saaleweb.de/leistungen"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/uslugi",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/uslugi",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen",
+        "en": "https://saaleweb.de/en/services",
+        "ru": "https://saaleweb.de/ru/uslugi",
+        "x-default": "https://saaleweb.de/leistungen"
+      },
+      "scope": false
+    },
+    {
+      "path": "/branchen",
+      "status": 200,
+      "canonical": "https://saaleweb.de/branchen",
+      "alternates": {
+        "de": "https://saaleweb.de/branchen",
+        "en": "https://saaleweb.de/en/industries",
+        "ru": "https://saaleweb.de/ru/otrasli",
+        "x-default": "https://saaleweb.de/branchen"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/industries",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/industries",
+      "alternates": {
+        "de": "https://saaleweb.de/branchen",
+        "en": "https://saaleweb.de/en/industries",
+        "ru": "https://saaleweb.de/ru/otrasli",
+        "x-default": "https://saaleweb.de/branchen"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/otrasli",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/otrasli",
+      "alternates": {
+        "de": "https://saaleweb.de/branchen",
+        "en": "https://saaleweb.de/en/industries",
+        "ru": "https://saaleweb.de/ru/otrasli",
+        "x-default": "https://saaleweb.de/branchen"
+      },
+      "scope": false
+    },
+    {
+      "path": "/standorte",
+      "status": 200,
+      "canonical": "https://saaleweb.de/standorte",
+      "alternates": {
+        "de": "https://saaleweb.de/standorte",
+        "en": "https://saaleweb.de/en/locations",
+        "ru": "https://saaleweb.de/ru/goroda",
+        "x-default": "https://saaleweb.de/standorte"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/locations",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/locations",
+      "alternates": {
+        "de": "https://saaleweb.de/standorte",
+        "en": "https://saaleweb.de/en/locations",
+        "ru": "https://saaleweb.de/ru/goroda",
+        "x-default": "https://saaleweb.de/standorte"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/goroda",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/goroda",
+      "alternates": {
+        "de": "https://saaleweb.de/standorte",
+        "en": "https://saaleweb.de/en/locations",
+        "ru": "https://saaleweb.de/ru/goroda",
+        "x-default": "https://saaleweb.de/standorte"
+      },
+      "scope": false
+    },
+    {
+      "path": "/kontakt",
+      "status": 200,
+      "canonical": "https://saaleweb.de/kontakt",
+      "alternates": {
+        "de": "https://saaleweb.de/kontakt",
+        "en": "https://saaleweb.de/en/contact",
+        "ru": "https://saaleweb.de/ru/kontakt",
+        "x-default": "https://saaleweb.de/kontakt"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/contact",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/contact",
+      "alternates": {
+        "de": "https://saaleweb.de/kontakt",
+        "en": "https://saaleweb.de/en/contact",
+        "ru": "https://saaleweb.de/ru/kontakt",
+        "x-default": "https://saaleweb.de/kontakt"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/kontakt",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/kontakt",
+      "alternates": {
+        "de": "https://saaleweb.de/kontakt",
+        "en": "https://saaleweb.de/en/contact",
+        "ru": "https://saaleweb.de/ru/kontakt",
+        "x-default": "https://saaleweb.de/kontakt"
+      },
+      "scope": false
+    },
+    {
+      "path": "/preise",
+      "status": 200,
+      "canonical": "https://saaleweb.de/preise",
+      "alternates": {
+        "de": "https://saaleweb.de/preise",
+        "en": "https://saaleweb.de/en/pricing",
+        "ru": "https://saaleweb.de/ru/ceny",
+        "x-default": "https://saaleweb.de/preise"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/pricing",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/pricing",
+      "alternates": {
+        "de": "https://saaleweb.de/preise",
+        "en": "https://saaleweb.de/en/pricing",
+        "ru": "https://saaleweb.de/ru/ceny",
+        "x-default": "https://saaleweb.de/preise"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/ceny",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/ceny",
+      "alternates": {
+        "de": "https://saaleweb.de/preise",
+        "en": "https://saaleweb.de/en/pricing",
+        "ru": "https://saaleweb.de/ru/ceny",
+        "x-default": "https://saaleweb.de/preise"
+      },
+      "scope": false
+    },
+    {
+      "path": "/projekte",
+      "status": 200,
+      "canonical": "https://saaleweb.de/projekte",
+      "alternates": {
+        "de": "https://saaleweb.de/projekte",
+        "en": "https://saaleweb.de/en/projects",
+        "ru": "https://saaleweb.de/ru/proekty",
+        "x-default": "https://saaleweb.de/projekte"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/projects",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/projects",
+      "alternates": {
+        "de": "https://saaleweb.de/projekte",
+        "en": "https://saaleweb.de/en/projects",
+        "ru": "https://saaleweb.de/ru/proekty",
+        "x-default": "https://saaleweb.de/projekte"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/proekty",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/proekty",
+      "alternates": {
+        "de": "https://saaleweb.de/projekte",
+        "en": "https://saaleweb.de/en/projects",
+        "ru": "https://saaleweb.de/ru/proekty",
+        "x-default": "https://saaleweb.de/projekte"
+      },
+      "scope": false
+    },
+    {
+      "path": "/kostenlose-website-analyse",
+      "status": 200,
+      "canonical": "https://saaleweb.de/kostenlose-website-analyse",
+      "alternates": {
+        "de": "https://saaleweb.de/kostenlose-website-analyse",
+        "en": "https://saaleweb.de/en/free-website-audit",
+        "ru": "https://saaleweb.de/ru/besplatnyy-audit-sayta",
+        "x-default": "https://saaleweb.de/kostenlose-website-analyse"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/free-website-audit",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/free-website-audit",
+      "alternates": {
+        "de": "https://saaleweb.de/kostenlose-website-analyse",
+        "en": "https://saaleweb.de/en/free-website-audit",
+        "ru": "https://saaleweb.de/ru/besplatnyy-audit-sayta",
+        "x-default": "https://saaleweb.de/kostenlose-website-analyse"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/besplatnyy-audit-sayta",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/besplatnyy-audit-sayta",
+      "alternates": {
+        "de": "https://saaleweb.de/kostenlose-website-analyse",
+        "en": "https://saaleweb.de/en/free-website-audit",
+        "ru": "https://saaleweb.de/ru/besplatnyy-audit-sayta",
+        "x-default": "https://saaleweb.de/kostenlose-website-analyse"
+      },
+      "scope": false
+    },
+    {
+      "path": "/impressum",
+      "status": 200,
+      "canonical": "https://saaleweb.de/impressum",
+      "alternates": {
+        "de": "https://saaleweb.de/impressum",
+        "en": "https://saaleweb.de/en/imprint",
+        "ru": "https://saaleweb.de/ru/impressum",
+        "x-default": "https://saaleweb.de/impressum"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/imprint",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/imprint",
+      "alternates": {
+        "de": "https://saaleweb.de/impressum",
+        "en": "https://saaleweb.de/en/imprint",
+        "ru": "https://saaleweb.de/ru/impressum",
+        "x-default": "https://saaleweb.de/impressum"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/impressum",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/impressum",
+      "alternates": {
+        "de": "https://saaleweb.de/impressum",
+        "en": "https://saaleweb.de/en/imprint",
+        "ru": "https://saaleweb.de/ru/impressum",
+        "x-default": "https://saaleweb.de/impressum"
+      },
+      "scope": false
+    },
+    {
+      "path": "/datenschutz",
+      "status": 200,
+      "canonical": "https://saaleweb.de/datenschutz",
+      "alternates": {
+        "de": "https://saaleweb.de/datenschutz",
+        "en": "https://saaleweb.de/en/privacy-policy",
+        "ru": "https://saaleweb.de/ru/datenschutz",
+        "x-default": "https://saaleweb.de/datenschutz"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/privacy-policy",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/privacy-policy",
+      "alternates": {
+        "de": "https://saaleweb.de/datenschutz",
+        "en": "https://saaleweb.de/en/privacy-policy",
+        "ru": "https://saaleweb.de/ru/datenschutz",
+        "x-default": "https://saaleweb.de/datenschutz"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/datenschutz",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/datenschutz",
+      "alternates": {
+        "de": "https://saaleweb.de/datenschutz",
+        "en": "https://saaleweb.de/en/privacy-policy",
+        "ru": "https://saaleweb.de/ru/datenschutz",
+        "x-default": "https://saaleweb.de/datenschutz"
+      },
+      "scope": false
+    },
+    {
+      "path": "/standorte/halle",
+      "status": 200,
+      "canonical": "https://saaleweb.de/standorte/halle",
+      "alternates": {
+        "de": "https://saaleweb.de/standorte/halle",
+        "en": "https://saaleweb.de/en/locations/halle",
+        "ru": "https://saaleweb.de/ru/goroda/halle",
+        "x-default": "https://saaleweb.de/standorte/halle"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/locations/halle",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/locations/halle",
+      "alternates": {
+        "de": "https://saaleweb.de/standorte/halle",
+        "en": "https://saaleweb.de/en/locations/halle",
+        "ru": "https://saaleweb.de/ru/goroda/halle",
+        "x-default": "https://saaleweb.de/standorte/halle"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/goroda/halle",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/goroda/halle",
+      "alternates": {
+        "de": "https://saaleweb.de/standorte/halle",
+        "en": "https://saaleweb.de/en/locations/halle",
+        "ru": "https://saaleweb.de/ru/goroda/halle",
+        "x-default": "https://saaleweb.de/standorte/halle"
+      },
+      "scope": false
+    },
+    {
+      "path": "/standorte/leipzig",
+      "status": 200,
+      "canonical": "https://saaleweb.de/standorte/leipzig",
+      "alternates": {
+        "de": "https://saaleweb.de/standorte/leipzig",
+        "en": "https://saaleweb.de/en/locations/leipzig",
+        "ru": "https://saaleweb.de/ru/goroda/leipzig",
+        "x-default": "https://saaleweb.de/standorte/leipzig"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/locations/leipzig",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/locations/leipzig",
+      "alternates": {
+        "de": "https://saaleweb.de/standorte/leipzig",
+        "en": "https://saaleweb.de/en/locations/leipzig",
+        "ru": "https://saaleweb.de/ru/goroda/leipzig",
+        "x-default": "https://saaleweb.de/standorte/leipzig"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/goroda/leipzig",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/goroda/leipzig",
+      "alternates": {
+        "de": "https://saaleweb.de/standorte/leipzig",
+        "en": "https://saaleweb.de/en/locations/leipzig",
+        "ru": "https://saaleweb.de/ru/goroda/leipzig",
+        "x-default": "https://saaleweb.de/standorte/leipzig"
+      },
+      "scope": false
+    },
+    {
+      "path": "/standorte/merseburg",
+      "status": 200,
+      "canonical": "https://saaleweb.de/standorte/merseburg",
+      "alternates": {
+        "de": "https://saaleweb.de/standorte/merseburg",
+        "en": "https://saaleweb.de/en/locations/merseburg",
+        "ru": "https://saaleweb.de/ru/goroda/merseburg",
+        "x-default": "https://saaleweb.de/standorte/merseburg"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/locations/merseburg",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/locations/merseburg",
+      "alternates": {
+        "de": "https://saaleweb.de/standorte/merseburg",
+        "en": "https://saaleweb.de/en/locations/merseburg",
+        "ru": "https://saaleweb.de/ru/goroda/merseburg",
+        "x-default": "https://saaleweb.de/standorte/merseburg"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/goroda/merseburg",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/goroda/merseburg",
+      "alternates": {
+        "de": "https://saaleweb.de/standorte/merseburg",
+        "en": "https://saaleweb.de/en/locations/merseburg",
+        "ru": "https://saaleweb.de/ru/goroda/merseburg",
+        "x-default": "https://saaleweb.de/standorte/merseburg"
+      },
+      "scope": false
+    },
+    {
+      "path": "/standorte/schkeuditz",
+      "status": 200,
+      "canonical": "https://saaleweb.de/standorte/schkeuditz",
+      "alternates": {
+        "de": "https://saaleweb.de/standorte/schkeuditz",
+        "en": "https://saaleweb.de/en/locations/schkeuditz",
+        "ru": "https://saaleweb.de/ru/goroda/schkeuditz",
+        "x-default": "https://saaleweb.de/standorte/schkeuditz"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/locations/schkeuditz",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/locations/schkeuditz",
+      "alternates": {
+        "de": "https://saaleweb.de/standorte/schkeuditz",
+        "en": "https://saaleweb.de/en/locations/schkeuditz",
+        "ru": "https://saaleweb.de/ru/goroda/schkeuditz",
+        "x-default": "https://saaleweb.de/standorte/schkeuditz"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/goroda/schkeuditz",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/goroda/schkeuditz",
+      "alternates": {
+        "de": "https://saaleweb.de/standorte/schkeuditz",
+        "en": "https://saaleweb.de/en/locations/schkeuditz",
+        "ru": "https://saaleweb.de/ru/goroda/schkeuditz",
+        "x-default": "https://saaleweb.de/standorte/schkeuditz"
+      },
+      "scope": false
+    },
+    {
+      "path": "/standorte/delitzsch",
+      "status": 200,
+      "canonical": "https://saaleweb.de/standorte/delitzsch",
+      "alternates": {
+        "de": "https://saaleweb.de/standorte/delitzsch",
+        "en": "https://saaleweb.de/en/locations/delitzsch",
+        "ru": "https://saaleweb.de/ru/goroda/delitzsch",
+        "x-default": "https://saaleweb.de/standorte/delitzsch"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/locations/delitzsch",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/locations/delitzsch",
+      "alternates": {
+        "de": "https://saaleweb.de/standorte/delitzsch",
+        "en": "https://saaleweb.de/en/locations/delitzsch",
+        "ru": "https://saaleweb.de/ru/goroda/delitzsch",
+        "x-default": "https://saaleweb.de/standorte/delitzsch"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/goroda/delitzsch",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/goroda/delitzsch",
+      "alternates": {
+        "de": "https://saaleweb.de/standorte/delitzsch",
+        "en": "https://saaleweb.de/en/locations/delitzsch",
+        "ru": "https://saaleweb.de/ru/goroda/delitzsch",
+        "x-default": "https://saaleweb.de/standorte/delitzsch"
+      },
+      "scope": false
+    },
+    {
+      "path": "/standorte/saalekreis",
+      "status": 200,
+      "canonical": "https://saaleweb.de/standorte/saalekreis",
+      "alternates": {
+        "de": "https://saaleweb.de/standorte/saalekreis",
+        "en": "https://saaleweb.de/en/locations/saalekreis",
+        "ru": "https://saaleweb.de/ru/goroda/saalekreis",
+        "x-default": "https://saaleweb.de/standorte/saalekreis"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/locations/saalekreis",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/locations/saalekreis",
+      "alternates": {
+        "de": "https://saaleweb.de/standorte/saalekreis",
+        "en": "https://saaleweb.de/en/locations/saalekreis",
+        "ru": "https://saaleweb.de/ru/goroda/saalekreis",
+        "x-default": "https://saaleweb.de/standorte/saalekreis"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/goroda/saalekreis",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/goroda/saalekreis",
+      "alternates": {
+        "de": "https://saaleweb.de/standorte/saalekreis",
+        "en": "https://saaleweb.de/en/locations/saalekreis",
+        "ru": "https://saaleweb.de/ru/goroda/saalekreis",
+        "x-default": "https://saaleweb.de/standorte/saalekreis"
+      },
+      "scope": false
+    },
+    {
+      "path": "/leistungen/website-erstellen-lassen",
+      "status": 200,
+      "canonical": "https://saaleweb.de/leistungen/website-erstellen-lassen",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/website-erstellen-lassen",
+        "en": "https://saaleweb.de/en/services/website-development",
+        "ru": "https://saaleweb.de/ru/uslugi/razrabotka-saytov",
+        "x-default": "https://saaleweb.de/leistungen/website-erstellen-lassen"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/services/website-development",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/services/website-development",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/website-erstellen-lassen",
+        "en": "https://saaleweb.de/en/services/website-development",
+        "ru": "https://saaleweb.de/ru/uslugi/razrabotka-saytov",
+        "x-default": "https://saaleweb.de/leistungen/website-erstellen-lassen"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/uslugi/razrabotka-saytov",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/uslugi/razrabotka-saytov",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/website-erstellen-lassen",
+        "en": "https://saaleweb.de/en/services/website-development",
+        "ru": "https://saaleweb.de/ru/uslugi/razrabotka-saytov",
+        "x-default": "https://saaleweb.de/leistungen/website-erstellen-lassen"
+      },
+      "scope": false
+    },
+    {
+      "path": "/leistungen/webdesign-halle",
+      "status": 200,
+      "canonical": "https://saaleweb.de/leistungen/webdesign-halle",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/webdesign-halle",
+        "en": "https://saaleweb.de/en/services/web-design-halle",
+        "ru": "https://saaleweb.de/ru/uslugi/webdesign-halle",
+        "x-default": "https://saaleweb.de/leistungen/webdesign-halle"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/services/web-design-halle",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/services/web-design-halle",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/webdesign-halle",
+        "en": "https://saaleweb.de/en/services/web-design-halle",
+        "ru": "https://saaleweb.de/ru/uslugi/webdesign-halle",
+        "x-default": "https://saaleweb.de/leistungen/webdesign-halle"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/uslugi/webdesign-halle",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/uslugi/webdesign-halle",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/webdesign-halle",
+        "en": "https://saaleweb.de/en/services/web-design-halle",
+        "ru": "https://saaleweb.de/ru/uslugi/webdesign-halle",
+        "x-default": "https://saaleweb.de/leistungen/webdesign-halle"
+      },
+      "scope": false
+    },
+    {
+      "path": "/leistungen/seo-halle",
+      "status": 200,
+      "canonical": "https://saaleweb.de/leistungen/seo-halle",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/seo-halle",
+        "en": "https://saaleweb.de/en/services/seo-halle",
+        "ru": "https://saaleweb.de/ru/uslugi/seo-halle",
+        "x-default": "https://saaleweb.de/leistungen/seo-halle"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/services/seo-halle",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/services/seo-halle",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/seo-halle",
+        "en": "https://saaleweb.de/en/services/seo-halle",
+        "ru": "https://saaleweb.de/ru/uslugi/seo-halle",
+        "x-default": "https://saaleweb.de/leistungen/seo-halle"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/uslugi/seo-halle",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/uslugi/seo-halle",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/seo-halle",
+        "en": "https://saaleweb.de/en/services/seo-halle",
+        "ru": "https://saaleweb.de/ru/uslugi/seo-halle",
+        "x-default": "https://saaleweb.de/leistungen/seo-halle"
+      },
+      "scope": false
+    },
+    {
+      "path": "/leistungen/wordpress-agentur-halle",
+      "status": 200,
+      "canonical": "https://saaleweb.de/leistungen/wordpress-agentur-halle",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/wordpress-agentur-halle",
+        "en": "https://saaleweb.de/en/services/wordpress-agency-halle",
+        "ru": "https://saaleweb.de/ru/uslugi/wordpress-agentstvo-halle",
+        "x-default": "https://saaleweb.de/leistungen/wordpress-agentur-halle"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/services/wordpress-agency-halle",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/services/wordpress-agency-halle",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/wordpress-agentur-halle",
+        "en": "https://saaleweb.de/en/services/wordpress-agency-halle",
+        "ru": "https://saaleweb.de/ru/uslugi/wordpress-agentstvo-halle",
+        "x-default": "https://saaleweb.de/leistungen/wordpress-agentur-halle"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/uslugi/wordpress-agentstvo-halle",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/uslugi/wordpress-agentstvo-halle",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/wordpress-agentur-halle",
+        "en": "https://saaleweb.de/en/services/wordpress-agency-halle",
+        "ru": "https://saaleweb.de/ru/uslugi/wordpress-agentstvo-halle",
+        "x-default": "https://saaleweb.de/leistungen/wordpress-agentur-halle"
+      },
+      "scope": false
+    },
+    {
+      "path": "/leistungen/webdesign-leipzig",
+      "status": 200,
+      "canonical": "https://saaleweb.de/leistungen/webdesign-leipzig",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/webdesign-leipzig",
+        "en": "https://saaleweb.de/en/services/web-design-leipzig",
+        "ru": "https://saaleweb.de/ru/uslugi/webdesign-leipzig",
+        "x-default": "https://saaleweb.de/leistungen/webdesign-leipzig"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/services/web-design-leipzig",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/services/web-design-leipzig",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/webdesign-leipzig",
+        "en": "https://saaleweb.de/en/services/web-design-leipzig",
+        "ru": "https://saaleweb.de/ru/uslugi/webdesign-leipzig",
+        "x-default": "https://saaleweb.de/leistungen/webdesign-leipzig"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/uslugi/webdesign-leipzig",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/uslugi/webdesign-leipzig",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/webdesign-leipzig",
+        "en": "https://saaleweb.de/en/services/web-design-leipzig",
+        "ru": "https://saaleweb.de/ru/uslugi/webdesign-leipzig",
+        "x-default": "https://saaleweb.de/leistungen/webdesign-leipzig"
+      },
+      "scope": false
+    },
+    {
+      "path": "/leistungen/seo-leipzig",
+      "status": 200,
+      "canonical": "https://saaleweb.de/leistungen/seo-leipzig",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/seo-leipzig",
+        "en": "https://saaleweb.de/en/services/seo-leipzig",
+        "ru": "https://saaleweb.de/ru/uslugi/seo-leipzig",
+        "x-default": "https://saaleweb.de/leistungen/seo-leipzig"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/services/seo-leipzig",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/services/seo-leipzig",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/seo-leipzig",
+        "en": "https://saaleweb.de/en/services/seo-leipzig",
+        "ru": "https://saaleweb.de/ru/uslugi/seo-leipzig",
+        "x-default": "https://saaleweb.de/leistungen/seo-leipzig"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/uslugi/seo-leipzig",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/uslugi/seo-leipzig",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/seo-leipzig",
+        "en": "https://saaleweb.de/en/services/seo-leipzig",
+        "ru": "https://saaleweb.de/ru/uslugi/seo-leipzig",
+        "x-default": "https://saaleweb.de/leistungen/seo-leipzig"
+      },
+      "scope": false
+    },
+    {
+      "path": "/leistungen/webdesign-merseburg",
+      "status": 200,
+      "canonical": "https://saaleweb.de/leistungen/webdesign-merseburg",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/webdesign-merseburg",
+        "en": "https://saaleweb.de/en/services/web-design-merseburg",
+        "ru": "https://saaleweb.de/ru/uslugi/webdesign-merseburg",
+        "x-default": "https://saaleweb.de/leistungen/webdesign-merseburg"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/services/web-design-merseburg",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/services/web-design-merseburg",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/webdesign-merseburg",
+        "en": "https://saaleweb.de/en/services/web-design-merseburg",
+        "ru": "https://saaleweb.de/ru/uslugi/webdesign-merseburg",
+        "x-default": "https://saaleweb.de/leistungen/webdesign-merseburg"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/uslugi/webdesign-merseburg",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/uslugi/webdesign-merseburg",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/webdesign-merseburg",
+        "en": "https://saaleweb.de/en/services/web-design-merseburg",
+        "ru": "https://saaleweb.de/ru/uslugi/webdesign-merseburg",
+        "x-default": "https://saaleweb.de/leistungen/webdesign-merseburg"
+      },
+      "scope": false
+    },
+    {
+      "path": "/leistungen/seo-merseburg",
+      "status": 200,
+      "canonical": "https://saaleweb.de/leistungen/seo-merseburg",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/seo-merseburg",
+        "en": "https://saaleweb.de/en/services/seo-merseburg",
+        "ru": "https://saaleweb.de/ru/uslugi/seo-merseburg",
+        "x-default": "https://saaleweb.de/leistungen/seo-merseburg"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/services/seo-merseburg",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/services/seo-merseburg",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/seo-merseburg",
+        "en": "https://saaleweb.de/en/services/seo-merseburg",
+        "ru": "https://saaleweb.de/ru/uslugi/seo-merseburg",
+        "x-default": "https://saaleweb.de/leistungen/seo-merseburg"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/uslugi/seo-merseburg",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/uslugi/seo-merseburg",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/seo-merseburg",
+        "en": "https://saaleweb.de/en/services/seo-merseburg",
+        "ru": "https://saaleweb.de/ru/uslugi/seo-merseburg",
+        "x-default": "https://saaleweb.de/leistungen/seo-merseburg"
+      },
+      "scope": false
+    },
+    {
+      "path": "/leistungen/webdesign-schkeuditz",
+      "status": 200,
+      "canonical": "https://saaleweb.de/leistungen/webdesign-schkeuditz",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/webdesign-schkeuditz",
+        "en": "https://saaleweb.de/en/services/web-design-schkeuditz",
+        "ru": "https://saaleweb.de/ru/uslugi/webdesign-schkeuditz",
+        "x-default": "https://saaleweb.de/leistungen/webdesign-schkeuditz"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/services/web-design-schkeuditz",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/services/web-design-schkeuditz",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/webdesign-schkeuditz",
+        "en": "https://saaleweb.de/en/services/web-design-schkeuditz",
+        "ru": "https://saaleweb.de/ru/uslugi/webdesign-schkeuditz",
+        "x-default": "https://saaleweb.de/leistungen/webdesign-schkeuditz"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/uslugi/webdesign-schkeuditz",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/uslugi/webdesign-schkeuditz",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/webdesign-schkeuditz",
+        "en": "https://saaleweb.de/en/services/web-design-schkeuditz",
+        "ru": "https://saaleweb.de/ru/uslugi/webdesign-schkeuditz",
+        "x-default": "https://saaleweb.de/leistungen/webdesign-schkeuditz"
+      },
+      "scope": false
+    },
+    {
+      "path": "/leistungen/seo-schkeuditz",
+      "status": 200,
+      "canonical": "https://saaleweb.de/leistungen/seo-schkeuditz",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/seo-schkeuditz",
+        "en": "https://saaleweb.de/en/services/seo-schkeuditz",
+        "ru": "https://saaleweb.de/ru/uslugi/seo-schkeuditz",
+        "x-default": "https://saaleweb.de/leistungen/seo-schkeuditz"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/services/seo-schkeuditz",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/services/seo-schkeuditz",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/seo-schkeuditz",
+        "en": "https://saaleweb.de/en/services/seo-schkeuditz",
+        "ru": "https://saaleweb.de/ru/uslugi/seo-schkeuditz",
+        "x-default": "https://saaleweb.de/leistungen/seo-schkeuditz"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/uslugi/seo-schkeuditz",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/uslugi/seo-schkeuditz",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/seo-schkeuditz",
+        "en": "https://saaleweb.de/en/services/seo-schkeuditz",
+        "ru": "https://saaleweb.de/ru/uslugi/seo-schkeuditz",
+        "x-default": "https://saaleweb.de/leistungen/seo-schkeuditz"
+      },
+      "scope": false
+    },
+    {
+      "path": "/leistungen/webdesign-delitzsch",
+      "status": 200,
+      "canonical": "https://saaleweb.de/leistungen/webdesign-delitzsch",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/webdesign-delitzsch",
+        "en": "https://saaleweb.de/en/services/web-design-delitzsch",
+        "ru": "https://saaleweb.de/ru/uslugi/webdesign-delitzsch",
+        "x-default": "https://saaleweb.de/leistungen/webdesign-delitzsch"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/services/web-design-delitzsch",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/services/web-design-delitzsch",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/webdesign-delitzsch",
+        "en": "https://saaleweb.de/en/services/web-design-delitzsch",
+        "ru": "https://saaleweb.de/ru/uslugi/webdesign-delitzsch",
+        "x-default": "https://saaleweb.de/leistungen/webdesign-delitzsch"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/uslugi/webdesign-delitzsch",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/uslugi/webdesign-delitzsch",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/webdesign-delitzsch",
+        "en": "https://saaleweb.de/en/services/web-design-delitzsch",
+        "ru": "https://saaleweb.de/ru/uslugi/webdesign-delitzsch",
+        "x-default": "https://saaleweb.de/leistungen/webdesign-delitzsch"
+      },
+      "scope": false
+    },
+    {
+      "path": "/leistungen/seo-delitzsch",
+      "status": 200,
+      "canonical": "https://saaleweb.de/leistungen/seo-delitzsch",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/seo-delitzsch",
+        "en": "https://saaleweb.de/en/services/seo-delitzsch",
+        "ru": "https://saaleweb.de/ru/uslugi/seo-delitzsch",
+        "x-default": "https://saaleweb.de/leistungen/seo-delitzsch"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/services/seo-delitzsch",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/services/seo-delitzsch",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/seo-delitzsch",
+        "en": "https://saaleweb.de/en/services/seo-delitzsch",
+        "ru": "https://saaleweb.de/ru/uslugi/seo-delitzsch",
+        "x-default": "https://saaleweb.de/leistungen/seo-delitzsch"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/uslugi/seo-delitzsch",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/uslugi/seo-delitzsch",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/seo-delitzsch",
+        "en": "https://saaleweb.de/en/services/seo-delitzsch",
+        "ru": "https://saaleweb.de/ru/uslugi/seo-delitzsch",
+        "x-default": "https://saaleweb.de/leistungen/seo-delitzsch"
+      },
+      "scope": false
+    },
+    {
+      "path": "/leistungen/webdesign-saalekreis",
+      "status": 200,
+      "canonical": "https://saaleweb.de/leistungen/webdesign-saalekreis",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/webdesign-saalekreis",
+        "en": "https://saaleweb.de/en/services/web-design-saalekreis",
+        "ru": "https://saaleweb.de/ru/uslugi/webdesign-saalekreis",
+        "x-default": "https://saaleweb.de/leistungen/webdesign-saalekreis"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/services/web-design-saalekreis",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/services/web-design-saalekreis",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/webdesign-saalekreis",
+        "en": "https://saaleweb.de/en/services/web-design-saalekreis",
+        "ru": "https://saaleweb.de/ru/uslugi/webdesign-saalekreis",
+        "x-default": "https://saaleweb.de/leistungen/webdesign-saalekreis"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/uslugi/webdesign-saalekreis",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/uslugi/webdesign-saalekreis",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/webdesign-saalekreis",
+        "en": "https://saaleweb.de/en/services/web-design-saalekreis",
+        "ru": "https://saaleweb.de/ru/uslugi/webdesign-saalekreis",
+        "x-default": "https://saaleweb.de/leistungen/webdesign-saalekreis"
+      },
+      "scope": false
+    },
+    {
+      "path": "/leistungen/seo-saalekreis",
+      "status": 200,
+      "canonical": "https://saaleweb.de/leistungen/seo-saalekreis",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/seo-saalekreis",
+        "en": "https://saaleweb.de/en/services/seo-saalekreis",
+        "ru": "https://saaleweb.de/ru/uslugi/seo-saalekreis",
+        "x-default": "https://saaleweb.de/leistungen/seo-saalekreis"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/services/seo-saalekreis",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/services/seo-saalekreis",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/seo-saalekreis",
+        "en": "https://saaleweb.de/en/services/seo-saalekreis",
+        "ru": "https://saaleweb.de/ru/uslugi/seo-saalekreis",
+        "x-default": "https://saaleweb.de/leistungen/seo-saalekreis"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/uslugi/seo-saalekreis",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/uslugi/seo-saalekreis",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/seo-saalekreis",
+        "en": "https://saaleweb.de/en/services/seo-saalekreis",
+        "ru": "https://saaleweb.de/ru/uslugi/seo-saalekreis",
+        "x-default": "https://saaleweb.de/leistungen/seo-saalekreis"
+      },
+      "scope": false
+    },
+    {
+      "path": "/leistungen/ki-optimierung",
+      "status": 200,
+      "canonical": "https://saaleweb.de/leistungen/ki-optimierung",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/ki-optimierung",
+        "en": "https://saaleweb.de/en/services/ai-optimization",
+        "ru": "https://saaleweb.de/ru/uslugi/optimizaciya-pod-ii",
+        "x-default": "https://saaleweb.de/leistungen/ki-optimierung"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/services/ai-optimization",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/services/ai-optimization",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/ki-optimierung",
+        "en": "https://saaleweb.de/en/services/ai-optimization",
+        "ru": "https://saaleweb.de/ru/uslugi/optimizaciya-pod-ii",
+        "x-default": "https://saaleweb.de/leistungen/ki-optimierung"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/uslugi/optimizaciya-pod-ii",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/uslugi/optimizaciya-pod-ii",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/ki-optimierung",
+        "en": "https://saaleweb.de/en/services/ai-optimization",
+        "ru": "https://saaleweb.de/ru/uslugi/optimizaciya-pod-ii",
+        "x-default": "https://saaleweb.de/leistungen/ki-optimierung"
+      },
+      "scope": false
+    },
+    {
+      "path": "/leistungen/wordpress-website-modernisieren",
+      "status": 200,
+      "canonical": "https://saaleweb.de/leistungen/wordpress-website-modernisieren",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/wordpress-website-modernisieren",
+        "en": "https://saaleweb.de/en/services/wordpress-website-modernization",
+        "ru": "https://saaleweb.de/ru/uslugi/modernizaciya-wordpress-sayta",
+        "x-default": "https://saaleweb.de/leistungen/wordpress-website-modernisieren"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/services/wordpress-website-modernization",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/services/wordpress-website-modernization",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/wordpress-website-modernisieren",
+        "en": "https://saaleweb.de/en/services/wordpress-website-modernization",
+        "ru": "https://saaleweb.de/ru/uslugi/modernizaciya-wordpress-sayta",
+        "x-default": "https://saaleweb.de/leistungen/wordpress-website-modernisieren"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/uslugi/modernizaciya-wordpress-sayta",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/uslugi/modernizaciya-wordpress-sayta",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/wordpress-website-modernisieren",
+        "en": "https://saaleweb.de/en/services/wordpress-website-modernization",
+        "ru": "https://saaleweb.de/ru/uslugi/modernizaciya-wordpress-sayta",
+        "x-default": "https://saaleweb.de/leistungen/wordpress-website-modernisieren"
+      },
+      "scope": false
+    },
+    {
+      "path": "/leistungen/website-relaunch",
+      "status": 200,
+      "canonical": "https://saaleweb.de/leistungen/website-relaunch",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/website-relaunch",
+        "en": "https://saaleweb.de/en/services/website-relaunch",
+        "ru": "https://saaleweb.de/ru/uslugi/relonch-sajta",
+        "x-default": "https://saaleweb.de/leistungen/website-relaunch"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/services/website-relaunch",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/services/website-relaunch",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/website-relaunch",
+        "en": "https://saaleweb.de/en/services/website-relaunch",
+        "ru": "https://saaleweb.de/ru/uslugi/relonch-sajta",
+        "x-default": "https://saaleweb.de/leistungen/website-relaunch"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/uslugi/relonch-sajta",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/uslugi/relonch-sajta",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/website-relaunch",
+        "en": "https://saaleweb.de/en/services/website-relaunch",
+        "ru": "https://saaleweb.de/ru/uslugi/relonch-sajta",
+        "x-default": "https://saaleweb.de/leistungen/website-relaunch"
+      },
+      "scope": false
+    },
+    {
+      "path": "/leistungen/performance-optimierung",
+      "status": 200,
+      "canonical": "https://saaleweb.de/leistungen/performance-optimierung",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/performance-optimierung",
+        "en": "https://saaleweb.de/en/services/performance-optimization",
+        "ru": "https://saaleweb.de/ru/uslugi/optimizaciya-proizvoditelnosti",
+        "x-default": "https://saaleweb.de/leistungen/performance-optimierung"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/services/performance-optimization",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/services/performance-optimization",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/performance-optimierung",
+        "en": "https://saaleweb.de/en/services/performance-optimization",
+        "ru": "https://saaleweb.de/ru/uslugi/optimizaciya-proizvoditelnosti",
+        "x-default": "https://saaleweb.de/leistungen/performance-optimierung"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/uslugi/optimizaciya-proizvoditelnosti",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/uslugi/optimizaciya-proizvoditelnosti",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/performance-optimierung",
+        "en": "https://saaleweb.de/en/services/performance-optimization",
+        "ru": "https://saaleweb.de/ru/uslugi/optimizaciya-proizvoditelnosti",
+        "x-default": "https://saaleweb.de/leistungen/performance-optimierung"
+      },
+      "scope": false
+    },
+    {
+      "path": "/leistungen/website-wartung",
+      "status": 200,
+      "canonical": "https://saaleweb.de/leistungen/website-wartung",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/website-wartung",
+        "en": "https://saaleweb.de/en/services/website-maintenance",
+        "ru": "https://saaleweb.de/ru/uslugi/podderzhka-saytov",
+        "x-default": "https://saaleweb.de/leistungen/website-wartung"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/services/website-maintenance",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/services/website-maintenance",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/website-wartung",
+        "en": "https://saaleweb.de/en/services/website-maintenance",
+        "ru": "https://saaleweb.de/ru/uslugi/podderzhka-saytov",
+        "x-default": "https://saaleweb.de/leistungen/website-wartung"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/uslugi/podderzhka-saytov",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/uslugi/podderzhka-saytov",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/website-wartung",
+        "en": "https://saaleweb.de/en/services/website-maintenance",
+        "ru": "https://saaleweb.de/ru/uslugi/podderzhka-saytov",
+        "x-default": "https://saaleweb.de/leistungen/website-wartung"
+      },
+      "scope": false
+    },
+    {
+      "path": "/leistungen/buchungssysteme",
+      "status": 200,
+      "canonical": "https://saaleweb.de/leistungen/buchungssysteme",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/buchungssysteme",
+        "en": "https://saaleweb.de/en/services/booking-systems",
+        "ru": "https://saaleweb.de/ru/uslugi/sistemy-bronirovaniya",
+        "x-default": "https://saaleweb.de/leistungen/buchungssysteme"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/services/booking-systems",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/services/booking-systems",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/buchungssysteme",
+        "en": "https://saaleweb.de/en/services/booking-systems",
+        "ru": "https://saaleweb.de/ru/uslugi/sistemy-bronirovaniya",
+        "x-default": "https://saaleweb.de/leistungen/buchungssysteme"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/uslugi/sistemy-bronirovaniya",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/uslugi/sistemy-bronirovaniya",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/buchungssysteme",
+        "en": "https://saaleweb.de/en/services/booking-systems",
+        "ru": "https://saaleweb.de/ru/uslugi/sistemy-bronirovaniya",
+        "x-default": "https://saaleweb.de/leistungen/buchungssysteme"
+      },
+      "scope": false
+    },
+    {
+      "path": "/leistungen/online-shop-erstellen",
+      "status": 200,
+      "canonical": "https://saaleweb.de/leistungen/online-shop-erstellen",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/online-shop-erstellen",
+        "en": "https://saaleweb.de/en/services/online-shop-development",
+        "ru": "https://saaleweb.de/ru/uslugi/sozdanie-internet-magazina",
+        "x-default": "https://saaleweb.de/leistungen/online-shop-erstellen"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/services/online-shop-development",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/services/online-shop-development",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/online-shop-erstellen",
+        "en": "https://saaleweb.de/en/services/online-shop-development",
+        "ru": "https://saaleweb.de/ru/uslugi/sozdanie-internet-magazina",
+        "x-default": "https://saaleweb.de/leistungen/online-shop-erstellen"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/uslugi/sozdanie-internet-magazina",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/uslugi/sozdanie-internet-magazina",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/online-shop-erstellen",
+        "en": "https://saaleweb.de/en/services/online-shop-development",
+        "ru": "https://saaleweb.de/ru/uslugi/sozdanie-internet-magazina",
+        "x-default": "https://saaleweb.de/leistungen/online-shop-erstellen"
+      },
+      "scope": false
+    },
+    {
+      "path": "/leistungen/ki-assistent",
+      "status": 200,
+      "canonical": "https://saaleweb.de/leistungen/ki-assistent",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/ki-assistent",
+        "en": "https://saaleweb.de/en/services/ai-assistant",
+        "ru": "https://saaleweb.de/ru/uslugi/ai-assistent",
+        "x-default": "https://saaleweb.de/leistungen/ki-assistent"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/services/ai-assistant",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/services/ai-assistant",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/ki-assistent",
+        "en": "https://saaleweb.de/en/services/ai-assistant",
+        "ru": "https://saaleweb.de/ru/uslugi/ai-assistent",
+        "x-default": "https://saaleweb.de/leistungen/ki-assistent"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/uslugi/ai-assistent",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/uslugi/ai-assistent",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/ki-assistent",
+        "en": "https://saaleweb.de/en/services/ai-assistant",
+        "ru": "https://saaleweb.de/ru/uslugi/ai-assistent",
+        "x-default": "https://saaleweb.de/leistungen/ki-assistent"
+      },
+      "scope": false
+    },
+    {
+      "path": "/leistungen/automatisierung",
+      "status": 200,
+      "canonical": "https://saaleweb.de/leistungen/automatisierung",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/automatisierung",
+        "en": "https://saaleweb.de/en/services/automation",
+        "ru": "https://saaleweb.de/ru/uslugi/avtomatizaciya",
+        "x-default": "https://saaleweb.de/leistungen/automatisierung"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/services/automation",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/services/automation",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/automatisierung",
+        "en": "https://saaleweb.de/en/services/automation",
+        "ru": "https://saaleweb.de/ru/uslugi/avtomatizaciya",
+        "x-default": "https://saaleweb.de/leistungen/automatisierung"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/uslugi/avtomatizaciya",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/uslugi/avtomatizaciya",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/automatisierung",
+        "en": "https://saaleweb.de/en/services/automation",
+        "ru": "https://saaleweb.de/ru/uslugi/avtomatizaciya",
+        "x-default": "https://saaleweb.de/leistungen/automatisierung"
+      },
+      "scope": false
+    },
+    {
+      "path": "/leistungen/api-integrationen",
+      "status": 200,
+      "canonical": "https://saaleweb.de/leistungen/api-integrationen",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/api-integrationen",
+        "en": "https://saaleweb.de/en/services/api-integrations",
+        "ru": "https://saaleweb.de/ru/uslugi/api-integracii",
+        "x-default": "https://saaleweb.de/leistungen/api-integrationen"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/services/api-integrations",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/services/api-integrations",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/api-integrationen",
+        "en": "https://saaleweb.de/en/services/api-integrations",
+        "ru": "https://saaleweb.de/ru/uslugi/api-integracii",
+        "x-default": "https://saaleweb.de/leistungen/api-integrationen"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/uslugi/api-integracii",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/uslugi/api-integracii",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/api-integrationen",
+        "en": "https://saaleweb.de/en/services/api-integrations",
+        "ru": "https://saaleweb.de/ru/uslugi/api-integracii",
+        "x-default": "https://saaleweb.de/leistungen/api-integrationen"
+      },
+      "scope": false
+    },
+    {
+      "path": "/leistungen/website-sicherheit",
+      "status": 200,
+      "canonical": "https://saaleweb.de/leistungen/website-sicherheit",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/website-sicherheit",
+        "en": "https://saaleweb.de/en/services/website-security",
+        "ru": "https://saaleweb.de/ru/uslugi/bezopasnost-sayta",
+        "x-default": "https://saaleweb.de/leistungen/website-sicherheit"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/services/website-security",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/services/website-security",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/website-sicherheit",
+        "en": "https://saaleweb.de/en/services/website-security",
+        "ru": "https://saaleweb.de/ru/uslugi/bezopasnost-sayta",
+        "x-default": "https://saaleweb.de/leistungen/website-sicherheit"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/uslugi/bezopasnost-sayta",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/uslugi/bezopasnost-sayta",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/website-sicherheit",
+        "en": "https://saaleweb.de/en/services/website-security",
+        "ru": "https://saaleweb.de/ru/uslugi/bezopasnost-sayta",
+        "x-default": "https://saaleweb.de/leistungen/website-sicherheit"
+      },
+      "scope": false
+    },
+    {
+      "path": "/leistungen/datenanalyse",
+      "status": 200,
+      "canonical": "https://saaleweb.de/leistungen/datenanalyse",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/datenanalyse",
+        "en": "https://saaleweb.de/en/services/data-analytics",
+        "ru": "https://saaleweb.de/ru/uslugi/analitika-dannyh",
+        "x-default": "https://saaleweb.de/leistungen/datenanalyse"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/services/data-analytics",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/services/data-analytics",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/datenanalyse",
+        "en": "https://saaleweb.de/en/services/data-analytics",
+        "ru": "https://saaleweb.de/ru/uslugi/analitika-dannyh",
+        "x-default": "https://saaleweb.de/leistungen/datenanalyse"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/uslugi/analitika-dannyh",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/uslugi/analitika-dannyh",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/datenanalyse",
+        "en": "https://saaleweb.de/en/services/data-analytics",
+        "ru": "https://saaleweb.de/ru/uslugi/analitika-dannyh",
+        "x-default": "https://saaleweb.de/leistungen/datenanalyse"
+      },
+      "scope": false
+    },
+    {
+      "path": "/leistungen/shop-produktimport",
+      "status": 200,
+      "canonical": "https://saaleweb.de/leistungen/shop-produktimport",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/shop-produktimport",
+        "en": "https://saaleweb.de/en/services/shop-product-import",
+        "ru": "https://saaleweb.de/ru/uslugi/import-tovarov",
+        "x-default": "https://saaleweb.de/leistungen/shop-produktimport"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/services/shop-product-import",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/services/shop-product-import",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/shop-produktimport",
+        "en": "https://saaleweb.de/en/services/shop-product-import",
+        "ru": "https://saaleweb.de/ru/uslugi/import-tovarov",
+        "x-default": "https://saaleweb.de/leistungen/shop-produktimport"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/uslugi/import-tovarov",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/uslugi/import-tovarov",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/shop-produktimport",
+        "en": "https://saaleweb.de/en/services/shop-product-import",
+        "ru": "https://saaleweb.de/ru/uslugi/import-tovarov",
+        "x-default": "https://saaleweb.de/leistungen/shop-produktimport"
+      },
+      "scope": false
+    },
+    {
+      "path": "/branchen/restaurant-website",
+      "status": 200,
+      "canonical": "https://saaleweb.de/branchen/restaurant-website",
+      "alternates": {
+        "de": "https://saaleweb.de/branchen/restaurant-website",
+        "en": "https://saaleweb.de/en/industries/restaurant-website",
+        "ru": "https://saaleweb.de/ru/otrasli/sayt-dlya-restorana",
+        "x-default": "https://saaleweb.de/branchen/restaurant-website"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/industries/restaurant-website",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/industries/restaurant-website",
+      "alternates": {
+        "de": "https://saaleweb.de/branchen/restaurant-website",
+        "en": "https://saaleweb.de/en/industries/restaurant-website",
+        "ru": "https://saaleweb.de/ru/otrasli/sayt-dlya-restorana",
+        "x-default": "https://saaleweb.de/branchen/restaurant-website"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/otrasli/sayt-dlya-restorana",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/otrasli/sayt-dlya-restorana",
+      "alternates": {
+        "de": "https://saaleweb.de/branchen/restaurant-website",
+        "en": "https://saaleweb.de/en/industries/restaurant-website",
+        "ru": "https://saaleweb.de/ru/otrasli/sayt-dlya-restorana",
+        "x-default": "https://saaleweb.de/branchen/restaurant-website"
+      },
+      "scope": false
+    },
+    {
+      "path": "/branchen/hotel-website",
+      "status": 200,
+      "canonical": "https://saaleweb.de/branchen/hotel-website",
+      "alternates": {
+        "de": "https://saaleweb.de/branchen/hotel-website",
+        "en": "https://saaleweb.de/en/industries/hotel-website",
+        "ru": "https://saaleweb.de/ru/otrasli/sayt-dlya-otelya",
+        "x-default": "https://saaleweb.de/branchen/hotel-website"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/industries/hotel-website",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/industries/hotel-website",
+      "alternates": {
+        "de": "https://saaleweb.de/branchen/hotel-website",
+        "en": "https://saaleweb.de/en/industries/hotel-website",
+        "ru": "https://saaleweb.de/ru/otrasli/sayt-dlya-otelya",
+        "x-default": "https://saaleweb.de/branchen/hotel-website"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/otrasli/sayt-dlya-otelya",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/otrasli/sayt-dlya-otelya",
+      "alternates": {
+        "de": "https://saaleweb.de/branchen/hotel-website",
+        "en": "https://saaleweb.de/en/industries/hotel-website",
+        "ru": "https://saaleweb.de/ru/otrasli/sayt-dlya-otelya",
+        "x-default": "https://saaleweb.de/branchen/hotel-website"
+      },
+      "scope": false
+    },
+    {
+      "path": "/branchen/beauty-studio-website",
+      "status": 200,
+      "canonical": "https://saaleweb.de/branchen/beauty-studio-website",
+      "alternates": {
+        "de": "https://saaleweb.de/branchen/beauty-studio-website",
+        "en": "https://saaleweb.de/en/industries/beauty-studio-website",
+        "ru": "https://saaleweb.de/ru/otrasli/sayt-dlya-salona-krasoty",
+        "x-default": "https://saaleweb.de/branchen/beauty-studio-website"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/industries/beauty-studio-website",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/industries/beauty-studio-website",
+      "alternates": {
+        "de": "https://saaleweb.de/branchen/beauty-studio-website",
+        "en": "https://saaleweb.de/en/industries/beauty-studio-website",
+        "ru": "https://saaleweb.de/ru/otrasli/sayt-dlya-salona-krasoty",
+        "x-default": "https://saaleweb.de/branchen/beauty-studio-website"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/otrasli/sayt-dlya-salona-krasoty",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/otrasli/sayt-dlya-salona-krasoty",
+      "alternates": {
+        "de": "https://saaleweb.de/branchen/beauty-studio-website",
+        "en": "https://saaleweb.de/en/industries/beauty-studio-website",
+        "ru": "https://saaleweb.de/ru/otrasli/sayt-dlya-salona-krasoty",
+        "x-default": "https://saaleweb.de/branchen/beauty-studio-website"
+      },
+      "scope": false
+    },
+    {
+      "path": "/branchen/bauunternehmen-website",
+      "status": 200,
+      "canonical": "https://saaleweb.de/branchen/bauunternehmen-website",
+      "alternates": {
+        "de": "https://saaleweb.de/branchen/bauunternehmen-website",
+        "en": "https://saaleweb.de/en/industries/construction-company-website",
+        "ru": "https://saaleweb.de/ru/otrasli/sayt-dlya-stroitelnoy-kompanii",
+        "x-default": "https://saaleweb.de/branchen/bauunternehmen-website"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/industries/construction-company-website",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/industries/construction-company-website",
+      "alternates": {
+        "de": "https://saaleweb.de/branchen/bauunternehmen-website",
+        "en": "https://saaleweb.de/en/industries/construction-company-website",
+        "ru": "https://saaleweb.de/ru/otrasli/sayt-dlya-stroitelnoy-kompanii",
+        "x-default": "https://saaleweb.de/branchen/bauunternehmen-website"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/otrasli/sayt-dlya-stroitelnoy-kompanii",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/otrasli/sayt-dlya-stroitelnoy-kompanii",
+      "alternates": {
+        "de": "https://saaleweb.de/branchen/bauunternehmen-website",
+        "en": "https://saaleweb.de/en/industries/construction-company-website",
+        "ru": "https://saaleweb.de/ru/otrasli/sayt-dlya-stroitelnoy-kompanii",
+        "x-default": "https://saaleweb.de/branchen/bauunternehmen-website"
+      },
+      "scope": false
+    },
+    {
+      "path": "/branchen/handwerker-website",
+      "status": 200,
+      "canonical": "https://saaleweb.de/branchen/handwerker-website",
+      "alternates": {
+        "de": "https://saaleweb.de/branchen/handwerker-website",
+        "en": "https://saaleweb.de/en/industries/craftsmen-website",
+        "ru": "https://saaleweb.de/ru/otrasli/sayt-dlya-masterov",
+        "x-default": "https://saaleweb.de/branchen/handwerker-website"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/industries/craftsmen-website",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/industries/craftsmen-website",
+      "alternates": {
+        "de": "https://saaleweb.de/branchen/handwerker-website",
+        "en": "https://saaleweb.de/en/industries/craftsmen-website",
+        "ru": "https://saaleweb.de/ru/otrasli/sayt-dlya-masterov",
+        "x-default": "https://saaleweb.de/branchen/handwerker-website"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/otrasli/sayt-dlya-masterov",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/otrasli/sayt-dlya-masterov",
+      "alternates": {
+        "de": "https://saaleweb.de/branchen/handwerker-website",
+        "en": "https://saaleweb.de/en/industries/craftsmen-website",
+        "ru": "https://saaleweb.de/ru/otrasli/sayt-dlya-masterov",
+        "x-default": "https://saaleweb.de/branchen/handwerker-website"
+      },
+      "scope": false
+    },
+    {
+      "path": "/branchen/glaserei-website",
+      "status": 200,
+      "canonical": "https://saaleweb.de/branchen/glaserei-website",
+      "alternates": {
+        "de": "https://saaleweb.de/branchen/glaserei-website",
+        "en": "https://saaleweb.de/en/industries/glazier-website",
+        "ru": "https://saaleweb.de/ru/otrasli/sayt-dlya-stekolnoy-masterskoy",
+        "x-default": "https://saaleweb.de/branchen/glaserei-website"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/industries/glazier-website",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/industries/glazier-website",
+      "alternates": {
+        "de": "https://saaleweb.de/branchen/glaserei-website",
+        "en": "https://saaleweb.de/en/industries/glazier-website",
+        "ru": "https://saaleweb.de/ru/otrasli/sayt-dlya-stekolnoy-masterskoy",
+        "x-default": "https://saaleweb.de/branchen/glaserei-website"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/otrasli/sayt-dlya-stekolnoy-masterskoy",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/otrasli/sayt-dlya-stekolnoy-masterskoy",
+      "alternates": {
+        "de": "https://saaleweb.de/branchen/glaserei-website",
+        "en": "https://saaleweb.de/en/industries/glazier-website",
+        "ru": "https://saaleweb.de/ru/otrasli/sayt-dlya-stekolnoy-masterskoy",
+        "x-default": "https://saaleweb.de/branchen/glaserei-website"
+      },
+      "scope": false
+    },
+    {
+      "path": "/branchen/dienstleister-website",
+      "status": 200,
+      "canonical": "https://saaleweb.de/branchen/dienstleister-website",
+      "alternates": {
+        "de": "https://saaleweb.de/branchen/dienstleister-website",
+        "en": "https://saaleweb.de/en/industries/service-provider-website",
+        "ru": "https://saaleweb.de/ru/otrasli/sayt-dlya-sfery-uslug",
+        "x-default": "https://saaleweb.de/branchen/dienstleister-website"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/industries/service-provider-website",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/industries/service-provider-website",
+      "alternates": {
+        "de": "https://saaleweb.de/branchen/dienstleister-website",
+        "en": "https://saaleweb.de/en/industries/service-provider-website",
+        "ru": "https://saaleweb.de/ru/otrasli/sayt-dlya-sfery-uslug",
+        "x-default": "https://saaleweb.de/branchen/dienstleister-website"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/otrasli/sayt-dlya-sfery-uslug",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/otrasli/sayt-dlya-sfery-uslug",
+      "alternates": {
+        "de": "https://saaleweb.de/branchen/dienstleister-website",
+        "en": "https://saaleweb.de/en/industries/service-provider-website",
+        "ru": "https://saaleweb.de/ru/otrasli/sayt-dlya-sfery-uslug",
+        "x-default": "https://saaleweb.de/branchen/dienstleister-website"
+      },
+      "scope": false
+    },
+    {
+      "path": "/blog/lokales-seo-halle",
+      "status": 200,
+      "canonical": "https://saaleweb.de/blog/lokales-seo-halle",
+      "alternates": {
+        "de": "https://saaleweb.de/blog/lokales-seo-halle",
+        "en": "https://saaleweb.de/en/blog/local-seo-halle",
+        "ru": "https://saaleweb.de/ru/blog/lokalnoe-seo-halle",
+        "x-default": "https://saaleweb.de/blog/lokales-seo-halle"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/blog/local-seo-halle",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/blog/local-seo-halle",
+      "alternates": {
+        "de": "https://saaleweb.de/blog/lokales-seo-halle",
+        "en": "https://saaleweb.de/en/blog/local-seo-halle",
+        "ru": "https://saaleweb.de/ru/blog/lokalnoe-seo-halle",
+        "x-default": "https://saaleweb.de/blog/lokales-seo-halle"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/blog/lokalnoe-seo-halle",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/blog/lokalnoe-seo-halle",
+      "alternates": {
+        "de": "https://saaleweb.de/blog/lokales-seo-halle",
+        "en": "https://saaleweb.de/en/blog/local-seo-halle",
+        "ru": "https://saaleweb.de/ru/blog/lokalnoe-seo-halle",
+        "x-default": "https://saaleweb.de/blog/lokales-seo-halle"
+      },
+      "scope": false
+    },
+    {
+      "path": "/blog/sichtbarkeit-in-ki-suche",
+      "status": 200,
+      "canonical": "https://saaleweb.de/blog/sichtbarkeit-in-ki-suche",
+      "alternates": {
+        "de": "https://saaleweb.de/blog/sichtbarkeit-in-ki-suche",
+        "en": "https://saaleweb.de/en/blog/ai-search-visibility",
+        "ru": "https://saaleweb.de/ru/blog/vidimost-v-ai-poiske",
+        "x-default": "https://saaleweb.de/blog/sichtbarkeit-in-ki-suche"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/blog/ai-search-visibility",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/blog/ai-search-visibility",
+      "alternates": {
+        "de": "https://saaleweb.de/blog/sichtbarkeit-in-ki-suche",
+        "en": "https://saaleweb.de/en/blog/ai-search-visibility",
+        "ru": "https://saaleweb.de/ru/blog/vidimost-v-ai-poiske",
+        "x-default": "https://saaleweb.de/blog/sichtbarkeit-in-ki-suche"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/blog/vidimost-v-ai-poiske",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/blog/vidimost-v-ai-poiske",
+      "alternates": {
+        "de": "https://saaleweb.de/blog/sichtbarkeit-in-ki-suche",
+        "en": "https://saaleweb.de/en/blog/ai-search-visibility",
+        "ru": "https://saaleweb.de/ru/blog/vidimost-v-ai-poiske",
+        "x-default": "https://saaleweb.de/blog/sichtbarkeit-in-ki-suche"
+      },
+      "scope": false
+    },
+    {
+      "path": "/blog/was-kostet-eine-website-in-halle",
+      "status": 200,
+      "canonical": "https://saaleweb.de/blog/was-kostet-eine-website-in-halle",
+      "alternates": {
+        "de": "https://saaleweb.de/blog/was-kostet-eine-website-in-halle",
+        "en": "https://saaleweb.de/en/blog/website-cost-in-halle",
+        "ru": "https://saaleweb.de/ru/blog/skolko-stoit-sajt-v-halle",
+        "x-default": "https://saaleweb.de/blog/was-kostet-eine-website-in-halle"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/blog/website-cost-in-halle",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/blog/website-cost-in-halle",
+      "alternates": {
+        "de": "https://saaleweb.de/blog/was-kostet-eine-website-in-halle",
+        "en": "https://saaleweb.de/en/blog/website-cost-in-halle",
+        "ru": "https://saaleweb.de/ru/blog/skolko-stoit-sajt-v-halle",
+        "x-default": "https://saaleweb.de/blog/was-kostet-eine-website-in-halle"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/blog/skolko-stoit-sajt-v-halle",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/blog/skolko-stoit-sajt-v-halle",
+      "alternates": {
+        "de": "https://saaleweb.de/blog/was-kostet-eine-website-in-halle",
+        "en": "https://saaleweb.de/en/blog/website-cost-in-halle",
+        "ru": "https://saaleweb.de/ru/blog/skolko-stoit-sajt-v-halle",
+        "x-default": "https://saaleweb.de/blog/was-kostet-eine-website-in-halle"
+      },
+      "scope": false
+    },
+    {
+      "path": "/blog/restaurant-website-mehr-reservierungen",
+      "status": 200,
+      "canonical": "https://saaleweb.de/blog/restaurant-website-mehr-reservierungen",
+      "alternates": {
+        "de": "https://saaleweb.de/blog/restaurant-website-mehr-reservierungen",
+        "en": "https://saaleweb.de/en/blog/restaurant-website-more-reservations",
+        "ru": "https://saaleweb.de/ru/blog/sajt-restorana-bolshe-bronirovanij",
+        "x-default": "https://saaleweb.de/blog/restaurant-website-mehr-reservierungen"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/blog/restaurant-website-more-reservations",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/blog/restaurant-website-more-reservations",
+      "alternates": {
+        "de": "https://saaleweb.de/blog/restaurant-website-mehr-reservierungen",
+        "en": "https://saaleweb.de/en/blog/restaurant-website-more-reservations",
+        "ru": "https://saaleweb.de/ru/blog/sajt-restorana-bolshe-bronirovanij",
+        "x-default": "https://saaleweb.de/blog/restaurant-website-mehr-reservierungen"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/blog/sajt-restorana-bolshe-bronirovanij",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/blog/sajt-restorana-bolshe-bronirovanij",
+      "alternates": {
+        "de": "https://saaleweb.de/blog/restaurant-website-mehr-reservierungen",
+        "en": "https://saaleweb.de/en/blog/restaurant-website-more-reservations",
+        "ru": "https://saaleweb.de/ru/blog/sajt-restorana-bolshe-bronirovanij",
+        "x-default": "https://saaleweb.de/blog/restaurant-website-mehr-reservierungen"
+      },
+      "scope": false
+    },
+    {
+      "path": "/blog/website-relaunch-checkliste",
+      "status": 200,
+      "canonical": "https://saaleweb.de/blog/website-relaunch-checkliste",
+      "alternates": {
+        "de": "https://saaleweb.de/blog/website-relaunch-checkliste",
+        "en": "https://saaleweb.de/en/blog/website-relaunch-checklist",
+        "ru": "https://saaleweb.de/ru/blog/relonch-sajta-checklist",
+        "x-default": "https://saaleweb.de/blog/website-relaunch-checkliste"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/blog/website-relaunch-checklist",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/blog/website-relaunch-checklist",
+      "alternates": {
+        "de": "https://saaleweb.de/blog/website-relaunch-checkliste",
+        "en": "https://saaleweb.de/en/blog/website-relaunch-checklist",
+        "ru": "https://saaleweb.de/ru/blog/relonch-sajta-checklist",
+        "x-default": "https://saaleweb.de/blog/website-relaunch-checkliste"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/blog/relonch-sajta-checklist",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/blog/relonch-sajta-checklist",
+      "alternates": {
+        "de": "https://saaleweb.de/blog/website-relaunch-checkliste",
+        "en": "https://saaleweb.de/en/blog/website-relaunch-checklist",
+        "ru": "https://saaleweb.de/ru/blog/relonch-sajta-checklist",
+        "x-default": "https://saaleweb.de/blog/website-relaunch-checkliste"
+      },
+      "scope": false
+    },
+    {
+      "path": "/blog/google-unternehmensprofil-optimieren",
+      "status": 200,
+      "canonical": "https://saaleweb.de/blog/google-unternehmensprofil-optimieren",
+      "alternates": {
+        "de": "https://saaleweb.de/blog/google-unternehmensprofil-optimieren",
+        "en": "https://saaleweb.de/en/blog/optimize-google-business-profile",
+        "ru": "https://saaleweb.de/ru/blog/optimizaciya-google-biznes-profilya",
+        "x-default": "https://saaleweb.de/blog/google-unternehmensprofil-optimieren"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/blog/optimize-google-business-profile",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/blog/optimize-google-business-profile",
+      "alternates": {
+        "de": "https://saaleweb.de/blog/google-unternehmensprofil-optimieren",
+        "en": "https://saaleweb.de/en/blog/optimize-google-business-profile",
+        "ru": "https://saaleweb.de/ru/blog/optimizaciya-google-biznes-profilya",
+        "x-default": "https://saaleweb.de/blog/google-unternehmensprofil-optimieren"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/blog/optimizaciya-google-biznes-profilya",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/blog/optimizaciya-google-biznes-profilya",
+      "alternates": {
+        "de": "https://saaleweb.de/blog/google-unternehmensprofil-optimieren",
+        "en": "https://saaleweb.de/en/blog/optimize-google-business-profile",
+        "ru": "https://saaleweb.de/ru/blog/optimizaciya-google-biznes-profilya",
+        "x-default": "https://saaleweb.de/blog/google-unternehmensprofil-optimieren"
+      },
+      "scope": false
+    },
+    {
+      "path": "/blog/nextjs-vs-wordpress",
+      "status": 200,
+      "canonical": "https://saaleweb.de/blog/nextjs-vs-wordpress",
+      "alternates": {
+        "de": "https://saaleweb.de/blog/nextjs-vs-wordpress",
+        "en": "https://saaleweb.de/en/blog/nextjs-vs-wordpress",
+        "ru": "https://saaleweb.de/ru/blog/nextjs-vs-wordpress",
+        "x-default": "https://saaleweb.de/blog/nextjs-vs-wordpress"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/blog/nextjs-vs-wordpress",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/blog/nextjs-vs-wordpress",
+      "alternates": {
+        "de": "https://saaleweb.de/blog/nextjs-vs-wordpress",
+        "en": "https://saaleweb.de/en/blog/nextjs-vs-wordpress",
+        "ru": "https://saaleweb.de/ru/blog/nextjs-vs-wordpress",
+        "x-default": "https://saaleweb.de/blog/nextjs-vs-wordpress"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/blog/nextjs-vs-wordpress",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/blog/nextjs-vs-wordpress",
+      "alternates": {
+        "de": "https://saaleweb.de/blog/nextjs-vs-wordpress",
+        "en": "https://saaleweb.de/en/blog/nextjs-vs-wordpress",
+        "ru": "https://saaleweb.de/ru/blog/nextjs-vs-wordpress",
+        "x-default": "https://saaleweb.de/blog/nextjs-vs-wordpress"
+      },
+      "scope": false
+    },
+    {
+      "path": "/blog/kategorie/seo",
+      "status": 200,
+      "canonical": "https://saaleweb.de/blog/kategorie/seo",
+      "alternates": {
+        "de": "https://saaleweb.de/blog/kategorie/seo",
+        "en": "https://saaleweb.de/en/blog/category/seo",
+        "ru": "https://saaleweb.de/ru/blog/kategoriya/seo",
+        "x-default": "https://saaleweb.de/blog/kategorie/seo"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/blog/category/seo",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/blog/category/seo",
+      "alternates": {
+        "de": "https://saaleweb.de/blog/kategorie/seo",
+        "en": "https://saaleweb.de/en/blog/category/seo",
+        "ru": "https://saaleweb.de/ru/blog/kategoriya/seo",
+        "x-default": "https://saaleweb.de/blog/kategorie/seo"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/blog/kategoriya/seo",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/blog/kategoriya/seo",
+      "alternates": {
+        "de": "https://saaleweb.de/blog/kategorie/seo",
+        "en": "https://saaleweb.de/en/blog/category/seo",
+        "ru": "https://saaleweb.de/ru/blog/kategoriya/seo",
+        "x-default": "https://saaleweb.de/blog/kategorie/seo"
+      },
+      "scope": false
+    },
+    {
+      "path": "/blog/kategorie/webdesign",
+      "status": 200,
+      "canonical": "https://saaleweb.de/blog/kategorie/webdesign",
+      "alternates": {
+        "de": "https://saaleweb.de/blog/kategorie/webdesign",
+        "en": "https://saaleweb.de/en/blog/category/web-design",
+        "ru": "https://saaleweb.de/ru/blog/kategoriya/veb-dizajn",
+        "x-default": "https://saaleweb.de/blog/kategorie/webdesign"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/blog/category/web-design",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/blog/category/web-design",
+      "alternates": {
+        "de": "https://saaleweb.de/blog/kategorie/webdesign",
+        "en": "https://saaleweb.de/en/blog/category/web-design",
+        "ru": "https://saaleweb.de/ru/blog/kategoriya/veb-dizajn",
+        "x-default": "https://saaleweb.de/blog/kategorie/webdesign"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/blog/kategoriya/veb-dizajn",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/blog/kategoriya/veb-dizajn",
+      "alternates": {
+        "de": "https://saaleweb.de/blog/kategorie/webdesign",
+        "en": "https://saaleweb.de/en/blog/category/web-design",
+        "ru": "https://saaleweb.de/ru/blog/kategoriya/veb-dizajn",
+        "x-default": "https://saaleweb.de/blog/kategorie/webdesign"
+      },
+      "scope": false
+    },
+    {
+      "path": "/blog/kategorie/ki-suche",
+      "status": 200,
+      "canonical": "https://saaleweb.de/blog/kategorie/ki-suche",
+      "alternates": {
+        "de": "https://saaleweb.de/blog/kategorie/ki-suche",
+        "en": "https://saaleweb.de/en/blog/category/ai-search",
+        "ru": "https://saaleweb.de/ru/blog/kategoriya/ii-i-poisk",
+        "x-default": "https://saaleweb.de/blog/kategorie/ki-suche"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/blog/category/ai-search",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/blog/category/ai-search",
+      "alternates": {
+        "de": "https://saaleweb.de/blog/kategorie/ki-suche",
+        "en": "https://saaleweb.de/en/blog/category/ai-search",
+        "ru": "https://saaleweb.de/ru/blog/kategoriya/ii-i-poisk",
+        "x-default": "https://saaleweb.de/blog/kategorie/ki-suche"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/blog/kategoriya/ii-i-poisk",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/blog/kategoriya/ii-i-poisk",
+      "alternates": {
+        "de": "https://saaleweb.de/blog/kategorie/ki-suche",
+        "en": "https://saaleweb.de/en/blog/category/ai-search",
+        "ru": "https://saaleweb.de/ru/blog/kategoriya/ii-i-poisk",
+        "x-default": "https://saaleweb.de/blog/kategorie/ki-suche"
+      },
+      "scope": false
+    },
+    {
+      "path": "/blog/kategorie/praxis",
+      "status": 200,
+      "canonical": "https://saaleweb.de/blog/kategorie/praxis",
+      "alternates": {
+        "de": "https://saaleweb.de/blog/kategorie/praxis",
+        "en": "https://saaleweb.de/en/blog/category/business-growth",
+        "ru": "https://saaleweb.de/ru/blog/kategoriya/rost-biznesa",
+        "x-default": "https://saaleweb.de/blog/kategorie/praxis"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/blog/category/business-growth",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/blog/category/business-growth",
+      "alternates": {
+        "de": "https://saaleweb.de/blog/kategorie/praxis",
+        "en": "https://saaleweb.de/en/blog/category/business-growth",
+        "ru": "https://saaleweb.de/ru/blog/kategoriya/rost-biznesa",
+        "x-default": "https://saaleweb.de/blog/kategorie/praxis"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/blog/kategoriya/rost-biznesa",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/blog/kategoriya/rost-biznesa",
+      "alternates": {
+        "de": "https://saaleweb.de/blog/kategorie/praxis",
+        "en": "https://saaleweb.de/en/blog/category/business-growth",
+        "ru": "https://saaleweb.de/ru/blog/kategoriya/rost-biznesa",
+        "x-default": "https://saaleweb.de/blog/kategorie/praxis"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/uslugi/razrabotka-sajtov",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/uslugi/razrabotka-sajtov",
+      "alternates": {
+        "en": "https://saaleweb.de/en/services/web-development",
+        "ru": "https://saaleweb.de/ru/uslugi/razrabotka-sajtov",
+        "x-default": "https://saaleweb.de/en/services/web-development"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/services/web-development",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/services/web-development",
+      "alternates": {
+        "en": "https://saaleweb.de/en/services/web-development",
+        "ru": "https://saaleweb.de/ru/uslugi/razrabotka-sajtov",
+        "x-default": "https://saaleweb.de/en/services/web-development"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/uslugi/seo-optimizaciya",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/uslugi/seo-optimizaciya",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/seo-optimierung",
+        "en": "https://saaleweb.de/en/services/seo-optimization",
+        "ru": "https://saaleweb.de/ru/uslugi/seo-optimizaciya",
+        "x-default": "https://saaleweb.de/leistungen/seo-optimierung"
+      },
+      "scope": true
+    },
+    {
+      "path": "/en/services/seo-optimization",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/services/seo-optimization",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/seo-optimierung",
+        "en": "https://saaleweb.de/en/services/seo-optimization",
+        "ru": "https://saaleweb.de/ru/uslugi/seo-optimizaciya",
+        "x-default": "https://saaleweb.de/leistungen/seo-optimierung"
+      },
+      "scope": true
+    },
+    {
+      "path": "/leistungen/seo-optimierung",
+      "status": 200,
+      "canonical": "https://saaleweb.de/leistungen/seo-optimierung",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/seo-optimierung",
+        "en": "https://saaleweb.de/en/services/seo-optimization",
+        "ru": "https://saaleweb.de/ru/uslugi/seo-optimizaciya",
+        "x-default": "https://saaleweb.de/leistungen/seo-optimierung"
+      },
+      "scope": true
+    },
+    {
+      "path": "/ru/uslugi/lokalnoe-seo",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/uslugi/lokalnoe-seo",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/local-seo",
+        "en": "https://saaleweb.de/en/services/local-seo",
+        "ru": "https://saaleweb.de/ru/uslugi/lokalnoe-seo",
+        "x-default": "https://saaleweb.de/leistungen/local-seo"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/services/local-seo",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/services/local-seo",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/local-seo",
+        "en": "https://saaleweb.de/en/services/local-seo",
+        "ru": "https://saaleweb.de/ru/uslugi/lokalnoe-seo",
+        "x-default": "https://saaleweb.de/leistungen/local-seo"
+      },
+      "scope": false
+    },
+    {
+      "path": "/leistungen/local-seo",
+      "status": 200,
+      "canonical": "https://saaleweb.de/leistungen/local-seo",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/local-seo",
+        "en": "https://saaleweb.de/en/services/local-seo",
+        "ru": "https://saaleweb.de/ru/uslugi/lokalnoe-seo",
+        "x-default": "https://saaleweb.de/leistungen/local-seo"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/uslugi/integraciya-ii",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/uslugi/integraciya-ii",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/ki-integration",
+        "en": "https://saaleweb.de/en/services/ai-integration",
+        "ru": "https://saaleweb.de/ru/uslugi/integraciya-ii",
+        "x-default": "https://saaleweb.de/leistungen/ki-integration"
+      },
+      "scope": true
+    },
+    {
+      "path": "/en/services/ai-integration",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/services/ai-integration",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/ki-integration",
+        "en": "https://saaleweb.de/en/services/ai-integration",
+        "ru": "https://saaleweb.de/ru/uslugi/integraciya-ii",
+        "x-default": "https://saaleweb.de/leistungen/ki-integration"
+      },
+      "scope": true
+    },
+    {
+      "path": "/leistungen/ki-integration",
+      "status": 200,
+      "canonical": "https://saaleweb.de/leistungen/ki-integration",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/ki-integration",
+        "en": "https://saaleweb.de/en/services/ai-integration",
+        "ru": "https://saaleweb.de/ru/uslugi/integraciya-ii",
+        "x-default": "https://saaleweb.de/leistungen/ki-integration"
+      },
+      "scope": true
+    },
+    {
+      "path": "/ru/uslugi/hosting",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/uslugi/hosting",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/hosting",
+        "en": "https://saaleweb.de/en/services/hosting",
+        "ru": "https://saaleweb.de/ru/uslugi/hosting",
+        "x-default": "https://saaleweb.de/leistungen/hosting"
+      },
+      "scope": true
+    },
+    {
+      "path": "/en/services/hosting",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/services/hosting",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/hosting",
+        "en": "https://saaleweb.de/en/services/hosting",
+        "ru": "https://saaleweb.de/ru/uslugi/hosting",
+        "x-default": "https://saaleweb.de/leistungen/hosting"
+      },
+      "scope": true
+    },
+    {
+      "path": "/leistungen/hosting",
+      "status": 200,
+      "canonical": "https://saaleweb.de/leistungen/hosting",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/hosting",
+        "en": "https://saaleweb.de/en/services/hosting",
+        "ru": "https://saaleweb.de/ru/uslugi/hosting",
+        "x-default": "https://saaleweb.de/leistungen/hosting"
+      },
+      "scope": true
+    },
+    {
+      "path": "/ru/uslugi/podderzhka",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/uslugi/podderzhka",
+      "alternates": {
+        "en": "https://saaleweb.de/en/services/maintenance",
+        "ru": "https://saaleweb.de/ru/uslugi/podderzhka",
+        "x-default": "https://saaleweb.de/en/services/maintenance"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/services/maintenance",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/services/maintenance",
+      "alternates": {
+        "en": "https://saaleweb.de/en/services/maintenance",
+        "ru": "https://saaleweb.de/ru/uslugi/podderzhka",
+        "x-default": "https://saaleweb.de/en/services/maintenance"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/uslugi/cifrovoj-konsalting",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/uslugi/cifrovoj-konsalting",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/digitalberatung",
+        "en": "https://saaleweb.de/en/services/digital-consulting",
+        "ru": "https://saaleweb.de/ru/uslugi/cifrovoj-konsalting",
+        "x-default": "https://saaleweb.de/leistungen/digitalberatung"
+      },
+      "scope": true
+    },
+    {
+      "path": "/en/services/digital-consulting",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/services/digital-consulting",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/digitalberatung",
+        "en": "https://saaleweb.de/en/services/digital-consulting",
+        "ru": "https://saaleweb.de/ru/uslugi/cifrovoj-konsalting",
+        "x-default": "https://saaleweb.de/leistungen/digitalberatung"
+      },
+      "scope": true
+    },
+    {
+      "path": "/leistungen/digitalberatung",
+      "status": 200,
+      "canonical": "https://saaleweb.de/leistungen/digitalberatung",
+      "alternates": {
+        "de": "https://saaleweb.de/leistungen/digitalberatung",
+        "en": "https://saaleweb.de/en/services/digital-consulting",
+        "ru": "https://saaleweb.de/ru/uslugi/cifrovoj-konsalting",
+        "x-default": "https://saaleweb.de/leistungen/digitalberatung"
+      },
+      "scope": true
+    },
+    {
+      "path": "/branchen/arztpraxen",
+      "status": 200,
+      "canonical": "https://saaleweb.de/branchen/arztpraxen",
+      "alternates": {
+        "de": "https://saaleweb.de/branchen/arztpraxen",
+        "en": "https://saaleweb.de/en/industries/medical-practices",
+        "ru": "https://saaleweb.de/ru/otrasli/medcentry",
+        "x-default": "https://saaleweb.de/branchen/arztpraxen"
+      },
+      "scope": true
+    },
+    {
+      "path": "/en/industries/medical-practices",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/industries/medical-practices",
+      "alternates": {
+        "de": "https://saaleweb.de/branchen/arztpraxen",
+        "en": "https://saaleweb.de/en/industries/medical-practices",
+        "ru": "https://saaleweb.de/ru/otrasli/medcentry",
+        "x-default": "https://saaleweb.de/branchen/arztpraxen"
+      },
+      "scope": true
+    },
+    {
+      "path": "/ru/otrasli/medcentry",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/otrasli/medcentry",
+      "alternates": {
+        "de": "https://saaleweb.de/branchen/arztpraxen",
+        "en": "https://saaleweb.de/en/industries/medical-practices",
+        "ru": "https://saaleweb.de/ru/otrasli/medcentry",
+        "x-default": "https://saaleweb.de/branchen/arztpraxen"
+      },
+      "scope": true
+    },
+    {
+      "path": "/branchen/immobilien",
+      "status": 200,
+      "canonical": "https://saaleweb.de/branchen/immobilien",
+      "alternates": {
+        "de": "https://saaleweb.de/branchen/immobilien",
+        "en": "https://saaleweb.de/en/industries/real-estate",
+        "ru": "https://saaleweb.de/ru/otrasli/nedvizhimost",
+        "x-default": "https://saaleweb.de/branchen/immobilien"
+      },
+      "scope": true
+    },
+    {
+      "path": "/en/industries/real-estate",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/industries/real-estate",
+      "alternates": {
+        "de": "https://saaleweb.de/branchen/immobilien",
+        "en": "https://saaleweb.de/en/industries/real-estate",
+        "ru": "https://saaleweb.de/ru/otrasli/nedvizhimost",
+        "x-default": "https://saaleweb.de/branchen/immobilien"
+      },
+      "scope": true
+    },
+    {
+      "path": "/ru/otrasli/nedvizhimost",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/otrasli/nedvizhimost",
+      "alternates": {
+        "de": "https://saaleweb.de/branchen/immobilien",
+        "en": "https://saaleweb.de/en/industries/real-estate",
+        "ru": "https://saaleweb.de/ru/otrasli/nedvizhimost",
+        "x-default": "https://saaleweb.de/branchen/immobilien"
+      },
+      "scope": true
+    },
+    {
+      "path": "/branchen/kanzleien",
+      "status": 200,
+      "canonical": "https://saaleweb.de/branchen/kanzleien",
+      "alternates": {
+        "de": "https://saaleweb.de/branchen/kanzleien",
+        "en": "https://saaleweb.de/en/industries/law-firms",
+        "ru": "https://saaleweb.de/ru/otrasli/yuristy",
+        "x-default": "https://saaleweb.de/branchen/kanzleien"
+      },
+      "scope": true
+    },
+    {
+      "path": "/en/industries/law-firms",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/industries/law-firms",
+      "alternates": {
+        "de": "https://saaleweb.de/branchen/kanzleien",
+        "en": "https://saaleweb.de/en/industries/law-firms",
+        "ru": "https://saaleweb.de/ru/otrasli/yuristy",
+        "x-default": "https://saaleweb.de/branchen/kanzleien"
+      },
+      "scope": true
+    },
+    {
+      "path": "/ru/otrasli/yuristy",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/otrasli/yuristy",
+      "alternates": {
+        "de": "https://saaleweb.de/branchen/kanzleien",
+        "en": "https://saaleweb.de/en/industries/law-firms",
+        "ru": "https://saaleweb.de/ru/otrasli/yuristy",
+        "x-default": "https://saaleweb.de/branchen/kanzleien"
+      },
+      "scope": true
+    },
+    {
+      "path": "/ru/proekty/neue-liebe-nebra",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/proekty/neue-liebe-nebra",
+      "alternates": {
+        "de": "https://saaleweb.de/projekte/neue-liebe-nebra",
+        "en": "https://saaleweb.de/en/projects/neue-liebe-nebra",
+        "ru": "https://saaleweb.de/ru/proekty/neue-liebe-nebra",
+        "x-default": "https://saaleweb.de/projekte/neue-liebe-nebra"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/projects/neue-liebe-nebra",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/projects/neue-liebe-nebra",
+      "alternates": {
+        "de": "https://saaleweb.de/projekte/neue-liebe-nebra",
+        "en": "https://saaleweb.de/en/projects/neue-liebe-nebra",
+        "ru": "https://saaleweb.de/ru/proekty/neue-liebe-nebra",
+        "x-default": "https://saaleweb.de/projekte/neue-liebe-nebra"
+      },
+      "scope": false
+    },
+    {
+      "path": "/projekte/neue-liebe-nebra",
+      "status": 200,
+      "canonical": "https://saaleweb.de/projekte/neue-liebe-nebra",
+      "alternates": {
+        "de": "https://saaleweb.de/projekte/neue-liebe-nebra",
+        "en": "https://saaleweb.de/en/projects/neue-liebe-nebra",
+        "ru": "https://saaleweb.de/ru/proekty/neue-liebe-nebra",
+        "x-default": "https://saaleweb.de/projekte/neue-liebe-nebra"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/proekty/pryamye-broni-bez-agregatorov",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/proekty/pryamye-broni-bez-agregatorov",
+      "alternates": {
+        "de": "https://saaleweb.de/projekte/direktbuchungen-ohne-portale",
+        "en": "https://saaleweb.de/en/projects/direct-bookings-without-portals",
+        "ru": "https://saaleweb.de/ru/proekty/pryamye-broni-bez-agregatorov",
+        "x-default": "https://saaleweb.de/projekte/direktbuchungen-ohne-portale"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/projects/direct-bookings-without-portals",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/projects/direct-bookings-without-portals",
+      "alternates": {
+        "de": "https://saaleweb.de/projekte/direktbuchungen-ohne-portale",
+        "en": "https://saaleweb.de/en/projects/direct-bookings-without-portals",
+        "ru": "https://saaleweb.de/ru/proekty/pryamye-broni-bez-agregatorov",
+        "x-default": "https://saaleweb.de/projekte/direktbuchungen-ohne-portale"
+      },
+      "scope": false
+    },
+    {
+      "path": "/projekte/direktbuchungen-ohne-portale",
+      "status": 200,
+      "canonical": "https://saaleweb.de/projekte/direktbuchungen-ohne-portale",
+      "alternates": {
+        "de": "https://saaleweb.de/projekte/direktbuchungen-ohne-portale",
+        "en": "https://saaleweb.de/en/projects/direct-bookings-without-portals",
+        "ru": "https://saaleweb.de/ru/proekty/pryamye-broni-bez-agregatorov",
+        "x-default": "https://saaleweb.de/projekte/direktbuchungen-ohne-portale"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/proekty/kvalificirovannye-zayavki",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/proekty/kvalificirovannye-zayavki",
+      "alternates": {
+        "en": "https://saaleweb.de/en/projects/qualified-construction-leads",
+        "de": "https://saaleweb.de/projekte/qualifizierte-bauanfragen",
+        "ru": "https://saaleweb.de/ru/proekty/kvalificirovannye-zayavki",
+        "x-default": "https://saaleweb.de/projekte/qualifizierte-bauanfragen"
+      },
+      "scope": false
+    },
+    {
+      "path": "/projekte/qualifizierte-bauanfragen",
+      "status": 200,
+      "canonical": "https://saaleweb.de/projekte/qualifizierte-bauanfragen",
+      "alternates": {
+        "en": "https://saaleweb.de/en/projects/qualified-construction-leads",
+        "de": "https://saaleweb.de/projekte/qualifizierte-bauanfragen",
+        "ru": "https://saaleweb.de/ru/proekty/kvalificirovannye-zayavki",
+        "x-default": "https://saaleweb.de/projekte/qualifizierte-bauanfragen"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/projects/qualified-construction-leads",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/projects/qualified-construction-leads",
+      "alternates": {
+        "en": "https://saaleweb.de/en/projects/qualified-construction-leads",
+        "de": "https://saaleweb.de/projekte/qualifizierte-bauanfragen",
+        "ru": "https://saaleweb.de/ru/proekty/kvalificirovannye-zayavki",
+        "x-default": "https://saaleweb.de/projekte/qualifizierte-bauanfragen"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/projects/glaserei-schubert",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/projects/glaserei-schubert",
+      "alternates": {
+        "de": "https://saaleweb.de/projekte/glaserei-schubert",
+        "ru": "https://saaleweb.de/ru/proekty/glaserei-schubert",
+        "en": "https://saaleweb.de/en/projects/glaserei-schubert",
+        "x-default": "https://saaleweb.de/projekte/glaserei-schubert"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/proekty/glaserei-schubert",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/proekty/glaserei-schubert",
+      "alternates": {
+        "de": "https://saaleweb.de/projekte/glaserei-schubert",
+        "ru": "https://saaleweb.de/ru/proekty/glaserei-schubert",
+        "en": "https://saaleweb.de/en/projects/glaserei-schubert",
+        "x-default": "https://saaleweb.de/projekte/glaserei-schubert"
+      },
+      "scope": false
+    },
+    {
+      "path": "/projekte/glaserei-schubert",
+      "status": 200,
+      "canonical": "https://saaleweb.de/projekte/glaserei-schubert",
+      "alternates": {
+        "de": "https://saaleweb.de/projekte/glaserei-schubert",
+        "ru": "https://saaleweb.de/ru/proekty/glaserei-schubert",
+        "en": "https://saaleweb.de/en/projects/glaserei-schubert",
+        "x-default": "https://saaleweb.de/projekte/glaserei-schubert"
+      },
+      "scope": false
+    },
+    {
+      "path": "/ru/proekty/onlajn-zapisi-vyrosli-vtroe",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/proekty/onlajn-zapisi-vyrosli-vtroe",
+      "alternates": {
+        "en": "https://saaleweb.de/en/projects/online-bookings-tripled",
+        "de": "https://saaleweb.de/projekte/online-buchungen-verdreifacht",
+        "ru": "https://saaleweb.de/ru/proekty/onlajn-zapisi-vyrosli-vtroe",
+        "x-default": "https://saaleweb.de/projekte/online-buchungen-verdreifacht"
+      },
+      "scope": false
+    },
+    {
+      "path": "/projekte/online-buchungen-verdreifacht",
+      "status": 200,
+      "canonical": "https://saaleweb.de/projekte/online-buchungen-verdreifacht",
+      "alternates": {
+        "en": "https://saaleweb.de/en/projects/online-bookings-tripled",
+        "de": "https://saaleweb.de/projekte/online-buchungen-verdreifacht",
+        "ru": "https://saaleweb.de/ru/proekty/onlajn-zapisi-vyrosli-vtroe",
+        "x-default": "https://saaleweb.de/projekte/online-buchungen-verdreifacht"
+      },
+      "scope": false
+    },
+    {
+      "path": "/en/projects/online-bookings-tripled",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/projects/online-bookings-tripled",
+      "alternates": {
+        "en": "https://saaleweb.de/en/projects/online-bookings-tripled",
+        "de": "https://saaleweb.de/projekte/online-buchungen-verdreifacht",
+        "ru": "https://saaleweb.de/ru/proekty/onlajn-zapisi-vyrosli-vtroe",
+        "x-default": "https://saaleweb.de/projekte/online-buchungen-verdreifacht"
+      },
+      "scope": false
+    }
+  ],
+  "sitemapUrls": 229,
+  "removed": [
+    "/leistungen/website-entwicklung",
+    "/leistungen/wartung"
+  ],
+  "excludedCanonicalRemaining": 48,
+  "scopePages": 21,
+  "retainedHubLinks": 21,
+  "contextualChecks": 9,
+  "redirects": [
+    {
+      "source": "/leistungen/website-entwicklung",
+      "destination": "/leistungen/website-erstellen-lassen",
+      "status": 308,
+      "ua": "SaaleWebLocalReview/1.0"
+    },
+    {
+      "source": "/leistungen/website-entwicklung",
+      "destination": "/leistungen/website-erstellen-lassen",
+      "status": 308,
+      "ua": "Googlebot"
+    },
+    {
+      "source": "/leistungen/wartung",
+      "destination": "/leistungen/website-wartung",
+      "status": 308,
+      "ua": "SaaleWebLocalReview/1.0"
+    },
+    {
+      "source": "/leistungen/wartung",
+      "destination": "/leistungen/website-wartung",
+      "status": 308,
+      "ua": "Googlebot"
+    },
+    {
+      "source": "/leistungen/podderzhka-sajta",
+      "destination": "/leistungen/website-wartung",
+      "status": 308,
+      "ua": "SaaleWebLocalReview/1.0"
+    },
+    {
+      "source": "/leistungen/podderzhka-sajta",
+      "destination": "/leistungen/website-wartung",
+      "status": 308,
+      "ua": "Googlebot"
+    },
+    {
+      "source": "/leistungen/podderzhka",
+      "destination": "/leistungen/website-wartung",
+      "status": 308,
+      "ua": "SaaleWebLocalReview/1.0"
+    },
+    {
+      "source": "/leistungen/podderzhka",
+      "destination": "/leistungen/website-wartung",
+      "status": 308,
+      "ua": "Googlebot"
+    },
+    {
+      "source": "/leistungen/web-development",
+      "destination": "/leistungen/website-erstellen-lassen",
+      "status": 308,
+      "ua": "SaaleWebLocalReview/1.0"
+    },
+    {
+      "source": "/leistungen/web-development",
+      "destination": "/leistungen/website-erstellen-lassen",
+      "status": 308,
+      "ua": "Googlebot"
+    },
+    {
+      "source": "/leistungen/razrabotka-sajtov",
+      "destination": "/leistungen/website-erstellen-lassen",
+      "status": 308,
+      "ua": "SaaleWebLocalReview/1.0"
+    },
+    {
+      "source": "/leistungen/razrabotka-sajtov",
+      "destination": "/leistungen/website-erstellen-lassen",
+      "status": 308,
+      "ua": "Googlebot"
+    },
+    {
+      "source": "/leistungen/maintenance",
+      "destination": "/leistungen/website-wartung",
+      "status": 308,
+      "ua": "SaaleWebLocalReview/1.0"
+    },
+    {
+      "source": "/leistungen/maintenance",
+      "destination": "/leistungen/website-wartung",
+      "status": 308,
+      "ua": "Googlebot"
+    },
+    {
+      "source": "/leistungen/website-development",
+      "destination": "/leistungen/website-erstellen-lassen",
+      "status": 308,
+      "ua": "SaaleWebLocalReview/1.0"
+    },
+    {
+      "source": "/leistungen/website-development",
+      "destination": "/leistungen/website-erstellen-lassen",
+      "status": 308,
+      "ua": "Googlebot"
+    },
+    {
+      "source": "/leistungen/razrabotka-saytov",
+      "destination": "/leistungen/website-erstellen-lassen",
+      "status": 308,
+      "ua": "SaaleWebLocalReview/1.0"
+    },
+    {
+      "source": "/leistungen/razrabotka-saytov",
+      "destination": "/leistungen/website-erstellen-lassen",
+      "status": 308,
+      "ua": "Googlebot"
+    },
+    {
+      "source": "/leistungen/website-maintenance",
+      "destination": "/leistungen/website-wartung",
+      "status": 308,
+      "ua": "SaaleWebLocalReview/1.0"
+    },
+    {
+      "source": "/leistungen/website-maintenance",
+      "destination": "/leistungen/website-wartung",
+      "status": 308,
+      "ua": "Googlebot"
+    },
+    {
+      "source": "/leistungen/podderzhka-saytov",
+      "destination": "/leistungen/website-wartung",
+      "status": 308,
+      "ua": "SaaleWebLocalReview/1.0"
+    },
+    {
+      "source": "/leistungen/podderzhka-saytov",
+      "destination": "/leistungen/website-wartung",
+      "status": 308,
+      "ua": "Googlebot"
+    }
+  ],
+  "changedUrls": [
+    "https://saaleweb.de/branchen",
+    "https://saaleweb.de/branchen/arztpraxen",
+    "https://saaleweb.de/branchen/immobilien",
+    "https://saaleweb.de/branchen/kanzleien",
+    "https://saaleweb.de/en/industries",
+    "https://saaleweb.de/en/industries/law-firms",
+    "https://saaleweb.de/en/industries/medical-practices",
+    "https://saaleweb.de/en/industries/real-estate",
+    "https://saaleweb.de/en/services",
+    "https://saaleweb.de/en/services/ai-integration",
+    "https://saaleweb.de/en/services/api-integrations",
+    "https://saaleweb.de/en/services/automation",
+    "https://saaleweb.de/en/services/digital-consulting",
+    "https://saaleweb.de/en/services/hosting",
+    "https://saaleweb.de/en/services/maintenance",
+    "https://saaleweb.de/en/services/seo-halle",
+    "https://saaleweb.de/en/services/seo-optimization",
+    "https://saaleweb.de/en/services/web-development",
+    "https://saaleweb.de/en/services/website-maintenance",
+    "https://saaleweb.de/en/services/website-relaunch",
+    "https://saaleweb.de/en/services/website-security",
+    "https://saaleweb.de/leistungen",
+    "https://saaleweb.de/leistungen/api-integrationen",
+    "https://saaleweb.de/leistungen/automatisierung",
+    "https://saaleweb.de/leistungen/digitalberatung",
+    "https://saaleweb.de/leistungen/hosting",
+    "https://saaleweb.de/leistungen/ki-integration",
+    "https://saaleweb.de/leistungen/seo-halle",
+    "https://saaleweb.de/leistungen/seo-optimierung",
+    "https://saaleweb.de/leistungen/website-erstellen-lassen",
+    "https://saaleweb.de/leistungen/website-relaunch",
+    "https://saaleweb.de/leistungen/website-sicherheit",
+    "https://saaleweb.de/leistungen/website-wartung",
+    "https://saaleweb.de/ru/otrasli",
+    "https://saaleweb.de/ru/otrasli/medcentry",
+    "https://saaleweb.de/ru/otrasli/nedvizhimost",
+    "https://saaleweb.de/ru/otrasli/yuristy",
+    "https://saaleweb.de/ru/uslugi",
+    "https://saaleweb.de/ru/uslugi/api-integracii",
+    "https://saaleweb.de/ru/uslugi/avtomatizaciya",
+    "https://saaleweb.de/ru/uslugi/bezopasnost-sayta",
+    "https://saaleweb.de/ru/uslugi/cifrovoj-konsalting",
+    "https://saaleweb.de/ru/uslugi/hosting",
+    "https://saaleweb.de/ru/uslugi/integraciya-ii",
+    "https://saaleweb.de/ru/uslugi/podderzhka",
+    "https://saaleweb.de/ru/uslugi/podderzhka-saytov",
+    "https://saaleweb.de/ru/uslugi/razrabotka-sajtov",
+    "https://saaleweb.de/ru/uslugi/relonch-sajta",
+    "https://saaleweb.de/ru/uslugi/seo-halle",
+    "https://saaleweb.de/ru/uslugi/seo-optimizaciya"
+  ]
+}

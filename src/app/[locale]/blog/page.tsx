@@ -11,6 +11,7 @@ import { Container } from "@/shared/ui/Container";
 import { Link, getPathname } from "@/i18n/navigation";
 import { PostCard } from "@/widgets/blog/PostCard";
 import { cn } from "@/shared/lib/cn";
+import { socialMetadata } from "@/shared/seo/metadata";
 
 type Params = { locale: string };
 
@@ -27,11 +28,13 @@ export async function generateMetadata({
   );
   const rssHref =
     locale === routing.defaultLocale ? "/blog/rss.xml" : `/blog/rss.xml?lang=${locale}`;
+  const canonical = getPathname({ locale, href: "/blog" });
   return {
     title: t("title"),
     description: t("subtitle"),
+    ...socialMetadata({ title: t("title"), description: t("subtitle"), locale, canonical }),
     alternates: {
-      canonical: getPathname({ locale, href: "/blog" }),
+      canonical,
       languages: {
         ...languages,
         "x-default": languages[routing.defaultLocale],

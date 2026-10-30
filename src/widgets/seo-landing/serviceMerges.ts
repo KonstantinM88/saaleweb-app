@@ -1,10 +1,8 @@
 /**
  * Service page consolidation.
  *
- * The original CMS-backed Performance service and the later, substantially
- * stronger performance-optimization landing page cover the same search intent.
- * Keep only the richer page indexable and redirect the legacy slug so existing
- * signals are preserved.
+ * Only explicitly reviewed equivalent pages are consolidated. The 2026-10-30
+ * GSC review authorized two DE-only pairs; their EN/RU pages remain available.
  */
 
 export type ServiceMergeLocale = "de" | "en" | "ru";
@@ -13,6 +11,8 @@ export type ServiceMergeLocale = "de" | "en" | "ru";
 export const SERVICE_SLUG_MERGES: Record<ServiceMergeLocale, Record<string, string>> = {
   de: {
     performance: "performance-optimierung",
+    "website-entwicklung": "website-erstellen-lassen",
+    wartung: "website-wartung",
   },
   en: {
     performance: "performance-optimization",
@@ -30,4 +30,9 @@ function isServiceMergeLocale(locale: string): locale is ServiceMergeLocale {
 export function isMergedServiceSlug(locale: string, slug: string): boolean {
   if (!isServiceMergeLocale(locale)) return false;
   return slug in SERVICE_SLUG_MERGES[locale];
+}
+
+/** Used by language navigation; metadata must omit the retired translation. */
+export function resolveServiceSlug(locale: string, slug: string): string {
+  return isServiceMergeLocale(locale) ? SERVICE_SLUG_MERGES[locale][slug] ?? slug : slug;
 }
