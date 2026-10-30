@@ -1,0 +1,87 @@
+{
+  "at": "2026-10-30T02:51:26.830Z",
+  "note": "Claimed user-agent from this workstation is not a verified Google crawler",
+  "rows": [
+    {
+      "path": "/robots.txt",
+      "ua": "Mozilla/5.0",
+      "status": 200,
+      "server": "hcdn",
+      "location": null,
+      "contentType": "text/plain",
+      "edgeDenied": null
+    },
+    {
+      "path": "/robots.txt",
+      "ua": "Googlebot",
+      "status": 403,
+      "server": "hcdn",
+      "location": null,
+      "contentType": "text/html",
+      "edgeDenied": "<!DOCTYPE html>\n<html style=\"height:100%\">\n<head>\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\" />\n<title> 403 Forbidden"
+    },
+    {
+      "path": "/robots.txt",
+      "ua": "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
+      "status": 403,
+      "server": "hcdn",
+      "location": null,
+      "contentType": "text/html",
+      "edgeDenied": "<!DOCTYPE html>\n<html style=\"height:100%\">\n<head>\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\" />\n<title> 403 Forbidden"
+    },
+    {
+      "path": "/leistungen/website-entwicklung",
+      "ua": "Mozilla/5.0",
+      "status": 308,
+      "server": "hcdn",
+      "location": "/leistungen/website-erstellen-lassen",
+      "contentType": null,
+      "edgeDenied": null
+    },
+    {
+      "path": "/leistungen/website-entwicklung",
+      "ua": "Googlebot",
+      "status": 403,
+      "server": "hcdn",
+      "location": null,
+      "contentType": "text/html",
+      "edgeDenied": "<!DOCTYPE html>\n<html style=\"height:100%\">\n<head>\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\" />\n<title> 403 Forbidden"
+    },
+    {
+      "path": "/leistungen/website-entwicklung",
+      "ua": "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
+      "status": 403,
+      "server": "hcdn",
+      "location": null,
+      "contentType": "text/html",
+      "edgeDenied": "<!DOCTYPE html>\n<html style=\"height:100%\">\n<head>\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\" />\n<title> 403 Forbidden"
+    },
+    {
+      "path": "/leistungen/website-erstellen-lassen",
+      "ua": "Mozilla/5.0",
+      "status": 200,
+      "server": "hcdn",
+      "location": null,
+      "contentType": "text/html; charset=utf-8",
+      "edgeDenied": null
+    },
+    {
+      "path": "/leistungen/website-erstellen-lassen",
+      "ua": "Googlebot",
+      "status": 403,
+      "server": "hcdn",
+      "location": null,
+      "contentType": "text/html",
+      "edgeDenied": "<!DOCTYPE html>\n<html style=\"height:100%\">\n<head>\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\" />\n<title> 403 Forbidden"
+    },
+    {
+      "path": "/leistungen/website-erstellen-lassen",
+      "ua": "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
+      "status": 403,
+      "server": "hcdn",
+      "location": null,
+      "contentType": "text/html",
+      "edgeDenied": "<!DOCTYPE html>\n<html style=\"height:100%\">\n<head>\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\" />\n<title> 403 Forbidden"
+    }
+  ]
+}

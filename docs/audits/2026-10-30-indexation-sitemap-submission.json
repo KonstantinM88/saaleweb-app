@@ -1,0 +1,31 @@
+{
+  "checkedAt": "2026-10-30T02:51:41.550Z",
+  "sitemapUrl": "https://saaleweb.de/sitemap.xml",
+  "ready": true,
+  "urls": 229,
+  "checks": [
+    {
+      "check": "/leistungen/website-entwicklung",
+      "ok": true,
+      "status": 308
+    },
+    {
+      "check": "/leistungen/website-erstellen-lassen",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "check": "/leistungen/wartung",
+      "ok": true,
+      "status": 308
+    },
+    {
+      "check": "/leistungen/website-wartung",
+      "ok": true,
+      "status": 200
+    }
+  ],
+  "submitted": true,
+  "status": 204,
+  "submittedAt": "2026-10-30T02:51:41.894Z"
+}

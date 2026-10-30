@@ -1,0 +1,98 @@
+{
+  "checkedAt": "2026-10-30T02:52:26.982Z",
+  "sitemap": {
+    "path": "https://saaleweb.de/sitemap.xml",
+    "lastSubmitted": "2026-10-30T02:51:43.445Z",
+    "isPending": false,
+    "isSitemapsIndex": false,
+    "type": "sitemap",
+    "lastDownloaded": "2026-10-30T02:51:44.515Z",
+    "warnings": "0",
+    "errors": "0",
+    "contents": [
+      {
+        "type": "web",
+        "submitted": "229",
+        "indexed": "0"
+      }
+    ]
+  },
+  "inspections": [
+    {
+      "url": "https://saaleweb.de/",
+      "result": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-30T00:44:51Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/",
+        "userCanonical": "https://saaleweb.de/",
+        "sitemap": [
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "referringUrls": [
+          "https://www.saaleweb.de/ru/uslugi/sistemy-bronirovaniya",
+          "https://www.neueliebe-nebra.de/news",
+          "https://drjack.world/report/4310101",
+          "http://saaleweb.de/"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/leistungen/website-erstellen-lassen",
+      "result": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-28T18:32:24Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/leistungen/website-erstellen-lassen",
+        "userCanonical": "https://saaleweb.de/leistungen/website-erstellen-lassen",
+        "referringUrls": [
+          "https://saaleweb.de/ru/uslugi/razrabotka-saytov",
+          "https://www.saaleweb.de/leistungen/website-erstellen-lassen"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/leistungen/website-wartung",
+      "result": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-09-10T15:08:30Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/leistungen/website-wartung",
+        "userCanonical": "https://saaleweb.de/leistungen/website-wartung",
+        "referringUrls": [
+          "https://www.saaleweb.de/en/services/website-maintenance"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/services/hosting",
+      "result": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-08-21T16:34:34Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/services/hosting",
+        "userCanonical": "https://saaleweb.de/en/services/hosting",
+        "referringUrls": [
+          "https://www.saaleweb.de/en/services"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    }
+  ],
+  "note": "URL Inspection describes the last indexed/crawled copy; it is not a live test or an indexing request."
+}
