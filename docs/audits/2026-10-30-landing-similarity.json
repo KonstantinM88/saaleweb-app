@@ -1,0 +1,1363 @@
+{
+ "generatedAt": "2026-10-30",
+ "method": "Code-backed Phase4 landing content (title, lead, problems, solution, features, process, FAQ, final text) exported via tsx; 5-word shingle Jaccard per locale. Premium industry pages (hotel/restaurant/construction/beauty) render dedicated content and are only partly represented.",
+ "pages": 120,
+ "perLocale": {
+  "de": {
+   "pairsAtLeast050": 36,
+   "topPairs": [
+    {
+     "a": "seo-leipzig",
+     "b": "seo-merseburg",
+     "jaccard": 0.88
+    },
+    {
+     "a": "seo-leipzig",
+     "b": "seo-schkeuditz",
+     "jaccard": 0.88
+    },
+    {
+     "a": "seo-leipzig",
+     "b": "seo-delitzsch",
+     "jaccard": 0.88
+    },
+    {
+     "a": "seo-leipzig",
+     "b": "seo-saalekreis",
+     "jaccard": 0.88
+    },
+    {
+     "a": "seo-merseburg",
+     "b": "seo-schkeuditz",
+     "jaccard": 0.88
+    },
+    {
+     "a": "seo-merseburg",
+     "b": "seo-delitzsch",
+     "jaccard": 0.88
+    },
+    {
+     "a": "seo-merseburg",
+     "b": "seo-saalekreis",
+     "jaccard": 0.88
+    },
+    {
+     "a": "seo-schkeuditz",
+     "b": "seo-delitzsch",
+     "jaccard": 0.88
+    },
+    {
+     "a": "seo-schkeuditz",
+     "b": "seo-saalekreis",
+     "jaccard": 0.88
+    },
+    {
+     "a": "seo-delitzsch",
+     "b": "seo-saalekreis",
+     "jaccard": 0.88
+    },
+    {
+     "a": "webdesign-leipzig",
+     "b": "webdesign-merseburg",
+     "jaccard": 0.86
+    },
+    {
+     "a": "webdesign-leipzig",
+     "b": "webdesign-schkeuditz",
+     "jaccard": 0.86
+    },
+    {
+     "a": "webdesign-leipzig",
+     "b": "webdesign-delitzsch",
+     "jaccard": 0.86
+    },
+    {
+     "a": "webdesign-leipzig",
+     "b": "webdesign-saalekreis",
+     "jaccard": 0.86
+    },
+    {
+     "a": "webdesign-merseburg",
+     "b": "webdesign-schkeuditz",
+     "jaccard": 0.86
+    },
+    {
+     "a": "webdesign-merseburg",
+     "b": "webdesign-delitzsch",
+     "jaccard": 0.86
+    },
+    {
+     "a": "webdesign-merseburg",
+     "b": "webdesign-saalekreis",
+     "jaccard": 0.86
+    },
+    {
+     "a": "webdesign-schkeuditz",
+     "b": "webdesign-delitzsch",
+     "jaccard": 0.86
+    },
+    {
+     "a": "webdesign-schkeuditz",
+     "b": "webdesign-saalekreis",
+     "jaccard": 0.86
+    },
+    {
+     "a": "webdesign-delitzsch",
+     "b": "webdesign-saalekreis",
+     "jaccard": 0.86
+    },
+    {
+     "a": "leipzig",
+     "b": "delitzsch",
+     "jaccard": 0.57
+    },
+    {
+     "a": "schkeuditz",
+     "b": "delitzsch",
+     "jaccard": 0.57
+    },
+    {
+     "a": "leipzig",
+     "b": "schkeuditz",
+     "jaccard": 0.56
+    },
+    {
+     "a": "merseburg",
+     "b": "delitzsch",
+     "jaccard": 0.56
+    },
+    {
+     "a": "merseburg",
+     "b": "schkeuditz",
+     "jaccard": 0.55
+    }
+   ],
+   "meta": [
+    {
+     "kind": "service",
+     "slug": "website-erstellen-lassen",
+     "titleLen": 51,
+     "descLen": 151,
+     "words": 819,
+     "faq": 12
+    },
+    {
+     "kind": "service",
+     "slug": "webdesign-halle",
+     "titleLen": 47,
+     "descLen": 161,
+     "words": 854,
+     "faq": 12
+    },
+    {
+     "kind": "service",
+     "slug": "seo-halle",
+     "titleLen": 20,
+     "descLen": 152,
+     "words": 689,
+     "faq": 12
+    },
+    {
+     "kind": "service",
+     "slug": "wordpress-agentur-halle",
+     "titleLen": 42,
+     "descLen": 192,
+     "words": 924,
+     "faq": 13
+    },
+    {
+     "kind": "service",
+     "slug": "webdesign-leipzig",
+     "titleLen": 44,
+     "descLen": 138,
+     "words": 613,
+     "faq": 7
+    },
+    {
+     "kind": "service",
+     "slug": "seo-leipzig",
+     "titleLen": 40,
+     "descLen": 147,
+     "words": 588,
+     "faq": 7
+    },
+    {
+     "kind": "service",
+     "slug": "webdesign-merseburg",
+     "titleLen": 46,
+     "descLen": 142,
+     "words": 617,
+     "faq": 7
+    },
+    {
+     "kind": "service",
+     "slug": "seo-merseburg",
+     "titleLen": 42,
+     "descLen": 151,
+     "words": 588,
+     "faq": 7
+    },
+    {
+     "kind": "service",
+     "slug": "webdesign-schkeuditz",
+     "titleLen": 47,
+     "descLen": 144,
+     "words": 616,
+     "faq": 7
+    },
+    {
+     "kind": "service",
+     "slug": "seo-schkeuditz",
+     "titleLen": 43,
+     "descLen": 153,
+     "words": 588,
+     "faq": 7
+    },
+    {
+     "kind": "service",
+     "slug": "webdesign-delitzsch",
+     "titleLen": 46,
+     "descLen": 142,
+     "words": 616,
+     "faq": 7
+    },
+    {
+     "kind": "service",
+     "slug": "seo-delitzsch",
+     "titleLen": 42,
+     "descLen": 151,
+     "words": 588,
+     "faq": 7
+    },
+    {
+     "kind": "service",
+     "slug": "webdesign-saalekreis",
+     "titleLen": 47,
+     "descLen": 144,
+     "words": 612,
+     "faq": 7
+    },
+    {
+     "kind": "service",
+     "slug": "seo-saalekreis",
+     "titleLen": 43,
+     "descLen": 153,
+     "words": 588,
+     "faq": 7
+    },
+    {
+     "kind": "service",
+     "slug": "ki-optimierung",
+     "titleLen": 41,
+     "descLen": 164,
+     "words": 718,
+     "faq": 12
+    },
+    {
+     "kind": "service",
+     "slug": "wordpress-website-modernisieren",
+     "titleLen": 42,
+     "descLen": 144,
+     "words": 654,
+     "faq": 11
+    },
+    {
+     "kind": "service",
+     "slug": "website-relaunch",
+     "titleLen": 27,
+     "descLen": 146,
+     "words": 668,
+     "faq": 11
+    },
+    {
+     "kind": "service",
+     "slug": "performance-optimierung",
+     "titleLen": 42,
+     "descLen": 126,
+     "words": 580,
+     "faq": 10
+    },
+    {
+     "kind": "service",
+     "slug": "website-wartung",
+     "titleLen": 38,
+     "descLen": 153,
+     "words": 604,
+     "faq": 10
+    },
+    {
+     "kind": "service",
+     "slug": "buchungssysteme",
+     "titleLen": 40,
+     "descLen": 159,
+     "words": 595,
+     "faq": 10
+    },
+    {
+     "kind": "service",
+     "slug": "online-shop-erstellen",
+     "titleLen": 39,
+     "descLen": 150,
+     "words": 457,
+     "faq": 7
+    },
+    {
+     "kind": "service",
+     "slug": "ki-assistent",
+     "titleLen": 52,
+     "descLen": 145,
+     "words": 551,
+     "faq": 9
+    },
+    {
+     "kind": "service",
+     "slug": "automatisierung",
+     "titleLen": 42,
+     "descLen": 141,
+     "words": 468,
+     "faq": 8
+    },
+    {
+     "kind": "service",
+     "slug": "api-integrationen",
+     "titleLen": 28,
+     "descLen": 129,
+     "words": 431,
+     "faq": 7
+    },
+    {
+     "kind": "service",
+     "slug": "website-sicherheit",
+     "titleLen": 29,
+     "descLen": 150,
+     "words": 450,
+     "faq": 7
+    },
+    {
+     "kind": "service",
+     "slug": "datenanalyse",
+     "titleLen": 43,
+     "descLen": 133,
+     "words": 426,
+     "faq": 7
+    },
+    {
+     "kind": "service",
+     "slug": "shop-produktimport",
+     "titleLen": 29,
+     "descLen": 132,
+     "words": 424,
+     "faq": 7
+    },
+    {
+     "kind": "industry",
+     "slug": "restaurant-website",
+     "titleLen": 34,
+     "descLen": 138,
+     "words": 604,
+     "faq": 11
+    },
+    {
+     "kind": "industry",
+     "slug": "hotel-website",
+     "titleLen": 41,
+     "descLen": 140,
+     "words": 573,
+     "faq": 10
+    },
+    {
+     "kind": "industry",
+     "slug": "beauty-studio-website",
+     "titleLen": 36,
+     "descLen": 124,
+     "words": 582,
+     "faq": 11
+    },
+    {
+     "kind": "industry",
+     "slug": "bauunternehmen-website",
+     "titleLen": 37,
+     "descLen": 148,
+     "words": 559,
+     "faq": 10
+    },
+    {
+     "kind": "industry",
+     "slug": "handwerker-website",
+     "titleLen": 33,
+     "descLen": 120,
+     "words": 601,
+     "faq": 11
+    },
+    {
+     "kind": "industry",
+     "slug": "glaserei-website",
+     "titleLen": 31,
+     "descLen": 124,
+     "words": 572,
+     "faq": 10
+    },
+    {
+     "kind": "industry",
+     "slug": "dienstleister-website",
+     "titleLen": 67,
+     "descLen": 150,
+     "words": 628,
+     "faq": 10
+    },
+    {
+     "kind": "location",
+     "slug": "halle",
+     "titleLen": 47,
+     "descLen": 138,
+     "words": 650,
+     "faq": 10
+    },
+    {
+     "kind": "location",
+     "slug": "leipzig",
+     "titleLen": 42,
+     "descLen": 143,
+     "words": 549,
+     "faq": 8
+    },
+    {
+     "kind": "location",
+     "slug": "merseburg",
+     "titleLen": 36,
+     "descLen": 139,
+     "words": 568,
+     "faq": 8
+    },
+    {
+     "kind": "location",
+     "slug": "schkeuditz",
+     "titleLen": 37,
+     "descLen": 128,
+     "words": 546,
+     "faq": 8
+    },
+    {
+     "kind": "location",
+     "slug": "delitzsch",
+     "titleLen": 36,
+     "descLen": 129,
+     "words": 535,
+     "faq": 8
+    },
+    {
+     "kind": "location",
+     "slug": "saalekreis",
+     "titleLen": 37,
+     "descLen": 128,
+     "words": 570,
+     "faq": 8
+    }
+   ]
+  },
+  "en": {
+   "pairsAtLeast050": 58,
+   "topPairs": [
+    {
+     "a": "seo-leipzig",
+     "b": "seo-merseburg",
+     "jaccard": 0.89
+    },
+    {
+     "a": "seo-leipzig",
+     "b": "seo-schkeuditz",
+     "jaccard": 0.89
+    },
+    {
+     "a": "seo-leipzig",
+     "b": "seo-delitzsch",
+     "jaccard": 0.89
+    },
+    {
+     "a": "seo-leipzig",
+     "b": "seo-saalekreis",
+     "jaccard": 0.89
+    },
+    {
+     "a": "seo-merseburg",
+     "b": "seo-schkeuditz",
+     "jaccard": 0.89
+    },
+    {
+     "a": "seo-merseburg",
+     "b": "seo-delitzsch",
+     "jaccard": 0.89
+    },
+    {
+     "a": "seo-merseburg",
+     "b": "seo-saalekreis",
+     "jaccard": 0.89
+    },
+    {
+     "a": "seo-schkeuditz",
+     "b": "seo-delitzsch",
+     "jaccard": 0.89
+    },
+    {
+     "a": "seo-schkeuditz",
+     "b": "seo-saalekreis",
+     "jaccard": 0.89
+    },
+    {
+     "a": "seo-delitzsch",
+     "b": "seo-saalekreis",
+     "jaccard": 0.89
+    },
+    {
+     "a": "web-design-leipzig",
+     "b": "web-design-schkeuditz",
+     "jaccard": 0.87
+    },
+    {
+     "a": "web-design-leipzig",
+     "b": "web-design-saalekreis",
+     "jaccard": 0.87
+    },
+    {
+     "a": "web-design-merseburg",
+     "b": "web-design-saalekreis",
+     "jaccard": 0.87
+    },
+    {
+     "a": "web-design-schkeuditz",
+     "b": "web-design-saalekreis",
+     "jaccard": 0.87
+    },
+    {
+     "a": "web-design-delitzsch",
+     "b": "web-design-saalekreis",
+     "jaccard": 0.87
+    },
+    {
+     "a": "web-design-leipzig",
+     "b": "web-design-merseburg",
+     "jaccard": 0.86
+    },
+    {
+     "a": "web-design-leipzig",
+     "b": "web-design-delitzsch",
+     "jaccard": 0.86
+    },
+    {
+     "a": "web-design-merseburg",
+     "b": "web-design-schkeuditz",
+     "jaccard": 0.86
+    },
+    {
+     "a": "web-design-merseburg",
+     "b": "web-design-delitzsch",
+     "jaccard": 0.86
+    },
+    {
+     "a": "web-design-schkeuditz",
+     "b": "web-design-delitzsch",
+     "jaccard": 0.86
+    },
+    {
+     "a": "leipzig",
+     "b": "schkeuditz",
+     "jaccard": 0.84
+    },
+    {
+     "a": "leipzig",
+     "b": "delitzsch",
+     "jaccard": 0.84
+    },
+    {
+     "a": "schkeuditz",
+     "b": "delitzsch",
+     "jaccard": 0.84
+    },
+    {
+     "a": "leipzig",
+     "b": "saalekreis",
+     "jaccard": 0.73
+    },
+    {
+     "a": "schkeuditz",
+     "b": "saalekreis",
+     "jaccard": 0.73
+    }
+   ],
+   "meta": [
+    {
+     "kind": "service",
+     "slug": "website-development",
+     "titleLen": 56,
+     "descLen": 131,
+     "words": 938,
+     "faq": 14
+    },
+    {
+     "kind": "service",
+     "slug": "web-design-halle",
+     "titleLen": 51,
+     "descLen": 138,
+     "words": 847,
+     "faq": 12
+    },
+    {
+     "kind": "service",
+     "slug": "seo-halle",
+     "titleLen": 20,
+     "descLen": 147,
+     "words": 670,
+     "faq": 10
+    },
+    {
+     "kind": "service",
+     "slug": "wordpress-agency-halle",
+     "titleLen": 44,
+     "descLen": 166,
+     "words": 985,
+     "faq": 13
+    },
+    {
+     "kind": "service",
+     "slug": "web-design-leipzig",
+     "titleLen": 40,
+     "descLen": 140,
+     "words": 649,
+     "faq": 7
+    },
+    {
+     "kind": "service",
+     "slug": "seo-leipzig",
+     "titleLen": 40,
+     "descLen": 123,
+     "words": 621,
+     "faq": 7
+    },
+    {
+     "kind": "service",
+     "slug": "web-design-merseburg",
+     "titleLen": 42,
+     "descLen": 144,
+     "words": 652,
+     "faq": 7
+    },
+    {
+     "kind": "service",
+     "slug": "seo-merseburg",
+     "titleLen": 42,
+     "descLen": 127,
+     "words": 621,
+     "faq": 7
+    },
+    {
+     "kind": "service",
+     "slug": "web-design-schkeuditz",
+     "titleLen": 43,
+     "descLen": 146,
+     "words": 650,
+     "faq": 7
+    },
+    {
+     "kind": "service",
+     "slug": "seo-schkeuditz",
+     "titleLen": 43,
+     "descLen": 129,
+     "words": 621,
+     "faq": 7
+    },
+    {
+     "kind": "service",
+     "slug": "web-design-delitzsch",
+     "titleLen": 42,
+     "descLen": 144,
+     "words": 652,
+     "faq": 7
+    },
+    {
+     "kind": "service",
+     "slug": "seo-delitzsch",
+     "titleLen": 42,
+     "descLen": 127,
+     "words": 621,
+     "faq": 7
+    },
+    {
+     "kind": "service",
+     "slug": "web-design-saalekreis",
+     "titleLen": 43,
+     "descLen": 146,
+     "words": 647,
+     "faq": 7
+    },
+    {
+     "kind": "service",
+     "slug": "seo-saalekreis",
+     "titleLen": 43,
+     "descLen": 129,
+     "words": 621,
+     "faq": 7
+    },
+    {
+     "kind": "service",
+     "slug": "ai-optimization",
+     "titleLen": 41,
+     "descLen": 144,
+     "words": 582,
+     "faq": 8
+    },
+    {
+     "kind": "service",
+     "slug": "wordpress-website-modernization",
+     "titleLen": 38,
+     "descLen": 117,
+     "words": 567,
+     "faq": 8
+    },
+    {
+     "kind": "service",
+     "slug": "website-relaunch",
+     "titleLen": 27,
+     "descLen": 116,
+     "words": 611,
+     "faq": 9
+    },
+    {
+     "kind": "service",
+     "slug": "performance-optimization",
+     "titleLen": 43,
+     "descLen": 116,
+     "words": 553,
+     "faq": 8
+    },
+    {
+     "kind": "service",
+     "slug": "website-maintenance",
+     "titleLen": 40,
+     "descLen": 122,
+     "words": 568,
+     "faq": 8
+    },
+    {
+     "kind": "service",
+     "slug": "booking-systems",
+     "titleLen": 40,
+     "descLen": 145,
+     "words": 566,
+     "faq": 8
+    },
+    {
+     "kind": "service",
+     "slug": "online-shop-development",
+     "titleLen": 34,
+     "descLen": 136,
+     "words": 500,
+     "faq": 7
+    },
+    {
+     "kind": "service",
+     "slug": "ai-assistant",
+     "titleLen": 51,
+     "descLen": 147,
+     "words": 550,
+     "faq": 8
+    },
+    {
+     "kind": "service",
+     "slug": "automation",
+     "titleLen": 36,
+     "descLen": 133,
+     "words": 462,
+     "faq": 7
+    },
+    {
+     "kind": "service",
+     "slug": "api-integrations",
+     "titleLen": 27,
+     "descLen": 134,
+     "words": 469,
+     "faq": 7
+    },
+    {
+     "kind": "service",
+     "slug": "website-security",
+     "titleLen": 27,
+     "descLen": 154,
+     "words": 472,
+     "faq": 7
+    },
+    {
+     "kind": "service",
+     "slug": "data-analytics",
+     "titleLen": 45,
+     "descLen": 122,
+     "words": 466,
+     "faq": 7
+    },
+    {
+     "kind": "service",
+     "slug": "shop-product-import",
+     "titleLen": 30,
+     "descLen": 132,
+     "words": 478,
+     "faq": 7
+    },
+    {
+     "kind": "industry",
+     "slug": "restaurant-website",
+     "titleLen": 29,
+     "descLen": 128,
+     "words": 544,
+     "faq": 8
+    },
+    {
+     "kind": "industry",
+     "slug": "hotel-website",
+     "titleLen": 24,
+     "descLen": 131,
+     "words": 548,
+     "faq": 8
+    },
+    {
+     "kind": "industry",
+     "slug": "beauty-studio-website",
+     "titleLen": 32,
+     "descLen": 116,
+     "words": 528,
+     "faq": 8
+    },
+    {
+     "kind": "industry",
+     "slug": "construction-company-website",
+     "titleLen": 39,
+     "descLen": 119,
+     "words": 538,
+     "faq": 8
+    },
+    {
+     "kind": "industry",
+     "slug": "craftsmen-website",
+     "titleLen": 28,
+     "descLen": 119,
+     "words": 574,
+     "faq": 9
+    },
+    {
+     "kind": "industry",
+     "slug": "glazier-website",
+     "titleLen": 26,
+     "descLen": 127,
+     "words": 549,
+     "faq": 8
+    },
+    {
+     "kind": "industry",
+     "slug": "service-provider-website",
+     "titleLen": 62,
+     "descLen": 144,
+     "words": 598,
+     "faq": 8
+    },
+    {
+     "kind": "location",
+     "slug": "halle",
+     "titleLen": 41,
+     "descLen": 147,
+     "words": 591,
+     "faq": 8
+    },
+    {
+     "kind": "location",
+     "slug": "leipzig",
+     "titleLen": 35,
+     "descLen": 141,
+     "words": 577,
+     "faq": 8
+    },
+    {
+     "kind": "location",
+     "slug": "merseburg",
+     "titleLen": 37,
+     "descLen": 143,
+     "words": 592,
+     "faq": 8
+    },
+    {
+     "kind": "location",
+     "slug": "schkeuditz",
+     "titleLen": 38,
+     "descLen": 144,
+     "words": 577,
+     "faq": 8
+    },
+    {
+     "kind": "location",
+     "slug": "delitzsch",
+     "titleLen": 37,
+     "descLen": 143,
+     "words": 577,
+     "faq": 8
+    },
+    {
+     "kind": "location",
+     "slug": "saalekreis",
+     "titleLen": 38,
+     "descLen": 144,
+     "words": 582,
+     "faq": 8
+    }
+   ]
+  },
+  "ru": {
+   "pairsAtLeast050": 51,
+   "topPairs": [
+    {
+     "a": "seo-leipzig",
+     "b": "seo-merseburg",
+     "jaccard": 0.87
+    },
+    {
+     "a": "seo-leipzig",
+     "b": "seo-schkeuditz",
+     "jaccard": 0.87
+    },
+    {
+     "a": "seo-leipzig",
+     "b": "seo-delitzsch",
+     "jaccard": 0.87
+    },
+    {
+     "a": "seo-leipzig",
+     "b": "seo-saalekreis",
+     "jaccard": 0.87
+    },
+    {
+     "a": "seo-merseburg",
+     "b": "seo-schkeuditz",
+     "jaccard": 0.87
+    },
+    {
+     "a": "seo-merseburg",
+     "b": "seo-delitzsch",
+     "jaccard": 0.87
+    },
+    {
+     "a": "seo-merseburg",
+     "b": "seo-saalekreis",
+     "jaccard": 0.87
+    },
+    {
+     "a": "seo-schkeuditz",
+     "b": "seo-delitzsch",
+     "jaccard": 0.87
+    },
+    {
+     "a": "seo-schkeuditz",
+     "b": "seo-saalekreis",
+     "jaccard": 0.87
+    },
+    {
+     "a": "seo-delitzsch",
+     "b": "seo-saalekreis",
+     "jaccard": 0.87
+    },
+    {
+     "a": "webdesign-leipzig",
+     "b": "webdesign-merseburg",
+     "jaccard": 0.85
+    },
+    {
+     "a": "webdesign-leipzig",
+     "b": "webdesign-schkeuditz",
+     "jaccard": 0.85
+    },
+    {
+     "a": "webdesign-leipzig",
+     "b": "webdesign-delitzsch",
+     "jaccard": 0.85
+    },
+    {
+     "a": "webdesign-leipzig",
+     "b": "webdesign-saalekreis",
+     "jaccard": 0.85
+    },
+    {
+     "a": "webdesign-merseburg",
+     "b": "webdesign-schkeuditz",
+     "jaccard": 0.85
+    },
+    {
+     "a": "webdesign-merseburg",
+     "b": "webdesign-saalekreis",
+     "jaccard": 0.85
+    },
+    {
+     "a": "webdesign-schkeuditz",
+     "b": "webdesign-delitzsch",
+     "jaccard": 0.85
+    },
+    {
+     "a": "webdesign-schkeuditz",
+     "b": "webdesign-saalekreis",
+     "jaccard": 0.85
+    },
+    {
+     "a": "webdesign-merseburg",
+     "b": "webdesign-delitzsch",
+     "jaccard": 0.84
+    },
+    {
+     "a": "webdesign-delitzsch",
+     "b": "webdesign-saalekreis",
+     "jaccard": 0.84
+    },
+    {
+     "a": "leipzig",
+     "b": "schkeuditz",
+     "jaccard": 0.82
+    },
+    {
+     "a": "leipzig",
+     "b": "delitzsch",
+     "jaccard": 0.82
+    },
+    {
+     "a": "schkeuditz",
+     "b": "delitzsch",
+     "jaccard": 0.82
+    },
+    {
+     "a": "leipzig",
+     "b": "saalekreis",
+     "jaccard": 0.71
+    },
+    {
+     "a": "schkeuditz",
+     "b": "saalekreis",
+     "jaccard": 0.71
+    }
+   ],
+   "meta": [
+    {
+     "kind": "service",
+     "slug": "razrabotka-saytov",
+     "titleLen": 51,
+     "descLen": 122,
+     "words": 786,
+     "faq": 14
+    },
+    {
+     "kind": "service",
+     "slug": "webdesign-halle",
+     "titleLen": 45,
+     "descLen": 119,
+     "words": 705,
+     "faq": 12
+    },
+    {
+     "kind": "service",
+     "slug": "seo-halle",
+     "titleLen": 20,
+     "descLen": 131,
+     "words": 570,
+     "faq": 10
+    },
+    {
+     "kind": "service",
+     "slug": "wordpress-agentstvo-halle",
+     "titleLen": 46,
+     "descLen": 206,
+     "words": 840,
+     "faq": 13
+    },
+    {
+     "kind": "service",
+     "slug": "webdesign-leipzig",
+     "titleLen": 35,
+     "descLen": 137,
+     "words": 556,
+     "faq": 7
+    },
+    {
+     "kind": "service",
+     "slug": "seo-leipzig",
+     "titleLen": 40,
+     "descLen": 130,
+     "words": 540,
+     "faq": 7
+    },
+    {
+     "kind": "service",
+     "slug": "webdesign-merseburg",
+     "titleLen": 37,
+     "descLen": 141,
+     "words": 558,
+     "faq": 7
+    },
+    {
+     "kind": "service",
+     "slug": "seo-merseburg",
+     "titleLen": 42,
+     "descLen": 134,
+     "words": 540,
+     "faq": 7
+    },
+    {
+     "kind": "service",
+     "slug": "webdesign-schkeuditz",
+     "titleLen": 38,
+     "descLen": 143,
+     "words": 556,
+     "faq": 7
+    },
+    {
+     "kind": "service",
+     "slug": "seo-schkeuditz",
+     "titleLen": 43,
+     "descLen": 136,
+     "words": 540,
+     "faq": 7
+    },
+    {
+     "kind": "service",
+     "slug": "webdesign-delitzsch",
+     "titleLen": 37,
+     "descLen": 141,
+     "words": 558,
+     "faq": 7
+    },
+    {
+     "kind": "service",
+     "slug": "seo-delitzsch",
+     "titleLen": 42,
+     "descLen": 134,
+     "words": 540,
+     "faq": 7
+    },
+    {
+     "kind": "service",
+     "slug": "webdesign-saalekreis",
+     "titleLen": 38,
+     "descLen": 151,
+     "words": 558,
+     "faq": 7
+    },
+    {
+     "kind": "service",
+     "slug": "seo-saalekreis",
+     "titleLen": 43,
+     "descLen": 144,
+     "words": 542,
+     "faq": 7
+    },
+    {
+     "kind": "service",
+     "slug": "optimizaciya-pod-ii",
+     "titleLen": 41,
+     "descLen": 130,
+     "words": 490,
+     "faq": 8
+    },
+    {
+     "kind": "service",
+     "slug": "modernizaciya-wordpress-sayta",
+     "titleLen": 39,
+     "descLen": 107,
+     "words": 468,
+     "faq": 8
+    },
+    {
+     "kind": "service",
+     "slug": "relonch-sajta",
+     "titleLen": 23,
+     "descLen": 119,
+     "words": 518,
+     "faq": 9
+    },
+    {
+     "kind": "service",
+     "slug": "optimizaciya-proizvoditelnosti",
+     "titleLen": 47,
+     "descLen": 101,
+     "words": 468,
+     "faq": 8
+    },
+    {
+     "kind": "service",
+     "slug": "podderzhka-saytov",
+     "titleLen": 26,
+     "descLen": 108,
+     "words": 471,
+     "faq": 8
+    },
+    {
+     "kind": "service",
+     "slug": "sistemy-bronirovaniya",
+     "titleLen": 48,
+     "descLen": 133,
+     "words": 478,
+     "faq": 8
+    },
+    {
+     "kind": "service",
+     "slug": "sozdanie-internet-magazina",
+     "titleLen": 37,
+     "descLen": 133,
+     "words": 436,
+     "faq": 7
+    },
+    {
+     "kind": "service",
+     "slug": "ai-assistent",
+     "titleLen": 47,
+     "descLen": 124,
+     "words": 470,
+     "faq": 8
+    },
+    {
+     "kind": "service",
+     "slug": "avtomatizaciya",
+     "titleLen": 36,
+     "descLen": 124,
+     "words": 396,
+     "faq": 7
+    },
+    {
+     "kind": "service",
+     "slug": "api-integracii",
+     "titleLen": 25,
+     "descLen": 139,
+     "words": 406,
+     "faq": 7
+    },
+    {
+     "kind": "service",
+     "slug": "bezopasnost-sayta",
+     "titleLen": 29,
+     "descLen": 149,
+     "words": 410,
+     "faq": 7
+    },
+    {
+     "kind": "service",
+     "slug": "analitika-dannyh",
+     "titleLen": 43,
+     "descLen": 117,
+     "words": 410,
+     "faq": 7
+    },
+    {
+     "kind": "service",
+     "slug": "import-tovarov",
+     "titleLen": 44,
+     "descLen": 115,
+     "words": 415,
+     "faq": 7
+    },
+    {
+     "kind": "industry",
+     "slug": "sayt-dlya-restorana",
+     "titleLen": 29,
+     "descLen": 109,
+     "words": 462,
+     "faq": 8
+    },
+    {
+     "kind": "industry",
+     "slug": "sayt-dlya-otelya",
+     "titleLen": 21,
+     "descLen": 96,
+     "words": 452,
+     "faq": 8
+    },
+    {
+     "kind": "industry",
+     "slug": "sayt-dlya-salona-krasoty",
+     "titleLen": 29,
+     "descLen": 93,
+     "words": 431,
+     "faq": 8
+    },
+    {
+     "kind": "industry",
+     "slug": "sayt-dlya-stroitelnoy-kompanii",
+     "titleLen": 37,
+     "descLen": 113,
+     "words": 445,
+     "faq": 8
+    },
+    {
+     "kind": "industry",
+     "slug": "sayt-dlya-masterov",
+     "titleLen": 28,
+     "descLen": 111,
+     "words": 484,
+     "faq": 9
+    },
+    {
+     "kind": "industry",
+     "slug": "sayt-dlya-stekolnoy-masterskoy",
+     "titleLen": 24,
+     "descLen": 110,
+     "words": 446,
+     "faq": 8
+    },
+    {
+     "kind": "industry",
+     "slug": "sayt-dlya-sfery-uslug",
+     "titleLen": 56,
+     "descLen": 154,
+     "words": 513,
+     "faq": 8
+    },
+    {
+     "kind": "location",
+     "slug": "halle",
+     "titleLen": 41,
+     "descLen": 132,
+     "words": 507,
+     "faq": 8
+    },
+    {
+     "kind": "location",
+     "slug": "leipzig",
+     "titleLen": 35,
+     "descLen": 126,
+     "words": 489,
+     "faq": 8
+    },
+    {
+     "kind": "location",
+     "slug": "merseburg",
+     "titleLen": 37,
+     "descLen": 128,
+     "words": 499,
+     "faq": 8
+    },
+    {
+     "kind": "location",
+     "slug": "schkeuditz",
+     "titleLen": 38,
+     "descLen": 129,
+     "words": 489,
+     "faq": 8
+    },
+    {
+     "kind": "location",
+     "slug": "delitzsch",
+     "titleLen": 37,
+     "descLen": 128,
+     "words": 489,
+     "faq": 8
+    },
+    {
+     "kind": "location",
+     "slug": "saalekreis",
+     "titleLen": 38,
+     "descLen": 129,
+     "words": 494,
+     "faq": 8
+    }
+   ]
+  }
+ }
+}
