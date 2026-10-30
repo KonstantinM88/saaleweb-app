@@ -1,0 +1,118 @@
+Browser tab: 2, Title: "Проверка URL", URL: "https://search.google.com/search-console/inspect?resource_id=https%3A%2F%2Fsaaleweb.de%2F&id=CGwy0uozFH08TYp1IY80uA&alt_id=cvsfDoNBidbXOtsKMdCr3g".
+0 AXWebArea Проверка URL, URL: search.google.com/search-console/inspect?resource_id=https%3A%2F%2Fsaaleweb.de%2F&id=CGwy0uozFH08TYp1IY80uA&alt_id=cvsfDoNBidbXOtsKMdCr3g
+	1 container
+		2 container yDmH0d
+			3 container gb
+				4 container
+					5 button (collapsed) Description: Главное меню, Secondary Actions: Expand
+						6 image
+					7 link Description: Google Search Console, Value: search.google.com/search-console?resource_id=https%3A%2F%2Fsaaleweb.de%2F, ID: sdgBod
+					8 container
+						9 combo box (collapsed, settable) Description: Проверка всех URL на ресурсе https://saaleweb.de/, Secondary Actions: Expand
+					10 button Поиск
+						11 image
+					12 button Справка
+					13 button Пользовательские настройки
+					14 button Сообщения
+					15 button (collapsed) Description: Приложения Google, Secondary Actions: Expand
+[Google account redacted]
+			17 container navigational drawer
+				18 container
+					19 container Основной
+						20 pop up button (collapsed) Description: Ресурс, Secondary Actions: Expand
+							21 image значок сайта
+							22 combo box (collapsed, settable) Description: https://saaleweb.de/, Secondary Actions: Expand
+						23 container
+							24 link Description: Обзор, Value: search.google.com/search-console?resource_id=https%3A%2F%2Fsaaleweb.de%2F
+							25 link Description: Статистика, Value: search.google.com/search-console/performance/insights?resource_id=https%3A%2F%2Fsaaleweb.de%2F
+							26 container
+								27 link Description: Эффективность, Value: search.google.com/search-console/performance/search-analytics?resource_id=https%3A%2F%2Fsaaleweb.de%2F
+								28 button (collapsed) Description: Раздел "Эффективность" в отчете, Secondary Actions: Expand
+							29 button Проверка URL
+								30 text Проверка URL
+							31 container
+								32 text Индексирование
+								33 button (expanded) Description: Раздел "Индексирование" в отчете, Secondary Actions: Collapse
+								34 link Description: Страницы, Value: search.google.com/search-console/index?resource_id=https%3A%2F%2Fsaaleweb.de%2F
+								35 link Description: Видео, Value: search.google.com/search-console/video-index?resource_id=https%3A%2F%2Fsaaleweb.de%2F
+								36 link Description: Файлы Sitemap, Value: search.google.com/search-console/sitemaps?resource_id=https%3A%2F%2Fsaaleweb.de%2F
+								37 link Description: Удаления, Value: search.google.com/search-console/removals?resource_id=https%3A%2F%2Fsaaleweb.de%2F
+							38 container
+								39 text Качество
+								40 button (expanded) Description: Раздел "Качество" в отчете, Secondary Actions: Collapse
+								41 link Description: Core Web Vitals, Value: search.google.com/search-console/core-web-vitals?resource_id=https%3A%2F%2Fsaaleweb.de%2F
+								42 link Description: HTTPS, Value: search.google.com/search-console/https?resource_id=https%3A%2F%2Fsaaleweb.de%2F
+							43 container
+								44 text Улучшения
+								45 button (expanded) Description: Раздел "Улучшения" в отчете, Secondary Actions: Collapse
+								46 link Description: Строки навигации, Value: search.google.com/search-console/r/breadcrumbs?resource_id=https%3A%2F%2Fsaaleweb.de%2F
+							47 container
+								48 text Проблемы безопасности и меры, принятые вручную
+								49 button (collapsed) Description: Раздел "Проблемы безопасности и меры, принятые вручную" в отчете, Secondary Actions: Expand
+							50 link Description: Отчет о ссылках, Value: search.google.com/search-console/links?resource_id=https%3A%2F%2Fsaaleweb.de%2F
+							51 link Description: Достижения, Value: search.google.com/search-console/achievements?resource_id=https%3A%2F%2Fsaaleweb.de%2F
+							52 link Description: Настройки, Value: search.google.com/search-console/settings?resource_id=https%3A%2F%2Fsaaleweb.de%2F
+							53 button Отправить отзыв
+								54 text Отправить отзыв
+							55 button Общие сведения о Search Console
+								56 text Общие сведения о Search Console
+							57 link Description: Конфиденциальность, Value: myaccount.google.com/privacypolicy?hl=ru
+							58 link Description: Условия использования, Value: myaccount.google.com/termsofservice?hl=ru
+			59 container
+				60 text https://saaleweb.de/leistungen/website-wartung
+				61 container
+					62 container Строки навигации
+						63 heading Проверка URL, Value: 1
+							64 text Проверка URL
+					65 container
+						66 link Description: ИСПОЛЬЗОВАТЬ ДАННЫЕ ИЗ ИНДЕКСА GOOGLE, Value: search.google.com/search-console/inspect?resource_id=https%3A%2F%2Fsaaleweb.de%2F&id=cvsfDoNBidbXOtsKMdCr3g&alt_id=CGwy0uozFH08TYp1IY80uA
+						67 button (disabled) ПРОВЕРИТЬ ОПУБЛИКОВАННУЮ ВЕРСИЮ
+							68 text ПРОВЕРИТЬ ОПУБЛИКОВАННУЮ ВЕРСИЮ
+					69 text Проверено: 30 окт. 2026 г. , 04:16
+					70 button Проверить URL ещё раз
+					71 container
+						72 text URL доступен Google
+						73 container
+							74 text Если страница будет проиндексирована и выбрана в качестве канонической, она сможет появляться в результатах поиска Google с любыми улучшениями.
+							75 link Description: Подробнее, Value: support.google.com/webmasters/answer/9012289#url_can_be_on_google
+						76 button Посмотреть проверенную страницу
+							77 text ПОСМОТРЕТЬ ПРОВЕРЕННУЮ СТРАНИЦУ
+						78 text Страница изменена?
+						79 button Запросить индексированиеЗапросить снова
+							80 text ЗАПРОСИТЬ ИНДЕКСИРОВАНИЕ
+					81 container
+						82 button (expanded) Доступность страницы Эту страницу можно проиндексировать, Secondary Actions: Collapse
+							83 text Доступность страницы
+							84 text Эту страницу можно проиндексировать
+						85 container
+							86 text URL будет проиндексирован при соблюдении
+							87 link Description: определенных условий, Value: support.google.com/webmasters/answer/9012289#will_i_be_indexed
+							88 text .
+						89 text Как обнаружено
+						90 text Эти данные недоступны при такой проверке
+						91 text Сканирование
+						92 text Время
+						93 text 30 окт. 2026 г., 04:16:33
+						94 text Робот, выполнивший сканирование
+						95 text Google Inspection Tool на смартфоне
+						96 text Сканирование разрешено?
+						97 text Да
+						98 text Получение страницы
+						99 text Успешно
+						100 text Индексирование разрешено?
+						101 text Да
+						102 text Индексирование
+						103 text Каноническая страница, выбранная пользователем
+						104 text https://saaleweb.de/leistungen/website-wartung
+						105 text Каноническая страница, выбранная Google
+						106 button (collapsed) Description: null, Secondary Actions: Expand
+						107 text Эти данные станут доступны после индексирования
+						108 link Description: Ознакомиться с подробной документацией, Value: support.google.com/webmasters/answer/9012289#url_can_be_on_google
+					109 text Улучшения и удобство для пользователей
+					110 link Description: Строки навигации Обнаружен 1 элемент без ошибок, Value: search.google.com/search-console/inspect/r/breadcrumbs?resource_id=https%3A%2F%2Fsaaleweb.de%2F&id=CGwy0uozFH08TYp1IY80uA&alt_id=cvsfDoNBidbXOtsKMdCr3g
+		111 container reCAPTCHA
+			112 AXWebArea reCAPTCHA, URL: google.com/recaptcha/api2/anchor?ar=1&k=6LeKMsIjAAAAAGP5PskdMId0tLXc7dL3LiO07Avf&co=aHR0cHM6Ly9zZWFyY2guZ29vZ2xlLmNvbTo0NDM.&hl=ru&v=NhfdZHzre16wrc2m6BxEdu7J&size=invisible&anchor-ms=20000&execute-ms=30000&cb=jrj7dkg1qn7m
+				113 text защита от спама
+				114 text reCAPTCHA
+
+The focused UI element is 82 button (expanded) Доступность страницы Эту страницу можно проиндексировать, Secondary Actions: Collapse

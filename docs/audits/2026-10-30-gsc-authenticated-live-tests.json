@@ -1,0 +1,86 @@
+{
+  "tests": [
+    {
+      "url": "https://saaleweb.de/",
+      "resultUrl": "https://search.google.com/search-console/inspect?resource_id=https%3A%2F%2Fsaaleweb.de%2F&id=JFiaANBa20Q9gJYsAfd7RQ&alt_id=BMlMtUHis5WdSD8dpnQlSg",
+      "crawlTimeBerlin": "30 окт. 2026 г., 04:12:35",
+      "crawlAllowed": true,
+      "fetchSuccessful": true,
+      "indexingAllowed": true,
+      "snapshot": "docs/audits/2026-10-30-gsc-home-live.txt",
+      "screenshot": "docs/audits/2026-10-30-gsc-home-live.jpg",
+      "indexingRequest": "not_requested",
+      "userCanonical": "https://saaleweb.de/",
+      "crawler": "Google Inspection Tool smartphone"
+    },
+    {
+      "url": "https://saaleweb.de/leistungen/website-erstellen-lassen",
+      "resultUrl": "https://search.google.com/search-console/inspect?resource_id=https%3A%2F%2Fsaaleweb.de%2F&id=8asxup5lHHHMPtIEWKS2-A&alt_id=LXNiGSsHkseND1j-7fOAyg",
+      "crawlTimeBerlin": "30 окт. 2026 г., 04:14:17",
+      "crawlAllowed": true,
+      "fetchSuccessful": true,
+      "indexingAllowed": true,
+      "snapshot": "docs/audits/2026-10-30-gsc-website-live.txt",
+      "screenshot": "docs/audits/2026-10-30-gsc-website-live.jpg",
+      "indexingRequest": "accepted",
+      "requestRecordedAtUTC": "2026-10-30T03:15:57.373Z",
+      "requestSnapshot": "docs/audits/2026-10-30-gsc-website-indexing-request.txt",
+      "requestScreenshot": "docs/audits/2026-10-30-gsc-website-indexing-request.jpg",
+      "userCanonical": "https://saaleweb.de/leistungen/website-erstellen-lassen",
+      "crawler": "Google Inspection Tool smartphone"
+    },
+    {
+      "url": "https://saaleweb.de/leistungen/website-wartung",
+      "resultUrl": "https://search.google.com/search-console/inspect?resource_id=https%3A%2F%2Fsaaleweb.de%2F&id=CGwy0uozFH08TYp1IY80uA&alt_id=cvsfDoNBidbXOtsKMdCr3g",
+      "crawlTimeBerlin": "30 окт. 2026 г., 04:16:33",
+      "crawlAllowed": true,
+      "fetchSuccessful": true,
+      "indexingAllowed": true,
+      "snapshot": "docs/audits/2026-10-30-gsc-maintenance-live.txt",
+      "screenshot": "docs/audits/2026-10-30-gsc-maintenance-live.jpg",
+      "indexingRequest": "accepted",
+      "requestRecordedAtUTC": "2026-10-30T03:18:32.629Z",
+      "requestSnapshot": "docs/audits/2026-10-30-gsc-maintenance-indexing-request.txt",
+      "requestScreenshot": "docs/audits/2026-10-30-gsc-maintenance-indexing-request.jpg",
+      "userCanonical": "https://saaleweb.de/leistungen/website-wartung",
+      "crawler": "Google Inspection Tool smartphone"
+    },
+    {
+      "url": "https://saaleweb.de/en/services/hosting",
+      "resultUrl": "https://search.google.com/search-console/inspect?resource_id=https%3A%2F%2Fsaaleweb.de%2F&id=LHnBu7ve0isLwF6DeUWQdQ&alt_id=AfNsD6bBDL-9GzaM54PVMA",
+      "crawlTimeBerlin": "30 окт. 2026 г., 04:19:24",
+      "crawlAllowed": true,
+      "fetchSuccessful": true,
+      "indexingAllowed": true,
+      "snapshot": "docs/audits/2026-10-30-gsc-hosting-live.txt",
+      "screenshot": "docs/audits/2026-10-30-gsc-hosting-live.jpg",
+      "indexingRequest": "accepted",
+      "requestRecordedAtUTC": "2026-10-30T03:21:24.139Z",
+      "requestSnapshot": "docs/audits/2026-10-30-gsc-hosting-indexing-request.txt",
+      "requestScreenshot": "docs/audits/2026-10-30-gsc-hosting-indexing-request.jpg",
+      "userCanonical": "https://saaleweb.de/en/services/hosting",
+      "crawler": "Google Inspection Tool smartphone"
+    }
+  ],
+  "property": "https://saaleweb.de/",
+  "method": "Authenticated Search Console URL Inspection live test",
+  "recordedAtUTC": "2026-10-30T03:23:25.908Z",
+  "crawlStats": {
+    "lastUpdated": "2026-10-28",
+    "period": "90 days",
+    "hostStatus": "No host problems reported",
+    "requestsRounded": "2.36k",
+    "averageResponseMs": 369,
+    "responseCategories": 5,
+    "http403CategoryPresent": false,
+    "robotsUnavailable": {
+      "count": 1,
+      "exampleTimeBerlin": "2026-08-20 12:49",
+      "requestedUrl": "https://saaleweb.de/projekte"
+    },
+    "snapshot": "docs/audits/2026-10-30-gsc-crawl-stats.txt",
+    "hostSnapshot": "docs/audits/2026-10-30-gsc-host-status.txt",
+    "robotsHistorySnapshot": "docs/audits/2026-10-30-gsc-robots-unavailable-history.txt"
+  },
+  "limits": "Live tests confirm Inspection Tool access to four URLs. Historical Crawl Stats ends October 28. No origin access logs examined; accepted requests do not guarantee indexation."
+}

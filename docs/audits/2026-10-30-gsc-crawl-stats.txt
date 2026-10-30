@@ -1,0 +1,229 @@
+Browser tab: 8, Title: "Статистика сканирования", URL: "https://search.google.com/search-console/settings/crawl-stats?resource_id=https%3A%2F%2Fsaaleweb.de%2F".
+0 AXWebArea Статистика сканирования, URL: search.google.com/search-console/settings/crawl-stats?resource_id=https%3A%2F%2Fsaaleweb.de%2F
+	1 container
+		2 container yDmH0d
+			3 container gb
+				4 container
+					5 button (collapsed) Description: Главное меню, Secondary Actions: Expand
+						6 image
+					7 link Description: Google Search Console, Value: search.google.com/search-console?resource_id=https%3A%2F%2Fsaaleweb.de%2F, ID: sdgBod
+					8 container
+						9 combo box (collapsed, settable) Description: Проверка всех URL на ресурсе https://saaleweb.de/, Secondary Actions: Expand
+					10 button Поиск
+						11 image
+					12 button Справка
+					13 button Пользовательские настройки
+					14 button Сообщения
+					15 button (collapsed) Description: Приложения Google, Secondary Actions: Expand
+[Google account redacted]
+			17 container navigational drawer
+				18 container
+					19 container Основной
+						20 pop up button (collapsed) Description: Ресурс, Secondary Actions: Expand
+							21 image значок сайта
+							22 combo box (collapsed, settable) Description: https://saaleweb.de/, Secondary Actions: Expand
+						23 container
+							24 link Description: Обзор, Value: search.google.com/search-console?resource_id=https%3A%2F%2Fsaaleweb.de%2F
+							25 link Description: Статистика, Value: search.google.com/search-console/performance/insights?resource_id=https%3A%2F%2Fsaaleweb.de%2F
+							26 container
+								27 link Description: Эффективность, Value: search.google.com/search-console/performance/search-analytics?resource_id=https%3A%2F%2Fsaaleweb.de%2F
+								28 button (collapsed) Description: Раздел "Эффективность" в отчете, Secondary Actions: Expand
+							29 button Проверка URL
+								30 text Проверка URL
+							31 container
+								32 text Индексирование
+								33 button (expanded) Description: Раздел "Индексирование" в отчете, Secondary Actions: Collapse
+								34 link Description: Страницы, Value: search.google.com/search-console/index?resource_id=https%3A%2F%2Fsaaleweb.de%2F
+								35 link Description: Видео, Value: search.google.com/search-console/video-index?resource_id=https%3A%2F%2Fsaaleweb.de%2F
+								36 link Description: Файлы Sitemap, Value: search.google.com/search-console/sitemaps?resource_id=https%3A%2F%2Fsaaleweb.de%2F
+								37 link Description: Удаления, Value: search.google.com/search-console/removals?resource_id=https%3A%2F%2Fsaaleweb.de%2F
+							38 container
+								39 text Качество
+								40 button (expanded) Description: Раздел "Качество" в отчете, Secondary Actions: Collapse
+								41 link Description: Core Web Vitals, Value: search.google.com/search-console/core-web-vitals?resource_id=https%3A%2F%2Fsaaleweb.de%2F
+								42 link Description: HTTPS, Value: search.google.com/search-console/https?resource_id=https%3A%2F%2Fsaaleweb.de%2F
+							43 container
+								44 text Улучшения
+								45 button (expanded) Description: Раздел "Улучшения" в отчете, Secondary Actions: Collapse
+								46 link Description: Строки навигации, Value: search.google.com/search-console/r/breadcrumbs?resource_id=https%3A%2F%2Fsaaleweb.de%2F
+							47 container
+								48 text Проблемы безопасности и меры, принятые вручную
+								49 button (collapsed) Description: Раздел "Проблемы безопасности и меры, принятые вручную" в отчете, Secondary Actions: Expand
+							50 link Description: Отчет о ссылках, Value: search.google.com/search-console/links?resource_id=https%3A%2F%2Fsaaleweb.de%2F
+							51 link Description: Достижения, Value: search.google.com/search-console/achievements?resource_id=https%3A%2F%2Fsaaleweb.de%2F
+							52 link Description: Настройки, Value: search.google.com/search-console/settings?resource_id=https%3A%2F%2Fsaaleweb.de%2F
+							53 button Отправить отзыв
+								54 text Отправить отзыв
+							55 button Общие сведения о Search Console
+								56 text Общие сведения о Search Console
+							57 link Description: Конфиденциальность, Value: myaccount.google.com/privacypolicy?hl=ru
+							58 link Description: Условия использования, Value: myaccount.google.com/termsofservice?hl=ru
+			59 container
+				60 container Строки навигации
+					61 link Description: Настройки, Value: search.google.com/search-console/settings?resource_id=https%3A%2F%2Fsaaleweb.de%2F
+					62 heading Статистика сканирования, Value: 1
+						91 text Статистика сканирования
+				63 pop up button (collapsed) Description: ЭКСПОРТИРОВАТЬ, Secondary Actions: Expand
+				92 container
+					93 text Обновлено  28.10.2026
+				64 container
+					65 container
+						66 button Всего запросов на сканирование 2,36 тыс.
+							94 text Всего запросов на сканирование
+							95 text 2,36 тыс.
+						67 container
+							68 button (collapsed) Description: null, Secondary Actions: Expand
+						69 button Общий размер скачивания (в байтах) 189 млн
+							96 text Общий размер скачивания (в байтах)
+							97 text 189 млн
+						70 container
+							71 button (collapsed) Description: null, Secondary Actions: Expand
+						72 button Среднее время ответа (мс) 369
+							98 text Среднее время ответа (мс)
+							99 text 369
+						73 container
+							74 button (collapsed) Description: null, Secondary Actions: Expand
+					75 link search.google.com/search-console/settings/crawl-stats/host-status?resource_id=https%3A%2F%2Fsaaleweb.de%2F
+					76 link search.google.com/search-console/settings/crawl-stats/host-status?resource_id=https%3A%2F%2Fsaaleweb.de%2F
+					77 link search.google.com/search-console/settings/crawl-stats/host-status?resource_id=https%3A%2F%2Fsaaleweb.de%2F
+					78 link search.google.com/search-console/settings/crawl-stats/host-status?resource_id=https%3A%2F%2Fsaaleweb.de%2F
+					79 link Description: Статус хоста, Value: search.google.com/search-console/settings/crawl-stats/host-status?resource_id=https%3A%2F%2Fsaaleweb.de%2F
+					80 link search.google.com/search-console/settings/crawl-stats/host-status?resource_id=https%3A%2F%2Fsaaleweb.de%2F
+					81 link search.google.com/search-console/settings/crawl-stats/host-status?resource_id=https%3A%2F%2Fsaaleweb.de%2F
+					82 button (collapsed) Description: null, Secondary Actions: Expand
+					100 text За последние 90 дней проблем с хостом не возникало Распределение запросов на сканирование
+					101 text По ответу
+					102 table
+						103 row
+							104 cell
+								105 text Файл получен (200)
+							106 cell
+								107 text 80 %
+						108 row
+							109 cell
+								110 text Не найдено (404)
+							111 cell
+								112 text 15 %
+						113 row
+							114 cell
+								115 text Перемещено навсегда (код статуса: 301)
+							116 cell
+								117 text 4 %
+						118 row
+							119 cell
+								120 text Временно перемещено (код статуса: 302)
+							121 cell
+								122 text < 1 %
+						123 row
+							124 cell
+								125 text Файл robots.txt недоступен
+							126 cell
+								127 text < 1 %
+					128 text Строк на странице:
+					83 list Количество строк на страницу
+						84 (selected) 5
+						129 10
+						130 25
+						131 50
+						132 100
+						133 250
+						134 500
+					135 text 1–5 из 5
+					136 text По цели
+					137 table
+						138 row
+							139 cell
+								140 text Обновление
+							141 cell
+								142 text 91 %
+						143 row
+							144 cell
+								145 text Как обнаружено
+							146 cell
+								147 text 9 %
+					148 text Строк на странице:
+					85 list Количество строк на страницу
+						86 (selected) 5
+						149 10
+						150 25
+						151 50
+						152 100
+						153 250
+						154 500
+					155 text 1–2 из 2
+					156 text По типу файла
+					157 table
+						158 row
+							159 cell
+								160 text JavaScript
+							161 cell
+								162 text 37 %
+						163 row
+							164 cell
+								165 text HTML
+							166 cell
+								167 text 30 %
+						168 row
+							169 cell
+								170 text Изображение
+							171 cell
+								172 text 12 %
+						173 row
+							174 cell
+								175 text Другой тип файла
+							176 cell
+								177 text 5 %
+						178 row
+							179 cell
+								180 text Видео
+							181 cell
+								182 text < 1 %
+					183 text Строк на странице:
+					87 list Количество строк на страницу
+						88 (selected) 5
+						184 10
+						185 25
+						186 50
+						187 100
+						188 250
+						189 500
+					190 text 1–5 из 7
+					191 text По типу робота Googlebot
+					192 table
+						193 row
+							194 cell
+								195 text Смартфоны
+							196 cell
+								197 text 47 %
+						198 row
+							199 cell
+								200 text Загрузка объектов страницы
+							201 cell
+								202 text 41 %
+						203 row
+							204 cell
+								205 text Изображение
+							206 cell
+								207 text 6 %
+						208 row
+							209 cell
+								210 text ПК
+							211 cell
+								212 text 4 %
+						213 row
+							214 cell
+								215 text Агент другого типа
+							216 cell
+								217 text < 1 %
+					218 text Строк на странице:
+					89 list Количество строк на страницу
+						90 (selected) 5
+						219 10
+						220 25
+						221 50
+						222 100
+						223 250
+						224 500
+					225 text 1–5 из 7
+
+The focused UI element is 0 AXWebArea Статистика сканирования, URL: search.google.com/search-console/settings/crawl-stats?resource_id=https%3A%2F%2Fsaaleweb.de%2F

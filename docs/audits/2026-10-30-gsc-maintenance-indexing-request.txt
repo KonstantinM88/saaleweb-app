@@ -1,0 +1,18 @@
+Browser tab: 2, Title: "Проверка URL", URL: "https://search.google.com/search-console/inspect?resource_id=https%3A%2F%2Fsaaleweb.de%2F&id=CGwy0uozFH08TYp1IY80uA&alt_id=cvsfDoNBidbXOtsKMdCr3g".
+0 AXWebArea Проверка URL, URL: search.google.com/search-console/inspect?resource_id=https%3A%2F%2Fsaaleweb.de%2F&id=CGwy0uozFH08TYp1IY80uA&alt_id=cvsfDoNBidbXOtsKMdCr3g
+	1 container
+		2 container
+			3 container Отправлен запрос на индексирование
+				4 container
+					5 heading Отправлен запрос на индексирование, Value: 2
+						6 text Отправлен запрос на индексирование
+					7 text URL добавлен в приоритетную очередь сканирования. Не пытайтесь добавить страницу в индекс несколько раз. Это не повлияет на ее позицию в очереди на сканирование или приоритет.
+					8 link Description: Подробнее..., Value: support.google.com/webmasters/answer/6065812
+				9 button Закрыть
+					10 text Закрыть
+		11 container reCAPTCHA
+			12 AXWebArea reCAPTCHA, URL: google.com/recaptcha/api2/anchor?ar=1&k=6LeKMsIjAAAAAGP5PskdMId0tLXc7dL3LiO07Avf&co=aHR0cHM6Ly9zZWFyY2guZ29vZ2xlLmNvbTo0NDM.&hl=ru&v=NhfdZHzre16wrc2m6BxEdu7J&size=invisible&anchor-ms=20000&execute-ms=30000&cb=jrj7dkg1qn7m
+				13 text защита от спама
+				14 text reCAPTCHA
+
+The focused UI element is 9 button Закрыть

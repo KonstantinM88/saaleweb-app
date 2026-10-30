@@ -1,0 +1,88 @@
+Browser tab: 8, Title: "Статистика сканирования", URL: "https://search.google.com/search-console/settings/crawl-stats/host-status?resource_id=https%3A%2F%2Fsaaleweb.de%2F".
+0 AXWebArea Статистика сканирования, URL: search.google.com/search-console/settings/crawl-stats/host-status?resource_id=https%3A%2F%2Fsaaleweb.de%2F
+	1 container
+		2 container yDmH0d
+			3 container gb
+				4 container
+					5 button (collapsed) Description: Главное меню, Secondary Actions: Expand
+						6 image
+					7 link Description: Google Search Console, Value: search.google.com/search-console?resource_id=https%3A%2F%2Fsaaleweb.de%2F, ID: sdgBod
+					8 container
+						9 combo box (collapsed, settable) Description: Проверка всех URL на ресурсе https://saaleweb.de/, Secondary Actions: Expand
+					10 button Поиск
+						11 image
+					12 button Справка
+					13 button Пользовательские настройки
+					14 button Сообщения
+					15 button (collapsed) Description: Приложения Google, Secondary Actions: Expand
+[Google account redacted]
+			17 container navigational drawer
+				18 container
+					19 container Основной
+						20 pop up button (collapsed) Description: Ресурс, Secondary Actions: Expand
+							21 image значок сайта
+							22 combo box (collapsed, settable) Description: https://saaleweb.de/, Secondary Actions: Expand
+						23 container
+							24 link Description: Обзор, Value: search.google.com/search-console?resource_id=https%3A%2F%2Fsaaleweb.de%2F
+							25 link Description: Статистика, Value: search.google.com/search-console/performance/insights?resource_id=https%3A%2F%2Fsaaleweb.de%2F
+							26 container
+								27 link Description: Эффективность, Value: search.google.com/search-console/performance/search-analytics?resource_id=https%3A%2F%2Fsaaleweb.de%2F
+								28 button (collapsed) Description: Раздел "Эффективность" в отчете, Secondary Actions: Expand
+							29 button Проверка URL
+								30 text Проверка URL
+							31 container
+								32 text Индексирование
+								33 button (expanded) Description: Раздел "Индексирование" в отчете, Secondary Actions: Collapse
+								34 link Description: Страницы, Value: search.google.com/search-console/index?resource_id=https%3A%2F%2Fsaaleweb.de%2F
+								35 link Description: Видео, Value: search.google.com/search-console/video-index?resource_id=https%3A%2F%2Fsaaleweb.de%2F
+								36 link Description: Файлы Sitemap, Value: search.google.com/search-console/sitemaps?resource_id=https%3A%2F%2Fsaaleweb.de%2F
+								37 link Description: Удаления, Value: search.google.com/search-console/removals?resource_id=https%3A%2F%2Fsaaleweb.de%2F
+							38 container
+								39 text Качество
+								40 button (expanded) Description: Раздел "Качество" в отчете, Secondary Actions: Collapse
+								41 link Description: Core Web Vitals, Value: search.google.com/search-console/core-web-vitals?resource_id=https%3A%2F%2Fsaaleweb.de%2F
+								42 link Description: HTTPS, Value: search.google.com/search-console/https?resource_id=https%3A%2F%2Fsaaleweb.de%2F
+							43 container
+								44 text Улучшения
+								45 button (expanded) Description: Раздел "Улучшения" в отчете, Secondary Actions: Collapse
+								46 link Description: Строки навигации, Value: search.google.com/search-console/r/breadcrumbs?resource_id=https%3A%2F%2Fsaaleweb.de%2F
+							47 container
+								48 text Проблемы безопасности и меры, принятые вручную
+								49 button (collapsed) Description: Раздел "Проблемы безопасности и меры, принятые вручную" в отчете, Secondary Actions: Expand
+							50 link Description: Отчет о ссылках, Value: search.google.com/search-console/links?resource_id=https%3A%2F%2Fsaaleweb.de%2F
+							51 link Description: Достижения, Value: search.google.com/search-console/achievements?resource_id=https%3A%2F%2Fsaaleweb.de%2F
+							52 link Description: Настройки, Value: search.google.com/search-console/settings?resource_id=https%3A%2F%2Fsaaleweb.de%2F
+							53 button Отправить отзыв
+								54 text Отправить отзыв
+							55 button Общие сведения о Search Console
+								56 text Общие сведения о Search Console
+							57 link Description: Конфиденциальность, Value: myaccount.google.com/privacypolicy?hl=ru
+							58 link Description: Условия использования, Value: myaccount.google.com/termsofservice?hl=ru
+			59 container
+				60 container Строки навигации
+					61 link Description: Настройки, Value: search.google.com/search-console/settings?resource_id=https%3A%2F%2Fsaaleweb.de%2F
+					62 link Description: Статистика сканирования, Value: search.google.com/search-console/settings/crawl-stats?resource_id=https%3A%2F%2Fsaaleweb.de%2F
+					63 heading Статус хоста, Value: 1
+						64 text Статус хоста
+				65 pop up button (collapsed) Description: ЭКСПОРТИРОВАТЬ, Secondary Actions: Expand
+				66 container
+					67 text Обновлено  28.10.2026
+				68 container
+					69 container
+						70 text За последние 90 дней проблем с хостом не возникало У роботов Google не возникало затруднений при сканировании вашего сайта.
+						71 link Description: Подробнее…, Value: support.google.com/webmasters/answer/9679690?hl=ru#availability
+					72 text Сведения
+					73 button (collapsed) Доступ к файлу robots.txt null Допустимая частота сбоев., Secondary Actions: Expand
+						74 text Доступ к файлу robots.txt
+						75 button (collapsed) Description: null, Secondary Actions: Expand
+						76 text Допустимая частота сбоев.
+					77 button (collapsed) DNS-преобразование null Допустимая частота сбоев., Secondary Actions: Expand
+						78 text DNS-преобразование
+						79 button (collapsed) Description: null, Secondary Actions: Expand
+						80 text Допустимая частота сбоев.
+					81 button (collapsed) Подключение к серверу null Допустимая частота сбоев., Secondary Actions: Expand
+						82 text Подключение к серверу
+						83 button (collapsed) Description: null, Secondary Actions: Expand
+						84 text Допустимая частота сбоев.
+
+The focused UI element is 0 AXWebArea Статистика сканирования, URL: search.google.com/search-console/settings/crawl-stats/host-status?resource_id=https%3A%2F%2Fsaaleweb.de%2F
