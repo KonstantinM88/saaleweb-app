@@ -1,0 +1,60 @@
+Browser tab: 3, Title: "Проверка расширенных результатов – Google Search Console", URL: "https://search.google.com/test/rich-results/result?id=T1Xbo0_FtmmJYrVKIzBaBA".
+0 AXWebArea Проверка расширенных результатов – Google Search Console, URL: search.google.com/test/rich-results/result?id=T1Xbo0_FtmmJYrVKIzBaBA
+	1 container
+		2 container yDmH0d
+			3 container gb
+				4 container
+					36 button Назад
+						37 image
+					5 heading Проверка расширенных результатов, Value: 1
+						38 text Проверка расширенных результатов
+					7 pop up button (collapsed) Secondary Actions: Expand
+					8 button (collapsed) Description: Приложения Google, Secondary Actions: Expand
+					9 link Description: Войти, Value: accounts.google.com/ServiceLogin?service=sitemaps&passive=1209600&continue=https%3A%2F%2Fsearch.google.com%2Ftest%2Frich-results%2Fresult%3Fid%3DT1Xbo0_FtmmJYrVKIzBaBA&followup=https%3A%2F%2Fsearch.google.com%2Ftest%2Frich-results%2Fresult%3Fid%3DT1Xbo0_FtmmJYrVKIzBaBA&ec=GAZA1AI
+			39 container
+				40 container
+					41 text field (settable) Description: Введите URL, Value: https://saaleweb.de/
+					42 button Проверить URL ещё раз
+					43 pop up button (collapsed) Description: Выбор агента пользователя, Secondary Actions: Expand
+				44 container
+					45 container Строки навигации
+						46 heading Результаты проверки, Value: 1
+							47 text Результаты проверки
+					48 button ПОДЕЛИТЬСЯ
+						49 text ПОДЕЛИТЬСЯ
+					50 container
+						51 container
+							52 text Обнаружено 4 элемента без ошибок Элементы без ошибок могут показываться в виде расширенных результатов поиска Google.
+							53 link Description: Подробнее, Value: support.google.com/webmasters/answer/9012289#enhancements
+						54 button Посмотреть проверенную страницу
+							55 text ПОСМОТРЕТЬ ПРОВЕРЕННУЮ СТРАНИЦУ
+						56 button Просмотреть, как будет выглядеть страница в результатах Google Поиска
+							57 text ПОСМОТРЕТЬ ПРИМЕРЫ РЕЗУЛЬТАТОВ
+						58 text Сведения
+						59 container
+							60 text Сканирование
+							61 button (expanded) Просканировано: 30 окт. 2026 г., 03:57:50, Secondary Actions: Collapse
+								62 text Просканировано: 30 окт. 2026 г., 03:57:50
+							71 text Робот, выполнивший сканирование
+							72 text Google Inspection Tool на смартфоне
+							73 text Сканирование разрешено?
+							74 text Да
+							75 text Получение страницы
+							76 text Успешно
+							77 text Индексирование разрешено?
+							78 text Да
+							79 button Посмотреть HTTP-ответ
+								80 text ПОСМОТРЕТЬ HTTP-ОТВЕТ
+						63 text Обнаруженные структурированные данные
+						64 link Description: Местные компании Обнаружено 2 элемента без ошибок, Value: search.google.com/test/rich-results/result/r%2Flocal-business?id=T1Xbo0_FtmmJYrVKIzBaBA
+						65 link Description: Организация Обнаружено 2 элемента без ошибок, Value: search.google.com/test/rich-results/result/r%2Forganization-info?id=T1Xbo0_FtmmJYrVKIzBaBA
+						66 text Дополнительная информация
+						67 link Description: Проверьте, какие структурированные данные есть на всем сайте. ПЕРЕЙТИ В SEARCH CONSOLE, Value: search.google.com/search-console/welcome
+						68 link Description: Конфиденциальность, Value: myaccount.google.com/privacypolicy?hl=ru
+						69 link Description: Условия использования, Value: myaccount.google.com/termsofservice?hl=ru
+		32 container reCAPTCHA
+			33 AXWebArea reCAPTCHA, URL: google.com/recaptcha/api2/anchor?ar=1&k=6LeKMsIjAAAAAGP5PskdMId0tLXc7dL3LiO07Avf&co=aHR0cHM6Ly9zZWFyY2guZ29vZ2xlLmNvbTo0NDM.&hl=ru&v=bSuJ2xBC8cHT21-c68JXN31m&size=invisible&anchor-ms=20000&execute-ms=30000&ovv=CADq00gF&cb=fstvbrunb6vy
+				34 text защита от спама
+				35 text reCAPTCHA
+
+The focused UI element is 61 button (expanded) Просканировано: 30 окт. 2026 г., 03:57:50, Secondary Actions: Collapse

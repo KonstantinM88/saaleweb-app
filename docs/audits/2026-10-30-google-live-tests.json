@@ -1,0 +1,66 @@
+{
+  "recordedAt": "2026-10-30T03:03:51.339Z",
+  "method": "Google public Rich Results Test, URL mode (not pasted HTML)",
+  "tests": [
+    {
+      "url": "https://saaleweb.de/",
+      "resultUrl": "https://search.google.com/test/rich-results/result?id=T1Xbo0_FtmmJYrVKIzBaBA",
+      "checkedAtBerlin": "2026-10-30T03:57:50+01:00",
+      "crawler": "Google Inspection Tool smartphone",
+      "crawlAllowed": true,
+      "fetchSuccessful": true,
+      "indexingAllowed": true,
+      "snapshot": "docs/audits/2026-10-30-google-home-live.txt",
+      "screenshot": "docs/audits/2026-10-30-google-home-live.jpg"
+    },
+    {
+      "url": "https://saaleweb.de/leistungen/website-erstellen-lassen",
+      "resultUrl": "https://search.google.com/test/rich-results/result?id=Snx2-1EqB4m7M3WMmkHEoQ",
+      "checkedAtBerlin": "2026-10-30T03:59:21+01:00",
+      "crawler": "Google Inspection Tool smartphone",
+      "crawlAllowed": true,
+      "fetchSuccessful": true,
+      "indexingAllowed": true,
+      "snapshot": "docs/audits/2026-10-30-google-website-live.txt",
+      "screenshot": "docs/audits/2026-10-30-google-website-live.jpg"
+    },
+    {
+      "url": "https://saaleweb.de/leistungen/website-wartung",
+      "resultUrl": "https://search.google.com/test/rich-results/result?id=O6ueVa-i5dYx5iqpnkO7Hg",
+      "checkedAtBerlin": "2026-10-30T03:59:29+01:00",
+      "crawler": "Google Inspection Tool smartphone",
+      "crawlAllowed": true,
+      "fetchSuccessful": true,
+      "indexingAllowed": true,
+      "snapshot": "docs/audits/2026-10-30-google-maintenance-live.txt",
+      "screenshot": "docs/audits/2026-10-30-google-maintenance-live.jpg"
+    },
+    {
+      "url": "https://saaleweb.de/en/services/hosting",
+      "resultUrl": "https://search.google.com/test/rich-results/result?id=t23dKv7kf0xShscDqcRmww",
+      "checkedAtBerlin": "2026-10-30T03:59:23+01:00",
+      "crawler": "Google Inspection Tool smartphone",
+      "crawlAllowed": true,
+      "fetchSuccessful": true,
+      "indexingAllowed": true,
+      "snapshot": "docs/audits/2026-10-30-google-hosting-live.txt",
+      "screenshot": "docs/audits/2026-10-30-google-hosting-live.jpg"
+    },
+    {
+      "url": "https://saaleweb.de/leistungen/website-entwicklung",
+      "resultUrl": "https://search.google.com/test/rich-results/result?id=WB1p87OHeQAT7BhmZs83_Q",
+      "checkedAtBerlin": "2026-10-30T04:00:38+01:00",
+      "crawler": "Google Inspection Tool smartphone",
+      "crawlAllowed": true,
+      "fetchSuccessful": true,
+      "indexingAllowed": true,
+      "snapshot": "docs/audits/2026-10-30-google-redirect-live.txt",
+      "screenshot": "docs/audits/2026-10-30-google-redirect-live.jpg",
+      "finalHttpStatus": 200,
+      "finalInternalPath": "/de/leistungen/website-erstellen-lassen"
+    }
+  ],
+  "gscBrowserLiveTest": "awaiting user login in handed-off GSC tab",
+  "automatedGooglebot": "not directly verified by this test",
+  "limits": "Successful Inspection Tool fetching does not prove indexing or that every automated Googlebot request succeeds. No verified-origin access logs examined. Prior workstation claimed-Googlebot 403 responses retained."
+}

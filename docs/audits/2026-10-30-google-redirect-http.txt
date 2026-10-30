@@ -1,0 +1,115 @@
+- banner:
+  - button "Назад":
+  - heading "Проверка расширенных результатов" [level=1]
+  - button:
+    - generic: 
+  - button "Приложения Google":
+  - link "Войти":
+    - /url: https://accounts.google.com/ServiceLogin?service=sitemaps&passive=1209600&continue=https%3A%2F%2Fsearch.google.com%2Ftest%2Frich-results%2Fresult%3Fid%3DWB1p87OHeQAT7BhmZs83_Q&followup=https%3A%2F%2Fsearch.google.com%2Ftest%2Frich-results%2Fresult%3Fid%3DWB1p87OHeQAT7BhmZs83_Q&ec=GAZA1AI
+- generic: 
+- textbox "Введите URL": https://saaleweb.de/leistungen/website-entwicklung
+- button "Проверить URL ещё раз":
+  - generic: 
+- button "Выбор агента пользователя":
+  - generic: 
+- navigation "Строки навигации":
+  - heading "Результаты проверки" [level=1]
+- button "Поделиться":
+  - generic: 
+  - generic: Поделиться
+- generic: check_circle
+- generic: Обнаружено 3 элемента без ошибок
+- text: Элементы без ошибок могут показываться в виде расширенных результатов поиска Google.
+- link "Подробнее":
+  - /url: https://support.google.com/webmasters/answer/9012289#enhancements
+- button "Посмотреть проверенную страницу":
+  - generic: Посмотреть проверенную страницу
+- button "Просмотреть, как будет выглядеть страница в результатах Google Поиска":
+  - generic: Посмотреть примеры результатов
+- generic: Сведения
+- generic: Сканирование
+- 'button "Просканировано: 30 окт. 2026 г., 04:00:38" [expanded]':
+  - generic: check_circle
+  - generic: "Просканировано: 30 окт. 2026 г., 04:00:38"
+  - generic: 
+- generic: Робот, выполнивший сканирование
+- generic: Google Inspection Tool на смартфоне
+- generic: Сканирование разрешено?
+- generic: Да
+- generic: Получение страницы
+- generic: Успешно
+- generic: Индексирование разрешено?
+- generic: Да
+- button "Посмотреть HTTP-ответ":
+  - generic: Посмотреть HTTP-ответ
+- generic: Обнаруженные структурированные данные
+- link "Строки навигации Обнаружен 1 элемент без ошибок":
+  - /url: ./test/rich-results/result/r%2Fbreadcrumbs?id=WB1p87OHeQAT7BhmZs83_Q
+  - generic: check_circle
+  - generic: Строки навигации
+  - generic: Обнаружен 1 элемент без ошибок
+  - generic: 
+- link "Местные компании Обнаружен 1 элемент без ошибок":
+  - /url: ./test/rich-results/result/r%2Flocal-business?id=WB1p87OHeQAT7BhmZs83_Q
+  - generic: check_circle
+  - generic: Местные компании
+  - generic: Обнаружен 1 элемент без ошибок
+  - generic: 
+- link "Организация Обнаружен 1 элемент без ошибок":
+  - /url: ./test/rich-results/result/r%2Forganization-info?id=WB1p87OHeQAT7BhmZs83_Q
+  - generic: check_circle
+  - generic: Организация
+  - generic: Обнаружен 1 элемент без ошибок
+  - generic: 
+- generic: Дополнительная информация
+- link "Проверьте, какие структурированные данные есть на всем сайте. Перейти в Search Console":
+  - /url: ./search-console/welcome
+  - generic: 
+  - text: Проверьте, какие структурированные данные есть на всем сайте.
+  - generic: Перейти в Search Console
+- link "Конфиденциальность":
+  - /url: https://myaccount.google.com/privacypolicy?hl=ru
+- link "Условия использования":
+  - /url: https://myaccount.google.com/termsofservice?hl=ru
+- button "Закрыть" [active]:
+  - generic: 
+- generic: Проверенная страница
+- tablist:
+  - tab "HTML":
+    - generic: HTML
+  - tab "СКРИНШОТ":
+    - generic: СКРИНШОТ
+  - tab "ПОДРОБНЕЕ" [selected]:
+    - generic: ПОДРОБНЕЕ
+- tabpanel:
+  - button "Назад в раздел \"Дополнительная информация\"":
+    - generic: arrow_back
+  - generic: Ответ HTTP
+  - generic: 200 OK
+  - text: HTTP/1.1 200 OK
+  - text: "Date: Fri, 30 Oct 2026 03:00:38 GMT"
+  - text: "Content-Type: text/html; charset=utf-8"
+  - text: "Transfer-Encoding: chunked"
+  - text: "Connection: keep-alive"
+  - text: "Vary: Accept-Encoding"
+  - text: "Set-Cookie: NEXT_LOCALE=de; path=/; Secure; SameSite=lax"
+  - text: "x-middleware-rewrite: /de/leistungen/website-erstellen-lassen"
+  - text: "x-nextjs-cache: HIT"
+  - text: "x-nextjs-prerender: 1"
+  - text: "x-nextjs-stale-time: 300"
+  - text: "x-powered-by: Next.js"
+  - text: "Cache-Control: s-maxage=86400, stale-while-revalidate=31449600"
+  - text: "etag: \"enjeo381bve1kn\""
+  - text: "Content-Encoding: gzip"
+  - text: "platform: hostinger"
+  - text: "panel: hpanel"
+  - text: "content-security-policy: upgrade-insecure-requests"
+  - text: "Vary: rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch"
+  - text: "Server: hcdn"
+  - text: "alt-svc: h3=\":443\"; ma=86400"
+  - text: "x-hcdn-request-id: 2006c8fa2c8a17c606c55d6a644d3298-bos-edge11"
+  - text: "x-hcdn-cache-status: DYNAMIC"
+  - text: "x-hcdn-upstream-rt: 0.100"
+- iframe [name="a-eyl2f495xwit"]:
+  - text: защита от спама
+  - strong: reCAPTCHA
