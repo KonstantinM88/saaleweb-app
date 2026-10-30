@@ -1,0 +1,251 @@
+{
+  "checkedAt": "2026-10-30T02:35:54.757Z",
+  "codeCommit": "4a1e7d8ffe14b28a55fa42d541876c5793d1d452",
+  "readiness": [
+    {
+      "attempt": 1,
+      "at": "2026-10-30T02:35:55.325Z",
+      "website": {
+        "status": 200,
+        "location": null,
+        "nextCache": "HIT",
+        "cdnCache": "DYNAMIC"
+      },
+      "maintenance": {
+        "status": 200,
+        "location": null,
+        "nextCache": "HIT",
+        "cdnCache": "DYNAMIC"
+      },
+      "sitemapStatus": 200,
+      "sitemapUrls": 231,
+      "scopeStatus": 200,
+      "newScope": false
+    },
+    {
+      "attempt": 2,
+      "at": "2026-10-30T02:36:20.837Z",
+      "website": {
+        "status": 200,
+        "location": null,
+        "nextCache": "STALE",
+        "cdnCache": "HIT"
+      },
+      "maintenance": {
+        "status": 200,
+        "location": null,
+        "nextCache": "HIT",
+        "cdnCache": "DYNAMIC"
+      },
+      "sitemapStatus": 200,
+      "sitemapUrls": 231,
+      "scopeStatus": 200,
+      "newScope": false
+    },
+    {
+      "attempt": 3,
+      "at": "2026-10-30T02:36:46.056Z",
+      "website": {
+        "status": 200,
+        "location": null,
+        "nextCache": "HIT",
+        "cdnCache": "DYNAMIC"
+      },
+      "maintenance": {
+        "status": 200,
+        "location": null,
+        "nextCache": "HIT",
+        "cdnCache": "DYNAMIC"
+      },
+      "sitemapStatus": 200,
+      "sitemapUrls": 231,
+      "scopeStatus": 200,
+      "newScope": false
+    },
+    {
+      "attempt": 4,
+      "at": "2026-10-30T02:37:11.309Z",
+      "website": {
+        "status": 200,
+        "location": null,
+        "nextCache": "HIT",
+        "cdnCache": "DYNAMIC"
+      },
+      "maintenance": {
+        "status": 200,
+        "location": null,
+        "nextCache": "HIT",
+        "cdnCache": "DYNAMIC"
+      },
+      "sitemapStatus": 200,
+      "sitemapUrls": 231,
+      "scopeStatus": 200,
+      "newScope": false
+    },
+    {
+      "attempt": 5,
+      "at": "2026-10-30T02:37:36.559Z",
+      "website": {
+        "status": 200,
+        "location": null,
+        "nextCache": "HIT",
+        "cdnCache": "DYNAMIC"
+      },
+      "maintenance": {
+        "status": 200,
+        "location": null,
+        "nextCache": "HIT",
+        "cdnCache": "DYNAMIC"
+      },
+      "sitemapStatus": 200,
+      "sitemapUrls": 231,
+      "scopeStatus": 200,
+      "newScope": false
+    },
+    {
+      "attempt": 6,
+      "at": "2026-10-30T02:38:01.724Z",
+      "website": {
+        "status": 200,
+        "location": null,
+        "nextCache": "HIT",
+        "cdnCache": "DYNAMIC"
+      },
+      "maintenance": {
+        "status": 200,
+        "location": null,
+        "nextCache": "HIT",
+        "cdnCache": "DYNAMIC"
+      },
+      "sitemapStatus": 200,
+      "sitemapUrls": 231,
+      "scopeStatus": 200,
+      "newScope": false
+    },
+    {
+      "attempt": 7,
+      "at": "2026-10-30T02:38:26.924Z",
+      "website": {
+        "status": 200,
+        "location": null,
+        "nextCache": "HIT",
+        "cdnCache": "DYNAMIC"
+      },
+      "maintenance": {
+        "status": 200,
+        "location": null,
+        "nextCache": "HIT",
+        "cdnCache": "HIT"
+      },
+      "sitemapStatus": 200,
+      "sitemapUrls": 231,
+      "scopeStatus": 200,
+      "newScope": false
+    },
+    {
+      "attempt": 8,
+      "at": "2026-10-30T02:38:52.138Z",
+      "website": {
+        "status": 200,
+        "location": null,
+        "nextCache": "STALE",
+        "cdnCache": "HIT"
+      },
+      "maintenance": {
+        "status": 200,
+        "location": null,
+        "nextCache": "HIT",
+        "cdnCache": "DYNAMIC"
+      },
+      "sitemapStatus": 200,
+      "sitemapUrls": 231,
+      "scopeStatus": 200,
+      "newScope": false
+    },
+    {
+      "attempt": 9,
+      "at": "2026-10-30T02:39:17.320Z",
+      "website": {
+        "status": 200,
+        "location": null,
+        "nextCache": "HIT",
+        "cdnCache": "DYNAMIC"
+      },
+      "maintenance": {
+        "status": 200,
+        "location": null,
+        "nextCache": "HIT",
+        "cdnCache": "DYNAMIC"
+      },
+      "sitemapStatus": 200,
+      "sitemapUrls": 231,
+      "scopeStatus": 200,
+      "newScope": false
+    },
+    {
+      "attempt": 10,
+      "at": "2026-10-30T02:39:42.635Z",
+      "website": {
+        "status": 200,
+        "location": null,
+        "nextCache": "HIT",
+        "cdnCache": "DYNAMIC"
+      },
+      "maintenance": {
+        "status": 200,
+        "location": null,
+        "nextCache": "HIT",
+        "cdnCache": "HIT"
+      },
+      "sitemapStatus": 200,
+      "sitemapUrls": 231,
+      "scopeStatus": 200,
+      "newScope": false
+    },
+    {
+      "attempt": 11,
+      "at": "2026-10-30T02:40:07.847Z",
+      "website": {
+        "status": 200,
+        "location": null,
+        "nextCache": "HIT",
+        "cdnCache": "DYNAMIC"
+      },
+      "maintenance": {
+        "status": 200,
+        "location": null,
+        "nextCache": "HIT",
+        "cdnCache": "DYNAMIC"
+      },
+      "sitemapStatus": 200,
+      "sitemapUrls": 231,
+      "scopeStatus": 200,
+      "newScope": false
+    },
+    {
+      "attempt": 12,
+      "at": "2026-10-30T02:40:33.120Z",
+      "website": {
+        "status": 200,
+        "location": null,
+        "nextCache": "STALE",
+        "cdnCache": "DYNAMIC"
+      },
+      "maintenance": {
+        "status": 200,
+        "location": null,
+        "nextCache": "HIT",
+        "cdnCache": "DYNAMIC"
+      },
+      "sitemapStatus": 200,
+      "sitemapUrls": 231,
+      "scopeStatus": 200,
+      "newScope": false
+    }
+  ],
+  "pages": [],
+  "redirects": [],
+  "controls": [],
+  "errors": [],
+  "state": "awaiting_deployment"
+}
