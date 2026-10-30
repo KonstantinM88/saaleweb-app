@@ -1,0 +1,25 @@
+{
+  "checkedAt": "2026-10-30T03:55:02.412Z",
+  "timeZone": "Europe/Berlin",
+  "today": {
+    "date": "2026-10-30",
+    "views": 0,
+    "visitors": 0
+  },
+  "yesterday": {
+    "date": "2026-10-29",
+    "views": 8,
+    "visitors": 3
+  },
+  "week": {
+    "views": 71,
+    "visitors": 22
+  },
+  "previousWeek": {
+    "views": 54,
+    "visitors": 22
+  },
+  "pngBytes": 111766,
+  "calendarRangeChecks": 2,
+  "externalMessagesSent": 0
+}

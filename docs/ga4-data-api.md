@@ -82,8 +82,14 @@ in PostgreSQL.
 
 ## 5. Telegram reports and periods
 
-- `/report`: first-party rolling 24 hours plus a compact GA4 block for
-  **yesterday**, compared with `2daysAgo`. The GA4 block also shows yesterday's
+- `/report`: first-party rolling 24 hours, a calendar traffic chart, and a
+  compact GA4 block. GA4 checks the last **seven completed calendar days** and
+  selects the most recent day with records, normally yesterday. If yesterday
+  has no records yet, the block names the actual selected date and explains
+  the fallback; it never presents older data as yesterday. Comparison uses the
+  calendar day immediately before the selected date. An empty or failed
+  comparison response is marked unavailable, not converted into a zero
+  baseline. The GA4 block also shows the selected day's
   `form_submit` events, contact-channel clicks (`phone_click`, `email_click`,
   `telegram_click`, `whatsapp_click`), and `ai_assistant_open` events. These are
   separate GA4 event counts, not additions to the first-party lead total.
@@ -93,6 +99,24 @@ in PostgreSQL.
   device, country, and business-event data (including `scroll_depth`) for the
   last seven completed days.
 
+The `/report`, `/week`, and daily cron chart shows first-party views and
+approximate daily visitors for the last seven completed days plus the partial
+current day. Summary cards and text compare yesterday with the preceding day,
+the last seven completed days with the preceding seven days, and today's
+elapsed time with the same elapsed duration yesterday. Today is explicitly
+marked incomplete. Calendar boundaries follow `TELEGRAM_REPORT_TIMEZONE`
+(default `Europe/Berlin`), including DST; GA4's daily selection uses the
+property timezone returned by its Data API. PageView UTC timestamps are
+converted to the report timezone before grouping. Daily visitor identifiers
+rotate at UTC midnight, so these are estimates, not distinct people over a
+week. The existing rolling lead/AI/source periods remain explicitly labeled.
+
+PNG generation uses the existing server-side Sharp dependency and aggregate
+counts only, without an external chart service. Each recipient receives the
+chart before the text. If rendering or photo delivery fails, the text still
+contains the comparisons and a clear chart-unavailable notice. Text keeps
+the existing 4096-character splitting and final-chunk menu behavior.
+
 The daily cron endpoint `/api/telegram/daily-report` uses the same `/report`
 content. A cron-job.org job at `08:00` in `Europe/Berlin` was verified from
 the 2026-10-02 execution history: HTTP 200, `delivery.attempted: 2`,
@@ -100,6 +124,9 @@ the 2026-10-02 execution history: HTTP 200, `delivery.attempted: 2`,
 alone proves only that at least one recipient received the report; inspect the
 response body for all recipient counts. The endpoint does not have a per-day
 send lock, so manually repeating the cron request sends another report.
+When a photo is attached, `delivery.photos` separately counts attempted/sent/
+failed photos. `delivery.sent` counts completed text deliveries; `partial`
+also becomes true when a photo fails but text succeeds.
 An authenticated manual request with `?test=1` sends the full report with a
 `[TEST]` prefix; leave this parameter off the scheduled job.
 
@@ -128,6 +155,18 @@ Console, PageSpeed, AI monitoring, or first-party analytics.
 - Empty report: confirm the property contains data for completed calendar days,
   GTM is published, the Google tag receives events, and the selected property
   is correct.
+
+An empty GA4 response does not prove zero website traffic. The daily fallback
+is bounded to seven completed days; if none contains records, the report says
+so rather than reusing arbitrary old traffic. Google documents processing
+delays of [24–48 hours](https://support.google.com/analytics/answer/11198161?hl=en).
+Consent behavior is preserved; first-party counts are never substituted for
+GA4 metrics.
+
+Run `npm run telegram:report:test` for isolated calendar, fallback, PNG,
+comparison, text splitting, and photo failure checks. It uses mocked Google
+and Telegram requests, synthetic credentials, and no database writes or real
+Telegram messages. A production test remains a separate controlled action.
 
 Use the Telegram `/ga4` command after deployment for a safe smoke test. It does
 not print the OAuth token, private key, raw Google response, or stack trace.

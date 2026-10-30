@@ -9,6 +9,10 @@ import { withDatabaseConnectionRetry } from "@/lib/databaseRetry";
 import { prisma } from "@/lib/prisma";
 import type { LeadNotification } from "./mailer";
 import { buildDailySearchInsights } from "./telegramSearchInsights";
+import { loadTelegramTraffic } from "./telegramTraffic";
+import { renderTelegramTrafficChart } from "./telegramTrafficChart";
+import { trafficCalendarLines, trafficChange, type TelegramTrafficSnapshot } from "./trafficSummary";
+import { shiftCalendarDate, shortCalendarDate } from "@/shared/lib/reportCalendar";
 import {
   sendTelegramAdminMessage,
   sendTelegramAdminMessageDetailed,
@@ -151,7 +155,8 @@ function formatDuration(seconds: number): string {
   return minutes > 0 ? `${minutes} мин ${remainder} сек` : `${remainder} сек`;
 }
 
-function formatGa4Delta(current: number, previous: number): string {
+function formatGa4Delta(current: number, previous: number, previousAvailable = true): string {
+  if (!previousAvailable) return "сравнение недоступно";
   if (previous === 0) return current > 0 ? "новое" : "0%";
   const percent = ((current - previous) / previous) * 100;
   const prefix = percent > 0 ? "+" : "";
@@ -492,8 +497,8 @@ function ga4UnavailableText(snapshot: Ga4Snapshot): string {
   if (!snapshot.configured) {
     return "Интеграция не настроена: проверь GA4_PROPERTY_ID и Google service account.";
   }
-  if (snapshot.errorCode === "ga4_no_data") return "За выбранный период в GA4 пока нет данных.";
-  return "Google Analytics временно недоступен; собственная аналитика продолжает работать.";
+  if (snapshot.errorCode === "ga4_no_data") return "API GA4 подключён, но за выбранный период Google не вернул записей. Это не означает отсутствие трафика сайта.";
+  return `${snapshot.errorMessage || "Google Analytics временно недоступен."} Собственный счётчик продолжает работать.`;
 }
 
 function ga4EventCount(snapshot: Ga4Snapshot, eventName: string): number {
@@ -501,8 +506,9 @@ function ga4EventCount(snapshot: Ga4Snapshot, eventName: string): number {
 }
 
 function ga4DailyLines(snapshot: Ga4Snapshot): string[] {
+  const heading = `📈 GA4 — ${shortCalendarDate(snapshot.periodEnd)} (завершённый день)`;
   if (!snapshot.available) {
-    return ["📈 GA4 — вчера (завершённый календарный день)", `• ${ga4UnavailableText(snapshot)}`];
+    return [heading, `• ${ga4UnavailableText(snapshot)}`, "• Данные GA4 могут задерживаться на 24–48 часов; трафик сайта показан собственным счётчиком выше."];
   }
 
   const leader = snapshot.channels[0];
@@ -516,10 +522,13 @@ function ga4DailyLines(snapshot: Ga4Snapshot): string[] {
       ]
     : ["• События GA4 временно недоступны."];
   return [
-    "📈 GA4 — вчера (завершённый календарный день)",
-    "• Данные с учётом Consent Mode; не равны first-party статистике.",
-    `• Активные пользователи GA4: ${formatInteger(snapshot.totals.activeUsers)} (${formatGa4Delta(snapshot.totals.activeUsers, snapshot.previousTotals.activeUsers)})`,
-    `• Сессии: ${formatInteger(snapshot.totals.sessions)} (${formatGa4Delta(snapshot.totals.sessions, snapshot.previousTotals.sessions)})`,
+    heading,
+    ...(snapshot.fallbackDays > 0 ? [`• За ${shortCalendarDate(snapshot.requestedDay)} GA4 не вернул записей; показан последний день с данными из 7 проверенных.`] : []),
+    `• Сравнение с ${shortCalendarDate(shiftCalendarDate(snapshot.periodEnd, -1))}; часовой пояс ${snapshot.timeZone}.`,
+    "• GA4 учитывает согласие на аналитику; обработка может занять 24–48 часов.",
+    `• Активные пользователи GA4: ${formatInteger(snapshot.totals.activeUsers)} (${formatGa4Delta(snapshot.totals.activeUsers, snapshot.previousTotals.activeUsers, snapshot.previousAvailable)})`,
+    `• Сессии: ${formatInteger(snapshot.totals.sessions)} (${formatGa4Delta(snapshot.totals.sessions, snapshot.previousTotals.sessions, snapshot.previousAvailable)})`,
+    `• Просмотры GA4: ${formatInteger(snapshot.totals.screenPageViews)} (${formatGa4Delta(snapshot.totals.screenPageViews, snapshot.previousTotals.screenPageViews, snapshot.previousAvailable)})`,
     `• Вовлечённость: ${formatRate(snapshot.totals.engagementRate)}`,
     `• Среднее время сессии: ${formatDuration(snapshot.totals.averageSessionDuration)}`,
     `• Главный канал: ${leader ? `${trimText(leader.channel, 60)} — ${formatInteger(leader.sessions)}` : "данных пока нет"}`,
@@ -529,17 +538,17 @@ function ga4DailyLines(snapshot: Ga4Snapshot): string[] {
 
 function ga4WeeklyLines(snapshot: Ga4Snapshot): string[] {
   if (!snapshot.available) {
-    return ["📈 GA4 — 7 завершённых дней", `• ${ga4UnavailableText(snapshot)}`];
+    return [`📈 GA4 — ${snapshot.periodLabel}`, `• ${ga4UnavailableText(snapshot)}`];
   }
 
   const leader = snapshot.channels[0];
   const landing = snapshot.landingPages[0];
   return [
-    "📈 GA4 — 7 завершённых дней",
+    `📈 GA4 — ${snapshot.periodLabel}`,
     "• Данные с учётом Consent Mode; не равны first-party статистике.",
-    `• Активные пользователи GA4: ${formatInteger(snapshot.totals.activeUsers)} (${formatGa4Delta(snapshot.totals.activeUsers, snapshot.previousTotals.activeUsers)})`,
-    `• Сессии: ${formatInteger(snapshot.totals.sessions)} (${formatGa4Delta(snapshot.totals.sessions, snapshot.previousTotals.sessions)})`,
-    `• Просмотры: ${formatInteger(snapshot.totals.screenPageViews)} (${formatGa4Delta(snapshot.totals.screenPageViews, snapshot.previousTotals.screenPageViews)})`,
+    `• Активные пользователи GA4: ${formatInteger(snapshot.totals.activeUsers)} (${formatGa4Delta(snapshot.totals.activeUsers, snapshot.previousTotals.activeUsers, snapshot.previousAvailable)})`,
+    `• Сессии: ${formatInteger(snapshot.totals.sessions)} (${formatGa4Delta(snapshot.totals.sessions, snapshot.previousTotals.sessions, snapshot.previousAvailable)})`,
+    `• Просмотры: ${formatInteger(snapshot.totals.screenPageViews)} (${formatGa4Delta(snapshot.totals.screenPageViews, snapshot.previousTotals.screenPageViews, snapshot.previousAvailable)})`,
     `• Engagement rate: ${formatRate(snapshot.totals.engagementRate)}`,
     `• Средняя длительность: ${formatDuration(snapshot.totals.averageSessionDuration)}`,
     `• Главный канал: ${leader ? `${trimText(leader.channel, 60)} — ${formatInteger(leader.sessions)}` : "данных пока нет"}`,
@@ -603,10 +612,10 @@ export async function buildGa4Report(now = new Date()): Promise<string> {
     "🔐 GA4 учитывает Consent Mode и может включать моделированные показатели; это не first-party статистика.",
     "",
     "📊 Аудитория",
-    `• Активные пользователи: ${formatInteger(snapshot.totals.activeUsers)} (${formatGa4Delta(snapshot.totals.activeUsers, snapshot.previousTotals.activeUsers)})`,
-    `• Сессии: ${formatInteger(snapshot.totals.sessions)} (${formatGa4Delta(snapshot.totals.sessions, snapshot.previousTotals.sessions)})`,
-    `• Просмотры страниц: ${formatInteger(snapshot.totals.screenPageViews)} (${formatGa4Delta(snapshot.totals.screenPageViews, snapshot.previousTotals.screenPageViews)})`,
-    `• Вовлечённые сессии: ${formatInteger(snapshot.totals.engagedSessions)} (${formatGa4Delta(snapshot.totals.engagedSessions, snapshot.previousTotals.engagedSessions)})`,
+    `• Активные пользователи: ${formatInteger(snapshot.totals.activeUsers)} (${formatGa4Delta(snapshot.totals.activeUsers, snapshot.previousTotals.activeUsers, snapshot.previousAvailable)})`,
+    `• Сессии: ${formatInteger(snapshot.totals.sessions)} (${formatGa4Delta(snapshot.totals.sessions, snapshot.previousTotals.sessions, snapshot.previousAvailable)})`,
+    `• Просмотры страниц: ${formatInteger(snapshot.totals.screenPageViews)} (${formatGa4Delta(snapshot.totals.screenPageViews, snapshot.previousTotals.screenPageViews, snapshot.previousAvailable)})`,
+    `• Вовлечённые сессии: ${formatInteger(snapshot.totals.engagedSessions)} (${formatGa4Delta(snapshot.totals.engagedSessions, snapshot.previousTotals.engagedSessions, snapshot.previousAvailable)})`,
     `• Engagement rate: ${formatRate(snapshot.totals.engagementRate)}`,
     `• Средняя длительность сессии: ${formatDuration(snapshot.totals.averageSessionDuration)}`,
     "",
@@ -630,13 +639,14 @@ export async function buildGa4Report(now = new Date()): Promise<string> {
   ].join("\n");
 }
 
-export async function buildDailySiteReport(now = new Date()): Promise<string> {
+export async function buildDailySiteReport(now = new Date(), suppliedTraffic?: TelegramTrafficSnapshot | null): Promise<string> {
   const to = now;
   const from = new Date(to.getTime() - MS_IN_DAY);
   const previousFrom = new Date(from.getTime() - MS_IN_DAY);
   const previousTo = from;
   const leadWindow = { createdAt: { gte: from, lt: to } };
   const previousLeadWindow = { createdAt: { gte: previousFrom, lt: previousTo } };
+  const traffic = suppliedTraffic === undefined ? await loadTelegramTraffic(now) : suppliedTraffic;
 
   // Search Console and its bounded AI interpretation do not use PostgreSQL.
   // Start them while the intentionally sequential Neon queries run so the
@@ -702,10 +712,11 @@ export async function buildDailySiteReport(now = new Date()): Promise<string> {
     "",
     `🕘 Период: ${formatDateTime(from)} — ${formatDateTime(to)}`,
     "",
-    "📈 Трафик",
-    `• Просмотры: ${viewsTotal} (${formatDelta(viewsTotal - previousViewsTotal)})`,
-    `• Посетители: ${uniqueTotal} (${formatDelta(uniqueTotal - previousUniqueTotal)})`,
+    "📈 Трафик — последние 24 часа, собственный счётчик",
+    `• Просмотры: ${viewsTotal}; было ${previousViewsTotal}; ${trafficChange(viewsTotal, previousViewsTotal)}.`,
+    `• Посетители ≈${uniqueTotal}; было ≈${previousUniqueTotal}; ${trafficChange(uniqueTotal, previousUniqueTotal)}.`,
     `• Языки: ${localeLines}`,
+    ...(traffic ? ["", ...trafficCalendarLines(traffic)] : []),
     "",
     "🎯 Заявки",
     `• Новые заявки: ${leadsTotal} (${formatDelta(leadsTotal - previousLeadsTotal)})`,
@@ -734,13 +745,14 @@ export async function buildDailySiteReport(now = new Date()): Promise<string> {
   ].join("\n");
 }
 
-export async function buildWeeklySiteReport(now = new Date()): Promise<string> {
+export async function buildWeeklySiteReport(now = new Date(), suppliedTraffic?: TelegramTrafficSnapshot | null): Promise<string> {
   const to = now;
   const from = new Date(to.getTime() - MS_IN_WEEK);
   const previousFrom = new Date(from.getTime() - MS_IN_WEEK);
   const previousTo = from;
   const leadWindow = { createdAt: { gte: from, lt: to } };
   const previousLeadWindow = { createdAt: { gte: previousFrom, lt: previousTo } };
+  const traffic = suppliedTraffic === undefined ? await loadTelegramTraffic(now) : suppliedTraffic;
 
   const viewsTotal = await countRealPageViews(from, to);
   const previousViewsTotal = await countRealPageViews(previousFrom, previousTo);
@@ -791,11 +803,12 @@ export async function buildWeeklySiteReport(now = new Date()): Promise<string> {
     "",
     `🕘 Период: ${formatDateTime(from)} — ${formatDateTime(to)}`,
     "",
-    "📈 Трафик",
-    `• Просмотры: ${viewsTotal} (${formatDelta(viewsTotal - previousViewsTotal)})`,
+    "📈 Трафик — последние 7 × 24 часа, собственный счётчик",
+    `• Просмотры: ${viewsTotal}; было ${previousViewsTotal}; ${trafficChange(viewsTotal, previousViewsTotal)}.`,
     // visitorHash intentionally rotates daily, so this is not a cross-week person count.
-    `• Дневные уникальные посетители: ${uniqueTotal} (${formatDelta(uniqueTotal - previousUniqueTotal)})`,
+    `• Оценка дневных уникальных посещений: ${uniqueTotal}; было ${previousUniqueTotal}; ${trafficChange(uniqueTotal, previousUniqueTotal)}.`,
     `• Языки: ${localeLines}`,
+    ...(traffic ? ["", ...trafficCalendarLines(traffic)] : []),
     "",
     "🎯 Заявки",
     `• Новые заявки: ${leadsTotal} (${formatDelta(leadsTotal - previousLeadsTotal)})`,
@@ -1131,6 +1144,23 @@ export async function sendDailySiteReport(): Promise<boolean> {
 export async function sendDailySiteReportDetailed(
   options: { test?: boolean } = {},
 ): Promise<TelegramAdminDeliverySummary> {
-  const report = await buildDailySiteReport();
-  return sendTelegramAdminMessageDetailed(options.test ? `[TEST] Ручная проверка\n\n${report}` : report);
+  const report = await buildSiteReportBundle("daily");
+  return sendTelegramAdminMessageDetailed(options.test ? `[TEST] Ручная проверка\n\n${report.text}` : report.text, {
+    ...(report.photo ? { photo: { ...report.photo, caption: `${options.test ? "[TEST] " : ""}${report.photo.caption}` } } : {}),
+  });
+}
+
+export async function buildSiteReportBundle(period: "daily" | "weekly", now = new Date()) {
+  const traffic = await loadTelegramTraffic(now);
+  const text = period === "daily"
+    ? await buildDailySiteReport(now, traffic)
+    : await buildWeeklySiteReport(now, traffic);
+  const png = traffic ? await renderTelegramTrafficChart(traffic) : null;
+  return {
+    text: png ? text : `📊 Диаграмма временно недоступна; ниже приведён текстовый отчёт.\n\n${text}`,
+    ...(png && traffic ? { photo: {
+      bytes: png,
+      caption: `📊 SaaleWeb · Трафик сайта\n7 завершённых дней + сегодня до ${traffic.todayClock} (${traffic.timeZone}).\nИсточник: собственный счётчик. Сегодня — неполный день; GA4 приведён отдельно в тексте.`,
+    } } : {}),
+  };
 }

@@ -22,6 +22,7 @@ const TELEGRAM_TEXT_LIMIT = 4096;
 
 export type TelegramSendOptions = {
   replyMarkup?: Record<string, unknown>;
+  photo?: { bytes: Uint8Array; caption: string };
 };
 
 type TelegramDeliveryFailureReason =
@@ -38,6 +39,8 @@ type TelegramMessageDelivery = {
   status?: number;
   errorCode?: number;
   failureReason?: TelegramDeliveryFailureReason;
+  photoSent?: boolean;
+  photoFailureReason?: TelegramDeliveryFailureReason;
 };
 
 export type TelegramAdminDeliverySummary = {
@@ -46,12 +49,15 @@ export type TelegramAdminDeliverySummary = {
   attempted: number;
   sent: number;
   failed: number;
+  photos?: { attempted: number; sent: number; failed: number };
   recipients: Array<{
     recipient: string;
     sent: boolean;
     status?: number;
     errorCode?: number;
     failureReason?: TelegramDeliveryFailureReason;
+    photoSent?: boolean;
+    photoFailureReason?: TelegramDeliveryFailureReason;
   }>;
 };
 
@@ -177,22 +183,58 @@ async function sendTelegramMessage(
   return (await deliverTelegramText(chatId, text, token, options)).sent;
 }
 
+async function deliverTelegramPhoto(
+  chatId: string, token: string, photo: NonNullable<TelegramSendOptions["photo"]>,
+): Promise<TelegramMessageDelivery> {
+  try {
+    const body = new FormData();
+    body.set("chat_id", chatId);
+    body.set("caption", photo.caption.slice(0, 1024));
+    body.set("photo", new Blob([new Uint8Array(photo.bytes)], { type: "image/png" }), "saaleweb-traffic.png");
+    const response = await fetch(`https://api.telegram.org/bot${token}/sendPhoto`, {
+      method: "POST", body, signal: AbortSignal.timeout(15_000),
+    });
+    const payload = await response.json().catch(() => null) as TelegramSendResponse | null;
+    if (!response.ok || !payload?.ok) {
+      const errorCode = payload && "error_code" in payload ? payload.error_code : undefined;
+      const description = payload && "description" in payload ? payload.description : undefined;
+      const failureReason = telegramFailureReason(response.status, errorCode, description);
+      console.warn("[telegram] Traffic photo failed; sending the text report.", {
+        recipient: maskedChatId(chatId), status: response.status, failureReason,
+      });
+      return { sent: false, status: response.status, errorCode, failureReason };
+    }
+    return { sent: true, status: response.status };
+  } catch {
+    console.warn("[telegram] Traffic photo request failed; sending the text report.", { recipient: maskedChatId(chatId) });
+    return { sent: false, failureReason: "request_failed" };
+  }
+}
+
 async function deliverTelegramText(
   chatId: string,
   text: string,
   token: string,
   options: TelegramSendOptions = {},
 ): Promise<TelegramMessageDelivery> {
-  const chunks = splitTelegramText(text);
+  const photoDelivery = options.photo ? await deliverTelegramPhoto(chatId, token, options.photo) : undefined;
+  const photoResult = photoDelivery ? {
+    photoSent: photoDelivery.sent,
+    ...(!photoDelivery.sent ? { photoFailureReason: photoDelivery.failureReason } : {}),
+  } : {};
+  const fullText = photoDelivery && !photoDelivery.sent
+    ? `📊 Диаграмму доставить не удалось; все показатели приведены в тексте.\n\n${text}`
+    : text;
+  const chunks = splitTelegramText(fullText);
   let lastDelivery: TelegramMessageDelivery = { sent: true };
   for (let index = 0; index < chunks.length; index += 1) {
     const isLastChunk = index === chunks.length - 1;
     lastDelivery = await deliverTelegramMessage(chatId, chunks[index] ?? "", token, {
       ...(isLastChunk ? options : {}),
     });
-    if (!lastDelivery.sent) return lastDelivery;
+    if (!lastDelivery.sent) return { ...lastDelivery, ...photoResult };
   }
-  return lastDelivery;
+  return { ...lastDelivery, ...photoResult };
 }
 
 export async function sendTelegramChatMessage(
@@ -322,6 +364,11 @@ export async function sendTelegramAdminMessageDetailed(
   );
   const sent = deliveries.filter((delivery) => delivery.sent).length;
   const failed = deliveries.length - sent;
+  const photos = options.photo ? {
+    attempted: deliveries.length,
+    sent: deliveries.filter((delivery) => delivery.photoSent).length,
+    failed: deliveries.filter((delivery) => !delivery.photoSent).length,
+  } : undefined;
 
   if (failed > 0) {
     console.warn("[telegram] Admin message delivery was incomplete.", {
@@ -338,10 +385,11 @@ export async function sendTelegramAdminMessageDetailed(
 
   return {
     ok: sent > 0,
-    partial: sent > 0 && failed > 0,
+    partial: sent > 0 && (failed > 0 || Boolean(photos?.failed)),
     attempted: deliveries.length,
     sent,
     failed,
+    ...(photos ? { photos } : {}),
     recipients: deliveries,
   };
 }

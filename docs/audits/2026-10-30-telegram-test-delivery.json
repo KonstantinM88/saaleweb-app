@@ -1,0 +1,29 @@
+{
+  "checkedAt": "2026-10-30T04:03:00.961Z",
+  "source": "local verified report builder; production bot transport",
+  "test": true,
+  "ok": true,
+  "partial": false,
+  "text": {
+    "attempted": 2,
+    "sent": 2,
+    "failed": 0
+  },
+  "photos": {
+    "attempted": 2,
+    "sent": 2,
+    "failed": 0
+  },
+  "statuses": [
+    {
+      "status": 200,
+      "sent": true,
+      "photoSent": true
+    },
+    {
+      "status": 200,
+      "sent": true,
+      "photoSent": true
+    }
+  ]
+}

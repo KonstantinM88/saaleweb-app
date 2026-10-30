@@ -2,11 +2,10 @@ import "server-only";
 
 import {
   buildAiSearchReport,
-  buildDailySiteReport,
+  buildSiteReportBundle,
   buildGa4Report,
   buildLeadsReport,
   buildTopPagesReport,
-  buildWeeklySiteReport,
 } from "./telegramReports";
 import {
   blockAssistantTarget,
@@ -170,11 +169,15 @@ export async function handleTelegramCommand(
   }
 
   if (command === "/report") {
-    return sendWithMenu(chatId, await buildDailySiteReport());
+    await ensureCompactMenu(chatId);
+    const report = await buildSiteReportBundle("daily");
+    return sendTelegramChatMessage(chatId, report.text, { replyMarkup: { remove_keyboard: true }, photo: report.photo });
   }
 
   if (command === "/week") {
-    return sendWithMenu(chatId, await buildWeeklySiteReport());
+    await ensureCompactMenu(chatId);
+    const report = await buildSiteReportBundle("weekly");
+    return sendTelegramChatMessage(chatId, report.text, { replyMarkup: { remove_keyboard: true }, photo: report.photo });
   }
 
   if (command === "/ga4") {

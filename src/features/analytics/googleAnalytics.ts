@@ -1,4 +1,5 @@
 import "server-only";
+import { calendarDate, reportTimeZone, shiftCalendarDate, shortCalendarDate } from "@/shared/lib/reportCalendar";
 
 import {
   getGoogleServiceAccountAccessToken,
@@ -69,6 +70,12 @@ export type Ga4Snapshot = {
   configured: boolean;
   available: boolean;
   periodLabel: string;
+  periodStart: string;
+  periodEnd: string;
+  timeZone: string;
+  requestedDay: string;
+  fallbackDays: number;
+  previousAvailable: boolean;
   totals: Ga4MetricTotals;
   previousTotals: Ga4MetricTotals;
   channels: Ga4ChannelRow[];
@@ -131,6 +138,7 @@ type Ga4ApiResponse = {
   metricHeaders?: { name?: string }[];
   rows?: Ga4ApiRow[];
   rowCount?: number;
+  metadata?: { timeZone?: string };
 };
 type ParsedRow = {
   dimensions: Record<string, string>;
@@ -141,6 +149,9 @@ type PeriodConfig = {
   current: Ga4DateRange;
   previous: Ga4DateRange;
   label: string;
+  timeZone: string;
+  requestedDay: string;
+  fallbackDays: number;
 };
 
 class Ga4RequestError extends Error {
@@ -167,19 +178,24 @@ function propertyId(): string | null {
   return value && /^\d+$/.test(value) ? value : null;
 }
 
-function periodConfig(period: Ga4Period): PeriodConfig {
+function periodConfig(period: Ga4Period, timeZone = reportTimeZone(), selectedDay?: string): PeriodConfig {
+  const requestedDay = shiftCalendarDate(calendarDate(new Date(), timeZone), -1);
+  const end = selectedDay || requestedDay;
   if (period === "daily") {
     return {
-      current: { startDate: "yesterday", endDate: "yesterday" },
-      previous: { startDate: "2daysAgo", endDate: "2daysAgo" },
-      label: "завершённый календарный день",
+      current: { startDate: end, endDate: end },
+      previous: { startDate: shiftCalendarDate(end, -1), endDate: shiftCalendarDate(end, -1) },
+      label: `завершённый день ${shortCalendarDate(end)}`,
+      timeZone, requestedDay,
+      fallbackDays: Math.max(0, Math.round((Date.parse(requestedDay) - Date.parse(end)) / 86_400_000)),
     };
   }
 
   return {
-    current: { startDate: "7daysAgo", endDate: "yesterday" },
-    previous: { startDate: "14daysAgo", endDate: "8daysAgo" },
-    label: "последние 7 завершённых дней",
+    current: { startDate: shiftCalendarDate(end, -6), endDate: end },
+    previous: { startDate: shiftCalendarDate(end, -13), endDate: shiftCalendarDate(end, -7) },
+    label: `7 завершённых дней ${shortCalendarDate(shiftCalendarDate(end, -6))}–${shortCalendarDate(end)}`,
+    timeZone, requestedDay, fallbackDays: 0,
   };
 }
 
@@ -314,11 +330,18 @@ function emptySnapshot(
   configured: boolean,
   errorCode: string,
   errorMessage: string,
+  dates = periodConfig(period),
 ): Ga4Snapshot {
   return {
     configured,
     available: false,
-    periodLabel: periodConfig(period).label,
+    periodLabel: dates.label,
+    periodStart: dates.current.startDate,
+    periodEnd: dates.current.endDate,
+    timeZone: dates.timeZone,
+    requestedDay: dates.requestedDay,
+    fallbackDays: dates.fallbackDays,
+    previousAvailable: false,
     totals: { ...ZERO_TOTALS },
     previousTotals: { ...ZERO_TOTALS },
     channels: [],
@@ -374,7 +397,29 @@ export async function fetchGa4Snapshot(period: Ga4Period = "weekly"): Promise<Ga
     );
   }
 
-  const dates = periodConfig(period);
+  let dates = periodConfig(period);
+  if (period === "daily") {
+    // At 08:00 yesterday may still be processing. Select the most recent
+    // completed day WITH records (bounded to seven days); never relabel it
+    // as yesterday, and compare with the calendar day immediately before it.
+    try {
+      const recent = await runGa4Report({
+        dateRanges: [{ startDate: "7daysAgo", endDate: "yesterday" }],
+        dimensions: ["date"], metrics: ["activeUsers", "sessions", "screenPageViews"],
+        orderBys: [{ dimension: { dimensionName: "date" }, desc: true }], limit: 7,
+      });
+      const timeZone = recent.metadata?.timeZone || dates.timeZone;
+      const latest = parseRows(recent)
+        .filter((row) => /^\d{8}$/.test(row.dimensions.date ?? "") && Object.values(row.metrics).some((value) => value > 0))
+        .map((row) => row.dimensions.date!)
+        .sort().at(-1);
+      const selected = latest ? `${latest.slice(0, 4)}-${latest.slice(4, 6)}-${latest.slice(6, 8)}` : undefined;
+      dates = periodConfig(period, timeZone, selected);
+    } catch {
+      // A freshness probe must not prevent the normal daily request.
+      console.warn("[ga4] Latest completed day probe unavailable; checking yesterday.");
+    }
+  }
   const totalsMetrics = [
     "activeUsers",
     "sessions",
@@ -440,7 +485,7 @@ export async function fetchGa4Snapshot(period: Ga4Period = "weekly"): Promise<Ga
       results[0]?.status === "rejected"
         ? errorDetails(results[0].reason)
         : { code: "ga4_no_data", message: "В GA4 пока нет данных за выбранный период." };
-    return emptySnapshot(period, true, details.code, details.message);
+    return emptySnapshot(period, true, details.code, details.message, dates);
   }
 
   const previousResponse = fulfilled(results[1]);
@@ -459,6 +504,13 @@ export async function fetchGa4Snapshot(period: Ga4Period = "weekly"): Promise<Ga
     configured: true,
     available: true,
     periodLabel: dates.label,
+    periodStart: dates.current.startDate,
+    periodEnd: dates.current.endDate,
+    timeZone: dates.timeZone,
+    requestedDay: dates.requestedDay,
+    fallbackDays: dates.fallbackDays,
+    // An empty response may still be processing; do not call it a proven zero.
+    previousAvailable: Boolean(previousResponse && totalsFrom(previousResponse)),
     totals,
     previousTotals,
     channels: channelRows
