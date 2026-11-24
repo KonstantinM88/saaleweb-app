@@ -27,6 +27,13 @@ const permanentCompatibilityRedirects = [
   // Reviewed DE-only pilot, 2026-10-30; mirrors serviceMerges.ts.
   { source: "/leistungen/website-entwicklung", destination: "/leistungen/website-erstellen-lassen" },
   { source: "/leistungen/wartung", destination: "/leistungen/website-wartung" },
+  // GSC 2026-11-18: an old serialized React key was discovered as a URL.
+  // The real link remains /leistungen/website-wartung; do not synthesize
+  // new URL-like keys by appending labels (see Phase4LandingPage/LinkCluster).
+  {
+    source: "/leistungen/website-wartung-Website-Wartung",
+    destination: "/leistungen/website-wartung",
+  },
   { source: "/en/services/performance", destination: "/en/services/performance-optimization" },
   {
     source: "/ru/uslugi/proizvoditelnost",
@@ -447,17 +454,19 @@ function buildHistoricalMergedIndustryRedirects() {
  * @returns {Array<{ source: string; destination: string }>}
  */
 function dedupeRedirects(redirects) {
+  // Only previously reviewed service merges. Resolve historical aliases
+  // directly to the surviving localized page instead of another redirect.
+  const survivingDestinations = new Map([
+    ["/leistungen/website-entwicklung", "/leistungen/website-erstellen-lassen"],
+    ["/leistungen/wartung", "/leistungen/website-wartung"],
+    ["/leistungen/performance", "/leistungen/performance-optimierung"],
+    ["/en/services/performance", "/en/services/performance-optimization"],
+    ["/ru/uslugi/proizvoditelnost", "/ru/uslugi/optimizaciya-proizvoditelnosti"],
+  ]);
   /** @type {Map<string, { source: string; destination: string }>} */
   const bySource = new Map();
   for (const redirect of redirects) {
-    // Historical cross-language aliases may still target a retired DE slug.
-    // Resolve only the two reviewed pilot destinations to avoid a new chain.
-    const destination =
-      redirect.destination === "/leistungen/website-entwicklung"
-        ? "/leistungen/website-erstellen-lassen"
-        : redirect.destination === "/leistungen/wartung"
-          ? "/leistungen/website-wartung"
-          : redirect.destination;
+    const destination = survivingDestinations.get(redirect.destination) ?? redirect.destination;
     const normalized = { ...redirect, destination };
     const existing = bySource.get(redirect.source);
     if (existing && existing.destination !== normalized.destination) {

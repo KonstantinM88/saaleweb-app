@@ -1,0 +1,131 @@
+{
+  "checkedAt": "2026-11-24T22:37:27.251Z",
+  "base": "http://localhost:3198",
+  "sitemapCount": 229,
+  "newsletter": {
+    "enabled": false,
+    "noStore": true
+  },
+  "pages": [
+    {
+      "path": "/",
+      "status": 200,
+      "canonical": "https://saaleweb.de",
+      "languages": [
+        "de",
+        "en",
+        "ru",
+        "x-default"
+      ],
+      "faqItems": 28
+    },
+    {
+      "path": "/en",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en",
+      "languages": [
+        "de",
+        "en",
+        "ru",
+        "x-default"
+      ],
+      "faqItems": 28
+    },
+    {
+      "path": "/ru",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru",
+      "languages": [
+        "de",
+        "en",
+        "ru",
+        "x-default"
+      ],
+      "faqItems": 28
+    },
+    {
+      "path": "/en/services",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/services",
+      "languages": [
+        "de",
+        "en",
+        "ru",
+        "x-default"
+      ]
+    },
+    {
+      "path": "/ru/uslugi",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/uslugi",
+      "languages": [
+        "de",
+        "en",
+        "ru",
+        "x-default"
+      ]
+    },
+    {
+      "path": "/en/services/web-development",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/services/web-development",
+      "languages": [
+        "en",
+        "ru",
+        "x-default"
+      ]
+    },
+    {
+      "path": "/en/services/maintenance",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en/services/maintenance",
+      "languages": [
+        "en",
+        "ru",
+        "x-default"
+      ]
+    },
+    {
+      "path": "/ru/uslugi/razrabotka-sajtov",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/uslugi/razrabotka-sajtov",
+      "languages": [
+        "en",
+        "ru",
+        "x-default"
+      ]
+    },
+    {
+      "path": "/ru/uslugi/podderzhka",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru/uslugi/podderzhka",
+      "languages": [
+        "en",
+        "ru",
+        "x-default"
+      ]
+    },
+    {
+      "path": "/leistungen/website-sicherheit",
+      "status": 200,
+      "canonical": "https://saaleweb.de/leistungen/website-sicherheit",
+      "languages": [
+        "de",
+        "en",
+        "ru",
+        "x-default"
+      ]
+    },
+    {
+      "path": "/leistungen/website-wartung",
+      "status": 200,
+      "canonical": "https://saaleweb.de/leistungen/website-wartung",
+      "languages": [
+        "de",
+        "en",
+        "ru",
+        "x-default"
+      ]
+    }
+  ]
+}

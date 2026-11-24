@@ -1,7 +1,9 @@
-import { useTranslations } from "next-intl";
+import { getLocale, getTranslations } from "next-intl/server";
+import { ArrowUpRight, Check } from "lucide-react";
+import type { AppLocale } from "@/i18n/routing";
 import { Container } from "@/shared/ui/Container";
 import { Reveal } from "@/shared/ui/Reveal";
-import { SectionHeader } from "@/shared/ui/SectionHeader";
+import { getLocalizedHref } from "@/shared/lib/localizedPath";
 
 type LabelPosition = "above" | "below" | "left" | "right";
 type City = { name: string; x: number; y: number; major?: boolean; delay: number; labelPosition?: LabelPosition };
@@ -204,21 +206,33 @@ function MapScene({
         <span className="max-w-[150px] leading-tight md:max-w-none">{floatA}</span>
       </div>
       <div className="absolute bottom-3 left-3 flex animate-bob items-center gap-2 rounded-xl border border-white/15 bg-dark/40 px-2.5 py-2 text-[11px] font-semibold text-white shadow-card backdrop-blur-xs [animation-delay:0.5s] md:bottom-4 md:left-4 md:bg-white/10 md:px-3 md:text-[12px]">
-        <span className="grid h-6 w-6 place-items-center rounded-lg bg-brand text-[10px]">50</span>
+        <span className="grid h-6 w-6 place-items-center rounded-lg bg-brand text-[10px]">↗</span>
         <span className="leading-tight">{floatB}</span>
       </div>
     </div>
   );
 }
 
-export function LocalSeo() {
-  const t = useTranslations("LocalSeo");
+export async function LocalSeo() {
+  const locale = (await getLocale()) as AppLocale;
+  const t = await getTranslations({ locale, namespace: "LocalSeo" });
+  const points = t.raw("points") as string[];
 
   return (
-    <section id="local" className="py-16 md:py-24">
+    <section id="local" aria-labelledby="local-title" className="scroll-mt-24 py-16 md:py-24">
       <Container>
-        <SectionHeader eyebrow={t("eyebrow")} title={t("title")} lead={t("lead")} />
-        <Reveal className="mx-auto max-w-[880px]">
+        <div className="grid min-w-0 gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-14">
+          <Reveal>
+            <span className="eyebrow">{t("eyebrow")}</span>
+            <h2 id="local-title" className="mt-4 text-[clamp(30px,3.8vw,46px)] font-extrabold leading-[1.1] tracking-tight text-dark">{t("title")}</h2>
+            <p className="mt-5 text-[17px] leading-relaxed text-ink">{t("lead")}</p>
+            <ul className="mt-6 grid gap-3">{points.map(point => <li key={point} className="flex items-start gap-2.5 text-[15px] leading-relaxed text-muted"><Check size={17} className="mt-1 shrink-0 text-emerald-700" aria-hidden />{point}</li>)}</ul>
+            <p className="mt-6 text-sm leading-relaxed text-muted">{t("base")}</p>
+            <div className="mt-5 flex flex-wrap gap-2">
+              {["halle", "leipzig", "merseburg"].map(city => <a key={city} href={`${getLocalizedHref(locale, "locations")}/${city}`} className="inline-flex min-h-11 items-center gap-2 rounded-full border border-line px-4 text-sm font-semibold text-[#6D28D9] hover:bg-brand-soft">{city === "halle" ? "Halle (Saale)" : city[0].toUpperCase() + city.slice(1)}<ArrowUpRight size={14} aria-hidden /></a>)}
+            </div>
+          </Reveal>
+        <Reveal className="min-w-0">
           <div className="relative overflow-hidden rounded-[26px] bg-dark shadow-lift">
             <div
               aria-hidden
@@ -257,6 +271,7 @@ export function LocalSeo() {
             />
           </div>
         </Reveal>
+        </div>
       </Container>
     </section>
   );

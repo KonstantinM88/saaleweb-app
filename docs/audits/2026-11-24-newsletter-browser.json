@@ -1,0 +1,26 @@
+{
+  "checkedAt": "2026-11-24T21:35:12.305Z",
+  "checks": [
+    {
+      "clientWidth": 1265,
+      "footerForms": 0,
+      "notice": "Die Newsletter-Anmeldung ist vorübergehend nicht verfügbar. Bitte versuchen Sie es später erneut.",
+      "scrollWidth": 1265,
+      "url": "http://localhost:3198/branchen/arztpraxen"
+    },
+    {
+      "clientWidth": 1265,
+      "footerForms": 0,
+      "notice": "Newsletter signup is temporarily unavailable. Please try again later.",
+      "scrollWidth": 1265,
+      "url": "http://localhost:3198/en/industries/medical-practices"
+    },
+    {
+      "clientWidth": 1265,
+      "footerForms": 0,
+      "notice": "Подписка на рассылку временно недоступна. Пожалуйста, попробуйте позже.",
+      "scrollWidth": 1265,
+      "url": "http://localhost:3198/ru/otrasli/medcentry"
+    }
+  ]
+}

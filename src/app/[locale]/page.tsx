@@ -1,36 +1,41 @@
 // src/app/[locale]/page.tsx
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { Navbar } from "@/widgets/navbar/Navbar";
 import { Hero } from "@/widgets/hero/Hero";
-import { Trust } from "@/widgets/trust/Trust";
+import { ProofStrip } from "@/widgets/proof-strip/ProofStrip";
 import { CaseStudies } from "@/widgets/case-studies/CaseStudies";
-import { Services } from "@/widgets/services/Services";
-import { Comparison } from "@/widgets/comparison/Comparison";
-import { Industries } from "@/widgets/industries/Industries";
-import { GrowthWindow } from "@/widgets/growth-window/GrowthWindow";
-import { LocalSeo } from "@/widgets/local-seo/LocalSeo";
-import { TechStack } from "@/widgets/tech-stack/TechStack";
-import { AiReady } from "@/widgets/ai-ready/AiReady";
+import { Pricing } from "@/widgets/pricing/Pricing";
+import { OfferOverview } from "@/widgets/offer-overview/OfferOverview";
 import { WhySaaleWebSection } from "@/widgets/why-saaleweb/WhySaaleWebSection";
-import { PerformanceProof } from "@/widgets/performance-proof/PerformanceProof";
-import { AuthorityStrip } from "@/widgets/authority-strip/AuthorityStrip";
-import { Process } from "@/widgets/process/Process";
+import { AiReady } from "@/widgets/ai-ready/AiReady";
+import { Comparison } from "@/widgets/comparison/Comparison";
+import { Automation } from "@/widgets/automation/Automation";
+import { LocalSeo } from "@/widgets/local-seo/LocalSeo";
+import { DirectAnswers } from "@/widgets/direct-answers/DirectAnswers";
 import { Founder } from "@/widgets/founder/Founder";
 import { Testimonials } from "@/widgets/testimonials/Testimonials";
-import { Pricing } from "@/widgets/pricing/Pricing";
+import { Process } from "@/widgets/process/Process";
 import { WebsiteAuditSection } from "@/widgets/website-audit/WebsiteAuditSection";
 import { Faq } from "@/widgets/faq/Faq";
 import { Contact } from "@/widgets/contact/Contact";
+import { MobileCtaBar } from "@/widgets/contact/MobileCtaBar";
 import { Footer } from "@/widgets/footer/Footer";
 import { isAppLocale } from "@/i18n/routing";
+import { siteConfig } from "@/shared/config/site";
+import { getContactHref } from "@/shared/lib/contactHref";
 import { HomeJsonLd } from "@/shared/seo/HomeJsonLd";
-import { DirectAnswers } from "@/widgets/direct-answers/DirectAnswers";
 
 // CMS actions invalidate this route immediately. The daily fallback prevents
 // public traffic from repeatedly waking Neon's five-minute autosuspended DB.
 export const revalidate = 86_400;
 
+/**
+ * Balanced homepage (2026-11-17): early proof/pricing, then relaunch,
+ * automation, search visibility and regional evidence before trust and FAQ.
+ * Direct answers render once, earlier than the general FAQ. Decorative
+ * full-height GrowthWindow/TechStack sections remain available elsewhere.
+ */
 export default async function HomePage({
   params,
 }: {
@@ -40,6 +45,7 @@ export default async function HomePage({
   if (!isAppLocale(locale)) notFound();
 
   setRequestLocale(locale);
+  const mobileCta = await getTranslations({ locale, namespace: "MobileCta" });
 
   return (
     <>
@@ -47,28 +53,29 @@ export default async function HomePage({
       <HomeJsonLd locale={locale} />
       <main>
         <Hero />
-        <Trust />
+        <ProofStrip />
         <CaseStudies />
-        <WhySaaleWebSection />
-        <PerformanceProof />
-        <AuthorityStrip />
-        <AiReady />
-        <DirectAnswers />
-        <Services />
+        <Pricing />
         <Comparison />
-        <Industries />
-        <GrowthWindow />
+        <OfferOverview />
+        <Automation />
+        <AiReady />
         <LocalSeo />
-        <TechStack />
-        <Process />
+        <DirectAnswers />
+        <WhySaaleWebSection />
         <Founder />
         <Testimonials locale={locale} />
+        <Process />
         <WebsiteAuditSection />
-        <Pricing />
         <Faq />
         <Contact locale={locale} />
       </main>
       <Footer />
+      <MobileCtaBar
+        labels={{ consult: mobileCta("consult"), whatsapp: mobileCta("whatsapp") }}
+        contactHref={getContactHref(locale)}
+        whatsappHref={siteConfig.phone.whatsappUrl}
+      />
     </>
   );
 }

@@ -1,51 +1,30 @@
-import { useTranslations } from "next-intl";
+import { getLocale, getTranslations } from "next-intl/server";
+import { ArrowUpRight, Check } from "lucide-react";
 import { Container } from "@/shared/ui/Container";
 import { Reveal } from "@/shared/ui/Reveal";
-import { SectionHeader } from "@/shared/ui/SectionHeader";
-import { BeforeAfter } from "./BeforeAfter";
+import { getAuditHref } from "@/shared/lib/localizedPath";
+import { BeforeAfter, type RelaunchDemoCopy } from "./BeforeAfter";
 
-type Row = { feature: string; us: string; them: string };
-
-export function Comparison() {
-  const t = useTranslations("Comparison");
-  const rows = t.raw("rows") as Row[];
+/** An illustrative relaunch with concrete scope, rather than claims about competitors. */
+export async function Comparison() {
+  const locale = await getLocale();
+  const t = await getTranslations({ locale, namespace: "Relaunch" });
 
   return (
-    <section className="bg-surface py-16 md:py-24">
+    <section id="relaunch" aria-labelledby="relaunch-title" className="scroll-mt-24 overflow-hidden bg-surface py-16 md:py-24">
       <Container>
-        <SectionHeader eyebrow={t("eyebrow")} title={t("title")} lead={t("lead")} />
-        <Reveal className="mx-auto mb-10 max-w-[860px] md:mb-14">
-          <BeforeAfter beforeLabel={t("before")} afterLabel={t("after")} />
-        </Reveal>
-        <Reveal>
-          <div className="overflow-x-auto rounded-[20px] border border-line bg-white shadow-card">
-            <div className="min-w-[600px]">
-            <div className="grid grid-cols-[1.4fr_1fr_1fr]">
-              <div className="bg-surface px-5 py-4 text-sm font-bold text-dark" />
-              <div className="bg-brand px-5 py-4 text-sm font-bold text-white">{t("us")}</div>
-              <div className="bg-surface px-5 py-4 text-sm font-bold text-dark">{t("them")}</div>
-            </div>
-            {rows.map((row, i) => (
-              <div
-                key={i}
-                className={`grid grid-cols-[1.4fr_1fr_1fr] text-[15px] ${
-                  i < rows.length - 1 ? "border-b border-line" : ""
-                }`}
-              >
-                <div className="px-5 py-4 font-semibold text-ink">{row.feature}</div>
-                <div className="flex items-center gap-2 border-l border-line bg-brand-pink/4 px-5 py-4">
-                  <span className="text-success">●</span>
-                  <span className="font-medium text-ink">{row.us}</span>
-                </div>
-                <div className="flex items-center gap-2 px-5 py-4 text-muted">
-                  <span className="text-gray-400">○</span>
-                  {row.them}
-                </div>
-              </div>
-            ))}
-            </div>
-          </div>
-        </Reveal>
+        <div className="mb-9 grid min-w-0 gap-5 lg:grid-cols-[1fr_1fr] lg:items-end lg:gap-14">
+          <Reveal>
+            <span className="eyebrow">{t("eyebrow")}</span>
+            <h2 id="relaunch-title" className="mt-4 text-[clamp(30px,4vw,48px)] font-extrabold leading-[1.1] tracking-tight text-dark">{t("title")}</h2>
+          </Reveal>
+          <Reveal>
+            <p className="text-[17px] leading-relaxed text-ink">{t("lead")}</p>
+            <a href={getAuditHref(locale)} className="mt-6 inline-flex min-h-11 items-center gap-2 text-[15px] font-bold text-[#6D28D9] underline-offset-4 hover:underline">{t("cta")} <ArrowUpRight size={17} aria-hidden /></a>
+          </Reveal>
+        </div>
+        <BeforeAfter copy={t.raw("demo") as RelaunchDemoCopy} />
+        <p className="mt-8 flex items-start gap-2 rounded-2xl border border-line bg-white px-5 py-4 text-sm leading-relaxed text-ink"><Check size={18} className="mt-0.5 shrink-0 text-emerald-700" aria-hidden />{t("continuity")}</p>
       </Container>
     </section>
   );

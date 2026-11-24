@@ -1,10 +1,11 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useEffect, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { subscribeToNewsletter, type NewsletterState } from "@/features/newsletter/actions";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/shared/lib/cn";
+import { TurnstileField } from "@/features/captcha/TurnstileField";
 
 const initialState: NewsletterState = { status: "idle" };
 
@@ -12,8 +13,30 @@ export function NewsletterForm({ variant = "footer" }: { variant?: "footer" | "b
   const locale = useLocale();
   const t = useTranslations("Newsletter");
   const [state, formAction, pending] = useActionState(subscribeToNewsletter, initialState);
+  const [available, setAvailable] = useState(false);
+
+  // Pages are statically cached; read runtime availability rather than baking
+  // a build-time flag into hundreds of pages. The action independently gates SMTP.
+  useEffect(() => {
+    const controller = new AbortController();
+    fetch("/api/newsletter/status", { cache: "no-store", signal: controller.signal })
+      .then(async (response) => {
+        const result = response.ok ? await response.json() : null;
+        setAvailable(result?.enabled === true);
+      })
+      .catch(() => { if (!controller.signal.aborted) setAvailable(false); });
+    return () => controller.abort();
+  }, []);
 
   const done = state.status === "success" || state.status === "already";
+
+  if (available !== true || state.status === "unavailable") {
+    return (
+      <p className="max-w-md rounded-xl border border-line bg-surface px-4 py-3 text-[14px] leading-relaxed text-muted" role="status">
+        {t("unavailable")}
+      </p>
+    );
+  }
 
   return (
     <div className={variant === "banner" ? "mx-auto max-w-xl" : "max-w-md"}>
@@ -62,9 +85,11 @@ export function NewsletterForm({ variant = "footer" }: { variant?: "footer" | "b
           />
           <input type="hidden" name="locale" value={locale} />
 
+          <TurnstileField action="newsletter_signup" serverError={state.message === "captcha"} resetSignal={state} />
+
           {state.status === "error" ? (
             <p className="text-[13px] text-brand-pink" role="alert">
-              {t("error")}
+              {state.message === "rate_limited" ? t("rateLimited") : state.message === "captcha" ? t("captchaError") : t("error")}
             </p>
           ) : null}
 

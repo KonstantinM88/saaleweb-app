@@ -1,0 +1,170 @@
+{
+  "checkedAt": "2026-11-17T23:50:10.944Z",
+  "layouts": [
+    {
+      "label": "DE 1440 default",
+      "activePanels": 1,
+      "client": 1425,
+      "height": 1250,
+      "playing": "true",
+      "providers": 6,
+      "scroll": 1425,
+      "stage": "1",
+      "unloadedIcons": [],
+      "width": 1440
+    },
+    {
+      "label": "DE 1440 full scene",
+      "activePanels": 1,
+      "client": 1425,
+      "height": 900,
+      "playing": "false",
+      "providers": 6,
+      "scroll": 1425,
+      "stage": "1",
+      "unloadedIcons": [],
+      "width": 1440
+    },
+    {
+      "label": "DE 1024",
+      "activePanels": 1,
+      "client": 1009,
+      "height": 900,
+      "playing": "false",
+      "providers": 6,
+      "scroll": 1009,
+      "stage": "1",
+      "unloadedIcons": [],
+      "width": 1024
+    },
+    {
+      "label": "DE 768",
+      "activePanels": 1,
+      "client": 753,
+      "height": 1000,
+      "playing": "false",
+      "providers": 6,
+      "scroll": 753,
+      "stage": "1",
+      "unloadedIcons": [],
+      "width": 768
+    },
+    {
+      "label": "DE 390",
+      "activePanels": 1,
+      "client": 375,
+      "height": 900,
+      "playing": "false",
+      "providers": 6,
+      "scroll": 375,
+      "stage": "1",
+      "unloadedIcons": [],
+      "width": 390
+    },
+    {
+      "label": "EN 320 default",
+      "activePanels": 1,
+      "client": 305,
+      "height": 1000,
+      "playing": "false",
+      "providers": 6,
+      "scroll": 305,
+      "stage": "1",
+      "unloadedIcons": [],
+      "width": 320
+    },
+    {
+      "label": "EN 320 evidence",
+      "activePanels": 1,
+      "client": 305,
+      "height": 1000,
+      "playing": "true",
+      "providers": 6,
+      "scroll": 305,
+      "stage": "2",
+      "unloadedIcons": [],
+      "width": 320
+    },
+    {
+      "label": "RU 320 default",
+      "activePanels": 1,
+      "client": 305,
+      "height": 1000,
+      "playing": "false",
+      "providers": 6,
+      "scroll": 305,
+      "stage": "1",
+      "unloadedIcons": [],
+      "width": 320
+    },
+    {
+      "label": "RU 320 discover",
+      "activePanels": 1,
+      "client": 305,
+      "height": 1000,
+      "playing": "true",
+      "providers": 6,
+      "scroll": 305,
+      "stage": "0",
+      "unloadedIcons": [],
+      "width": 320
+    },
+    {
+      "label": "DE 320 default",
+      "activePanels": 1,
+      "client": 305,
+      "height": 1000,
+      "playing": "true",
+      "providers": 6,
+      "scroll": 305,
+      "stage": "1",
+      "unloadedIcons": [],
+      "width": 320
+    }
+  ],
+  "interactions": [
+    {
+      "check": "DE stages via keyboard and click; correct visible headings; pause",
+      "passed": true
+    },
+    {
+      "check": "Replay and pause control actual CSS animation",
+      "active": {
+        "duration": "4s",
+        "playing": "true",
+        "shine": "av-paper-light",
+        "signal": "av-signal"
+      },
+      "paused": {
+        "playing": "false",
+        "signal": "none"
+      }
+    },
+    {
+      "check": "Audit CTA reached existing form; animation stops offscreen",
+      "passed": true,
+      "state": {
+        "auditTop": 91.046875,
+        "hash": "#website-audit",
+        "playing": "false",
+        "sceneBottom": -10658.90625
+      }
+    },
+    {
+      "check": "EN 320 keyboard evidence stage and visible heading",
+      "passed": true
+    },
+    {
+      "check": "RU 320 discover stage and visible heading",
+      "passed": true
+    },
+    {
+      "check": "Entry animation finishes without interaction",
+      "started": true,
+      "after": "false",
+      "passed": true
+    }
+  ],
+  "reducedMotion": "Static SSR verified; media CSS and subscription inspected. Browser does not expose media-feature emulation.",
+  "completedAt": "2026-11-17T23:54:59.417Z"
+}

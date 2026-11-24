@@ -28,6 +28,19 @@ const services: Record<string, RetainedPage> = {
   },
 };
 
+// The October 30 consolidation retired only the DE members of these groups.
+// Keep their existing EN/RU pages reachable; never re-link the retired DE URLs.
+const localeSpecificServices: Record<string, Partial<RetainedPage>> = {
+  "website-entwicklung": {
+    en: { slug: "web-development", label: "Website development & handover", description: "Design, implementation and an editable website for your business, with scope and handover agreed in advance." },
+    ru: { slug: "razrabotka-sajtov", label: "Разработка и передача сайта", description: "Дизайн, реализация и редактируемый сайт для компании с согласованным объёмом работ и передачей проекта." },
+  },
+  wartung: {
+    en: { slug: "maintenance", label: "Support for an existing website", description: "Updates, backups, function checks and ongoing improvements within an agreed maintenance scope." },
+    ru: { slug: "podderzhka", label: "Поддержка существующего сайта", description: "Обновления, резервные копии, проверка функций и развитие сайта в согласованном объёме сопровождения." },
+  },
+};
+
 const industries: Record<string, RetainedPage> = {
   arztpraxen: {
     de: { slug: "arztpraxen", label: "Websites für Arztpraxen", description: "Leistungen, Praxisteam, Sprechzeiten und Kontaktwege für Patienten verständlich darstellen." },
@@ -52,11 +65,20 @@ function link(page: RetainedPage, locale: AppLocale, section: "services" | "indu
 }
 
 export function getRetainedServiceLink(canonical: string, locale: AppLocale): Phase4Link | null {
-  return services[canonical] ? link(services[canonical], locale, "services") : null;
+  const page = services[canonical]?.[locale] ?? localeSpecificServices[canonical]?.[locale];
+  if (!page) return null;
+  const { slug, ...copy } = page;
+  return { ...copy, href: getLocalizedSlugHref(locale, "services", slug) };
 }
 
 export function getRetainedServiceLinks(locale: AppLocale): Phase4Link[] {
-  return Object.values(services).map((page) => link(page, locale, "services"));
+  return [
+    ...Object.values(services).map((page) => link(page, locale, "services")),
+    ...Object.keys(localeSpecificServices).flatMap((canonical) => {
+      const retained = getRetainedServiceLink(canonical, locale);
+      return retained ? [retained] : [];
+    }),
+  ];
 }
 
 export function getRetainedIndustryLinks(locale: AppLocale): Phase4Link[] {

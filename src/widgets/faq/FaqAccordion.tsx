@@ -7,15 +7,38 @@ import { cn } from "@/shared/lib/cn";
 
 export type QA = { q: string; a: string };
 
-export function FaqAccordion({ items }: { items: QA[] }) {
+/**
+ * `initialVisible` keeps long lists short: the remaining items stay in the
+ * DOM (hidden with `hidden`, so the text remains in the server HTML) until
+ * the visitor asks for more.
+ */
+export function FaqAccordion({
+  items,
+  initialVisible,
+  moreLabel,
+  lessLabel,
+}: {
+  items: QA[];
+  initialVisible?: number;
+  moreLabel?: string;
+  lessLabel?: string;
+}) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [expanded, setExpanded] = useState(false);
+  const limit = initialVisible && initialVisible < items.length ? initialVisible : items.length;
+  const hiddenCount = items.length - limit;
 
   return (
     <div className="mx-auto grid max-w-[780px] gap-3">
       {items.map((item, i) => {
         const open = openIndex === i;
+        const collapsed = !expanded && i >= limit;
         return (
-          <div key={i} className="overflow-hidden rounded-[14px] border border-line bg-white">
+          <div
+            key={i}
+            hidden={collapsed}
+            className="overflow-hidden rounded-[14px] border border-line bg-white"
+          >
             <button
               type="button"
               onClick={() => setOpenIndex(open ? null : i)}
@@ -47,6 +70,16 @@ export function FaqAccordion({ items }: { items: QA[] }) {
           </div>
         );
       })}
+      {hiddenCount > 0 && moreLabel ? (
+        <button
+          type="button"
+          onClick={() => setExpanded((value) => !value)}
+          aria-expanded={expanded}
+          className="mx-auto mt-2 inline-flex items-center gap-2 rounded-xl border border-line bg-white px-5 py-2.5 text-[14px] font-bold text-dark transition hover:border-brand-purple hover:text-brand-purple"
+        >
+          {expanded ? lessLabel ?? moreLabel : `${moreLabel} (${hiddenCount})`}
+        </button>
+      ) : null}
     </div>
   );
 }

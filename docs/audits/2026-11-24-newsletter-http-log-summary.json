@@ -1,0 +1,16 @@
+{
+  "sourceFile": "01a20f60-0e56-70e2-8146-c66017db3934.csv",
+  "sourceSha256": "04b34170dd4725dfc5de98206763f3ebb41d6c63182d9814adafc90b4ad9f4e5",
+  "rows": 769,
+  "totalPosts": 64,
+  "medicalPagePosts": 55,
+  "medicalUniqueIPs": 38,
+  "incidentBerlinDate": "2026-11-24",
+  "incidentPosts": 49,
+  "incidentUniqueIPs": 34,
+  "incidentHttp200": 49,
+  "exampleUtc": "2026-11-24T19:36:53.000000Z",
+  "exampleBerlin": "2026-11-24 20:36:53",
+  "matchingExample": 1,
+  "limitations": "No request body, Next-Action ID, recipient, mail ID or SMTP result in this export. The 13 mail correlations are user-supplied."
+}

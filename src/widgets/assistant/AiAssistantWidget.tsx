@@ -307,7 +307,7 @@ export function AiAssistantWidget({
   return (
     <div
       className={`pointer-events-none fixed bottom-[calc(0.25rem+env(safe-area-inset-bottom))] left-1 right-1 flex max-w-none flex-col items-stretch sm:bottom-[calc(0.75rem+env(safe-area-inset-bottom))] sm:left-auto sm:right-5 sm:max-w-[calc(100vw-2rem)] sm:items-end md:bottom-[calc(1.25rem+env(safe-area-inset-bottom))] md:right-7 ${
-        open ? "z-80" : "z-40"
+        open ? "z-80" : "ai-assistant-launcher z-40"
       }`}
       aria-live="polite"
     >

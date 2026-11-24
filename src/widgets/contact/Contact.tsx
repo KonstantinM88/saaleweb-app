@@ -31,8 +31,8 @@ export async function Contact({ locale }: { locale: AppLocale }) {
             className="pointer-events-none absolute -right-20 -top-20 -z-10 h-72 w-72 rounded-full border border-brand-purple/15"
           />
 
-          <div className="grid gap-10 lg:grid-cols-[0.88fr_1.12fr] lg:items-center lg:gap-14">
-            <div>
+          <div className="grid min-w-0 grid-cols-1 gap-10 wrap-anywhere lg:grid-cols-[0.88fr_1.12fr] lg:items-center lg:gap-14">
+            <div className="min-w-0">
               <span className="font-mono text-xs uppercase tracking-[0.18em] text-brand-pink">
                 {t("eyebrow")}
               </span>
@@ -58,7 +58,7 @@ export async function Contact({ locale }: { locale: AppLocale }) {
               </ul>
             </div>
 
-            <div className="rounded-[24px] border border-white/12 bg-white/7.5 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-xs sm:p-5">
+            <div className="min-w-0 rounded-[24px] border border-white/12 bg-white/7.5 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-xs sm:p-5">
               <div className="px-2 pb-4">
                 <p className="text-sm font-bold text-white">{t("choiceTitle")}</p>
                 <p className="mt-1 text-sm leading-relaxed text-slate-400">{t("choiceText")}</p>

@@ -20,6 +20,8 @@ Diese Datei ist ein kurzer Wegweiser zu öffentlichen SaaleWeb-Seiten. [Ausführ
 - [WordPress Agentur Halle](https://saaleweb.de/leistungen/wordpress-agentur-halle): Übernahme, Modernisierung und Betreuung.
 - [KI-Optimierung](https://saaleweb.de/leistungen/ki-optimierung): Strukturierte, überprüfbare Informationen für moderne Such- und Antwortsysteme.
 - [Website Relaunch](https://saaleweb.de/leistungen/website-relaunch): Bestandsaufnahme, URL-Planung und technische Umsetzung.
+- [Website Wartung](https://saaleweb.de/leistungen/website-wartung): Übernahme, Pflege und Weiterentwicklung nach vereinbartem Umfang.
+- [KI-Assistent](https://saaleweb.de/leistungen/ki-assistent): Wissensbasis, Kundenfragen, Übergabe und geplante Integrationen.
 - [Kostenlose Website-Analyse](https://saaleweb.de/kostenlose-website-analyse): Manuelle Ersteinschätzung mit priorisierten Hinweisen.
 
 ## Branchen, Region und Sprachversionen

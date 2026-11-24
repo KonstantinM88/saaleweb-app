@@ -9,6 +9,7 @@ export const turnstileActionSchema = z.enum([
   "homepage_contact",
   "contact_page",
   "website_audit",
+  "newsletter_signup",
 ]);
 
 export type TurnstileAction = z.infer<typeof turnstileActionSchema>;

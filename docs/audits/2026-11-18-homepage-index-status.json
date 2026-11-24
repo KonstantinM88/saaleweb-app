@@ -1,0 +1,64 @@
+{
+  "checkedAt": "2026-11-18T00:13:27.674Z",
+  "source": "GSC URL Inspection stored index state; not a live test or indexing request",
+  "results": [
+    {
+      "url": "https://saaleweb.de/",
+      "indexStatus": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-11-13T15:27:00Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/",
+        "userCanonical": "https://saaleweb.de/",
+        "referringUrls": [
+          "https://www.saaleweb.de/ru/uslugi/sistemy-bronirovaniya",
+          "https://www.neueliebe-nebra.de/news",
+          "https://drjack.world/report/4310101",
+          "http://saaleweb.de/"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en",
+      "indexStatus": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-29T21:02:48Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en",
+        "userCanonical": "https://saaleweb.de/en",
+        "referringUrls": [
+          "https://saaleweb.de/en/blog",
+          "https://www.saaleweb.de/en/industries/service-provider-website",
+          "https://saaleweb.de/"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/ru",
+      "indexStatus": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-11-05T06:52:12Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/ru",
+        "userCanonical": "https://saaleweb.de/ru",
+        "referringUrls": [
+          "https://saaleweb.de/",
+          "https://saaleweb.de/ru/uslugi/seo-saalekreis",
+          "https://www.saaleweb.de/ru/goroda/delitzsch"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    }
+  ]
+}

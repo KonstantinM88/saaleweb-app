@@ -17,6 +17,7 @@ type StaticItem = {
   solution: string;
   benefits: string[];
   result: string;
+  report?: { source: string; text: string; url: string; linkLabel: string };
 };
 type Card = {
   slug: string | null;
@@ -87,6 +88,11 @@ export async function CaseStudies() {
   const dbBySlug = new Map(dbItems.flatMap((item) => (item.slug ? [[item.slug, item]] : [])));
   const items: CaseStudyCardView[] = fallback.map((item) => {
     const db = dbBySlug.get(item.slug);
+    const liveCapture = item.report?.url.includes("neueliebe-nebra.de")
+      ? "/images/project-captures/2026-11-17/neue-liebe.webp"
+      : item.report?.url.includes("permanent-halle.de")
+        ? "/images/project-captures/2026-11-17/salon-elen.webp"
+        : null;
     return {
       slug: db?.slug ?? item.slug,
       title: item.name,
@@ -96,9 +102,10 @@ export async function CaseStudies() {
       solution: item.solution,
       benefits: item.benefits,
       result: item.result || db?.result || "",
-      cover: db?.cover ?? item.cover,
+      report: item.report,
+      cover: liveCapture ? { image: liveCapture, mobileImage: liveCapture.replace(".webp", "-mobile.webp"), domain: new URL(item.report!.url).hostname.replace(/^www\./, ""), color: null, label: item.name } : db?.cover ?? item.cover,
     };
-  });
+  }).sort((a, b) => Number(Boolean(b.report)) - Number(Boolean(a.report)));
 
   return (
     <section id="cases" className="py-16 md:py-24">
@@ -107,7 +114,7 @@ export async function CaseStudies() {
         <p className="mx-auto -mt-3 mb-8 max-w-2xl text-center text-[14px] font-semibold text-muted">
           {t("trustLine")}
         </p>
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-6">
           {items.map((item, i) => (
             <CaseStudyCard key={item.slug ?? item.title} item={item} labels={labels} index={i} />
           ))}

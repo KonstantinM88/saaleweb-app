@@ -1,0 +1,212 @@
+{
+  "checkedAt": "2026-11-18T00:28:51.055Z",
+  "layouts": [
+    {
+      "label": "DE 1440 default",
+      "client": 1425,
+      "height": 1000,
+      "opened": [
+        "Webdesigner in Halle gesucht für eine neue Firmenwebsite — wer macht sowas?+"
+      ],
+      "questions": 10,
+      "scroll": 1425,
+      "summaryItems": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "width": 1440
+    },
+    {
+      "label": "DE 1440 SEO keyboard",
+      "client": 1425,
+      "height": 1000,
+      "opened": [
+        "Webdesigner in Halle gesucht für eine neue Firmenwebsite — wer macht sowas?+",
+        "Bietet SaaleWeb Webdesign und SEO aus einer Hand in Halle an?+"
+      ],
+      "questions": 10,
+      "scroll": 1425,
+      "summaryItems": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "width": 1440
+    },
+    {
+      "label": "DE 1440 all four new answers open",
+      "client": 1425,
+      "height": 1000,
+      "opened": [
+        "Webdesigner in Halle gesucht für eine neue Firmenwebsite — wer macht sowas?+",
+        "Bietet SaaleWeb Webdesign und SEO aus einer Hand in Halle an?+",
+        "Kann ich meine WordPress-Website modernisieren lassen und bestehende Google-Sichtbarkeit erhalten?+",
+        "Wer übernimmt die laufende Betreuung unserer Firmenwebsite?+",
+        "Was kostet ein KI-Chatbot für meine Website und lässt er sich mit Buchung oder CRM verbinden?+"
+      ],
+      "questions": 10,
+      "scroll": 1425,
+      "summaryItems": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "width": 1440
+    },
+    {
+      "label": "DE 390 AI answer",
+      "client": 375,
+      "height": 1000,
+      "opened": [
+        "Webdesigner in Halle gesucht für eine neue Firmenwebsite — wer macht sowas?+",
+        "Bietet SaaleWeb Webdesign und SEO aus einer Hand in Halle an?+",
+        "Kann ich meine WordPress-Website modernisieren lassen und bestehende Google-Sichtbarkeit erhalten?+",
+        "Wer übernimmt die laufende Betreuung unserer Firmenwebsite?+",
+        "Was kostet ein KI-Chatbot für meine Website und lässt er sich mit Buchung oder CRM verbinden?+"
+      ],
+      "questions": 10,
+      "scroll": 375,
+      "summaryItems": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "width": 390
+    },
+    {
+      "label": "DE 320 SEO answer",
+      "client": 305,
+      "height": 1000,
+      "opened": [
+        "Webdesigner in Halle gesucht für eine neue Firmenwebsite — wer macht sowas?+",
+        "Bietet SaaleWeb Webdesign und SEO aus einer Hand in Halle an?+",
+        "Kann ich meine WordPress-Website modernisieren lassen und bestehende Google-Sichtbarkeit erhalten?+",
+        "Wer übernimmt die laufende Betreuung unserer Firmenwebsite?+",
+        "Was kostet ein KI-Chatbot für meine Website und lässt er sich mit Buchung oder CRM verbinden?+"
+      ],
+      "questions": 10,
+      "scroll": 305,
+      "summaryItems": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "width": 320
+    },
+    {
+      "label": "EN 320 relaunch keyboard",
+      "client": 305,
+      "height": 1000,
+      "opened": [
+        "Looking for a web designer in Halle for a new company website — who does that?+",
+        "Can I modernise my WordPress website and preserve existing Google visibility?+"
+      ],
+      "questions": 10,
+      "scroll": 305,
+      "summaryItems": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "width": 320
+    },
+    {
+      "label": "RU 320 AI answer keyboard",
+      "client": 305,
+      "height": 1000,
+      "opened": [
+        "Ищу веб-дизайнера в Halle для нового корпоративного сайта — кто этим занимается?+",
+        "Сколько стоит AI-чатбот для сайта и можно ли подключить бронирование или CRM?+"
+      ],
+      "questions": 10,
+      "scroll": 305,
+      "summaryItems": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "width": 320
+    }
+  ],
+  "interactions": [
+    {
+      "check": "DE SEO answer opens with Enter and keeps brand inline",
+      "passed": true
+    },
+    {
+      "check": "All four added DE answers open; AI question works with Space",
+      "passed": true
+    },
+    {
+      "check": "EN relaunch opens by keyboard at 320 px",
+      "passed": true
+    },
+    {
+      "check": "RU AI answer opens with Enter after initial layout settles",
+      "passed": true
+    },
+    {
+      "check": "RU AI answer closes and reopens by pointer after layout settles",
+      "passed": true
+    },
+    {
+      "check": "Existing Google summary still updates to four reviews while keeping two saved quotes",
+      "passed": true
+    }
+  ],
+  "reviews": {
+    "summary": "STIMMEN\nWas Kunden sagen\nGoogle Maps\n\nECHTE GOOGLE-REZENSIONEN\n\n5,0\n4 Rezensionen\nAlle Rezensionen\nRezension schreiben\n\nDie aktuelle Gesamtbewertung umfasst alle Google-Rezensionen. Darunter sehen Sie zwei ausgewählte, dokumentierte Kundenstimmen. Alle Rezensionen finden Sie im verlinkten Google-Profil.\n\nWir sind mit der Zusammenarbeit mit SaaleWeb",
+    "note": "Live summary loads on viewport entry; two saved sourced quotes are retained."
+  },
+  "completedAt": "2026-11-18T00:31:31.871Z"
+}

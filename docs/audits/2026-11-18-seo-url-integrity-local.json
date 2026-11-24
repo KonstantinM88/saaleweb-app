@@ -1,0 +1,90 @@
+{
+  "base": "http://localhost:3198",
+  "passed": 18,
+  "checks": [
+    {
+      "source": "/leistungen/website-wartung-Website-Wartung",
+      "target": "/leistungen/website-wartung",
+      "status": "308 -> 200"
+    },
+    {
+      "source": "/leistungen/website-wartung-Website-Wartung?utm_source=url-integrity&check=1",
+      "target": "/leistungen/website-wartung?utm_source=url-integrity&check=1",
+      "status": "308 -> 200"
+    },
+    {
+      "source": "/leistungen/proizvoditelnost",
+      "target": "/leistungen/performance-optimierung",
+      "status": "308 -> 200"
+    },
+    {
+      "source": "/leistungen/proizvoditelnost?utm_source=url-integrity&check=1",
+      "target": "/leistungen/performance-optimierung?utm_source=url-integrity&check=1",
+      "status": "308 -> 200"
+    },
+    {
+      "source": "/en/services/proizvoditelnost",
+      "target": "/en/services/performance-optimization",
+      "status": "308 -> 200"
+    },
+    {
+      "source": "/en/services/proizvoditelnost?utm_source=url-integrity&check=1",
+      "target": "/en/services/performance-optimization?utm_source=url-integrity&check=1",
+      "status": "308 -> 200"
+    },
+    {
+      "source": "/ru/uslugi/performance",
+      "target": "/ru/uslugi/optimizaciya-proizvoditelnosti",
+      "status": "308 -> 200"
+    },
+    {
+      "source": "/ru/uslugi/performance?utm_source=url-integrity&check=1",
+      "target": "/ru/uslugi/optimizaciya-proizvoditelnosti?utm_source=url-integrity&check=1",
+      "status": "308 -> 200"
+    },
+    {
+      "source": "/leistungen/website-sicherheit",
+      "status": "200; no malformed URL in HTML/RSC"
+    },
+    {
+      "source": "/en/services/website-security",
+      "status": "200; no malformed URL in HTML/RSC"
+    },
+    {
+      "source": "/ru/uslugi/bezopasnost-sayta",
+      "status": "200; no malformed URL in HTML/RSC"
+    },
+    {
+      "source": "/leistungen",
+      "status": "200; no malformed URL in HTML/RSC"
+    },
+    {
+      "source": "/en/services",
+      "status": "200; no malformed URL in HTML/RSC"
+    },
+    {
+      "source": "/en/services",
+      "target": "/en/services/web-development",
+      "status": "Retained service linked in server HTML"
+    },
+    {
+      "source": "/en/services",
+      "target": "/en/services/maintenance",
+      "status": "Retained service linked in server HTML"
+    },
+    {
+      "source": "/ru/uslugi",
+      "status": "200; no malformed URL in HTML/RSC"
+    },
+    {
+      "source": "/ru/uslugi",
+      "target": "/ru/uslugi/razrabotka-sajtov",
+      "status": "Retained service linked in server HTML"
+    },
+    {
+      "source": "/ru/uslugi",
+      "target": "/ru/uslugi/podderzhka",
+      "status": "Retained service linked in server HTML"
+    }
+  ]
+}

@@ -43,7 +43,7 @@ export function Founder() {
                   }}
                 />
                 <div className="absolute right-3 top-3 flex animate-bob items-center gap-1 rounded-lg bg-white/95 px-2 py-1 text-[11px] font-bold text-dark shadow-card">
-                  5.0
+                  {t("portraitBadge")}
                 </div>
               </div>
             </div>

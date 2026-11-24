@@ -61,8 +61,7 @@
     "badge": "Webagentur · Halle (Saale) → Deutschland",
     "titleA": "Websites, die ",
     "titleB": "Kunden bringen.",
-    "lead1": "Wir entwickeln digitale Systeme, die Unternehmen sichtbar machen, Vertrauen schaffen und nachhaltig wachsen lassen.",
-    "lead2": "Von modernen Unternehmenswebsites über lokale SEO bis hin zu KI-optimierten Inhalten – jede Lösung entsteht mit einem klaren Ziel: mehr qualifizierte Anfragen und langfristiges Wachstum.",
+    "lead": "Wir modernisieren Ihre Website, machen Ihr Angebot für Google und KI-Suchen verständlich und verbinden Anfragen mit Ihren Abläufen. Für Unternehmen in Halle, Leipzig und im Saalekreis.",
     "ctaPrimary": "Kostenloses Erstgespräch",
     "ctaSecondary": "Unsere Projekte ansehen",
     "note": "Antwort in 24 h · Keine Vorkasse · Festpreis",
@@ -80,6 +79,17 @@
     "floats": {
       "a": "Lighthouse {score}/100",
       "b": "Antwort in 24 h"
+    },
+    "showcase": {
+      "label": "Websites, die für unsere Kunden arbeiten",
+      "primaryName": "Neue Liebe Nebra",
+      "primaryMeta": "Restaurant · Speisekarte & Reservierung",
+      "secondaryName": "SorgfaltBau",
+      "secondaryMeta": "Bauunternehmen · qualifizierte Anfragen",
+      "google": "Kundenstimmen auf Google",
+      "lighthouse": "Lighthouse {score}/100 · saaleweb.de",
+      "desktop": "Desktop",
+      "mobile": "Mobil"
     }
   },
   "Trust": {
@@ -224,7 +234,7 @@
   "Pricing": {
     "eyebrow": "Preise",
     "title": "Transparente Festpreise",
-    "lead": "Keine versteckten Kosten. Sie wissen genau, was Sie bekommen.",
+    "lead": "Sie erhalten einen vereinbarten Leistungsumfang und einen nachvollziehbaren Festpreis. Der passende Einstieg richtet sich nach Ihrer Website und Ihren Abläufen.",
     "trustLine": "Transparente Einstiegspakete. Individuelle Angebote nach Projektumfang.",
     "popular": "Beliebt",
     "button": "Anfragen",
@@ -280,15 +290,15 @@
       },
       {
         "q": "Ist SEO bei jeder Website inklusive?",
-        "a": "Ja. Technisches SEO, saubere Seitenstruktur, schnelle Ladezeiten, Meta-Daten und strukturierte Daten gehören von Anfang an dazu. So werden Sie bei Google in Halle, Leipzig und Umgebung gefunden — auf Wunsch ergänzen wir zusätzliche SEO-Landingpages für einzelne Leistungen."
+        "a": "Die technische SEO-Basis, eine klare Seitenstruktur und passende Metadaten gehören zur Umsetzung. Welche Inhalte, lokale Optimierungen und laufenden Maßnahmen zusätzlich sinnvoll sind, wird nach Bestandsaufnahme vereinbart. Eine bestimmte Suchposition ist damit nicht garantiert."
       },
       {
         "q": "Was bedeutet GEO bzw. AIO — Optimierung für KI-Suche?",
-        "a": "GEO (Generative Engine Optimization) und AIO (AI Optimization) sorgen dafür, dass KI-Systeme wie ChatGPT, Gemini, Claude und Perplexity Ihr Unternehmen verstehen, korrekt zitieren und weiterempfehlen. Dafür strukturieren wir Inhalte semantisch, ergänzen strukturierte Daten nach Schema.org und beantworten echte Kundenfragen direkt auf der Website."
+        "a": "GEO (Generative Engine Optimization) und AIO (AI Optimization) bezeichnen die Arbeit an verständlichen, zugänglichen und belegbaren Inhalten für KI-Suche. Dazu gehören konkrete Antworten, eindeutige Unternehmensinformationen und passende strukturierte Daten. Ob ein System die Website nennt oder verlinkt, entscheidet es selbst."
       },
       {
         "q": "Wie erscheint mein Unternehmen in Antworten von ChatGPT & Co.?",
-        "a": "KI-Suchsysteme bevorzugen Websites mit klaren Fakten: wer Sie sind, was Sie anbieten, wo Sie arbeiten und was es kostet. Genau diese Informationen bereiten wir maschinenlesbar auf — mit FAQ-Bereichen, LocalBusiness-Daten und eindeutigen Leistungsseiten. So steigt die Chance, dass KI-Antworten Ihr Unternehmen nennen."
+        "a": "KI-Suchsysteme können öffentlich zugängliche Quellen für ihre Antworten heranziehen. Wir machen Leistungen, Standort, Erfahrung und Abläufe klar verständlich und stützen Aussagen durch reale Projekte. Wiederkehrende Testfragen zeigen, ob Ihr Unternehmen erwähnt oder als Quelle verlinkt wird; eine Aufnahme in Antworten ist nicht zugesichert."
       },
       {
         "q": "Macht ihr lokales SEO für Halle, Leipzig und den Saalekreis?",
@@ -342,7 +352,9 @@
         "q": "Was brauche ich, um zu starten?",
         "a": "Nur Ihr Ziel. Für das kostenlose Erstgespräch reichen Ihre aktuelle Website (falls vorhanden) und eine kurze Beschreibung Ihres Angebots. Texte, Bilder und Struktur entwickeln wir gemeinsam — melden Sie sich einfach per Kontaktformular, WhatsApp oder Telefon."
       }
-    ]
+    ],
+    "more": "Weitere Fragen anzeigen",
+    "less": "Weniger anzeigen"
   },
   "Contact": {
     "eyebrow": "Kontakt",
@@ -692,6 +704,9 @@
     "madeIn": "Made in Halle"
   },
   "Newsletter": {
+    "unavailable": "Die Newsletter-Anmeldung ist vorübergehend nicht verfügbar. Bitte versuchen Sie es später erneut.",
+    "rateLimited": "Zurzeit können wir keine weitere Bestätigungs-E-Mail senden. Bitte prüfen Sie Ihr Postfach und versuchen Sie es frühestens in 24 Stunden erneut.",
+    "captchaError": "Bitte schließen Sie die Sicherheitsprüfung erneut ab.",
     "eyebrow": "Newsletter",
     "title": "Praxistipps für Ihre Sichtbarkeit",
     "text": "Etwa einmal im Monat: umsetzbare Tipps zu Websites, lokalem SEO und KI-Sichtbarkeit für Unternehmen in Halle & Leipzig. Kein Spam, jederzeit abbestellbar.",
@@ -714,8 +729,8 @@
   },
   "CaseStudies": {
     "eyebrow": "Case Studies",
-    "title": "Projekte, die geschäftlich Wirkung zeigen",
-    "lead": "Jedes Projekt wird als Wachstumssystem gedacht: mehr Sichtbarkeit, mehr Vertrauen und mehr qualifizierte Anfragen.",
+    "title": "Websites, die im Alltag genutzt werden.",
+    "lead": "Ein Tisch im Restaurant. Ein Termin im Salon. Eine verständliche Bauanfrage. Unsere Projekte verbinden Gestaltung mit konkreten Aufgaben im Betrieb.",
     "link": "Case ansehen",
     "trustLine": "Ausgewählte Projekte aus Gastronomie, Beauty, Handwerk und Bau.",
     "labels": {
@@ -724,7 +739,9 @@
       "solution": "Lösung",
       "benefits": "Vorteile",
       "result": "Fokus",
-      "cta": "Projekt ansehen"
+      "cta": "Projekt ansehen",
+      "desktop": "Desktop",
+      "mobile": "Mobil"
     },
     "projects": [
       {
@@ -739,7 +756,13 @@
           "Bessere lokale Auffindbarkeit"
         ],
         "badge": "Beauty · Booking · Local SEO",
-        "result": "Online-Termine & Local SEO"
+        "result": "Online-Termine & Local SEO",
+        "report": {
+          "source": "Rückmeldung aus dem Projekt",
+          "text": "Guter Website-Traffic und um ein Mehrfaches gestiegene Online-Buchungen laut Rückmeldung aus dem Projekt.",
+          "url": "https://permanent-halle.de/",
+          "linkLabel": "Live-Website ansehen"
+        }
       },
       {
         "slug": "neue-liebe-nebra",
@@ -753,7 +776,13 @@
           "Mehr Vertrauen bei Gästen"
         ],
         "badge": "Restaurant · SEO · Mobile First",
-        "result": "Restaurant-Auftritt"
+        "result": "Restaurant-Auftritt",
+        "report": {
+          "source": "Rückmeldung aus dem Projekt",
+          "text": "Guter Website-Traffic und um ein Mehrfaches gestiegene Online-Buchungen laut Rückmeldung aus dem Projekt.",
+          "url": "https://neueliebe-nebra.de/",
+          "linkLabel": "Live-Website ansehen"
+        }
       },
       {
         "slug": "direktbuchungen-ohne-portale",
@@ -766,7 +795,7 @@
           "Mehr Direktbuchungen möglich",
           "Professionelle Hotelwirkung"
         ],
-        "badge": "Hotel · Restaurant · Buchungen",
+        "badge": "Projektvorschau · Hotel & Restaurant",
         "result": "Hotel & Restaurant"
       },
       {
@@ -794,7 +823,7 @@
           "Leistungen klar verständlich",
           "Bessere lokale Sichtbarkeit"
         ],
-        "badge": "Handwerk · Leistungen · Local SEO",
+        "badge": "Projektvorschau · Handwerk / Glaserei",
         "result": "Vertrauen & lokale Sichtbarkeit"
       }
     ],
@@ -1025,38 +1054,97 @@
     ]
   },
   "AiReady": {
-    "eyebrow": "AI Ready Websites",
-    "title": "Bereit für die nächste Generation der Suche.",
-    "lead": "Immer mehr Menschen stellen ihre Fragen nicht mehr ausschließlich bei Google. KI-Systeme wie ChatGPT, Claude, Gemini oder Perplexity werden zunehmend zur ersten Anlaufstelle. Wir entwickeln Inhalte und Webseiten, die so strukturiert sind, dass sie auch von modernen KI-Systemen besser verstanden und eingeordnet werden können.",
-    "subtitle": "Heute sichtbar. Morgen relevant.",
+    "eyebrow": "SEO · GEO · AIO",
+    "title": "Ihre Website. Bereit für die Suche mit KI.",
+    "lead": "Wer nach einem Anbieter sucht, vergleicht Leistungen, Erfahrung und regionale Nähe. Wir bereiten Ihre Website so auf, dass Menschen und Suchsysteme erkennen können, wofür Ihr Unternehmen die passende Wahl ist.",
+    "subtitle": "Ihr Angebot braucht eine klare, belegbare Grundlage.",
     "features": [
       {
-        "title": "Sichtbarkeit in neuen Suchwegen",
-        "desc": "Ihre Inhalte werden so aufgebaut, dass sie auch in KI-Antworten verstanden werden können"
+        "title": "Suchfragen Ihrer Kunden",
+        "desc": "Relevante Leistungen und konkrete Fragen bilden die Seitenstruktur. Jede wichtige Seite bekommt ein klares Thema."
       },
       {
-        "title": "Klare Unternehmenssignale",
-        "desc": "Leistungen, Standort, Erfahrung und Nutzen werden eindeutig beschrieben"
+        "title": "Region & Unternehmensprofil",
+        "desc": "Standort, Einzugsgebiet, Kontaktdaten und Google-Unternehmensprofil werden konsistent aufeinander abgestimmt."
       },
       {
-        "title": "Vertrauenswürdige Informationen",
-        "desc": "Suchsysteme erkennen schneller, wofür Ihr Unternehmen steht"
+        "title": "Technisch zugängliche Inhalte",
+        "desc": "Indexierbare Seiten, verständliches HTML, interne Links und passende strukturierte Daten bilden die Grundlage."
       },
       {
-        "title": "Zukunftssichere Inhalte",
-        "desc": "Ihre Website bleibt verständlich, auch wenn sich Suchverhalten verändert"
+        "title": "Antworten mit Belegen",
+        "desc": "Konkrete Abläufe, reale Projekte und nachvollziehbare Quellen geben Such- und KI-Systemen belastbare Informationen."
       }
     ],
     "window": {
       "label": "AI Search Ecosystem",
       "metric": "Maschinenlesbar",
       "caption": "Ihre Inhalte werden als klare Signale für Google, ChatGPT, Gemini, Claude und Perplexity vorbereitet - damit Ihr Unternehmen auch in neuen Sucherlebnissen sichtbar bleibt."
+    },
+    "cta": "SEO & KI-Sichtbarkeit besprechen",
+    "measurementTitle": "Wirkung nachvollziehen.",
+    "measurement": "Suchanfragen, Impressionen und Anfragen werden passend zur Einrichtung ausgewertet. Für KI-Suche vergleichen wir wiederkehrende Testfragen und unterscheiden eine Erwähnung von einer tatsächlichen Quellenverlinkung.",
+    "scope": "GEO/AIO ergänzt die SEO-Arbeit um verständliche Antworten und klare Unternehmensinformationen. Suchpositionen und Nennungen entscheiden die jeweiligen Systeme; garantierte Platzierungen gehören nicht zu unserem Angebot.",
+    "auditCta": "Website-Potenzial prüfen",
+    "visual": {
+      "label": "Von Ihrer Website zur fundierten Antwort",
+      "example": "Konzept · keine Live-Abfrage",
+      "networkLabel": "Ihre Inhalte im Umfeld verschiedener KI-Dienste",
+      "website": "Ihr Unternehmen",
+      "source": "Ihre Website als Quelle",
+      "documents": [
+        "Leistungen & Angebot",
+        "Region & Kontakt",
+        "Projekte & Erfahrung"
+      ],
+      "queryLabel": "Eine Frage Ihres nächsten Kunden",
+      "query": "Wer modernisiert meine alte Website und vereinfacht meine Kundenanfragen?",
+      "factsLabel": "Was eine hilfreiche Antwort wissen muss",
+      "facts": [
+        {
+          "label": "Leistung",
+          "value": "Website-Relaunch & Automatisierung"
+        },
+        {
+          "label": "Region",
+          "value": "Halle (Saale) & Umgebung"
+        },
+        {
+          "label": "Belege",
+          "value": "Projekte, Abläufe, Ansprechpartner"
+        }
+      ],
+      "stages": [
+        {
+          "label": "Finden",
+          "title": "Die passende Seite kann gefunden werden.",
+          "text": "Eine zugängliche Leistungsseite, klare interne Links und konsistente Unternehmensangaben schaffen die technische Grundlage.",
+          "takeaway": "Wichtige Inhalte sind erreichbar und lesbar."
+        },
+        {
+          "label": "Verstehen",
+          "title": "Klar wird, wofür Ihr Unternehmen passt.",
+          "text": "Leistung, Einsatzgebiet und Erfahrung stehen in einem verständlichen Zusammenhang. Die Website beantwortet konkrete Kundenfragen.",
+          "takeaway": "Ihr Angebot lässt sich passend zur Frage einordnen."
+        },
+        {
+          "label": "Belegen",
+          "title": "Ihre Aussagen lassen sich nachprüfen.",
+          "text": "Reale Projekte, nachvollziehbare Abläufe und ein erkennbarer Ansprechpartner geben Ihren Aussagen Substanz. Die Website lädt zum nächsten Schritt ein.",
+          "takeaway": "Belege unterstützen eine fundierte Auswahl."
+        }
+      ],
+      "sources": "Grundlage: die Inhalte Ihrer Website",
+      "sourceNote": "Illustratives Inhaltsmodell. Welche Informationen und Quellen in einer Antwort erscheinen, entscheidet das jeweilige System.",
+      "play": "Animation ansehen",
+      "pause": "Animation anhalten",
+      "reduced": "Ruhige Ansicht"
     }
   },
   "WhySaaleWeb": {
     "eyebrow": "Digitaler Wachstumspartner",
-    "title": "Warum Unternehmen auf SaaleWeb setzen.",
-    "lead": "Wir entwickeln digitale Systeme, die Unternehmen sichtbar machen, Vertrauen schaffen und nachhaltiges Wachstum ermöglichen.",
+    "title": "Klare Entscheidungen. Verlässliche Umsetzung.",
+    "lead": "Sie sollen verstehen, was wir ändern, welchen Zweck es erfüllt und was Ihr Team danach selbst übernehmen kann. Gestaltung, Technik, Sichtbarkeit und Betreuung werden gemeinsam geplant.",
     "pillarsTitle": "Brand Pillars",
     "pillarsHeading": "Vier Grundlagen für digitale Wirkung",
     "pillarsLead": "Jede Entscheidung folgt einem klaren Ziel: Ihr Unternehmen soll professioneller wirken, besser gefunden werden und mehr qualifizierte Anfragen erhalten.",
@@ -1091,34 +1179,34 @@
     "advantagesLead": "SaaleWeb verbindet Strategie, Umsetzung und Betreuung. Dadurch entsteht kein isolierter Internetauftritt, sondern ein System, das im Alltag Ihres Unternehmens arbeitet.",
     "advantages": [
       {
-        "key": "visibility",
-        "title": "Mehr Sichtbarkeit",
-        "text": "Ihre Leistungen werden klar beschrieben, lokal eingeordnet und dort sichtbar gemacht, wo Kunden nach Lösungen suchen."
+        "key": "inquiries",
+        "title": "Passendere Anfragen",
+        "text": "Angebot, Zielgruppe und Kontaktweg werden aufeinander abgestimmt. Wichtige Angaben kommen früh im Prozess an."
       },
       {
-        "key": "inquiries",
-        "title": "Mehr qualifizierte Anfragen",
-        "text": "Der Weg vom ersten Eindruck zur Kontaktaufnahme wird einfacher, klarer und vertrauenswürdiger."
+        "key": "visibility",
+        "title": "Verständliche Sichtbarkeit",
+        "text": "Ihre Leistungen bekommen klare Themen, regionale Einordnung und konkrete Antworten für Google und KI-Suche."
       },
       {
         "key": "performance",
-        "title": "Bessere Nutzererfahrung",
-        "text": "Schnelle Ladezeiten und klare Strukturen helfen Besuchern, schneller zu verstehen und zu handeln."
+        "title": "Gut bedienbar im Alltag",
+        "text": "Mobile Darstellung, Ladeverhalten und Formulare werden geprüft. Ein hochwertiger Auftritt muss auch praktisch funktionieren."
       },
       {
         "key": "security",
-        "title": "Mehr Sicherheit im Alltag",
-        "text": "Saubere Umsetzung, klare Prozesse und wartbare Systeme reduzieren technische Risiken."
+        "title": "Geplanter Übergang",
+        "text": "Domain, Inhalte, Weiterleitungen und Zugänge werden vor einem Relaunch berücksichtigt und nachvollziehbar übergeben."
       },
       {
         "key": "support",
-        "title": "Langfristige Weiterentwicklung",
-        "text": "Ihre digitale Präsenz bleibt aktuell, messbar und anpassbar, wenn Ihr Unternehmen wächst."
+        "title": "Passende Technik",
+        "text": "WordPress, Next.js oder eine individuelle Anwendung: Die Wahl richtet sich nach Pflege, Abläufen und Budget."
       },
       {
         "key": "contact",
-        "title": "Persönlicher Ansprechpartner",
-        "text": "Sie arbeiten direkt mit SaaleWeb – klar, persönlich und ohne anonyme Agenturprozesse."
+        "title": "Direkter Ansprechpartner",
+        "text": "Sie sprechen mit Konstantin Mykhailov. Zuständigkeit, Umfang und nächste Schritte bleiben klar."
       }
     ],
     "cta": {
@@ -1264,7 +1352,7 @@
   },
   "Founder": {
     "role": "Direkter Ansprechpartner",
-    "title": "Direkter Ansprechpartner statt anonyme Agenturprozesse.",
+    "title": "Konstantin Mykhailov. Ihr direkter Ansprechpartner.",
     "bio": "Bei SaaleWeb arbeiten Sie direkt mit Konstantin Mykhailov – vom ersten Konzept bis zur langfristigen Weiterentwicklung Ihrer Website. Das bedeutet kurze Wege, klare Kommunikation und ein Ansprechpartner, der Ihr Projekt wirklich kennt.",
     "cta": "Erstgespräch vereinbaren",
     "points": [
@@ -1283,18 +1371,19 @@
     ],
     "stats": [
       {
-        "value": "30+",
-        "label": "Projekte"
+        "value": "1",
+        "label": "persönlicher Ansprechpartner"
       },
       {
-        "value": "100",
-        "label": "Lighthouse Score"
+        "value": "DE · EN · RU",
+        "label": "Projektsprachen"
       },
       {
-        "value": "3+",
-        "label": "Sprachen inklusive · weitere auf Wunsch"
+        "value": "Halle",
+        "label": "Standort · überregional tätig"
       }
-    ]
+    ],
+    "portraitBadge": "Direkt im Projekt"
   },
   "Testimonials": {
     "eyebrow": "Stimmen",
@@ -1313,7 +1402,11 @@
     "policyLink": "Google-Richtlinie ansehen",
     "loading": "Google-Rezensionen werden geladen",
     "unavailableTitle": "Unsere Google-Rezensionen direkt ansehen",
-    "unavailableText": "Die Live-Rezensionen konnten gerade nicht geladen werden. Auf Google Maps sehen Sie jederzeit die aktuelle, unveränderte Bewertung."
+    "unavailableText": "Die Live-Rezensionen konnten gerade nicht geladen werden. Auf Google Maps sehen Sie jederzeit die aktuelle, unveränderte Bewertung.",
+    "savedReviewCount": "{count} dokumentierte Rezensionen · Juli 2026",
+    "summaryWithoutTexts": "Die aktuelle Gesamtbewertung umfasst alle Google-Rezensionen. Darunter sehen Sie zwei ausgewählte, dokumentierte Kundenstimmen. Alle Rezensionen finden Sie im verlinkten Google-Profil.",
+    "expandReview": "Vollständigen Text lesen",
+    "collapseReview": "Weniger anzeigen"
   },
   "Pages": {
     "home": "Start",
@@ -1386,11 +1479,17 @@
     "categoryEyebrow": "Kategorie"
   },
   "LocalSeo": {
-    "eyebrow": "Lokales SEO",
-    "title": "Sichtbar in Halle, Leipzig und allen Städten der Region",
-    "lead": "Wir machen Ihr Unternehmen auf der Karte sichtbar - in Halle (Saale), Leipzig, Merseburg, Schkeuditz, Delitzsch, Markkleeberg und Landsberg.",
-    "floatA": "Top-Rankings lokal",
-    "floatB": "~50 km Radius"
+    "eyebrow": "Halle als Standort. Die Region im Blick.",
+    "title": "Kunden aus Halle, Leipzig und Merseburg erreichen.",
+    "lead": "Ein Handwerksbetrieb braucht passende Anfragen aus seinem Einsatzgebiet. Ein Salon braucht erreichbare Termine. Ein Restaurant braucht Gäste, die Angebot und Reservierung schnell finden. Wir verbinden regionale Suchabsichten mit dem tatsächlichen Angebot Ihres Unternehmens.",
+    "floatA": "Regional relevant",
+    "floatB": "Persönlich & digital",
+    "points": [
+      "Leistungen und tatsächliches Einzugsgebiet klar beschreiben.",
+      "Unternehmensdaten und Google-Profil konsistent halten.",
+      "Von der lokalen Suche zum passenden Kontakt- oder Buchungsweg führen."
+    ],
+    "base": "SaaleWeb sitzt in Halle (Saale) und betreut auch Unternehmen in Leipzig, Merseburg und im Saalekreis. Abstimmung digital; persönliche Termine in der Region nach Vereinbarung."
   },
   "ServicesPage": {
     "metaTitle": "Leistungen für digitale Sichtbarkeit, Automatisierung und Wachstum",
@@ -1793,13 +1892,13 @@
   },
   "DirectAnswers": {
     "eyebrow": "Direkt beantwortet",
-    "title": "Fragen, die Menschen wirklich eingeben — kurz beantwortet",
-    "lead": "Diese Antworten stehen bewusst kurz und vollständig hier auf der Seite, damit Suchmaschinen und KI-Systeme sie leichter finden und richtig einordnen können.",
-    "note": "Stand der Angaben: August 2026. Preise verstehen sich zzgl. MwSt. Es werden keine Suchpositionen oder Nennungen in KI-Antworten garantiert, da diese von externen Systemen abhängen.",
+    "title": "Kurz geklärt, bevor Sie entscheiden.",
+    "lead": "Was vor der Entscheidung wichtig ist: Website-Kosten, Webdesign mit SEO, ein sicher geplanter Relaunch, laufende Betreuung und KI-Assistenten. Kurze Antworten führen Sie zum passenden Leistungsumfang.",
+    "note": "Einstiegspreise zzgl. MwSt.; verbindlicher Umfang und Festpreis nach dem Erstgespräch. Sichtbarkeit in Google und KI-Antworten wird beobachtet, nicht garantiert.",
     "items": [
       {
         "q": "Webdesigner in Halle gesucht für eine neue Firmenwebsite — wer macht sowas?",
-        "a": "SaaleWeb in Halle (Saale) baut Firmenwebsites für kleine und mittelständische Unternehmen. Der Ablauf: kostenloses Erstgespräch, Analyse, Festpreisangebot, Umsetzung in 1–5 Wochen je nach Umfang, Launch und optionale Betreuung. Ansprechpartner ist Konstantin Mykhailov — direkt, ohne Agenturkette.",
+        "a": "SaaleWeb in Halle (Saale) entwickelt und modernisiert Firmenwebsites für kleine und mittelständische Unternehmen. Auf Erstgespräch und Bestandsaufnahme folgen ein vereinbarter Leistungsumfang, Festpreisangebot, Umsetzung und Launch. Ansprechpartner ist Konstantin Mykhailov; Betreuung und Automatisierung können ergänzt werden.",
         "href": "/leistungen/webdesign-halle",
         "linkLabel": "Webdesign Halle ansehen"
       },
@@ -1811,7 +1910,7 @@
       },
       {
         "q": "Gibt es Webdesigner in Halle, die GEO/SGE-optimierten Content machen?",
-        "a": "Ja. SaaleWeb strukturiert Inhalte für generative Suchsysteme: klare Entitäten, FAQ-Blöcke in echter Nutzersprache, Schema.org-Daten, LocalBusiness-Angaben, llms.txt und explizite Crawler-Regeln für GPTBot, ClaudeBot und PerplexityBot. Garantierte Nennungen in KI-Antworten gibt es nicht — die Struktur erhöht aber die Chance.",
+        "a": "Ja. SaaleWeb verbindet SEO mit klaren Unternehmensinformationen, konkreten Antworten, passenden strukturierten Daten und belegbaren Projektbeispielen. Diese Grundlagen helfen Suchsystemen, Inhalte einzuordnen. llms.txt ergänzt die Orientierung für unterstützende Systeme, ist aber keine Voraussetzung oder Garantie für Google-KI-Ergebnisse. Erwähnungen und Quellenlinks werden anhand wiederkehrender Testfragen überprüft.",
         "href": "/leistungen/ki-optimierung",
         "linkLabel": "KI-Optimierung ansehen"
       },
@@ -1823,16 +1922,189 @@
       },
       {
         "q": "Wer erstellt Websites für kleine Unternehmen im Saalekreis?",
-        "a": "SaaleWeb betreut Halle (Saale), Merseburg, Schkeuditz, Delitzsch, Leipzig und den Saalekreis. Für jeden Ort gibt es eine eigene Standortseite mit lokalem Bezug. Projekte außerhalb der Region laufen remote per Telefon, WhatsApp oder Videocall.",
+        "a": "SaaleWeb hat seinen Standort in Halle (Saale) und betreut Unternehmen in Merseburg, Leipzig und im Saalekreis sowie überregional. Leistungen und Einzugsgebiet werden für das tatsächliche Angebot geplant. Abstimmung erfolgt per Telefon, Videocall oder nach Vereinbarung persönlich in der Region.",
         "href": "/standorte",
         "linkLabel": "Alle Standorte"
       },
       {
         "q": "Wie lange dauert es, bis eine neue Website bei Google sichtbar ist?",
-        "a": "Indexierung erfolgt meist innerhalb weniger Tage bis Wochen. Belastbare Positionen für umkämpfte lokale Suchbegriffe brauchen in der Regel drei bis sechs Monate und hängen zusätzlich von Wettbewerb, Bewertungen und Google-Unternehmensprofil ab. Wer schnellere Garantien verspricht, kann sie nicht einhalten.",
+        "a": "Nach einem Launch müssen Suchmaschinen die Seiten zunächst abrufen und bewerten. Wann relevante Sichtbarkeit entsteht, hängt unter anderem von bestehender Website, Wettbewerb, Inhalt und technischen Voraussetzungen ab. Wir prüfen Indexierbarkeit und verfolgen Suchanfragen, Impressionen und passende Anfragen über einen vereinbarten Zeitraum. Einen festen Ranking-Termin können wir nicht zusagen.",
         "href": "/leistungen/seo-halle",
         "linkLabel": "SEO Halle ansehen"
+      },
+      {
+        "q": "Bietet SaaleWeb Webdesign und SEO aus einer Hand in Halle an?",
+        "a": "Ja. SaaleWeb plant Gestaltung, mobile Anfragewege, Leistungsinhalte und die technische SEO-Basis gemeinsam. Für kleine und mittelständische Unternehmen in Halle und im Saalekreis entsteht so ein zusammenhängender Website-Auftritt. Laufende Suchanalyse, zusätzliche Inhalte und Local SEO werden bei Bedarf als eigener Leistungsumfang angeboten; eine bestimmte Google-Position wird nicht zugesagt.",
+        "href": "/leistungen/seo-halle",
+        "linkLabel": "Webdesign und SEO gemeinsam planen"
+      },
+      {
+        "q": "Kann ich meine WordPress-Website modernisieren lassen und bestehende Google-Sichtbarkeit erhalten?",
+        "a": "SaaleWeb prüft zuerst, was an Ihrer bestehenden Website weiterverwendet werden kann. Vor einem Relaunch werden wichtige Seiten, Suchanfragen und URLs erfasst; notwendige Weiterleitungen, Inhalte, Formulare und mobile Darstellung werden vor dem Wechsel getestet. Nach dem Start folgt die Kontrolle in der Search Console. Das reduziert vermeidbare Risiken; vorübergehende Ranking-Schwankungen lassen sich nicht ausschließen.",
+        "href": "/leistungen/website-relaunch",
+        "linkLabel": "Relaunch und Übernahme planen"
+      },
+      {
+        "q": "Wer übernimmt die laufende Betreuung unserer Firmenwebsite?",
+        "a": "SaaleWeb bietet die Übernahme bestehender Websites nach einer technischen Bestandsaufnahme an. Je nach System umfasst die vereinbarte Betreuung etwa Updates, Backups, Funktionsprüfungen, Inhaltsänderungen oder Weiterentwicklung. Zuständigkeiten, Reaktionszeiten sowie monatliche Leistungen und Zusatzaufwand werden vorab geklärt. Eine WordPress-Installation und eine individuelle Next.js-Anwendung benötigen unterschiedliche Pflege.",
+        "href": "/leistungen/website-wartung",
+        "linkLabel": "Website-Betreuung und Wartung"
+      },
+      {
+        "q": "Was kostet ein KI-Chatbot für meine Website und lässt er sich mit Buchung oder CRM verbinden?",
+        "a": "SaaleWeb kalkuliert einen KI-Assistenten nach Wissensbasis, Aufgaben, Sprachen und Schnittstellen. Das Angebot trennt Einrichtung und Integration von laufenden Modell-, Hosting- und Betreuungskosten. Bestehende Kalender, Buchungs- oder CRM-Systeme können nach Prüfung ihrer Schnittstellen angebunden werden. Freigegebene Inhalte, Datenzugriffe, Testfragen und die Übergabe an Ihr Team werden vor dem Start festgelegt; einen pauschalen Preis für jede Integration gibt es nicht.",
+        "href": "/leistungen/ki-assistent",
+        "linkLabel": "KI-Assistent: Aufgaben und Integration"
       }
     ]
+  },
+  "ProofStrip": {
+    "ariaLabel": "Fakten zu SaaleWeb",
+    "google": "Google-Bewertung · {count}",
+    "response": "Antwort in 24 h",
+    "responseSub": "persönlich, kein Bot",
+    "price": "Festpreis",
+    "priceSub": "keine Vorkasse",
+    "languages": "DE · EN · RU",
+    "languagesSub": "inklusive, weitere auf Wunsch",
+    "region": "Halle (Saale)",
+    "regionSub": "Saalekreis · Leipzig · deutschlandweit",
+    "voices": "Echte Kundenstimmen",
+    "googleLink": "Google-Rezensionen ansehen"
+  },
+  "OfferOverview": {
+    "eyebrow": "Leistungen & Branchen",
+    "title": "Was wir für Ihr Unternehmen bauen",
+    "lead": "Webdesign und SEO aus einer Hand für kleine und mittelständische Unternehmen: neue Firmenwebsites, WordPress-Relaunch und Buchungsabläufe. Ob Next.js, WordPress oder individuelle Entwicklung – die Lösung folgt Ihrem Ziel und Pflegebedarf.",
+    "servicesTitle": "Leistungen",
+    "industriesTitle": "Branchen, die wir kennen",
+    "linksTitle": "Direkte Einstiege",
+    "linksLead": "Webdesign Halle, SEO Halle, WordPress-Betreuung, Buchungssysteme und Branchenseiten.",
+    "allServices": "Alle Leistungen",
+    "allIndustries": "Alle Branchen"
+  },
+  "MobileCta": {
+    "consult": "Erstgespräch",
+    "whatsapp": "WhatsApp"
+  },
+  "Relaunch": {
+    "eyebrow": "Website-Relaunch mit Plan",
+    "title": "Ihr Unternehmen ist weiter. Ihre Website auch?",
+    "lead": "Sie leisten gute Arbeit. Doch der alte Auftritt erklärt Ihr Angebot nicht mehr, auf dem Handy ist der Kontakt umständlich und im Postfach landen unvollständige Anfragen. Wir prüfen, was Kunden heute vom nächsten Schritt abhält, und entwickeln daraus einen passenden Relaunch.",
+    "cta": "Potenzial meiner Website prüfen",
+    "changes": [
+      {
+        "problem": "Besucher verstehen Ihr Angebot nicht sofort?",
+        "solution": "Leistungen, passende Kunden und der nächste Schritt werden auf einen Blick verständlich."
+      },
+      {
+        "problem": "Der Kontakt ist mobil zu umständlich?",
+        "solution": "Kurze Anfragewege, gut bedienbare Formulare und passende Buchungsfunktionen erleichtern den Einstieg."
+      },
+      {
+        "problem": "Nach jeder Anfrage beginnt die Handarbeit?",
+        "solution": "Relevante Angaben direkt erfassen und an Kalender, CRM oder Ihren bestehenden Ablauf weitergeben."
+      }
+    ],
+    "continuity": "Ein Relaunch beginnt mit einer Bestandsaufnahme: wertvolle Inhalte, bestehende URLs und funktionierende Abläufe werden geprüft. Weiterleitungen und der Übergang zum neuen Auftritt werden geplant.",
+    "demo": {
+      "label": "Interaktives Relaunch-Konzept",
+      "title": "Erleben Sie den Unterschied. Als Ihr nächster Kunde.",
+      "intro": "Gleicher Musterbetrieb, zwei Wege zum Kontakt. Wechseln Sie die Ansicht und testen Sie die neue Projektanfrage selbst.",
+      "before": "Vorher",
+      "after": "Nachher",
+      "mobile": "Mobil",
+      "desktop": "Desktop",
+      "steps": [
+        {
+          "title": "Angebot sofort verstehen",
+          "text": "Eine konkrete Leistung und ein verständlicher nächster Schritt."
+        },
+        {
+          "title": "Auf dem Handy handeln",
+          "text": "Lesbare Inhalte, große Schaltflächen und eine kurze Anfrage."
+        },
+        {
+          "title": "Besser vorbereitet starten",
+          "text": "Leistung und Zeitrahmen stehen vor dem ersten Gespräch fest."
+        }
+      ],
+      "hint": "Probieren Sie „Projekt anfragen“ in der neuen Version aus.",
+      "note": "Illustratives Konzept für einen fiktiven Handwerksbetrieb. Keine Kundenreferenz und kein gemessener Vorher-Nachher-Erfolg.",
+      "business": "RAUM & WERK",
+      "businessType": "Musterbetrieb · Handwerk",
+      "region": "Halle (Saale) & Umgebung",
+      "nav": "Leistungen",
+      "oldTitle": "Willkommen auf unserer Website",
+      "oldText": "Wir sind Ihr Partner für Arbeiten rund um Haus und Garten. Informieren Sie sich über unser vielseitiges Angebot. Bei Interesse freuen wir uns auf Ihre Nachricht.",
+      "oldCta": "Kontakt aufnehmen",
+      "oldContactTitle": "Schreiben Sie uns eine E-Mail",
+      "oldContactText": "Der Kontakt ist möglich. Welche Leistung, welcher Umfang und welcher Zeitraum gemeint sind, bleibt zunächst offen und muss im Austausch geklärt werden.",
+      "newEyebrow": "Ihr Zuhause. Durchdacht erneuert.",
+      "newTitle": "Mehr Raum für das, was Ihnen wichtig ist.",
+      "newText": "Terrasse, Fenster oder Innenausbau: Beschreiben Sie Ihr Vorhaben in wenigen Schritten.",
+      "newCta": "Projekt anfragen",
+      "reassurance": "Leistung wählen · Zeitraum angeben",
+      "projectLabel": "Gestaltungskonzept",
+      "servicesTitle": "Was möchten Sie verändern?",
+      "services": [
+        "Terrasse & Garten",
+        "Fenster & Türen",
+        "Innenausbau"
+      ],
+      "timingTitle": "Wann möchten Sie starten?",
+      "timings": [
+        "In den nächsten 3 Monaten",
+        "Später in diesem Jahr",
+        "Ich möchte mich zuerst beraten lassen"
+      ],
+      "next": "Weiter",
+      "back": "Zurück",
+      "summary": "Ein guter Anfang für Ihr Erstgespräch.",
+      "summaryText": "Die wichtigsten Angaben sind übersichtlich vorbereitet. Im echten Projekt folgt hier der vereinbarte Kontakt- und Übergabeprozess.",
+      "serviceLabel": "Ihr Vorhaben",
+      "timingLabel": "Ihr Zeitrahmen",
+      "reset": "Demo neu starten",
+      "demoOnly": "Demo: Es wird keine Anfrage gesendet und nichts gespeichert."
+    }
+  },
+  "Automation": {
+    "eyebrow": "Website & Arbeitsabläufe",
+    "title": "Weniger Nachfragen. Mehr Zeit für Ihr Geschäft.",
+    "lead": "Eine Anfrage ist erst dann hilfreich, wenn die richtigen Informationen am richtigen Ort ankommen. Wir verbinden Ihre Website mit bestehenden Werkzeugen oder entwickeln ein passendes System für Ihren Betrieb.",
+    "cases": [
+      {
+        "title": "Anfragen mit den nötigen Angaben",
+        "text": "Leistung, Projektort und Zeitrahmen direkt erfassen, damit Ihr Team den Bedarf besser einschätzen kann."
+      },
+      {
+        "title": "Buchungen und Termine verbinden",
+        "text": "Kalender oder Buchungslösung einbinden und Bestätigungen auf Ihren tatsächlichen Ablauf abstimmen."
+      },
+      {
+        "title": "Wiederkehrende Fragen beantworten",
+        "text": "Ein KI-Assistent kann geprüfte Unternehmensinformationen erklären und Interessenten an einen persönlichen Ansprechpartner übergeben."
+      }
+    ],
+    "example": "Beispiel: strukturierte Projektanfrage",
+    "before": "Aus einer E-Mail mit vielen Rückfragen wird ein nachvollziehbarer Eingang für Ihr Team.",
+    "steps": [
+      "Leistung & Projektort erfassen",
+      "Bedarf & Zeitrahmen klären",
+      "An CRM, Kalender oder Team übergeben"
+    ],
+    "scope": "Welche Schritte automatisiert werden, legen wir gemeinsam fest. Schnittstellen, Berechtigungen und Datenschutzanforderungen gehören zur Planung.",
+    "cta": "Meinen Ablauf gemeinsam prüfen",
+    "automationLink": "Automatisierung im Detail",
+    "assistantLink": "Website-KI-Assistent"
+  },
+  "QualityProof": {
+    "title": "Unser technischer Anspruch, sichtbar gemacht.",
+    "source": "Referenz: saaleweb.de · Messstand {date}",
+    "performance": "Performance · Desktop",
+    "seo": "Technisches SEO",
+    "accessibility": "Barrierefreiheit",
+    "practices": "Best Practices",
+    "method": "Google-Lighthouse-Laborwerte unserer eigenen Website, keine Kunden- oder Ranking-Ergebnisse. Performance: Median der letzten drei verfügbaren Desktop-Messungen; weitere Kategorien: letzter verfügbarer Wert. Projektziele und reale Nutzungsdaten werden gesondert bewertet."
   }
 }

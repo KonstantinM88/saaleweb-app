@@ -1,0 +1,323 @@
+{
+  "checkedAt": "2026-11-16T22:46:34.089Z",
+  "next": "16.4.6",
+  "responsive": [
+    {
+      "path": "/ru",
+      "width": 320,
+      "height": 740,
+      "client": 305,
+      "clippedText": [],
+      "content": 305,
+      "heroImages": [
+        {
+          "alt": "Neue Liebe Nebra – Ресторан · меню и бронирование",
+          "loaded": true
+        },
+        {
+          "alt": "SorgfaltBau – Строительная компания · качественные заявки",
+          "loaded": true
+        }
+      ],
+      "overflow": false,
+      "sections": 13,
+      "viewport": 320
+    },
+    {
+      "path": "/",
+      "width": 320,
+      "height": 740,
+      "client": 305,
+      "clippedText": [],
+      "content": 305,
+      "heroImages": [
+        {
+          "alt": "Neue Liebe Nebra – Restaurant · Speisekarte & Reservierung",
+          "loaded": true
+        },
+        {
+          "alt": "SorgfaltBau – Bauunternehmen · qualifizierte Anfragen",
+          "loaded": true
+        }
+      ],
+      "overflow": false,
+      "sections": 13,
+      "viewport": 320
+    },
+    {
+      "path": "/",
+      "width": 375,
+      "height": 812,
+      "client": 360,
+      "clippedText": [],
+      "content": 360,
+      "heroImages": [
+        {
+          "alt": "Neue Liebe Nebra – Restaurant · Speisekarte & Reservierung",
+          "loaded": true
+        },
+        {
+          "alt": "SorgfaltBau – Bauunternehmen · qualifizierte Anfragen",
+          "loaded": true
+        }
+      ],
+      "overflow": false,
+      "sections": 13,
+      "viewport": 375
+    },
+    {
+      "path": "/",
+      "width": 768,
+      "height": 1024,
+      "client": 753,
+      "clippedText": [],
+      "content": 753,
+      "heroImages": [
+        {
+          "alt": "Neue Liebe Nebra – Restaurant · Speisekarte & Reservierung",
+          "loaded": true
+        },
+        {
+          "alt": "SorgfaltBau – Bauunternehmen · qualifizierte Anfragen",
+          "loaded": true
+        }
+      ],
+      "overflow": false,
+      "sections": 13,
+      "viewport": 768
+    },
+    {
+      "path": "/",
+      "width": 1440,
+      "height": 1000,
+      "client": 1425,
+      "clippedText": [],
+      "content": 1425,
+      "heroImages": [
+        {
+          "alt": "Neue Liebe Nebra – Restaurant · Speisekarte & Reservierung",
+          "loaded": true
+        },
+        {
+          "alt": "SorgfaltBau – Bauunternehmen · qualifizierte Anfragen",
+          "loaded": true
+        }
+      ],
+      "overflow": false,
+      "sections": 13,
+      "viewport": 1440
+    },
+    {
+      "path": "/en",
+      "width": 320,
+      "height": 740,
+      "client": 305,
+      "clippedText": [],
+      "content": 305,
+      "heroImages": [
+        {
+          "alt": "Neue Liebe Nebra – Restaurant · menu & reservations",
+          "loaded": true
+        },
+        {
+          "alt": "SorgfaltBau – Construction company · qualified inquiries",
+          "loaded": true
+        }
+      ],
+      "overflow": false,
+      "sections": 13,
+      "viewport": 320
+    },
+    {
+      "path": "/en",
+      "width": 390,
+      "height": 844,
+      "client": 375,
+      "clippedText": [],
+      "content": 375,
+      "heroImages": [
+        {
+          "alt": "Neue Liebe Nebra – Restaurant · menu & reservations",
+          "loaded": true
+        },
+        {
+          "alt": "SorgfaltBau – Construction company · qualified inquiries",
+          "loaded": true
+        }
+      ],
+      "overflow": false,
+      "sections": 13,
+      "viewport": 390
+    },
+    {
+      "path": "/en",
+      "width": 1440,
+      "height": 1000,
+      "client": 1425,
+      "clippedText": [],
+      "content": 1425,
+      "heroImages": [
+        {
+          "alt": "Neue Liebe Nebra – Restaurant · menu & reservations",
+          "loaded": true
+        },
+        {
+          "alt": "SorgfaltBau – Construction company · qualified inquiries",
+          "loaded": true
+        }
+      ],
+      "overflow": false,
+      "sections": 13,
+      "viewport": 1440
+    },
+    {
+      "path": "/ru",
+      "width": 390,
+      "height": 844,
+      "client": 375,
+      "clippedText": [],
+      "content": 375,
+      "heroImages": [
+        {
+          "alt": "Neue Liebe Nebra – Ресторан · меню и бронирование",
+          "loaded": true
+        },
+        {
+          "alt": "SorgfaltBau – Строительная компания · качественные заявки",
+          "loaded": true
+        }
+      ],
+      "overflow": false,
+      "sections": 13,
+      "viewport": 390
+    },
+    {
+      "path": "/ru",
+      "width": 1440,
+      "height": 1000,
+      "client": 1425,
+      "clippedText": [],
+      "content": 1425,
+      "heroImages": [
+        {
+          "alt": "Neue Liebe Nebra – Ресторан · меню и бронирование",
+          "loaded": true
+        },
+        {
+          "alt": "SorgfaltBau – Строительная компания · качественные заявки",
+          "loaded": true
+        }
+      ],
+      "overflow": false,
+      "sections": 13,
+      "viewport": 1440
+    }
+  ],
+  "mobileCta": {
+    "bar": {
+      "bottom": 844,
+      "height": 65,
+      "left": 0,
+      "right": 375,
+      "top": 779,
+      "width": 375,
+      "x": 0,
+      "y": 779
+    },
+    "cta": "visible",
+    "launcher": {
+      "bottom": 768,
+      "height": 62,
+      "left": 4,
+      "right": 371,
+      "top": 706,
+      "width": 367,
+      "x": 4,
+      "y": 706
+    },
+    "settings": {
+      "bottom": 768,
+      "height": 34.5,
+      "left": 12,
+      "right": 185.46875,
+      "top": 733.5,
+      "width": 173.46875,
+      "x": 12,
+      "y": 733.5
+    },
+    "y": 1023
+  },
+  "interactions": {
+    "consentReopened": {
+      "banner": true,
+      "cta": "hidden"
+    },
+    "assistantOpen": {
+      "panel": {
+        "bottom": 840,
+        "height": 760,
+        "left": 4,
+        "right": 371,
+        "top": 80,
+        "width": 367,
+        "x": 4,
+        "y": 80
+      },
+      "viewport": 844
+    },
+    "contact": {
+      "closedLauncher": {
+        "bottom": 840,
+        "height": 822,
+        "left": 4,
+        "right": 371,
+        "top": 18,
+        "width": 367,
+        "x": 4,
+        "y": 18
+      },
+      "contact": {
+        "bottom": 1258.921875,
+        "height": 1184.09375,
+        "left": 0,
+        "right": 375,
+        "top": 74.828125,
+        "width": 375,
+        "x": 0,
+        "y": 74.828125
+      },
+      "cta": "hidden",
+      "viewport": 844,
+      "y": 22517
+    },
+    "faqExpanded": {
+      "hidden": 0
+    },
+    "faqCollapsed": {
+      "hidden": 12
+    },
+    "assistantClosed": {
+      "bar": {
+        "bottom": 844,
+        "height": 65,
+        "left": 0,
+        "right": 375,
+        "top": 779,
+        "width": 375,
+        "x": 0,
+        "y": 779
+      },
+      "trigger": {
+        "bottom": 768,
+        "height": 62,
+        "left": 303,
+        "right": 371,
+        "top": 706,
+        "width": 68,
+        "x": 303,
+        "y": 706
+      }
+    }
+  },
+  "scope": "Local production build; no public form submission or assistant question sent"
+}

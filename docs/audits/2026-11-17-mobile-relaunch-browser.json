@@ -1,0 +1,216 @@
+{
+  "checkedAt": "2026-11-17T01:56:47.628Z",
+  "viewports": [
+    {
+      "label": "DE desktop 1440 mobile concept",
+      "client": 1425,
+      "device": "mobile",
+      "height": 1100,
+      "scroll": 1425,
+      "unloadedImages": [],
+      "version": "after",
+      "width": 1440
+    },
+    {
+      "label": "DE desktop 1440 wide concept",
+      "client": 1425,
+      "device": "desktop",
+      "height": 1100,
+      "scroll": 1425,
+      "unloadedImages": [],
+      "version": "after",
+      "width": 1440
+    },
+    {
+      "label": "DE desktop 1440 old concept",
+      "client": 1425,
+      "device": "desktop",
+      "height": 1100,
+      "scroll": 1425,
+      "unloadedImages": [],
+      "version": "before",
+      "width": 1440
+    },
+    {
+      "label": "DE 1024 enquiry",
+      "client": 1009,
+      "device": "mobile",
+      "height": 900,
+      "scroll": 1009,
+      "unloadedImages": [],
+      "version": "after",
+      "width": 1024
+    },
+    {
+      "label": "DE 768 enquiry",
+      "client": 753,
+      "device": "mobile",
+      "height": 1000,
+      "scroll": 753,
+      "unloadedImages": [],
+      "version": "after",
+      "width": 768
+    },
+    {
+      "label": "DE 390 enquiry",
+      "client": 375,
+      "device": "mobile",
+      "height": 900,
+      "scroll": 375,
+      "unloadedImages": [],
+      "version": "after",
+      "width": 390
+    },
+    {
+      "label": "DE 390 case devices",
+      "client": 375,
+      "device": "mobile",
+      "height": 900,
+      "scroll": 375,
+      "unloadedImages": [],
+      "version": "after",
+      "width": 390
+    },
+    {
+      "label": "EN 320 modern concept",
+      "client": 305,
+      "device": "mobile",
+      "height": 900,
+      "scroll": 305,
+      "unloadedImages": [],
+      "version": "after",
+      "width": 320
+    },
+    {
+      "label": "EN 320 old concept",
+      "client": 305,
+      "device": "mobile",
+      "height": 900,
+      "scroll": 305,
+      "unloadedImages": [],
+      "version": "before",
+      "width": 320
+    },
+    {
+      "label": "RU 320 modern concept",
+      "client": 305,
+      "device": "mobile",
+      "height": 900,
+      "scroll": 305,
+      "unloadedImages": [],
+      "version": "after",
+      "width": 320
+    },
+    {
+      "label": "RU 320 old concept",
+      "client": 305,
+      "device": "mobile",
+      "height": 900,
+      "scroll": 305,
+      "unloadedImages": [],
+      "version": "before",
+      "width": 320
+    },
+    {
+      "label": "RU 320 desktop frame",
+      "client": 305,
+      "device": "desktop",
+      "height": 900,
+      "scroll": 305,
+      "unloadedImages": [],
+      "version": "after",
+      "width": 320
+    },
+    {
+      "label": "DE 1440 final device crop",
+      "client": 1425,
+      "device": "mobile",
+      "height": 1100,
+      "scroll": 1425,
+      "unloadedImages": [],
+      "version": "after",
+      "width": 1440
+    },
+    {
+      "label": "DE 1440 final hero",
+      "client": 1425,
+      "device": "mobile",
+      "height": 1100,
+      "scroll": 1425,
+      "unloadedImages": [],
+      "version": "after",
+      "width": 1440
+    },
+    {
+      "label": "DE 390 final device crop",
+      "client": 375,
+      "device": "mobile",
+      "height": 900,
+      "scroll": 375,
+      "unloadedImages": [],
+      "version": "after",
+      "width": 390
+    },
+    {
+      "label": "RU 320 final device crop",
+      "client": 305,
+      "device": "mobile",
+      "height": 900,
+      "scroll": 305,
+      "unloadedImages": [],
+      "version": "after",
+      "width": 320
+    },
+    {
+      "label": "EN 320 final device crop",
+      "client": 305,
+      "device": "mobile",
+      "height": 900,
+      "scroll": 305,
+      "unloadedImages": [],
+      "version": "after",
+      "width": 320
+    },
+    {
+      "label": "DE 1440 final hero badge",
+      "client": 1425,
+      "height": 1100,
+      "scroll": 1425,
+      "unloadedImages": [],
+      "width": 1440
+    },
+    {
+      "label": "DE 390 final hero badge",
+      "client": 375,
+      "height": 900,
+      "scroll": 375,
+      "unloadedImages": [],
+      "width": 390
+    }
+  ],
+  "interactions": [
+    {
+      "check": "DE desktop direct service → timeframe → summary",
+      "passed": true,
+      "service": "Fenster & Türen",
+      "timing": "Später in diesem Jahr"
+    },
+    {
+      "check": "Back preserves timing; reset focuses enquiry start",
+      "passed": true
+    },
+    {
+      "check": "Keyboard version/device switches, old contact, modern reset selection guard",
+      "passed": true
+    },
+    {
+      "check": "EN 320 modern/old toggle and keyboard enquiry choices",
+      "passed": true
+    },
+    {
+      "check": "RU 320 version/device switches and required-choice guard",
+      "passed": true
+    }
+  ],
+  "completedAt": "2026-11-17T02:19:20.428Z"
+}

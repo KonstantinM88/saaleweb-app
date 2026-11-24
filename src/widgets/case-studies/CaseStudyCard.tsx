@@ -3,6 +3,7 @@ import { ArrowUpRight, Check } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { Reveal } from "@/shared/ui/Reveal";
 import { cn } from "@/shared/lib/cn";
+import { ProjectDevices } from "@/shared/ui/ProjectDevices";
 
 export type CaseStudyCardView = {
   slug: string | null;
@@ -13,7 +14,8 @@ export type CaseStudyCardView = {
   solution: string;
   benefits: string[];
   result: string;
-  cover: { image: string | null; color: string | null; label: string };
+  report?: { source: string; text: string; url: string; linkLabel: string };
+  cover: { image: string | null; mobileImage?: string; domain?: string; color: string | null; label: string };
 };
 
 export type CaseStudyCardLabels = {
@@ -23,6 +25,8 @@ export type CaseStudyCardLabels = {
   benefits: string;
   result: string;
   cta: string;
+  desktop: string;
+  mobile: string;
 };
 
 export function CaseStudyCard({
@@ -34,16 +38,33 @@ export function CaseStudyCard({
   labels: CaseStudyCardLabels;
   index: number;
 }) {
+  // Keep the two documented live projects prominent; the remaining examples
+  // stay discoverable without repeating another full image-and-detail block.
+  if (index >= 2) {
+    const content = <>
+      <span className="font-mono text-[11px] font-semibold text-brand-purple">{item.badge}</span>
+      <h3 className="mt-2 text-lg font-extrabold leading-tight text-dark">{item.title}</h3>
+      <p className="mt-2 text-sm leading-relaxed text-muted">{item.solution}</p>
+      <span className="mt-4 inline-flex min-h-11 items-center gap-2 text-sm font-bold text-[#6D28D9]">{labels.cta}<ArrowUpRight size={15} aria-hidden /></span>
+    </>;
+    return <Reveal delay={index * 70} className="h-full lg:col-span-2">
+      <article className="h-full rounded-[18px] border border-line bg-white transition hover:border-brand-purple/25">
+        {item.slug ? <Link href={{ pathname: "/projekte/[slug]", params: { slug: item.slug } }} prefetch={false} className="block h-full rounded-[18px] p-5 outline-hidden focus-visible:ring-2 focus-visible:ring-[#6D28D9]">{content}</Link> : <div className="p-5">{content}</div>}
+      </article>
+    </Reveal>;
+  }
   const hex = item.cover.color?.startsWith("#");
   const isLocalImage = item.cover.image?.startsWith("/");
+  const isLegacyMockup = item.cover.image?.startsWith("/images/cases/");
   const cardClass =
     "card-border-glow group/case relative flex h-full flex-col overflow-hidden rounded-[18px] border border-line bg-white transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-purple/20 hover:shadow-[0_30px_82px_-48px_rgba(139,92,246,0.6)] focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-4";
 
   const inner = (
     <>
-      <div
+      {item.cover.image && item.cover.mobileImage ? <ProjectDevices desktop={item.cover.image} mobile={item.cover.mobileImage} name={item.title} domain={item.cover.domain ?? ""} desktopLabel={labels.desktop} mobileLabel={labels.mobile} /> : <div
         className={cn(
-          "relative aspect-3/2 overflow-hidden",
+          "relative overflow-hidden",
+          isLegacyMockup ? "aspect-[1536/737]" : "aspect-3/2",
           item.cover.image ? "bg-[#fbf7fc]" : !hex ? item.cover.color ?? "bg-brand" : undefined,
         )}
         style={!item.cover.image && hex ? { background: item.cover.color ?? undefined } : undefined}
@@ -57,8 +78,8 @@ export function CaseStudyCard({
             src={item.cover.image}
             alt={item.title}
             fill
-            sizes="(min-width: 1280px) 220px, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-            className="object-cover object-center transition-transform duration-700 ease-out group-hover/case:scale-[1.04]"
+            sizes={index < 2 ? "(min-width: 1280px) 570px, (min-width: 640px) 50vw, 100vw" : "(min-width: 1280px) 375px, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"}
+            className={cn("object-cover transition-transform duration-700 ease-out group-hover/case:scale-[1.04]", isLegacyMockup ? "object-top" : "object-center")}
           />
         ) : item.cover.image ? (
           // eslint-disable-next-line @next/next/no-img-element
@@ -74,7 +95,7 @@ export function CaseStudyCard({
             {item.cover.label}
           </span>
         )}
-      </div>
+      </div>}
 
       <div className="flex flex-1 flex-col p-[18px]">
         <span className="mb-3 w-fit rounded-md bg-brand-soft px-2 py-1 font-mono text-[11px] font-semibold text-brand-purple">
@@ -89,12 +110,12 @@ export function CaseStudyCard({
             </dt>
             <dd className="mt-1 font-semibold text-ink">{item.industry}</dd>
           </div>
-          <div>
+          {index < 2 && <div>
             <dt className="font-mono text-[10px] font-bold uppercase tracking-widest text-muted">
               {labels.goal}
             </dt>
             <dd className="mt-1 text-muted">{item.goal}</dd>
-          </div>
+          </div>}
           <div>
             <dt className="font-mono text-[10px] font-bold uppercase tracking-widest text-muted">
               {labels.solution}
@@ -103,7 +124,7 @@ export function CaseStudyCard({
           </div>
         </dl>
 
-        {item.benefits.length > 0 ? (
+        {index < 2 && item.benefits.length > 0 ? (
           <div className="mt-4 rounded-[14px] border border-emerald-100 bg-emerald-50 p-3">
             <span className="font-mono text-[10px] font-bold uppercase tracking-[0.12em] text-emerald-700">
               {labels.benefits}
@@ -140,14 +161,17 @@ export function CaseStudyCard({
   );
 
   return (
-    <Reveal delay={index * 70} className="h-full">
+    <Reveal delay={index * 70} className={cn("h-full", index < 2 ? "lg:col-span-3" : "lg:col-span-2")}>
+      <article className={cardClass}>
       {item.slug ? (
-        <Link href={{ pathname: "/projekte/[slug]", params: { slug: item.slug } }} className={cardClass}>
+        <Link href={{ pathname: "/projekte/[slug]", params: { slug: item.slug } }} prefetch={false} className="flex flex-1 flex-col outline-hidden focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#6D28D9]">
           {inner}
         </Link>
       ) : (
-        <article className={cardClass}>{inner}</article>
+        <div className="flex flex-1 flex-col">{inner}</div>
       )}
+      {item.report && <div className="border-t border-emerald-100 bg-emerald-50 px-[18px] py-4"><p className="text-[11px] font-bold uppercase tracking-[0.08em] text-emerald-800">{item.report.source}</p><p className="mt-2 text-[14px] font-semibold leading-relaxed text-ink">{item.report.text}</p><a href={item.report.url} target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex min-h-11 items-center gap-1.5 text-sm font-bold text-[#6D28D9] hover:underline">{item.report.linkLabel}<ArrowUpRight size={15} aria-hidden /></a></div>}
+      </article>
     </Reveal>
   );
 }

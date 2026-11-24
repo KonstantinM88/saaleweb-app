@@ -550,7 +550,7 @@ export default async function ProjectPage({
 
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 {data.gallery.map((item, index) => (
-                  <Reveal key={`${item.url}-${index}`} delay={(index % 2) * 70}>
+                  <Reveal key={`gallery-${index}`} delay={(index % 2) * 70}>
                     <ProjectMedia
                       item={item}
                       title={item.alt ?? data.title}
@@ -666,7 +666,7 @@ function ProjectRichText({
     <div className="mt-4 whitespace-pre-line text-[16px] leading-relaxed text-ink">
       {parts.map((part, index) => {
         if (!part.match(/^https?:\/\//)) {
-          return <Fragment key={`${part}-${index}`}>{part}</Fragment>;
+          return <Fragment key={`text-${index}`}>{part}</Fragment>;
         }
 
         const href = cleanUrl(part);
@@ -674,7 +674,7 @@ function ProjectRichText({
         const label = isPreviewUrl(href) ? previewLinkLabel : displayUrl(href);
 
         return (
-          <Fragment key={`${href}-${index}`}>
+          <Fragment key={`link-${index}`}>
             <a
               href={href}
               target="_blank"

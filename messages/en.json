@@ -61,8 +61,7 @@
     "badge": "Web agency · Halle (Saale) → Germany",
     "titleA": "Websites that ",
     "titleB": "win customers.",
-    "lead1": "We build digital systems that make businesses visible, create trust and support sustainable growth.",
-    "lead2": "From modern company websites to local SEO and AI-optimized content — every solution is built with one clear goal: more qualified inquiries and long-term growth.",
+    "lead": "We modernise your website, make your offer clear to Google and AI search, and connect enquiries with your workflows. For businesses in Halle, Leipzig and the Saalekreis.",
     "ctaPrimary": "Free consultation",
     "ctaSecondary": "View our projects",
     "note": "Reply in 24 h · No upfront payment · Fixed price",
@@ -80,6 +79,17 @@
     "floats": {
       "a": "Lighthouse {score}/100",
       "b": "Reply within 24 h"
+    },
+    "showcase": {
+      "label": "Websites that work for our clients",
+      "primaryName": "Neue Liebe Nebra",
+      "primaryMeta": "Restaurant · menu & reservations",
+      "secondaryName": "SorgfaltBau",
+      "secondaryMeta": "Construction company · qualified inquiries",
+      "google": "Customer voices on Google",
+      "lighthouse": "Lighthouse {score}/100 · saaleweb.de",
+      "desktop": "Desktop",
+      "mobile": "Mobile"
     }
   },
   "Trust": {
@@ -224,7 +234,7 @@
   "Pricing": {
     "eyebrow": "Pricing",
     "title": "Transparent fixed prices",
-    "lead": "No hidden costs. You know exactly what you get.",
+    "lead": "You get an agreed scope and a clear fixed price. The right starting point depends on your website and workflows.",
     "trustLine": "Transparent entry packages. Individual offers based on project scope.",
     "popular": "Popular",
     "button": "Request",
@@ -280,15 +290,15 @@
       },
       {
         "q": "Is SEO included with every website?",
-        "a": "Yes. Technical SEO, a clean page structure, fast load times, meta data and structured data are part of every project from the start. That's how you get found on Google in Halle, Leipzig and the region — and we can add dedicated SEO landing pages for individual services."
+        "a": "Technical SEO foundations, a clear page structure and suitable metadata are part of implementation. Additional content, local optimisation and ongoing work are agreed after reviewing the existing website. These steps do not guarantee a particular search position."
       },
       {
         "q": "What do GEO and AIO — optimization for AI search — mean?",
-        "a": "GEO (Generative Engine Optimization) and AIO (AI Optimization) make sure AI systems like ChatGPT, Gemini, Claude and Perplexity understand, correctly cite and recommend your business. We structure content semantically, add Schema.org structured data and answer real customer questions directly on the website."
+        "a": "GEO (Generative Engine Optimization) and AIO (AI Optimization) describe work on clear, accessible and evidenced content for AI search. This includes specific answers, unambiguous company information and appropriate structured data. Each system decides whether to mention or link to the website."
       },
       {
         "q": "How does my business appear in answers from ChatGPT & co.?",
-        "a": "AI search systems prefer websites with clear facts: who you are, what you offer, where you work and what it costs. We prepare exactly this information in machine-readable form — with FAQ sections, LocalBusiness data and unambiguous service pages. That raises the chance that AI answers mention your business."
+        "a": "AI search systems can draw on publicly accessible sources. We make your services, location, experience and workflows clear and support statements with real projects. Recurring test questions show whether your business is mentioned or linked as a source; inclusion in answers is not assured."
       },
       {
         "q": "Do you do local SEO for Halle, Leipzig and Saalekreis?",
@@ -342,7 +352,9 @@
         "q": "What do I need to get started?",
         "a": "Just your goal. For the free initial call, your current website (if you have one) and a short description of your offer are enough. Texts, images and structure are developed together — simply reach out via contact form, WhatsApp or phone."
       }
-    ]
+    ],
+    "more": "Show more questions",
+    "less": "Show fewer"
   },
   "Contact": {
     "eyebrow": "Contact",
@@ -692,6 +704,9 @@
     "madeIn": "Made in Halle"
   },
   "Newsletter": {
+    "unavailable": "Newsletter signup is temporarily unavailable. Please try again later.",
+    "rateLimited": "We cannot send another confirmation email right now. Please check your inbox and try again in at least 24 hours.",
+    "captchaError": "Please complete the security check again.",
     "eyebrow": "Newsletter",
     "title": "Practical tips for your visibility",
     "text": "About once a month: actionable tips on websites, local SEO and AI visibility for businesses in Halle & Leipzig. No spam, unsubscribe anytime.",
@@ -714,8 +729,8 @@
   },
   "CaseStudies": {
     "eyebrow": "Case studies",
-    "title": "Projects that create business impact",
-    "lead": "Every project is designed as a growth system: more visibility, more trust and more qualified inquiries.",
+    "title": "Websites people use in everyday business.",
+    "lead": "A restaurant table. A salon appointment. A clear construction enquiry. Our projects connect design with practical business needs.",
     "link": "View case",
     "trustLine": "Selected projects from gastronomy, beauty, trades and construction.",
     "labels": {
@@ -724,7 +739,9 @@
       "solution": "Solution",
       "benefits": "Benefits",
       "result": "Focus",
-      "cta": "View project"
+      "cta": "View project",
+      "desktop": "Desktop",
+      "mobile": "Mobile"
     },
     "projects": [
       {
@@ -739,7 +756,13 @@
           "Better local discoverability"
         ],
         "badge": "Beauty · Booking · Local SEO",
-        "result": "Online appointments & Local SEO"
+        "result": "Online appointments & Local SEO",
+        "report": {
+          "source": "Feedback from the project",
+          "text": "Good website traffic and online bookings reported to have increased several-fold, based on project feedback.",
+          "url": "https://permanent-halle.de/",
+          "linkLabel": "View the live website"
+        }
       },
       {
         "slug": "neue-liebe-nebra",
@@ -753,7 +776,13 @@
           "More trust with guests"
         ],
         "badge": "Restaurant · SEO · Mobile First",
-        "result": "Restaurant website"
+        "result": "Restaurant website",
+        "report": {
+          "source": "Feedback from the project",
+          "text": "Good website traffic and online bookings reported to have increased several-fold, based on project feedback.",
+          "url": "https://neueliebe-nebra.de/",
+          "linkLabel": "View the live website"
+        }
       },
       {
         "slug": "direct-bookings-without-portals",
@@ -766,7 +795,7 @@
           "More direct booking potential",
           "Professional hotel impression"
         ],
-        "badge": "Hotel · Restaurant · Bookings",
+        "badge": "Project preview · Hotel & restaurant",
         "result": "Hotel & restaurant"
       },
       {
@@ -794,7 +823,7 @@
           "Services clearly explained",
           "Better local visibility"
         ],
-        "badge": "Trades · Services · Local SEO",
+        "badge": "Project preview · Trade / glazing",
         "result": "Trust & local visibility"
       }
     ],
@@ -1025,38 +1054,97 @@
     ]
   },
   "AiReady": {
-    "eyebrow": "AI ready websites",
-    "title": "Ready for the next generation of search.",
-    "lead": "More people no longer ask their questions only on Google. AI systems such as ChatGPT, Claude, Gemini and Perplexity are increasingly becoming the first place they turn to. We create content and websites that are structured so modern AI systems can understand and classify them more easily.",
-    "subtitle": "Visible today. Relevant tomorrow.",
+    "eyebrow": "SEO · GEO · AIO",
+    "title": "Your website. Ready for search with AI.",
+    "lead": "People choosing a provider compare services, experience and regional proximity. We structure your website so people and search systems can understand when your business is a suitable choice.",
+    "subtitle": "Your offer needs a clear, evidence-backed foundation.",
     "features": [
       {
-        "title": "Visibility in new search paths",
-        "desc": "Your content is prepared so AI answers can understand it"
+        "title": "Your customers' search questions",
+        "desc": "Relevant services and concrete questions shape the site structure. Each important page has a clear subject."
       },
       {
-        "title": "Clear business signals",
-        "desc": "Services, location, experience and value are described unambiguously"
+        "title": "Region & business profile",
+        "desc": "Location, service area, contact details and your Google Business Profile are kept consistent."
       },
       {
-        "title": "Trustworthy information",
-        "desc": "Search systems recognize faster what your business stands for"
+        "title": "Technically accessible content",
+        "desc": "Indexable pages, readable HTML, internal links and appropriate structured data form the foundation."
       },
       {
-        "title": "Future-proof content",
-        "desc": "Your website remains understandable as search behavior changes"
+        "title": "Answers backed by evidence",
+        "desc": "Specific workflows, real projects and traceable sources give search and AI systems reliable information."
       }
     ],
     "window": {
       "label": "AI Search Ecosystem",
       "metric": "Machine-readable",
       "caption": "Your content is prepared as clear signals for Google, ChatGPT, Gemini, Claude and Perplexity - so your business can stay visible in new search experiences."
+    },
+    "cta": "Discuss SEO & AI visibility",
+    "measurementTitle": "Track the effect.",
+    "measurement": "Search queries, impressions and enquiries are reviewed according to the agreed setup. For AI search, we compare recurring test questions and distinguish a brand mention from an actual source link.",
+    "scope": "GEO/AIO adds clear answers and company information to SEO work. The individual systems decide rankings and mentions; guaranteed placements are not part of our offer.",
+    "auditCta": "Explore my website’s potential",
+    "visual": {
+      "label": "From your website to an informed answer",
+      "example": "Concept · not a live query",
+      "networkLabel": "Your content in the context of different AI services",
+      "website": "Your business",
+      "source": "Your website as a source",
+      "documents": [
+        "Services & offering",
+        "Location & contact",
+        "Projects & experience"
+      ],
+      "queryLabel": "A question from your next customer",
+      "query": "Who can modernise my old website and make customer enquiries easier?",
+      "factsLabel": "What a useful answer needs to know",
+      "facts": [
+        {
+          "label": "Service",
+          "value": "Website relaunch & automation"
+        },
+        {
+          "label": "Region",
+          "value": "Halle (Saale) & surrounding area"
+        },
+        {
+          "label": "Evidence",
+          "value": "Projects, workflows, named contact"
+        }
+      ],
+      "stages": [
+        {
+          "label": "Discover",
+          "title": "The relevant page can be found.",
+          "text": "An accessible service page, clear internal links and consistent business information create the technical foundation.",
+          "takeaway": "Important content is reachable and readable."
+        },
+        {
+          "label": "Understand",
+          "title": "It becomes clear where your business fits.",
+          "text": "Services, service area and experience form a coherent picture. Your website answers specific customer questions.",
+          "takeaway": "Your offering can be understood in the context of the question."
+        },
+        {
+          "label": "Verify",
+          "title": "Your statements can be checked.",
+          "text": "Real projects, clear workflows and an identifiable contact give your statements substance. Your website offers an obvious next step.",
+          "takeaway": "Evidence supports an informed choice."
+        }
+      ],
+      "sources": "Foundation: your website’s content",
+      "sourceNote": "Illustrative content model. Each system decides which information and sources appear in an answer.",
+      "play": "Play animation",
+      "pause": "Pause animation",
+      "reduced": "Reduced motion"
     }
   },
   "WhySaaleWeb": {
     "eyebrow": "Digital growth partner",
-    "title": "Why businesses trust SaaleWeb.",
-    "lead": "We create digital systems that make businesses visible, build trust and enable sustainable growth.",
+    "title": "Clear decisions. Dependable delivery.",
+    "lead": "You should understand what we change, why it matters and what your team can manage afterwards. Design, technology, visibility and ongoing support are planned together.",
     "pillarsTitle": "Brand pillars",
     "pillarsHeading": "Four foundations for digital impact",
     "pillarsLead": "Every decision follows one clear goal: your business should look more professional, be found more often and receive more qualified inquiries.",
@@ -1091,34 +1179,34 @@
     "advantagesLead": "SaaleWeb combines strategy, implementation and support. The result is not an isolated website, but a system that works inside your business every day.",
     "advantages": [
       {
-        "key": "visibility",
-        "title": "More visibility",
-        "text": "Your services are described clearly, positioned locally and made visible where customers search for solutions."
+        "key": "inquiries",
+        "title": "More relevant enquiries",
+        "text": "Your offer, audience and contact path are aligned. Essential details arrive early in the process."
       },
       {
-        "key": "inquiries",
-        "title": "More qualified inquiries",
-        "text": "The path from first impression to contacting you becomes simpler, clearer and more trustworthy."
+        "key": "visibility",
+        "title": "Understandable visibility",
+        "text": "Your services get clear topics, regional context and specific answers for Google and AI search."
       },
       {
         "key": "performance",
-        "title": "Better user experience",
-        "text": "Fast loading times and clear structures help visitors understand faster and take action."
+        "title": "Usable every day",
+        "text": "We check mobile layouts, loading behaviour and forms. A quality website needs to work in practice."
       },
       {
         "key": "security",
-        "title": "More operational confidence",
-        "text": "Clean implementation, clear processes and maintainable systems reduce technical risk."
+        "title": "A planned transition",
+        "text": "Domains, content, redirects and access are considered before the relaunch and handed over clearly."
       },
       {
         "key": "support",
-        "title": "Long-term development",
-        "text": "Your digital presence stays current, measurable and adaptable as your business grows."
+        "title": "Technology that fits",
+        "text": "WordPress, Next.js or a custom application: the choice follows maintenance needs, workflows and budget."
       },
       {
         "key": "contact",
-        "title": "Personal contact",
-        "text": "You work directly with SaaleWeb — clearly, personally and without anonymous agency processes."
+        "title": "A direct contact",
+        "text": "You work with Konstantin Mykhailov. Responsibility, scope and next steps stay clear."
       }
     ],
     "cta": {
@@ -1264,7 +1352,7 @@
   },
   "Founder": {
     "role": "Direct contact",
-    "title": "Direct contact instead of anonymous agency processes.",
+    "title": "Konstantin Mykhailov. Your direct contact.",
     "bio": "At SaaleWeb you work directly with Konstantin Mykhailov — from the first concept to the long-term development of your website. That means short paths, clear communication and one contact person who truly knows your project.",
     "cta": "Book first consultation",
     "points": [
@@ -1283,18 +1371,19 @@
     ],
     "stats": [
       {
-        "value": "30+",
-        "label": "Projects"
+        "value": "1",
+        "label": "personal point of contact"
       },
       {
-        "value": "100",
-        "label": "Lighthouse score"
+        "value": "DE · EN · RU",
+        "label": "project languages"
       },
       {
-        "value": "3+",
-        "label": "Languages included · more on request"
+        "value": "Halle",
+        "label": "our base · serving beyond the region"
       }
-    ]
+    ],
+    "portraitBadge": "Direct project contact"
   },
   "Testimonials": {
     "eyebrow": "Voices",
@@ -1313,7 +1402,11 @@
     "policyLink": "View Google policy",
     "loading": "Loading Google reviews",
     "unavailableTitle": "View our Google reviews directly",
-    "unavailableText": "The live reviews could not be loaded right now. Google Maps always shows the current, unaltered rating."
+    "unavailableText": "The live reviews could not be loaded right now. Google Maps always shows the current, unaltered rating.",
+    "savedReviewCount": "{count} documented reviews · July 2026",
+    "summaryWithoutTexts": "The current overall rating includes all Google reviews. Below are two selected, documented customer voices. All reviews are available through the linked Google profile.",
+    "expandReview": "Read the full review",
+    "collapseReview": "Show less"
   },
   "Pages": {
     "home": "Home",
@@ -1386,11 +1479,17 @@
     "categoryEyebrow": "Category"
   },
   "LocalSeo": {
-    "eyebrow": "Local SEO",
-    "title": "Visible in Halle, Leipzig and every city around",
-    "lead": "We make your business visible across the map - Halle (Saale), Leipzig, Merseburg, Schkeuditz, Delitzsch, Markkleeberg and Landsberg.",
-    "floatA": "Top local rankings",
-    "floatB": "~50 km radius"
+    "eyebrow": "Based in Halle. Working across the region.",
+    "title": "Reach customers in Halle, Leipzig and Merseburg.",
+    "lead": "A trades business needs relevant enquiries in its service area. A salon needs accessible appointments. A restaurant needs guests who can quickly find its menu and reservation options. We connect regional search intent with your actual offer.",
+    "floatA": "Relevant to your region",
+    "floatB": "Personal & digital",
+    "points": [
+      "Clearly describe your services and actual service area.",
+      "Keep business details and your Google profile consistent.",
+      "Lead from local search to a suitable contact or booking path."
+    ],
+    "base": "SaaleWeb is based in Halle (Saale) and also serves businesses in Leipzig, Merseburg and the Saalekreis. We collaborate online; regional in-person appointments are available by arrangement."
   },
   "ServicesPage": {
     "metaTitle": "Services for digital visibility, automation and growth",
@@ -1793,13 +1892,13 @@
   },
   "DirectAnswers": {
     "eyebrow": "Answered directly",
-    "title": "The questions people actually type — answered briefly",
-    "lead": "These answers are deliberately short and self-contained, so search engines and AI systems can find and understand them more easily.",
-    "note": "Information as of August 2026. Prices exclude VAT. No search positions or mentions in AI answers are guaranteed, as these depend on external systems.",
+    "title": "Clear answers before you decide.",
+    "lead": "What matters before you decide: website costs, web design with SEO, a carefully planned relaunch, ongoing support and AI assistants. These short answers lead to the relevant scope of work.",
+    "note": "Starting prices exclude VAT; final scope and fixed price follow the initial discussion. Visibility in Google and AI answers is monitored, not guaranteed.",
     "items": [
       {
         "q": "Looking for a web designer in Halle for a new company website — who does that?",
-        "a": "SaaleWeb in Halle (Saale) builds company websites for small and mid-sized businesses. The process: free first consultation, analysis, fixed-price proposal, delivery in 1–5 weeks depending on scope, launch and optional ongoing support. Your contact is Konstantin Mykhailov — directly, with no agency layers.",
+        "a": "SaaleWeb in Halle (Saale) builds and modernises company websites for small and medium-sized businesses. An initial discussion and review are followed by an agreed scope, fixed-price proposal, implementation and launch. Your contact is Konstantin Mykhailov; ongoing support and automation can be added.",
         "href": "/en/services/web-design-halle",
         "linkLabel": "See web design Halle"
       },
@@ -1811,7 +1910,7 @@
       },
       {
         "q": "Are there web designers in Halle who produce GEO/SGE-optimised content?",
-        "a": "Yes. SaaleWeb structures content for generative search: clear entities, FAQ blocks in real user phrasing, Schema.org data, LocalBusiness details, llms.txt and explicit crawler rules for GPTBot, ClaudeBot and PerplexityBot. Mentions in AI answers cannot be guaranteed, but the structure improves the odds.",
+        "a": "Yes. SaaleWeb combines SEO with clear company information, specific answers, appropriate structured data and evidenced project examples. These foundations help search systems interpret content. llms.txt provides additional guidance for systems that support it; it is not a requirement or guarantee for Google's AI results. Mentions and source links are checked using recurring test questions.",
         "href": "/en/services/ai-optimization",
         "linkLabel": "See AI optimisation"
       },
@@ -1823,16 +1922,189 @@
       },
       {
         "q": "Who builds websites for small businesses in the Saalekreis district?",
-        "a": "SaaleWeb covers Halle (Saale), Merseburg, Schkeuditz, Delitzsch, Leipzig and the Saalekreis district. Each location has its own page with genuine local context. Projects outside the region run remotely by phone, WhatsApp or video call.",
+        "a": "SaaleWeb is based in Halle (Saale) and serves businesses in Merseburg, Leipzig, the Saalekreis and beyond. Services and service areas reflect the actual business. We collaborate by phone, video call or, by arrangement, in person in the region.",
         "href": "/en/locations",
         "linkLabel": "All locations"
       },
       {
         "q": "How long until a new website becomes visible on Google?",
-        "a": "Indexing usually happens within days to weeks. Reliable positions for competitive local terms typically take three to six months and also depend on competition, reviews and the Google Business Profile. Anyone promising faster guarantees cannot keep them.",
+        "a": "After launch, search engines first need to crawl and assess the pages. Relevant visibility depends on the existing website, competition, content and technical foundations. We check indexability and track queries, impressions and relevant enquiries over an agreed period. A fixed ranking date cannot be promised.",
         "href": "/en/services/seo-halle",
         "linkLabel": "See SEO Halle"
+      },
+      {
+        "q": "Does SaaleWeb provide web design and SEO together in Halle?",
+        "a": "Yes. SaaleWeb plans design, mobile enquiry paths, service content and the technical SEO foundation together. This gives small and medium-sized businesses in Halle and the Saalekreis a consistent website. Ongoing search analysis, additional content and local SEO can be offered as a separate agreed scope; a particular Google position is not promised.",
+        "href": "/en/services/seo-halle",
+        "linkLabel": "Plan web design and SEO together"
+      },
+      {
+        "q": "Can I modernise my WordPress website and preserve existing Google visibility?",
+        "a": "SaaleWeb first checks what can be reused from your existing website. Before a relaunch, important pages, search queries and URLs are recorded; necessary redirects, content, forms and mobile layouts are tested before the switch. Search Console checks follow the launch. This reduces avoidable risks; temporary ranking fluctuations cannot be ruled out.",
+        "href": "/en/services/website-relaunch",
+        "linkLabel": "Plan a website relaunch and takeover"
+      },
+      {
+        "q": "Who can take over ongoing support for our company website?",
+        "a": "SaaleWeb offers to take over existing websites after a technical review. Depending on the system, agreed support can cover updates, backups, function checks, content changes or further development. Responsibilities, response times, monthly services and additional work are clarified in advance. A WordPress installation and a custom Next.js application need different maintenance.",
+        "href": "/en/services/website-maintenance",
+        "linkLabel": "Website support and maintenance"
+      },
+      {
+        "q": "What does a website AI chatbot cost, and can it connect to bookings or a CRM?",
+        "a": "SaaleWeb scopes an AI assistant around its knowledge base, tasks, languages and interfaces. The proposal separates setup and integration from ongoing model, hosting and support costs. Existing calendars, booking tools or CRM systems can be connected after their interfaces are reviewed. Approved content, data access, test questions and handover to your team are agreed before launch; there is no single price for every integration.",
+        "href": "/en/services/ai-assistant",
+        "linkLabel": "AI assistant: tasks and integration"
       }
     ]
+  },
+  "ProofStrip": {
+    "ariaLabel": "Facts about SaaleWeb",
+    "google": "Google rating · {count}",
+    "response": "Reply within 24 h",
+    "responseSub": "personal, not a bot",
+    "price": "Fixed price",
+    "priceSub": "no upfront payment",
+    "languages": "DE · EN · RU",
+    "languagesSub": "included, more on request",
+    "region": "Halle (Saale)",
+    "regionSub": "Saalekreis · Leipzig · Germany-wide",
+    "voices": "Real customer feedback",
+    "googleLink": "Read Google reviews"
+  },
+  "OfferOverview": {
+    "eyebrow": "Services & industries",
+    "title": "What we build for your business",
+    "lead": "Web design and SEO together for small and medium-sized businesses: new company websites, WordPress relaunches and booking workflows. Next.js, WordPress or custom development – the solution follows your goals and content maintenance needs.",
+    "servicesTitle": "Services",
+    "industriesTitle": "Industries we know",
+    "linksTitle": "Direct entry points",
+    "linksLead": "Web design Halle, SEO Halle, WordPress support, booking systems and industry pages.",
+    "allServices": "All services",
+    "allIndustries": "All industries"
+  },
+  "MobileCta": {
+    "consult": "Free consultation",
+    "whatsapp": "WhatsApp"
+  },
+  "Relaunch": {
+    "eyebrow": "A planned website relaunch",
+    "title": "Your business has moved on. Has your website?",
+    "lead": "You do good work. But your old website no longer explains your offer, contacting you on a phone takes effort, and enquiries arrive without essential details. We find what keeps customers from taking the next step and plan a relaunch around it.",
+    "cta": "Check my website's potential",
+    "changes": [
+      {
+        "problem": "Visitors don't understand your offer straight away?",
+        "solution": "Make your services, intended customers and next step clear at a glance."
+      },
+      {
+        "problem": "Getting in touch is awkward on mobile?",
+        "solution": "Short enquiry paths, usable forms and suitable booking features make it easier to start."
+      },
+      {
+        "problem": "Every enquiry creates more manual work?",
+        "solution": "Collect relevant details early and pass them to your calendar, CRM or existing workflow."
+      }
+    ],
+    "continuity": "A relaunch starts with an inventory: we review valuable content, existing URLs and working processes, then plan redirects and the transition to the new website.",
+    "demo": {
+      "label": "Interactive relaunch concept",
+      "title": "Experience the difference. As your next customer.",
+      "intro": "The same fictional business, two ways to get in touch. Switch views and try the new project enquiry yourself.",
+      "before": "Before",
+      "after": "After",
+      "mobile": "Mobile",
+      "desktop": "Desktop",
+      "steps": [
+        {
+          "title": "Understand the offer",
+          "text": "A specific service and an obvious next step."
+        },
+        {
+          "title": "Take action on a phone",
+          "text": "Readable content, generous buttons and a short enquiry."
+        },
+        {
+          "title": "Start better prepared",
+          "text": "Service and timing are clear before the first conversation."
+        }
+      ],
+      "hint": "Try “Enquire about a project” in the new version.",
+      "note": "Illustrative concept for a fictional trades business. Not a client reference or a measured before-and-after result.",
+      "business": "RAUM & WERK",
+      "businessType": "Fictional trades business",
+      "region": "Halle (Saale) & surrounding area",
+      "nav": "Services",
+      "oldTitle": "Welcome to our website",
+      "oldText": "We are your partner for work around your home and garden. Find out about our wide range of services. Please contact us if you are interested.",
+      "oldCta": "Get in touch",
+      "oldContactTitle": "Write us an email",
+      "oldContactText": "Contact is possible. The service, scope and timing are still open and need to be clarified in the conversation.",
+      "newEyebrow": "Your home. Thoughtfully renewed.",
+      "newTitle": "More room for what matters to you.",
+      "newText": "Terrace, windows or interiors: outline your project in a few simple steps.",
+      "newCta": "Enquire about a project",
+      "reassurance": "Choose a service · Share your timing",
+      "projectLabel": "Design concept",
+      "servicesTitle": "What would you like to change?",
+      "services": [
+        "Terrace & garden",
+        "Windows & doors",
+        "Interior renovation"
+      ],
+      "timingTitle": "When would you like to start?",
+      "timings": [
+        "Within the next 3 months",
+        "Later this year",
+        "I would like advice first"
+      ],
+      "next": "Continue",
+      "back": "Back",
+      "summary": "A useful start to your first conversation.",
+      "summaryText": "The key details are clearly prepared. In a real project, the agreed contact and handover process follows here.",
+      "serviceLabel": "Your project",
+      "timingLabel": "Your timing",
+      "reset": "Restart demo",
+      "demoOnly": "Demo: no enquiry is sent and nothing is stored."
+    }
+  },
+  "Automation": {
+    "eyebrow": "Website & workflows",
+    "title": "Fewer follow-up questions. More time for your business.",
+    "lead": "An enquiry becomes useful when the right information reaches the right place. We connect your website with existing tools or build a system suited to your business.",
+    "cases": [
+      {
+        "title": "Enquiries with the details you need",
+        "text": "Collect the service, project location and timeframe so your team can assess the request."
+      },
+      {
+        "title": "Connect bookings and appointments",
+        "text": "Integrate a calendar or booking solution and align confirmations with your actual workflow."
+      },
+      {
+        "title": "Answer recurring questions",
+        "text": "An AI assistant can explain verified company information and hand interested visitors over to a real contact."
+      }
+    ],
+    "example": "Example: a structured project enquiry",
+    "before": "An email followed by many questions becomes a clear intake for your team.",
+    "steps": [
+      "Capture service & project location",
+      "Clarify needs & timeframe",
+      "Pass to CRM, calendar or team"
+    ],
+    "scope": "We agree together which steps to automate. Integrations, permissions and data protection requirements are part of the planning.",
+    "cta": "Review my workflow together",
+    "automationLink": "Automation in detail",
+    "assistantLink": "Website AI assistant"
+  },
+  "QualityProof": {
+    "title": "Our technical standard, made visible.",
+    "source": "Reference: saaleweb.de · measurement {date}",
+    "performance": "Performance · desktop",
+    "seo": "Technical SEO",
+    "accessibility": "Accessibility",
+    "practices": "Best practices",
+    "method": "Google Lighthouse lab scores for our own website, not client outcomes or search rankings. Performance is the median of the last three available desktop measurements; other categories use the latest available value. Project goals and real-user data are assessed separately."
   }
 }

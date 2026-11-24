@@ -311,13 +311,13 @@ export default async function ServicesIndexPage({ params }: { params: Promise<Pa
               {clusters.map((cluster, i) => {
                 const Icon = clusterIcons[i % clusterIcons.length];
                 return (
-                  <Reveal key={cluster.title} delay={(i % 2) * 80} className="h-full">
+                  <Reveal key={cluster.title} delay={(i % 2) * 80} className="h-full min-w-0">
                     <article className="h-full rounded-[24px] border border-line bg-white p-6 shadow-xs md:p-8">
                       <div className="flex items-start gap-4">
                         <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-brand text-white">
                           <Icon size={22} aria-hidden />
                         </span>
-                        <div>
+                        <div className="min-w-0 break-words">
                           <h2 className="text-[clamp(22px,2.8vw,30px)] font-extrabold tracking-tight text-dark">
                             {cluster.title}
                           </h2>

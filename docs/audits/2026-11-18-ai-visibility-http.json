@@ -1,0 +1,610 @@
+{
+  "checkedAt": "2026-11-17T23:49:48.395Z",
+  "homes": [
+    {
+      "path": "/",
+      "status": 200,
+      "canonical": "https://saaleweb.de",
+      "hreflang": [
+        "de",
+        "en",
+        "ru",
+        "x-default"
+      ],
+      "faqPages": 1,
+      "faqItems": 24,
+      "panels": 3,
+      "SSR": "static/reduced",
+      "providers": 6,
+      "auditCTA": "/#website-audit"
+    },
+    {
+      "path": "/en",
+      "status": 200,
+      "canonical": "https://saaleweb.de/en",
+      "hreflang": [
+        "de",
+        "en",
+        "ru",
+        "x-default"
+      ],
+      "faqPages": 1,
+      "faqItems": 24,
+      "panels": 3,
+      "SSR": "static/reduced",
+      "providers": 6,
+      "auditCTA": "/en#website-audit"
+    },
+    {
+      "path": "/ru",
+      "status": 200,
+      "canonical": "https://saaleweb.de/ru",
+      "hreflang": [
+        "de",
+        "en",
+        "ru",
+        "x-default"
+      ],
+      "faqPages": 1,
+      "faqItems": 24,
+      "panels": 3,
+      "SSR": "static/reduced",
+      "providers": 6,
+      "auditCTA": "/ru#website-audit"
+    }
+  ],
+  "links": [
+    {
+      "path": "/",
+      "status": 200
+    },
+    {
+      "path": "/blog",
+      "status": 200
+    },
+    {
+      "path": "/branchen",
+      "status": 200
+    },
+    {
+      "path": "/branchen/arztpraxen",
+      "status": 200
+    },
+    {
+      "path": "/branchen/bauunternehmen-website",
+      "status": 200
+    },
+    {
+      "path": "/branchen/beauty-studio-website",
+      "status": 200
+    },
+    {
+      "path": "/branchen/dienstleister-website",
+      "status": 200
+    },
+    {
+      "path": "/branchen/glaserei-website",
+      "status": 200
+    },
+    {
+      "path": "/branchen/handwerker-website",
+      "status": 200
+    },
+    {
+      "path": "/branchen/hotel-website",
+      "status": 200
+    },
+    {
+      "path": "/branchen/immobilien",
+      "status": 200
+    },
+    {
+      "path": "/branchen/kanzleien",
+      "status": 200
+    },
+    {
+      "path": "/branchen/restaurant-website",
+      "status": 200
+    },
+    {
+      "path": "/datenschutz",
+      "status": 200
+    },
+    {
+      "path": "/en",
+      "status": 200
+    },
+    {
+      "path": "/en/blog",
+      "status": 200
+    },
+    {
+      "path": "/en/contact",
+      "status": 200
+    },
+    {
+      "path": "/en/free-website-audit",
+      "status": 200
+    },
+    {
+      "path": "/en/imprint",
+      "status": 200
+    },
+    {
+      "path": "/en/industries",
+      "status": 200
+    },
+    {
+      "path": "/en/industries/beauty-studio-website",
+      "status": 200
+    },
+    {
+      "path": "/en/industries/construction-company-website",
+      "status": 200
+    },
+    {
+      "path": "/en/industries/craftsmen-website",
+      "status": 200
+    },
+    {
+      "path": "/en/industries/glazier-website",
+      "status": 200
+    },
+    {
+      "path": "/en/industries/hotel-website",
+      "status": 200
+    },
+    {
+      "path": "/en/industries/law-firms",
+      "status": 200
+    },
+    {
+      "path": "/en/industries/medical-practices",
+      "status": 200
+    },
+    {
+      "path": "/en/industries/real-estate",
+      "status": 200
+    },
+    {
+      "path": "/en/industries/restaurant-website",
+      "status": 200
+    },
+    {
+      "path": "/en/industries/service-provider-website",
+      "status": 200
+    },
+    {
+      "path": "/en/locations",
+      "status": 200
+    },
+    {
+      "path": "/en/locations/delitzsch",
+      "status": 200
+    },
+    {
+      "path": "/en/locations/halle",
+      "status": 200
+    },
+    {
+      "path": "/en/locations/leipzig",
+      "status": 200
+    },
+    {
+      "path": "/en/locations/merseburg",
+      "status": 200
+    },
+    {
+      "path": "/en/locations/saalekreis",
+      "status": 200
+    },
+    {
+      "path": "/en/locations/schkeuditz",
+      "status": 200
+    },
+    {
+      "path": "/en/pricing",
+      "status": 200
+    },
+    {
+      "path": "/en/privacy-policy",
+      "status": 200
+    },
+    {
+      "path": "/en/projects",
+      "status": 200
+    },
+    {
+      "path": "/en/projects/direct-bookings-without-portals",
+      "status": 200
+    },
+    {
+      "path": "/en/projects/glaserei-schubert",
+      "status": 200
+    },
+    {
+      "path": "/en/projects/neue-liebe-nebra",
+      "status": 200
+    },
+    {
+      "path": "/en/projects/online-bookings-tripled",
+      "status": 200
+    },
+    {
+      "path": "/en/projects/qualified-construction-leads",
+      "status": 200
+    },
+    {
+      "path": "/en/services",
+      "status": 200
+    },
+    {
+      "path": "/en/services/ai-assistant",
+      "status": 200
+    },
+    {
+      "path": "/en/services/ai-optimization",
+      "status": 200
+    },
+    {
+      "path": "/en/services/api-integrations",
+      "status": 200
+    },
+    {
+      "path": "/en/services/automation",
+      "status": 200
+    },
+    {
+      "path": "/en/services/seo-halle",
+      "status": 200
+    },
+    {
+      "path": "/en/services/seo-leipzig",
+      "status": 200
+    },
+    {
+      "path": "/en/services/web-design-halle",
+      "status": 200
+    },
+    {
+      "path": "/en/services/web-design-leipzig",
+      "status": 200
+    },
+    {
+      "path": "/en/services/website-development",
+      "status": 200
+    },
+    {
+      "path": "/en/services/website-security",
+      "status": 200
+    },
+    {
+      "path": "/en/services/wordpress-agency-halle",
+      "status": 200
+    },
+    {
+      "path": "/impressum",
+      "status": 200
+    },
+    {
+      "path": "/kontakt",
+      "status": 200
+    },
+    {
+      "path": "/kostenlose-website-analyse",
+      "status": 200
+    },
+    {
+      "path": "/leistungen",
+      "status": 200
+    },
+    {
+      "path": "/leistungen/api-integrationen",
+      "status": 200
+    },
+    {
+      "path": "/leistungen/automatisierung",
+      "status": 200
+    },
+    {
+      "path": "/leistungen/ki-assistent",
+      "status": 200
+    },
+    {
+      "path": "/leistungen/ki-optimierung",
+      "status": 200
+    },
+    {
+      "path": "/leistungen/seo-halle",
+      "status": 200
+    },
+    {
+      "path": "/leistungen/seo-leipzig",
+      "status": 200
+    },
+    {
+      "path": "/leistungen/webdesign-halle",
+      "status": 200
+    },
+    {
+      "path": "/leistungen/webdesign-leipzig",
+      "status": 200
+    },
+    {
+      "path": "/leistungen/website-erstellen-lassen",
+      "status": 200
+    },
+    {
+      "path": "/leistungen/website-sicherheit",
+      "status": 200
+    },
+    {
+      "path": "/leistungen/wordpress-agentur-halle",
+      "status": 200
+    },
+    {
+      "path": "/preise",
+      "status": 200
+    },
+    {
+      "path": "/projekte",
+      "status": 200
+    },
+    {
+      "path": "/projekte/direktbuchungen-ohne-portale",
+      "status": 200
+    },
+    {
+      "path": "/projekte/glaserei-schubert",
+      "status": 200
+    },
+    {
+      "path": "/projekte/neue-liebe-nebra",
+      "status": 200
+    },
+    {
+      "path": "/projekte/online-buchungen-verdreifacht",
+      "status": 200
+    },
+    {
+      "path": "/projekte/qualifizierte-bauanfragen",
+      "status": 200
+    },
+    {
+      "path": "/ru",
+      "status": 200
+    },
+    {
+      "path": "/ru/besplatnyy-audit-sayta",
+      "status": 200
+    },
+    {
+      "path": "/ru/blog",
+      "status": 200
+    },
+    {
+      "path": "/ru/ceny",
+      "status": 200
+    },
+    {
+      "path": "/ru/datenschutz",
+      "status": 200
+    },
+    {
+      "path": "/ru/goroda",
+      "status": 200
+    },
+    {
+      "path": "/ru/goroda/delitzsch",
+      "status": 200
+    },
+    {
+      "path": "/ru/goroda/halle",
+      "status": 200
+    },
+    {
+      "path": "/ru/goroda/leipzig",
+      "status": 200
+    },
+    {
+      "path": "/ru/goroda/merseburg",
+      "status": 200
+    },
+    {
+      "path": "/ru/goroda/saalekreis",
+      "status": 200
+    },
+    {
+      "path": "/ru/goroda/schkeuditz",
+      "status": 200
+    },
+    {
+      "path": "/ru/impressum",
+      "status": 200
+    },
+    {
+      "path": "/ru/kontakt",
+      "status": 200
+    },
+    {
+      "path": "/ru/otrasli",
+      "status": 200
+    },
+    {
+      "path": "/ru/otrasli/medcentry",
+      "status": 200
+    },
+    {
+      "path": "/ru/otrasli/nedvizhimost",
+      "status": 200
+    },
+    {
+      "path": "/ru/otrasli/sayt-dlya-masterov",
+      "status": 200
+    },
+    {
+      "path": "/ru/otrasli/sayt-dlya-otelya",
+      "status": 200
+    },
+    {
+      "path": "/ru/otrasli/sayt-dlya-restorana",
+      "status": 200
+    },
+    {
+      "path": "/ru/otrasli/sayt-dlya-salona-krasoty",
+      "status": 200
+    },
+    {
+      "path": "/ru/otrasli/sayt-dlya-sfery-uslug",
+      "status": 200
+    },
+    {
+      "path": "/ru/otrasli/sayt-dlya-stekolnoy-masterskoy",
+      "status": 200
+    },
+    {
+      "path": "/ru/otrasli/sayt-dlya-stroitelnoy-kompanii",
+      "status": 200
+    },
+    {
+      "path": "/ru/otrasli/yuristy",
+      "status": 200
+    },
+    {
+      "path": "/ru/proekty",
+      "status": 200
+    },
+    {
+      "path": "/ru/proekty/glaserei-schubert",
+      "status": 200
+    },
+    {
+      "path": "/ru/proekty/kvalificirovannye-zayavki",
+      "status": 200
+    },
+    {
+      "path": "/ru/proekty/neue-liebe-nebra",
+      "status": 200
+    },
+    {
+      "path": "/ru/proekty/onlajn-zapisi-vyrosli-vtroe",
+      "status": 200
+    },
+    {
+      "path": "/ru/proekty/pryamye-broni-bez-agregatorov",
+      "status": 200
+    },
+    {
+      "path": "/ru/uslugi",
+      "status": 200
+    },
+    {
+      "path": "/ru/uslugi/ai-assistent",
+      "status": 200
+    },
+    {
+      "path": "/ru/uslugi/api-integracii",
+      "status": 200
+    },
+    {
+      "path": "/ru/uslugi/avtomatizaciya",
+      "status": 200
+    },
+    {
+      "path": "/ru/uslugi/bezopasnost-sayta",
+      "status": 200
+    },
+    {
+      "path": "/ru/uslugi/optimizaciya-pod-ii",
+      "status": 200
+    },
+    {
+      "path": "/ru/uslugi/razrabotka-saytov",
+      "status": 200
+    },
+    {
+      "path": "/ru/uslugi/seo-halle",
+      "status": 200
+    },
+    {
+      "path": "/ru/uslugi/seo-leipzig",
+      "status": 200
+    },
+    {
+      "path": "/ru/uslugi/webdesign-halle",
+      "status": 200
+    },
+    {
+      "path": "/ru/uslugi/webdesign-leipzig",
+      "status": 200
+    },
+    {
+      "path": "/ru/uslugi/wordpress-agentstvo-halle",
+      "status": 200
+    },
+    {
+      "path": "/standorte",
+      "status": 200
+    },
+    {
+      "path": "/standorte/delitzsch",
+      "status": 200
+    },
+    {
+      "path": "/standorte/halle",
+      "status": 200
+    },
+    {
+      "path": "/standorte/leipzig",
+      "status": 200
+    },
+    {
+      "path": "/standorte/merseburg",
+      "status": 200
+    },
+    {
+      "path": "/standorte/saalekreis",
+      "status": 200
+    },
+    {
+      "path": "/standorte/schkeuditz",
+      "status": 200
+    }
+  ],
+  "icons": [
+    {
+      "path": "/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fchatgpt-icon.c55ccaa8.webp&w=3840&q=75",
+      "status": 200,
+      "bytes": 9187,
+      "type": "image/jpeg"
+    },
+    {
+      "path": "/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fclaude-icon.5c560d01.webp&w=3840&q=75",
+      "status": 200,
+      "bytes": 6428,
+      "type": "image/jpeg"
+    },
+    {
+      "path": "/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fperplexity-icon.4a32094c.webp&w=3840&q=75",
+      "status": 200,
+      "bytes": 4781,
+      "type": "image/jpeg"
+    },
+    {
+      "path": "/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcopilot-icon.35a84155.webp&w=3840&q=75",
+      "status": 200,
+      "bytes": 4911,
+      "type": "image/jpeg"
+    },
+    {
+      "path": "/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgoogle-ai-icon.2bc4b642.webp&w=3840&q=75",
+      "status": 200,
+      "bytes": 6108,
+      "type": "image/jpeg"
+    }
+  ],
+  "sitemap": {
+    "status": 200,
+    "canonicalUrls": 229
+  }
+}

@@ -1,0 +1,2051 @@
+{
+  "checkedAt": "2026-11-18T00:48:10.077Z",
+  "source": "GSC URL Inspection stored index state; readonly; not a live test or request for indexing",
+  "results": [
+    {
+      "url": "https://saaleweb.de/leistungen/website-wartung-Website-Wartung",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Not found (404)",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_STATE_UNSPECIFIED",
+        "lastCrawlTime": "2026-11-16T02:49:30Z",
+        "pageFetchState": "NOT_FOUND",
+        "referringUrls": [
+          "https://saaleweb.de/leistungen/website-sicherheit"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/leistungen/website-sicherheit",
+      "indexStatus": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-11-06T07:49:03Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/leistungen/website-sicherheit",
+        "userCanonical": "https://saaleweb.de/leistungen/website-sicherheit",
+        "sitemap": [
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "referringUrls": [
+          "https://saaleweb.de/en/services/website-security",
+          "https://saaleweb.de/"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/leistungen/website-wartung",
+      "indexStatus": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-30T03:20:03Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/leistungen/website-wartung",
+        "userCanonical": "https://saaleweb.de/leistungen/website-wartung",
+        "sitemap": [
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "referringUrls": [
+          "https://www.saaleweb.de/en/services/website-maintenance"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/services/website-maintenance",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-11-12T23:28:08Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/services/website-maintenance",
+        "userCanonical": "https://saaleweb.de/en/services/website-maintenance",
+        "referringUrls": [
+          "https://saaleweb.de/ru/uslugi/podderzhka-sajta",
+          "https://saaleweb.de/leistungen/website-wartung",
+          "https://www.saaleweb.de/en/services/website-maintenance",
+          "https://saaleweb.de/en/pricing"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/ru/uslugi/seo-optimizaciya",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-11-12T18:39:13Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/ru/uslugi/seo-optimizaciya",
+        "userCanonical": "https://saaleweb.de/ru/uslugi/seo-optimizaciya",
+        "referringUrls": [
+          "https://saaleweb.de/en/services/seo-optimization",
+          "https://www.saaleweb.de/ru/uslugi"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/ru/proekty",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-11-11T16:20:33Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/ru/proekty",
+        "userCanonical": "https://saaleweb.de/ru/proekty",
+        "sitemap": [
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "referringUrls": [
+          "https://saaleweb.de/projekte",
+          "https://saaleweb.de/ru/blog/vidimost-v-ai-poiske",
+          "https://saaleweb.de/ru/uslugi/seo-halle"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/services/api-integrations",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-11-05T09:04:34Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/services/api-integrations",
+        "userCanonical": "https://saaleweb.de/en/services/api-integrations",
+        "referringUrls": [
+          "https://www.saaleweb.de/leistungen/api-integrationen",
+          "https://saaleweb.de/en/services/automation"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/services/ai-optimization",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-11-02T09:04:35Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/services/ai-optimization",
+        "userCanonical": "https://saaleweb.de/en/services/ai-optimization",
+        "referringUrls": [
+          "https://saaleweb.de/leistungen/ki-optimierung",
+          "https://www.saaleweb.de/leistungen/ki-optimierung"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/services/web-design-saalekreis",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-29T11:13:33Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/services/web-design-saalekreis",
+        "userCanonical": "https://saaleweb.de/en/services/web-design-saalekreis",
+        "referringUrls": [
+          "https://saaleweb.de/leistungen/webdesign-saalekreis",
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/industries/medical-practices",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-27T15:01:27Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/industries/medical-practices",
+        "userCanonical": "https://saaleweb.de/en/industries/medical-practices",
+        "sitemap": [
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "referringUrls": [
+          "https://saaleweb.de/branchen/arztpraxen",
+          "https://www.saaleweb.de/en/industries/medical-practices"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/ru/goroda/delitzsch",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-21T11:44:31Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/ru/goroda/delitzsch",
+        "userCanonical": "https://saaleweb.de/ru/goroda/delitzsch",
+        "sitemap": [
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "referringUrls": [
+          "https://saaleweb.de/standorte/delitzsch",
+          "https://saaleweb.de/ru/uslugi/webdesign-schkeuditz",
+          "https://saaleweb.de/en/locations/delitzsch",
+          "https://www.saaleweb.de/standorte/delitzsch"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/ru/otrasli/sayt-dlya-stroitelnoy-kompanii",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-14T21:19:10Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/ru/otrasli/sayt-dlya-stroitelnoy-kompanii",
+        "userCanonical": "https://saaleweb.de/ru/otrasli/sayt-dlya-stroitelnoy-kompanii",
+        "sitemap": [
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "referringUrls": [
+          "https://saaleweb.de/branchen/bauunternehmen-website",
+          "https://saaleweb.de/ru",
+          "https://www.saaleweb.de/en/industries/construction-company-website"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/services/web-design-leipzig",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-13T10:04:57Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/services/web-design-leipzig",
+        "userCanonical": "https://saaleweb.de/en/services/web-design-leipzig",
+        "referringUrls": [
+          "https://saaleweb.de/leistungen/webdesign-leipzig",
+          "https://saaleweb.de/ru/uslugi/webdesign-leipzig",
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/industries/service-provider-website",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-08T01:33:48Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/industries/service-provider-website",
+        "userCanonical": "https://saaleweb.de/en/industries/service-provider-website",
+        "referringUrls": [
+          "https://www.saaleweb.de/branchen/dienstleister-website",
+          "https://www.saaleweb.de/en/industries/service-provider-website"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/industries/glazier-website",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-07T23:34:06Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/industries/glazier-website",
+        "userCanonical": "https://saaleweb.de/en/industries/glazier-website",
+        "referringUrls": [
+          "https://www.saaleweb.de/en/industries/glazier-website",
+          "https://saaleweb.de/en/industries"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/ru/datenschutz",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-09-25T03:25:07Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/ru/datenschutz",
+        "userCanonical": "https://saaleweb.de/ru/datenschutz",
+        "referringUrls": [
+          "https://saaleweb.de/en/privacy-policy",
+          "https://saaleweb.de/ru/goroda/leipzig",
+          "https://www.saaleweb.de/datenschutz"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/ru/blog/relonch-sajta-checklist",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-09-25T03:17:23Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/ru/blog/relonch-sajta-checklist",
+        "userCanonical": "https://saaleweb.de/ru/blog/relonch-sajta-checklist",
+        "sitemap": [
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "referringUrls": [
+          "https://saaleweb.de/blog/website-relaunch-checkliste",
+          "https://saaleweb.de/ru/blog/nextjs-vs-wordpress",
+          "https://www.saaleweb.de/blog/website-relaunch-checkliste"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/services/data-analytics",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-09-25T03:05:03Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/services/data-analytics",
+        "userCanonical": "https://saaleweb.de/en/services/data-analytics",
+        "referringUrls": [
+          "https://saaleweb.de/ru/uslugi/analitika-dannyh",
+          "https://saaleweb.de/leistungen/datenanalyse",
+          "https://saaleweb.de/en/services/automation",
+          "https://saaleweb.de/en/services/ai-assistant"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/ru/uslugi",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-09-25T02:35:33Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/ru/uslugi",
+        "userCanonical": "https://saaleweb.de/ru/uslugi",
+        "sitemap": [
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "referringUrls": [
+          "https://saaleweb.de/leistungen",
+          "https://saaleweb.de/ru/blog/nextjs-vs-wordpress",
+          "https://www.saaleweb.de/en/services"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/services/wordpress-agency-halle",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-09-24T16:32:01Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/services/wordpress-agency-halle",
+        "userCanonical": "https://saaleweb.de/en/services/wordpress-agency-halle",
+        "referringUrls": [
+          "https://saaleweb.de/ru/uslugi/wordpress-agentstvo-halle",
+          "https://saaleweb.de/leistungen/wordpress-agentur-halle"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/ru/uslugi/webdesign-leipzig",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-09-23T15:14:35Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/ru/uslugi/webdesign-leipzig",
+        "userCanonical": "https://saaleweb.de/ru/uslugi/webdesign-leipzig",
+        "referringUrls": [
+          "https://www.saaleweb.de/leistungen/webdesign-leipzig",
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/ru/goroda/halle",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-09-21T12:38:40Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/ru/goroda/halle",
+        "userCanonical": "https://saaleweb.de/ru/goroda/halle",
+        "sitemap": [
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "referringUrls": [
+          "https://saaleweb.de/standorte/halle",
+          "https://saaleweb.de/ru/proekty/onlajn-zapisi-vyrosli-vtroe",
+          "https://www.saaleweb.de/standorte/halle"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/ru/otrasli/sayt-dlya-stekolnoy-masterskoy",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-09-21T07:49:33Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/ru/otrasli/sayt-dlya-stekolnoy-masterskoy",
+        "userCanonical": "https://saaleweb.de/ru/otrasli/sayt-dlya-stekolnoy-masterskoy",
+        "sitemap": [
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "referringUrls": [
+          "https://saaleweb.de/branchen/glaserei-website",
+          "https://www.saaleweb.de/en/industries/glazier-website"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/projects/online-bookings-tripled",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-09-19T22:23:48Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/projects/online-bookings-tripled",
+        "userCanonical": "https://saaleweb.de/en/projects/online-bookings-tripled",
+        "referringUrls": [
+          "https://www.saaleweb.de/projekte/online-buchungen-verdreifacht",
+          "https://www.saaleweb.de/ru/proekty/onlajn-zapisi-vyrosli-vtroe",
+          "https://saaleweb.de/en/services/data-analytics",
+          "https://saaleweb.de/en/services/website-development"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/industries/beauty-studio-website",
+      "indexStatus": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-11-15T20:51:41Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/industries/beauty-studio-website",
+        "userCanonical": "https://saaleweb.de/en/industries/beauty-studio-website",
+        "referringUrls": [
+          "https://saaleweb.de/branchen/beauty-studio-website",
+          "https://www.saaleweb.de/branchen/beauty-studio-website",
+          "https://www.saaleweb.de/en/industries/beauty-studio-website"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/ru/otrasli/yuristy",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-09-17T00:17:35Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/ru/otrasli/yuristy",
+        "userCanonical": "https://saaleweb.de/ru/otrasli/yuristy",
+        "sitemap": [
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "referringUrls": [
+          "https://saaleweb.de/branchen/kanzleien",
+          "https://saaleweb.de/ru",
+          "https://www.saaleweb.de/en/industries/law-firms"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/ru/goroda/leipzig",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-09-10T12:18:16Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/ru/goroda/leipzig",
+        "userCanonical": "https://saaleweb.de/ru/goroda/leipzig",
+        "referringUrls": [
+          "https://www.saaleweb.de/standorte/leipzig",
+          "https://saaleweb.de/ru/uslugi/razrabotka-saytov"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/services/web-design-delitzsch",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-09-10T11:03:16Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/services/web-design-delitzsch",
+        "userCanonical": "https://saaleweb.de/en/services/web-design-delitzsch",
+        "referringUrls": [
+          "https://saaleweb.de/leistungen/webdesign-delitzsch",
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/services/automation",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-09-10T00:54:03Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/services/automation",
+        "userCanonical": "https://saaleweb.de/en/services/automation",
+        "referringUrls": [
+          "https://www.saaleweb.de/leistungen/automatisierung",
+          "https://saaleweb.de/en/services"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/free-website-audit",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-09-09T22:23:38Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/free-website-audit",
+        "userCanonical": "https://saaleweb.de/en/free-website-audit",
+        "sitemap": [
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "referringUrls": [
+          "https://saaleweb.de/en/projects/neue-liebe-nebra",
+          "https://www.saaleweb.de/kostenlose-website-analyse",
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/ru/blog/skolko-stoit-sajt-v-halle",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-09-09T19:27:04Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/ru/blog/skolko-stoit-sajt-v-halle",
+        "userCanonical": "https://saaleweb.de/ru/blog/skolko-stoit-sajt-v-halle",
+        "sitemap": [
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "referringUrls": [
+          "https://saaleweb.de/blog/was-kostet-eine-website-in-halle",
+          "https://www.saaleweb.de/blog/was-kostet-eine-website-in-halle",
+          "https://www.saaleweb.de/en/blog/website-cost-in-halle"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/ru/uslugi/sozdanie-internet-magazina",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-09-08T21:27:05Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/ru/uslugi/sozdanie-internet-magazina",
+        "userCanonical": "https://saaleweb.de/ru/uslugi/sozdanie-internet-magazina",
+        "sitemap": [
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "referringUrls": [
+          "https://saaleweb.de/leistungen/online-shop-erstellen",
+          "https://saaleweb.de/ru/uslugi/api-integracii"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/ru/uslugi/import-tovarov",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-09-08T18:57:04Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/ru/uslugi/import-tovarov",
+        "userCanonical": "https://saaleweb.de/ru/uslugi/import-tovarov",
+        "referringUrls": [
+          "https://saaleweb.de/en/services/shop-product-import"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/blog/website-cost-in-halle",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-09-08T13:20:22Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/blog/website-cost-in-halle",
+        "userCanonical": "https://saaleweb.de/en/blog/website-cost-in-halle",
+        "sitemap": [
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "referringUrls": [
+          "https://saaleweb.de/blog/was-kostet-eine-website-in-halle",
+          "https://www.saaleweb.de/blog/was-kostet-eine-website-in-halle",
+          "https://www.saaleweb.de/en/blog/website-cost-in-halle",
+          "https://saaleweb.de/en/blog"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/ru/uslugi/sistemy-bronirovaniya",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-09-08T10:50:22Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/ru/uslugi/sistemy-bronirovaniya",
+        "userCanonical": "https://saaleweb.de/ru/uslugi/sistemy-bronirovaniya",
+        "sitemap": [
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "referringUrls": [
+          "https://saaleweb.de/leistungen/buchungssysteme",
+          "https://saaleweb.de/en/services/booking-systems"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/services",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-09-07T07:47:53Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/services",
+        "userCanonical": "https://saaleweb.de/en/services",
+        "sitemap": [
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "referringUrls": [
+          "https://saaleweb.de/en/locations",
+          "https://www.saaleweb.de/ru/uslugi",
+          "https://saaleweb.de/en/services/website-development",
+          "https://saaleweb.de/leistungen"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/ru/uslugi/seo-halle",
+      "indexStatus": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-11-15T02:31:16Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/ru/uslugi/seo-halle",
+        "userCanonical": "https://saaleweb.de/ru/uslugi/seo-halle",
+        "sitemap": [
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "referringUrls": [
+          "https://saaleweb.de/en/services/seo-halle",
+          "https://saaleweb.de/leistungen/seo-halle",
+          "https://www.saaleweb.de/leistungen/seo-halle"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/ru/uslugi/optimizaciya-pod-ii",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-09-05T01:48:27Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/ru/uslugi/optimizaciya-pod-ii",
+        "userCanonical": "https://saaleweb.de/ru/uslugi/optimizaciya-pod-ii",
+        "referringUrls": [
+          "https://saaleweb.de/ru/blog/nextjs-vs-wordpress"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/industries/construction-company-website",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-09-04T05:48:29Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/industries/construction-company-website",
+        "userCanonical": "https://saaleweb.de/en/industries/construction-company-website",
+        "referringUrls": [
+          "https://saaleweb.de/branchen/bauunternehmen-website",
+          "https://www.saaleweb.de/en/industries/construction-company-website",
+          "https://saaleweb.de/en/industries"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/ru/goroda/saalekreis",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-09-03T21:03:27Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/ru/goroda/saalekreis",
+        "userCanonical": "https://saaleweb.de/ru/goroda/saalekreis",
+        "referringUrls": [
+          "https://saaleweb.de/en/locations/saalekreis",
+          "https://saaleweb.de/ru/uslugi/webdesign-leipzig",
+          "https://saaleweb.de/ru/datenschutz",
+          "https://www.saaleweb.de/standorte/saalekreis"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/ru/uslugi/relonch-sajta",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-09-01T16:13:56Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/ru/uslugi/relonch-sajta",
+        "userCanonical": "https://saaleweb.de/ru/uslugi/relonch-sajta",
+        "referringUrls": [
+          "https://saaleweb.de/en/services/website-relaunch",
+          "https://saaleweb.de/ru/uslugi",
+          "https://www.saaleweb.de/leistungen/website-relaunch"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/ru/uslugi/analitika-dannyh",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-09-01T08:27:54Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/ru/uslugi/analitika-dannyh",
+        "userCanonical": "https://saaleweb.de/ru/uslugi/analitika-dannyh",
+        "sitemap": [
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "referringUrls": [
+          "https://saaleweb.de/leistungen/datenanalyse",
+          "https://saaleweb.de/ru/uslugi"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/ru/blog/lokalnoe-seo-halle",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-09-01T05:45:24Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/ru/blog/lokalnoe-seo-halle",
+        "userCanonical": "https://saaleweb.de/ru/blog/lokalnoe-seo-halle",
+        "referringUrls": [
+          "https://saaleweb.de/en/blog/local-seo-halle",
+          "https://saaleweb.de/ru/blog",
+          "https://www.saaleweb.de/en/blog/local-seo-halle"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/industries/restaurant-website",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-09-01T05:07:54Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/industries/restaurant-website",
+        "userCanonical": "https://saaleweb.de/en/industries/restaurant-website",
+        "referringUrls": [
+          "https://saaleweb.de/branchen/restaurant-website",
+          "https://www.saaleweb.de/en/industries/restaurant-website"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/ru/blog/optimizaciya-google-biznes-profilya",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-08-30T14:32:49Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/ru/blog/optimizaciya-google-biznes-profilya",
+        "userCanonical": "https://saaleweb.de/ru/blog/optimizaciya-google-biznes-profilya",
+        "sitemap": [
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "referringUrls": [
+          "https://www.saaleweb.de/blog/google-unternehmensprofil-optimieren"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/locations/leipzig",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-08-29T03:06:23Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/locations/leipzig",
+        "userCanonical": "https://saaleweb.de/en/locations/leipzig",
+        "sitemap": [
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "referringUrls": [
+          "https://saaleweb.de/ru/goroda/leipzig",
+          "https://saaleweb.de/en/services/online-shop-development",
+          "https://saaleweb.de/en/services/website-development"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/blog/ai-search-visibility",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-08-26T06:08:39Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/blog/ai-search-visibility",
+        "userCanonical": "https://saaleweb.de/en/blog/ai-search-visibility",
+        "referringUrls": [
+          "https://www.saaleweb.de/en/blog/ai-search-visibility",
+          "https://saaleweb.de/blog/sichtbarkeit-in-ki-suche"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/locations/halle",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-08-25T02:44:13Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/locations/halle",
+        "userCanonical": "https://saaleweb.de/en/locations/halle",
+        "sitemap": [
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "referringUrls": [
+          "https://saaleweb.de/standorte/halle",
+          "https://saaleweb.de/en/services/api-integrations",
+          "https://www.saaleweb.de/standorte/halle",
+          "https://saaleweb.de/en/services/web-design-halle"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/ru/blog/sajt-restorana-bolshe-bronirovanij",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-08-23T15:03:34Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/ru/blog/sajt-restorana-bolshe-bronirovanij",
+        "userCanonical": "https://saaleweb.de/ru/blog/sajt-restorana-bolshe-bronirovanij",
+        "referringUrls": [
+          "https://www.saaleweb.de/en/blog/restaurant-website-more-reservations",
+          "https://www.saaleweb.de/blog/restaurant-website-mehr-reservierungen"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/blog/restaurant-website-more-reservations",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-08-23T14:23:58Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/blog/restaurant-website-more-reservations",
+        "userCanonical": "https://saaleweb.de/en/blog/restaurant-website-more-reservations",
+        "referringUrls": [
+          "https://saaleweb.de/blog/restaurant-website-mehr-reservierungen",
+          "https://saaleweb.de/en/blog/category/business-growth",
+          "https://saaleweb.de/en/blog"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/services/web-design-schkeuditz",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-08-22T06:45:19Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/services/web-design-schkeuditz",
+        "userCanonical": "https://saaleweb.de/en/services/web-design-schkeuditz",
+        "sitemap": [
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "referringUrls": [
+          "https://saaleweb.de/ru/uslugi/webdesign-schkeuditz",
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/services/seo-saalekreis",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-08-22T04:58:14Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/services/seo-saalekreis",
+        "userCanonical": "https://saaleweb.de/en/services/seo-saalekreis",
+        "referringUrls": [
+          "https://saaleweb.de/leistungen/seo-saalekreis",
+          "https://saaleweb.de/ru/uslugi/seo-saalekreis",
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/services/web-development",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-08-21T20:42:47Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/services/web-development",
+        "userCanonical": "https://saaleweb.de/en/services/web-development",
+        "referringUrls": [
+          "https://saaleweb.de/en/services"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/services/web-design-merseburg",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-08-21T20:24:01Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/services/web-design-merseburg",
+        "userCanonical": "https://saaleweb.de/en/services/web-design-merseburg",
+        "referringUrls": [
+          "https://saaleweb.de/ru/uslugi/webdesign-merseburg",
+          "https://www.saaleweb.de/leistungen/webdesign-merseburg",
+          "https://saaleweb.de/en"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/services/seo-delitzsch",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-08-21T20:05:18Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/services/seo-delitzsch",
+        "userCanonical": "https://saaleweb.de/en/services/seo-delitzsch",
+        "referringUrls": [
+          "https://saaleweb.de/leistungen/seo-delitzsch",
+          "https://saaleweb.de/ru/uslugi/seo-delitzsch",
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/services/seo-merseburg",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-08-21T19:46:31Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/services/seo-merseburg",
+        "userCanonical": "https://saaleweb.de/en/services/seo-merseburg",
+        "sitemap": [
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "referringUrls": [
+          "https://saaleweb.de/leistungen/seo-merseburg",
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/services/seo-leipzig",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-08-21T19:27:46Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/services/seo-leipzig",
+        "userCanonical": "https://saaleweb.de/en/services/seo-leipzig",
+        "sitemap": [
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "referringUrls": [
+          "https://www.saaleweb.de/leistungen/seo-leipzig",
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/services/seo-schkeuditz",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-08-21T19:06:24Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/services/seo-schkeuditz",
+        "userCanonical": "https://saaleweb.de/en/services/seo-schkeuditz",
+        "referringUrls": [
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/locations/saalekreis",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-08-21T18:44:54Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/locations/saalekreis",
+        "userCanonical": "https://saaleweb.de/en/locations/saalekreis",
+        "referringUrls": [
+          "https://saaleweb.de/standorte/saalekreis",
+          "https://saaleweb.de/en/blog",
+          "https://www.saaleweb.de/standorte/saalekreis"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/services/performance-optimization",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-08-21T18:02:10Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/services/performance-optimization",
+        "userCanonical": "https://saaleweb.de/en/services/performance-optimization",
+        "referringUrls": [
+          "https://saaleweb.de/ru/uslugi/optimizaciya-proizvoditelnosti",
+          "https://saaleweb.de/en/services/website-maintenance",
+          "https://www.saaleweb.de/en/services/performance-optimization",
+          "https://www.saaleweb.de/leistungen/performance-optimierung"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/blog/optimize-google-business-profile",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-08-21T17:37:07Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/blog/optimize-google-business-profile",
+        "userCanonical": "https://saaleweb.de/en/blog/optimize-google-business-profile",
+        "sitemap": [
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "referringUrls": [
+          "https://saaleweb.de/blog/google-unternehmensprofil-optimieren",
+          "https://www.saaleweb.de/blog/google-unternehmensprofil-optimieren",
+          "https://saaleweb.de/en/blog"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/services/maintenance",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-08-21T16:47:03Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/services/maintenance",
+        "userCanonical": "https://saaleweb.de/en/services/maintenance",
+        "referringUrls": [
+          "https://www.saaleweb.de/en/services"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/services/hosting",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-08-21T16:34:34Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/services/hosting",
+        "userCanonical": "https://saaleweb.de/en/services/hosting",
+        "sitemap": [
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "referringUrls": [
+          "https://www.saaleweb.de/en/services"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/projects/neue-liebe-nebra",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-08-21T16:11:14Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/projects/neue-liebe-nebra",
+        "userCanonical": "https://saaleweb.de/en/projects/neue-liebe-nebra",
+        "sitemap": [
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "referringUrls": [
+          "https://saaleweb.de/ru/proekty/neue-liebe-nebra",
+          "https://saaleweb.de/en/industries",
+          "https://www.saaleweb.de/projekte/neue-liebe-nebra",
+          "https://saaleweb.de/en/services/website-development"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/projects/glaserei-schubert",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-08-21T14:42:03Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/projects/glaserei-schubert",
+        "userCanonical": "https://saaleweb.de/en/projects/glaserei-schubert",
+        "sitemap": [
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "referringUrls": [
+          "https://www.saaleweb.de/projekte/glaserei-schubert",
+          "https://saaleweb.de/en",
+          "https://www.saaleweb.de/en/projects/glaserei-schubert"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/ru/uslugi/wordpress-agentstvo-halle",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-08-21T11:38:45Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/ru/uslugi/wordpress-agentstvo-halle",
+        "userCanonical": "https://saaleweb.de/ru/uslugi/wordpress-agentstvo-halle",
+        "sitemap": [
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "referringUrls": [
+          "https://saaleweb.de/leistungen/wordpress-agentur-halle",
+          "https://saaleweb.de/ru/uslugi/modernizaciya-wordpress-sajta"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/blog/website-relaunch-checklist",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-08-21T05:19:26Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/blog/website-relaunch-checklist",
+        "userCanonical": "https://saaleweb.de/en/blog/website-relaunch-checklist",
+        "sitemap": [
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "referringUrls": [
+          "https://saaleweb.de/blog/website-relaunch-checkliste",
+          "https://www.saaleweb.de/blog/website-relaunch-checkliste"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/industries/craftsmen-website",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-08-21T04:50:06Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/industries/craftsmen-website",
+        "userCanonical": "https://saaleweb.de/en/industries/craftsmen-website",
+        "sitemap": [
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "referringUrls": [
+          "https://www.saaleweb.de/branchen/handwerker-website",
+          "https://www.saaleweb.de/en/industries/craftsmen-website"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/blog/local-seo-halle",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-08-20T18:46:41Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/blog/local-seo-halle",
+        "userCanonical": "https://saaleweb.de/en/blog/local-seo-halle",
+        "referringUrls": [
+          "https://saaleweb.de/blog/lokales-seo-halle",
+          "https://saaleweb.de/en/blog/optimize-google-business-profile"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/locations/merseburg",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-08-19T18:58:35Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/locations/merseburg",
+        "userCanonical": "https://saaleweb.de/en/locations/merseburg",
+        "sitemap": [
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "referringUrls": [
+          "https://www.saaleweb.de/standorte/merseburg",
+          "https://saaleweb.de/en/projects/qualified-construction-leads",
+          "https://saaleweb.de/en/services/web-design-halle"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/services/shop-product-import",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-08-16T12:37:54Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/services/shop-product-import",
+        "userCanonical": "https://saaleweb.de/en/services/shop-product-import",
+        "referringUrls": [
+          "https://saaleweb.de/en/services"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/services/online-shop-development",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-08-16T11:35:01Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/services/online-shop-development",
+        "userCanonical": "https://saaleweb.de/en/services/online-shop-development",
+        "sitemap": [
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "referringUrls": [
+          "https://saaleweb.de/en/services"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/services/website-security",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-08-16T09:30:27Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/services/website-security",
+        "userCanonical": "https://saaleweb.de/en/services/website-security",
+        "referringUrls": [
+          "https://www.saaleweb.de/leistungen/website-sicherheit",
+          "https://saaleweb.de/en/services"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/services/booking-systems",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-08-16T04:30:22Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/services/booking-systems",
+        "userCanonical": "https://saaleweb.de/en/services/booking-systems",
+        "referringUrls": [
+          "https://saaleweb.de/en/services"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/ru/uslugi/webdesign-halle",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-08-11T19:50:27Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/ru/uslugi/webdesign-halle",
+        "userCanonical": "https://saaleweb.de/ru/uslugi/webdesign-halle",
+        "referringUrls": [
+          "https://www.saaleweb.de/leistungen/webdesign-halle",
+          "https://saaleweb.de/ru/goroda/leipzig"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/services/website-relaunch",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-08-11T19:47:54Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/services/website-relaunch",
+        "userCanonical": "https://saaleweb.de/en/services/website-relaunch",
+        "sitemap": [
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "referringUrls": [
+          "https://www.saaleweb.de/leistungen/website-relaunch",
+          "https://saaleweb.de/en/services"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/services/ai-integration",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-08-07T17:41:18Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/services/ai-integration",
+        "userCanonical": "https://saaleweb.de/en/services/ai-integration",
+        "referringUrls": [
+          "https://saaleweb.de/en/services"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/ru/proekty/kvalificirovannye-zayavki",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-08-07T15:53:38Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/ru/proekty/kvalificirovannye-zayavki",
+        "userCanonical": "https://saaleweb.de/ru/proekty/kvalificirovannye-zayavki",
+        "sitemap": [
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "referringUrls": [
+          "https://saaleweb.de/en/projects/qualified-construction-leads",
+          "https://saaleweb.de/projekte/qualifizierte-bauanfragen",
+          "https://www.saaleweb.de/en/projects/qualified-construction-leads"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/locations/delitzsch",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-08-07T06:33:46Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/locations/delitzsch",
+        "userCanonical": "https://saaleweb.de/en/locations/delitzsch",
+        "referringUrls": [
+          "https://www.saaleweb.de/standorte/delitzsch",
+          "https://saaleweb.de/en/projects/neue-liebe-nebra",
+          "https://saaleweb.de/en/services/website-development"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/locations/schkeuditz",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-08-07T03:03:46Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/locations/schkeuditz",
+        "userCanonical": "https://saaleweb.de/en/locations/schkeuditz",
+        "sitemap": [
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "referringUrls": [
+          "https://saaleweb.de/en/projects/neue-liebe-nebra",
+          "https://saaleweb.de/en/services/web-design-halle"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/ru/otrasli/sayt-dlya-sfery-uslug",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-08-06T03:59:37Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/ru/otrasli/sayt-dlya-sfery-uslug",
+        "userCanonical": "https://saaleweb.de/ru/otrasli/sayt-dlya-sfery-uslug",
+        "referringUrls": [
+          "https://saaleweb.de/en/industries/service-provider-website",
+          "https://www.saaleweb.de/branchen/dienstleister-website"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/ru/uslugi/api-integracii",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-11-15T10:52:32Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/ru/uslugi/api-integracii",
+        "userCanonical": "https://saaleweb.de/ru/uslugi/api-integracii",
+        "referringUrls": [
+          "https://saaleweb.de/leistungen/api-integrationen",
+          "https://saaleweb.de/en/services/api-integrations",
+          "https://www.saaleweb.de/leistungen/api-integrationen"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/privacy-policy",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-08-04T18:42:13Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/privacy-policy",
+        "userCanonical": "https://saaleweb.de/en/privacy-policy",
+        "referringUrls": [
+          "https://www.saaleweb.de/datenschutz",
+          "https://saaleweb.de/en/services/website-development"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/leistungen/seo-optimierung",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-08-03T16:09:28Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/leistungen/seo-optimierung",
+        "userCanonical": "https://saaleweb.de/leistungen/seo-optimierung",
+        "referringUrls": [
+          "https://saaleweb.de/en/services/seo-optimization",
+          "https://www.saaleweb.de/leistungen"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/industries/law-firms",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-08-02T02:25:03Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/industries/law-firms",
+        "userCanonical": "https://saaleweb.de/en/industries/law-firms",
+        "sitemap": [
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "referringUrls": [
+          "https://saaleweb.de/ru/otrasli/kanzleien",
+          "https://www.saaleweb.de/en/industries/law-firms",
+          "https://saaleweb.de/en"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/ru/uslugi/ai-assistent",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-07-29T05:16:45Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/ru/uslugi/ai-assistent",
+        "userCanonical": "https://saaleweb.de/ru/uslugi/ai-assistent",
+        "sitemap": [
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "referringUrls": [
+          "https://saaleweb.de/leistungen/ki-assistent"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/services/website-development",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-07-29T04:16:31Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/services/website-development",
+        "userCanonical": "https://saaleweb.de/en/services/website-development",
+        "sitemap": [
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "referringUrls": [
+          "https://www.saaleweb.de/leistungen/website-erstellen-lassen",
+          "https://saaleweb.de/en/services/web-design-halle"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/services/seo-halle",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-07-28T14:39:08Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/services/seo-halle",
+        "userCanonical": "https://saaleweb.de/en/services/seo-halle",
+        "sitemap": [
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "referringUrls": [
+          "https://www.saaleweb.de/leistungen/seo-halle",
+          "https://saaleweb.de/leistungen/seo-halle",
+          "https://saaleweb.de/en/services/website-development"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/ru/uslugi/seo-merseburg",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-07-26T11:21:28Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/ru/uslugi/seo-merseburg",
+        "userCanonical": "https://saaleweb.de/ru/uslugi/seo-merseburg",
+        "referringUrls": [
+          "https://saaleweb.de/en/services/seo-merseburg",
+          "https://saaleweb.de/leistungen/seo-merseburg",
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/ru/uslugi/seo-leipzig",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-07-26T08:13:58Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/ru/uslugi/seo-leipzig",
+        "userCanonical": "https://saaleweb.de/ru/uslugi/seo-leipzig",
+        "sitemap": [
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "referringUrls": [
+          "https://saaleweb.de/en/services/seo-leipzig",
+          "https://www.saaleweb.de/leistungen/seo-leipzig",
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/ru/uslugi/seo-saalekreis",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-07-26T07:22:49Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/ru/uslugi/seo-saalekreis",
+        "userCanonical": "https://saaleweb.de/ru/uslugi/seo-saalekreis",
+        "referringUrls": [
+          "https://saaleweb.de/leistungen/seo-saalekreis",
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/ru/otrasli/sayt-dlya-restorana",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-07-25T07:34:57Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/ru/otrasli/sayt-dlya-restorana",
+        "userCanonical": "https://saaleweb.de/ru/otrasli/sayt-dlya-restorana",
+        "sitemap": [
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "referringUrls": [
+          "https://saaleweb.de/en/industries/restaurant-website",
+          "https://saaleweb.de/ru/blog/sajt-restorana-bolshe-bronirovanij"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/ru/uslugi/webdesign-delitzsch",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-07-24T22:44:57Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/ru/uslugi/webdesign-delitzsch",
+        "userCanonical": "https://saaleweb.de/ru/uslugi/webdesign-delitzsch",
+        "referringUrls": [
+          "https://saaleweb.de/en/services/web-design-delitzsch",
+          "https://saaleweb.de/leistungen/webdesign-delitzsch",
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/services/seo-optimization",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-07-24T09:53:32Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/services/seo-optimization",
+        "userCanonical": "https://saaleweb.de/en/services/seo-optimization",
+        "referringUrls": [
+          "https://www.saaleweb.de/en/services"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/ru/uslugi/seo-delitzsch",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-07-23T17:34:59Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/ru/uslugi/seo-delitzsch",
+        "userCanonical": "https://saaleweb.de/ru/uslugi/seo-delitzsch",
+        "referringUrls": [
+          "https://saaleweb.de/leistungen/seo-delitzsch",
+          "https://saaleweb.de/en/services/seo-delitzsch",
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/ru/uslugi/webdesign-schkeuditz",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-07-23T17:04:06Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/ru/uslugi/webdesign-schkeuditz",
+        "userCanonical": "https://saaleweb.de/ru/uslugi/webdesign-schkeuditz",
+        "referringUrls": [
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/ru/uslugi/bezopasnost-sayta",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-07-23T16:04:04Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/ru/uslugi/bezopasnost-sayta",
+        "userCanonical": "https://saaleweb.de/ru/uslugi/bezopasnost-sayta",
+        "referringUrls": [
+          "https://saaleweb.de/en/services/website-security",
+          "https://www.saaleweb.de/leistungen/website-sicherheit"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/services/web-design-halle",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-07-22T05:43:35Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/services/web-design-halle",
+        "userCanonical": "https://saaleweb.de/en/services/web-design-halle",
+        "sitemap": [
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "referringUrls": [
+          "https://saaleweb.de/en/services/wordpress-agency-halle",
+          "https://www.saaleweb.de/leistungen/webdesign-halle"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/ru/goroda/merseburg",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-07-11T11:51:05Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/ru/goroda/merseburg",
+        "userCanonical": "https://saaleweb.de/ru/goroda/merseburg",
+        "referringUrls": [
+          "https://saaleweb.de/en/locations/merseburg",
+          "https://saaleweb.de/ru/uslugi/analitika-dannyh",
+          "https://www.saaleweb.de/standorte/merseburg",
+          "https://saaleweb.de/ru/proekty/neue-liebe-nebra"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/en/services/ai-assistant",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-07-11T04:54:06Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/en/services/ai-assistant",
+        "userCanonical": "https://saaleweb.de/en/services/ai-assistant",
+        "sitemap": [
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "referringUrls": [
+          "https://saaleweb.de/en/services"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/ru/goroda/schkeuditz",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-07-11T00:04:39Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/ru/goroda/schkeuditz",
+        "userCanonical": "https://saaleweb.de/ru/goroda/schkeuditz",
+        "referringUrls": [
+          "https://saaleweb.de/en/locations/schkeuditz",
+          "https://saaleweb.de/ru/uslugi/seo-schkeuditz"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/ru/uslugi/seo-schkeuditz",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-07-10T22:10:22Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/ru/uslugi/seo-schkeuditz",
+        "userCanonical": "https://saaleweb.de/ru/uslugi/seo-schkeuditz",
+        "referringUrls": [
+          "https://saaleweb.de/leistungen/seo-schkeuditz",
+          "https://saaleweb.de/en/services/seo-schkeuditz",
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/ru/uslugi/webdesign-merseburg",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-07-10T22:09:21Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/ru/uslugi/webdesign-merseburg",
+        "userCanonical": "https://saaleweb.de/ru/uslugi/webdesign-merseburg",
+        "referringUrls": [
+          "https://saaleweb.de/leistungen/webdesign-merseburg",
+          "https://www.saaleweb.de/leistungen/webdesign-merseburg",
+          "https://saaleweb.de/sitemap.xml"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    },
+    {
+      "url": "https://saaleweb.de/ru/uslugi/hosting",
+      "indexStatus": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-07-10T20:33:26Z",
+        "pageFetchState": "SUCCESSFUL",
+        "googleCanonical": "https://saaleweb.de/ru/uslugi/hosting",
+        "userCanonical": "https://saaleweb.de/ru/uslugi/hosting",
+        "referringUrls": [
+          "https://saaleweb.de/en/services/hosting",
+          "https://www.saaleweb.de/ru/uslugi"
+        ],
+        "crawledAs": "MOBILE"
+      }
+    }
+  ]
+}

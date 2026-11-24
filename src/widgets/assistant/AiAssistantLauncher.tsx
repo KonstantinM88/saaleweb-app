@@ -58,7 +58,7 @@ export function AiAssistantLauncher({
     return (
       <Suspense
         fallback={
-          <div className="pointer-events-none fixed bottom-[calc(0.25rem+env(safe-area-inset-bottom))] left-1 right-1 z-40 flex flex-col items-stretch sm:bottom-[calc(0.75rem+env(safe-area-inset-bottom))] sm:left-auto sm:right-5 sm:items-end md:bottom-[calc(1.25rem+env(safe-area-inset-bottom))] md:right-7">
+          <div className="ai-assistant-launcher pointer-events-none fixed bottom-[calc(0.25rem+env(safe-area-inset-bottom))] left-1 right-1 z-40 flex flex-col items-stretch sm:bottom-[calc(0.75rem+env(safe-area-inset-bottom))] sm:left-auto sm:right-5 sm:items-end md:bottom-[calc(1.25rem+env(safe-area-inset-bottom))] md:right-7">
             <AiAssistantTrigger locale={locale} labels={labels} pageScrolled={pageScrolled} loading onOpen={() => {}} />
           </div>
         }
@@ -69,7 +69,7 @@ export function AiAssistantLauncher({
   }
 
   return (
-    <div className="pointer-events-none fixed bottom-[calc(0.25rem+env(safe-area-inset-bottom))] left-1 right-1 z-40 flex flex-col items-stretch sm:bottom-[calc(0.75rem+env(safe-area-inset-bottom))] sm:left-auto sm:right-5 sm:items-end md:bottom-[calc(1.25rem+env(safe-area-inset-bottom))] md:right-7">
+    <div className="ai-assistant-launcher pointer-events-none fixed bottom-[calc(0.25rem+env(safe-area-inset-bottom))] left-1 right-1 z-40 flex flex-col items-stretch sm:bottom-[calc(0.75rem+env(safe-area-inset-bottom))] sm:left-auto sm:right-5 sm:items-end md:bottom-[calc(1.25rem+env(safe-area-inset-bottom))] md:right-7">
       <AiAssistantTrigger
         locale={locale}
         labels={labels}

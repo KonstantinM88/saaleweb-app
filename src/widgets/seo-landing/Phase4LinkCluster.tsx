@@ -42,7 +42,7 @@ export function Phase4LinkCluster({
             <div className={compact ? "grid gap-3 sm:grid-cols-2" : "grid gap-3 sm:grid-cols-2 xl:grid-cols-3"}>
               {links.map((link) => (
                 <a
-                  key={`${link.href}-${link.label}`}
+                  key={link.href}
                   href={link.href}
                   className="group rounded-[18px] border border-line bg-white/82 p-4 transition-all duration-300 hover:-translate-y-1 hover:border-brand-purple/32 hover:shadow-[0_22px_72px_-58px_rgba(139,92,246,0.78)] focus:outline-hidden focus:ring-2 focus:ring-brand-purple/20"
                 >

@@ -1420,3 +1420,11 @@ html.custom-cursor *:not(input):not(textarea):not(select) {
 .markdown th {
   @apply bg-surface font-semibold;
 }
+
+/* Homepage phone CTA bar: lift the AI assistant launcher above it while visible. */
+@media (max-width: 767.98px) {
+  body:has([data-mobile-cta="visible"]) .ai-assistant-launcher,
+  body:has([data-mobile-cta="visible"]) [data-analytics-consent-settings] {
+    bottom: calc(4.75rem + env(safe-area-inset-bottom));
+  }
+}

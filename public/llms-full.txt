@@ -1,6 +1,6 @@
 # SaaleWeb — ausführlicher Kontext
 
-> Faktenübersicht über SaaleWeb für Menschen und Assistenzsysteme. Maßgeblich für aktuelle Angebote, Preise und Projektstatus sind immer die verlinkten öffentlichen Seiten. Stand: 04.10.2026.
+> Faktenübersicht über SaaleWeb für Menschen und Assistenzsysteme. Maßgeblich für aktuelle Angebote, Preise und Projektstatus sind immer die verlinkten öffentlichen Seiten. Stand: 18.11.2026.
 
 ## Unternehmen und Arbeitsgebiet
 
@@ -32,9 +32,9 @@ Für eine erste Einschätzung bietet SaaleWeb eine kostenlose, manuell durchgef�
 
 ## Projektbeispiele und Nachweisgrenzen
 
-- [Salon Elen / Permanent Halle](https://saaleweb.de/projekte/online-buchungen-verdreifacht): Beauty-Projekt mit klarer Leistungsdarstellung, mobiler Nutzerführung und digitalem Terminweg. Der historische URL-Slug enthält eine frühere Ergebnisbehauptung; für eine Verdreifachung liegt kein bestätigter Messnachweis vor.
+- [Salon Elen / Permanent Halle](https://saaleweb.de/projekte/online-buchungen-verdreifacht): Live-Website [permanent-halle.de](https://permanent-halle.de/) mit Leistungsdarstellung, mobiler Nutzerführung und digitaler Terminbuchung. Projektbezogene Rückmeldung des SaaleWeb-Inhabers vom 17. November 2026: guter Website-Traffic und um ein Mehrfaches gestiegene Online-Buchungen. Das ist eine qualitative Projekt-Rückmeldung ohne veröffentlichten Vergleichszeitraum oder Analytics-Nachweis; sie belegt keinen exakten Faktor und keine alleinige Ursache. Der historische URL-Slug ist kein Messnachweis einer Verdreifachung.
 - [SorgfaltBau](https://saaleweb.de/projekte/qualifizierte-bauanfragen): Regionales Bauprojekt mit strukturierten Leistungsseiten und nachvollziehbaren Anfragewegen. Der URL-Slug ist kein Nachweis einer gemessenen Zahl qualifizierter Anfragen.
-- [Neue Liebe Nebra](https://saaleweb.de/projekte/neue-liebe-nebra): Restaurant-Website mit Speisekarte, Reservierungsweg und regionalem Bezug. Konkrete Wachstumszahlen werden ohne belegten Zeitraum und Messquelle nicht behauptet.
+- [Neue Liebe Nebra](https://saaleweb.de/projekte/neue-liebe-nebra): Live-Website [neueliebe-nebra.de](https://neueliebe-nebra.de/) mit Speisekarte, Reservierungsweg und regionalem Bezug. Projektbezogene Rückmeldung des SaaleWeb-Inhabers vom 17. November 2026: guter Website-Traffic und um ein Mehrfaches gestiegene Online-Buchungen. Ein genauer Faktor, ein Vergleichszeitraum und ein Analytics-Nachweis sind nicht veröffentlicht; die Rückmeldung ist keine unabhängig geprüfte Wirkungsmessung.
 - [Waldschlösschen](https://saaleweb.de/projekte/direktbuchungen-ohne-portale) und [Glaserei Schubert](https://saaleweb.de/projekte/glaserei-schubert) zeigen interaktive Projektvorschauen. Sie belegen Gestaltung und Lösungsansatz, keine veröffentlichten Betriebs- oder Suchergebnisse.
 
 SaaleWeb garantiert keine Google-Position, Nennung in einer KI-Antwort, PageSpeed-Punktzahl für Kundenprojekte oder bestimmte Anzahl von Anfragen. Aussagen über messbare Kundenergebnisse benötigen Quelle, Zeitraum und Freigabe.
@@ -46,6 +46,12 @@ SaaleWeb garantiert keine Google-Position, Nennung in einer KI-Antwort, PageSpee
 **Muss eine vorhandene Website ersetzt werden?** Nicht zwangsläufig. Vor einem Relaunch wird geprüft, ob Verbesserung, Modernisierung oder ein Neubau zum Ziel und zur bestehenden Technik passt. [Website Relaunch](https://saaleweb.de/leistungen/website-relaunch)
 
 **Kann SaaleWeb ein bestehendes WordPress-Projekt übernehmen?** Ja, nach Sichtung von Zugängen, Hosting, Theme, Plugins, Pflegezustand und Anforderungen. Aufwand und Preis werden vor der Umsetzung geklärt. [WordPress Agentur Halle](https://saaleweb.de/leistungen/wordpress-agentur-halle)
+
+**Gibt es Webdesign und SEO aus einer Hand?** Ja. Gestaltung, mobile Anfragewege, Leistungsinhalte und technische SEO-Basis werden gemeinsam geplant. Laufende Suchanalyse, weitere Inhalte und Local SEO werden als eigener Leistungsumfang vereinbart. [Webdesign Halle](https://saaleweb.de/leistungen/webdesign-halle) · [SEO Halle](https://saaleweb.de/leistungen/seo-halle)
+
+**Wie wird ein Relaunch abgesichert?** Wichtige Seiten, Suchanfragen und URLs werden vorab erfasst. Nötige Weiterleitungen, Inhalte, Formulare und mobile Darstellung werden vor dem Wechsel getestet; danach folgt die Kontrolle in der Search Console. Ranking-Schwankungen können trotzdem auftreten. [Website Relaunch](https://saaleweb.de/leistungen/website-relaunch)
+
+**Was kostet ein KI-Assistent mit Buchungs- oder CRM-Anbindung?** Wissensbasis, Aufgaben, Sprachen und Schnittstellen bestimmen den Aufwand. Einrichtung und Integration werden von laufenden Modell-, Hosting- und Betreuungskosten getrennt. Datenzugriffe, freigegebene Inhalte, Testfragen und die Übergabe an das Team werden vor dem Start vereinbart. Die Anbindung vorhandener Systeme setzt eine Prüfung ihrer Schnittstellen voraus. [KI-Assistent](https://saaleweb.de/leistungen/ki-assistent)
 
 **Ist Local SEO oder Optimierung für KI-Antworten enthalten?** Die technische und inhaltliche Basis wird passend zum Projekt geplant. Zusätzliche lokale Seiten, laufende SEO-Betreuung und weitergehende Analyse gehören nur zum vereinbarten Umfang. Weder Suchmaschinen noch Antwortsysteme können zu einer bestimmten Ausgabe verpflichtet werden. [SEO Halle](https://saaleweb.de/leistungen/seo-halle) · [KI-Optimierung](https://saaleweb.de/leistungen/ki-optimierung)
 

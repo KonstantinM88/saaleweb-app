@@ -1,0 +1,13 @@
+{
+  "checkedAt": "2026-11-24T21:34:13.076Z",
+  "passed": 5,
+  "smtpStubCalls": 7,
+  "realEmails": 0,
+  "checks": [
+    "DE EN RU server HTML shows signup unavailable, footer form absent",
+    "direct medical-page POST with missing or false switch never invokes SMTP",
+    "enabled direct POST requires CAPTCHA and sends one pending DOI",
+    "pending repeat and confirmed address cannot send another DOI over HTTP",
+    "contact, homepage and audit actions store leads and retain mail with signup off"
+  ]
+}

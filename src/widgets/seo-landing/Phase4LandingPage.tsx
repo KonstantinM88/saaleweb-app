@@ -736,7 +736,7 @@ function LinkGrid({
   return (
     <div className={compact ? "grid gap-3" : "grid gap-5 md:grid-cols-2"}>
       {links.map((link, index) => (
-        <Reveal key={`${link.href}-${link.label}`} delay={(index % 2) * 70} className="h-full">
+        <Reveal key={link.href} delay={(index % 2) * 70} className="h-full">
           <a
             href={link.href}
             className="group block h-full rounded-[20px] border border-line bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-brand-purple/30 hover:shadow-[0_22px_70px_-54px_rgba(139,92,246,0.74)] focus:outline-hidden focus:ring-2 focus:ring-brand-purple/20"

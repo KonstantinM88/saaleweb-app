@@ -4,15 +4,20 @@ import { Container } from "@/shared/ui/Container";
 import { Button } from "@/shared/ui/Button";
 import { getContactHref } from "@/shared/lib/contactHref";
 import { getLocalizedHref } from "@/shared/lib/localizedPath";
-import { HeroDashboard } from "./HeroDashboard";
+import { HeroShowcase } from "./HeroShowcase";
 
+/**
+ * First screen. The lead is one sentence and the primary CTA follows it
+ * directly, so a phone viewport (390×844) shows headline, offer and button
+ * before the consent banner or any scrolling.
+ */
 export function Hero() {
   const t = useTranslations("Hero");
   const locale = useLocale();
   const projectsHref = getLocalizedHref(locale, "projects");
 
   return (
-    <section id="top" className="relative overflow-hidden py-12 md:py-24">
+    <section id="top" className="relative overflow-hidden pb-16 pt-8 md:py-20 lg:py-24">
       {/* Living-gradient backdrop and engineering grid */}
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
         <div
@@ -35,26 +40,24 @@ export function Hero() {
         />
       </div>
 
-      <Container className="grid items-center gap-10 md:grid-cols-[1.02fr_0.98fr] md:gap-14">
+      <Container className="grid items-center gap-14 md:grid-cols-[1.02fr_0.98fr] md:gap-12 lg:gap-16">
         <div>
-          <span className="hero-reveal hero-reveal-1 mb-6 inline-flex items-center gap-2 rounded-full border border-line bg-white/70 px-3.5 py-1.5 text-[13px] font-medium text-gray-700 backdrop-blur-xs">
+          <span className="hero-reveal hero-reveal-1 mb-5 inline-flex items-center gap-2 rounded-full border border-line bg-white/70 px-3.5 py-1.5 text-[13px] font-medium text-gray-700 backdrop-blur-xs">
             <span className="h-[7px] w-[7px] rounded-full bg-success animate-[pulse-dot_2.4s_ease-out_infinite]" />
             {t("badge")}
           </span>
 
-          <h1 className="mb-5 text-[clamp(38px,5.4vw,64px)] font-bold leading-[1.08] tracking-tight text-dark">
+          <h1 className="mb-4 text-[clamp(36px,5.4vw,64px)] font-bold leading-[1.06] tracking-tight text-dark">
             {t("titleA")}
             <span className="text-gradient text-gradient-animated">{t("titleB")}</span>
           </h1>
 
-          <p className="mb-8 max-w-[560px] text-[clamp(16px,1.6vw,19px)] text-muted">
-            <b className="font-semibold text-ink">{t("lead1")}</b>
-            <br />
-            {t("lead2")}
+          <p className="mb-6 max-w-[560px] text-[clamp(16px,1.5vw,19px)] leading-relaxed text-ink">
+            {t("lead")}
           </p>
 
-          <div className="hero-reveal hero-reveal-2 flex flex-wrap items-center gap-3.5">
-            <Button href={getContactHref(locale)} prefetch={false}>
+          <div className="hero-reveal hero-reveal-2 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+            <Button href={getContactHref(locale)} prefetch={false} className="w-full sm:w-auto">
               {t("ctaPrimary")}
               <span
                 aria-hidden
@@ -63,18 +66,18 @@ export function Hero() {
                 →
               </span>
             </Button>
-            <Button href={projectsHref} prefetch={false} variant="ghost">
+            <Button href={projectsHref} prefetch={false} variant="ghost" className="w-full sm:w-auto">
               {t("ctaSecondary")}
             </Button>
           </div>
 
-          <p className="hero-reveal hero-reveal-3 mt-5 flex items-center gap-2 text-[13.5px] text-muted">
-            <Check size={16} className="text-success" />
+          <p className="hero-reveal hero-reveal-3 mt-4 flex items-center gap-2 text-[13.5px] text-muted">
+            <Check size={16} className="shrink-0 text-success" />
             {t("note")}
           </p>
         </div>
 
-        <HeroDashboard />
+        <HeroShowcase />
       </Container>
     </section>
   );

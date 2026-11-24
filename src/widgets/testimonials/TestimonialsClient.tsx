@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { ExternalLink, Flag, MapPin, Star } from "lucide-react";
 import type { AppLocale } from "@/i18n/routing";
@@ -77,6 +77,9 @@ function GoogleReviewCard({
 }) {
   const t = useTranslations("Testimonials");
   const reviewDate = formattedReviewDate(review, locale);
+  const [expanded, setExpanded] = useState(false);
+  const quoteId = useId();
+  const isLong = (review.text?.length ?? 0) > 300;
   const author = (
     <>
       {review.authorPhotoDataUrl ? (
@@ -114,9 +117,11 @@ function GoogleReviewCard({
           label={t("ratingLabel", { rating: review.rating })}
         />
       </div>
-      <blockquote className="mb-5 flex-1 whitespace-pre-line text-[15px] leading-7 text-ink">
+      <blockquote id={quoteId} className={`whitespace-pre-line text-[15px] leading-7 text-ink ${isLong && !expanded ? "line-clamp-6" : ""}`}>
         {review.text ?? t("ratingOnly", { rating: review.rating })}
       </blockquote>
+      {isLong && <button type="button" aria-expanded={expanded} aria-controls={quoteId} onClick={() => setExpanded(!expanded)} className="mt-2 min-h-11 self-start text-left text-sm font-bold text-[#6D28D9] hover:underline">{t(expanded ? "collapseReview" : "expandReview")}</button>}
+      <div className="mb-5 flex-1" />
       {review.isTranslated ? (
         <p className="mb-5 rounded-xl bg-surface px-3 py-2 text-xs leading-5 text-muted">
           {t("translatedReview")}
@@ -166,9 +171,11 @@ function GoogleReviewCard({
 function GoogleReviewSummary({
   feed,
   locale,
+  usesLiveSummary,
 }: {
   feed: GoogleBusinessReviewFeed;
   locale: AppLocale;
+  usesLiveSummary: boolean;
 }) {
   const t = useTranslations("Testimonials");
 
@@ -204,7 +211,7 @@ function GoogleReviewSummary({
                 label={t("ratingLabel", { rating: feed.rating })}
               />
               <span className="text-sm text-muted">
-                {t("reviewCount", { count: feed.userRatingCount })}
+                {usesLiveSummary ? t("reviewCount", { count: feed.userRatingCount }) : t("savedReviewCount", { count: feed.reviews.length })}
               </span>
             </div>
           </div>
@@ -248,6 +255,7 @@ export function TestimonialsClient({
   const requestedLocaleRef = useRef<string | null>(null);
   const [feed, setFeed] = useState<GoogleBusinessReviewFeed>(fallbackFeed);
   const [usesLiveFeed, setUsesLiveFeed] = useState(false);
+  const [usesLiveSummary, setUsesLiveSummary] = useState(false);
 
   useEffect(() => {
     if (!liveSyncEnabled) return;
@@ -265,17 +273,22 @@ export function TestimonialsClient({
       })
         .then(async (response) => {
           const payload = (await response.json()) as ReviewsApiResponse;
-          if (!response.ok || !payload.ok || !payload.feed.reviews.length) {
+          if (!response.ok || !payload.ok || !Number.isFinite(payload.feed.rating) || !Number.isFinite(payload.feed.userRatingCount)) {
             throw new Error("google_reviews_unavailable");
           }
-          setFeed(payload.feed);
-          setUsesLiveFeed(true);
+          const hasReviewText = payload.feed.reviews.length > 0;
+          // A valid current rating/count can arrive without review texts.
+          // Keep sourced saved quotes while showing the actual total separately.
+          setFeed({ ...payload.feed, reviews: hasReviewText ? payload.feed.reviews : fallbackFeed.reviews });
+          setUsesLiveSummary(true);
+          setUsesLiveFeed(hasReviewText);
         })
         .catch(() => {
           // Keep the owner-verified local copies visible when Google is
           // unavailable. They retain direct source and write-review links.
           setFeed(fallbackFeed);
           setUsesLiveFeed(false);
+          setUsesLiveSummary(false);
         });
     };
 
@@ -294,11 +307,12 @@ export function TestimonialsClient({
   }, [fallbackFeed, liveSyncEnabled, locale]);
 
   return (
-    <section ref={sectionRef} className="py-24">
+    <section id="reviews" ref={sectionRef} className="scroll-mt-24 py-16 md:py-24">
       <Container>
         <SectionHeader eyebrow={t("eyebrow")} title={t("title")} />
 
-        <GoogleReviewSummary feed={feed} locale={locale} />
+        <GoogleReviewSummary feed={feed} locale={locale} usesLiveSummary={usesLiveSummary} />
+        {usesLiveSummary && !usesLiveFeed && <p className="mb-5 text-sm leading-relaxed text-muted">{t("summaryWithoutTexts")}</p>}
         <div
           className={
             feed.reviews.length > 2

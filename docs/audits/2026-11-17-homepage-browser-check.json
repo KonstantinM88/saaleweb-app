@@ -1,0 +1,180 @@
+{
+  "checkedAt": "2026-11-17T00:19:59.118Z",
+  "responsiveEnvironment": "Next.js dev; layout checked before the final hidden FAQ consent wording correction",
+  "viewports": [
+    {
+      "client": 305,
+      "h1": "Сайты, которые приводят клиентов.",
+      "height": 35680,
+      "overflow": false,
+      "path": "/ru",
+      "scroll": 305,
+      "sections": 17,
+      "viewport": 320
+    },
+    {
+      "client": 375,
+      "h1": "Сайты, которые приводят клиентов.",
+      "height": 30950,
+      "overflow": false,
+      "path": "/ru",
+      "scroll": 375,
+      "sections": 17,
+      "viewport": 390
+    },
+    {
+      "client": 753,
+      "h1": "Сайты, которые приводят клиентов.",
+      "height": 21514,
+      "overflow": false,
+      "path": "/ru",
+      "scroll": 753,
+      "sections": 17,
+      "viewport": 768
+    },
+    {
+      "client": 1425,
+      "h1": "Сайты, которые приводят клиентов.",
+      "height": 17656,
+      "overflow": false,
+      "path": "/ru",
+      "scroll": 1425,
+      "sections": 17,
+      "viewport": 1440
+    },
+    {
+      "client": 305,
+      "h1": "Websites that win customers.",
+      "height": 33898,
+      "overflow": true,
+      "path": "/en",
+      "scroll": 310,
+      "sections": 17,
+      "viewport": 320
+    },
+    {
+      "client": 375,
+      "h1": "Websites that win customers.",
+      "height": 29796,
+      "overflow": false,
+      "path": "/en",
+      "scroll": 375,
+      "sections": 17,
+      "viewport": 390
+    },
+    {
+      "client": 1425,
+      "h1": "Websites that win customers.",
+      "height": 17001,
+      "overflow": false,
+      "path": "/en",
+      "scroll": 1425,
+      "sections": 17,
+      "viewport": 1440
+    },
+    {
+      "client": 305,
+      "h1": "Websites, die Kunden bringen.",
+      "height": 35487,
+      "overflow": false,
+      "path": "/",
+      "scroll": 305,
+      "sections": 17,
+      "viewport": 320
+    },
+    {
+      "client": 375,
+      "h1": "Websites, die Kunden bringen.",
+      "height": 30930,
+      "overflow": false,
+      "path": "/",
+      "scroll": 375,
+      "sections": 17,
+      "viewport": 390
+    },
+    {
+      "client": 1425,
+      "h1": "Websites, die Kunden bringen.",
+      "height": 17409,
+      "overflow": false,
+      "path": "/",
+      "scroll": 1425,
+      "sections": 17,
+      "viewport": 1440
+    },
+    {
+      "client": 305,
+      "height": 33521,
+      "overflow": false,
+      "path": "/en",
+      "recheckAfterLayout": true,
+      "scroll": 305,
+      "viewport": 320
+    }
+  ],
+  "interactions": {
+    "slider": [
+      "50",
+      "54",
+      "4",
+      "96"
+    ],
+    "reviews": {
+      "summary": "4 Rezensionen",
+      "figures": 2,
+      "expanded": "true",
+      "collapsed": "false"
+    },
+    "faq": {
+      "expandedHidden": 0,
+      "collapsedHidden": 12
+    },
+    "directAnswers": ""
+  },
+  "production": {
+    "origin": "http://localhost:3198",
+    "initialConsent": {
+      "banner": true,
+      "cta": "hidden"
+    }
+  },
+  "status": "Passed final production verification",
+  "productionFinal": {
+    "checkedAt": "2026-11-17T00:59:18.977Z",
+    "viewports": [
+      {
+        "overflow": false,
+        "path": "/",
+        "sections": 17,
+        "width": 1440
+      },
+      {
+        "overflow": false,
+        "path": "/",
+        "sections": 17,
+        "width": 390
+      },
+      {
+        "client": 305,
+        "overflow": false,
+        "path": "/ru",
+        "scroll": 305,
+        "sections": 17,
+        "width": 320
+      },
+      {
+        "client": 305,
+        "overflow": false,
+        "path": "/en",
+        "scroll": 305,
+        "sections": 17,
+        "width": 320
+      }
+    ],
+    "reviews": {
+      "count": "4 Rezensionen",
+      "quotes": 2
+    },
+    "contactCta": "hidden"
+  }
+}

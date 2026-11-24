@@ -1,0 +1,21 @@
+{
+  "checkedAt": "2026-11-24T21:21:49.438Z",
+  "passed": 13,
+  "storage": "isolated PostgreSQL 17 on loopback; independent Node processes",
+  "transport": "substituted nodemailer; no real email or Cloudflare requests",
+  "checks": [
+    "missing/false/string flag blocks direct action and all SMTP",
+    "enabled signup sends exactly one DOI and remains pending",
+    "existing pending record can retry after cooldown, not repeatedly",
+    "confirmed address sends nothing and consumes no quota",
+    "missing/invalid/wrong-action CAPTCHA and honeypot never send",
+    "concurrent same-recipient requests reserve only one SMTP attempt",
+    "global hourly cap holds across concurrent database clients",
+    "limits survive process restart and concurrent independent workers",
+    "rolling daily cap and expired recipient reservations",
+    "SMTP failure keeps quota; corrupt storage fails closed",
+    "old DOI confirmation and unsubscribe work while signup is off",
+    "DE EN RU confirmations retain localized subjects",
+    "contact notification and reply still send with newsletter off"
+  ]
+}

@@ -1,0 +1,1846 @@
+{
+  "checkedAt": "2026-11-18T00:29:38.412Z",
+  "mode": "after",
+  "local": [
+    {
+      "path": "/",
+      "status": 200,
+      "headers": {
+        "robots": null,
+        "type": "text/html; charset=utf-8",
+        "cache": "s-maxage=86400, stale-while-revalidate=31449600"
+      },
+      "title": "Webdesign Halle (Saale) & SEO — Webagentur | SaaleWeb",
+      "description": "Webdesigner und Webagentur in Halle (Saale): moderne Firmenwebsites, Local SEO und KI-Optimierung. Festpreis ab 600 €, persönlicher Ansprechpartner, Antwort in 24 h.",
+      "robots": null,
+      "canonical": "https://saaleweb.de",
+      "hreflang": {
+        "de": "https://saaleweb.de",
+        "en": "https://saaleweb.de/en",
+        "ru": "https://saaleweb.de/ru",
+        "x-default": "https://saaleweb.de"
+      },
+      "og": {
+        "og:title": "Webdesign Halle (Saale) & SEO — Webagentur | SaaleWeb",
+        "og:description": "Webdesigner und Webagentur in Halle (Saale): moderne Firmenwebsites, Local SEO und KI-Optimierung. Festpreis ab 600 €, persönlicher Ansprechpartner, Antwort in 24 h.",
+        "og:url": "https://saaleweb.de",
+        "og:site_name": "SaaleWeb",
+        "og:locale": "de_DE",
+        "og:image": "https://saaleweb.de/api/og?title=Webdesign+Halle+%28Saale%29+%26+SEO+%E2%80%94+Webagentur+%7C+SaaleWeb",
+        "og:image:width": "1200",
+        "og:image:height": "630",
+        "og:locale:alternate": "ru_RU",
+        "og:type": "website"
+      },
+      "h1": [
+        "Websites, die Kunden bringen."
+      ],
+      "h2": [
+        "Websites, die im Alltag genutzt werden.",
+        "Transparente Festpreise",
+        "Ihr Unternehmen ist weiter. Ihre Website auch?",
+        "Was wir für Ihr Unternehmen bauen",
+        "Weniger Nachfragen. Mehr Zeit für Ihr Geschäft.",
+        "Ihre Website. Bereit für die Suche mit KI.",
+        "Kunden aus Halle, Leipzig und Merseburg erreichen.",
+        "Kurz geklärt, bevor Sie entscheiden.",
+        "Klare Entscheidungen. Verlässliche Umsetzung.",
+        "Konstantin Mykhailov. Ihr direkter Ansprechpartner.",
+        "Was Kunden sagen",
+        "In 4 klaren Schritten zu mehr Anfragen",
+        "Was bremst Ihre aktuelle Website aus?",
+        "Häufige Fragen",
+        "Bereit für mehr Kunden?",
+        "Praxistipps für Ihre Sichtbarkeit"
+      ],
+      "sections": [
+        "top",
+        "cases",
+        "pricing",
+        "relaunch",
+        "services",
+        "automation",
+        "search-visibility",
+        "local",
+        "direct-answers",
+        "why-saaleweb",
+        "founder",
+        "reviews",
+        "process",
+        "website-audit",
+        "faq",
+        "contact"
+      ],
+      "schemaTypes": [
+        "Organization",
+        "Person",
+        "WebSite",
+        [
+          "ProfessionalService",
+          "LocalBusiness"
+        ],
+        "FAQPage"
+      ],
+      "entities": [
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "@id": "https://saaleweb.de/#organization",
+          "name": "SaaleWeb",
+          "url": "https://saaleweb.de",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://saaleweb.de/icons/icon-512.png",
+            "width": 512,
+            "height": 512
+          },
+          "image": "https://saaleweb.de/icons/icon-512.png",
+          "description": "Webagentur in Halle (Saale) für Websites, Local SEO, WordPress und individuelle digitale Lösungen für Unternehmen.",
+          "email": "hallo@saaleweb.de",
+          "telephone": "+4917671764743",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Hettstedter Str. 64",
+            "postalCode": "06124",
+            "addressLocality": "Halle (Saale)",
+            "addressRegion": "Sachsen-Anhalt",
+            "addressCountry": "DE"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "hallo@saaleweb.de",
+            "telephone": "+4917671764743",
+            "contactType": "sales",
+            "areaServed": "DE",
+            "availableLanguage": [
+              "German",
+              "English",
+              "Russian"
+            ]
+          },
+          "founder": {
+            "@id": "https://saaleweb.de/#founder"
+          },
+          "areaServed": [
+            "Halle (Saale)",
+            "Leipzig",
+            "Merseburg",
+            "Schkeuditz",
+            "Delitzsch",
+            "Saalekreis"
+          ],
+          "knowsAbout": [
+            "Webdesign",
+            "Webentwicklung",
+            "Suchmaschinenoptimierung",
+            "Local SEO",
+            "WordPress",
+            "Next.js",
+            "Online-Buchungssysteme",
+            "KI-Integration"
+          ],
+          "slogan": "Websites, SEO & KI für Unternehmen",
+          "sameAs": [
+            "https://g.page/r/CQgPij2bE5yLEBM",
+            "https://maps.google.com/?cid=10059937225112162056"
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "Person",
+          "@id": "https://saaleweb.de/#founder",
+          "name": "Konstantin Mykhailov",
+          "jobTitle": "Webentwickler & Gründer",
+          "image": "https://saaleweb.de/images/sections/founder-avatar.webp",
+          "worksFor": {
+            "@id": "https://saaleweb.de/#organization"
+          },
+          "knowsAbout": [
+            "Webdesign",
+            "Webentwicklung",
+            "Suchmaschinenoptimierung",
+            "Local SEO",
+            "WordPress",
+            "Next.js",
+            "Online-Buchungssysteme",
+            "KI-Integration"
+          ],
+          "url": "https://saaleweb.de"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": [
+            "ProfessionalService",
+            "LocalBusiness"
+          ],
+          "@id": "https://saaleweb.de/#localbusiness",
+          "name": "SaaleWeb",
+          "url": "https://saaleweb.de",
+          "email": "hallo@saaleweb.de",
+          "telephone": "+4917671764743",
+          "image": "https://saaleweb.de/icons/icon-512.png",
+          "logo": "https://saaleweb.de/icons/icon-512.png",
+          "priceRange": "€€",
+          "areaServed": [
+            "Halle (Saale)",
+            "Leipzig",
+            "Merseburg",
+            "Schkeuditz",
+            "Delitzsch",
+            "Saalekreis"
+          ],
+          "founder": {
+            "@id": "https://saaleweb.de/#founder"
+          },
+          "parentOrganization": {
+            "@id": "https://saaleweb.de/#organization"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Hettstedter Str. 64",
+            "postalCode": "06124",
+            "addressLocality": "Halle (Saale)",
+            "addressRegion": "Sachsen-Anhalt",
+            "addressCountry": "DE"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 51.4738593,
+            "longitude": 11.9106955
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday"
+              ],
+              "opens": "08:00",
+              "closes": "16:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Friday"
+              ],
+              "opens": "08:00",
+              "closes": "15:00"
+            }
+          ],
+          "sameAs": [
+            "https://g.page/r/CQgPij2bE5yLEBM",
+            "https://maps.google.com/?cid=10059937225112162056"
+          ]
+        }
+      ],
+      "faqPages": 1,
+      "faqItems": 28,
+      "faqContentMismatches": [],
+      "imagesMissingAlt": [],
+      "internalLinks": [
+        "/",
+        "/leistungen",
+        "/branchen",
+        "/standorte",
+        "/projekte",
+        "/preise",
+        "/blog",
+        "/kontakt",
+        "/projekte/neue-liebe-nebra",
+        "/projekte/online-buchungen-verdreifacht",
+        "/projekte/direktbuchungen-ohne-portale",
+        "/projekte/qualifizierte-bauanfragen",
+        "/projekte/glaserei-schubert",
+        "/leistungen/website-erstellen-lassen",
+        "/leistungen/seo-halle",
+        "/leistungen/automatisierung",
+        "/leistungen/api-integrationen",
+        "/leistungen/website-sicherheit",
+        "/branchen/hotel-website",
+        "/branchen/restaurant-website",
+        "/branchen/beauty-studio-website",
+        "/branchen/bauunternehmen-website",
+        "/branchen/handwerker-website",
+        "/branchen/arztpraxen",
+        "/branchen/immobilien",
+        "/branchen/kanzleien",
+        "/leistungen/webdesign-halle",
+        "/leistungen/wordpress-agentur-halle",
+        "/leistungen/webdesign-leipzig",
+        "/leistungen/seo-leipzig",
+        "/standorte/halle",
+        "/standorte/leipzig",
+        "/branchen/glaserei-website",
+        "/branchen/dienstleister-website",
+        "/leistungen/ki-assistent",
+        "/leistungen/ki-optimierung",
+        "/standorte/merseburg",
+        "/leistungen/website-relaunch",
+        "/leistungen/website-wartung",
+        "/datenschutz",
+        "/standorte/schkeuditz",
+        "/standorte/delitzsch",
+        "/standorte/saalekreis",
+        "/kostenlose-website-analyse",
+        "/impressum"
+      ],
+      "textLength": 31527,
+      "htmlBytes": 1067726,
+      "visibleText": "Webdesign Halle (Saale) & SEO — Webagentur | SaaleWeb SaaleWebLeistungenBranchenStandorteProjektePreiseBlogKontaktFAQ DeutschEnglishРусский Erstgespräch Webagentur · Halle (Saale) → Deutschland Websites, die Kunden bringen. Wir modernisieren Ihre Website, machen Ihr Angebot für Google und KI-Suchen verständlich und verbinden Anfragen mit Ihren Abläufen. Für Unternehmen in Halle, Leipzig und im Saalekreis. Kostenloses Erstgespräch→ Unsere Projekte ansehen Antwort in 24 h · Keine Vorkasse · Festpreis neueliebe-nebra.de DesktopMobil Kundenstimmen auf Google ⚡ Lighthouse 96/100 · saaleweb.de Neue Liebe Nebra · Restaurant · Speisekarte & Reservierung Echte KundenstimmenGoogle-Rezensionen ansehen Antwort in 24 hpersönlich, kein Bot Festpreiskeine Vorkasse DE · EN · RUinklusive, weitere auf Wunsch Halle (Saale)Saalekreis · Leipzig · deutschlandweit Case Studies Websites, die im Alltag genutzt werden. Ein Tisch im Restaurant. Ein Termin im Salon. Eine verständliche Bauanfrage. Unsere Projekte verbinden Gestaltung mit konkreten Aufgaben im Betrieb. Ausgewählte Projekte aus Gastronomie, Beauty, Handwerk und Bau. permanent-halle.de DesktopMobil Beauty · Booking · Local SEO Salon Elen / Permanent Halle Branche Beauty Studio Ziel Mehr Online-Termine und lokale Sichtbarkeit Lösung Moderner Auftritt mit Buchungslogik, mehrsprachiger Struktur und Fokus auf lokale Suchanfragen in Halle. Vorteile Einfache Online-Terminbuchung Mehrsprachige Nutzerführung Bessere lokale Auffindbarkeit FokusOnline-Termine & Local SEO Projekt ansehen Rückmeldung aus dem Projekt Guter Website-Traffic und um ein Mehrfaches gestiegene Online-Buchungen laut Rückmeldung aus dem Projekt. Live-Website ansehen neueliebe-nebra.de DesktopMobil Restaurant · SEO · Mobile First Neue Liebe Branche Restaurant / Gastronomie Ziel Mehr Sichtbarkeit und professioneller digitaler Auftritt Lösung Moderner Restaurantauftritt mit klarer Struktur, aktuellen Inhalten und starker mobiler Präsentation. Vorteile Mobile Nutzerführung Aktuelle Inhalte sichtbar Mehr Vertrauen bei Gästen FokusRestaurant-Auftritt Projekt ansehen Rückmeldung aus dem Projekt Guter Website-Traffic und um ein Mehrfaches gestiegene Online-Buchungen laut Rückmeldung aus dem Projekt. Live-Website ansehen Projektvorschau · Hotel & Restaurant Waldschlösschen Hochwertiger digitaler Auftritt für Gastronomie, Hotelbetrieb und regionale Sichtbarkeit. Projekt ansehen Bau · Vertrauen · Anfragen SorgfaltBau Professioneller Unternehmensauftritt, der Leistungen klar präsentiert und Vertrauen bei potenziellen Kunden schafft. Projekt ansehen Projektvorschau · Handwerk / Glaserei Glaserei Schubert Moderner Auftritt für ein Handwerksunternehmen mit Fokus auf Vertrauen, klare Leistungen und lokale Auffindbarkeit. Projekt ansehen Alle Projekte -> Preise Transparente Festpreise Sie erhalten einen vereinbarten Leistungsumfang und einen nachvollziehbaren Festpreis. Der passende Einstieg richtet sich nach Ihrer Website und Ihren Abläufen. Transparente Einstiegspakete. Individuelle Angebote nach Projektumfang. Leichter Start WordPress Onepager für den schnellen professionellen Einstieg. ab 600 € 1 professionelle Onepage-Website WordPress-Basis Responsive Design Kontaktformular Basis-SEO Grundlegende GEO / AIO-Struktur Kurze Einweisung Anfragen Beliebt Starter Landingpage React / Next.js Landingpage mit 6–9 Inhaltsbereichen. ab 990 € 1 hochwertige Landingpage 6–9 professionelle Inhaltsbereiche Individuelles Layout Conversion-orientierte CTA-Struktur Basis-SEO Grundlegende GEO / AIO-Struktur Performance-Optimierung FAQ-Bereich Anfragen Business Website Mehrseitige Website für Sichtbarkeit, Vertrauen und Wachstum. ab 1.990 € Mehrseitige Website Individuelle Seitenstruktur Leistungsseiten Kontakt- und Anfrageprozesse Basis-SEO GEO / AIO-Grundstruktur Local SEO Grundlagen Skalierbare Inhaltsstruktur Anfragen Individuelles System Für Shops, Portale, Buchung, Automatisierung und Spezialfunktionen. Individuelles Angebot Konzept und technische Planung Individuelle UX- und Funktionsstruktur Skalierbare technische Basis Schnittstellenplanung SEO- und Performance-Grundlagen Launch- und Übergabeunterstützung Beispiele Online-ShopBuchungssystemKundenportalAPI-IntegrationDatenimport / ExportKI-AssistentAutomatisierungenWordPress-PluginIndividuelle Webanwendung Anfragen Website-Relaunch mit Plan Ihr Unternehmen ist weiter. Ihre Website auch? Sie leisten gute Arbeit. Doch der alte Auftritt erklärt Ihr Angebot nicht mehr, auf dem Handy ist der Kontakt umständlich und im Postfach landen unvollständige Anfragen. Wir prüfen, was Kunden heute vom nächsten Schritt abhält, und entwickeln daraus einen passenden Relaunch. Potenzial meiner Website prüfen Interaktives Relaunch-Konzept VorherNachher 02 / Nachher Erleben Sie den Unterschied. Als Ihr nächster Kunde. Gleicher Musterbetrieb, zwei Wege zum Kontakt. Wechseln Sie die Ansicht und testen Sie die neue Projektanfrage selbst. 1 Angebot sofort verstehen Eine konkrete Leistung und ein verständlicher nächster Schritt. 2 Auf dem Handy handeln Lesbare Inhalte, große Schaltflächen und eine kurze Anfrage. 3 Besser vorbereitet starten Leistung und Zeitrahmen stehen vor dem ersten Gespräch fest. Probieren Sie „Projekt anfragen“ in der neuen Version aus. Illustratives Konzept für einen fiktiven Handwerksbetrieb. Keine Kundenreferenz und kein gemessener Vorher-Nachher-Erfolg. MobilDesktop RAUM & WERKMusterbetrieb · HandwerkLeistungen Ihr Zuhause. Durchdacht erneuert. Mehr Raum für das, was Ihnen wichtig ist. Terrasse, Fenster oder Innenausbau: Beschreiben Sie Ihr Vorhaben in wenigen Schritten. Projekt anfragen Leistung wählen · Zeitraum angeben Gestaltungskonzept Halle (Saale) & Umgebung 01Terrasse & Garten02Fenster & Türen03Innenausbau Demo neu starten Ein Relaunch beginnt mit einer Bestandsaufnahme: wertvolle Inhalte, bestehende URLs und funktionierende Abläufe werden geprüft. Weiterleitungen und der Übergang zum neuen Auftritt werden geplant. Leistungen & Branchen Was wir für Ihr Unternehmen bauen Webdesign und SEO aus einer Hand für kleine und mittelständische Unternehmen: neue Firmenwebsites, WordPress-Relaunch und Buchungsabläufe. Ob Next.js, WordPress oder individuelle Entwicklung – die Lösung folgt Ihrem Ziel und Pflegebedarf. Leistungen Alle Leistungen Websites, Portale & Online-ShopsProfessionelle digitale Auftritte und Systeme, die Vertrauen schaffen, Produkte präsentieren und Anfragen oder Verkäufe ermöglichen. SEO, Content & SichtbarkeitStrukturierte Inhalte, technische Optimierung und redaktionell geprüfte Texte helfen, Ihr Unternehmen besser auffindbar und verständlich zu machen. Automatisierung, KI & ProzesseDigitale Prozesse sparen Zeit, reduzieren manuelle Arbeit und unterstützen Ihr Team im Alltag. Daten, API & IntegrationenWir verbinden Systeme, strukturieren Daten und schaffen Schnittstellen, damit digitale Prozesse zuverlässig zusammenarbeiten. Sicherheit, Wartung & SupportWebsites und Webanwendungen benötigen Pflege, Updates, Backups und technische Kontrolle. Marketing, CRM & KundenprozesseDigitale Kundengewinnung endet nicht bei der Website. Wir unterstützen strukturierte Anfragewege und DSGVO-bewusste Kommunikation. Branchen, die wir kennen Alle Branchen 🏨HotelsDirektbuchungen 🍽️RestaurantsMehr Reservierungen 💇Beauty & SalonsOnline-Termine 🏗️BauQualifizierte Anfragen 🔧HandwerkRegionale Aufträge 🩺ArztpraxenNeue Patienten 🏠ImmobilienMehr Leads ⚖️KanzleienMandanten gewinnen Direkte Einstiege Webdesign Halle, SEO Halle, WordPress-Betreuung, Buchungssysteme und Branchenseiten. Website erstellen lassen Webdesign Halle (Saale) SEO Halle WordPress Agentur Halle (Saale) Webdesign Leipzig SEO Leipzig Halle (Saale) Leipzig Website für Restaurants Hotel Website Website für Beauty Studios Website für Bauunternehmen Website für Handwerker Website für Glasereien Website für Dienstleister Business First: Die Technologie folgt dem Ziel – nicht umgekehrt. Website & Arbeitsabläufe Weniger Nachfragen. Mehr Zeit für Ihr Geschäft. Eine Anfrage ist erst dann hilfreich, wenn die richtigen Informationen am richtigen Ort ankommen. Wir verbinden Ihre Website mit bestehenden Werkzeugen oder entwickeln ein passendes System für Ihren Betrieb. Anfragen mit den nötigen Angaben Leistung, Projektort und Zeitrahmen direkt erfassen, damit Ihr Team den Bedarf besser einschätzen kann. Buchungen und Termine verbinden Kalender oder Buchungslösung einbinden und Bestätigungen auf Ihren tatsächlichen Ablauf abstimmen. Wiederkehrende Fragen beantworten Ein KI-Assistent kann geprüfte Unternehmensinformationen erklären und Interessenten an einen persönlichen Ansprechpartner übergeben. Beispiel: strukturierte Projektanfrage Aus einer E-Mail mit vielen Rückfragen wird ein nachvollziehbarer Eingang für Ihr Team. 01Leistung & Projektort erfassen 02Bedarf & Zeitrahmen klären 03An CRM, Kalender oder Team übergeben Welche Schritte automatisiert werden, legen wir gemeinsam fest. Schnittstellen, Berechtigungen und Datenschutzanforderungen gehören zur Planung. Meinen Ablauf gemeinsam prüfen Automatisierung im DetailWebsite-KI-Assistent SEO · GEO · AIO Ihre Website. Bereit für die Suche mit KI. Wer nach einem Anbieter sucht, vergleicht Leistungen, Erfahrung und regionale Nähe. Wir bereiten Ihre Website so auf, dass Menschen und Suchsysteme erkennen können, wofür Ihr Unternehmen die passende Wahl ist. Website-Potenzial prüfenSEO & KI-Sichtbarkeit besprechen Von Ihrer Website zur fundierten AntwortKonzept · keine Live-Abfrage 01Finden02Verstehen03Belegen unternehmen.example Ihre Website als Quelle Ihr Unternehmen Leistungen & Angebot Region & Kontakt Projekte & Erfahrung ChatGPT Gemini Claude Perplexity Copilot Google AI Ihre Inhalte im Umfeld verschiedener KI-DiensteRuhige Ansicht Eine Frage Ihres nächsten Kunden Wer modernisiert meine alte Website und vereinfacht meine Kundenanfragen? Was eine hilfreiche Antwort wissen muss 01 / Finden Die passende Seite kann gefunden werden. Eine zugängliche Leistungsseite, klare interne Links und konsistente Unternehmensangaben schaffen die technische Grundlage. Leistung Website-Relaunch & Automatisierung Region Halle (Saale) & Umgebung Belege Projekte, Abläufe, Ansprechpartner Wichtige Inhalte sind erreichbar und lesbar. 02 / Verstehen Klar wird, wofür Ihr Unternehmen passt. Leistung, Einsatzgebiet und Erfahrung stehen in einem verständlichen Zusammenhang. Die Website beantwortet konkrete Kundenfragen. Leistung Website-Relaunch & Automatisierung Region Halle (Saale) & Umgebung Belege Projekte, Abläufe, Ansprechpartner Ihr Angebot lässt sich passend zur Frage einordnen. 03 / Belegen Ihre Aussagen lassen sich nachprüfen. Reale Projekte, nachvollziehbare Abläufe und ein erkennbarer Ansprechpartner geben Ihren Aussagen Substanz. Die Website lädt zum nächsten Schritt ein. Leistung Website-Relaunch & Automatisierung Region Halle (Saale) & Umgebung Belege Projekte, Abläufe, Ansprechpartner Belege unterstützen eine fundierte Auswahl. Grundlage: die Inhalte Ihrer Website Illustratives Inhaltsmodell. Welche Informationen und Quellen in einer Antwort erscheinen, entscheidet das jeweilige System. Suchfragen Ihrer Kunden Relevante Leistungen und konkrete Fragen bilden die Seitenstruktur. Jede wichtige Seite bekommt ein klares Thema. Region & Unternehmensprofil Standort, Einzugsgebiet, Kontaktdaten und Google-Unternehmensprofil werden konsistent aufeinander abgestimmt. Technisch zugängliche Inhalte Indexierbare Seiten, verständliches HTML, interne Links und passende strukturierte Daten bilden die Grundlage. Antworten mit Belegen Konkrete Abläufe, reale Projekte und nachvollziehbare Quellen geben Such- und KI-Systemen belastbare Informationen. Wirkung nachvollziehen. Suchanfragen, Impressionen und Anfragen werden passend zur Einrichtung ausgewertet. Für KI-Suche vergleichen wir wiederkehrende Testfragen und unterscheiden eine Erwähnung von einer tatsächlichen Quellenverlinkung. GEO/AIO ergänzt die SEO-Arbeit um verständliche Antworten und klare Unternehmensinformationen. Suchpositionen und Nennungen entscheiden die jeweiligen Systeme; garantierte Platzierungen gehören nicht zu unserem Angebot. Halle als Standort. Die Region im Blick. Kunden aus Halle, Leipzig und Merseburg erreichen. Ein Handwerksbetrieb braucht passende Anfragen aus seinem Einsatzgebiet. Ein Salon braucht erreichbare Termine. Ein Restaurant braucht Gäste, die Angebot und Reservierung schnell finden. Wir verbinden regionale Suchabsichten mit dem tatsächlichen Angebot Ihres Unternehmens. Leistungen und tatsächliches Einzugsgebiet klar beschreiben. Unternehmensdaten und Google-Profil konsistent halten. Von der lokalen Suche zum passenden Kontakt- oder Buchungsweg führen. SaaleWeb sitzt in Halle (Saale) und betreut auch Unternehmen in Leipzig, Merseburg und im Saalekreis. Abstimmung digital; persönliche Termine in der Region nach Vereinbarung. Halle (Saale)LeipzigMerseburg SEO Halle (Saale) Leipzig Merseburg Schkeuditz Delitzsch Markkleeberg Landsberg SEORegional relevant ↗Persönlich & digital SEO Halle (Saale) Leipzig Merseburg Schkeuditz Delitzsch Markkleeberg Landsberg SEORegional relevant ↗Persönlich & digital Direkt beantwortet Kurz geklärt, bevor Sie entscheiden. Was vor der Entscheidung wichtig ist: Website-Kosten, Webdesign mit SEO, ein sicher geplanter Relaunch, laufende Betreuung und KI-Assistenten. Kurze Antworten führen Sie zum passenden Leistungsumfang. Webdesigner in Halle gesucht für eine neue Firmenwebsite — wer macht sowas?+ SaaleWeb in Halle (Saale) entwickelt und modernisiert Firmenwebsites für kleine und mittelständische Unternehmen. Auf Erstgespräch und Bestandsaufnahme folgen ein vereinbarter Leistungsumfang, Festpreisangebot, Umsetzung und Launch. Ansprechpartner ist Konstantin Mykhailov; Betreuung und Automatisierung können ergänzt werden. Webdesign Halle ansehen Was kostet es, in Halle eine Website erstellen zu lassen?+ Ein WordPress-Onepager startet bei 600 €, eine individuelle Landingpage bei 990 €, eine mehrseitige Business-Website bei 1.990 € — jeweils zzgl. MwSt. Online-Buchung, Shop, Mehrsprachigkeit oder Integrationen werden nach Umfang kalkuliert. Nach dem Erstgespräch erhalten Sie einen Festpreis. Preise im Detail Gibt es Webdesigner in Halle, die GEO/SGE-optimierten Content machen?+ Ja. SaaleWeb verbindet SEO mit klaren Unternehmensinformationen, konkreten Antworten, passenden strukturierten Daten und belegbaren Projektbeispielen. Diese Grundlagen helfen Suchsystemen, Inhalte einzuordnen. llms.txt ergänzt die Orientierung für unterstützende Systeme, ist aber keine Voraussetzung oder Garantie für Google-KI-Ergebnisse. Erwähnungen und Quellenlinks werden anhand wiederkehrender Testfragen überprüft. KI-Optimierung ansehen Welche Webagentur in Halle arbeitet sowohl mit WordPress als auch mit Next.js?+ SaaleWeb arbeitet mit beidem. WordPress passt, wenn Sie Inhalte häufig selbst pflegen und ein verbreitetes System wollen. Next.js/React passt bei hohem Tempo-Anspruch, Sonderfunktionen oder langfristiger Skalierung. Die Empfehlung richtet sich nach Ziel, Pflegeaufwand und Budget — nicht nach Vorliebe. WordPress Agentur Halle Wer erstellt Websites für kleine Unternehmen im Saalekreis?+ SaaleWeb hat seinen Standort in Halle (Saale) und betreut Unternehmen in Merseburg, Leipzig und im Saalekreis sowie überregional. Leistungen und Einzugsgebiet werden für das tatsächliche Angebot geplant. Abstimmung erfolgt per Telefon, Videocall oder nach Vereinbarung persönlich in der Region. Alle Standorte Wie lange dauert es, bis eine neue Website bei Google sichtbar ist?+ Nach einem Launch müssen Suchmaschinen die Seiten zunächst abrufen und bewerten. Wann relevante Sichtbarkeit entsteht, hängt unter anderem von bestehender Website, Wettbewerb, Inhalt und technischen Voraussetzungen ab. Wir prüfen Indexierbarkeit und verfolgen Suchanfragen, Impressionen und passende Anfragen über einen vereinbarten Zeitraum. Einen festen Ranking-Termin können wir nicht zusagen. SEO Halle ansehen Bietet SaaleWeb Webdesign und SEO aus einer Hand in Halle an?+ Ja. SaaleWeb plant Gestaltung, mobile Anfragewege, Leistungsinhalte und die technische SEO-Basis gemeinsam. Für kleine und mittelständische Unternehmen in Halle und im Saalekreis entsteht so ein zusammenhängender Website-Auftritt. Laufende Suchanalyse, zusätzliche Inhalte und Local SEO werden bei Bedarf als eigener Leistungsumfang angeboten; eine bestimmte Google-Position wird nicht zugesagt. Webdesign und SEO gemeinsam planen Kann ich meine WordPress-Website modernisieren lassen und bestehende Google-Sichtbarkeit erhalten?+ SaaleWeb prüft zuerst, was an Ihrer bestehenden Website weiterverwendet werden kann. Vor einem Relaunch werden wichtige Seiten, Suchanfragen und URLs erfasst; notwendige Weiterleitungen, Inhalte, Formulare und mobile Darstellung werden vor dem Wechsel getestet. Nach dem Start folgt die Kontrolle in der Search Console. Das reduziert vermeidbare Risiken; vorübergehende Ranking-Schwankungen lassen sich nicht ausschließen. Relaunch und Übernahme planen Wer übernimmt die laufende Betreuung unserer Firmenwebsite?+ SaaleWeb bietet die Übernahme bestehender Websites nach einer technischen Bestandsaufnahme an. Je nach System umfasst die vereinbarte Betreuung etwa Updates, Backups, Funktionsprüfungen, Inhaltsänderungen oder Weiterentwicklung. Zuständigkeiten, Reaktionszeiten sowie monatliche Leistungen und Zusatzaufwand werden vorab geklärt. Eine WordPress-Installation und eine individuelle Next.js-Anwendung benötigen unterschiedliche Pflege. Website-Betreuung und Wartung Was kostet ein KI-Chatbot für meine Website und lässt er sich mit Buchung oder CRM verbinden?+ SaaleWeb kalkuliert einen KI-Assistenten nach Wissensbasis, Aufgaben, Sprachen und Schnittstellen. Das Angebot trennt Einrichtung und Integration von laufenden Modell-, Hosting- und Betreuungskosten. Bestehende Kalender, Buchungs- oder CRM-Systeme können nach Prüfung ihrer Schnittstellen angebunden werden. Freigegebene Inhalte, Datenzugriffe, Testfragen und die Übergabe an Ihr Team werden vor dem Start festgelegt; einen pauschalen Preis für jede Integration gibt es nicht. KI-Assistent: Aufgaben und Integration Einstiegspreise zzgl. MwSt.; verbindlicher Umfang und Festpreis nach dem Erstgespräch. Sichtbarkeit in Google und KI-Antworten wird beobachtet, nicht garantiert. Digitaler Wachstumspartner Klare Entscheidungen. Verlässliche Umsetzung. Sie sollen verstehen, was wir ändern, welchen Zweck es erfüllt und was Ihr Team danach selbst übernehmen kann. Gestaltung, Technik, Sichtbarkeit und Betreuung werden gemeinsam geplant. Wir zeigen Ihnen unverbindlich, welche Hebel bei Sichtbarkeit, Vertrauen und Anfragen den größten Effekt haben. Kostenlose Website-Analyse anfragenProjekte ansehen Passendere Anfragen Angebot, Zielgruppe und Kontaktweg werden aufeinander abgestimmt. Wichtige Angaben kommen früh im Prozess an. Verständliche Sichtbarkeit Ihre Leistungen bekommen klare Themen, regionale Einordnung und konkrete Antworten für Google und KI-Suche. Gut bedienbar im Alltag Mobile Darstellung, Ladeverhalten und Formulare werden geprüft. Ein hochwertiger Auftritt muss auch praktisch funktionieren. Geplanter Übergang Domain, Inhalte, Weiterleitungen und Zugänge werden vor einem Relaunch berücksichtigt und nachvollziehbar übergeben. Passende Technik WordPress, Next.js oder eine individuelle Anwendung: Die Wahl richtet sich nach Pflege, Abläufen und Budget. Direkter Ansprechpartner Sie sprechen mit Konstantin Mykhailov. Zuständigkeit, Umfang und nächste Schritte bleiben klar. Unser technischer Anspruch, sichtbar gemacht. Referenz: saaleweb.de · Messstand 2026-11-05 Google Lighthouse Performance · Desktop 96 / 100 Technisches SEO 100 / 100 Barrierefreiheit 100 / 100 Best Practices 100 / 100 Google-Lighthouse-Laborwerte unserer eigenen Website, keine Kunden- oder Ranking-Ergebnisse. Performance: Median der letzten drei verfügbaren Desktop-Messungen; weitere Kategorien: letzter verfügbarer Wert. Projektziele und reale Nutzungsdaten werden gesondert bewertet. Direkt im Projekt Direkter Ansprechpartner Konstantin Mykhailov. Ihr direkter Ansprechpartner. Bei SaaleWeb arbeiten Sie direkt mit Konstantin Mykhailov – vom ersten Konzept bis zur langfristigen Weiterentwicklung Ihrer Website. Das bedeutet kurze Wege, klare Kommunikation und ein Ansprechpartner, der Ihr Projekt wirklich kennt. Persönliche Betreuung Sie sprechen direkt mit dem Menschen, der Ihr Projekt technisch und strategisch begleitet. Langfristige Zusammenarbeit Nach dem Launch bleibt Ihre Website nicht stehen – sie wird weiterentwickelt. Technologie mit Verantwortung Jede Entscheidung wird danach getroffen, was Ihrem Unternehmen langfristig hilft. 1persönlicher Ansprechpartner DE · EN · RUProjektsprachen HalleStandort · überregional tätig Erstgespräch vereinbaren Stimmen Was Kunden sagen Google Maps Echte Google-Rezensionen 5,0 2 dokumentierte Rezensionen · Juli 2026 Alle RezensionenRezension schreiben Wir sind mit der Zusammenarbeit mit SaaleWeb rundum zufrieden. Von Anfang an wurden unsere Wünsche verstanden und professionell umgesetzt. Unsere neue Website sieht nicht nur hochwertig aus, sondern vermittelt unseren Kunden endlich genau den Eindruck, den wir uns für unser Unternehmen vorgestellt haben. Besonders schätzen wir die schnelle Kommunikation, die ehrliche Beratung und die vielen eigenen Ideen, die das Projekt deutlich besser gemacht haben. Änderungswünsche wurden immer zügig umgesetzt und wir hatten während des gesamten Projekts einen zuverlässigen Ansprechpartner. Wir können SaaleWeb jedem Unternehmen empfehlen, das Wert auf Qualität, Zuverlässigkeit und eine moderne Website legt. Vielen Dank für die hervorragende Zusammenarbeit! SorgfaltBauVollständigen Text lesen GIGheorghi IabanjiJuli 2026 · Google-Rezension Google Maps Ich bin mit der Zusammenarbeit sehr zufrieden. Von Anfang an wurden alle Wünsche berücksichtigt und professionell umgesetzt. Besonders gefallen haben mir das moderne Design, die einfache Online-Terminbuchung und die schnelle Ladezeit der Website. Auch nach dem Launch wurden Anpassungen schnell erledigt und ich bekomme jederzeit kompetente Unterstützung. Ich kann SaaleWeb uneingeschränkt weiterempfehlen.Vollständigen Text lesen SESalon ElenJuli 2026 · Google-Rezension Google Maps Diese beiden öffentlichen Rezensionen und die Bewertung von 5,0 Sternen wurden im Juli 2026 direkt im Google-Unternehmensprofil geprüft. Übersetzungen sind deutlich gekennzeichnet; maßgeblich bleibt das Original auf Google. Google prüft Rezensionen nicht einzeln, entfernt jedoch erkannte Fälschungen und Richtlinienverstöße. Google-Richtlinie ansehen Prozess In 4 klaren Schritten zu mehr Anfragen Keine undurchsichtigen Agenturprozesse: Sie wissen jederzeit, was als Nächstes passiert — und wie jeder Schritt auf Ihr Ziel einzahlt. 01✓ Potenzial erkennen Wir analysieren Ziele, Kunden und Wettbewerb — und finden den stärksten Hebel für Ihr Wachstum. 02✓ Erfolgsplan entwickeln Sie erhalten eine klare Roadmap für Website, SEO und planbare Kundengewinnung. 03✓ System aufbauen Wir verwandeln die Strategie in einen schnellen Auftritt, der Vertrauen schafft und Besucher zur Anfrage führt. 04✓ Messbar wachsen Nach dem Launch optimieren wir weiter — für mehr Sichtbarkeit, qualifizierte Anfragen und Umsatz. Kostenlose Analyse Was bremst Ihre aktuelle Website aus? Viele Websites sehen auf den ersten Blick gut aus – verlieren aber Kunden durch langsame Ladezeiten, schwache SEO-Struktur oder unklare Nutzerführung. Wir prüfen Ihre Website auf Performance, SEO, mobile Nutzererfahrung und technische Grundlagen. Danach erhalten Sie konkrete Hinweise, was verbessert werden kann. Performance Ladezeiten, Core Web Vitals und technische Geschwindigkeit. SEO-Struktur Titel, Inhalte, lokale Suchbegriffe und Indexierbarkeit. Nutzerführung Klarheit, Call-to-Actions und mobile Bedienbarkeit. Zukunftsfähigkeit Technische Basis, Wartbarkeit und AI-Readiness. Sicherheitsprüfung Schützt dieses Formular vor automatisiertem Spam. Bitte bestätigen Sie bei Bedarf die oben angezeigte Prüfung. Kostenlose Website-Analyse anfragen Unverbindlich. Persönlich geprüft. Keine automatisierte Massenanalyse. FAQ Häufige Fragen Was kostet eine Website bei SaaleWeb? Ein kompakter WordPress-Onepager startet ab 600 €, eine moderne Landingpage ab 990 € und eine vollständige Unternehmenswebsite ab 1.990 €. Individuelle Systeme mit Online-Buchung, Shop oder Automatisierung kalkulieren wir nach Aufwand — immer als transparenter Festpreis nach einem kostenlosen Erstgespräch. Wie lange dauert die Erstellung einer Website? Eine Landingpage ist oft in 1–2 Wochen online, eine vollständige Unternehmenswebsite in 3–5 Wochen. Größere Projekte mit Online-Buchung, Mehrsprachigkeit oder Integrationen planen wir individuell — Sie erhalten von Anfang an einen klaren Zeitplan. Ist SEO bei jeder Website inklusive? Die technische SEO-Basis, eine klare Seitenstruktur und passende Metadaten gehören zur Umsetzung. Welche Inhalte, lokale Optimierungen und laufenden Maßnahmen zusätzlich sinnvoll sind, wird nach Bestandsaufnahme vereinbart. Eine bestimmte Suchposition ist damit nicht garantiert. Was bedeutet GEO bzw. AIO — Optimierung für KI-Suche? GEO (Generative Engine Optimization) und AIO (AI Optimization) bezeichnen die Arbeit an verständlichen, zugänglichen und belegbaren Inhalten für KI-Suche. Dazu gehören konkrete Antworten, eindeutige Unternehmensinformationen und passende strukturierte Daten. Ob ein System die Website nennt oder verlinkt, entscheidet es selbst. Wie erscheint mein Unternehmen in Antworten von ChatGPT & Co.? KI-Suchsysteme können öffentlich zugängliche Quellen für ihre Antworten heranziehen. Wir machen Leistungen, Standort, Erfahrung und Abläufe klar verständlich und stützen Aussagen durch reale Projekte. Wiederkehrende Testfragen zeigen, ob Ihr Unternehmen erwähnt oder als Quelle verlinkt wird; eine Aufnahme in Antworten ist nicht zugesichert. Macht ihr lokales SEO für Halle, Leipzig und den Saalekreis? Ja, das ist unser Kerngebiet. Wir optimieren Ihre Website für lokale Suchanfragen wie „Friseur Halle“ oder „Dachdecker Merseburg“, bauen Standort- und Leistungsseiten und verknüpfen alles mit Ihrem Google Business Profil — für Kunden aus Halle (Saale), Leipzig, Merseburg, Schkeuditz, Delitzsch und dem Saalekreis. Helft ihr auch beim Google Business Profil? Ja. Ein gepflegtes Google Business Profil bringt Sichtbarkeit auf Google Maps und in der lokalen Suche. Wir richten das Profil ein oder optimieren es, verknüpfen es sauber mit der Website und sorgen für konsistente Unternehmensdaten — ein wichtiger Faktor für lokale Rankings. Sind mehrsprachige Websites möglich? Ja — Deutsch, Englisch und Russisch gehören zur Basis, weitere Sprachen sind auf Anfrage möglich. Jede Sprachversion erhält eigene URLs, saubere hreflang-Verknüpfungen und angepasste Inhalte, damit Sie auch internationale und russischsprachige Kunden in der Region erreichen. WordPress oder Next.js — was passt zu meinem Projekt? Die Technologie folgt dem Ziel. WordPress ist stark, wenn Sie Inhalte häufig selbst pflegen und ein bewährtes System wünschen. Next.js/React punktet mit maximaler Geschwindigkeit, individuellen Funktionen und langfristiger Skalierbarkeit. Im Erstgespräch empfehlen wir ehrlich, was zu Ihrem Budget und Ihren Plänen passt. Ich habe schon eine Website — lohnt sich ein Relaunch? Oft ja: Wenn die Seite langsam lädt, auf dem Smartphone schlecht aussieht, kaum Anfragen bringt oder bei Google unsichtbar ist, kostet sie täglich Kunden. Wir analysieren den Ist-Zustand kostenlos, übernehmen bewährte Inhalte und bauen ein schnelles Fundament mit sauberer SEO-Struktur. Könnt ihr Online-Terminbuchung integrieren? Ja. Ob Friseursalon, Kosmetikstudio, Praxis oder Handwerksbetrieb — wir integrieren Online-Buchung, Kalender-Anbindung und automatische Bestätigungen. Ihre Kunden buchen rund um die Uhr, Sie sparen Telefonzeit und verlieren keine Anfragen außerhalb der Öffnungszeiten. Kann ich Inhalte später selbst pflegen? Ja. Ab dem Business-Paket erhalten Sie ein einfaches CMS, mit dem Sie Texte, Bilder, Preise und Blog-Beiträge ohne Programmierkenntnisse aktualisieren. Alternativ übernehmen wir die Pflege im Rahmen eines Wartungspakets. Bietet ihr Hosting, Wartung und Support an? Ja. Wir hosten auf schneller, sicherer Infrastruktur (u. a. Vercel) und bieten optionale Wartungspakete mit Updates, Monitoring, Backups und persönlichem Support. Sie haben einen direkten Ansprechpartner — keine anonyme Hotline. Wie läuft ein Projekt bei SaaleWeb ab? In sechs klaren Schritten: kostenloses Erstgespräch, Analyse Ihrer Ziele, individuelles Konzept mit Festpreis, Design und Entwicklung, gemeinsamer Launch — und danach Support. Sie sehen Zwischenstände, geben Feedback und wissen jederzeit, wo das Projekt steht. Warum nicht einfach ein Baukasten wie Wix — oder nur Instagram? Baukästen und Social Media sind ein Start, aber selten ein Fundament: eingeschränktes SEO, generisches Design und Abhängigkeit von Plattform-Regeln. Eine eigene professionelle Website gehört Ihnen, wird bei Google und in KI-Suchen gefunden und wandelt Besucher gezielt in Anfragen um. Instagram ergänzt das ideal — ersetzt es aber nicht. Wird die Website nach DSGVO-Grundsätzen umgesetzt? Ja. Impressum, Datenschutzerklärung, SSL-Verschlüsselung und europäische Hosting-Optionen gehören zum Standard. Unsere eigene Besucherstatistik bleibt cookielos; die zusätzliche Google-Analytics-Messung wird nur nach Einwilligung aktiviert und kann jederzeit widerrufen werden. Arbeitet ihr auch remote bzw. außerhalb der Region? Ja. Unser Schwerpunkt liegt in Halle (Saale), Leipzig und dem Saalekreis — genauso zuverlässig arbeiten wir remote für Kunden in ganz Deutschland. Abstimmungen laufen bequem per Telefon, WhatsApp oder Videocall. Was brauche ich, um zu starten? Nur Ihr Ziel. Für das kostenlose Erstgespräch reichen Ihre aktuelle Website (falls vorhanden) und eine kurze Beschreibung Ihres Angebots. Texte, Bilder und Struktur entwickeln wir gemeinsam — melden Sie sich einfach per Kontaktformular, WhatsApp oder Telefon. Weitere Fragen anzeigen (12) Kontakt Bereit für mehr Kunden? Lassen Sie uns in einem kostenlosen Erstgespräch herausfinden, wie SaaleWeb Ihr Unternehmen sichtbar macht. Antwort in 24 Std. Kostenloses Erstgespräch Kein Verkaufsdruck Wählen Sie den passenden nächsten Schritt Beschreiben Sie Ihr Vorhaben ausführlich oder erreichen Sie uns direkt. Projekt unverbindlich besprechenZiele, Umfang und Budget in Ruhe einordnen WhatsAppKurze Nachricht sendenDirekt anrufen+49 176 71764743 Vertraulich und unverbindlich. Wir verwenden Ihre Angaben ausschließlich zur persönlichen Beratung. Praxistipps für Ihre Sichtbarkeit Etwa einmal im Monat: umsetzbare Tipps zu Websites, lokalem SEO und KI-Sichtbarkeit für Unternehmen in Halle & Leipzig. Kein Spam, jederzeit abbestellbar. Ihre E-Mail-AdresseAnmelden Mit der Anmeldung stimmen Sie dem Erhalt des Newsletters zu (Double-Opt-In). Details in der Datenschutzerklärung SaaleWeb Digitales Studio für moderne Websites, SEO und KI — aus Halle (Saale) für ganz Deutschland. SaaleWeb Hettstedter Str. 64 06124 Halle (Saale) Deutschland+49 176 71764743Route planen Leistungen Website erstellen lassenWebdesign HalleSEO HalleWordPress Agentur HalleKI-OptimierungAlle Leistungen Standorte Halle (Saale)LeipzigMerseburgSchkeuditzDelitzschSaalekreisStandorte Unternehmen ProjektePreiseKostenlose AnalyseFAQKontakt © 2026 SaaleWeb · Konstantin Mykhailov Impressum·Datenschutz·Made in Halle ErstgesprächWhatsApp",
+      "missingLocalAnchors": []
+    },
+    {
+      "path": "/en",
+      "status": 200,
+      "headers": {
+        "robots": null,
+        "type": "text/html; charset=utf-8",
+        "cache": "s-maxage=86400, stale-while-revalidate=31449600"
+      },
+      "title": "Web Design Halle (Saale) & SEO — Web Agency | SaaleWeb",
+      "description": "Web designer and web agency in Halle (Saale): modern company websites, local SEO and AI optimisation. Fixed price from €600, one personal contact, reply within 24 h.",
+      "robots": null,
+      "canonical": "https://saaleweb.de/en",
+      "hreflang": {
+        "de": "https://saaleweb.de",
+        "en": "https://saaleweb.de/en",
+        "ru": "https://saaleweb.de/ru",
+        "x-default": "https://saaleweb.de"
+      },
+      "og": {
+        "og:title": "Web Design Halle (Saale) & SEO — Web Agency | SaaleWeb",
+        "og:description": "Web designer and web agency in Halle (Saale): modern company websites, local SEO and AI optimisation. Fixed price from €600, one personal contact, reply within 24 h.",
+        "og:url": "https://saaleweb.de/en",
+        "og:site_name": "SaaleWeb",
+        "og:locale": "en_GB",
+        "og:image": "https://saaleweb.de/api/og?title=Web+Design+Halle+%28Saale%29+%26+SEO+%E2%80%94+Web+Agency+%7C+SaaleWeb",
+        "og:image:width": "1200",
+        "og:image:height": "630",
+        "og:locale:alternate": "ru_RU",
+        "og:type": "website"
+      },
+      "h1": [
+        "Websites that win customers."
+      ],
+      "h2": [
+        "Websites people use in everyday business.",
+        "Transparent fixed prices",
+        "Your business has moved on. Has your website?",
+        "What we build for your business",
+        "Fewer follow-up questions. More time for your business.",
+        "Your website. Ready for search with AI.",
+        "Reach customers in Halle, Leipzig and Merseburg.",
+        "Clear answers before you decide.",
+        "Clear decisions. Dependable delivery.",
+        "Konstantin Mykhailov. Your direct contact.",
+        "What clients say",
+        "Four clear steps to more enquiries",
+        "What is slowing your current website down?",
+        "Frequently asked questions",
+        "Ready for more customers?",
+        "Practical tips for your visibility"
+      ],
+      "sections": [
+        "top",
+        "cases",
+        "pricing",
+        "relaunch",
+        "services",
+        "automation",
+        "search-visibility",
+        "local",
+        "direct-answers",
+        "why-saaleweb",
+        "founder",
+        "reviews",
+        "process",
+        "website-audit",
+        "faq",
+        "contact"
+      ],
+      "schemaTypes": [
+        "Organization",
+        "Person",
+        "WebSite",
+        [
+          "ProfessionalService",
+          "LocalBusiness"
+        ],
+        "FAQPage"
+      ],
+      "entities": [
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "@id": "https://saaleweb.de/#organization",
+          "name": "SaaleWeb",
+          "url": "https://saaleweb.de",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://saaleweb.de/icons/icon-512.png",
+            "width": 512,
+            "height": 512
+          },
+          "image": "https://saaleweb.de/icons/icon-512.png",
+          "description": "Webagentur in Halle (Saale) für Websites, Local SEO, WordPress und individuelle digitale Lösungen für Unternehmen.",
+          "email": "hallo@saaleweb.de",
+          "telephone": "+4917671764743",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Hettstedter Str. 64",
+            "postalCode": "06124",
+            "addressLocality": "Halle (Saale)",
+            "addressRegion": "Sachsen-Anhalt",
+            "addressCountry": "DE"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "hallo@saaleweb.de",
+            "telephone": "+4917671764743",
+            "contactType": "sales",
+            "areaServed": "DE",
+            "availableLanguage": [
+              "German",
+              "English",
+              "Russian"
+            ]
+          },
+          "founder": {
+            "@id": "https://saaleweb.de/#founder"
+          },
+          "areaServed": [
+            "Halle (Saale)",
+            "Leipzig",
+            "Merseburg",
+            "Schkeuditz",
+            "Delitzsch",
+            "Saalekreis"
+          ],
+          "knowsAbout": [
+            "Webdesign",
+            "Webentwicklung",
+            "Suchmaschinenoptimierung",
+            "Local SEO",
+            "WordPress",
+            "Next.js",
+            "Online-Buchungssysteme",
+            "KI-Integration"
+          ],
+          "slogan": "Websites, SEO & KI für Unternehmen",
+          "sameAs": [
+            "https://g.page/r/CQgPij2bE5yLEBM",
+            "https://maps.google.com/?cid=10059937225112162056"
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "Person",
+          "@id": "https://saaleweb.de/#founder",
+          "name": "Konstantin Mykhailov",
+          "jobTitle": "Webentwickler & Gründer",
+          "image": "https://saaleweb.de/images/sections/founder-avatar.webp",
+          "worksFor": {
+            "@id": "https://saaleweb.de/#organization"
+          },
+          "knowsAbout": [
+            "Webdesign",
+            "Webentwicklung",
+            "Suchmaschinenoptimierung",
+            "Local SEO",
+            "WordPress",
+            "Next.js",
+            "Online-Buchungssysteme",
+            "KI-Integration"
+          ],
+          "url": "https://saaleweb.de"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": [
+            "ProfessionalService",
+            "LocalBusiness"
+          ],
+          "@id": "https://saaleweb.de/#localbusiness",
+          "name": "SaaleWeb",
+          "url": "https://saaleweb.de",
+          "email": "hallo@saaleweb.de",
+          "telephone": "+4917671764743",
+          "image": "https://saaleweb.de/icons/icon-512.png",
+          "logo": "https://saaleweb.de/icons/icon-512.png",
+          "priceRange": "€€",
+          "areaServed": [
+            "Halle (Saale)",
+            "Leipzig",
+            "Merseburg",
+            "Schkeuditz",
+            "Delitzsch",
+            "Saalekreis"
+          ],
+          "founder": {
+            "@id": "https://saaleweb.de/#founder"
+          },
+          "parentOrganization": {
+            "@id": "https://saaleweb.de/#organization"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Hettstedter Str. 64",
+            "postalCode": "06124",
+            "addressLocality": "Halle (Saale)",
+            "addressRegion": "Sachsen-Anhalt",
+            "addressCountry": "DE"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 51.4738593,
+            "longitude": 11.9106955
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday"
+              ],
+              "opens": "08:00",
+              "closes": "16:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Friday"
+              ],
+              "opens": "08:00",
+              "closes": "15:00"
+            }
+          ],
+          "sameAs": [
+            "https://g.page/r/CQgPij2bE5yLEBM",
+            "https://maps.google.com/?cid=10059937225112162056"
+          ]
+        }
+      ],
+      "faqPages": 1,
+      "faqItems": 28,
+      "faqContentMismatches": [],
+      "imagesMissingAlt": [],
+      "internalLinks": [
+        "/en",
+        "/en/services",
+        "/en/industries",
+        "/en/locations",
+        "/en/projects",
+        "/en/pricing",
+        "/en/blog",
+        "/en/contact",
+        "/en/projects/neue-liebe-nebra",
+        "/en/projects/online-bookings-tripled",
+        "/en/projects/direct-bookings-without-portals",
+        "/en/projects/qualified-construction-leads",
+        "/en/projects/glaserei-schubert",
+        "/en/services/website-development",
+        "/en/services/seo-halle",
+        "/en/services/automation",
+        "/en/services/api-integrations",
+        "/en/services/website-security",
+        "/en/industries/hotel-website",
+        "/en/industries/restaurant-website",
+        "/en/industries/beauty-studio-website",
+        "/en/industries/construction-company-website",
+        "/en/industries/craftsmen-website",
+        "/en/industries/medical-practices",
+        "/en/industries/real-estate",
+        "/en/industries/law-firms",
+        "/en/services/web-design-halle",
+        "/en/services/wordpress-agency-halle",
+        "/en/services/web-design-leipzig",
+        "/en/services/seo-leipzig",
+        "/en/locations/halle",
+        "/en/locations/leipzig",
+        "/en/industries/glazier-website",
+        "/en/industries/service-provider-website",
+        "/en/services/ai-assistant",
+        "/en/services/ai-optimization",
+        "/en/locations/merseburg",
+        "/en/services/website-relaunch",
+        "/en/services/website-maintenance",
+        "/en/privacy-policy",
+        "/en/locations/schkeuditz",
+        "/en/locations/delitzsch",
+        "/en/locations/saalekreis",
+        "/en/free-website-audit",
+        "/en/imprint"
+      ],
+      "textLength": 29298,
+      "htmlBytes": 1058698,
+      "visibleText": "Web Design Halle (Saale) & SEO — Web Agency | SaaleWeb SaaleWebServicesIndustriesLocationsProjectsPricingBlogContactFAQ DeutschEnglishРусский Free call Web agency · Halle (Saale) → Germany Websites that win customers. We modernise your website, make your offer clear to Google and AI search, and connect enquiries with your workflows. For businesses in Halle, Leipzig and the Saalekreis. Free consultation→ View our projects Reply in 24 h · No upfront payment · Fixed price neueliebe-nebra.de DesktopMobile Customer voices on Google ⚡ Lighthouse 96/100 · saaleweb.de Neue Liebe Nebra · Restaurant · menu & reservations Real customer feedbackRead Google reviews Reply within 24 hpersonal, not a bot Fixed priceno upfront payment DE · EN · RUincluded, more on request Halle (Saale)Saalekreis · Leipzig · Germany-wide Case studies Websites people use in everyday business. A restaurant table. A salon appointment. A clear construction enquiry. Our projects connect design with practical business needs. Selected projects from gastronomy, beauty, trades and construction. permanent-halle.de DesktopMobile Beauty · Booking · Local SEO Salon Elen / Permanent Halle Industry Beauty studio Goal More online appointments and local visibility Solution Modern presence with booking logic, multilingual structure and focus on local searches in Halle. Benefits Simple online appointment booking Multilingual user guidance Better local discoverability FocusOnline appointments & Local SEO View project Feedback from the project Good website traffic and online bookings reported to have increased several-fold, based on project feedback. View the live website neueliebe-nebra.de DesktopMobile Restaurant · SEO · Mobile First Neue Liebe Industry Restaurant / gastronomy Goal More visibility and a professional digital presence Solution Modern restaurant presence with clear structure, current content and strong mobile presentation. Benefits Mobile-first user experience Current content clearly visible More trust with guests FocusRestaurant website View project Feedback from the project Good website traffic and online bookings reported to have increased several-fold, based on project feedback. View the live website Project preview · Hotel & restaurant Waldschlösschen Premium digital presence for gastronomy, hotel operations and regional visibility. View project Construction · Trust · Inquiries SorgfaltBau Professional company presence that presents services clearly and builds trust with potential clients. View project Project preview · Trade / glazing Glaserei Schubert Modern presence for a trade business with focus on trust, clear services and local findability. View project All projects -> Pricing Transparent fixed prices You get an agreed scope and a clear fixed price. The right starting point depends on your website and workflows. Transparent entry packages. Individual offers based on project scope. Easy Start WordPress one-pager for a fast professional start. from €600 1 professional one-page website WordPress foundation Responsive design Contact form Basic SEO Basic GEO / AIO structure Short handover Request Popular Starter Landing Page React / Next.js landing page with 6–9 content sections. from €990 1 premium landing page 6–9 professional content sections Custom layout Conversion-oriented CTA structure Basic SEO Basic GEO / AIO structure Performance optimization FAQ section Request Business Website Multi-page website for visibility, trust and growth. from €1,990 Multi-page website Custom page structure Service pages Contact and inquiry flows Basic SEO GEO / AIO foundation Local SEO basics Scalable content structure Request Custom System For shops, portals, booking, automation and special functions. Individual proposal Concept and technical planning Custom UX and feature structure Scalable technical foundation Interface planning SEO and performance foundations Launch and handover support Examples Online shopBooking systemCustomer portalAPI integrationData import / exportAI assistantAutomationWordPress pluginCustom web application Request A planned website relaunch Your business has moved on. Has your website? You do good work. But your old website no longer explains your offer, contacting you on a phone takes effort, and enquiries arrive without essential details. We find what keeps customers from taking the next step and plan a relaunch around it. Check my website's potential Interactive relaunch concept BeforeAfter 02 / After Experience the difference. As your next customer. The same fictional business, two ways to get in touch. Switch views and try the new project enquiry yourself. 1 Understand the offer A specific service and an obvious next step. 2 Take action on a phone Readable content, generous buttons and a short enquiry. 3 Start better prepared Service and timing are clear before the first conversation. Try “Enquire about a project” in the new version. Illustrative concept for a fictional trades business. Not a client reference or a measured before-and-after result. MobileDesktop RAUM & WERKFictional trades businessServices Your home. Thoughtfully renewed. More room for what matters to you. Terrace, windows or interiors: outline your project in a few simple steps. Enquire about a project Choose a service · Share your timing Design concept Halle (Saale) & surrounding area 01Terrace & garden02Windows & doors03Interior renovation Restart demo A relaunch starts with an inventory: we review valuable content, existing URLs and working processes, then plan redirects and the transition to the new website. Services & industries What we build for your business Web design and SEO together for small and medium-sized businesses: new company websites, WordPress relaunches and booking workflows. Next.js, WordPress or custom development – the solution follows your goals and content maintenance needs. Services All services Websites, portals & online shopsProfessional digital presences and systems that build trust, present products and make inquiries or sales easier. SEO, content & visibilityStructured content, technical optimization and editorially reviewed copy help your business become easier to find and understand. Automation, AI & processesDigital workflows save time, reduce manual work and support your team in daily operations. Data, API & integrationsWe connect systems, structure data and build interfaces so digital processes work together reliably. Security, maintenance & supportWebsites and web applications need maintenance, updates, backups and technical control. Marketing, CRM & customer processesDigital customer acquisition does not stop at the website. We support structured inquiry paths and GDPR-conscious communication. Industries we know All industries 🏨HotelsDirect bookings 🍽️RestaurantsMore reservations 💇Beauty & salonsOnline appointments 🏗️ConstructionQualified leads 🔧CraftsmenRegional jobs 🩺Medical practicesNew patients 🏠Real estateMore leads ⚖️Law firmsWin clients Direct entry points Web design Halle, SEO Halle, WordPress support, booking systems and industry pages. Get a website Web design Halle SEO Halle WordPress agency Halle Web design Leipzig SEO Leipzig Halle (Saale) Leipzig Restaurant website Hotel website Beauty studio website Construction website Craftsmen website Glazier website Service provider website Business first: technology follows the goal, not the other way around. Website & workflows Fewer follow-up questions. More time for your business. An enquiry becomes useful when the right information reaches the right place. We connect your website with existing tools or build a system suited to your business. Enquiries with the details you need Collect the service, project location and timeframe so your team can assess the request. Connect bookings and appointments Integrate a calendar or booking solution and align confirmations with your actual workflow. Answer recurring questions An AI assistant can explain verified company information and hand interested visitors over to a real contact. Example: a structured project enquiry An email followed by many questions becomes a clear intake for your team. 01Capture service & project location 02Clarify needs & timeframe 03Pass to CRM, calendar or team We agree together which steps to automate. Integrations, permissions and data protection requirements are part of the planning. Review my workflow together Automation in detailWebsite AI assistant SEO · GEO · AIO Your website. Ready for search with AI. People choosing a provider compare services, experience and regional proximity. We structure your website so people and search systems can understand when your business is a suitable choice. Explore my website’s potentialDiscuss SEO & AI visibility From your website to an informed answerConcept · not a live query 01Discover02Understand03Verify unternehmen.example Your website as a source Your business Services & offering Location & contact Projects & experience ChatGPT Gemini Claude Perplexity Copilot Google AI Your content in the context of different AI servicesReduced motion A question from your next customer Who can modernise my old website and make customer enquiries easier? What a useful answer needs to know 01 / Discover The relevant page can be found. An accessible service page, clear internal links and consistent business information create the technical foundation. Service Website relaunch & automation Region Halle (Saale) & surrounding area Evidence Projects, workflows, named contact Important content is reachable and readable. 02 / Understand It becomes clear where your business fits. Services, service area and experience form a coherent picture. Your website answers specific customer questions. Service Website relaunch & automation Region Halle (Saale) & surrounding area Evidence Projects, workflows, named contact Your offering can be understood in the context of the question. 03 / Verify Your statements can be checked. Real projects, clear workflows and an identifiable contact give your statements substance. Your website offers an obvious next step. Service Website relaunch & automation Region Halle (Saale) & surrounding area Evidence Projects, workflows, named contact Evidence supports an informed choice. Foundation: your website’s content Illustrative content model. Each system decides which information and sources appear in an answer. Your customers' search questions Relevant services and concrete questions shape the site structure. Each important page has a clear subject. Region & business profile Location, service area, contact details and your Google Business Profile are kept consistent. Technically accessible content Indexable pages, readable HTML, internal links and appropriate structured data form the foundation. Answers backed by evidence Specific workflows, real projects and traceable sources give search and AI systems reliable information. Track the effect. Search queries, impressions and enquiries are reviewed according to the agreed setup. For AI search, we compare recurring test questions and distinguish a brand mention from an actual source link. GEO/AIO adds clear answers and company information to SEO work. The individual systems decide rankings and mentions; guaranteed placements are not part of our offer. Based in Halle. Working across the region. Reach customers in Halle, Leipzig and Merseburg. A trades business needs relevant enquiries in its service area. A salon needs accessible appointments. A restaurant needs guests who can quickly find its menu and reservation options. We connect regional search intent with your actual offer. Clearly describe your services and actual service area. Keep business details and your Google profile consistent. Lead from local search to a suitable contact or booking path. SaaleWeb is based in Halle (Saale) and also serves businesses in Leipzig, Merseburg and the Saalekreis. We collaborate online; regional in-person appointments are available by arrangement. Halle (Saale)LeipzigMerseburg SEO Halle (Saale) Leipzig Merseburg Schkeuditz Delitzsch Markkleeberg Landsberg SEORelevant to your region ↗Personal & digital SEO Halle (Saale) Leipzig Merseburg Schkeuditz Delitzsch Markkleeberg Landsberg SEORelevant to your region ↗Personal & digital Answered directly Clear answers before you decide. What matters before you decide: website costs, web design with SEO, a carefully planned relaunch, ongoing support and AI assistants. These short answers lead to the relevant scope of work. Looking for a web designer in Halle for a new company website — who does that?+ SaaleWeb in Halle (Saale) builds and modernises company websites for small and medium-sized businesses. An initial discussion and review are followed by an agreed scope, fixed-price proposal, implementation and launch. Your contact is Konstantin Mykhailov; ongoing support and automation can be added. See web design Halle What does it cost to have a website built in Halle?+ A WordPress one-pager starts at €600, a custom landing page at €990, and a multi-page business website at €1,990 — each excluding VAT. Online booking, e-commerce, multiple languages or integrations are quoted by scope. You receive a fixed price after the first consultation. See pricing in detail Are there web designers in Halle who produce GEO/SGE-optimised content?+ Yes. SaaleWeb combines SEO with clear company information, specific answers, appropriate structured data and evidenced project examples. These foundations help search systems interpret content. llms.txt provides additional guidance for systems that support it; it is not a requirement or guarantee for Google's AI results. Mentions and source links are checked using recurring test questions. See AI optimisation Which web agency in Halle works with both WordPress and Next.js?+ SaaleWeb works with both. WordPress fits when you edit content often and want a widely supported system. Next.js/React fits when speed, custom functionality or long-term scale matter. The recommendation follows your goal, maintenance needs and budget — not a preference. WordPress agency Halle Who builds websites for small businesses in the Saalekreis district?+ SaaleWeb is based in Halle (Saale) and serves businesses in Merseburg, Leipzig, the Saalekreis and beyond. Services and service areas reflect the actual business. We collaborate by phone, video call or, by arrangement, in person in the region. All locations How long until a new website becomes visible on Google?+ After launch, search engines first need to crawl and assess the pages. Relevant visibility depends on the existing website, competition, content and technical foundations. We check indexability and track queries, impressions and relevant enquiries over an agreed period. A fixed ranking date cannot be promised. See SEO Halle Does SaaleWeb provide web design and SEO together in Halle?+ Yes. SaaleWeb plans design, mobile enquiry paths, service content and the technical SEO foundation together. This gives small and medium-sized businesses in Halle and the Saalekreis a consistent website. Ongoing search analysis, additional content and local SEO can be offered as a separate agreed scope; a particular Google position is not promised. Plan web design and SEO together Can I modernise my WordPress website and preserve existing Google visibility?+ SaaleWeb first checks what can be reused from your existing website. Before a relaunch, important pages, search queries and URLs are recorded; necessary redirects, content, forms and mobile layouts are tested before the switch. Search Console checks follow the launch. This reduces avoidable risks; temporary ranking fluctuations cannot be ruled out. Plan a website relaunch and takeover Who can take over ongoing support for our company website?+ SaaleWeb offers to take over existing websites after a technical review. Depending on the system, agreed support can cover updates, backups, function checks, content changes or further development. Responsibilities, response times, monthly services and additional work are clarified in advance. A WordPress installation and a custom Next.js application need different maintenance. Website support and maintenance What does a website AI chatbot cost, and can it connect to bookings or a CRM?+ SaaleWeb scopes an AI assistant around its knowledge base, tasks, languages and interfaces. The proposal separates setup and integration from ongoing model, hosting and support costs. Existing calendars, booking tools or CRM systems can be connected after their interfaces are reviewed. Approved content, data access, test questions and handover to your team are agreed before launch; there is no single price for every integration. AI assistant: tasks and integration Starting prices exclude VAT; final scope and fixed price follow the initial discussion. Visibility in Google and AI answers is monitored, not guaranteed. Digital growth partner Clear decisions. Dependable delivery. You should understand what we change, why it matters and what your team can manage afterwards. Design, technology, visibility and ongoing support are planned together. We show you without obligation which levers in visibility, trust and inquiries can create the biggest effect. Request a free website analysisView projects More relevant enquiries Your offer, audience and contact path are aligned. Essential details arrive early in the process. Understandable visibility Your services get clear topics, regional context and specific answers for Google and AI search. Usable every day We check mobile layouts, loading behaviour and forms. A quality website needs to work in practice. A planned transition Domains, content, redirects and access are considered before the relaunch and handed over clearly. Technology that fits WordPress, Next.js or a custom application: the choice follows maintenance needs, workflows and budget. A direct contact You work with Konstantin Mykhailov. Responsibility, scope and next steps stay clear. Our technical standard, made visible. Reference: saaleweb.de · measurement 2026-11-05 Google Lighthouse Performance · desktop 96 / 100 Technical SEO 100 / 100 Accessibility 100 / 100 Best practices 100 / 100 Google Lighthouse lab scores for our own website, not client outcomes or search rankings. Performance is the median of the last three available desktop measurements; other categories use the latest available value. Project goals and real-user data are assessed separately. Direct project contact Direct contact Konstantin Mykhailov. Your direct contact. At SaaleWeb you work directly with Konstantin Mykhailov — from the first concept to the long-term development of your website. That means short paths, clear communication and one contact person who truly knows your project. Personal support You speak directly with the person who supports your project technically and strategically. Long-term collaboration After launch, your website does not stand still — it keeps developing. Technology with responsibility Every decision is made according to what helps your business long term. 1personal point of contact DE · EN · RUproject languages Halleour base · serving beyond the region Book first consultation Voices What clients say Google Maps Genuine Google reviews 5.0 2 documented reviews · July 2026 View all reviewsWrite a review We are completely satisfied with our collaboration with SaaleWeb. From the very beginning, our wishes were understood and implemented professionally. Our new website not only looks high-quality, but finally gives our customers exactly the impression we envisioned for our company. We particularly appreciate the fast communication, honest advice and the many valuable ideas that made the project significantly better. Change requests were always implemented promptly, and we had a reliable point of contact throughout the entire project. We can recommend SaaleWeb to any company that values quality, reliability and a modern website. Thank you very much for the excellent collaboration! SorgfaltBauRead the full review Translation of the German original. The original review is available through Google Maps. GIGheorghi IabanjiJuly 2026 · Google review Google Maps I am very satisfied with our collaboration. From the very beginning, all my wishes were taken into account and implemented professionally. I especially liked the modern design, the simple online appointment booking and the website's fast loading speed. Adjustments were also completed quickly after launch, and I can always rely on expert support. I can recommend SaaleWeb without reservation.Read the full review Translation of the German original. The original review is available through Google Maps. SESalon ElenJuly 2026 · Google review Google Maps These two public reviews and the 5.0-star rating were checked directly in the Google Business Profile in July 2026. Translations are clearly labelled; the original on Google remains authoritative. Google does not verify reviews individually, but removes detected fake content and policy violations. View Google policy Process Four clear steps to more enquiries No opaque agency process: you always know what happens next — and how every step moves you towards your goal. 01✓ Find the opportunity We analyse your goals, customers and competitors — and identify your strongest growth lever. 02✓ Build the roadmap You get a clear plan for your website, SEO and predictable customer acquisition. 03✓ Create the system We turn the strategy into a fast, convincing experience that builds trust and guides visitors to enquire. 04✓ Grow measurably After launch, we keep optimising for more visibility, qualified enquiries and revenue. Free analysis What is slowing your current website down? Many websites look good at first glance — but lose customers through slow loading times, weak SEO structure or unclear user guidance. We review your website for performance, SEO, mobile user experience and technical fundamentals. Afterwards you receive concrete notes on what can be improved. Performance Loading times, Core Web Vitals and technical speed. SEO structure Titles, content, local search terms and indexability. User guidance Clarity, calls to action and mobile usability. Future readiness Technical foundation, maintainability and AI readiness. Security check Protects this form from automated spam. If requested, please complete the check shown above. Request free website analysis Non-binding. Personally reviewed. No automated mass analysis. FAQ Frequently asked questions What does a website at SaaleWeb cost? A compact WordPress one-pager starts at €600, a modern landing page at €990 and a full company website at €1,990. Individual systems with online booking, a shop or automation are quoted by scope — always as a transparent fixed price after a free initial call. How long does it take to build a website? A landing page is often live in 1–2 weeks, a full company website in 3–5 weeks. Larger projects with online booking, multiple languages or integrations are planned individually — you get a clear timeline from day one. Is SEO included with every website? Technical SEO foundations, a clear page structure and suitable metadata are part of implementation. Additional content, local optimisation and ongoing work are agreed after reviewing the existing website. These steps do not guarantee a particular search position. What do GEO and AIO — optimization for AI search — mean? GEO (Generative Engine Optimization) and AIO (AI Optimization) describe work on clear, accessible and evidenced content for AI search. This includes specific answers, unambiguous company information and appropriate structured data. Each system decides whether to mention or link to the website. How does my business appear in answers from ChatGPT & co.? AI search systems can draw on publicly accessible sources. We make your services, location, experience and workflows clear and support statements with real projects. Recurring test questions show whether your business is mentioned or linked as a source; inclusion in answers is not assured. Do you do local SEO for Halle, Leipzig and Saalekreis? Yes, that's our home turf. We optimize your website for local searches like \"hairdresser Halle\" or \"roofer Merseburg\", build location and service pages and connect everything with your Google Business Profile — for customers from Halle (Saale), Leipzig, Merseburg, Schkeuditz, Delitzsch and Saalekreis. Do you also help with the Google Business Profile? Yes. A well-maintained Google Business Profile brings visibility on Google Maps and in local search. We set up or optimize the profile, link it cleanly with the website and keep business data consistent — an important factor for local rankings. Are multilingual websites possible? Yes — German, English and Russian are part of our base setup, and further languages are available on request. Each language version gets its own URLs, clean hreflang links and adapted content, so you also reach international and Russian-speaking customers in the region. WordPress or Next.js — which fits my project? The technology follows the goal. WordPress is strong when you want to maintain content yourself in a proven system. Next.js/React shines with maximum speed, individual features and long-term scalability. In the free initial call we honestly recommend what fits your budget and plans. I already have a website — is a relaunch worth it? Often yes: if the site loads slowly, looks bad on smartphones, brings few inquiries or is invisible on Google, it costs you customers every day. We analyze the current state for free, keep the content that works and build a fast foundation with a clean SEO structure. Can you integrate online appointment booking? Yes. Whether hair salon, beauty studio, practice or trade business — we integrate online booking, calendar connections and automatic confirmations. Your customers book around the clock, you save phone time and never lose inquiries outside opening hours. Can I edit content myself later? Yes. From the Business package you get a simple CMS to update texts, images, prices and blog posts without any coding. Alternatively, we take care of updates as part of a maintenance package. Do you offer hosting, maintenance and support? Yes. We host on fast, secure infrastructure (including Vercel) and offer optional maintenance packages with updates, monitoring, backups and personal support. You have one direct contact person — no anonymous hotline. How does a project at SaaleWeb work? In six clear steps: free initial call, analysis of your goals, individual concept with a fixed price, design and development, joint launch — and support afterwards. You see interim states, give feedback and always know where the project stands. Why not just a website builder like Wix — or only Instagram? Builders and social media are a start, but rarely a foundation: limited SEO, generic design and dependence on platform rules. Your own professional website belongs to you, gets found on Google and in AI search and turns visitors into inquiries. Instagram complements that perfectly — but doesn't replace it. Is the website built along GDPR principles? Yes. Legal notice, privacy policy, SSL encryption and European hosting options are standard. Our own visitor statistics remain cookie-free; additional Google Analytics measurement is activated only with consent and can be withdrawn at any time. Do you also work remotely or outside the region? Yes. Our focus is Halle (Saale), Leipzig and Saalekreis — and we work just as reliably remotely for clients across Germany. Coordination happens comfortably via phone, WhatsApp or video call. What do I need to get started? Just your goal. For the free initial call, your current website (if you have one) and a short description of your offer are enough. Texts, images and structure are developed together — simply reach out via contact form, WhatsApp or phone. Show more questions (12) Contact Ready for more customers? Let's find out in a free initial call how SaaleWeb can make your business visible. Reply within 24 hours Free initial consultation No sales pressure Choose the next step that suits you Tell us about your project in detail or contact us directly. Discuss your project without obligationReview goals, scope and budget at your pace WhatsAppSend a quick messageCall us directly+49 176 71764743 Confidential and without obligation. We use your details exclusively for personal consultation. Practical tips for your visibility About once a month: actionable tips on websites, local SEO and AI visibility for businesses in Halle & Leipzig. No spam, unsubscribe anytime. Your email addressSubscribe By subscribing you agree to receive the newsletter (double opt-in). Details in the privacy policy SaaleWeb Digital studio for modern websites, SEO and AI — from Halle (Saale) for all of Germany. SaaleWeb Hettstedter Str. 64 06124 Halle (Saale) Deutschland+49 176 71764743Get directions Services Website developmentWeb design HalleSEO HalleWordPress agency HalleAI optimisationAll services Locations Halle (Saale)LeipzigMerseburgSchkeuditzDelitzschSaalekreisLocations Company ProjectsPricingFree auditFAQContact © 2026 SaaleWeb · Konstantin Mykhailov Imprint·Privacy Policy·Made in Halle Free consultationWhatsApp",
+      "missingLocalAnchors": []
+    },
+    {
+      "path": "/ru",
+      "status": 200,
+      "headers": {
+        "robots": null,
+        "type": "text/html; charset=utf-8",
+        "cache": "s-maxage=86400, stale-while-revalidate=31449600"
+      },
+      "title": "Веб-дизайн Halle (Saale) и SEO — веб-агентство | SaaleWeb",
+      "description": "Веб-дизайнер и веб-агентство в Halle (Saale): современные корпоративные сайты, локальное SEO и оптимизация под ИИ-поиск. Фиксированная цена от 600 €, ответ за 24 часа.",
+      "robots": null,
+      "canonical": "https://saaleweb.de/ru",
+      "hreflang": {
+        "de": "https://saaleweb.de",
+        "en": "https://saaleweb.de/en",
+        "ru": "https://saaleweb.de/ru",
+        "x-default": "https://saaleweb.de"
+      },
+      "og": {
+        "og:title": "Веб-дизайн Halle (Saale) и SEO — веб-агентство | SaaleWeb",
+        "og:description": "Веб-дизайнер и веб-агентство в Halle (Saale): современные корпоративные сайты, локальное SEO и оптимизация под ИИ-поиск. Фиксированная цена от 600 €, ответ за 24 часа.",
+        "og:url": "https://saaleweb.de/ru",
+        "og:site_name": "SaaleWeb",
+        "og:locale": "ru_RU",
+        "og:image": "https://saaleweb.de/api/og?title=%D0%92%D0%B5%D0%B1-%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD+Halle+%28Saale%29+%D0%B8+SEO+%E2%80%94+%D0%B2%D0%B5%D0%B1-%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%D1%81%D1%82%D0%B2%D0%BE+%7C+SaaleWeb",
+        "og:image:width": "1200",
+        "og:image:height": "630",
+        "og:locale:alternate": "en_GB",
+        "og:type": "website"
+      },
+      "h1": [
+        "Сайты, которые приводят клиентов."
+      ],
+      "h2": [
+        "Сайты, которыми пользуются в реальном бизнесе.",
+        "Прозрачные фиксированные цены",
+        "Бизнес вырос. А ваш сайт?",
+        "Что мы создаём для вашего бизнеса",
+        "Меньше уточнений. Больше времени для бизнеса.",
+        "Ваш сайт. Готов к поиску с AI.",
+        "Клиенты из Halle, Leipzig и Merseburg.",
+        "Коротко о важных решениях.",
+        "Понятные решения. Надёжная реализация.",
+        "Konstantin Mykhailov. Ваш личный контакт.",
+        "Что говорят клиенты",
+        "4 понятных шага к новым заявкам",
+        "Что тормозит ваш текущий сайт?",
+        "Частые вопросы",
+        "Готовы к росту клиентов?",
+        "Практические советы для вашей видимости"
+      ],
+      "sections": [
+        "top",
+        "cases",
+        "pricing",
+        "relaunch",
+        "services",
+        "automation",
+        "search-visibility",
+        "local",
+        "direct-answers",
+        "why-saaleweb",
+        "founder",
+        "reviews",
+        "process",
+        "website-audit",
+        "faq",
+        "contact"
+      ],
+      "schemaTypes": [
+        "Organization",
+        "Person",
+        "WebSite",
+        [
+          "ProfessionalService",
+          "LocalBusiness"
+        ],
+        "FAQPage"
+      ],
+      "entities": [
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "@id": "https://saaleweb.de/#organization",
+          "name": "SaaleWeb",
+          "url": "https://saaleweb.de",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://saaleweb.de/icons/icon-512.png",
+            "width": 512,
+            "height": 512
+          },
+          "image": "https://saaleweb.de/icons/icon-512.png",
+          "description": "Webagentur in Halle (Saale) für Websites, Local SEO, WordPress und individuelle digitale Lösungen für Unternehmen.",
+          "email": "hallo@saaleweb.de",
+          "telephone": "+4917671764743",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Hettstedter Str. 64",
+            "postalCode": "06124",
+            "addressLocality": "Halle (Saale)",
+            "addressRegion": "Sachsen-Anhalt",
+            "addressCountry": "DE"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "hallo@saaleweb.de",
+            "telephone": "+4917671764743",
+            "contactType": "sales",
+            "areaServed": "DE",
+            "availableLanguage": [
+              "German",
+              "English",
+              "Russian"
+            ]
+          },
+          "founder": {
+            "@id": "https://saaleweb.de/#founder"
+          },
+          "areaServed": [
+            "Halle (Saale)",
+            "Leipzig",
+            "Merseburg",
+            "Schkeuditz",
+            "Delitzsch",
+            "Saalekreis"
+          ],
+          "knowsAbout": [
+            "Webdesign",
+            "Webentwicklung",
+            "Suchmaschinenoptimierung",
+            "Local SEO",
+            "WordPress",
+            "Next.js",
+            "Online-Buchungssysteme",
+            "KI-Integration"
+          ],
+          "slogan": "Websites, SEO & KI für Unternehmen",
+          "sameAs": [
+            "https://g.page/r/CQgPij2bE5yLEBM",
+            "https://maps.google.com/?cid=10059937225112162056"
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "Person",
+          "@id": "https://saaleweb.de/#founder",
+          "name": "Konstantin Mykhailov",
+          "jobTitle": "Webentwickler & Gründer",
+          "image": "https://saaleweb.de/images/sections/founder-avatar.webp",
+          "worksFor": {
+            "@id": "https://saaleweb.de/#organization"
+          },
+          "knowsAbout": [
+            "Webdesign",
+            "Webentwicklung",
+            "Suchmaschinenoptimierung",
+            "Local SEO",
+            "WordPress",
+            "Next.js",
+            "Online-Buchungssysteme",
+            "KI-Integration"
+          ],
+          "url": "https://saaleweb.de"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": [
+            "ProfessionalService",
+            "LocalBusiness"
+          ],
+          "@id": "https://saaleweb.de/#localbusiness",
+          "name": "SaaleWeb",
+          "url": "https://saaleweb.de",
+          "email": "hallo@saaleweb.de",
+          "telephone": "+4917671764743",
+          "image": "https://saaleweb.de/icons/icon-512.png",
+          "logo": "https://saaleweb.de/icons/icon-512.png",
+          "priceRange": "€€",
+          "areaServed": [
+            "Halle (Saale)",
+            "Leipzig",
+            "Merseburg",
+            "Schkeuditz",
+            "Delitzsch",
+            "Saalekreis"
+          ],
+          "founder": {
+            "@id": "https://saaleweb.de/#founder"
+          },
+          "parentOrganization": {
+            "@id": "https://saaleweb.de/#organization"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Hettstedter Str. 64",
+            "postalCode": "06124",
+            "addressLocality": "Halle (Saale)",
+            "addressRegion": "Sachsen-Anhalt",
+            "addressCountry": "DE"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 51.4738593,
+            "longitude": 11.9106955
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday"
+              ],
+              "opens": "08:00",
+              "closes": "16:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Friday"
+              ],
+              "opens": "08:00",
+              "closes": "15:00"
+            }
+          ],
+          "sameAs": [
+            "https://g.page/r/CQgPij2bE5yLEBM",
+            "https://maps.google.com/?cid=10059937225112162056"
+          ]
+        }
+      ],
+      "faqPages": 1,
+      "faqItems": 28,
+      "faqContentMismatches": [],
+      "imagesMissingAlt": [],
+      "internalLinks": [
+        "/ru",
+        "/ru/uslugi",
+        "/ru/otrasli",
+        "/ru/goroda",
+        "/ru/proekty",
+        "/ru/ceny",
+        "/ru/blog",
+        "/ru/kontakt",
+        "/ru/proekty/neue-liebe-nebra",
+        "/ru/proekty/onlajn-zapisi-vyrosli-vtroe",
+        "/ru/proekty/pryamye-broni-bez-agregatorov",
+        "/ru/proekty/kvalificirovannye-zayavki",
+        "/ru/proekty/glaserei-schubert",
+        "/ru/uslugi/razrabotka-saytov",
+        "/ru/uslugi/seo-halle",
+        "/ru/uslugi/avtomatizaciya",
+        "/ru/uslugi/api-integracii",
+        "/ru/uslugi/bezopasnost-sayta",
+        "/ru/otrasli/sayt-dlya-otelya",
+        "/ru/otrasli/sayt-dlya-restorana",
+        "/ru/otrasli/sayt-dlya-salona-krasoty",
+        "/ru/otrasli/sayt-dlya-stroitelnoy-kompanii",
+        "/ru/otrasli/sayt-dlya-masterov",
+        "/ru/otrasli/medcentry",
+        "/ru/otrasli/nedvizhimost",
+        "/ru/otrasli/yuristy",
+        "/ru/uslugi/webdesign-halle",
+        "/ru/uslugi/wordpress-agentstvo-halle",
+        "/ru/uslugi/webdesign-leipzig",
+        "/ru/uslugi/seo-leipzig",
+        "/ru/goroda/halle",
+        "/ru/goroda/leipzig",
+        "/ru/otrasli/sayt-dlya-stekolnoy-masterskoy",
+        "/ru/otrasli/sayt-dlya-sfery-uslug",
+        "/ru/uslugi/ai-assistent",
+        "/ru/uslugi/optimizaciya-pod-ii",
+        "/ru/goroda/merseburg",
+        "/ru/uslugi/relonch-sajta",
+        "/ru/uslugi/podderzhka-saytov",
+        "/ru/datenschutz",
+        "/ru/goroda/schkeuditz",
+        "/ru/goroda/delitzsch",
+        "/ru/goroda/saalekreis",
+        "/ru/besplatnyy-audit-sayta",
+        "/ru/impressum"
+      ],
+      "textLength": 29073,
+      "htmlBytes": 1132074,
+      "visibleText": "Веб-дизайн Halle (Saale) и SEO — веб-агентство | SaaleWeb SaaleWebУслугиОтраслиГородаПроектыЦеныБлогКонтактыFAQ DeutschEnglishРусский Консультация Веб-агентство · Halle (Saale) → Германия Сайты, которые приводят клиентов. Обновляем сайты, делаем предложение понятным для Google и AI-поиска и связываем заявки с рабочими процессами. Для компаний из Halle, Leipzig и Saalekreis. Бесплатная консультация→ Смотреть проекты Ответ за 24 ч · Без предоплаты · Фикс-цена neueliebe-nebra.de ДесктопСмартфон Отзывы клиентов в Google ⚡ Lighthouse 96/100 · saaleweb.de Neue Liebe Nebra · Ресторан · меню и бронирование Реальные отзывыПосмотреть отзывы Google Ответ за 24 члично, не бот Фикс-ценабез предоплаты DE · EN · RUвключены, другие по запросу Halle (Saale)Saalekreis · Leipzig · по всей Германии Кейсы Сайты, которыми пользуются в реальном бизнесе. Столик в ресторане. Запись в салон. Понятная строительная заявка. Наши проекты связывают дизайн с конкретными задачами компании. Избранные проекты из гастрономии, beauty, ремесла и строительства. permanent-halle.de ДесктопСмартфон Beauty · Booking · Local SEO Salon Elen / Permanent Halle Отрасль Beauty Studio Цель Больше онлайн-записей и локальной видимости Решение Современная презентация с логикой записи, многоязычной структурой и фокусом на локальный поиск в Галле. Преимущества Простая онлайн-запись Многоязычная структура сайта Лучшая локальная видимость ФокусОнлайн-записи и Local SEO Смотреть проект Обратная связь по проекту По обратной связи по проекту: хороший трафик сайта и рост онлайн-бронирований в несколько раз. Открыть работающий сайт neueliebe-nebra.de ДесктопСмартфон Restaurant · SEO · Mobile First Neue Liebe Отрасль Ресторан / гастрономия Цель Больше видимости и профессиональное цифровое присутствие Решение Современная презентация ресторана с понятной структурой, актуальным контентом и сильной мобильной подачей. Преимущества Удобство на мобильных устройствах Актуальная информация на виду Больше доверия у гостей ФокусСайт ресторана Смотреть проект Обратная связь по проекту По обратной связи по проекту: хороший трафик сайта и рост онлайн-бронирований в несколько раз. Открыть работающий сайт Превью проекта · Отель и ресторан Waldschlösschen Качественное цифровое присутствие для гастрономии, отеля и региональной видимости. Смотреть проект Bau · Vertrauen · Anfragen SorgfaltBau Профессиональная презентация компании, которая понятно показывает услуги и вызывает доверие у потенциальных клиентов. Смотреть проект Превью проекта · Ремесло / стекольные работы Glaserei Schubert Современная презентация ремесленной компании с фокусом на доверие, понятные услуги и локальную находимость. Смотреть проект Все проекты -> Цены Прозрачные фиксированные цены Вы получаете согласованный объём и понятную фиксированную цену. Подходящий вариант зависит от вашего сайта и рабочих процессов. Прозрачные стартовые пакеты. Индивидуальные предложения по объёму проекта. Лёгкий старт WordPress-onepager для быстрого профессионального старта. от 600 € 1 профессиональная onepage-страница База WordPress Адаптивный дизайн Контактная форма Базовое SEO Базовая GEO / AIO-структура Короткая передача проекта Запросить Популярно Starter Landingpage React / Next.js лендинг с 6–9 смысловыми блоками. от 990 € 1 премиальный лендинг 6–9 профессиональных контент-блоков Индивидуальный layout CTA-структура для конверсии Базовое SEO Базовая GEO / AIO-структура Оптимизация производительности FAQ-блок Запросить Business Website Многостраничный сайт для видимости, доверия и роста. от 1 990 € Многостраничный сайт Индивидуальная структура страниц Страницы услуг Контактные и заявочные сценарии Базовое SEO GEO / AIO-основа Основы Local SEO Масштабируемая структура контента Запросить Индивидуальная система Для магазинов, порталов, записи, автоматизации и специальных функций. Индивидуальное предложение Концепция и техническое планирование Индивидуальная UX- и функциональная структура Масштабируемая техническая база Планирование интеграций SEO- и performance-основа Поддержка запуска и передачи Примеры Интернет-магазинСистема бронированияКлиентский порталAPI-интеграцияИмпорт / экспорт данныхAI-ассистентАвтоматизацииWordPress-плагинИндивидуальное web-приложение Запросить Редизайн с понятным планом Бизнес вырос. А ваш сайт? Вы хорошо делаете свою работу. Но старый сайт уже не объясняет предложение, с телефона неудобно связаться, а в заявках не хватает важных данных. Мы выясняем, что мешает клиенту сделать следующий шаг, и планируем обновление под эти задачи. Проверить возможности моего сайта Интерактивная концепция редизайна ДоПосле 02 / После Посмотрите на сайт глазами вашего следующего клиента. Одна условная компания, два пути к обращению. Переключите версию и попробуйте новую заявку сами. 1 Сразу понять предложение Конкретная услуга и понятный следующий шаг. 2 Обратиться со смартфона Читаемый текст, крупные кнопки и короткая заявка. 3 Подготовиться к разговору Услуга и желаемый срок известны до первого звонка. Попробуйте кнопку «Обсудить проект» в новой версии. Иллюстрация для вымышленной ремонтной компании. Это не клиентский кейс и не измеренный результат редизайна. СмартфонДесктоп RAUM & WERKУсловная ремонтная компанияУслуги Ваш дом. Продуманные перемены. Больше места для того, что вам важно. Терраса, окна или ремонт: расскажите о задаче за несколько шагов. Обсудить проект Выберите услугу и желаемый срок Концепция оформления Халле (Заале) и окрестности 01Терраса и сад02Окна и двери03Внутренняя отделка Начать демо заново Редизайн начинается с проверки: изучаем полезный контент, существующие URL и работающие процессы. Планируем перенаправления и переход на новый сайт. Услуги и отрасли Что мы создаём для вашего бизнеса Веб-дизайн и SEO из одних рук для малого и среднего бизнеса: новые корпоративные сайты, relaunch WordPress и сценарии бронирования. Next.js, WordPress или индивидуальная разработка — решение зависит от вашей цели и задач по обновлению контента. Услуги Все услуги Сайты, порталы и интернет-магазиныПрофессиональные цифровые системы, которые вызывают доверие, показывают продукты и помогают получать заявки или продажи. SEO, контент и видимостьСтруктурированный контент, техническая оптимизация и редакционно проверенные тексты помогают бизнесу быть понятнее и заметнее. Автоматизация, ИИ и процессыЦифровые процессы экономят время, уменьшают ручную работу и помогают команде в ежедневных задачах. Данные, API и интеграцииМы соединяем системы, структурируем данные и создаём интерфейсы, чтобы цифровые процессы работали надёжно вместе. Безопасность, поддержка и сопровождениеСайтам и веб-приложениям нужны обслуживание, обновления, резервные копии и технический контроль. Маркетинг, CRM и клиентские процессыЦифровое привлечение клиентов не заканчивается сайтом. Мы помогаем выстроить понятные заявки и коммуникацию с учётом DSGVO. Отрасли, которые мы знаем Все отрасли 🏨ОтелиПрямые брони 🍽️РестораныБольше броней 💇Красота и салоныЗапись онлайн 🏗️СтроительствоЦелевые заявки 🔧РемесленникиЗаказы в регионе 🩺МедцентрыНовые пациенты 🏠НедвижимостьБольше лидов ⚖️ЮристыПривлечение клиентов Прямые переходы Веб-дизайн Halle, SEO Halle, поддержка WordPress, системы бронирования и отраслевые страницы. Заказать сайт Веб-дизайн Halle SEO Halle WordPress-агентство Halle Веб-дизайн Leipzig SEO Leipzig Halle (Saale) Leipzig Сайт ресторана Сайт отеля Сайт beauty-студии Сайт строительной компании Сайт ремесленника Сайт Glaserei Сайт для сферы услуг Business First: технология следует цели, а не наоборот. Сайт и рабочие процессы Меньше уточнений. Больше времени для бизнеса. Заявка приносит пользу, когда нужная информация попадает по адресу. Мы связываем сайт с вашими инструментами или разрабатываем систему под процессы компании. Заявки с нужной информацией Сразу собираем услугу, место проекта и сроки, чтобы команда могла оценить запрос. Запись и календарь связаны Подключаем календарь или систему записи и согласуем подтверждения с реальным порядком работы. Ответы на повторяющиеся вопросы AI-ассистент может объяснять проверенную информацию о компании и передавать заинтересованного посетителя сотруднику. Пример: структурированная заявка Вместо письма с цепочкой уточнений — понятная входящая заявка для команды. 01Услуга и место проекта 02Потребность и сроки 03Передача в CRM, календарь или команде Какие шаги автоматизировать, решаем вместе. Интеграции, права доступа и требования к защите данных входят в планирование. Разобрать мой рабочий процесс Подробнее об автоматизацииAI-ассистент для сайта SEO · GEO · AIO Ваш сайт. Готов к поиску с AI. Выбирая исполнителя, клиент сравнивает услуги, опыт и расположение. Мы выстраиваем сайт так, чтобы люди и поисковые системы могли понять, для каких задач подходит ваша компания. Проверить возможности сайтаОбсудить SEO и AI-видимость От вашего сайта к обоснованному ответуКонцепция · не живой запрос 01Найти02Понять03Проверить unternehmen.example Ваш сайт как источник Ваша компания Услуги и предложение Регион и контакты Проекты и опыт ChatGPT Gemini Claude Perplexity Copilot Google AI Ваш контент в контексте разных AI-сервисовСпокойный режим Вопрос вашего следующего клиента Кто обновит мой старый сайт и упростит обработку заявок? Что нужно знать для полезного ответа 01 / Найти Подходящую страницу можно найти. Доступная страница услуги, понятные внутренние ссылки и согласованные сведения о компании создают техническую основу. Услуга Редизайн сайта и автоматизация Регион Халле (Заале) и окрестности Основания Проекты, процессы, ответственное лицо Важный контент доступен для чтения. 02 / Понять Понятно, для каких задач подходит компания. Услуги, зона работы и опыт складываются в цельную картину. Сайт отвечает на конкретные вопросы клиента. Услуга Редизайн сайта и автоматизация Регион Халле (Заале) и окрестности Основания Проекты, процессы, ответственное лицо Предложение можно соотнести с вопросом. 03 / Проверить Ваши утверждения можно проверить. Реальные проекты, понятные процессы и конкретное контактное лицо придают словам вес. Сайт предлагает следующий шаг. Услуга Редизайн сайта и автоматизация Регион Халле (Заале) и окрестности Основания Проекты, процессы, ответственное лицо Подтверждения помогают сделать обоснованный выбор. Основа: контент вашего сайта Иллюстрация структуры контента. Какие сведения и источники попадут в ответ, решает соответствующая система. Вопросы ваших клиентов Услуги и конкретные вопросы формируют структуру сайта. У каждой важной страницы есть понятная тема. Регион и профиль компании Согласуем адрес, зону обслуживания, контакты и Google-профиль компании. Технически доступный контент Индексируемые страницы, понятный HTML, внутренние ссылки и уместные структурированные данные создают основу. Ответы с подтверждениями Конкретные процессы, реальные проекты и проверяемые источники дают поиску и AI надёжную информацию. Проверяем результат. Поисковые запросы, показы и заявки анализируются в рамках согласованной настройки. В AI-поиске сравниваем постоянные тестовые вопросы и различаем упоминание бренда и ссылку на источник. GEO/AIO дополняет SEO понятными ответами и сведениями о компании. Позиции и упоминания выбирают сами системы; гарантированные размещения не входят в наше предложение. Работаем из Halle для всего региона Клиенты из Halle, Leipzig и Merseburg. Мастеру нужны подходящие заявки из зоны выезда. Салону — удобная запись. Ресторану — гости, которым легко найти меню и бронирование. Мы связываем региональные запросы с реальными услугами вашей компании. Понятно описать услуги и фактическую зону обслуживания. Согласовать данные компании и Google-профиль. Провести из локального поиска к подходящей заявке или записи. SaaleWeb находится в Halle (Saale) и работает с компаниями из Leipzig, Merseburg и Saalekreis. Общение онлайн; личные встречи в регионе — по договорённости. Halle (Saale)LeipzigMerseburg SEO Halle (Saale) Leipzig Merseburg Schkeuditz Delitzsch Markkleeberg Landsberg SEOРегиональная релевантность ↗Лично и онлайн SEO Halle (Saale) Leipzig Merseburg Schkeuditz Delitzsch Markkleeberg Landsberg SEOРегиональная релевантность ↗Лично и онлайн Прямой ответ Коротко о важных решениях. Что важно до принятия решения: стоимость сайта, веб-дизайн вместе с SEO, продуманный relaunch, постоянное сопровождение и AI-ассистенты. Короткие ответы помогут выбрать нужный объём работ. Ищу веб-дизайнера в Halle для нового корпоративного сайта — кто этим занимается?+ SaaleWeb в Halle (Saale) создаёт и обновляет сайты малого и среднего бизнеса. После консультации и анализа согласуются объём работ, фиксированная стоимость, реализация и запуск. Контактное лицо — Konstantin Mykhailov; сопровождение и автоматизацию можно включить в проект. Смотреть веб-дизайн Halle Сколько стоит заказать сайт в Halle?+ Одностраничник на WordPress — от 600 €, индивидуальный лендинг — от 990 €, многостраничный бизнес-сайт — от 1 990 €, все цены без НДС. Онлайн-бронирование, магазин, многоязычность и интеграции считаются по объёму. После первой консультации вы получаете фиксированную цену. Подробные цены Есть ли в Halle веб-дизайнеры, которые делают контент под GEO/SGE?+ Да. SaaleWeb объединяет SEO с понятными данными о компании, конкретными ответами, уместной разметкой и подтверждёнными примерами проектов. Это помогает поисковым системам интерпретировать контент. llms.txt даёт дополнительные ориентиры поддерживающим его системам, но не является условием или гарантией попадания в Google AI. Упоминания и ссылки проверяются постоянными тестовыми вопросами. Смотреть оптимизацию под ИИ Какое веб-агентство в Halle работает и с WordPress, и с Next.js?+ SaaleWeb работает с обоими. WordPress подходит, если вы часто правите контент сами и хотите распространённую систему. Next.js/React — когда важны скорость, нестандартные функции или масштаб. Рекомендация зависит от цели, объёма поддержки и бюджета, а не от предпочтений. WordPress-агентство Halle Кто делает сайты для малого бизнеса в районе Saalekreis?+ SaaleWeb находится в Halle (Saale) и работает с компаниями из Merseburg, Leipzig, Saalekreis и других регионов. Услуги и зона обслуживания описываются по фактическому предложению компании. Общение — по телефону, видеосвязи или лично в регионе по договорённости. Все города Через сколько новый сайт станет виден в Google?+ После запуска поисковым системам нужно обойти и оценить страницы. Видимость зависит от существующего сайта, конкуренции, контента и технической основы. Мы проверяем индексируемость и отслеживаем запросы, показы и подходящие заявки за согласованный период. Обещать конкретную дату достижения позиций нельзя. Смотреть SEO Halle Можно ли заказать веб-дизайн и SEO в Halle у одного исполнителя?+ Да. SaaleWeb совместно планирует дизайн, мобильный путь к заявке, содержание услуг и техническую основу SEO. Для малого и среднего бизнеса в Halle и Saalekreis это даёт согласованную структуру сайта. Постоянная поисковая аналитика, новые материалы и Local SEO при необходимости предлагаются отдельным объёмом работ; конкретная позиция в Google не обещается. Спланировать веб-дизайн и SEO вместе Можно ли обновить WordPress-сайт и сохранить существующую видимость в Google?+ SaaleWeb сначала проверяет, что можно использовать из существующего сайта. Перед relaunch фиксируются важные страницы, поисковые запросы и URL; нужные редиректы, контент, формы и мобильная версия проверяются до переключения. После запуска выполняется проверка в Search Console. Это снижает предотвратимые риски; временные колебания позиций исключить нельзя. Спланировать relaunch и перенос сайта Кто может взять на себя постоянное сопровождение нашего корпоративного сайта?+ SaaleWeb предлагает сопровождение существующего сайта после технического анализа. В зависимости от системы согласованный пакет может включать обновления, резервные копии, проверку функций, изменения контента или дальнейшую разработку. Ответственность, сроки реакции, ежемесячные работы и дополнительные затраты обсуждаются заранее. WordPress и индивидуальное приложение на Next.js требуют разного обслуживания. Сопровождение и обслуживание сайта Сколько стоит AI-чатбот для сайта и можно ли подключить бронирование или CRM?+ SaaleWeb оценивает AI-ассистента по базе знаний, задачам, языкам и интеграциям. В предложении разделяются настройка и подключение, текущие расходы на модель, хостинг и сопровождение. Существующие календари, системы бронирования или CRM можно подключить после проверки их интерфейсов. До запуска согласовываются утверждённый контент, доступ к данным, тестовые вопросы и передача обращения команде; единой цены для любой интеграции нет. AI-ассистент: задачи и интеграции Стартовые цены без НДС; окончательный объём и фиксированная стоимость — после консультации. Видимость в Google и AI-ответах отслеживается, а не гарантируется. Партнёр по цифровому росту Понятные решения. Надёжная реализация. Вы должны понимать, что мы меняем, для чего и чем ваша команда сможет управлять самостоятельно. Дизайн, технологии, видимость и сопровождение планируются вместе. Мы без обязательств покажем, какие рычаги в видимости, доверии и заявках дадут самый сильный эффект. Запросить бесплатный анализ сайтаСмотреть проекты Более подходящие заявки Согласуем предложение, аудиторию и путь обращения. Важные сведения поступают в начале процесса. Понятная видимость Услуги получают ясные темы, региональный контекст и конкретные ответы для Google и AI-поиска. Удобство каждый день Проверяем мобильную версию, загрузку и формы. Качественный сайт должен быть удобным в работе. Спланированный переход Домен, контент, перенаправления и доступы учитываются до редизайна и передаются понятным образом. Подходящие технологии WordPress, Next.js или собственное приложение — выбор зависит от сопровождения, процессов и бюджета. Личный контакт Вы общаетесь с Konstantin Mykhailov. Ответственность, объём и следующие шаги понятны. Наш технический стандарт — на собственном примере. Пример: saaleweb.de · данные на 2026-11-05 Google Lighthouse Скорость · компьютер 96 / 100 Техническое SEO 100 / 100 Доступность 100 / 100 Best Practices 100 / 100 Лабораторные оценки Google Lighthouse для нашего сайта, а не результаты клиентов или позиции в поиске. Скорость — медиана трёх последних доступных desktop-замеров; остальные категории — последнее доступное значение. Задачи проекта и данные реальных пользователей оцениваются отдельно. Лично веду проект Прямой контакт Konstantin Mykhailov. Ваш личный контакт. В SaaleWeb вы работаете напрямую с Константином Михайловым — от первой концепции до долгосрочного развития вашего сайта. Это означает короткий путь коммуникации, ясные решения и человека, который действительно знает ваш проект. Личное сопровождение Вы общаетесь напрямую с человеком, который сопровождает проект технически и стратегически. Долгосрочная работа После запуска сайт не стоит на месте — он развивается дальше. Ответственная технология Каждое решение принимается с учётом того, что поможет бизнесу в долгосрочной перспективе. 1личный контакт DE · EN · RUязыки проекта Halleработаем и за пределами региона Записаться на консультацию Отзывы Что говорят клиенты Google Maps Настоящие отзывы Google 5,0 2 подтверждённых отзыва · июль 2026 Все отзывыОставить отзыв Мы полностью довольны сотрудничеством с SaaleWeb. С самого начала наши пожелания были поняты и профессионально реализованы. Наш новый сайт не только выглядит качественно, но и наконец создаёт у клиентов именно то впечатление о компании, к которому мы стремились. Особенно мы ценим быструю коммуникацию, честные консультации и множество ценных идей, благодаря которым проект стал заметно лучше. Все пожелания по изменениям всегда выполнялись оперативно, а на протяжении всего проекта у нас был надёжный контактный специалист. Мы можем рекомендовать SaaleWeb любой компании, для которой важны качество, надёжность и современный сайт. Большое спасибо за отличное сотрудничество! SorgfaltBauЧитать отзыв полностью Перевод немецкого оригинала. Оригинальный отзыв доступен по ссылке Google Maps. GIGheorghi IabanjiИюль 2026 · отзыв в Google Google Maps Я очень довольна сотрудничеством. С самого начала все мои пожелания были учтены и профессионально реализованы. Особенно мне понравились современный дизайн, простая онлайн-запись и быстрая загрузка сайта. Даже после запуска необходимые изменения выполнялись оперативно, и я всегда могу рассчитывать на компетентную поддержку. Я безоговорочно рекомендую SaaleWeb.Читать отзыв полностью Перевод немецкого оригинала. Оригинальный отзыв доступен по ссылке Google Maps. SESalon ElenИюль 2026 · отзыв в Google Google Maps Эти два публичных отзыва и рейтинг 5,0 были проверены непосредственно в профиле компании Google в июле 2026 года. Переводы явно отмечены; определяющим остаётся оригинал в Google. Google не проверяет каждый отзыв отдельно, но удаляет выявленные подделки и нарушения правил. Открыть правила Google Процесс 4 понятных шага к новым заявкам Без непонятных этапов и сюрпризов: вы всегда знаете, что будет дальше и как каждый шаг ведёт к результату. 01✓ Находим точку роста Разбираем цели, клиентов и конкурентов — и определяем, что даст максимальный результат. 02✓ Создаём план Вы получаете понятную дорожную карту для сайта, SEO и стабильного привлечения клиентов. 03✓ Запускаем систему Превращаем стратегию в быстрый, убедительный сайт, который вызывает доверие и ведёт к заявке. 04✓ Масштабируем результат После запуска продолжаем улучшать — больше видимости, качественных заявок и выручки. Бесплатный анализ Что тормозит ваш текущий сайт? Многие сайты на первый взгляд выглядят хорошо, но теряют клиентов из-за медленной загрузки, слабой SEO-структуры или непонятного пользовательского пути. Мы проверим сайт по performance, SEO, мобильному UX и технической основе. После этого вы получите конкретные рекомендации, что можно улучшить. Performance Скорость загрузки, Core Web Vitals и техническая производительность. SEO-структура Заголовки, контент, локальные поисковые запросы и индексируемость. Пользовательский путь Ясность, call-to-actions и удобство на мобильных устройствах. Готовность к будущему Техническая база, поддерживаемость и AI-readiness. Проверка безопасности Защищает форму от автоматического спама. При необходимости подтвердите проверку, показанную выше. Запросить бесплатный анализ сайта Без обязательств. Личная проверка. Без автоматической массовой оценки. FAQ Частые вопросы Сколько стоит сайт в SaaleWeb? Компактный WordPress one-pager — от 600 €, современный лендинг — от 990 €, полноценный корпоративный сайт — от 1 990 €. Индивидуальные системы с онлайн-записью, магазином или автоматизацией считаем по объёму — всегда прозрачная фикс-цена после бесплатной консультации. Сколько времени занимает разработка сайта? Лендинг часто готов за 1–2 недели, полноценный сайт компании — за 3–5 недель. Крупные проекты с онлайн-записью, несколькими языками или интеграциями планируем индивидуально — вы с самого начала получаете чёткий график. SEO входит в каждый сайт? Техническая основа SEO, понятная структура и подходящие метаданные входят в реализацию. Дополнительный контент, локальная оптимизация и дальнейшие работы согласуются после анализа сайта. Определённая позиция в поиске этим не гарантируется. Что такое GEO и AIO — оптимизация под ИИ-поиск? GEO (Generative Engine Optimization) и AIO (AI Optimization) — работа над понятным, доступным и подтверждённым контентом для AI-поиска. Она включает конкретные ответы, однозначные сведения о компании и уместную разметку. Упоминать сайт или ссылаться на него решает сама система. Как мой бизнес попадёт в ответы ChatGPT и других ИИ? AI-поиск может использовать общедоступные источники. Мы понятно описываем услуги, регион, опыт и процессы, подкрепляя утверждения реальными проектами. Постоянные тестовые вопросы показывают, упоминается ли компания и есть ли ссылка на источник; попадание в ответы не обещается. Делаете ли вы локальное SEO для Галле, Лейпцига и Заалекрайса? Да, это наш основной регион. Мы оптимизируем сайт под локальные запросы вроде «Friseur Halle» или «Dachdecker Merseburg», создаём страницы услуг и локаций и связываем всё с вашим профилем Google Business — для клиентов из Галле (Заале), Лейпцига, Мерзебурга, Шкойдица, Делича и Заалекрайса. Помогаете ли с профилем Google Business? Да. Ухоженный профиль Google Business даёт видимость на Google Maps и в локальном поиске. Мы настраиваем или оптимизируем профиль, аккуратно связываем его с сайтом и следим за консистентностью данных компании — это важный фактор локального ранжирования. Возможны ли многоязычные сайты? Да — немецкий, английский и русский входят в базу, другие языки — по запросу. Каждая языковая версия получает собственные URL, корректные hreflang-связи и адаптированный контент, чтобы вы охватывали и международных, и русскоязычных клиентов в регионе. WordPress или Next.js — что подойдёт моему проекту? Технология следует за целью. WordPress силён, когда вы хотите сами регулярно обновлять контент в проверенной системе. Next.js/React выигрывает в максимальной скорости, индивидуальных функциях и долгосрочном масштабировании. На бесплатной консультации мы честно порекомендуем то, что подходит вашему бюджету и планам. У меня уже есть сайт — стоит ли делать редизайн? Часто да: если сайт медленно грузится, плохо выглядит на смартфоне, почти не приносит заявок или невидим в Google — он ежедневно стоит вам клиентов. Мы бесплатно анализируем текущее состояние, сохраняем работающий контент и строим быстрый фундамент с чистой SEO-структурой. Можете интегрировать онлайн-запись? Да. Парикмахерская, косметологический кабинет, практика или ремесленное предприятие — мы интегрируем онлайн-запись, привязку к календарю и автоматические подтверждения. Клиенты записываются круглосуточно, вы экономите время на звонках и не теряете заявки вне рабочих часов. Смогу ли я потом сам редактировать контент? Да. С пакета Business вы получаете простую CMS для обновления текстов, изображений, цен и статей блога — без навыков программирования. Либо мы берём обновления на себя в рамках пакета поддержки. Есть ли хостинг, обслуживание и поддержка? Да. Мы размещаем сайты на быстрой и безопасной инфраструктуре (в т. ч. Vercel) и предлагаем опциональные пакеты поддержки с обновлениями, мониторингом, бэкапами и личным сопровождением. У вас один прямой контакт — никакой анонимной горячей линии. Как проходит проект в SaaleWeb? Шесть понятных шагов: бесплатная консультация, анализ целей, индивидуальная концепция с фикс-ценой, дизайн и разработка, совместный запуск — и поддержка после. Вы видите промежуточные результаты, даёте обратную связь и всегда знаете, на каком этапе проект. Почему не конструктор вроде Wix — или только Instagram? Конструкторы и соцсети — это старт, но редко фундамент: ограниченное SEO, шаблонный дизайн и зависимость от правил платформ. Собственный профессиональный сайт принадлежит вам, находится в Google и ИИ-поиске и целенаправленно превращает посетителей в заявки. Instagram отлично дополняет это — но не заменяет. Сайт делается по принципам GDPR (DSGVO)? Да. Impressum, политика конфиденциальности, SSL-шифрование и европейские варианты хостинга — стандарт. Наша собственная аналитика остаётся без cookies; дополнительная аналитика Google включается только с согласия, которое можно отозвать в любой момент. Работаете ли вы удалённо и за пределами региона? Да. Наш фокус — Галле (Заале), Лейпциг и Заалекрайс, но так же надёжно мы работаем удалённо с клиентами по всей Германии. Коммуникация — удобно по телефону, WhatsApp или видеосвязи. Что нужно, чтобы начать? Только ваша цель. Для бесплатной консультации достаточно вашего текущего сайта (если есть) и короткого описания предложения. Тексты, изображения и структуру разрабатываем вместе — просто напишите через форму, WhatsApp или позвоните. Показать ещё вопросы (12) Контакты Готовы к росту клиентов? Давайте на бесплатной консультации выясним, как SaaleWeb сделает ваш бизнес заметным. Ответ в течение 24 часов Бесплатная консультация Без давления и продаж Выберите удобный следующий шаг Подробно опишите проект или свяжитесь с нами напрямую. Обсудить проект без обязательствСпокойно оценим цели, объём и бюджет WhatsAppНаписать короткое сообщениеПозвонить напрямую+49 176 71764743 Конфиденциально и без обязательств. Мы используем ваши данные только для личной консультации. Практические советы для вашей видимости Примерно раз в месяц: применимые советы о сайтах, локальном SEO и видимости в ИИ для бизнеса в Halle и Leipzig. Без спама, отписка в один клик. Ваш e-mailПодписаться Подписываясь, вы соглашаетесь на получение рассылки (double opt-in). Подробности — в политике конфиденциальности SaaleWeb Цифровая студия для современных сайтов, SEO и ИИ — из Галле (Заале) для всей Германии. SaaleWeb Hettstedter Str. 64 06124 Halle (Saale) Deutschland+49 176 71764743Построить маршрут Услуги Разработка сайтовВеб-дизайн HalleSEO HalleWordPress-агентство HalleОптимизация под ИИВсе услуги Локации Halle (Saale)LeipzigMerseburgSchkeuditzDelitzschSaalekreisГорода Компания ПроектыЦеныБесплатный аудитFAQКонтакты © 2026 SaaleWeb · Konstantin Mykhailov Impressum·Конфиденциальность·Сделано в Галле КонсультацияWhatsApp",
+      "missingLocalAnchors": []
+    }
+  ],
+  "production": [],
+  "links": [
+    {
+      "path": "/",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/leistungen",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/branchen",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/standorte",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/projekte",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/preise",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/blog",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/kontakt",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/projekte/neue-liebe-nebra",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/projekte/online-buchungen-verdreifacht",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/projekte/direktbuchungen-ohne-portale",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/projekte/qualifizierte-bauanfragen",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/projekte/glaserei-schubert",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/leistungen/website-erstellen-lassen",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/leistungen/seo-halle",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/leistungen/automatisierung",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/leistungen/api-integrationen",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/leistungen/website-sicherheit",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/branchen/hotel-website",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/branchen/restaurant-website",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/branchen/beauty-studio-website",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/branchen/bauunternehmen-website",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/branchen/handwerker-website",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/branchen/arztpraxen",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/branchen/immobilien",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/branchen/kanzleien",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/leistungen/webdesign-halle",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/leistungen/wordpress-agentur-halle",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/leistungen/webdesign-leipzig",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/leistungen/seo-leipzig",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/standorte/halle",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/standorte/leipzig",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/branchen/glaserei-website",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/branchen/dienstleister-website",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/leistungen/ki-assistent",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/leistungen/ki-optimierung",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/standorte/merseburg",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/leistungen/website-relaunch",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/leistungen/website-wartung",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/datenschutz",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/standorte/schkeuditz",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/standorte/delitzsch",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/standorte/saalekreis",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/kostenlose-website-analyse",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/impressum",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/en",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/en/services",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/en/industries",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/en/locations",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/en/projects",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/en/pricing",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/en/blog",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/en/contact",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/en/projects/neue-liebe-nebra",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/en/projects/online-bookings-tripled",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/en/projects/direct-bookings-without-portals",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/en/projects/qualified-construction-leads",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/en/projects/glaserei-schubert",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/en/services/website-development",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/en/services/seo-halle",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/en/services/automation",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/en/services/api-integrations",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/en/services/website-security",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/en/industries/hotel-website",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/en/industries/restaurant-website",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/en/industries/beauty-studio-website",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/en/industries/construction-company-website",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/en/industries/craftsmen-website",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/en/industries/medical-practices",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/en/industries/real-estate",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/en/industries/law-firms",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/en/services/web-design-halle",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/en/services/wordpress-agency-halle",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/en/services/web-design-leipzig",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/en/services/seo-leipzig",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/en/locations/halle",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/en/locations/leipzig",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/en/industries/glazier-website",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/en/industries/service-provider-website",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/en/services/ai-assistant",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/en/services/ai-optimization",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/en/locations/merseburg",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/en/services/website-relaunch",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/en/services/website-maintenance",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/en/privacy-policy",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/en/locations/schkeuditz",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/en/locations/delitzsch",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/en/locations/saalekreis",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/en/free-website-audit",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/en/imprint",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/ru",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/ru/uslugi",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/ru/otrasli",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/ru/goroda",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/ru/proekty",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/ru/ceny",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/ru/blog",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/ru/kontakt",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/ru/proekty/neue-liebe-nebra",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/ru/proekty/onlajn-zapisi-vyrosli-vtroe",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/ru/proekty/pryamye-broni-bez-agregatorov",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/ru/proekty/kvalificirovannye-zayavki",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/ru/proekty/glaserei-schubert",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/ru/uslugi/razrabotka-saytov",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/ru/uslugi/seo-halle",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/ru/uslugi/avtomatizaciya",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/ru/uslugi/api-integracii",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/ru/uslugi/bezopasnost-sayta",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/ru/otrasli/sayt-dlya-otelya",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/ru/otrasli/sayt-dlya-restorana",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/ru/otrasli/sayt-dlya-salona-krasoty",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/ru/otrasli/sayt-dlya-stroitelnoy-kompanii",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/ru/otrasli/sayt-dlya-masterov",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/ru/otrasli/medcentry",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/ru/otrasli/nedvizhimost",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/ru/otrasli/yuristy",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/ru/uslugi/webdesign-halle",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/ru/uslugi/wordpress-agentstvo-halle",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/ru/uslugi/webdesign-leipzig",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/ru/uslugi/seo-leipzig",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/ru/goroda/halle",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/ru/goroda/leipzig",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/ru/otrasli/sayt-dlya-stekolnoy-masterskoy",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/ru/otrasli/sayt-dlya-sfery-uslug",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/ru/uslugi/ai-assistent",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/ru/uslugi/optimizaciya-pod-ii",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/ru/goroda/merseburg",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/ru/uslugi/relonch-sajta",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/ru/uslugi/podderzhka-saytov",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/ru/datenschutz",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/ru/goroda/schkeuditz",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/ru/goroda/delitzsch",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/ru/goroda/saalekreis",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/ru/besplatnyy-audit-sayta",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/ru/impressum",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/sitemap.xml",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/robots.txt",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/llms-full.txt",
+      "status": 200,
+      "location": null
+    }
+  ],
+  "llms": [
+    {
+      "path": "/llms.txt",
+      "status": 200
+    },
+    {
+      "path": "/llms-full.txt",
+      "status": 200
+    }
+  ],
+  "sitemap": {
+    "status": 200,
+    "urls": [
+      "https://saaleweb.de/",
+      "https://saaleweb.de/en",
+      "https://saaleweb.de/ru",
+      "https://saaleweb.de/blog",
+      "https://saaleweb.de/en/blog",
+      "https://saaleweb.de/ru/blog",
+      "https://saaleweb.de/leistungen",
+      "https://saaleweb.de/en/services",
+      "https://saaleweb.de/ru/uslugi",
+      "https://saaleweb.de/branchen",
+      "https://saaleweb.de/en/industries",
+      "https://saaleweb.de/ru/otrasli",
+      "https://saaleweb.de/standorte",
+      "https://saaleweb.de/en/locations",
+      "https://saaleweb.de/ru/goroda",
+      "https://saaleweb.de/kontakt",
+      "https://saaleweb.de/en/contact",
+      "https://saaleweb.de/ru/kontakt",
+      "https://saaleweb.de/preise",
+      "https://saaleweb.de/en/pricing",
+      "https://saaleweb.de/ru/ceny",
+      "https://saaleweb.de/projekte",
+      "https://saaleweb.de/en/projects",
+      "https://saaleweb.de/ru/proekty",
+      "https://saaleweb.de/kostenlose-website-analyse",
+      "https://saaleweb.de/en/free-website-audit",
+      "https://saaleweb.de/ru/besplatnyy-audit-sayta",
+      "https://saaleweb.de/impressum",
+      "https://saaleweb.de/en/imprint",
+      "https://saaleweb.de/ru/impressum",
+      "https://saaleweb.de/datenschutz",
+      "https://saaleweb.de/en/privacy-policy",
+      "https://saaleweb.de/ru/datenschutz",
+      "https://saaleweb.de/standorte/halle",
+      "https://saaleweb.de/en/locations/halle",
+      "https://saaleweb.de/ru/goroda/halle",
+      "https://saaleweb.de/standorte/leipzig",
+      "https://saaleweb.de/en/locations/leipzig",
+      "https://saaleweb.de/ru/goroda/leipzig",
+      "https://saaleweb.de/standorte/merseburg",
+      "https://saaleweb.de/en/locations/merseburg",
+      "https://saaleweb.de/ru/goroda/merseburg",
+      "https://saaleweb.de/standorte/schkeuditz",
+      "https://saaleweb.de/en/locations/schkeuditz",
+      "https://saaleweb.de/ru/goroda/schkeuditz",
+      "https://saaleweb.de/standorte/delitzsch",
+      "https://saaleweb.de/en/locations/delitzsch",
+      "https://saaleweb.de/ru/goroda/delitzsch",
+      "https://saaleweb.de/standorte/saalekreis",
+      "https://saaleweb.de/en/locations/saalekreis",
+      "https://saaleweb.de/ru/goroda/saalekreis",
+      "https://saaleweb.de/leistungen/website-erstellen-lassen",
+      "https://saaleweb.de/en/services/website-development",
+      "https://saaleweb.de/ru/uslugi/razrabotka-saytov",
+      "https://saaleweb.de/leistungen/webdesign-halle",
+      "https://saaleweb.de/en/services/web-design-halle",
+      "https://saaleweb.de/ru/uslugi/webdesign-halle",
+      "https://saaleweb.de/leistungen/seo-halle",
+      "https://saaleweb.de/en/services/seo-halle",
+      "https://saaleweb.de/ru/uslugi/seo-halle",
+      "https://saaleweb.de/leistungen/wordpress-agentur-halle",
+      "https://saaleweb.de/en/services/wordpress-agency-halle",
+      "https://saaleweb.de/ru/uslugi/wordpress-agentstvo-halle",
+      "https://saaleweb.de/leistungen/webdesign-leipzig",
+      "https://saaleweb.de/en/services/web-design-leipzig",
+      "https://saaleweb.de/ru/uslugi/webdesign-leipzig",
+      "https://saaleweb.de/leistungen/seo-leipzig",
+      "https://saaleweb.de/en/services/seo-leipzig",
+      "https://saaleweb.de/ru/uslugi/seo-leipzig",
+      "https://saaleweb.de/leistungen/webdesign-merseburg",
+      "https://saaleweb.de/en/services/web-design-merseburg",
+      "https://saaleweb.de/ru/uslugi/webdesign-merseburg",
+      "https://saaleweb.de/leistungen/seo-merseburg",
+      "https://saaleweb.de/en/services/seo-merseburg",
+      "https://saaleweb.de/ru/uslugi/seo-merseburg",
+      "https://saaleweb.de/leistungen/webdesign-schkeuditz",
+      "https://saaleweb.de/en/services/web-design-schkeuditz",
+      "https://saaleweb.de/ru/uslugi/webdesign-schkeuditz",
+      "https://saaleweb.de/leistungen/seo-schkeuditz",
+      "https://saaleweb.de/en/services/seo-schkeuditz",
+      "https://saaleweb.de/ru/uslugi/seo-schkeuditz",
+      "https://saaleweb.de/leistungen/webdesign-delitzsch",
+      "https://saaleweb.de/en/services/web-design-delitzsch",
+      "https://saaleweb.de/ru/uslugi/webdesign-delitzsch",
+      "https://saaleweb.de/leistungen/seo-delitzsch",
+      "https://saaleweb.de/en/services/seo-delitzsch",
+      "https://saaleweb.de/ru/uslugi/seo-delitzsch",
+      "https://saaleweb.de/leistungen/webdesign-saalekreis",
+      "https://saaleweb.de/en/services/web-design-saalekreis",
+      "https://saaleweb.de/ru/uslugi/webdesign-saalekreis",
+      "https://saaleweb.de/leistungen/seo-saalekreis",
+      "https://saaleweb.de/en/services/seo-saalekreis",
+      "https://saaleweb.de/ru/uslugi/seo-saalekreis",
+      "https://saaleweb.de/leistungen/ki-optimierung",
+      "https://saaleweb.de/en/services/ai-optimization",
+      "https://saaleweb.de/ru/uslugi/optimizaciya-pod-ii",
+      "https://saaleweb.de/leistungen/wordpress-website-modernisieren",
+      "https://saaleweb.de/en/services/wordpress-website-modernization",
+      "https://saaleweb.de/ru/uslugi/modernizaciya-wordpress-sayta",
+      "https://saaleweb.de/leistungen/website-relaunch",
+      "https://saaleweb.de/en/services/website-relaunch",
+      "https://saaleweb.de/ru/uslugi/relonch-sajta",
+      "https://saaleweb.de/leistungen/performance-optimierung",
+      "https://saaleweb.de/en/services/performance-optimization",
+      "https://saaleweb.de/ru/uslugi/optimizaciya-proizvoditelnosti",
+      "https://saaleweb.de/leistungen/website-wartung",
+      "https://saaleweb.de/en/services/website-maintenance",
+      "https://saaleweb.de/ru/uslugi/podderzhka-saytov",
+      "https://saaleweb.de/leistungen/buchungssysteme",
+      "https://saaleweb.de/en/services/booking-systems",
+      "https://saaleweb.de/ru/uslugi/sistemy-bronirovaniya",
+      "https://saaleweb.de/leistungen/online-shop-erstellen",
+      "https://saaleweb.de/en/services/online-shop-development",
+      "https://saaleweb.de/ru/uslugi/sozdanie-internet-magazina",
+      "https://saaleweb.de/leistungen/ki-assistent",
+      "https://saaleweb.de/en/services/ai-assistant",
+      "https://saaleweb.de/ru/uslugi/ai-assistent",
+      "https://saaleweb.de/leistungen/automatisierung",
+      "https://saaleweb.de/en/services/automation",
+      "https://saaleweb.de/ru/uslugi/avtomatizaciya",
+      "https://saaleweb.de/leistungen/api-integrationen",
+      "https://saaleweb.de/en/services/api-integrations",
+      "https://saaleweb.de/ru/uslugi/api-integracii",
+      "https://saaleweb.de/leistungen/website-sicherheit",
+      "https://saaleweb.de/en/services/website-security",
+      "https://saaleweb.de/ru/uslugi/bezopasnost-sayta",
+      "https://saaleweb.de/leistungen/datenanalyse",
+      "https://saaleweb.de/en/services/data-analytics",
+      "https://saaleweb.de/ru/uslugi/analitika-dannyh",
+      "https://saaleweb.de/leistungen/shop-produktimport",
+      "https://saaleweb.de/en/services/shop-product-import",
+      "https://saaleweb.de/ru/uslugi/import-tovarov",
+      "https://saaleweb.de/branchen/restaurant-website",
+      "https://saaleweb.de/en/industries/restaurant-website",
+      "https://saaleweb.de/ru/otrasli/sayt-dlya-restorana",
+      "https://saaleweb.de/branchen/hotel-website",
+      "https://saaleweb.de/en/industries/hotel-website",
+      "https://saaleweb.de/ru/otrasli/sayt-dlya-otelya",
+      "https://saaleweb.de/branchen/beauty-studio-website",
+      "https://saaleweb.de/en/industries/beauty-studio-website",
+      "https://saaleweb.de/ru/otrasli/sayt-dlya-salona-krasoty",
+      "https://saaleweb.de/branchen/bauunternehmen-website",
+      "https://saaleweb.de/en/industries/construction-company-website",
+      "https://saaleweb.de/ru/otrasli/sayt-dlya-stroitelnoy-kompanii",
+      "https://saaleweb.de/branchen/handwerker-website",
+      "https://saaleweb.de/en/industries/craftsmen-website",
+      "https://saaleweb.de/ru/otrasli/sayt-dlya-masterov",
+      "https://saaleweb.de/branchen/glaserei-website",
+      "https://saaleweb.de/en/industries/glazier-website",
+      "https://saaleweb.de/ru/otrasli/sayt-dlya-stekolnoy-masterskoy",
+      "https://saaleweb.de/branchen/dienstleister-website",
+      "https://saaleweb.de/en/industries/service-provider-website",
+      "https://saaleweb.de/ru/otrasli/sayt-dlya-sfery-uslug",
+      "https://saaleweb.de/blog/lokales-seo-halle",
+      "https://saaleweb.de/en/blog/local-seo-halle",
+      "https://saaleweb.de/ru/blog/lokalnoe-seo-halle",
+      "https://saaleweb.de/blog/sichtbarkeit-in-ki-suche",
+      "https://saaleweb.de/en/blog/ai-search-visibility",
+      "https://saaleweb.de/ru/blog/vidimost-v-ai-poiske",
+      "https://saaleweb.de/blog/was-kostet-eine-website-in-halle",
+      "https://saaleweb.de/en/blog/website-cost-in-halle",
+      "https://saaleweb.de/ru/blog/skolko-stoit-sajt-v-halle",
+      "https://saaleweb.de/blog/restaurant-website-mehr-reservierungen",
+      "https://saaleweb.de/en/blog/restaurant-website-more-reservations",
+      "https://saaleweb.de/ru/blog/sajt-restorana-bolshe-bronirovanij",
+      "https://saaleweb.de/blog/website-relaunch-checkliste",
+      "https://saaleweb.de/en/blog/website-relaunch-checklist",
+      "https://saaleweb.de/ru/blog/relonch-sajta-checklist",
+      "https://saaleweb.de/blog/google-unternehmensprofil-optimieren",
+      "https://saaleweb.de/en/blog/optimize-google-business-profile",
+      "https://saaleweb.de/ru/blog/optimizaciya-google-biznes-profilya",
+      "https://saaleweb.de/blog/nextjs-vs-wordpress",
+      "https://saaleweb.de/en/blog/nextjs-vs-wordpress",
+      "https://saaleweb.de/ru/blog/nextjs-vs-wordpress",
+      "https://saaleweb.de/blog/kategorie/seo",
+      "https://saaleweb.de/en/blog/category/seo",
+      "https://saaleweb.de/ru/blog/kategoriya/seo",
+      "https://saaleweb.de/blog/kategorie/webdesign",
+      "https://saaleweb.de/en/blog/category/web-design",
+      "https://saaleweb.de/ru/blog/kategoriya/veb-dizajn",
+      "https://saaleweb.de/blog/kategorie/ki-suche",
+      "https://saaleweb.de/en/blog/category/ai-search",
+      "https://saaleweb.de/ru/blog/kategoriya/ii-i-poisk",
+      "https://saaleweb.de/blog/kategorie/praxis",
+      "https://saaleweb.de/en/blog/category/business-growth",
+      "https://saaleweb.de/ru/blog/kategoriya/rost-biznesa",
+      "https://saaleweb.de/ru/uslugi/razrabotka-sajtov",
+      "https://saaleweb.de/en/services/web-development",
+      "https://saaleweb.de/ru/uslugi/seo-optimizaciya",
+      "https://saaleweb.de/en/services/seo-optimization",
+      "https://saaleweb.de/leistungen/seo-optimierung",
+      "https://saaleweb.de/ru/uslugi/lokalnoe-seo",
+      "https://saaleweb.de/en/services/local-seo",
+      "https://saaleweb.de/leistungen/local-seo",
+      "https://saaleweb.de/ru/uslugi/integraciya-ii",
+      "https://saaleweb.de/en/services/ai-integration",
+      "https://saaleweb.de/leistungen/ki-integration",
+      "https://saaleweb.de/ru/uslugi/hosting",
+      "https://saaleweb.de/en/services/hosting",
+      "https://saaleweb.de/leistungen/hosting",
+      "https://saaleweb.de/ru/uslugi/podderzhka",
+      "https://saaleweb.de/en/services/maintenance",
+      "https://saaleweb.de/ru/uslugi/cifrovoj-konsalting",
+      "https://saaleweb.de/en/services/digital-consulting",
+      "https://saaleweb.de/leistungen/digitalberatung",
+      "https://saaleweb.de/branchen/arztpraxen",
+      "https://saaleweb.de/en/industries/medical-practices",
+      "https://saaleweb.de/ru/otrasli/medcentry",
+      "https://saaleweb.de/branchen/immobilien",
+      "https://saaleweb.de/en/industries/real-estate",
+      "https://saaleweb.de/ru/otrasli/nedvizhimost",
+      "https://saaleweb.de/branchen/kanzleien",
+      "https://saaleweb.de/en/industries/law-firms",
+      "https://saaleweb.de/ru/otrasli/yuristy",
+      "https://saaleweb.de/ru/proekty/neue-liebe-nebra",
+      "https://saaleweb.de/en/projects/neue-liebe-nebra",
+      "https://saaleweb.de/projekte/neue-liebe-nebra",
+      "https://saaleweb.de/ru/proekty/pryamye-broni-bez-agregatorov",
+      "https://saaleweb.de/en/projects/direct-bookings-without-portals",
+      "https://saaleweb.de/projekte/direktbuchungen-ohne-portale",
+      "https://saaleweb.de/ru/proekty/kvalificirovannye-zayavki",
+      "https://saaleweb.de/projekte/qualifizierte-bauanfragen",
+      "https://saaleweb.de/en/projects/qualified-construction-leads",
+      "https://saaleweb.de/en/projects/glaserei-schubert",
+      "https://saaleweb.de/ru/proekty/glaserei-schubert",
+      "https://saaleweb.de/projekte/glaserei-schubert",
+      "https://saaleweb.de/ru/proekty/onlajn-zapisi-vyrosli-vtroe",
+      "https://saaleweb.de/projekte/online-buchungen-verdreifacht",
+      "https://saaleweb.de/en/projects/online-bookings-tripled"
+    ]
+  },
+  "robots": {
+    "status": 200,
+    "body": "User-Agent: OAI-SearchBot\nUser-Agent: ChatGPT-User\nUser-Agent: GPTBot\nUser-Agent: ClaudeBot\nUser-Agent: Claude-User\nUser-Agent: Claude-SearchBot\nUser-Agent: PerplexityBot\nUser-Agent: Perplexity-User\nUser-Agent: Google-Extended\nUser-Agent: Applebot\nUser-Agent: Applebot-Extended\nUser-Agent: Bytespider\nAllow: /\nDisallow: /api/\nDisallow: /admin/\n\nUser-Agent: *\nAllow: /\nDisallow: /api/\nDisallow: /admin/\n\nSitemap: https://saaleweb.de/sitemap.xml\n"
+  },
+  "comparison": [
+    {
+      "path": "/",
+      "metadataPreserved": true,
+      "liveMetadataSame": true,
+      "entitiesPreserved": true,
+      "lostInternalLinks": [],
+      "lostLiveLinks": [],
+      "htmlGrowthBytes": 28506,
+      "faqAdded": 4
+    },
+    {
+      "path": "/en",
+      "metadataPreserved": true,
+      "liveMetadataSame": true,
+      "entitiesPreserved": true,
+      "lostInternalLinks": [],
+      "lostLiveLinks": [],
+      "htmlGrowthBytes": 27228,
+      "faqAdded": 4
+    },
+    {
+      "path": "/ru",
+      "metadataPreserved": true,
+      "liveMetadataSame": true,
+      "entitiesPreserved": true,
+      "lostInternalLinks": [],
+      "lostLiveLinks": [],
+      "htmlGrowthBytes": 35449,
+      "faqAdded": 4
+    }
+  ]
+}

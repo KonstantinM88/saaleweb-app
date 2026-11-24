@@ -1,0 +1,130 @@
+{
+  "checkedAt": "2026-11-18T02:33:23.424Z",
+  "initialMobileIssue": "RU 320 px: 11 px document overflow in existing service detail cards; fixed with min-w-0 and word wrapping",
+  "checks": [
+    {
+      "check": "Malformed Wartung browser redirect preserves query",
+      "url": "http://localhost:3198/leistungen/website-wartung?utm_source=url-integrity&check=1",
+      "h1": "Website Wartung & Betreuung – zuverlässig, transparent und langfristig gedacht"
+    },
+    {
+      "clientWidth": 1425,
+      "restoredLinks": [
+        {
+          "href": "/en/services/web-development",
+          "rect": {
+            "height": 149.75,
+            "width": 209.921875,
+            "x": 813.65625,
+            "y": 397.3125
+          },
+          "text": "Website development & handoverDesign, implementation and an editable website for your business, with scope and handover agreed in advance."
+        },
+        {
+          "href": "/en/services/maintenance",
+          "rect": {
+            "height": 149.75,
+            "width": 209.921875,
+            "x": 1035.578125,
+            "y": 397.3125
+          },
+          "text": "Support for an existing websiteUpdates, backups, function checks and ongoing improvements within an agreed maintenance scope."
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://localhost:3198/en/services",
+      "width": 1440
+    },
+    {
+      "clientWidth": 375,
+      "restoredLinks": [
+        {
+          "href": "/en/services/web-development",
+          "text": "Website development & handoverDesign, implementation and an editable website for your business, with scope and handover agreed in advance.",
+          "width": 277
+        },
+        {
+          "href": "/en/services/maintenance",
+          "text": "Support for an existing websiteUpdates, backups, function checks and ongoing improvements within an agreed maintenance scope.",
+          "width": 277
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://localhost:3198/en/services",
+      "width": 390
+    },
+    {
+      "clientWidth": 305,
+      "restoredLinks": [
+        {
+          "href": "/ru/uslugi/razrabotka-sajtov",
+          "text": "Разработка и передача сайтаДизайн, реализация и редактируемый сайт для компании с согласованным объёмом работ и передачей проекта.",
+          "width": 243.5
+        },
+        {
+          "href": "/ru/uslugi/podderzhka",
+          "text": "Поддержка существующего сайтаОбновления, резервные копии, проверка функций и развитие сайта в согласованном объёме сопровождения.",
+          "width": 243.5
+        }
+      ],
+      "scrollWidth": 316,
+      "url": "http://localhost:3198/ru/uslugi",
+      "width": 320
+    },
+    {
+      "clientWidth": 1425,
+      "scrollWidth": 1425,
+      "url": "http://localhost:3198/ru/uslugi",
+      "width": 1440
+    },
+    {
+      "clientWidth": 305,
+      "phase": "final build",
+      "scrollWidth": 305,
+      "url": "http://localhost:3198/ru/uslugi",
+      "width": 320
+    },
+    {
+      "clientWidth": 305,
+      "phase": "final build",
+      "scrollWidth": 305,
+      "url": "http://localhost:3198/leistungen",
+      "width": 320
+    },
+    {
+      "clientWidth": 1425,
+      "phase": "final build",
+      "scrollWidth": 1425,
+      "url": "http://localhost:3198/leistungen",
+      "width": 1440
+    },
+    {
+      "clientWidth": 305,
+      "phase": "final build",
+      "scrollWidth": 305,
+      "url": "http://localhost:3198/en/services",
+      "width": 320
+    },
+    {
+      "clientWidth": 375,
+      "phase": "final build",
+      "scrollWidth": 375,
+      "url": "http://localhost:3198/en/services",
+      "width": 390
+    },
+    {
+      "clientWidth": 1425,
+      "phase": "final build",
+      "scrollWidth": 1425,
+      "url": "http://localhost:3198/en/services",
+      "width": 1440
+    },
+    {
+      "clientWidth": 1425,
+      "phase": "final build",
+      "scrollWidth": 1425,
+      "url": "http://localhost:3198/ru/uslugi",
+      "width": 1440
+    }
+  ]
+}
