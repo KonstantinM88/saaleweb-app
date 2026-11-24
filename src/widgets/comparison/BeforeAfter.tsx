@@ -36,7 +36,7 @@ export function BeforeAfter({ copy }: { copy: RelaunchDemoCopy }) {
     <div className="flex flex-wrap items-center justify-between gap-3 border-b border-line px-4 py-4 sm:px-7">
       <span className="flex items-center gap-2 font-mono text-[11px] font-semibold uppercase tracking-[0.12em] text-[#6D28D9]"><Sparkles size={15} aria-hidden />{copy.label}</span>
       <div role="group" aria-label={copy.title} className="flex rounded-xl bg-[#f2f0f6] p-1">
-        {[false, true].map(value => <button key={String(value)} type="button" aria-pressed={modern === value} onClick={() => { setModern(value); reset(); }} className={cn("min-h-11 rounded-lg px-4 text-sm font-bold transition", modern === value ? "bg-white text-dark shadow-sm" : "text-muted hover:text-dark", focusClass)}>{value ? copy.after : copy.before}</button>)}
+        {[false, true].map(value => <button key={String(value)} type="button" aria-pressed={modern === value} onClick={() => { setModern(value); reset(); }} className={cn("min-h-11 rounded-lg px-4 text-sm font-bold transition", modern === value ? "bg-white text-dark shadow-sm" : "text-gray-700 hover:text-dark", focusClass)}>{value ? copy.after : copy.before}</button>)}
       </div>
     </div>
     <div className="grid lg:grid-cols-[0.8fr_1.5fr]">

@@ -1,0 +1,449 @@
+{
+  "checkedAt": "2026-11-24T23:10:54.912Z",
+  "htmlDelayMs": 3000,
+  "fontDelayMs": 1800,
+  "cssOverride": false,
+  "cases": [
+    {
+      "label": "DE 412x823",
+      "clientWidth": 397,
+      "fieldBottom": "-160px",
+      "fieldTop": "-160px",
+      "probe": {
+        "cls": 0.00038657549127822655,
+        "entries": [
+          {
+            "at": 4600.099999904633,
+            "sources": [
+              {
+                "className": "flex items-center gap-3.5 max-[359px]:gap-1.5",
+                "current": {
+                  "height": 42,
+                  "width": 150,
+                  "x": 223,
+                  "y": 15
+                },
+                "id": "",
+                "node": "DIV",
+                "previous": {
+                  "height": 42,
+                  "width": 150,
+                  "x": 238,
+                  "y": 15
+                }
+              }
+            ],
+            "value": 0.00038657549127822655
+          }
+        ],
+        "snapshots": [
+          {
+            "at": 3857.699999809265,
+            "field": {
+              "height": 1301.9964599609375,
+              "width": 525.619384765625,
+              "x": -63.11859130859375,
+              "y": -90.9339599609375
+            },
+            "fonts": "loaded",
+            "hero": {
+              "height": 978.0625,
+              "width": 397,
+              "x": 0,
+              "y": 73
+            },
+            "label": "DOMContentLoaded"
+          },
+          {
+            "at": 6444,
+            "field": {
+              "height": 1312.698486328125,
+              "width": 529.9398803710938,
+              "x": -62.038482666015625,
+              "y": -101.63604736328124
+            },
+            "fonts": "loading",
+            "hero": {
+              "height": 978.0625,
+              "width": 397,
+              "x": 0,
+              "y": 73
+            },
+            "label": "load"
+          },
+          {
+            "at": 6526.400000095367,
+            "field": {
+              "height": 1312.698486328125,
+              "width": 529.9398803710938,
+              "x": -62.038482666015625,
+              "y": -101.63604736328124
+            },
+            "fonts": "loaded",
+            "hero": {
+              "height": 978.0625,
+              "width": 397,
+              "x": 0,
+              "y": 73
+            },
+            "label": "fonts-ready"
+          },
+          {
+            "at": 13072.599999904633,
+            "field": {
+              "height": 1345.040771484375,
+              "width": 542.9964599609375,
+              "x": -58.7742919921875,
+              "y": -133.97821044921875
+            },
+            "fonts": "loaded",
+            "hero": {
+              "height": 978.0625,
+              "width": 397,
+              "x": 0,
+              "y": 73
+            },
+            "label": "settled"
+          }
+        ]
+      },
+      "scrollWidth": 397,
+      "width": 412
+    },
+    {
+      "label": "RU 320x823",
+      "clientWidth": 305,
+      "fieldBottom": "-160px",
+      "fieldTop": "-160px",
+      "probe": {
+        "cls": 0.0005214793914834568,
+        "entries": [
+          {
+            "at": 4275.800000190735,
+            "sources": [
+              {
+                "className": "flex items-center gap-1 rounded-full border border-line/80 bg-white/85 p-1 shadow-[0_10px_28px_rgba(15,23,42,0.08)] backdrop-blur-xl transition-opacity data-[pending=true]:opacity-70 max-[359px]:gap-0.5 max-[359px]:p-0.5",
+                "current": {
+                  "height": 105,
+                  "width": 170.96875,
+                  "x": 134.03125,
+                  "y": 0
+                },
+                "id": "",
+                "node": "DIV",
+                "previous": {
+                  "height": 105,
+                  "width": 164.96875,
+                  "x": 140.03125,
+                  "y": 0
+                }
+              }
+            ],
+            "value": 0.0005214793914834568
+          }
+        ],
+        "snapshots": [
+          {
+            "at": 3322.6000003814697,
+            "field": {
+              "height": 1376.2274169921875,
+              "width": 404.0919494628906,
+              "x": -48.422332763671875,
+              "y": -92.1024169921875
+            },
+            "fonts": "loaded",
+            "hero": {
+              "height": 1051.125,
+              "width": 305,
+              "x": 0,
+              "y": 73
+            },
+            "label": "DOMContentLoaded"
+          },
+          {
+            "at": 6089.10000038147,
+            "field": {
+              "height": 1388.5999755859375,
+              "width": 407.7247924804687,
+              "x": -47.51411437988281,
+              "y": -104.4749755859375
+            },
+            "fonts": "loading",
+            "hero": {
+              "height": 1051.125,
+              "width": 305,
+              "x": 0,
+              "y": 73
+            },
+            "label": "load"
+          },
+          {
+            "at": 6184.900000095367,
+            "field": {
+              "height": 1388.5999755859375,
+              "width": 407.7247924804687,
+              "x": -47.51411437988281,
+              "y": -104.4749755859375
+            },
+            "fonts": "loaded",
+            "hero": {
+              "height": 1051.125,
+              "width": 305,
+              "x": 0,
+              "y": 73
+            },
+            "label": "fonts-ready"
+          },
+          {
+            "at": 12287.900000095367,
+            "field": {
+              "height": 1422.659912109375,
+              "width": 417.7255859375,
+              "x": -45.01393127441406,
+              "y": -138.53485107421875
+            },
+            "fonts": "loaded",
+            "hero": {
+              "height": 1051.125,
+              "width": 305,
+              "x": 0,
+              "y": 73
+            },
+            "label": "settled"
+          }
+        ]
+      },
+      "scrollWidth": 305,
+      "width": 320
+    },
+    {
+      "label": "EN 390x844",
+      "clientWidth": 375,
+      "fieldBottom": "-160px",
+      "fieldTop": "-160px",
+      "probe": {
+        "cls": 0.0003891422025560971,
+        "entries": [
+          {
+            "at": 3835,
+            "sources": [
+              {
+                "className": "flex items-center gap-3.5 max-[359px]:gap-1.5",
+                "current": {
+                  "height": 42,
+                  "width": 150,
+                  "x": 201,
+                  "y": 15
+                },
+                "id": "",
+                "node": "DIV",
+                "previous": {
+                  "height": 42,
+                  "width": 150,
+                  "x": 216,
+                  "y": 15
+                }
+              }
+            ],
+            "value": 0.0003891422025560971
+          }
+        ],
+        "snapshots": [
+          {
+            "at": 3273.1000003814697,
+            "field": {
+              "height": 1265.181884765625,
+              "width": 496.86322021484375,
+              "x": -59.53419494628906,
+              "y": -91.74444580078124
+            },
+            "fonts": "loaded",
+            "hero": {
+              "height": 940.4375,
+              "width": 375,
+              "x": 0,
+              "y": 73
+            },
+            "label": "DOMContentLoaded"
+          },
+          {
+            "at": 5651.900000095367,
+            "field": {
+              "height": 1274.74072265625,
+              "width": 500.6171569824219,
+              "x": -58.595703125,
+              "y": -101.30316162109376
+            },
+            "fonts": "loading",
+            "hero": {
+              "height": 940.4375,
+              "width": 375,
+              "x": 0,
+              "y": 73
+            },
+            "label": "load"
+          },
+          {
+            "at": 5719,
+            "field": {
+              "height": 1274.74072265625,
+              "width": 500.6171569824219,
+              "x": -58.595703125,
+              "y": -101.30316162109376
+            },
+            "fonts": "loaded",
+            "hero": {
+              "height": 940.4375,
+              "width": 375,
+              "x": 0,
+              "y": 73
+            },
+            "label": "fonts-ready"
+          },
+          {
+            "at": 12242.200000286102,
+            "field": {
+              "height": 1306.935546875,
+              "width": 513.2607421875,
+              "x": -55.434814453125,
+              "y": -133.498046875
+            },
+            "fonts": "loaded",
+            "hero": {
+              "height": 940.4375,
+              "width": 375,
+              "x": 0,
+              "y": 73
+            },
+            "label": "settled"
+          }
+        ]
+      },
+      "scrollWidth": 375,
+      "width": 390
+    },
+    {
+      "label": "DE 1440x1000",
+      "clientWidth": 1425,
+      "fieldBottom": "-160px",
+      "fieldTop": "-160px",
+      "probe": {
+        "cls": 0.0003436712834718375,
+        "entries": [
+          {
+            "at": 4163.799999713898,
+            "sources": [
+              {
+                "className": "mx-auto w-full max-w-container px-6 flex h-[72px] items-center justify-between max-[359px]:px-4",
+                "current": {
+                  "height": 72,
+                  "width": 1180,
+                  "x": 122.5,
+                  "y": 0
+                },
+                "id": "",
+                "node": "DIV",
+                "previous": {
+                  "height": 72,
+                  "width": 1180,
+                  "x": 130,
+                  "y": 0
+                }
+              },
+              {
+                "className": "flex items-center gap-1 rounded-full border border-line/80 bg-white/85 p-1 shadow-[0_10px_28px_rgba(15,23,42,0.08)] backdrop-blur-xl transition-opacity data-[pending=true]:opacity-70 max-[359px]:gap-0.5 max-[359px]:p-0.5",
+                "current": {
+                  "height": 109,
+                  "width": 198,
+                  "x": 972.765625,
+                  "y": 0
+                },
+                "id": "",
+                "node": "DIV",
+                "previous": {
+                  "height": 109,
+                  "width": 198,
+                  "x": 979.765625,
+                  "y": 0
+                }
+              }
+            ],
+            "value": 0.0003436712834718375
+          }
+        ],
+        "snapshots": [
+          {
+            "at": 3396.900000095367,
+            "field": {
+              "height": 1011.361328125,
+              "width": 1887.447998046875,
+              "x": -226.387939453125,
+              "y": -90.45510864257812
+            },
+            "fonts": "loaded",
+            "hero": {
+              "height": 687.90625,
+              "width": 1425,
+              "x": 0,
+              "y": 73
+            },
+            "label": "DOMContentLoaded"
+          },
+          {
+            "at": 6056,
+            "field": {
+              "height": 1019.7083740234376,
+              "width": 1903.0257568359375,
+              "x": -222.4935302734375,
+              "y": -98.80215454101562
+            },
+            "fonts": "loading",
+            "hero": {
+              "height": 687.90625,
+              "width": 1425,
+              "x": 0,
+              "y": 73
+            },
+            "label": "load"
+          },
+          {
+            "at": 6135.400000095367,
+            "field": {
+              "height": 1019.7083740234376,
+              "width": 1903.0257568359375,
+              "x": -222.4935302734375,
+              "y": -98.80215454101562
+            },
+            "fonts": "loaded",
+            "hero": {
+              "height": 687.90625,
+              "width": 1425,
+              "x": 0,
+              "y": 73
+            },
+            "label": "fonts-ready"
+          },
+          {
+            "at": 12425.400000095367,
+            "field": {
+              "height": 1045.2816162109375,
+              "width": 1950.7515869140625,
+              "x": -210.56201171875,
+              "y": -124.37539672851562
+            },
+            "fonts": "loaded",
+            "hero": {
+              "height": 687.90625,
+              "width": 1425,
+              "x": 0,
+              "y": 73
+            },
+            "label": "settled"
+          }
+        ]
+      },
+      "scrollWidth": 1425,
+      "width": 1440
+    }
+  ]
+}

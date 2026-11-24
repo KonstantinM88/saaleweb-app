@@ -11,9 +11,14 @@ export function ScrollProgress() {
     const update = () => {
       cancelAnimationFrame(raf);
       raf = requestAnimationFrame(() => {
+        const top = window.scrollY;
+        if (top <= 0) {
+          setP(0);
+          return;
+        }
         const el = document.documentElement;
         const max = el.scrollHeight - el.clientHeight;
-        setP(max > 0 ? Math.min(1, el.scrollTop / max) : 0);
+        setP(max > 0 ? Math.min(1, top / max) : 0);
       });
     };
     update();
@@ -29,8 +34,8 @@ export function ScrollProgress() {
   return (
     <span
       aria-hidden
-      className="absolute -bottom-px left-0 z-10 block h-[2px] rounded-r-full bg-brand"
-      style={{ width: `${p * 100}%` }}
+      className="absolute -bottom-px left-0 z-10 block h-[2px] w-full origin-left rounded-r-full bg-brand"
+      style={{ transform: `scaleX(${p})` }}
     />
   );
 }

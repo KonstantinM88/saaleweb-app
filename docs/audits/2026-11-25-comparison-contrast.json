@@ -1,0 +1,20 @@
+{
+  "computed": [
+    {
+      "background": "rgb(242, 240, 246)",
+      "color": "oklch(0.373 0.034 259.733)",
+      "fontSize": "14px",
+      "label": "Before",
+      "pressed": "false"
+    },
+    {
+      "background": "rgb(242, 240, 246)",
+      "color": "rgb(17, 24, 39)",
+      "fontSize": "14px",
+      "label": "After",
+      "pressed": "true"
+    }
+  ],
+  "inactiveContrastRatio": 9.113420227614208,
+  "required": 4.5
+}

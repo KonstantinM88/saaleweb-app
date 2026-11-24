@@ -776,7 +776,9 @@
 /* Full-surface hero gradient field */
 .hero-gradient-field {
   position: absolute;
-  inset: -16%;
+  /* Vertical percentages move the backdrop as streamed hero content arrives.
+     Keep vertical overscan independent of the section's changing height. */
+  inset: -160px -16%;
   opacity: 0.9;
   filter: saturate(1.08);
   will-change: transform;

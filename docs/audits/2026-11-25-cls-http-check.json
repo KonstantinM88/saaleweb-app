@@ -1,0 +1,39 @@
+{
+  "checkedAt": "2026-11-24T23:08:45.588Z",
+  "sitemapCount": 229,
+  "pages": [
+    {
+      "path": "/",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://saaleweb.de",
+      "faq": 28,
+      "hreflang": 4,
+      "newsletterForm": false,
+      "scrollProgressTransform": true,
+      "inactiveComparisonDarker": true
+    },
+    {
+      "path": "/en",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://saaleweb.de/en",
+      "faq": 28,
+      "hreflang": 4,
+      "newsletterForm": false,
+      "scrollProgressTransform": true,
+      "inactiveComparisonDarker": true
+    },
+    {
+      "path": "/ru",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://saaleweb.de/ru",
+      "faq": 28,
+      "hreflang": 4,
+      "newsletterForm": false,
+      "scrollProgressTransform": true,
+      "inactiveComparisonDarker": true
+    }
+  ]
+}

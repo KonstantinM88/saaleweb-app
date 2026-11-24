@@ -1,0 +1,492 @@
+{
+  "fetchedAt": "2026-11-24T22:56:44.315Z",
+  "lighthouseVersion": "13.6.0",
+  "finalUrl": "https://saaleweb.de/",
+  "categories": {
+    "performance": 0.83,
+    "accessibility": 0.97,
+    "best-practices": 1,
+    "seo": 1
+  },
+  "audits": {
+    "layout-shifts": {
+      "id": "layout-shifts",
+      "title": "Avoid large layout shifts",
+      "description": "These are the largest layout shifts observed on the page. Each table item represents a single layout shift, and shows the element that shifted the most. Below each item are possible root causes that led to the layout shift. Some of these layout shifts may not be included in the CLS metric value due to [windowing](https://web.dev/articles/cls#what_is_cls). [Learn how to improve CLS](https://web.dev/articles/optimize-cls)",
+      "score": 0,
+      "scoreDisplayMode": "metricSavings",
+      "displayValue": "1 layout shift found",
+      "metricSavings": {
+        "CLS": 0.251
+      },
+      "details": {
+        "type": "table",
+        "items": [
+          {
+            "node": {
+              "lhId": "page-1-DIV",
+              "snippet": "<div class=\"hero-gradient-field\" style=\"\">",
+              "path": "1,HTML,1,BODY,9,MAIN,0,SECTION,0,DIV,0,DIV",
+              "type": "node",
+              "selector": "main > section#top > div.pointer-events-none > div.hero-gradient-field",
+              "nodeLabel": "main > section#top > div.pointer-events-none > div.hero-gradient-field",
+              "boundingRect": {
+                "left": -61,
+                "width": 564,
+                "right": 504,
+                "top": -125,
+                "height": 1291,
+                "bottom": 1166
+              }
+            },
+            "score": 0.2506975007714124,
+            "subItems": {
+              "items": [
+                {
+                  "cause": "Web font loaded",
+                  "extra": {
+                    "value": "https://saaleweb.de/_next/static/media/e91e1ff17da97c42-s.p.woff2",
+                    "type": "url"
+                  }
+                },
+                {
+                  "cause": "Web font loaded",
+                  "extra": {
+                    "value": "https://saaleweb.de/_next/static/media/f5cb94a89b585f0b.p.woff2",
+                    "type": "url"
+                  }
+                }
+              ],
+              "type": "subitems"
+            }
+          }
+        ],
+        "headings": [
+          {
+            "valueType": "node",
+            "key": "node",
+            "subItemsHeading": {
+              "key": "extra"
+            },
+            "label": "Element"
+          },
+          {
+            "valueType": "numeric",
+            "granularity": 0.001,
+            "subItemsHeading": {
+              "key": "cause",
+              "valueType": "text"
+            },
+            "label": "Layout shift score",
+            "key": "score"
+          }
+        ]
+      }
+    },
+    "legacy-javascript-insight": {
+      "id": "legacy-javascript-insight",
+      "title": "Legacy JavaScript",
+      "description": "Polyfills and transforms enable older browsers to use new JavaScript features. However, many aren’t necessary for modern browsers. Consider modifying your JavaScript build process to not transpile [Baseline](https://web.dev/articles/baseline-and-polyfills) features, unless you know you must support older browsers. [Learn why most sites can deploy ES6+ code without transpiling](https://developer.chrome.com/docs/performance/insights/legacy-javascript).",
+      "score": 0.5,
+      "scoreDisplayMode": "metricSavings",
+      "displayValue": "Est savings of 12 KiB",
+      "metricSavings": {
+        "LCP": 0,
+        "FCP": 0
+      },
+      "details": {
+        "debugData": {
+          "wastedBytes": 12369,
+          "type": "debugdata"
+        },
+        "type": "table",
+        "headings": [
+          {
+            "valueType": "url",
+            "subItemsHeading": {
+              "valueType": "source-location",
+              "key": "location"
+            },
+            "key": "url",
+            "label": "URL"
+          },
+          {
+            "valueType": "code",
+            "subItemsHeading": {
+              "key": "signal"
+            },
+            "key": null
+          },
+          {
+            "valueType": "bytes",
+            "label": "Wasted bytes",
+            "key": "wastedBytes"
+          }
+        ],
+        "items": [
+          {
+            "wastedBytes": 12369,
+            "subItems": {
+              "items": [
+                {
+                  "location": {
+                    "column": 35349,
+                    "type": "source-location",
+                    "urlProvider": "network",
+                    "url": "https://saaleweb.de/_next/static/chunks/3794-1dd6dca93c13a9a7.js",
+                    "line": 51
+                  },
+                  "signal": "Array.prototype.at"
+                },
+                {
+                  "signal": "Array.prototype.flat",
+                  "location": {
+                    "urlProvider": "network",
+                    "line": 51,
+                    "column": 34737,
+                    "url": "https://saaleweb.de/_next/static/chunks/3794-1dd6dca93c13a9a7.js",
+                    "type": "source-location"
+                  }
+                },
+                {
+                  "signal": "Array.prototype.flatMap",
+                  "location": {
+                    "url": "https://saaleweb.de/_next/static/chunks/3794-1dd6dca93c13a9a7.js",
+                    "type": "source-location",
+                    "urlProvider": "network",
+                    "column": 34850,
+                    "line": 51
+                  }
+                },
+                {
+                  "signal": "Object.fromEntries",
+                  "location": {
+                    "urlProvider": "network",
+                    "line": 51,
+                    "column": 35226,
+                    "type": "source-location",
+                    "url": "https://saaleweb.de/_next/static/chunks/3794-1dd6dca93c13a9a7.js"
+                  }
+                },
+                {
+                  "location": {
+                    "column": 35484,
+                    "url": "https://saaleweb.de/_next/static/chunks/3794-1dd6dca93c13a9a7.js",
+                    "type": "source-location",
+                    "urlProvider": "network",
+                    "line": 51
+                  },
+                  "signal": "Object.hasOwn"
+                },
+                {
+                  "signal": "String.prototype.trimEnd",
+                  "location": {
+                    "column": 34479,
+                    "type": "source-location",
+                    "url": "https://saaleweb.de/_next/static/chunks/3794-1dd6dca93c13a9a7.js",
+                    "urlProvider": "network",
+                    "line": 51
+                  }
+                },
+                {
+                  "location": {
+                    "line": 51,
+                    "url": "https://saaleweb.de/_next/static/chunks/3794-1dd6dca93c13a9a7.js",
+                    "urlProvider": "network",
+                    "type": "source-location",
+                    "column": 34394
+                  },
+                  "signal": "String.prototype.trimStart"
+                }
+              ],
+              "type": "subitems"
+            },
+            "url": "https://saaleweb.de/_next/static/chunks/3794-1dd6dca93c13a9a7.js"
+          }
+        ]
+      },
+      "numericValue": 12369,
+      "numericUnit": "byte"
+    },
+    "color-contrast": {
+      "id": "color-contrast",
+      "title": "Background and foreground colors do not have a sufficient contrast ratio.",
+      "description": "Low-contrast text is difficult or impossible for many users to read. [Learn how to provide sufficient color contrast](https://dequeuniversity.com/rules/axe/4.14/color-contrast).",
+      "score": 0,
+      "scoreDisplayMode": "binary",
+      "details": {
+        "debugData": {
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "impact": "serious",
+          "type": "debugdata"
+        },
+        "type": "table",
+        "headings": [
+          {
+            "valueType": "node",
+            "label": "Failing Elements",
+            "key": "node",
+            "subItemsHeading": {
+              "key": "relatedNode",
+              "valueType": "node"
+            }
+          }
+        ],
+        "items": [
+          {
+            "node": {
+              "selector": "div#relaunch-demo > div.flex > div.flex > button.min-h-11",
+              "nodeLabel": "Vorher",
+              "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 4.27 (foreground color: #6b7280, background color: #f2f0f6, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "type": "node",
+              "boundingRect": {
+                "width": 79,
+                "right": 124,
+                "left": 45,
+                "top": 7834,
+                "bottom": 7878,
+                "height": 44
+              },
+              "path": "1,HTML,1,BODY,9,MAIN,4,SECTION,0,DIV,1,DIV,0,DIV,1,DIV,0,BUTTON",
+              "snippet": "<button type=\"button\" aria-pressed=\"false\" class=\"min-h-11 rounded-lg px-4 text-sm font-bold transition text-muted hover:tex…\">",
+              "lhId": "1-0-BUTTON"
+            },
+            "subItems": {
+              "items": [
+                {
+                  "relatedNode": {
+                    "type": "node",
+                    "nodeLabel": "Vorher\nNachher",
+                    "boundingRect": {
+                      "right": 219,
+                      "width": 178,
+                      "top": 7830,
+                      "left": 41,
+                      "height": 52,
+                      "bottom": 7882
+                    },
+                    "selector": "div.mx-auto > div#relaunch-demo > div.flex > div.flex",
+                    "snippet": "<div role=\"group\" aria-label=\"Erleben Sie den Unterschied. Als Ihr nächster Kunde.\" class=\"flex rounded-xl bg-[#f2f0f6] p-1\">",
+                    "path": "1,HTML,1,BODY,9,MAIN,4,SECTION,0,DIV,1,DIV,0,DIV,1,DIV",
+                    "lhId": "1-1-DIV"
+                  }
+                }
+              ],
+              "type": "subitems"
+            }
+          }
+        ]
+      }
+    },
+    "forced-reflow-insight": {
+      "id": "forced-reflow-insight",
+      "title": "Forced reflow",
+      "description": "A forced reflow occurs when JavaScript queries geometric properties (such as `offsetWidth`) after styles have been invalidated by a change to the DOM state. This can result in poor performance. Learn more about [forced reflows](https://developer.chrome.com/docs/performance/insights/forced-reflow) and possible mitigations.",
+      "score": 0,
+      "scoreDisplayMode": "numeric",
+      "details": {
+        "items": [
+          {
+            "items": [
+              {
+                "source": {
+                  "line": 1,
+                  "url": "https://saaleweb.de/_next/static/chunks/9861-4335f31c7f1be7fc.js",
+                  "column": 11161,
+                  "type": "source-location",
+                  "urlProvider": "network"
+                },
+                "reflowTime": 1.514
+              }
+            ],
+            "headings": [
+              {
+                "label": "Top function call",
+                "key": "source",
+                "valueType": "source-location"
+              },
+              {
+                "granularity": 1,
+                "valueType": "ms",
+                "label": "Total reflow time",
+                "key": "reflowTime"
+              }
+            ],
+            "type": "table"
+          },
+          {
+            "items": [
+              {
+                "reflowTime": 47.125,
+                "source": {
+                  "value": "[unattributed]",
+                  "type": "text"
+                }
+              },
+              {
+                "source": {
+                  "type": "source-location",
+                  "urlProvider": "network",
+                  "column": 14386,
+                  "url": "https://saaleweb.de/_next/static/chunks/9861-4335f31c7f1be7fc.js",
+                  "line": 0
+                },
+                "reflowTime": 1.206
+              },
+              {
+                "reflowTime": 1.514,
+                "source": {
+                  "column": 11200,
+                  "line": 0,
+                  "urlProvider": "network",
+                  "type": "source-location",
+                  "url": "https://saaleweb.de/_next/static/chunks/9861-4335f31c7f1be7fc.js"
+                }
+              },
+              {
+                "source": {
+                  "line": 909,
+                  "url": "https://www.googletagmanager.com/gtag/js?id=G-30BVTE3FPZ&cx=c&gtm=4e6bh1",
+                  "urlProvider": "network",
+                  "type": "source-location",
+                  "column": 55
+                },
+                "reflowTime": 0.696
+              }
+            ],
+            "type": "table",
+            "headings": [
+              {
+                "label": "Source",
+                "key": "source",
+                "valueType": "source-location"
+              },
+              {
+                "valueType": "ms",
+                "granularity": 1,
+                "key": "reflowTime",
+                "label": "Total reflow time"
+              }
+            ]
+          }
+        ],
+        "type": "list"
+      }
+    },
+    "cumulative-layout-shift": {
+      "id": "cumulative-layout-shift",
+      "title": "Cumulative Layout Shift",
+      "description": "Cumulative Layout Shift measures the movement of visible elements within the viewport. [Learn more about the Cumulative Layout Shift metric](https://web.dev/articles/cls).",
+      "score": 0.49,
+      "scoreDisplayMode": "numeric",
+      "displayValue": "0.251",
+      "details": {
+        "items": [
+          {
+            "newEngineResultDiffered": false,
+            "cumulativeLayoutShiftMainFrame": 0.2506975007714124
+          }
+        ],
+        "type": "debugdata"
+      },
+      "numericValue": 0.2506975007714124,
+      "numericUnit": "unitless"
+    },
+    "cls-culprits-insight": {
+      "id": "cls-culprits-insight",
+      "title": "Layout shift culprits",
+      "description": "Layout shifts occur when elements move absent any user interaction. [Investigate the causes of layout shifts](https://developer.chrome.com/docs/performance/insights/cls-culprit), such as elements being added, removed, or their fonts changing as the page loads.",
+      "score": 0,
+      "scoreDisplayMode": "numeric",
+      "metricSavings": {
+        "CLS": 0
+      },
+      "details": {
+        "items": [
+          {
+            "type": "table",
+            "items": [
+              {
+                "score": 0.2506975007714124,
+                "node": {
+                  "value": "Total",
+                  "type": "text"
+                }
+              },
+              {
+                "node": {
+                  "snippet": "<div class=\"hero-gradient-field\" style=\"\">",
+                  "selector": "main > section#top > div.pointer-events-none > div.hero-gradient-field",
+                  "type": "node",
+                  "lhId": "page-1-DIV",
+                  "boundingRect": {
+                    "left": -61,
+                    "bottom": 1166,
+                    "top": -125,
+                    "height": 1291,
+                    "width": 564,
+                    "right": 504
+                  },
+                  "nodeLabel": "main > section#top > div.pointer-events-none > div.hero-gradient-field",
+                  "path": "1,HTML,1,BODY,9,MAIN,0,SECTION,0,DIV,0,DIV"
+                },
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "extra": {
+                        "value": "https://saaleweb.de/_next/static/media/e91e1ff17da97c42-s.p.woff2",
+                        "type": "url"
+                      },
+                      "cause": "Web font"
+                    },
+                    {
+                      "extra": {
+                        "type": "url",
+                        "value": "https://saaleweb.de/_next/static/media/f5cb94a89b585f0b.p.woff2"
+                      },
+                      "cause": "Web font"
+                    }
+                  ]
+                },
+                "score": 0.2506975007714124
+              }
+            ],
+            "headings": [
+              {
+                "valueType": "node",
+                "label": "Element",
+                "key": "node",
+                "subItemsHeading": {
+                  "key": "extra"
+                }
+              },
+              {
+                "granularity": 0.001,
+                "key": "score",
+                "label": "Layout shift score",
+                "subItemsHeading": {
+                  "key": "cause",
+                  "valueType": "text"
+                },
+                "valueType": "numeric"
+              }
+            ]
+          }
+        ],
+        "type": "list"
+      }
+    }
+  }
+}

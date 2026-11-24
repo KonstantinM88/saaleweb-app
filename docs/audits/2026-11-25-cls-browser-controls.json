@@ -1,0 +1,17 @@
+{
+  "top": {
+    "overflow": 0,
+    "progress": "transform: scaleX(0);",
+    "top": 0
+  },
+  "bottom": {
+    "cookieButtons": 0,
+    "max": 18091,
+    "progress": "transform: scaleX(1);",
+    "top": 18091
+  },
+  "englishKeyboardAfter": true,
+  "germanKeyboardAfter": true,
+  "bothInactiveColorsVerified": true,
+  "contrastRatio": 9.113420227614208
+}
