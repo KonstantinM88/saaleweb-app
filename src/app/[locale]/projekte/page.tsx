@@ -21,6 +21,7 @@ import { breadcrumbSchema, collectionPageSchema, itemListSchema } from "@/shared
 import { buildMetadata } from "@/shared/seo/metadata";
 import { getContactHref } from "@/shared/lib/contactHref";
 import { getProjectFocusBySlug } from "@/features/projects/projectFocus";
+import { getCodeProjectCards, isCodeProjectSlug } from "@/features/projects/codeProjects";
 
 export const revalidate = 300;
 
@@ -39,7 +40,7 @@ async function getItems(locale: AppLocale): Promise<ProjectCard[]> {
       },
     });
 
-    return rows.flatMap((row) => {
+    const dbItems = rows.flatMap((row) => {
       const translation = row.translations[0];
       if (!translation) return [];
 
@@ -56,8 +57,9 @@ async function getItems(locale: AppLocale): Promise<ProjectCard[]> {
         },
       ];
     });
+    return [...dbItems.filter((item) => !isCodeProjectSlug(item.slug)), ...getCodeProjectCards(locale)];
   } catch {
-    return [];
+    return getCodeProjectCards(locale);
   }
 }
 

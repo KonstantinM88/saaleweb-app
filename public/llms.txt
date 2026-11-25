@@ -36,6 +36,7 @@ Diese Datei ist ein kurzer Wegweiser zu öffentlichen SaaleWeb-Seiten. [Ausführ
 - [Salon Elen / Permanent Halle](https://saaleweb.de/projekte/online-buchungen-verdreifacht): Leistungsdarstellung und digitaler Terminweg; der historische URL-Slug belegt keine Verdreifachung.
 - [SorgfaltBau](https://saaleweb.de/projekte/qualifizierte-bauanfragen): Leistungsseiten und Anfragewege für Baukunden; keine unbelegten Rang- oder Leadzahlen.
 - [Neue Liebe Nebra](https://saaleweb.de/projekte/neue-liebe-nebra): Restaurant-Website mit Menü und Reservierungsweg.
+- [Onebbau](https://saaleweb.de/projekte/onebbau): Veröffentlichte Bau- und Handwerkswebsite aus Halle mit Leistungsseiten, Projektgalerie und Kontaktwegen; [Live-Website](https://www.onebbau.de/).
 - [Waldschlösschen](https://saaleweb.de/projekte/direktbuchungen-ohne-portale) und [Glaserei Schubert](https://saaleweb.de/projekte/glaserei-schubert): Interaktive Projektvorschauen, keine gemessenen Betriebsergebnisse.
 
 ## Weitere Quellen

@@ -1,0 +1,18 @@
+[
+  {
+    "currentSrc": "http://localhost:3000/_next/image?url=%2Fimages%2Fcases%2Fonebbau-monitor-phone-v1.webp&w=384&q=75",
+    "loaded": true,
+    "overflow": false,
+    "path": "/projekte",
+    "src": "/_next/image?url=%2Fimages%2Fcases%2Fonebbau-monitor-phone-v1.webp&w=3840&q=75",
+    "width": 1280
+  },
+  {
+    "currentSrc": "http://localhost:3000/_next/image?url=%2Fimages%2Fcases%2Fonebbau-monitor-phone-v1.webp&w=640&q=75",
+    "loaded": true,
+    "overflow": false,
+    "path": "/projekte",
+    "src": "/_next/image?url=%2Fimages%2Fcases%2Fonebbau-monitor-phone-v1.webp&w=3840&q=75",
+    "width": 390
+  }
+]

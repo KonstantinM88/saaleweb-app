@@ -825,6 +825,24 @@
         ],
         "badge": "Projektvorschau · Handwerk / Glaserei",
         "result": "Vertrauen & lokale Sichtbarkeit"
+      },
+      {
+        "slug": "onebbau",
+        "name": "Onebbau",
+        "industry": "Bau & Handwerk · Halle (Saale)",
+        "goal": "Leistungen verständlich zeigen und den Weg zur Beratung vereinfachen",
+        "solution": "Veröffentlichte Website mit eigenen Leistungsseiten, Projektgalerie, FAQ und direkten Kontaktwegen auf Deutsch und Russisch.",
+        "benefits": [
+          "Eigene Seiten für einzelne Leistungen",
+          "Kontakt per Formular, Telefon und WhatsApp",
+          "Mobile Darstellung und DE/RU-Inhalte"
+        ],
+        "badge": "Live-Projekt · Bau & Handwerk",
+        "result": "Leistungen & Kontaktwege",
+        "liveSite": {
+          "url": "https://www.onebbau.de/",
+          "label": "Live-Website ansehen"
+        }
       }
     ],
     "items": [
@@ -907,6 +925,20 @@
     "solution": "Lösung",
     "results": "Ergebnis",
     "gallery": "Galerie",
+    "galleryViews": {
+      "title": "Ein Auftritt. Zwei Perspektiven.",
+      "intro": "Die Originalansichten der Website – auf dem großen Bildschirm und auf dem Smartphone. Öffnen Sie die Bilder, um sich die Details anzusehen.",
+      "desktop": "Desktop-Ansicht",
+      "mobile": "Mobile Ansicht",
+      "desktopDescription": "Die Website im Browser: klare Leistungen und direkte Kontaktwege.",
+      "mobileDescription": "Das eigenständige mobile Layout – vollständig im Bild.",
+      "enlarge": "{view} vergrößern",
+      "hint": "Originalaufnahmen · Zum Vergrößern anklicken",
+      "close": "Bildansicht schließen",
+      "previous": "Vorheriges Bild",
+      "next": "Nächstes Bild",
+      "original": "Original öffnen"
+    },
     "tech": "Eingesetzte Technologien",
     "result": "Ergebnis",
     "liveSite": "Live-Website ansehen",
@@ -957,6 +989,12 @@
         "goal": "Hochwertige Präsentation von Leistungen und Referenzen",
         "result": "Ein moderner Handwerksauftritt mit klarer Leistungsdarstellung und professioneller Außenwirkung.",
         "performance": "Fokus auf lokale Auffindbarkeit, klare Leistungsstruktur, mobile Lesbarkeit und vertrauensbildende Referenzen."
+      },
+      "onebbau": {
+        "industry": "Bau & Handwerk · Halle (Saale)",
+        "goal": "Leistungen verständlich zeigen und den Weg zur Beratung vereinfachen",
+        "result": "Leistungen & Kontaktwege",
+        "performance": "Responsive Darstellung und nachvollziehbare Leistungsseiten mit Halle-Bezug. Konkrete PageSpeed-Werte, Rankings oder Anfragezuwächse werden hier nicht als gemessenes Ergebnis behauptet."
       }
     }
   },

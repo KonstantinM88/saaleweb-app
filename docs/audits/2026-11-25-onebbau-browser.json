@@ -1,0 +1,52 @@
+[
+  {
+    "images": [
+      {
+        "alt": "Onebbau – Website für Bau und Handwerk in Halle · Desktop",
+        "loaded": true
+      },
+      {
+        "alt": "Onebbau – Website für Bau und Handwerk in Halle · Mobil",
+        "loaded": true
+      }
+    ],
+    "overflow": false,
+    "page": "/projekte/onebbau",
+    "width": 390
+  },
+  {
+    "heading": "Onebbau — сайт строительной компании в Галле",
+    "overflow": false,
+    "page": "/ru/proekty/onebbau",
+    "width": 390
+  },
+  {
+    "heading": "Onebbau – construction and trade website in Halle",
+    "overflow": false,
+    "page": "/en/projects/onebbau",
+    "width": 320
+  },
+  {
+    "filter": "construction",
+    "overflow": false,
+    "page": "/projekte",
+    "projects": [
+      "/projekte/qualifizierte-bauanfragen",
+      "/projekte/onebbau"
+    ],
+    "width": 1440
+  },
+  {
+    "navigationFromFilteredCard": true,
+    "overflow": false,
+    "page": "/projekte/onebbau",
+    "width": 1440
+  },
+  {
+    "detailLink": true,
+    "liveLink": true,
+    "overflow": false,
+    "page": "/",
+    "width": 1440
+  }
+]

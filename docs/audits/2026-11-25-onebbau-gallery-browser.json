@@ -1,0 +1,50 @@
+[
+  {
+    "cursor": "pointer",
+    "focus": "Bildansicht schließen",
+    "open": true,
+    "overflow": false,
+    "scrollLocked": true,
+    "step": "desktop viewer"
+  },
+  {
+    "focus": null,
+    "step": "Shift+Tab from close (native browser focus behavior)"
+  },
+  {
+    "focus": "Bildansicht schließen",
+    "step": "Tab returns to close"
+  },
+  {
+    "focus": "Desktop-Ansicht vergrößern",
+    "open": false,
+    "scrollLocked": false,
+    "step": "Escape and focus return"
+  },
+  {
+    "dialogOverflow": false,
+    "fit": "contain",
+    "loaded": true,
+    "open": true,
+    "overflow": false,
+    "step": "390 mobile viewer"
+  },
+  {
+    "close": "Закрыть просмотр изображения",
+    "dialogOverflow": false,
+    "open": true,
+    "overflow": false,
+    "step": "RU 320 viewer"
+  },
+  {
+    "close": "Close image viewer",
+    "open": true,
+    "overflow": false,
+    "step": "EN 390 viewer"
+  },
+  {
+    "heading": "Onebbau – construction and trade website in HalleMobile view · 2 / 2",
+    "image": "Onebbau: mobile website with a direct consultation path",
+    "step": "Next button click: immediate read before render settled (not an assertion)"
+  }
+]

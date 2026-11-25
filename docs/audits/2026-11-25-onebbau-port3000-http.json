@@ -1,0 +1,77 @@
+{
+  "environment": "Owner dev server localhost:3000, configured database unchanged, Onebbau supplied by source-controlled catalog",
+  "checks": [
+    {
+      "locale": "de",
+      "kind": "home",
+      "path": "/",
+      "status": 200
+    },
+    {
+      "locale": "de",
+      "kind": "index",
+      "path": "/projekte",
+      "status": 200
+    },
+    {
+      "locale": "de",
+      "kind": "detail",
+      "path": "/projekte/onebbau",
+      "status": 200
+    },
+    {
+      "locale": "en",
+      "kind": "home",
+      "path": "/en",
+      "status": 200
+    },
+    {
+      "locale": "en",
+      "kind": "index",
+      "path": "/en/projects",
+      "status": 200
+    },
+    {
+      "locale": "en",
+      "kind": "detail",
+      "path": "/en/projects/onebbau",
+      "status": 200
+    },
+    {
+      "locale": "ru",
+      "kind": "home",
+      "path": "/ru",
+      "status": 200
+    },
+    {
+      "locale": "ru",
+      "kind": "index",
+      "path": "/ru/proekty",
+      "status": 200
+    },
+    {
+      "locale": "ru",
+      "kind": "detail",
+      "path": "/ru/proekty/onebbau",
+      "status": 200
+    },
+    {
+      "path": "/images/project-captures/2026-11-25/onebbau.webp",
+      "status": 200,
+      "bytes": 77294
+    },
+    {
+      "path": "/images/project-captures/2026-11-25/onebbau-mobile.webp",
+      "status": 200,
+      "bytes": 27038
+    }
+  ],
+  "sitemap": {
+    "count": 232,
+    "onebbau": [
+      "https://saaleweb.de/projekte/onebbau",
+      "https://saaleweb.de/en/projects/onebbau",
+      "https://saaleweb.de/ru/proekty/onebbau"
+    ]
+  }
+}

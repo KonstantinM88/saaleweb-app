@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Fragment } from "react";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { hasLocale } from "next-intl";
+import { hasLocale, NextIntlClientProvider } from "next-intl";
 import {
   ArrowLeft,
   ArrowRight,
@@ -16,12 +16,15 @@ import {
 import { prisma } from "@/lib/prisma";
 import { getProjectFocusBySlug } from "@/features/projects/projectFocus";
 import { getProjectFaq } from "@/features/projects/projectFaq";
+import { getCodeProject, getCodeProjectCards, getCodeProjectParams, isCodeProjectSlug } from "@/features/projects/codeProjects";
 import { routing, type AppLocale } from "@/i18n/routing";
 import { getPathname, Link } from "@/i18n/navigation";
 import { Navbar } from "@/widgets/navbar/Navbar";
 import { Footer } from "@/widgets/footer/Footer";
 import { CaseStudyDetailPage } from "@/widgets/project-detail/CaseStudyDetailPage";
+import { ProjectGallery } from "@/widgets/project-detail/ProjectGallery";
 import { Container } from "@/shared/ui/Container";
+import { ProjectDevices } from "@/shared/ui/ProjectDevices";
 import { Breadcrumbs } from "@/shared/ui/Breadcrumbs";
 import { Reveal } from "@/shared/ui/Reveal";
 import { Magnetic } from "@/shared/ui/Magnetic";
@@ -85,13 +88,15 @@ export async function generateStaticParams() {
       select: { locale: true, slug: true },
     })) as { locale: string; slug: string }[];
 
-    return rows.map((row) => ({ locale: row.locale, slug: row.slug }));
+    return [...rows.filter((row) => !isCodeProjectSlug(row.slug)), ...getCodeProjectParams()];
   } catch {
-    return [];
+    return getCodeProjectParams();
   }
 }
 
 async function getProjectData(locale: AppLocale, slug: string) {
+  const codeProject = getCodeProject(locale, slug);
+  if (codeProject) return codeProject;
   try {
     const focusBySlug = await getProjectFocusBySlug(locale);
     const translation = await prisma.projectTranslation.findFirst({
@@ -154,13 +159,17 @@ async function getNextProject(locale: AppLocale, currentSlug: string) {
       orderBy: [{ featured: "desc" }, { order: "asc" }],
       include: { translations: { where: { locale }, take: 1 } },
     });
-    const projects = rows.flatMap((row) => {
+    const dbProjects = rows.flatMap((row) => {
       const translation = row.translations[0];
       return translation
         ? [{ slug: translation.slug, title: translation.title }]
         : [];
     });
 
+    const projects = [
+      ...dbProjects.filter((project) => !isCodeProjectSlug(project.slug)),
+      ...getCodeProjectCards(locale).map(({ slug, title }) => ({ slug, title })),
+    ];
     if (projects.length < 2) return null;
     const currentIndex = projects.findIndex((project) => project.slug === currentSlug);
     if (currentIndex === -1) return null;
@@ -208,6 +217,10 @@ export default async function ProjectPage({
 
   const t = await getTranslations({ locale, namespace: "Projects" });
   const pages = await getTranslations({ locale, namespace: "Pages" });
+  const caseLabels = await getTranslations({ locale, namespace: "CaseStudies.labels" });
+  const mobileCaptureUrl = data.cover?.url.replace(/\.webp$/, "-mobile.webp");
+  const mobileCapture = data.gallery.find((item) => item.url === mobileCaptureUrl);
+  const gallery = data.gallery.filter((item) => item !== mobileCapture);
   const caseDetails = t.raw("caseDetails") as Record<string, CaseDetailCopy>;
   const detailCopy = caseDetails[slug] ?? caseDetails[data.slugs.de] ?? {
     industry: data.tag || t("label"),
@@ -225,7 +238,7 @@ export default async function ProjectPage({
   const homePath = getHomeHref(locale);
   const contactHref = getContactHref(locale);
   const auditHref = getAuditHref(locale);
-  const relatedWebdesign = ["online-buchungen-verdreifacht", "qualifizierte-bauanfragen"].includes(data.slugs.de)
+  const relatedWebdesign = ["online-buchungen-verdreifacht", "qualifizierte-bauanfragen", "onebbau"].includes(data.slugs.de)
     ? {
         de: { prompt: "Sie planen eine ähnliche Firmenwebsite in Halle?", link: "Webdesign Halle ansehen" },
         en: { prompt: "Planning a similar business website in Halle?", link: "Explore web design in Halle" },
@@ -329,16 +342,25 @@ export default async function ProjectPage({
         <section className="pb-4">
           <Container>
             <Reveal>
-              <ProjectMedia
+              {data.cover && mobileCapture ? <ProjectDevices
+                desktop={data.cover.url}
+                mobile={mobileCapture.url}
+                name={data.title}
+                domain={data.externalUrl ? displayUrl(data.externalUrl) : ""}
+                desktopLabel={caseLabels("desktop")}
+                mobileLabel={caseLabels("mobile")}
+                priority
+                className="mx-auto max-w-4xl rounded-[20px]"
+              /> : <ProjectMedia
                 item={data.cover}
-                title={data.title}
+                title={data.cover?.alt ?? data.title}
                 color={data.coverColor}
                 hexColor={Boolean(hexCover)}
                 priority
                 fit="cover"
                 imagePosition="object-top"
-                className="aspect-16/10 rounded-[20px] sm:aspect-video"
-              />
+                className={isCodeProjectSlug(slug) ? "aspect-3/2 rounded-[20px]" : "aspect-16/10 rounded-[20px] sm:aspect-video"}
+              />}
             </Reveal>
 
             {facts.length > 0 && (
@@ -538,9 +560,15 @@ export default async function ProjectPage({
           </Container>
         </section>
 
-        {data.gallery.length > 0 && (
+        {gallery.length > 0 && (
           <section className="bg-surface py-16 md:py-24">
             <Container>
+              {isCodeProjectSlug(slug) ? <>
+                <div className="mb-4 text-center"><span className="eyebrow">{t("gallery")}</span></div>
+                <NextIntlClientProvider messages={{ Projects: { galleryViews: t.raw("galleryViews") } }}>
+                  <ProjectGallery items={gallery} name={data.title} domain={data.externalUrl ? displayUrl(data.externalUrl) : ""} />
+                </NextIntlClientProvider>
+              </> : <>
               <Reveal className="mx-auto mb-10 max-w-[680px] text-center">
                 <span className="eyebrow">{t("gallery")}</span>
                 <h2 className="mt-4 text-[clamp(24px,3.2vw,38px)] font-bold tracking-tight text-dark">
@@ -549,7 +577,7 @@ export default async function ProjectPage({
               </Reveal>
 
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                {data.gallery.map((item, index) => (
+                {gallery.map((item, index) => (
                   <Reveal key={`gallery-${index}`} delay={(index % 2) * 70}>
                     <ProjectMedia
                       item={item}
@@ -561,6 +589,7 @@ export default async function ProjectPage({
                   </Reveal>
                 ))}
               </div>
+              </>}
             </Container>
           </section>
         )}

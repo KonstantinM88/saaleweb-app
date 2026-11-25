@@ -9,6 +9,7 @@ import { isSitemapIndexablePath } from "@/shared/seo/crawl";
 import { getSeoIndustrySlugGroups, getSeoServiceSlugGroups } from "@/widgets/seo-landing/phase4Content";
 import { isMergedIndustrySlug } from "@/widgets/seo-landing/industryMerges";
 import { isMergedServiceSlug } from "@/widgets/seo-landing/serviceMerges";
+import { getCodeProject, getCodeProjectParams } from "@/features/projects/codeProjects";
 
 const BASE = siteConfig.url;
 const abs = (p: string) => `${BASE}${p}`;
@@ -124,6 +125,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     entries.push(
       ...entriesForLocalizedUrls(languages, 0.5, "monthly"),
     );
+  }
+
+  // Source-controlled cases remain available without a CMS import.
+  for (const { locale, slug } of getCodeProjectParams().filter((item) => item.locale === routing.defaultLocale)) {
+    const project = getCodeProject(locale, slug)!;
+    entries.push(...entriesForLocalizedUrls(
+      Object.fromEntries(Object.entries(project.languages).map(([language, path]) => [language, abs(path)])),
+      0.8,
+      "monthly",
+    ));
   }
 
   // Services & industries (DB-backed, per-locale slugs). Skipped without a DB.

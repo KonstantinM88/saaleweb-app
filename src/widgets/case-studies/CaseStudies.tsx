@@ -17,6 +17,7 @@ type StaticItem = {
   solution: string;
   benefits: string[];
   result: string;
+  liveSite?: { url: string; label: string };
   report?: { source: string; text: string; url: string; linkLabel: string };
 };
 type Card = {
@@ -102,6 +103,7 @@ export async function CaseStudies() {
       solution: item.solution,
       benefits: item.benefits,
       result: item.result || db?.result || "",
+      liveSite: item.liveSite,
       report: item.report,
       cover: liveCapture ? { image: liveCapture, mobileImage: liveCapture.replace(".webp", "-mobile.webp"), domain: new URL(item.report!.url).hostname.replace(/^www\./, ""), color: null, label: item.name } : db?.cover ?? item.cover,
     };

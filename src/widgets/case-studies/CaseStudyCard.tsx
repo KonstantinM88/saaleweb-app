@@ -14,6 +14,7 @@ export type CaseStudyCardView = {
   solution: string;
   benefits: string[];
   result: string;
+  liveSite?: { url: string; label: string };
   report?: { source: string; text: string; url: string; linkLabel: string };
   cover: { image: string | null; mobileImage?: string; domain?: string; color: string | null; label: string };
 };
@@ -38,7 +39,7 @@ export function CaseStudyCard({
   labels: CaseStudyCardLabels;
   index: number;
 }) {
-  // Keep the two documented live projects prominent; the remaining examples
+  // Keep the two projects with owner feedback prominent; the remaining examples
   // stay discoverable without repeating another full image-and-detail block.
   if (index >= 2) {
     const content = <>
@@ -47,9 +48,10 @@ export function CaseStudyCard({
       <p className="mt-2 text-sm leading-relaxed text-muted">{item.solution}</p>
       <span className="mt-4 inline-flex min-h-11 items-center gap-2 text-sm font-bold text-[#6D28D9]">{labels.cta}<ArrowUpRight size={15} aria-hidden /></span>
     </>;
-    return <Reveal delay={index * 70} className="h-full lg:col-span-2">
-      <article className="h-full rounded-[18px] border border-line bg-white transition hover:border-brand-purple/25">
-        {item.slug ? <Link href={{ pathname: "/projekte/[slug]", params: { slug: item.slug } }} prefetch={false} className="block h-full rounded-[18px] p-5 outline-hidden focus-visible:ring-2 focus-visible:ring-[#6D28D9]">{content}</Link> : <div className="p-5">{content}</div>}
+    return <Reveal delay={index * 70} className="h-full lg:col-span-3">
+      <article className="flex h-full flex-col rounded-[18px] border border-line bg-white transition hover:border-brand-purple/25">
+        {item.slug ? <Link href={{ pathname: "/projekte/[slug]", params: { slug: item.slug } }} prefetch={false} className="block flex-1 rounded-[18px] p-5 outline-hidden focus-visible:ring-2 focus-visible:ring-[#6D28D9]">{content}</Link> : <div className="p-5">{content}</div>}
+        {item.liveSite && <a href={item.liveSite.url} target="_blank" rel="noopener noreferrer" className="mx-5 mb-5 inline-flex min-h-11 items-center gap-2 text-sm font-bold text-[#6D28D9] hover:underline">{item.liveSite.label}<ArrowUpRight size={15} aria-hidden /></a>}
       </article>
     </Reveal>;
   }

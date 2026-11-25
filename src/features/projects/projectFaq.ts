@@ -8,10 +8,39 @@ type ProjectFaqContent = {
   items: ProjectFaqItem[];
 };
 
-// These are editorial answers for the five published case studies. Add a new
+// These are editorial answers for the published case studies. Add a new
 // entry only after checking the actual project scope; never infer a measured
 // speed, ranking or conversion gain from a technology label.
 const projectFaq: Record<string, Record<AppLocale, ProjectFaqContent>> = {
+  onebbau: {
+    de: {
+      title: "Fragen zum Projekt Onebbau",
+      intro: "Wie der veröffentlichte Auftritt Bau- und Handwerksleistungen erklärt.",
+      items: [
+        { q: "Ist die Onebbau-Website bereits online?", a: "Ja. Die verlinkte Website onebbau.de ist veröffentlicht und bietet Inhalte auf Deutsch und Russisch. Die hier gezeigten Desktop- und Mobilaufnahmen stammen vom 25. November 2026." },
+        { q: "Wie finden Interessenten eine passende Leistung und nehmen Kontakt auf?", a: "Eigene Leistungsseiten beschreiben unter anderem Badsanierung, Trockenbau, Bodenverlegung und Gartenarbeiten. Projektbilder und häufige Fragen ergänzen die Informationen; Kontakt ist per Formular, Telefon oder WhatsApp möglich." },
+        { q: "Was unterstützt die lokale Suche?", a: "Die Leistungsseiten verbinden konkrete Arbeiten mit Halle (Saale). Klare Überschriften, Antworten und Kontaktdaten helfen Besuchern und Suchsystemen bei der Einordnung. Daraus folgt keine Garantie für Rankings, KI-Nennungen oder eine bestimmte Zahl an Anfragen." },
+      ],
+    },
+    en: {
+      title: "Questions about the Onebbau project",
+      intro: "How the published website explains construction and trade services.",
+      items: [
+        { q: "Is the Onebbau website already live?", a: "Yes. The linked onebbau.de website is published, with content in German and Russian. The desktop and mobile captures shown here were taken on 25 November 2026." },
+        { q: "How do visitors find a service and get in touch?", a: "Dedicated pages cover services including bathroom renovation, drywall, flooring and garden work. Project images and frequently asked questions support the information; visitors can use the contact form, phone or WhatsApp." },
+        { q: "What supports local search?", a: "Service pages connect specific work with Halle (Saale). Clear headings, answers and contact details help visitors and search systems understand the offer. This does not guarantee rankings, AI mentions or a particular number of inquiries." },
+      ],
+    },
+    ru: {
+      title: "Вопросы о проекте Onebbau",
+      intro: "Как опубликованный сайт представляет строительные и ремонтные услуги.",
+      items: [
+        { q: "Сайт Onebbau уже работает?", a: "Да. По ссылке onebbau.de открывается опубликованный сайт с контентом на немецком и русском языках. Показанные снимки для компьютера и телефона сделаны 25 ноября 2026 года." },
+        { q: "Как посетителю найти услугу и обратиться в компанию?", a: "Отдельные страницы описывают ремонт ванных, гипсокартонные работы, укладку полов и уход за садом. Информацию дополняют фотографии работ и FAQ; связаться можно через форму, телефон или WhatsApp." },
+        { q: "Что помогает локальному поиску?", a: "Страницы связывают конкретные виды работ с Halle (Saale). Понятные заголовки, ответы и контакты помогают посетителям и поисковым системам разобраться в предложении. Это не гарантирует позиции, упоминания в ИИ или определённое число заявок." },
+      ],
+    },
+  },
   "online-buchungen-verdreifacht": {
     de: {
       title: "Fragen zum Projekt Salon Elen",

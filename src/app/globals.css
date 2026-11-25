@@ -939,6 +939,16 @@ html.custom-cursor *:not(input):not(textarea):not(select) {
   cursor: none !important;
 }
 
+/* Native modal dialogs render above the decorative cursor's document layer. */
+html.custom-cursor .project-gallery-dialog,
+html.custom-cursor .project-gallery-dialog * {
+  cursor: auto !important;
+}
+html.custom-cursor .project-gallery-dialog button,
+html.custom-cursor .project-gallery-dialog a {
+  cursor: pointer !important;
+}
+
 .cursor-layer {
   position: fixed;
   inset: 0;

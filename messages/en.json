@@ -825,6 +825,24 @@
         ],
         "badge": "Project preview · Trade / glazing",
         "result": "Trust & local visibility"
+      },
+      {
+        "slug": "onebbau",
+        "name": "Onebbau",
+        "industry": "Construction & trades · Halle (Saale)",
+        "goal": "Explain services clearly and simplify the path to a consultation",
+        "solution": "Published website with dedicated service pages, a project gallery, FAQ and direct contact options in German and Russian.",
+        "benefits": [
+          "Dedicated pages for individual services",
+          "Contact by form, phone and WhatsApp",
+          "Mobile layout and DE/RU content"
+        ],
+        "badge": "Live project · Construction & trades",
+        "result": "Services & contact paths",
+        "liveSite": {
+          "url": "https://www.onebbau.de/",
+          "label": "View the live website"
+        }
       }
     ],
     "items": [
@@ -907,6 +925,20 @@
     "solution": "Solution",
     "results": "Result",
     "gallery": "Gallery",
+    "galleryViews": {
+      "title": "One website. Two perspectives.",
+      "intro": "Original views of the website on a large screen and a smartphone. Open an image to explore the details.",
+      "desktop": "Desktop view",
+      "mobile": "Mobile view",
+      "desktopDescription": "The website in a browser: clear services and direct contact options.",
+      "mobileDescription": "The dedicated mobile layout, shown in full.",
+      "enlarge": "Enlarge {view}",
+      "hint": "Original captures · Select an image to enlarge",
+      "close": "Close image viewer",
+      "previous": "Previous image",
+      "next": "Next image",
+      "original": "Open original"
+    },
     "tech": "Technologies used",
     "result": "Result",
     "liveSite": "View live website",
@@ -957,6 +989,12 @@
         "goal": "High-quality presentation of services and references",
         "result": "A modern trade-business presence with clear service presentation and professional external impact.",
         "performance": "Focus on local findability, clear service structure, mobile readability and trust-building references."
+      },
+      "onebbau": {
+        "industry": "Construction & trades · Halle (Saale)",
+        "goal": "Explain services clearly and simplify the path to a consultation",
+        "result": "Services & contact paths",
+        "performance": "Responsive presentation and clear service pages referring to Halle. Specific PageSpeed scores, rankings or inquiry gains are not presented as measured results."
       }
     }
   },
